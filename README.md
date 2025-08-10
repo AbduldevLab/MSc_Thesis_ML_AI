@@ -3,7 +3,7 @@
 This repository contains a structured LaTeX folder designed for writing academic theses, dissertations, or reports. It includes a modular setup with separate files for chapters, bibliography, and formatting, making it easy to manage large documents.
 
 ## 📁 Folder Structure
-
+Open `Thesis.pdf` after compilation to preview the formatted document.
 
 ### 🛠️ Requirements (Local Setup)
 
