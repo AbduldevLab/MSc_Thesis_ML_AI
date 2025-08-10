@@ -1,0 +1,61 @@
+% this file is called up by thesis.tex
+% content in this file will be fed into the main document
+
+
+
+%: ----------------------- name of chapter  -------------------------
+\chapter{Chapter 5} % top level followed by section, subsection
+
+\ifpdf
+    \graphicspath{{5_chapter5/figures/PNG/}{5_chapter5/figures/PDF/}{5_chapter5/figures/}}
+\else
+    \graphicspath{{5_chapter5/figures/EPS/}{5_chapter5/figures/}}
+\fi
+
+
+
+
+\section{References}
+
+Open the file `references\_myphd' with BibTex. The file is located in `/7\_references/'
+
+The file contains a series of templates for the proper formatting of references according to the Harvard referencing style.
+Click on each reference in the text below to see how Latex has formatted the reference on the References section.
+
+\begin{itemize}
+\item \textbf{Book}: (\Citealt[p. 10]{mybook}) (page number required only if referring to an in-text quote)
+\item \textbf{Book Chapter}: (\Citealt{mybookchapter})
+\item \textbf{Book Contribution}: (\Citealt{mybookcontribution})
+\item \textbf{MUSIC CD/DVD}: (\Citealt{mycddvd})
+\item \textbf{Journal Article}: (\Citealt{myjournal})
+\item \textbf{Patent}: (\Citealt{mypatent})
+\item \textbf{PhD/Master Dissertation}: (\Citealt{myphd})
+\item \textbf{Conference Paper}: (\Citealt{myproceeding})
+\item \textbf{Technical Report}: (\Citealt{mytechreport})
+\item \textbf{Unpublished Report}: (\Citealt{myunpublishedreport})
+\item \textbf{Web Videos}(\Citealt{mywebvideos}) (. . . not the name of the person who uploaded the video though)
+\item \textbf{Web Paper}: (\Citealt{mywebpaper}) 
+\item \textbf{Web Journal Article}: (\Citealt{mywebarticlejournal})
+\item \textbf{Webpage}: (\Citealt{mywebpage})
+\item \textbf{Downloaded Images or Sounds}: (\Citealt{mydownloadedimage})
+\end{itemize}
+
+
+You can also you this kind of referencing if needed in the text: 
+
+Surname \citeyearpar{mybookchapter} said that . . .
+
+ 		
+
+
+
+
+
+
+
+
+
+% ---------------------------------------------------------------------------
+%: ----------------------- end of thesis sub-document ------------------------
+% ---------------------------------------------------------------------------
+

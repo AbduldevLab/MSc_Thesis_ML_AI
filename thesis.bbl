@@ -1,0 +1,51 @@
+\begin{thebibliography}{xx}
+
+\harvarditem{digitalart}{2013}{mydownloadedimage}
+digitalart  \harvardyearleft 2013\harvardyearright , `{Recycle Symbol With Tree Stock Image}', {\em in www.freedigitalphotos.net \emph{[online], available: \urlwofont{http://http://www.freedigitalphotos.net/images/Recycling_g385-Recycle_Symbol_With_Tree_p39521.html} [accessed: 1 January 2013]}} .
+
+\harvarditem{Surname}{2001}{mybookchapter}
+Surname, N.  \harvardyearleft 2001\harvardyearright , {\em \emph{Chapter Title}, Book Title}, Publisher, 1-100.
+
+\harvarditem{Surname}{2002}{mybookcontribution}
+Surname, N.  \harvardyearleft 2002\harvardyearright , {Title of Book}, in {editors}, eds., \emph{Title of Contribution}, {Publishers}, 1-100.
+
+\harvarditem{Surname}{2003}{mycddvd}
+Surname, N.  \harvardyearleft 2003\harvardyearright , {\em {CD Title} \emph{[CD], Label}}.
+
+\harvarditem{Surname}{2005}{mypatent}
+Surname, N.  \harvardyearleft 2005\harvardyearright , {\em Title}, {U.S. Patent} 0,000,001 avaliable: \urlwofont{http://www.websitename.comm} [accessed: 1 January 2013].
+
+\harvarditem{Surname}{2006}{myphd}
+Surname, N.  \harvardyearleft 2006\harvardyearright , \emph{Title of Dissertation}, PhD thesis, Centre of Research - University of BLA.
+
+\harvarditem{Surname}{2008}{mytechreport}
+Surname, N.  \harvardyearleft 2008\harvardyearright , \emph{Title of Report}, Technical report, Name of Institution.
+
+\harvarditem{Surname}{2009}{myunpublishedreport}
+Surname, N.  \harvardyearleft 2009\harvardyearright , {\em Title of Unpublished Report}, name of Institution, unpublished.
+
+\harvarditem{Surname}{2010}{mywebvideos}
+Surname, N.  \harvardyearleft 2010\harvardyearright , `{Title of the Video}', {\em Collection (if any) at http://http://vimeo.com/user3594431 \emph{[online], available: \urlwofont{http://vimeo.com/44650248} [accessed: 1 January 2013]}} .
+
+\harvarditem{Surname}{2012}{mywebarticlejournal}
+Surname, N.  \harvardyearleft 2012\harvardyearright , `{Title of Web Journal Article}', {\em in {Name of Journal'}, {\bf15}\emph{(11)} \emph{available: \urlwofont{http://www.linktojournalarticle.html}[accessed: 1 January 2013]}} .
+
+\harvarditem{Surname}{2013}{mywebpage}
+Surname, N.  \harvardyearleft 2013\harvardyearright , {\em {Title of Webpage} \emph{[online], available: \urlwofont{http://www.linktowebpage.comm} [accessed: 1 January 2012]}}.
+
+\harvarditem{Surname \harvardand\ Surname}{2011}{mywebpaper}
+Surname, N. \harvardand\ Surname, N.  \harvardyearleft 2011\harvardyearright , `{Title of the article}', {\em {Name of Conference or Organisation publishing}, \emph{available: \urlwofont{http://www.article.pdf}[accessed: 1 January 2011]}} .
+
+\harvarditem[Surname et~al.]{Surname, Surname \harvardand\ Surname}{2000}{mybook}
+Surname, N., Surname, N. \harvardand\ Surname, N.  \harvardyearleft 2000\harvardyearright , {\em {Title of Book}}, Publisher.
+
+\harvarditem[Surname et~al.]{Surname, Surname \harvardand\ Surname}{2004}{myjournal}
+Surname, N., Surname, N. \harvardand\ Surname, N.  \harvardyearleft 2004\harvardyearright , `{Title of Journal Article}', {\em Journal name,} {\bf 9}(2),~1--100.
+
+\harvarditem[Surname et~al.]{Surname, Surname, Surname \harvardand\ Surname}{2007}{myproceeding}
+Surname, N., Surname, N., Surname, N. \harvardand\ Surname, N.  \harvardyearleft 2007\harvardyearright , `{Title of Paper}', in editor name, \emph{In Proceedings of Conference name}, {C}ity, {M}onth 22-28, 2007, {City, Country}, 1-10.
+
+\harvarditem{Wordsworth}{1799}{poem}
+Wordsworth, W.  \harvardyearleft 1799\harvardyearright , `{The Prelude}', {\em {Name of Conference or Organisation publishing}, \emph{available: \urlwofont{https://genius.com/William-wordsworth-the-prelude-book-12-annotated}[accessed: 1 January 2011]}} .
+
+\end{thebibliography}

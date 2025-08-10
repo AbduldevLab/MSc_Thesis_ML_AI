@@ -1,0 +1,62 @@
+This is BibTeX, Version 0.99d (TeX Live 2025)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: thesis.aux
+A level-1 auxiliary file: Latex/Macros/MacroFile1.aux
+A level-1 auxiliary file: 0_frontmatter/abstract.aux
+A level-1 auxiliary file: 0_frontmatter/declaration.aux
+A level-1 auxiliary file: 0_frontmatter/acknowledgement.aux
+A level-1 auxiliary file: 0_frontmatter/dedication.aux
+A level-1 auxiliary file: 0_frontmatter/glossary.aux
+A level-1 auxiliary file: 1_introduction/introduction.aux
+A level-1 auxiliary file: 2_chapter2/chapter2.aux
+A level-1 auxiliary file: 3_chapter3/chapter3.aux
+A level-1 auxiliary file: 4_chapter4/chapter4.aux
+A level-1 auxiliary file: 5_chapter5/chapter5.aux
+A level-1 auxiliary file: 6_conclusions/conclusions.aux
+The style file: agsm.bst
+Database file #1: References-Bibtex.bib
+Warning--empty booktitle in mybookcontribution
+Warning--empty publisher in mybookcontribution
+Warning--empty booktitle in myproceeding
+You've used 16 entries,
+            2909 wiz_defined-function locations,
+            717 strings with 7117 characters,
+and the built_in function-call counts, 43068 in all, are:
+= -- 6821
+> -- 566
+< -- 0
++ -- 3132
+- -- 168
+* -- 3476
+:= -- 9157
+add.period$ -- 16
+call.type$ -- 16
+change.case$ -- 218
+chr.to.int$ -- 16
+cite$ -- 19
+duplicate$ -- 236
+empty$ -- 431
+format.name$ -- 207
+if$ -- 7622
+int.to.chr$ -- 5
+int.to.str$ -- 0
+missing$ -- 16
+newline$ -- 51
+num.names$ -- 163
+pop$ -- 102
+preamble$ -- 1
+purify$ -- 240
+quote$ -- 0
+skip$ -- 177
+stack$ -- 0
+substring$ -- 9375
+swap$ -- 19
+text.length$ -- 224
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 56
+warning$ -- 3
+while$ -- 337
+width$ -- 0
+write$ -- 198
+(There were 3 warnings)
