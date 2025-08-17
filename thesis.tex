@@ -5,7 +5,7 @@
 % -----------------
 %Refresh the tex project by running the following commands in the terminal:
 % pdflatex thesis
-% makeindex thesis.nlo -s nomencl.ist -o thesis.nls
+% makeindex thesis.nlo -s nomencl.ist -o thesis.nls or makeglossaries thesis or bibtex thesis 
 % pdflatex thesis
 % pdflatex thesis
 % ------------------
@@ -28,6 +28,8 @@
 \usepackage{multirow}
 \usepackage{color}
 
+\usepackage[acronym]{glossaries}
+\makeglossaries
 
 \newcommand{\urlwofont}[1]
 {
@@ -231,19 +233,20 @@ Day of the defense: day month year
 
 %: ----------------------- glossary ------------------------
 \cleardoublepage
-\renewcommand{\nomname}{List of Abbreviations}
+% \renewcommand{\nomname}{List of Abbreviations}
 % Tie in external source file for definitions: /0_frontmatter/glossary.tex
 % Glossary entries can also be defined in the main text. See glossary.tex
 \include{0_frontmatter/glossary} 
 % \begin{multicols}{2} % \begin{multicols}{#columns}[header text][space]
 % \begin{footnotesize} % scriptsize(7) < footnotesize(8) < small (9) < normal (10)
-\setlength{\nomlabelwidth}{2.5cm}
+% \setlength{\nomlabelwidth}{2.5cm}
 
-\printnomenclature[1.5cm] % [] = distance between entry and description
+% \printnomenclature[1.5cm] % [] = distance between entry and description
 % \label{nom} % target name for links to glossary
 % \end{footnotesize}
 % \end{multicols}
-
+\printglossary[type=\acronymtype, title=List of Abbreviations]
+\addcontentsline{toc}{chapter}{List of Abbreviations}
 
 %: --------------------------------------------------------------
 %:                  MAIN DOCUMENT SECTION
@@ -252,7 +255,7 @@ Day of the defense: day month year
 % the main text starts here with the introduction, 1st chapter,...
 \mainmatter
 
-\renewcommand{\chaptername}{} % uncomment to print only "1" not "Chapter 1"
+% \renewcommand{\chaptername}{} % uncomment to print only "1" not "Chapter 1"
 
 
 %: ----------------------- subdocuments ------------------------
@@ -289,7 +292,7 @@ Day of the defense: day month year
 
 
 % here is how to add a figure in the appendix�. it is the same as any other place in the latex document
-\figuremacroW{7_appendixes/image01}{Title of Figure}{Description. [Source: (\Citealt{mydownloadedimage})]}{0.8}
+% \figuremacroW{7_appendixes/image01}{Title of Figure}{Description. [Source: (\Citealt{mydownloadedimage})]}{0.8}
 
 % here is how we close the chapter
 \addcontentsline{toc}{chapter}{Appendix A: Insert figure in Appendix}

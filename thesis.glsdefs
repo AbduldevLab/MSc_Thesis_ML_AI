@@ -1,0 +1,1204 @@
+\glsdefs@newdocentry{TILDA}%
+{%
+name={\acronymfont {\glsentryshort {TILDA}}},%
+sort={TILDA},%
+type={acronym},%
+first={TILDA},%
+firstplural={TILDAs},%
+text={TILDA},%
+plural={TILDAs},%
+description={The Irish Longitudinal Study on Ageing},%
+descriptionplural={The Irish Longitudinal Study on Ageing},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={The Irish Longitudinal Study on Ageing},%
+longplural={The Irish Longitudinal Study on Ageings},%
+short={TILDA},%
+shortplural={TILDAs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{ML}%
+{%
+name={\acronymfont {\glsentryshort {ML}}},%
+sort={ML},%
+type={acronym},%
+first={ML},%
+firstplural={MLs},%
+text={ML},%
+plural={MLs},%
+description={Machine Learning},%
+descriptionplural={Machine Learning},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Machine Learning},%
+longplural={Machine Learnings},%
+short={ML},%
+shortplural={MLs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{WHO}%
+{%
+name={\acronymfont {\glsentryshort {WHO}}},%
+sort={WHO},%
+type={acronym},%
+first={WHO},%
+firstplural={WHOs},%
+text={WHO},%
+plural={WHOs},%
+description={World Health Organization},%
+descriptionplural={World Health Organization},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={World Health Organization},%
+longplural={World Health Organizations},%
+short={WHO},%
+shortplural={WHOs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{EU}%
+{%
+name={\acronymfont {\glsentryshort {EU}}},%
+sort={EU},%
+type={acronym},%
+first={EU},%
+firstplural={EUs},%
+text={EU},%
+plural={EUs},%
+description={European Union},%
+descriptionplural={European Union},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={European Union},%
+longplural={European Unions},%
+short={EU},%
+shortplural={EUs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{UK}%
+{%
+name={\acronymfont {\glsentryshort {UK}}},%
+sort={UK},%
+type={acronym},%
+first={UK},%
+firstplural={UKs},%
+text={UK},%
+plural={UKs},%
+description={United Kingdom},%
+descriptionplural={United Kingdom},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={United Kingdom},%
+longplural={United Kingdoms},%
+short={UK},%
+shortplural={UKs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{AUC}%
+{%
+name={\acronymfont {\glsentryshort {AUC}}},%
+sort={AUC},%
+type={acronym},%
+first={AUC},%
+firstplural={AUCs},%
+text={AUC},%
+plural={AUCs},%
+description={Area Under the ROC Curve},%
+descriptionplural={Area Under the ROC Curve},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Area Under the ROC Curve},%
+longplural={Area Under the ROC Curves},%
+short={AUC},%
+shortplural={AUCs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{BMI}%
+{%
+name={\acronymfont {\glsentryshort {BMI}}},%
+sort={BMI},%
+type={acronym},%
+first={BMI},%
+firstplural={BMIs},%
+text={BMI},%
+plural={BMIs},%
+description={Body Mass Index},%
+descriptionplural={Body Mass Index},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Body Mass Index},%
+longplural={Body Mass Indexs},%
+short={BMI},%
+shortplural={BMIs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{TUG}%
+{%
+name={\acronymfont {\glsentryshort {TUG}}},%
+sort={TUG},%
+type={acronym},%
+first={TUG},%
+firstplural={TUGs},%
+text={TUG},%
+plural={TUGs},%
+description={Timed Up and Go (mobility test)},%
+descriptionplural={Timed Up and Go (mobility test)},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Timed Up and Go (mobility test)},%
+longplural={Timed Up and Go (mobility test)s},%
+short={TUG},%
+shortplural={TUGs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{MMSE}%
+{%
+name={\acronymfont {\glsentryshort {MMSE}}},%
+sort={MMSE},%
+type={acronym},%
+first={MMSE},%
+firstplural={MMSEs},%
+text={MMSE},%
+plural={MMSEs},%
+description={Mini-Mental State Examination},%
+descriptionplural={Mini-Mental State Examination},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Mini-Mental State Examination},%
+longplural={Mini-Mental State Examinations},%
+short={MMSE},%
+shortplural={MMSEs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{CESD}%
+{%
+name={\acronymfont {\glsentryshort {CESD}}},%
+sort={CES-D},%
+type={acronym},%
+first={CES-D},%
+firstplural={CES-Ds},%
+text={CES-D},%
+plural={CES-Ds},%
+description={Center for Epidemiologic Studies Depression Scale},%
+descriptionplural={Center for Epidemiologic Studies Depression Scale},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Center for Epidemiologic Studies Depression Scale},%
+longplural={Center for Epidemiologic Studies Depression Scales},%
+short={CES-D},%
+shortplural={CES-Ds},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{CVD}%
+{%
+name={\acronymfont {\glsentryshort {CVD}}},%
+sort={CVD},%
+type={acronym},%
+first={CVD},%
+firstplural={CVDs},%
+text={CVD},%
+plural={CVDs},%
+description={Cardiovascular Disease},%
+descriptionplural={Cardiovascular Disease},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Cardiovascular Disease},%
+longplural={Cardiovascular Diseases},%
+short={CVD},%
+shortplural={CVDs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{DM}%
+{%
+name={\acronymfont {\glsentryshort {DM}}},%
+sort={DM},%
+type={acronym},%
+first={DM},%
+firstplural={DMs},%
+text={DM},%
+plural={DMs},%
+description={Diabetes Mellitus},%
+descriptionplural={Diabetes Mellitus},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Diabetes Mellitus},%
+longplural={Diabetes Mellituss},%
+short={DM},%
+shortplural={DMs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{HTN}%
+{%
+name={\acronymfont {\glsentryshort {HTN}}},%
+sort={HTN},%
+type={acronym},%
+first={HTN},%
+firstplural={HTNs},%
+text={HTN},%
+plural={HTNs},%
+description={Hypertension},%
+descriptionplural={Hypertension},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Hypertension},%
+longplural={Hypertensions},%
+short={HTN},%
+shortplural={HTNs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{CHD}%
+{%
+name={\acronymfont {\glsentryshort {CHD}}},%
+sort={CHD},%
+type={acronym},%
+first={CHD},%
+firstplural={CHDs},%
+text={CHD},%
+plural={CHDs},%
+description={Coronary Heart Disease},%
+descriptionplural={Coronary Heart Disease},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Coronary Heart Disease},%
+longplural={Coronary Heart Diseases},%
+short={CHD},%
+shortplural={CHDs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{CKD}%
+{%
+name={\acronymfont {\glsentryshort {CKD}}},%
+sort={CKD},%
+type={acronym},%
+first={CKD},%
+firstplural={CKDs},%
+text={CKD},%
+plural={CKDs},%
+description={Chronic Kidney Disease},%
+descriptionplural={Chronic Kidney Disease},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Chronic Kidney Disease},%
+longplural={Chronic Kidney Diseases},%
+short={CKD},%
+shortplural={CKDs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{MCI}%
+{%
+name={\acronymfont {\glsentryshort {MCI}}},%
+sort={MCI},%
+type={acronym},%
+first={MCI},%
+firstplural={MCIs},%
+text={MCI},%
+plural={MCIs},%
+description={Mild Cognitive Impairment},%
+descriptionplural={Mild Cognitive Impairment},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Mild Cognitive Impairment},%
+longplural={Mild Cognitive Impairments},%
+short={MCI},%
+shortplural={MCIs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{FI}%
+{%
+name={\acronymfont {\glsentryshort {FI}}},%
+sort={FI},%
+type={acronym},%
+first={FI},%
+firstplural={FIs},%
+text={FI},%
+plural={FIs},%
+description={Frailty Index},%
+descriptionplural={Frailty Index},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Frailty Index},%
+longplural={Frailty Indexs},%
+short={FI},%
+shortplural={FIs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{PA}%
+{%
+name={\acronymfont {\glsentryshort {PA}}},%
+sort={PA},%
+type={acronym},%
+first={PA},%
+firstplural={PAs},%
+text={PA},%
+plural={PAs},%
+description={Physical Activity},%
+descriptionplural={Physical Activity},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Physical Activity},%
+longplural={Physical Activitys},%
+short={PA},%
+shortplural={PAs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{MVPA}%
+{%
+name={\acronymfont {\glsentryshort {MVPA}}},%
+sort={MVPA},%
+type={acronym},%
+first={MVPA},%
+firstplural={MVPAs},%
+text={MVPA},%
+plural={MVPAs},%
+description={Moderate-to-Vigorous Physical Activity},%
+descriptionplural={Moderate-to-Vigorous Physical Activity},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Moderate-to-Vigorous Physical Activity},%
+longplural={Moderate-to-Vigorous Physical Activitys},%
+short={MVPA},%
+shortplural={MVPAs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{VPA}%
+{%
+name={\acronymfont {\glsentryshort {VPA}}},%
+sort={VPA},%
+type={acronym},%
+first={VPA},%
+firstplural={VPAs},%
+text={VPA},%
+plural={VPAs},%
+description={Vigorous Physical Activity},%
+descriptionplural={Vigorous Physical Activity},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Vigorous Physical Activity},%
+longplural={Vigorous Physical Activitys},%
+short={VPA},%
+shortplural={VPAs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{UGS}%
+{%
+name={\acronymfont {\glsentryshort {UGS}}},%
+sort={UGS},%
+type={acronym},%
+first={UGS},%
+firstplural={UGSs},%
+text={UGS},%
+plural={UGSs},%
+description={Usual Gait Speed},%
+descriptionplural={Usual Gait Speed},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Usual Gait Speed},%
+longplural={Usual Gait Speeds},%
+short={UGS},%
+shortplural={UGSs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{MGS}%
+{%
+name={\acronymfont {\glsentryshort {MGS}}},%
+sort={MGS},%
+type={acronym},%
+first={MGS},%
+firstplural={MGSs},%
+text={MGS},%
+plural={MGSs},%
+description={Maximum Gait Speed},%
+descriptionplural={Maximum Gait Speed},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Maximum Gait Speed},%
+longplural={Maximum Gait Speeds},%
+short={MGS},%
+shortplural={MGSs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{HGS}%
+{%
+name={\acronymfont {\glsentryshort {HGS}}},%
+sort={HGS},%
+type={acronym},%
+first={HGS},%
+firstplural={HGSs},%
+text={HGS},%
+plural={HGSs},%
+description={Hand Grip Strength},%
+descriptionplural={Hand Grip Strength},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Hand Grip Strength},%
+longplural={Hand Grip Strengths},%
+short={HGS},%
+shortplural={HGSs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{FOF}%
+{%
+name={\acronymfont {\glsentryshort {FOF}}},%
+sort={FOF},%
+type={acronym},%
+first={FOF},%
+firstplural={FOFs},%
+text={FOF},%
+plural={FOFs},%
+description={Fear of Falling},%
+descriptionplural={Fear of Falling},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Fear of Falling},%
+longplural={Fear of Fallings},%
+short={FOF},%
+shortplural={FOFs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{IADL}%
+{%
+name={\acronymfont {\glsentryshort {IADL}}},%
+sort={IADL},%
+type={acronym},%
+first={IADL},%
+firstplural={IADLs},%
+text={IADL},%
+plural={IADLs},%
+description={Instrumental Activities of Daily Living},%
+descriptionplural={Instrumental Activities of Daily Living},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Instrumental Activities of Daily Living},%
+longplural={Instrumental Activities of Daily Livings},%
+short={IADL},%
+shortplural={IADLs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{BADL}%
+{%
+name={\acronymfont {\glsentryshort {BADL}}},%
+sort={BADL},%
+type={acronym},%
+first={BADL},%
+firstplural={BADLs},%
+text={BADL},%
+plural={BADLs},%
+description={Basic Activities of Daily Living},%
+descriptionplural={Basic Activities of Daily Living},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Basic Activities of Daily Living},%
+longplural={Basic Activities of Daily Livings},%
+short={BADL},%
+shortplural={BADLs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{GDS}%
+{%
+name={\acronymfont {\glsentryshort {GDS}}},%
+sort={GDS},%
+type={acronym},%
+first={GDS},%
+firstplural={GDSs},%
+text={GDS},%
+plural={GDSs},%
+description={Geriatric Depression Scale},%
+descriptionplural={Geriatric Depression Scale},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Geriatric Depression Scale},%
+longplural={Geriatric Depression Scales},%
+short={GDS},%
+shortplural={GDSs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{MOCA}%
+{%
+name={\acronymfont {\glsentryshort {MOCA}}},%
+sort={MOCA},%
+type={acronym},%
+first={MOCA},%
+firstplural={MOCAs},%
+text={MOCA},%
+plural={MOCAs},%
+description={Montreal Cognitive Assessment},%
+descriptionplural={Montreal Cognitive Assessment},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Montreal Cognitive Assessment},%
+longplural={Montreal Cognitive Assessments},%
+short={MOCA},%
+shortplural={MOCAs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{MRI}%
+{%
+name={\acronymfont {\glsentryshort {MRI}}},%
+sort={MRI},%
+type={acronym},%
+first={MRI},%
+firstplural={MRIs},%
+text={MRI},%
+plural={MRIs},%
+description={Magnetic Resonance Imaging},%
+descriptionplural={Magnetic Resonance Imaging},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Magnetic Resonance Imaging},%
+longplural={Magnetic Resonance Imagings},%
+short={MRI},%
+shortplural={MRIs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{recall}%
+{%
+name={\acronymfont {\glsentryshort {recall}}},%
+sort={Recall},%
+type={acronym},%
+first={Recall},%
+firstplural={Recalls},%
+text={Recall},%
+plural={Recalls},%
+description={Recall (true positive rate)},%
+descriptionplural={Recall (true positive rate)},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Recall (true positive rate)},%
+longplural={Recall (true positive rate)s},%
+short={Recall},%
+shortplural={Recalls},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{F1}%
+{%
+name={\acronymfont {\glsentryshort {F1}}},%
+sort={F1},%
+type={acronym},%
+first={F1},%
+firstplural={F1s},%
+text={F1},%
+plural={F1s},%
+description={F1-score (harmonic mean of precision and recall)},%
+descriptionplural={F1-score (harmonic mean of precision and recall)},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={F1-score (harmonic mean of precision and recall)},%
+longplural={F1-score (harmonic mean of precision and recall)s},%
+short={F1},%
+shortplural={F1s},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{RF}%
+{%
+name={\acronymfont {\glsentryshort {RF}}},%
+sort={RF},%
+type={acronym},%
+first={RF},%
+firstplural={RFs},%
+text={RF},%
+plural={RFs},%
+description={Random Forest},%
+descriptionplural={Random Forest},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Random Forest},%
+longplural={Random Forests},%
+short={RF},%
+shortplural={RFs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{GBM}%
+{%
+name={\acronymfont {\glsentryshort {GBM}}},%
+sort={GBM},%
+type={acronym},%
+first={GBM},%
+firstplural={GBMs},%
+text={GBM},%
+plural={GBMs},%
+description={Gradient Boosting Machine},%
+descriptionplural={Gradient Boosting Machine},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Gradient Boosting Machine},%
+longplural={Gradient Boosting Machines},%
+short={GBM},%
+shortplural={GBMs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{CV}%
+{%
+name={\acronymfont {\glsentryshort {CV}}},%
+sort={CV},%
+type={acronym},%
+first={CV},%
+firstplural={CVs},%
+text={CV},%
+plural={CVs},%
+description={Cross-Validation},%
+descriptionplural={Cross-Validation},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Cross-Validation},%
+longplural={Cross-Validations},%
+short={CV},%
+shortplural={CVs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{ROC}%
+{%
+name={\acronymfont {\glsentryshort {ROC}}},%
+sort={ROC},%
+type={acronym},%
+first={ROC},%
+firstplural={ROCs},%
+text={ROC},%
+plural={ROCs},%
+description={Receiver Operating Characteristic},%
+descriptionplural={Receiver Operating Characteristic},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Receiver Operating Characteristic},%
+longplural={Receiver Operating Characteristics},%
+short={ROC},%
+shortplural={ROCs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{HR}%
+{%
+name={\acronymfont {\glsentryshort {HR}}},%
+sort={HR},%
+type={acronym},%
+first={HR},%
+firstplural={HRs},%
+text={HR},%
+plural={HRs},%
+description={Hazard Ratio},%
+descriptionplural={Hazard Ratio},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Hazard Ratio},%
+longplural={Hazard Ratios},%
+short={HR},%
+shortplural={HRs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{OR}%
+{%
+name={\acronymfont {\glsentryshort {OR}}},%
+sort={OR},%
+type={acronym},%
+first={OR},%
+firstplural={ORs},%
+text={OR},%
+plural={ORs},%
+description={Odds Ratio},%
+descriptionplural={Odds Ratio},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Odds Ratio},%
+longplural={Odds Ratios},%
+short={OR},%
+shortplural={ORs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{CI}%
+{%
+name={\acronymfont {\glsentryshort {CI}}},%
+sort={CI},%
+type={acronym},%
+first={CI},%
+firstplural={CIs},%
+text={CI},%
+plural={CIs},%
+description={Confidence Interval},%
+descriptionplural={Confidence Interval},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Confidence Interval},%
+longplural={Confidence Intervals},%
+short={CI},%
+shortplural={CIs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{RMSE}%
+{%
+name={\acronymfont {\glsentryshort {RMSE}}},%
+sort={RMSE},%
+type={acronym},%
+first={RMSE},%
+firstplural={RMSEs},%
+text={RMSE},%
+plural={RMSEs},%
+description={Root Mean Squared Error},%
+descriptionplural={Root Mean Squared Error},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Root Mean Squared Error},%
+longplural={Root Mean Squared Errors},%
+short={RMSE},%
+shortplural={RMSEs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{PRAUC}%
+{%
+name={\acronymfont {\glsentryshort {PRAUC}}},%
+sort={PR-AUC},%
+type={acronym},%
+first={PR-AUC},%
+firstplural={PR-AUCs},%
+text={PR-AUC},%
+plural={PR-AUCs},%
+description={Precision-Recall Area Under the Curve},%
+descriptionplural={Precision-Recall Area Under the Curve},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Precision-Recall Area Under the Curve},%
+longplural={Precision-Recall Area Under the Curves},%
+short={PR-AUC},%
+shortplural={PR-AUCs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{AUROC}%
+{%
+name={\acronymfont {\glsentryshort {AUROC}}},%
+sort={AUROC},%
+type={acronym},%
+first={AUROC},%
+firstplural={AUROCs},%
+text={AUROC},%
+plural={AUROCs},%
+description={Area Under the Receiver Operating Characteristic Curve},%
+descriptionplural={Area Under the Receiver Operating Characteristic Curve},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Area Under the Receiver Operating Characteristic Curve},%
+longplural={Area Under the Receiver Operating Characteristic Curves},%
+short={AUROC},%
+shortplural={AUROCs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{SHAP}%
+{%
+name={\acronymfont {\glsentryshort {SHAP}}},%
+sort={SHAP},%
+type={acronym},%
+first={SHAP},%
+firstplural={SHAPs},%
+text={SHAP},%
+plural={SHAPs},%
+description={Shapley Additive Explanations},%
+descriptionplural={Shapley Additive Explanations},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Shapley Additive Explanations},%
+longplural={Shapley Additive Explanationss},%
+short={SHAP},%
+shortplural={SHAPs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{PCA}%
+{%
+name={\acronymfont {\glsentryshort {PCA}}},%
+sort={PCA},%
+type={acronym},%
+first={PCA},%
+firstplural={PCAs},%
+text={PCA},%
+plural={PCAs},%
+description={Principal Component Analysis},%
+descriptionplural={Principal Component Analysis},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Principal Component Analysis},%
+longplural={Principal Component Analysiss},%
+short={PCA},%
+shortplural={PCAs},%
+counter={page},%
+parent={},%
+%
+}%
+

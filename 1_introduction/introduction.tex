@@ -1,4 +1,3 @@
-
 % this file is called up by thesis.tex
 % content in this file will be fed into the main document
 
@@ -15,93 +14,107 @@
 % ----------------------------------------------------------------------
 %: ----------------------- introduction content ----------------------- 
 % ----------------------------------------------------------------------
-TILDA
-Here you can write you own text . . .  also we can write a footnote like this.\footnote{It is simple to create a footnote.} 
+\section{Background and Context}
+Chronic conditions, including cardiovascular disease, diabetes, and frailty, are leading contributors to morbidity and mortality in ageing populations~\cite{bencivengaAtrialFibrillationElderly2020, bardonPredictorsIncidentMalnutrition2020}. These conditions are associated with declines in functional capacity (e.g., gait speed, grip strength~\cite{davisComparisonGaitSpeed2021}), increased healthcare utilisation~\cite{mooreCountingTimeLived2017}, and reduced quality of life~\cite{huangSexDifferencesAssociations2020}. Traditional risk prediction models rely primarily on clinical biomarkers such as blood pressure and lipid profiles. However, increasing evidence highlights the importance of multidimensional predictors, including nutrition~\cite{murphyPlasmaLuteinZeaxanthin2023}, physical activity~\cite{lairdPhysicalActivityDose2023}, mental health~\cite{mcdowellAssociationsPhysicalActivity2018}, and social determinants~\cite{mccrorySocialDisadvantageSocial2016}.
 
-This document offers few basic examples on how to format tables, insert pictures, format text so that you can start using Latex immediately.
-The main advantage of Latex is that you do not need to care about the formatting of the entire document because Latex will do the job for you! Nice!
+% \par\vspace{5mm}
 
-Latex can be downloaded free here: \url{http://www.latex-project.org/}
+\gls{TILDA} provides a uniquely rich, nationally representative dataset of adults in Ireland aged 50+ with repeated measures spanning clinical, nutritional, lifestyle, cognitive, and psychosocial domains. Leveraging \gls{TILDA} waves 1--5\footnote{\gls{TILDA} data are pseudonymised and accessed under licence via the Irish Social Science Data Archive (ISSDA); use adheres to UL S\&E ethics approval and data governance requirements.}, the harmonised longitudinal dataset, and the IDS dataset (covering participants with disabilities), this project has access to comprehensive repeated measures across multiple domains. Previous studies using \gls{TILDA} have linked, for example, slower blood pressure recovery after standing to accelerated brain ageing~\cite{a.shirsathSlowerSpeedBlood2024}, and vitamin D deficiency to incident prediabetes~\cite{mccarthyAssociationVitaminDeficiency2022}. Such findings highlight the need for integrated models that combine traditional and non-traditional risk factors. 
 
-\nomenclature{DAPI}{4',6-diamidino-2-phenylindole; a fluorescent stain that binds strongly to DNA and serves to marks the nucleus in fluorescence microscopy} 
+Leveraging \gls{TILDA} waves 1--5\footnote{\gls{TILDA} data are pseudonymised and accessed under licence via the Irish Social Science Data Archive (ISSDA); use adheres to UL S\&E ethics approval and data governance requirements.}, 
+the harmonised longitudinal TILDA dataset, and the IDS dataset (covering participants with disabilities) offers a comprehensive set of repeated measures across multiple domains, enabling robust analysis of multidimensional predictors.\par
 
+% \par\vspace{5mm}
+\section{Research Problem and Motivation}
+Current \gls{ML} approaches for chronic disease prediction in older adults often fall short in several ways.
 
-\vspace{10mm}
+\subsection{Limited Integration of Multidimensional Data}
+Most models prioritise clinical variables but neglect modifiable lifestyle and nutrition factors~\cite{murphyPlasmaLuteinZeaxanthin2023, lairdPhysicalActivityDepression2023}.
+\subsection{Underuse of Longitudinal Dynamics}
+Few studies exploit repeated measures to capture trajectories of risk, such as frailty progression~\cite{moguilnerImportanceAgePrediction2021}.
+\subsection{Lack of Explainability}
+Many \gls{ML} models are not interpretable, limiting clinical utility~\cite{donoghueUsingConditionalInference2023}.
 
-Usually, the first Chapter of a Dissertation has the following headings (see below). Your dissertation may have different ones, so change these as you wish.
+Addressing these gaps requires methods that integrate multidomain predictors, account for longitudinal dynamics, and balance predictive accuracy with interpretability.
 
-% here we declare a new section
+\section{Research Aims and Objectives}
+This thesis aims to develop and validate \gls{ML} models that integrate nutrition, lifestyle, and mental health features with clinical data to improve prediction of chronic disease and ageing-related outcomes in a representative cohort of older adults. 
 
-\section{Aims and Objectives} 
-
-The main question that this dissertation addresses is  
-In order to address this question, this work focuses on the following issues in the context of :
-
+Specific objectives are:
 \begin{itemize}
-
-\item Firstly, . . .
-
-\item Secondly, . . . 
-
+  \item Conducting a focused literature review on \gls{ML} for chronic disease prediction in ageing populations, emphasising gaps in lifestyle and nutrition integration.
+  \item Preprocess and harmonise \gls{TILDA} waves 1--5, engineering multidomain features including nutrition, activity, mobility, mental health, and clinical indicators.
+  \item Develop and compare baseline statistical models (e.g., logistic regression) with advanced \gls{ML} methods (e.g., \gls{RF}, \gls{GBM}).
+  \item Evaluate models using discrimination (\gls{AUC}), calibration, and error metrics (accuracy, precision, \gls{recall}, \gls{F1}); conduct ablation analyses to quantify the added value of lifestyle and nutrition.
+  \item Identify actionable predictors (e.g., vitamin D status, gait speed reserve) and highlight modifiable risk factors relevant to intervention.
+  \item To Document ethical, governance, and reproducibility practices for handling longitudinal pseudonymised health data.
 \end{itemize}
 
+\section{Methodology Overview} 
+The methodological workflow consists of the following components.
+
+\subsection{Data Curation}
+\subsubsection{Harmonisation}
+Variables from \gls{TILDA} waves 1--5 will be harmonised using official documentation and guidelines to 
+ensure consistency across repeated measures. Where definitions differ between waves (e.g., frailty indices, 
+nutritional measures), harmonisation rules will be explicitly documented.
+
+\subsubsection{Handling Missing Data}
+Missingness will be addressed using both complete-case analysis (sensitivity check) and multiple imputation 
+methods, depending on the type and extent of missing data. This ensures robustness of findings and reduces 
+bias introduced by attrition across waves.
+
+\subsubsection{Feature Engineering}
+Derived variables will be constructed to capture multidimensional predictors. Examples include:
+\begin{itemize}
+    \item Frailty indices (e.g., Fried’s phenotype, \gls{FI}).
+    \item Mobility measures (e.g., \gls{TUG}, gait speed, grip strength).
+    \item Mental health scales (e.g., \gls{CESD}, \gls{GDS}).
+    \item Nutrition scores (e.g., dietary diversity indices, micronutrient biomarkers).
+\end{itemize}
+
+\subsection{Modelling}
+Development of baseline (logistic regression) and advanced \gls{ML} models (\gls{RF}, \gls{GBM}) 
+tuned via \gls{CV}.
+
+\subsection{Evaluation}
+Assessment with discrimination metrics (\gls{AUC}), calibration (plots, Brier score), and error measures 
+(accuracy, \gls{recall}, \gls{F1}). Explainability will be examined using feature importance and \gls{SHAP} values.
 
 
-% here we declare a new section
-\section{Methodology} 
-
-In order to address this question the following approach was taken. 
- 
- 
-% here we declare a new section
-\section{Research Contribution}
-
-The primary research contribution is: 
-
-
-
-
+\section{Contributions of the Research}
+This research makes contributions at three levels:
+\begin{itemize}
+  \item \textbf{Empirical:} Demonstrates the added predictive value of nutrition and lifestyle features beyond clinical baselines in chronic disease risk prediction.
+  \item \textbf{Methodological:} Provides a reproducible pipeline for harmonising longitudinal \gls{TILDA} data and integrating multidomain features into \gls{ML} models.
+  \item \textbf{Clinical:} Highlights modifiable predictors with potential for targeted interventions and policy development to promote healthy ageing.
+\end{itemize}
 
 \section{Thesis Outline} 
 
-The remaining chapters of this dissertation are as follows:
+The remaining chapters of this dissertation are structured as follows:
 
-
-\emph{Chapter Two} is an introductory discussion to . . .
-
-\emph{Chapter Three} is a historical review of  . . .
-
-\emph{Chapter Four} presents the  . . . 
-
-\emph{Chapter Five} describes the . . .
-
-\emph{Chapter Six} draws conclusions and evaluates the . . .  Lastly, it suggests possible future works. 
+\emph{Chapter Two} presents a focused literature review on \gls{ML} prediction of chronic disease in ageing populations, with emphasis on lifestyle and nutrition predictors and methodological considerations.  
+\emph{Chapter Three} describes the \gls{TILDA} study design and data, the preprocessing pipeline, harmonisation decisions, and feature engineering strategy.  
+\emph{Chapter Four} outlines the modelling framework, including baseline statistical models and advanced \gls{ML}, hyperparameter tuning, validation, and evaluation metrics.  
+\emph{Chapter Five} reports results, compares model performance, and presents feature importance and ablation analyses.  
+\emph{Chapter Six} discusses implications, limitations, ethical and governance considerations, and opportunities for future work.  
 
 \vspace{5 mm}
 
 A series of documents have been included in the Appendix section of this dissertation. These are:
 
 \begin{itemize}
-\item \emph{Appendix A} outlines . . .
-
-\item \emph{Appendix B} presents . . .
-
-\item \emph{Appendix C} includes . . .
+\item \emph{Appendix A}: Variable codebook and wave harmonisation notes (including anonymisation actions, top-coding, and grouping rules relevant to the features used).
+\item \emph{Appendix B}: Ethics.
+\item \emph{Appendix C}: Modelling details, additional tables/figures, and reproducibility checklist (overview of data processing scripts).
 \end{itemize} 
 
 \vspace{5 mm}
 
-Attached to this dissertation is a CD containing the following items:
+A digital archive is attached to this dissertation containing:(Access request required)
 
 \begin{itemize}
-\item \emph{folder 1}: . . .
-
-\item \emph{folder 2}: . . .
-
+\item \emph{folder 1}: Preprocessing and feature-engineering scripts (documentation only; no raw \gls{TILDA} data).
+\item \emph{folder 2}: Model training/evaluation code and configuration files to reproduce reported results.
 \end{itemize}
-
-
-% ----------------------------------------------------------------------
-
-
-

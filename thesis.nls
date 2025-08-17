@@ -1,10 +1,13 @@
 
 \begin{thenomenclature} 
 \nomgroup{A}
-  \item [{DAPI}]\begingroup 4',6-diamidino-2-phenylindole; a fluorescent stain that binds strongly to DNA and serves to marks the nucleus in fluorescence microscopy\nomeqref {1.0}\nompageref{1}
-  \item [{IMU}]\begingroup Inertial Measurement Unit\nomeqref {0}\nompageref{ix}
-  \item [{TILDA}]\begingroup The Irish Longiudinal Study on Ageing\nomeqref {0}\nompageref{ix}
-  \item [{TRIAD}]\begingroup ejfowejfopjewopfjweopjfopwejfopwjeopfjweopfjopwefjopwej\nomeqref {0}\nompageref{ix}
-  \item [{WIMU}]\begingroup Wireless Inertial Measurement Unit\nomeqref {0}\nompageref{ix}
+  \item [{AUC}]\begingroup Area Under the ROC Curve\nomeqref {0}\nompageref{ix}
+  \item [{BMI}]\begingroup Body Mass Index\nomeqref {0}\nompageref{ix}
+  \item [{CES-D}]\begingroup Center for Epidemiologic Studies Depression Scale\nomeqref {0}\nompageref{ix}
+  \item [{ML}]\begingroup Machine Learning\nomeqref {0}\nompageref{ix}
+  \item [{MMSE}]\begingroup Mini-Mental State Examination\nomeqref {0}\nompageref{ix}
+  \item [{TILDA}]\begingroup The Irish Longitudinal Study on Ageing\nomeqref {0}\nompageref{ix}
+  \item [{TILDA}]\begingroup \nomeqref {1.0}\nompageref{1}
+  \item [{TUG}]\begingroup Timed Up and Go (mobility test)\nomeqref {0}\nompageref{ix}
 
 \end{thenomenclature}

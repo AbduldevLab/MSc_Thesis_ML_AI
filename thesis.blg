@@ -15,48 +15,61 @@ A level-1 auxiliary file: 5_chapter5/chapter5.aux
 A level-1 auxiliary file: 6_conclusions/conclusions.aux
 The style file: agsm.bst
 Database file #1: References-Bibtex.bib
-Warning--empty booktitle in mybookcontribution
-Warning--empty publisher in mybookcontribution
-Warning--empty booktitle in myproceeding
-You've used 16 entries,
+Warning--I didn't find a database entry for "mydownloadedimage"
+Warning--I didn't find a database entry for "poem"
+Warning--I didn't find a database entry for "mybook"
+Warning--I didn't find a database entry for "mybookchapter"
+Warning--I didn't find a database entry for "mybookcontribution"
+Warning--I didn't find a database entry for "mycddvd"
+Warning--I didn't find a database entry for "myjournal"
+Warning--I didn't find a database entry for "mypatent"
+Warning--I didn't find a database entry for "myphd"
+Warning--I didn't find a database entry for "myproceeding"
+Warning--I didn't find a database entry for "mytechreport"
+Warning--I didn't find a database entry for "myunpublishedreport"
+Warning--I didn't find a database entry for "mywebvideos"
+Warning--I didn't find a database entry for "mywebpaper"
+Warning--I didn't find a database entry for "mywebarticlejournal"
+Warning--I didn't find a database entry for "mywebpage"
+You've used 14 entries,
             2909 wiz_defined-function locations,
-            717 strings with 7117 characters,
-and the built_in function-call counts, 43068 in all, are:
-= -- 6821
-> -- 566
+            768 strings with 10891 characters,
+and the built_in function-call counts, 156745 in all, are:
+= -- 26245
+> -- 2223
 < -- 0
-+ -- 3132
-- -- 168
-* -- 3476
-:= -- 9157
-add.period$ -- 16
-call.type$ -- 16
-change.case$ -- 218
-chr.to.int$ -- 16
-cite$ -- 19
-duplicate$ -- 236
-empty$ -- 431
-format.name$ -- 207
-if$ -- 7622
++ -- 13348
+- -- 711
+* -- 14418
+:= -- 29914
+add.period$ -- 14
+call.type$ -- 14
+change.case$ -- 196
+chr.to.int$ -- 14
+cite$ -- 14
+duplicate$ -- 224
+empty$ -- 481
+format.name$ -- 749
+if$ -- 28210
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 16
-newline$ -- 51
-num.names$ -- 163
-pop$ -- 102
+missing$ -- 14
+newline$ -- 45
+num.names$ -- 152
+pop$ -- 28
 preamble$ -- 1
-purify$ -- 240
+purify$ -- 210
 quote$ -- 0
-skip$ -- 177
+skip$ -- 197
 stack$ -- 0
-substring$ -- 9375
-swap$ -- 19
-text.length$ -- 224
+substring$ -- 38514
+swap$ -- 42
+text.length$ -- 196
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 56
-warning$ -- 3
-while$ -- 337
+warning$ -- 0
+while$ -- 316
 width$ -- 0
-write$ -- 198
-(There were 3 warnings)
+write$ -- 194
+(There were 16 warnings)
