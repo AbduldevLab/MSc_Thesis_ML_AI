@@ -18,7 +18,7 @@
 \contentsline {subsection}{\numberline {1.4.3}Evaluation}{5}{subsection.1.4.3}%
 \contentsline {section}{\numberline {1.5}Contributions of the Research}{5}{section.1.5}%
 \contentsline {section}{\numberline {1.6}Thesis Outline}{5}{section.1.6}%
-\contentsline {chapter}{\numberline {2}literature Review}{7}{chapter.2}%
+\contentsline {chapter}{\numberline {2}Literature Review}{7}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Font}{7}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Special characters}{7}{subsection.2.1.1}%
 \contentsline {subsubsection}{\numberline {2.1.1.1}Subsubsection Title}{7}{subsubsection.2.1.1.1}%

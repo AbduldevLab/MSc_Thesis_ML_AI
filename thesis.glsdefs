@@ -138,6 +138,62 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{HRS}%
+{%
+name={\acronymfont {\glsentryshort {HRS}}},%
+sort={HRS},%
+type={acronym},%
+first={HRS},%
+firstplural={HRSs},%
+text={HRS},%
+plural={HRSs},%
+description={Health and Retirement Study, (a longitudinal study of ageing in the United States)},%
+descriptionplural={Health and Retirement Study, (a longitudinal study of ageing in the United States)},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Health and Retirement Study, (a longitudinal study of ageing in the United States)},%
+longplural={Health and Retirement Study, (a longitudinal study of ageing in the United States)s},%
+short={HRS},%
+shortplural={HRSs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{SHARE}%
+{%
+name={\acronymfont {\glsentryshort {SHARE}}},%
+sort={SHARE},%
+type={acronym},%
+first={SHARE},%
+firstplural={SHAREs},%
+text={SHARE},%
+plural={SHAREs},%
+description={Survey of Health, Ageing and Retirement in Europe},%
+descriptionplural={Survey of Health, Ageing and Retirement in Europe},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Survey of Health, Ageing and Retirement in Europe},%
+longplural={Survey of Health, Ageing and Retirement in Europes},%
+short={SHARE},%
+shortplural={SHAREs},%
+counter={page},%
+parent={},%
+%
+}%
+
 \glsdefs@newdocentry{AUC}%
 {%
 name={\acronymfont {\glsentryshort {AUC}}},%
