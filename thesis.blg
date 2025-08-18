@@ -33,25 +33,25 @@ Warning--I didn't find a database entry for "mywebarticlejournal"
 Warning--I didn't find a database entry for "mywebpage"
 You've used 14 entries,
             2909 wiz_defined-function locations,
-            768 strings with 10891 characters,
-and the built_in function-call counts, 156745 in all, are:
-= -- 26245
-> -- 2223
+            767 strings with 10677 characters,
+and the built_in function-call counts, 143301 in all, are:
+= -- 23943
+> -- 2047
 < -- 0
-+ -- 13348
-- -- 711
-* -- 14418
-:= -- 29914
++ -- 12137
+- -- 651
+* -- 13142
+:= -- 27422
 add.period$ -- 14
 call.type$ -- 14
 change.case$ -- 196
-chr.to.int$ -- 14
+chr.to.int$ -- 13
 cite$ -- 14
 duplicate$ -- 224
 empty$ -- 481
-format.name$ -- 749
-if$ -- 28210
-int.to.chr$ -- 5
+format.name$ -- 695
+if$ -- 25794
+int.to.chr$ -- 6
 int.to.str$ -- 0
 missing$ -- 14
 newline$ -- 45
@@ -60,16 +60,16 @@ pop$ -- 28
 preamble$ -- 1
 purify$ -- 210
 quote$ -- 0
-skip$ -- 197
+skip$ -- 196
 stack$ -- 0
-substring$ -- 38514
-swap$ -- 42
+substring$ -- 35058
+swap$ -- 44
 text.length$ -- 196
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 56
 warning$ -- 0
-while$ -- 316
+while$ -- 314
 width$ -- 0
 write$ -- 194
 (There were 16 warnings)
