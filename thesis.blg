@@ -31,45 +31,46 @@ Warning--I didn't find a database entry for "mywebvideos"
 Warning--I didn't find a database entry for "mywebpaper"
 Warning--I didn't find a database entry for "mywebarticlejournal"
 Warning--I didn't find a database entry for "mywebpage"
-You've used 14 entries,
+Warning--empty author in Symposia2011
+You've used 27 entries,
             2909 wiz_defined-function locations,
-            767 strings with 10677 characters,
-and the built_in function-call counts, 143301 in all, are:
-= -- 23943
-> -- 2047
+            853 strings with 15550 characters,
+and the built_in function-call counts, 285716 in all, are:
+= -- 47730
+> -- 4159
 < -- 0
-+ -- 12137
-- -- 651
-* -- 13142
-:= -- 27422
-add.period$ -- 14
-call.type$ -- 14
-change.case$ -- 196
-chr.to.int$ -- 13
-cite$ -- 14
-duplicate$ -- 224
-empty$ -- 481
-format.name$ -- 695
-if$ -- 25794
++ -- 24252
+- -- 1331
+* -- 26255
+:= -- 54539
+add.period$ -- 27
+call.type$ -- 27
+change.case$ -- 372
+chr.to.int$ -- 26
+cite$ -- 28
+duplicate$ -- 444
+empty$ -- 940
+format.name$ -- 1410
+if$ -- 51463
 int.to.chr$ -- 6
 int.to.str$ -- 0
-missing$ -- 14
-newline$ -- 45
-num.names$ -- 152
-pop$ -- 28
+missing$ -- 27
+newline$ -- 84
+num.names$ -- 280
+pop$ -- 65
 preamble$ -- 1
-purify$ -- 210
+purify$ -- 400
 quote$ -- 0
-skip$ -- 196
+skip$ -- 386
 stack$ -- 0
-substring$ -- 35058
-swap$ -- 44
-text.length$ -- 196
+substring$ -- 69933
+swap$ -- 97
+text.length$ -- 368
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 56
-warning$ -- 0
-while$ -- 314
+type$ -- 108
+warning$ -- 1
+while$ -- 591
 width$ -- 0
-write$ -- 194
-(There were 16 warnings)
+write$ -- 366
+(There were 17 warnings)

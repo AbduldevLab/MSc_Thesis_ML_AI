@@ -922,6 +922,174 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{MPOD}%
+{%
+name={\acronymfont {\glsentryshort {MPOD}}},%
+sort={MPOD},%
+type={acronym},%
+first={MPOD},%
+firstplural={MPODs},%
+text={MPOD},%
+plural={MPODs},%
+description={Macular pigment optical density},%
+descriptionplural={Macular pigment optical density},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Macular pigment optical density},%
+longplural={Macular pigment optical densitys},%
+short={MPOD},%
+shortplural={MPODs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{LDA}%
+{%
+name={\acronymfont {\glsentryshort {LDA}}},%
+sort={LDA},%
+type={acronym},%
+first={LDA},%
+firstplural={LDAs},%
+text={LDA},%
+plural={LDAs},%
+description={Linear Discriminant Analysis},%
+descriptionplural={Linear Discriminant Analysis},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Linear Discriminant Analysis},%
+longplural={Linear Discriminant Analysiss},%
+short={LDA},%
+shortplural={LDAs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{DNN}%
+{%
+name={\acronymfont {\glsentryshort {DNN}}},%
+sort={DNN},%
+type={acronym},%
+first={DNN},%
+firstplural={DNNs},%
+text={DNN},%
+plural={DNNs},%
+description={Deep Neural Network},%
+descriptionplural={Deep Neural Network},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Deep Neural Network},%
+longplural={Deep Neural Networks},%
+short={DNN},%
+shortplural={DNNs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{AI}%
+{%
+name={\acronymfont {\glsentryshort {AI}}},%
+sort={AI},%
+type={acronym},%
+first={AI},%
+firstplural={AIs},%
+text={AI},%
+plural={AIs},%
+description={Artificial Intelligence},%
+descriptionplural={Artificial Intelligence},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Artificial Intelligence},%
+longplural={Artificial Intelligences},%
+short={AI},%
+shortplural={AIs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{MLP}%
+{%
+name={\acronymfont {\glsentryshort {MLP}}},%
+sort={MLP},%
+type={acronym},%
+first={MLP},%
+firstplural={MLPs},%
+text={MLP},%
+plural={MLPs},%
+description={Multilayer Perceptron},%
+descriptionplural={Multilayer Perceptron},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Multilayer Perceptron},%
+longplural={Multilayer Perceptrons},%
+short={MLP},%
+shortplural={MLPs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{SVM}%
+{%
+name={\acronymfont {\glsentryshort {SVM}}},%
+sort={SVM},%
+type={acronym},%
+first={SVM},%
+firstplural={SVMs},%
+text={SVM},%
+plural={SVMs},%
+description={Support Vector Machine},%
+descriptionplural={Support Vector Machine},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Support Vector Machine},%
+longplural={Support Vector Machines},%
+short={SVM},%
+shortplural={SVMs},%
+counter={page},%
+parent={},%
+%
+}%
+
 \glsdefs@newdocentry{RF}%
 {%
 name={\acronymfont {\glsentryshort {RF}}},%

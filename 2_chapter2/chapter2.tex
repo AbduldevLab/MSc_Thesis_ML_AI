@@ -16,36 +16,96 @@
 
 %: ----------------------- contents from here ------------------------
 
-Latex will automatically renumber sections! Also it creates list of figures, list of tables and references! Nice job!
+\section{Introduction} 
+\begin{itemize}
+    \item Purpose of this chapter
+    \item Brief overview on TILDA as a unique dataset (rich, longitudinal, multi-domai...)
+    \item Scope: frailty, mental health, chronic disease, multimorbidity, nutrition, and ML models
+\end{itemize}
 
+\section{Chronic Disease and Ageing}
+\begin{itemize}
+    \item The burden of chronic conditions in older adults
+    \item Healthy ageing framework \gls{WHO}
+    \item Importance of multimorbidity, frailty, mental health
+\end{itemize}
 
-This document is formatted according to the University of Limerick specification for the submission of a Master or PhD dissertation.
-Double-page printing is already in the code!
-If you want to change things  you need to modify the `PhDthesisPSnPDF.cls' file found in Latex/Classes 
+\subsection{Frailty and Physical Function}
+\begin{itemize}
+    \item Gait speed, grip strength, functional mobility decline 
+    \item Predictors of frailty transitions (\cite{mccarthyAssociationMetabolicSyndrome2023}, \cite{huangAgeModifyAssociations2019}, \cite{oconnellOrthostaticHypotensionOrthostatic2015})
+\end{itemize}
 
+\subsection{Mental Health in Older Adults}
+\begin{itemize}
+    \item Depression, anxiety, loneliness, social connectedness (\cite{santiniProtectivePropertiesActBelongCommit2017}, \cite{Symposia2011}, \cite{briggsWishLaterLife2021})
+    \item Links between physical activity and depression (\cite{mcdowellAssociationsPhysicalActivity2018}, \cite{lairdPhysicalActivityDose2023}, \cite{lairdPhysicalActivityDepression2023})
+\end{itemize}
 
+\subsection{Nutrition and Biological Ageing}
+\begin{itemize}
+    \item Vitamin D, lutein, zeaxanthin, \gls{MPOD} (\cite{murphyPlasmaLuteinZeaxanthin2023}, \cite{mccarthyAssociationVitaminDeficiency2022}, lairdVitaminDeficiencyIreland2020, feeneyLowMacularPigment2013)
+    \item Malnutrition and its predictors (\cite{bardonPredictorsIncidentMalnutrition2020})
+    \item Biological vs chronological ageing (\cite{mccarthyMetabolicSyndromeAccelerates2023}, \cite{aziziEvidenceAssociationAllostatic2024})
+\end{itemize}
 
+\section{Machine Learning in Ageing and Chronic Disease}
+\begin{itemize}
+    \item Overview: Why ML is valuable in ageing research \cite{zhangMachineLearningModels2025}
+    \item Transition from regression-based models → ensemble ML → deep learning(cite a example here)
+\end{itemize}
 
-\section{Font}
+\subsection{Feature Sets in ML Studies}
+\begin{itemize}
+    \item Clinical, sociodemographic, lifestyle, cognition, psychosocial
+    \item Over-reliance on physical health predictors vs underuse of nutrition/social variables
+\end{itemize}
 
-Normal font \textbf{Bold Font} \emph{italics}.  List of \textcolor{blue}{colours} \textcolor{red}{for} \textcolor{ForestGreen}{font} can be found at: \url{http://en.wikibooks.org/wiki/LaTeX/Colors}
+\subsection{ML Models Used}
+\begin{itemize}
+    \item Logistic regression, Markov models, \gls{LDA} (traditional)
+    \item Ensembles \gls{RF}, \gls{GBM}, \gls{DNN} – e.g., (\cite{xuTailoredMachineLearning2023}) diabetes prediction
+    \item Unsupervised clustering for dementia (\cite{bayeneleonoreUnsupervisedMachineLearning2018})
+    \item Brain age prediction models (\cite{boyleBrainpredictedAgeDifference2021}, \cite{a.shirsathSlowerSpeedBlood2024})
+\end{itemize}
 
-\subsection{Special characters}
+\subsection{Performance and Validation}
+\begin{itemize}
+    \item \gls{AUC}, R² ranges across tasks (diabetes, gait speed, mortality, depression)
+    \item Limitations: internal validation only, cross-sectional data, no generalisation
+\end{itemize}
 
-Special characters such as \& and \% need to be treated in a special way. Check the full list of special characters here: \url{http://en.wikibooks.org/wiki/LaTeX/Special_Characters}
-\subsubsection{Subsubsection Title}
+\subsection{Explainability in ML for Ageing}
+\begin{itemize}
+    \item \gls{SHAP}, TreeExplainer examples (\cite{xuTailoredMachineLearning2023}, \cite{davisLinearRegressionbasedMachine2021}, \cite{davisComparisonGaitSpeed2021})
+    \item Challenges of black-box models in clinical practice
+\end{itemize}
 
-\subsection{Wiki page}
+\section{Gaps in the Literature}
+\begin{itemize}
+    \item Limited population diversity (mostly Irish, 50+)
+    \item Over-reliance on physical predictors; neglect of nutrition, social, religious/spiritual, environmental variables
+    \item Dominance of regression models; limited advanced ML such as neural networks, transformers
+    \item Validation gaps – very few external validations, especially for ensemble and brain-age models
+    \item Underexplored outcomes: pain, sleep, QoL
+    \item Cross-sectional bias; weak time-series modelling
+    \item Poor transparency on missing data handling
+    \item Limited integration of nutrition biomarkers
+    \item Lack of biological age prediction vs chronological
+    \item Interpretability challenges in ML
+\end{itemize}
 
-You can learn more about Latex by clicking \href{http://en.wikibooks.org/wiki/LaTeX}{here}.
-
-
-\section{Another Section}
-
-\subsection{Another Subsection}
-
-\subsubsection{Another Subsubsection Title}
-
+\section{Chapter Summary}
+\begin{itemize}
+    \item I need to recap the main findings from LR systematic mapping excel file
+    \item Identify your contribution niche:
+    \begin{itemize}
+        \item integrating nutrition + lifestyle + clinical predictors
+        \item ML + explainability
+        \item time-based prediction (longitudinal TILDA data)
+    \end{itemize}
+    \item Lead into Methodology (Chapter 3)
+\end{itemize}
 
 
 

@@ -19,28 +19,33 @@
 \contentsline {section}{\numberline {1.5}Contributions of the Research}{5}{section.1.5}%
 \contentsline {section}{\numberline {1.6}Thesis Outline}{5}{section.1.6}%
 \contentsline {chapter}{\numberline {2}Literature Review}{7}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Font}{7}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Special characters}{7}{subsection.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.1.1}Subsubsection Title}{7}{subsubsection.2.1.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Wiki page}{7}{subsection.2.1.2}%
-\contentsline {section}{\numberline {2.2}Another Section}{8}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Another Subsection}{8}{subsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.1.1}Another Subsubsection Title}{8}{subsubsection.2.2.1.1}%
-\contentsline {chapter}{\numberline {3}Data and Preprocessing}{9}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Insert a Figure}{9}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Creating a list}{10}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Creating a Table}{10}{subsection.3.2.1}%
-\contentsline {section}{\numberline {3.3}Quote}{11}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Methodology}{13}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Math}{13}{section.4.1}%
-\contentsline {chapter}{\numberline {5}Results}{15}{chapter.5}%
-\contentsline {section}{\numberline {5.1}References}{15}{section.5.1}%
-\contentsline {chapter}{\numberline {6}Conclusions and Future Directions}{17}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Summary}{17}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Conclusions}{17}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Contributions}{17}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Future Work}{17}{section.6.4}%
-\contentsline {chapter}{Appendix A: Insert figure in Appendix}{19}{section*.9}%
-\contentsline {chapter}{Appendix B: Insert Text in Appendix}{21}{section*.11}%
-\contentsline {chapter}{Appendix C: Insert C++/Java et al. Code in Appendix}{25}{lstnumber.-1.143}%
-\contentsline {chapter}{Bibliography}{27}{appendix*.14}%
+\contentsline {section}{\numberline {2.1}Introduction}{7}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Chronic Disease and Ageing}{7}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Frailty and Physical Function}{7}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Mental Health in Older Adults}{8}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Nutrition and Biological Ageing}{8}{subsection.2.2.3}%
+\contentsline {section}{\numberline {2.3}Machine Learning in Ageing and Chronic Disease}{8}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Feature Sets in ML Studies}{8}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}ML Models Used}{9}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Performance and Validation}{9}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Explainability in ML for Ageing}{9}{subsection.2.3.4}%
+\contentsline {section}{\numberline {2.4}Gaps in the Literature}{9}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Chapter Summary}{10}{section.2.5}%
+\contentsline {chapter}{\numberline {3}Data and Preprocessing}{11}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Insert a Figure}{11}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Creating a list}{12}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Creating a Table}{12}{subsection.3.2.1}%
+\contentsline {section}{\numberline {3.3}Quote}{13}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Methodology}{15}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Math}{15}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Results}{17}{chapter.5}%
+\contentsline {section}{\numberline {5.1}References}{17}{section.5.1}%
+\contentsline {chapter}{\numberline {6}Conclusions and Future Directions}{19}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Summary}{19}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Conclusions}{19}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Contributions}{19}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Future Work}{19}{section.6.4}%
+\contentsline {chapter}{Appendix A: Insert figure in Appendix}{21}{section*.9}%
+\contentsline {chapter}{Appendix B: Insert Text in Appendix}{23}{section*.11}%
+\contentsline {chapter}{Appendix C: Insert C++/Java et al. Code in Appendix}{27}{lstnumber.-1.143}%
+\contentsline {chapter}{Bibliography}{29}{appendix*.14}%

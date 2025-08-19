@@ -3,17 +3,35 @@
 \harvarditem[A.~Shirsath et~al.]{A.~Shirsath, O'Connor, Boyle, Newman, Knight, Hernandez, Whelan, Meaney \harvardand\ Kenny}{2024}{a.shirsathSlowerSpeedBlood2024}
 A.~Shirsath, M., O'Connor, J.~D., Boyle, R., Newman, L., Knight, S.~P., Hernandez, B., Whelan, R., Meaney, J.~F. \harvardand\ Kenny, R.~A.  \harvardyearleft 2024\harvardyearright , `Slower speed of blood pressure recovery after standing is associated with accelerated brain ageing: {{Evidence}} from {{The Irish Longitudinal Study}} on {{Ageing}} ({{TILDA}})', {\em Cerebral Circulation - Cognition and Behavior} {\bf 6},~100212.
 
+\harvarditem[Azizi et~al.]{Azizi, Hirst, Dowd, McCrory, Kenny, Newell \harvardand\ Setti}{2024}{aziziEvidenceAssociationAllostatic2024}
+Azizi, Z., Hirst, R.~J., Dowd, A.~O., McCrory, C., Kenny, R.~A., Newell, F.~N. \harvardand\ Setti, A.  \harvardyearleft 2024\harvardyearright , `Evidence for an association between allostatic load and multisensory integration in middle-aged and older adults', {\em Archives of Gerontology and Geriatrics} {\bf 116},~105155.
+
 \harvarditem[Bardon et~al.]{Bardon, Streicher, Corish, Clarke, Power, Kenny, O'Connor, Laird, O'Connor, Visser, Volkert, Gibney \harvardand\ {MaNuEL Consortium}}{2020}{bardonPredictorsIncidentMalnutrition2020}
 Bardon, L.~A., Streicher, M., Corish, C.~A., Clarke, M., Power, L.~C., Kenny, R.~A., O'Connor, D.~M., Laird, E., O'Connor, E.~M., Visser, M., Volkert, D., Gibney, E.~R. \harvardand\ {MaNuEL Consortium}  \harvardyearleft 2020\harvardyearright , `Predictors of {{Incident Malnutrition}} in {{Older Irish Adults}} from the {{Irish Longitudinal Study}} on {{Ageing Cohort}}---{{A MaNuEL}} study', {\em J Gerontol A Biol Sci Med Sci} {\bf 75}(2),~249--256.
+
+\harvarditem[{Bayen, Eleonore} et~al.]{{Bayen, Eleonore}, {Laurent, Cleret de Langavan} \harvardand\ {Yaffe, Kristine}}{2018}{bayeneleonoreUnsupervisedMachineLearning2018}
+{Bayen, Eleonore}, {Laurent, Cleret de Langavan} \harvardand\ {Yaffe, Kristine}  \harvardyearleft 2018\harvardyearright , `Unsupervised {{Machine Learning}} to {{Identify High Likelihood}} of {{Dementia}} in {{Population-Based Surveys}}: {{Development}} and {{Validation Study}}', {\em Journal of Medical Internet Research} {\bf 20}(7).
 
 \harvarditem[Bencivenga et~al.]{Bencivenga, Komici, Nocella, Grieco, Spezzano, Puzone, Cannavo, Cittadini, Corbi, Ferrara \harvardand\ Rengo}{2020}{bencivengaAtrialFibrillationElderly2020}
 Bencivenga, L., Komici, K., Nocella, P., Grieco, F.~V., Spezzano, A., Puzone, B., Cannavo, A., Cittadini, A., Corbi, G., Ferrara, N. \harvardand\ Rengo, G.  \harvardyearleft 2020\harvardyearright , `Atrial fibrillation in the elderly: A risk factor beyond stroke', {\em Ageing Research Reviews} {\bf 61},~101092.
 
-\harvarditem[Davis et~al.]{Davis, Knight, Donoghue, Hern{\'a}ndez, Rizzo, Kenny \harvardand\ {Romero-Ortuno}}{2021}{davisComparisonGaitSpeed2021}
-Davis, J. R.~C., Knight, S.~P., Donoghue, O.~A., Hern{\'a}ndez, B., Rizzo, R., Kenny, R.~A. \harvardand\ {Romero-Ortuno}, R.  \harvardyearleft 2021\harvardyearright , `Comparison of {{Gait Speed Reserve}}, {{Usual Gait Speed}}, and {{Maximum Gait Speed}} of {{Adults Aged}} 50+ in {{Ireland Using Explainable Machine Learning}}', {\em Front Netw Physiol} {\bf 1},~754477.
+\harvarditem[Boyle et~al.]{Boyle, Jollans, {Rueda-Delgado}, Rizzo, Yener, McMorrow, Knight, Carey, Robertson, {Emek-Sava{\c s}}, Stern, Kenny \harvardand\ Whelan}{2021}{boyleBrainpredictedAgeDifference2021}
+Boyle, R., Jollans, L., {Rueda-Delgado}, L.~M., Rizzo, R., Yener, G.~G., McMorrow, J.~P., Knight, S.~P., Carey, D., Robertson, I.~H., {Emek-Sava{\c s}}, D.~D., Stern, Y., Kenny, R.~A. \harvardand\ Whelan, R.  \harvardyearleft 2021\harvardyearright , `Brain-predicted age difference score is related to specific cognitive functions: A multi-site replication analysis', {\em Brain Imaging Behav} {\bf 15}(1),~327--345.
+
+\harvarditem[Briggs et~al.]{Briggs, Ward \harvardand\ Kenny}{2021}{briggsWishLaterLife2021}
+Briggs, R., Ward, M. \harvardand\ Kenny, R.~A.  \harvardyearleft 2021\harvardyearright , `The `{{Wish}} to {{Die}}' in later life: Prevalence, longitudinal course and mortality. {{Data}} from {{TILDA}}', {\em Age and Ageing} {\bf 50}(4),~1321--1328.
+
+\harvarditem{Davis et~al.}{n.d.}{davisComparisonGaitSpeed2021}
+Davis, J. R.~C. et~al.  \harvardyearleft n.d.\harvardyearright , `Comparison of {{Gait Speed Reserve}}, {{Usual Gait Speed}}, and {{Maximum Gait Speed}} of {{Adults Aged}} 50+ in {{Ireland Using Explainable Machine Learning}}', {\em Front Netw Physiol} {\bf 1},~754477.
+
+\harvarditem{Davis et~al.}{2021}{davisLinearRegressionbasedMachine2021}
+Davis, J. et~al.  \harvardyearleft 2021\harvardyearright , A linear regression-based machine learning pipeline for the discovery of clinically relevant correlates of gait speed reserve from multiple physiological systems, {\em in} `2021 29th {{European Signal Processing Conference}} ({{EUSIPCO}})', pp.~1266--1270.
 
 \harvarditem[Donoghue et~al.]{Donoghue, Hernandez, O'Connell \harvardand\ Kenny}{2023}{donoghueUsingConditionalInference2023}
 Donoghue, O.~A., Hernandez, B., O'Connell, M. D.~L. \harvardand\ Kenny, R.~A.  \harvardyearleft 2023\harvardyearright , `Using {{Conditional Inference Forests}} to {{Examine Predictive Ability}} for {{Future Falls}} and {{Syncope}} in {{Older Adults}}: {{Results}} from {{The Irish Longitudinal Study}} on {{Ageing}}', {\em J Gerontol A Biol Sci Med Sci} {\bf 78}(4),~673--682.
+
+\harvarditem[Huang et~al.]{Huang, Sun, Tian, Wang, Wang, Duan \harvardand\ Wu}{2019}{huangAgeModifyAssociations2019}
+Huang, C., Sun, S., Tian, X., Wang, T., Wang, T., Duan, H. \harvardand\ Wu, Y.  \harvardyearleft 2019\harvardyearright , `Age modify the associations of obesity, physical activity, vision and grip strength with functional mobility in {{Irish}} aged 50 and older', {\em Archives of Gerontology and Geriatrics} {\bf 84},~103895.
 
 \harvarditem[Huang et~al.]{Huang, Su, Jiang \harvardand\ Zhu}{2020}{huangSexDifferencesAssociations2020}
 Huang, Y., Su, Y., Jiang, Y. \harvardand\ Zhu, M.  \harvardyearleft 2020\harvardyearright , `Sex differences in the associations between blood pressure and anxiety and depression scores in a middle-aged and elderly population: {{The Irish Longitudinal Study}} on {{Ageing}} ({{TILDA}})', {\em Journal of Affective Disorders} {\bf 274},~118--125.
@@ -24,8 +42,14 @@ Laird, E. et~al.  \harvardyearleft 2023{\em a}\harvardyearright , `Physical {{Ac
 \harvarditem{Laird et~al.}{2023{\em b}}{lairdPhysicalActivityDepression2023}
 Laird, E. et~al.  \harvardyearleft 2023{\em b}\harvardyearright , `Physical activity for depression among the chronically {{Ill}}: {{Results}} from older diabetics in the {{Irish}} longitudinal study on ageing', {\em Psychiatry Research} {\bf 326},~115274.
 
+\harvarditem{McCarthy, Laird, O'Halloran, Fallon, Ortu{\~n}o \harvardand\ Kenny}{2023}{mccarthyAssociationMetabolicSyndrome2023}
+McCarthy, K., Laird, E., O'Halloran, A.~M., Fallon, P., Ortu{\~n}o, R.~R. \harvardand\ Kenny, R.~A.  \harvardyearleft 2023\harvardyearright , `Association between metabolic syndrome and risk of both prevalent and incident frailty in older adults: {{Findings}} from {{The Irish Longitudinal Study}} on {{Ageing}} ({{TILDA}})', {\em Experimental Gerontology} {\bf 172},~112056.
+
 \harvarditem[McCarthy et~al.]{McCarthy, Laird, O'Halloran, Walsh, Healy, Fitzpatrick, Walsh, Hern{\'a}ndez, Fallon, Molloy \harvardand\ Kenny}{2022}{mccarthyAssociationVitaminDeficiency2022}
 McCarthy, K., Laird, E., O'Halloran, A.~M., Walsh, C., Healy, M., Fitzpatrick, A.~L., Walsh, J.~B., Hern{\'a}ndez, B., Fallon, P., Molloy, A.~M. \harvardand\ Kenny, R.~A.  \harvardyearleft 2022\harvardyearright , `Association between vitamin {{D}} deficiency and the risk of prevalent type 2 diabetes and incident prediabetes: {{A}} prospective cohort study using data from {{The Irish Longitudinal Study}} on {{Ageing}} ({{TILDA}})', {\em EClinicalMedicine} {\bf 53},~101654.
+
+\harvarditem{McCarthy et~al.}{2023}{mccarthyMetabolicSyndromeAccelerates2023}
+McCarthy, K. et~al.  \harvardyearleft 2023\harvardyearright , `Metabolic syndrome accelerates epigenetic ageing in older adults: {{Findings}} from {{The Irish Longitudinal Study}} on {{Ageing}} ({{TILDA}})', {\em Experimental Gerontology} {\bf 183},~112314.
 
 \harvarditem[McCrory et~al.]{McCrory, Finucane, O'Hare, Frewen, Nolan, Layte, Kearney \harvardand\ Kenny}{2016}{mccrorySocialDisadvantageSocial2016}
 McCrory, C., Finucane, C., O'Hare, C., Frewen, J., Nolan, H., Layte, R., Kearney, P.~M. \harvardand\ Kenny, R.~A.  \harvardyearleft 2016\harvardyearright , `Social {{Disadvantage}} and {{Social Isolation Are Associated With}} a {{Higher Resting Heart Rate}}: {{Evidence From The Irish Longitudinal Study}} on {{Ageing}}', {\em J Gerontol B Psychol Sci Soc Sci} {\bf 71}(3),~463--473.
@@ -41,5 +65,20 @@ Moore, P.~V., Bennett, K. \harvardand\ Normand, C.  \harvardyearleft 2017\harvar
 
 \harvarditem[Murphy et~al.]{Murphy, Duggan, Davis, O'Halloran, Knight, Kenny, McCarthy \harvardand\ {Romero-Ortuno}}{2023}{murphyPlasmaLuteinZeaxanthin2023}
 Murphy, C.~H., Duggan, E., Davis, J., O'Halloran, A.~M., Knight, S.~P., Kenny, R.~A., McCarthy, S.~N. \harvardand\ {Romero-Ortuno}, R.  \harvardyearleft 2023\harvardyearright , `Plasma lutein and zeaxanthin concentrations associated with musculoskeletal health and incident frailty in {{The Irish Longitudinal Study}} on {{Ageing}} ({{TILDA}})', {\em Experimental Gerontology} {\bf 171},~112013.
+
+\harvarditem[O'Connell et~al.]{O'Connell, Savva, Fan \harvardand\ Kenny}{2015}{oconnellOrthostaticHypotensionOrthostatic2015}
+O'Connell, M. D.~L., Savva, G.~M., Fan, C.~W. \harvardand\ Kenny, R.~A.  \harvardyearleft 2015\harvardyearright , `Orthostatic hypotension, orthostatic intolerance and frailty: {{The Irish Longitudinal Study}} on {{Aging-TILDA}}', {\em Archives of Gerontology and Geriatrics} {\bf 60}(3),~507--513.
+
+\harvarditem[Santini et~al.]{Santini, Koyanagi, Tyrovolas, Haro, Donovan, Nielsen \harvardand\ Koushede}{2017}{santiniProtectivePropertiesActBelongCommit2017}
+Santini, Z.~I., Koyanagi, A., Tyrovolas, S., Haro, J.~M., Donovan, R.~J., Nielsen, L. \harvardand\ Koushede, V.  \harvardyearleft 2017\harvardyearright , `The protective properties of {{Act-Belong-Commit}} indicators against incident depression, anxiety, and cognitive impairment among older {{Irish}} adults: {{Findings}} from a prospective community-based study', {\em Experimental Gerontology} {\bf 91},~79--87.
+
+\harvarditem{{\em Symposia}}{2011}{Symposia2011}
+{\em Symposia}  \harvardyearleft 2011\harvardyearright , {\em International Psychogeriatrics} {\bf 23},~S12--S96.
+
+\harvarditem[Xu et~al.]{Xu, Mingyang, Yang, Zheng \harvardand\ Che}{2023}{xuTailoredMachineLearning2023}
+Xu, X., Mingyang, X., Yang, J., Zheng, H. \harvardand\ Che, Z.  \harvardyearleft 2023\harvardyearright , `Tailored machine learning for evaluating the long-term diabetes risk in older individuals: Findings from the {{Irish Longitudinal Study}} on {{Ageing}} ({{TILDA}})', {\em BMJ Open} {\bf 13}(5),~e072991.
+
+\harvarditem[Zhang et~al.]{Zhang, Robinson, Whelan, Jollans, Wang, Nees, Chu, Bobou, Du, Cristea, Banaschewski, Barker, Bokde, Grigis, Garavan, Heinz, Br{\"u}hl, Martinot, Martinot, Artiges, Orfanos, Poustka, Hohmann, Millenet, Fr{\"o}hner, Smolka, Vaidya, Walter, Winterer, Broulidakis, {van Noort}, Stringaris, Penttil{\"a}, Grimmer, Insensee, Becker, Zhang, King, Sinclair, Schumann, Schmidt \harvardand\ Desrivi{\`e}res}{2025}{zhangMachineLearningModels2025}
+Zhang, Z., Robinson, L., Whelan, R., Jollans, L., Wang, Z., Nees, F., Chu, C., Bobou, M., Du, D., Cristea, I., Banaschewski, T., Barker, G.~J., Bokde, A. L.~W., Grigis, A., Garavan, H., Heinz, A., Br{\"u}hl, R., Martinot, J.-L., Martinot, M.-L.~P., Artiges, E., Orfanos, D.~P., Poustka, L., Hohmann, S., Millenet, S., Fr{\"o}hner, J.~H., Smolka, M.~N., Vaidya, N., Walter, H., Winterer, J., Broulidakis, M.~J., {van Noort}, B.~M., Stringaris, A., Penttil{\"a}, J., Grimmer, Y., Insensee, C., Becker, A., Zhang, Y., King, S., Sinclair, J., Schumann, G., Schmidt, U. \harvardand\ Desrivi{\`e}res, S.  \harvardyearleft 2025\harvardyearright , `Machine learning models for diagnosis and risk prediction in eating disorders, depression, and alcohol use disorder', {\em Journal of Affective Disorders} {\bf 379},~889--899.
 
 \end{thebibliography}
