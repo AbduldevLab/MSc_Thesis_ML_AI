@@ -1,7 +1,7 @@
 \babel@toc {english}{}\relax 
 \contentsline {chapter}{List of Tables}{v}{chapter*.2}%
 \contentsline {chapter}{List of Figures}{vii}{chapter*.3}%
-\contentsline {chapter}{List of Abbreviations}{ix}{chapter*.5}%
+\contentsline {chapter}{List of Abbreviations}{ix}{chapter*.3}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Background and Context}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Research Problem and Motivation}{2}{section.1.2}%
@@ -45,7 +45,7 @@
 \contentsline {section}{\numberline {6.2}Conclusions}{19}{section.6.2}%
 \contentsline {section}{\numberline {6.3}Contributions}{19}{section.6.3}%
 \contentsline {section}{\numberline {6.4}Future Work}{19}{section.6.4}%
-\contentsline {chapter}{Appendix A: Insert figure in Appendix}{21}{section*.9}%
-\contentsline {chapter}{Appendix B: Insert Text in Appendix}{23}{section*.11}%
+\contentsline {chapter}{Appendix A: Insert figure in Appendix}{21}{section*.7}%
+\contentsline {chapter}{Appendix B: Insert Text in Appendix}{23}{section*.9}%
 \contentsline {chapter}{Appendix C: Insert C++/Java et al. Code in Appendix}{27}{lstnumber.-1.143}%
-\contentsline {chapter}{Bibliography}{29}{appendix*.14}%
+\contentsline {chapter}{References}{29}{appendix*.12}%
