@@ -38,7 +38,7 @@
 \contentsline {section}{\numberline {6.2}Conclusions}{19}{section.6.2}%
 \contentsline {section}{\numberline {6.3}Contributions}{19}{section.6.3}%
 \contentsline {section}{\numberline {6.4}Future Work}{19}{section.6.4}%
-\contentsline {chapter}{Appendix A: Insert figure in Appendix}{21}{section*.10}%
-\contentsline {chapter}{Appendix B: Insert Text in Appendix}{23}{section*.12}%
+\contentsline {chapter}{Appendix A: Insert figure in Appendix}{21}{section*.9}%
+\contentsline {chapter}{Appendix B: Insert Text in Appendix}{23}{section*.11}%
 \contentsline {chapter}{Appendix C: Insert C++/Java et al. Code in Appendix}{27}{lstnumber.-1.143}%
-\contentsline {chapter}{References}{29}{appendix*.15}%
+\contentsline {chapter}{References}{29}{appendix*.14}%

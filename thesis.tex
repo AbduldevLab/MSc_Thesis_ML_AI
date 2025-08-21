@@ -4,8 +4,10 @@
 % Template for Undergrad/Master/PhD Thesis
 % -----------------
 %Refresh the tex project by running the following commands in the terminal:
+% rm *.glo *.gls *.glsdefs *.acn *.acr *.alg *.bbl *.blg *.lof *.lot *.out *.toc
+
 % pdflatex thesis
-% makeindex thesis.nlo -s nomencl.ist -o thesis.nls or makeglossaries thesis or bibtex thesis 
+% makeglossaries thesis or bibtex thesis 
 % pdflatex thesis
 % pdflatex thesis
 % ------------------
@@ -34,15 +36,10 @@
 %%%USE TABLE LIKE STYLING FOR GLOSSARY
 \newglossarystyle{tableacronyms}{%
   \setglossarystyle{long}%
-  % First col = natural width of widest acronym, left-aligned
   \renewenvironment{theglossary}%
     {\begin{longtable}{@{}l p{\dimexpr\linewidth-2\tabcolsep-1em}@{}}}%
     {\end{longtable}}%
-  % Entry format
-  \renewcommand*{\glossentry}[2]{%
-    \textbf{\glsentryshort{##1}} & \glsentrylong{##1} \\}%
-  % Suppress page references
-  \renewcommand*{\glspostdescription}{}%
+  % no \renewcommand{\glossentry} here
 }
 
 \newcommand{\urlwofont}[1]
@@ -259,7 +256,6 @@ Day of the defense: day month year
 % \label{nom} % target name for links to glossary
 % \end{footnotesize}
 % \end{multicols}
-\phantomsection
 \printglossary[type=\acronymtype, title=List of Abbreviations, style=tableacronyms]
 \addcontentsline{toc}{chapter}{List of Abbreviations}
 

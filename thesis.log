@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.9)  22 AUG 2025 00:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.9)  22 AUG 2025 00:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -671,11 +671,11 @@ Package: glossary-tree 2025/03/03 v4.56 (NLCT)
 \glo@main@file=\write5
 \openout5 = `thesis.glo'.
 
-Package glossaries Info: Writing glossary file thesis.glo on input line 32.
+Package glossaries Info: Writing glossary file thesis.glo on input line 34.
 \glo@acronym@file=\write6
 \openout6 = `thesis.acn'.
 
-Package glossaries Info: Writing glossary file thesis.acn on input line 32.
+Package glossaries Info: Writing glossary file thesis.acn on input line 34.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/mathtools/mathtools.sty
 Package: mathtools 2024/10/04 v1.31 mathematical typesetting tools
 
@@ -757,24 +757,24 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 (./5_chapter5/chapter5.aux) (./6_conclusions/conclusions.aux))
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 148.
-LaTeX Font Info:    ... okay on input line 148.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 148.
-LaTeX Font Info:    ... okay on input line 148.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 148.
-LaTeX Font Info:    ... okay on input line 148.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 148.
-LaTeX Font Info:    ... okay on input line 148.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 148.
-LaTeX Font Info:    ... okay on input line 148.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 148.
-LaTeX Font Info:    ... okay on input line 148.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 148.
-LaTeX Font Info:    ... okay on input line 148.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 148.
-LaTeX Font Info:    ... okay on input line 148.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 148.
-LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
 
 (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -808,8 +808,8 @@ Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
 Package caption Info: supertabular package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package backref Info: ** backref set up for natbib ** on input line 148.
-Package hyperref Info: Link coloring OFF on input line 148.
+Package backref Info: ** backref set up for natbib ** on input line 145.
+Package hyperref Info: Link coloring OFF on input line 145.
 
 (./thesis.out) (./thesis.out)
 \@outlinefile=\write7
@@ -817,7 +817,7 @@ Package hyperref Info: Link coloring OFF on input line 148.
 
  (./thesis.glsdefs)
 \c@lstlisting=\count365
-Package tocbasic Info: setting babel extension for `lol' on input line 148.
+Package tocbasic Info: setting babel extension for `lol' on input line 145.
 \openout2 = `Latex/Macros/MacroFile1.aux'.
 
  (./Latex/Macros/MacroFile1.tex)
@@ -825,7 +825,7 @@ Package tocbasic Info: setting babel extension for `lol' on input line 148.
 File: 0_frontmatter/figures/logonew2020.jpg Graphic file (type jpg)
 <use 0_frontmatter/figures/logonew2020.jpg>
 Package pdftex.def Info: 0_frontmatter/figures/logonew2020.jpg  used on input l
-ine 163.
+ine 160.
 (pdftex.def)             Requested size: 256.05025pt x 128.02512pt.
 
 
@@ -924,7 +924,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.iv}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.244 \listoftables
+l.241 \listoftables
                      % print list of tables [4] (./thesis.lot)
 \tf@lot=\write9
 \openout9 = `thesis.lot'.
@@ -936,7 +936,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.v}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.245 \listoffigures
+l.242 \listoffigures
                     	% print list of figures [5
 
 ]
@@ -946,7 +946,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.vi}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.245 \listoffigures
+l.242 \listoffigures
                     	% print list of figures [6
 
 ] (./thesis.lof)
@@ -965,11 +965,6 @@ l.245 \listoffigures
  (./0_frontmatter/glossary.tex
 \@gls@deffile=\write11
 \openout11 = `thesis.glsdefs'.
-
-
-
-Package glossaries Warning: Entry `AI' has already been defined in the document
- environment (ignoring new definition) on input line 52.
 
 ) (./thesis.acr)
 
@@ -1027,7 +1022,7 @@ Chapter 2.
 
  (./3_chapter3/chapter3.tex
 Chapter 3.
-<3_chapter3/figures/image02.jpg, id=454, 401.5pt x 401.5pt>
+<3_chapter3/figures/image02.jpg, id=471, 401.5pt x 401.5pt>
 File: 3_chapter3/figures/image02.jpg Graphic file (type jpg)
 <use 3_chapter3/figures/image02.jpg>
 Package pdftex.def Info: 3_chapter3/figures/image02.jpg  used on input line 20.
@@ -1244,90 +1239,43 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 31E727DEEFA84F282884E26B1CB78864;8030.
+(rerunfilecheck)             Checksum: 3058EEE8361ED0432A325571420A319E;8029.
 Package rerunfilecheck Info: File `thesis.brf' has not changed.
 (rerunfilecheck)             Checksum: CCE107A1529FEDA07D8436498260D420;2730.
  )
-(\end occurred when \iftrue on line 107 was incomplete) 
+(\end occurred when \iftrue on line 104 was incomplete) 
 Here is how much of TeX's memory you used:
- 26493 strings out of 473190
- 476070 string characters out of 5715801
- 1642630 words of memory out of 5000000
+ 26492 strings out of 473190
+ 476058 string characters out of 5715801
+ 1642595 words of memory out of 5000000
  49020 multiletter control sequences out of 15000+600000
  569784 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  125i,12n,121p,2363b,2190s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{glo:SHAP} has been referenced but does not exist, r
-eplaced by a fixed one
-
-
-pdfTeX warning (dest): name{glo:DNN} has been referenced but does not exist, re
-placed by a fixed one
-
-
-pdfTeX warning (dest): name{glo:LDA} has been referenced but does not exist, re
-placed by a fixed one
-
-
-pdfTeX warning (dest): name{glo:MPOD} has been referenced but does not exist, r
-eplaced by a fixed one
-
-
-pdfTeX warning (dest): name{glo:WHO} has been referenced but does not exist, re
-placed by a fixed one
-
-
-pdfTeX warning (dest): name{glo:AUC} has been referenced but does not exist, re
-placed by a fixed one
-
-
-pdfTeX warning (dest): name{glo:GBM} has been referenced but does not exist, re
-placed by a fixed one
-
-
-pdfTeX warning (dest): name{glo:RF} has been referenced but does not exist, rep
-laced by a fixed one
-
-
-pdfTeX warning (dest): name{glo:HRS} has been referenced but does not exist, re
-placed by a fixed one
-
-
-pdfTeX warning (dest): name{glo:TILDA} has been referenced but does not exist, 
-replaced by a fixed one
-
-
-pdfTeX warning (dest): name{glo:ML} has been referenced but does not exist, rep
-laced by a fixed one
-
-
-pdfTeX warning (dest): name{glo:AI} has been referenced but does not exist, rep
-laced by a fixed one
-
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
-/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></
-usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></us
-r/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr
-/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/
-local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/lo
-cal/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/loca
-l/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/
-texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/te
-xlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texli
-ve/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/
-2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2
-025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/202
-5/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2025/te
-xmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2025/texm
-f-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-
-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on thesis.pdf (49 pages, 512239 bytes).
+</usr/local/texlive/2025
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/local/texlive/2025/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2025/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmti12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/pub
+lic/cm-super/sfrm0600.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/publi
+c/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/
+cm-super/sfrm1200.pfb>
+Output written on thesis.pdf (49 pages, 513140 bytes).
 PDF statistics:
- 901 PDF objects out of 1000 (max. 8388607)
- 801 compressed objects within 9 object streams
- 286 named destinations out of 1000 (max. 500000)
+ 918 PDF objects out of 1000 (max. 8388607)
+ 818 compressed objects within 9 object streams
+ 285 named destinations out of 1000 (max. 500000)
  355 words of extra memory for PDF output out of 10000 (max. 10000000)
 
