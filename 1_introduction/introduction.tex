@@ -15,87 +15,80 @@
 %: ----------------------- introduction content ----------------------- 
 % ----------------------------------------------------------------------
 \section{Background and Context}
-Chronic conditions, including cardiovascular disease, diabetes, and frailty, are leading contributors to morbidity and mortality in ageing populations~\cite{bencivengaAtrialFibrillationElderly2020, bardonPredictorsIncidentMalnutrition2020}. These conditions are associated with declines in functional capacity (e.g., gait speed, grip strength~\cite{davisComparisonGaitSpeed2021}), increased healthcare utilisation~\cite{mooreCountingTimeLived2017}, and reduced quality of life~\cite{huangSexDifferencesAssociations2020}. Traditional risk prediction models rely primarily on clinical biomarkers such as blood pressure and lipid profiles. However, increasing evidence highlights the importance of multidimensional predictors, including nutrition~\cite{murphyPlasmaLuteinZeaxanthin2023}, physical activity~\cite{lairdPhysicalActivityDose2023}, mental health~\cite{mcdowellAssociationsPhysicalActivity2018}, and social determinants~\cite{mccrorySocialDisadvantageSocial2016}.
+Chronic conditions—including cardiovascular disease, diabetes, and frailty—are leading contributors to morbidity and mortality in ageing populations~\cite{bencivengaAtrialFibrillationElderly2020, bardonPredictorsIncidentMalnutrition2020}. These conditions are associated with declines in functional capacity (e.g., gait speed, grip strength~\cite{davisComparisonGaitSpeed2021}), increased healthcare utilisation~\cite{mooreCountingTimeLived2017}, and reduced quality of life~\cite{huangSexDifferencesAssociations2020}.  
 
-% \par\vspace{5mm}
+Traditional risk prediction models rely primarily on clinical biomarkers such as blood pressure and lipid profiles. Evidence suggests that multidimensional predictors, including nutrition~\cite{murphyPlasmaLuteinZeaxanthin2023}, physical activity~\cite{lairdPhysicalActivityDose2023}, mental health~\cite{mcdowellAssociationsPhysicalActivity2018}, and social determinants~\cite{mccrorySocialDisadvantageSocial2016}, improve predictive performance.
 
-\gls{TILDA} provides a uniquely rich, nationally representative dataset of adults in Ireland aged 50+ with repeated measures spanning clinical, nutritional, lifestyle, cognitive, and psychosocial domains. Leveraging \gls{TILDA} waves 1--5\footnote{\gls{TILDA} data are pseudonymised and accessed under licence via the Irish Social Science Data Archive (ISSDA); use adheres to UL S\&E ethics approval and data governance requirements.}, the harmonised longitudinal dataset, and the IDS dataset (covering participants with disabilities), this project has access to comprehensive repeated measures across multiple domains. Previous studies using \gls{TILDA} have linked, for example, slower blood pressure recovery after standing to accelerated brain ageing~\cite{a.shirsathSlowerSpeedBlood2024}, and vitamin D deficiency to incident prediabetes~\cite{mccarthyAssociationVitaminDeficiency2022}. Such findings highlight the need for integrated models that combine traditional and non-traditional risk factors. 
+The Irish Longitudinal Study on Ageing (\gls{TILDA}) provides a nationally representative dataset of adults aged 50+ in Ireland with repeated measures across multiple domains. The Harmonized \gls{TILDA} dataset aligns variables with the RAND Health and Retirement Study (\gls{HRS}) framework for cross-country comparability, while the raw waves contain additional study-specific variables. The IDS dataset supplements coverage for participants with disabilities.  
 
-Leveraging \gls{TILDA} waves 1--5, the harmonised longitudinal TILDA dataset, and the IDS dataset (covering participants with disabilities) offers a comprehensive set of repeated measures across multiple domains, enabling robust analysis of multidimensional predictors.\par
+These data motivate the development of integrated models combining traditional (e.g., blood pressure, cholesterol, diabetes diagnosis) and non-traditional (e.g., nutrition biomarkers, physical activity, mental health, social determinants) risk factors. This thesis focuses on the non-traditional predictors to quantify their added predictive value.
 
-% \par\vspace{5mm}
+% ----------------------------------------------------------------------
+% Research Problem
 \section{Research Problem and Motivation}
-Current \gls{ML} approaches for chronic disease prediction in older adults often fall short in several ways.
+Existing \gls{ML} approaches for chronic disease prediction in older adults face several challenges:
 
 \subsection{Limited Integration of Multidimensional Data}
 Most models prioritise clinical variables but neglect modifiable lifestyle and nutrition factors~\cite{murphyPlasmaLuteinZeaxanthin2023, lairdPhysicalActivityDepression2023}.
+
 \subsection{Underuse of Longitudinal Dynamics}
 Few studies exploit repeated measures to capture trajectories of risk, such as frailty progression~\cite{moguilnerImportanceAgePrediction2021}.
+
 \subsection{Lack of Explainability}
 Many \gls{ML} models are not interpretable, limiting clinical utility~\cite{donoghueUsingConditionalInference2023}.
 
 Addressing these gaps requires methods that integrate multidomain predictors, account for longitudinal dynamics, and balance predictive accuracy with interpretability.
 
+% ----------------------------------------------------------------------
+% Research Aims
 \section{Research Aims and Objectives}
-This thesis aims to develop and validate \gls{ML} models that integrate nutrition, lifestyle, and mental health features with clinical data to improve prediction of chronic disease and ageing-related outcomes in a representative cohort of older adults. 
+This thesis develops and validates \gls{ML} models that integrate nutrition, lifestyle, and mental health features with clinical data to improve prediction of chronic disease and ageing-related outcomes.
 
-Specific objectives are:
 \begin{itemize}
-  \item Conducting a focused literature review on \gls{ML} for chronic disease prediction in ageing populations, emphasising gaps in lifestyle and nutrition integration.
-  \item Preprocess and harmonise \gls{TILDA} waves 1--5, engineering multidomain features including nutrition, activity, mobility, mental health, and clinical indicators.
-  \item Develop and compare baseline statistical models (e.g., logistic regression) with advanced \gls{ML} methods (e.g., \gls{RF}, \gls{GBM}).
-  \item Evaluate models using discrimination (\gls{AUC}), calibration, and error metrics (accuracy, precision, \gls{recall}, \gls{F1}); conduct ablation analyses to quantify the added value of lifestyle and nutrition.
-  \item Identify actionable predictors (e.g., vitamin D status, gait speed reserve) and highlight modifiable risk factors relevant to intervention.
-  \item To Document ethical, governance, and reproducibility practices for handling longitudinal pseudonymised health data.
+  \item Conduct a literature review on \gls{ML} for chronic disease prediction in ageing populations, emphasising gaps in lifestyle and nutrition integration.
+  \item Preprocess and harmonise \gls{TILDA} waves 1--5 and engineer multidomain features (nutrition, activity, mobility, mental health, clinical indicators).
+  \item Develop and compare baseline statistical models (logistic regression) with advanced \gls{ML} methods (\gls{RF}, \gls{GBM}).
+  \item Evaluate models using discrimination (\gls{AUC}), calibration, and error metrics (accuracy, precision, recall, F1-score); perform ablation analyses to quantify added value of lifestyle and nutrition.
+  \item Identify actionable predictors (e.g., vitamin D status, gait speed reserve) and highlight modifiable risk factors for intervention.
+  \item Document ethical, governance, and reproducibility practices for handling longitudinal pseudonymised health data.
 \end{itemize}
 
-\section{Methodology Overview} 
-The methodological workflow consists of the following components.
+% ----------------------------------------------------------------------
+% Methodology Overview (concise, non-repetitive)
+\section{Methodology Overview}
+This section summarises the workflow; detailed methods are presented in Chapter 3.  
 
-\subsection{Data Curation}
-\subsubsection{Harmonisation}
-This project uses the official harmonised TILDA dataset, which consolidates variables from waves 1--5 to ensure consistency across repeated measures and comparability with other international longitudinal studies such as the \gls{HRS} and \gls{SHARE}. Where definitions differ between waves (e.g., frailty indices, nutritional measures), harmonisation rules are documented in the official dataset.
+Data are derived from both raw \gls{TILDA} waves 1--5 and the Harmonized \gls{TILDA} dataset, aligned to the \gls{HRS} framework. IDS data complements coverage for participants with disabilities.  
 
-\subsubsection{Handling Missing Data}
-Missingness will be addressed using both complete-case analysis (sensitivity check) and multiple imputation 
-methods, depending on the type and extent of missing data. This ensures robustness of findings and reduces 
-bias introduced by attrition across waves.
-
-\subsubsection{Feature Engineering}
-Derived variables will be constructed to capture multidimensional predictors. Examples include:
+Missing data are addressed with complete-case analysis and multiple imputation. Derived features capture multidimensional predictors:
 \begin{itemize}
-    \item Frailty indices (e.g., Fried’s phenotype, \gls{FI}).
-    \item Mobility measures (e.g., \gls{TUG}, gait speed, grip strength).
-    \item Mental health scales (e.g., \gls{CESD}, \gls{GDS}).
-    \item Nutrition scores (e.g., dietary diversity indices, micronutrient biomarkers).
+    \item Frailty indices (e.g., Fried’s phenotype, \gls{FI})
+    \item Mobility measures (e.g., \gls{TUG}, gait speed, grip strength)
+    \item Mental health scales (e.g., \gls{CESD}, \gls{GDS})
+    \item Nutrition scores (e.g., dietary diversity indices, micronutrient biomarkers)
 \end{itemize}
 
-\subsection{Modelling}
-Development of baseline (logistic regression) and advanced \gls{ML} models (\gls{RF}, \gls{GBM}) 
-tuned via \gls{CV}.
+Baseline (logistic regression) and advanced \gls{ML} models (\gls{RF}, \gls{GBM}) are tuned via cross-validation. Performance is evaluated using discrimination (\gls{AUC}), calibration (plots, Brier score), and error metrics. Explainability is assessed with feature importance and \gls{SHAP} values.
 
-\subsection{Evaluation}
-Assessment with discrimination metrics (\gls{AUC}), calibration (plots, Brier score), and error measures 
-(accuracy, \gls{recall}, \gls{F1}). Explainability will be examined using feature importance and \gls{SHAP} values.
-
-
+% ----------------------------------------------------------------------
+% Contributions
 \section{Contributions of the Research}
-This research makes contributions at three levels:
 \begin{itemize}
-  \item \textbf{Empirical:} Demonstrates the added predictive value of nutrition and lifestyle features beyond clinical baselines in chronic disease risk prediction.
+  \item \textbf{Empirical:} Quantifies the predictive value of nutrition and lifestyle features beyond clinical baselines.
   \item \textbf{Methodological:} Provides a reproducible pipeline for harmonising longitudinal \gls{TILDA} data and integrating multidomain features into \gls{ML} models.
-  \item \textbf{Clinical:} Highlights modifiable predictors with potential for targeted interventions and policy development to promote healthy ageing.
+  \item \textbf{Clinical:} Highlights modifiable predictors for targeted interventions and policy to promote healthy ageing.
 \end{itemize}
 
-\section{Thesis Outline} 
-
-The remaining chapters of this dissertation are structured as follows:
-
-\emph{Chapter Two} presents a focused literature review on \gls{ML} prediction of chronic disease in ageing populations, with emphasis on lifestyle and nutrition predictors and methodological considerations.  
-\emph{Chapter Three} describes the \gls{TILDA} study design and data, the preprocessing pipeline, harmonisation decisions, and feature engineering strategy.  
-\emph{Chapter Four} outlines the modelling framework, including baseline statistical models and advanced \gls{ML}, hyperparameter tuning, validation, and evaluation metrics.  
-\emph{Chapter Five} reports results, compares model performance, and presents feature importance and ablation analyses.  
-\emph{Chapter Six} discusses implications, limitations, ethical and governance considerations, and opportunities for future work.  
+% ----------------------------------------------------------------------
+% Thesis Outline
+\section{Thesis Outline}
+\begin{itemize}
+    \item \emph{Chapter Two:} Literature review on \gls{ML} prediction of chronic disease in ageing populations.
+    \item \emph{Chapter Three:} \gls{TILDA} study design, data preprocessing, harmonisation, and feature engineering.
+    \item \emph{Chapter Four:} Modelling framework, including baseline and advanced \gls{ML}, hyperparameter tuning, validation, and evaluation metrics.
+    \item \emph{Chapter Five:} Results, model comparison, feature importance, and ablation analyses.
+    \item \emph{Chapter Six:} Discussion of implications, limitations, ethical considerations, and future work.
+\end{itemize}
 
 \vspace{5 mm}
 
