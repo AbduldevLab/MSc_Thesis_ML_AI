@@ -31,45 +31,45 @@ Warning--I didn't find a database entry for "mywebvideos"
 Warning--I didn't find a database entry for "mywebpaper"
 Warning--I didn't find a database entry for "mywebarticlejournal"
 Warning--I didn't find a database entry for "mywebpage"
-You've used 27 entries,
+You've used 29 entries,
             2481 wiz_defined-function locations,
-            815 strings with 16681 characters,
-and the built_in function-call counts, 14916 in all, are:
-= -- 1064
-> -- 1341
-< -- 2
-+ -- 477
-- -- 420
-* -- 1546
-:= -- 2666
-add.period$ -- 134
-call.type$ -- 27
-change.case$ -- 54
-chr.to.int$ -- 24
-cite$ -- 27
-duplicate$ -- 526
-empty$ -- 999
-format.name$ -- 449
-if$ -- 2949
+            830 strings with 17392 characters,
+and the built_in function-call counts, 15609 in all, are:
+= -- 1131
+> -- 1363
+< -- 4
++ -- 487
+- -- 426
+* -- 1593
+:= -- 2772
+add.period$ -- 142
+call.type$ -- 29
+change.case$ -- 58
+chr.to.int$ -- 26
+cite$ -- 29
+duplicate$ -- 559
+empty$ -- 1069
+format.name$ -- 459
+if$ -- 3100
 int.to.chr$ -- 4
-int.to.str$ -- 28
-missing$ -- 27
-newline$ -- 196
-num.names$ -- 81
-pop$ -- 141
+int.to.str$ -- 30
+missing$ -- 28
+newline$ -- 208
+num.names$ -- 87
+pop$ -- 158
 preamble$ -- 1
-purify$ -- 27
+purify$ -- 29
 quote$ -- 0
-skip$ -- 266
+skip$ -- 288
 stack$ -- 0
-substring$ -- 606
-swap$ -- 87
+substring$ -- 641
+swap$ -- 92
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 189
+type$ -- 203
 warning$ -- 0
-while$ -- 93
+while$ -- 99
 width$ -- 0
-write$ -- 464
+write$ -- 493
 (There were 16 warnings)

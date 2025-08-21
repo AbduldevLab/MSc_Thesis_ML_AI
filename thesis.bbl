@@ -1,4 +1,4 @@
-\begin{thebibliography}{27}
+\begin{thebibliography}{29}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -39,6 +39,18 @@ Ying Huang, Yuhao Su, Ying Jiang, and Meilan Zhu.
 \newblock \emph{Journal of Affective Disorders}, 274:\penalty0 118--125, September 2020.
 \newblock ISSN 0165-0327.
 \newblock \doi{10.1016/j.jad.2020.05.133}.
+
+\bibitem[{World Health Organization Europe}(2025)]{WhoNutritionReport}
+{World Health Organization Europe}.
+\newblock New data: Noncommunicable diseases cause 1.8 million avoidable deaths and cost {{US}}\$ 514 billion every year, reveals new {{WHO}}/{{Europe}} report.
+\newblock https://www.who.int/europe/news/item/27-06-2025-new-data--noncommunicable-diseases-cause-1-8-million-avoidable-deaths-and-cost-us-514-billion-USD-every-year--reveals-new-who-europe-report, 2025.
+
+\bibitem[Rice and Normand(2012)]{RICE2012}
+Niamh Rice and Charles Normand.
+\newblock The cost associated with disease-related malnutrition in {{Ireland}}.
+\newblock \emph{Public Health Nutr}, 15\penalty0 (10):\penalty0 1966--1972, October 2012.
+\newblock ISSN 1475-2727.
+\newblock \doi{10.1017/S1368980011003624}.
 
 \bibitem[Murphy et~al.(2023)Murphy, Duggan, Davis, O'Halloran, Knight, Kenny, McCarthy, and {Romero-Ortuno}]{murphyPlasmaLuteinZeaxanthin2023}
 Caoileann~H. Murphy, Eoin Duggan, James Davis, Aisling~M. O'Halloran, Silvin~P. Knight, Rose~Anne Kenny, Sinead~N. McCarthy, and Roman {Romero-Ortuno}.

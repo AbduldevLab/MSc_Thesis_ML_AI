@@ -1,10 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.9)  21 AUG 2025 01:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.9)  22 AUG 2025 00:08
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/Users/mrarab/Library/CloudStorage/OneDrive-UniversityofLimerick/MSc AI/MSc Project/Abderahman_Haouit/thesis.tex"
-(/Users/mrarab/Library/CloudStorage/OneDrive-UniversityofLimerick/MSc AI/MSc Project/Abderahman_Haouit/thesis.tex
+**thesis
+(./thesis.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (./Latex/Classes/PhDthesisPSnPDF.cls
@@ -26,9 +25,11 @@ File: bk12.clo 2024/06/29 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip49
 \belowcaptionskip=\skip50
 \bibindent=\dimen141
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/amssymb.sty
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
- (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks17
 \symAMSa=\mathgroup4
@@ -36,21 +37,28 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/graphics.sty
+))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
- (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/trig.sty
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 106.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics-def/pdftex.def
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
-)) (/usr/local/texlive/2025/texmf-dist/tex/latex/caption/caption.sty
+))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
- (/usr/local/texlive/2025/texmf-dist/tex/latex/caption/caption3.sty
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
- (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/keyval.sty
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks18
 )
@@ -66,8 +74,10 @@ Package caption Info: Standard document class detected.
 )
 \c@caption@flags=\count271
 \c@continuedfloat=\count272
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
+
 \f@nch@headwidth=\skip51
 \f@nch@offset@elh=\skip52
 \f@nch@offset@erh=\skip53
@@ -83,19 +93,24 @@ Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 \f@nch@widthC=\skip63
 \f@nch@widthR=\skip64
 \@temptokenb=\toks19
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/eucal.sty
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/eucal.sty
 Package: eucal 2009/06/22 v3.00 Euler Script fonts
 LaTeX Font Info:    Overwriting math alphabet `\EuScript' in version `bold'
 (Font)                  U/eus/m/n --> U/eus/b/n on input line 33.
-) (/usr/local/texlive/2025/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2025/02/14 v25.4 The multilingual framework for pdfLaTeX, LuaLaTeX and XeLaTeX
+)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2025/02/14 v25.4 The multilingual framework for pdfLaTeX, LuaLaT
+eX and XeLaTeX
 \babel@savecnt=\count273
 \U@D=\dimen150
 \l@unhyphenated=\language90
- (/usr/local/texlive/2025/texmf-dist/tex/generic/babel/txtbabel.def)
+
+(/usr/local/texlive/2025/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
 \bbl@dirlevel=\count274
- (/usr/local/texlive/2025/texmf-dist/tex/generic/babel-english/english.ldf
+
+(/usr/local/texlive/2025/texmf-dist/tex/generic/babel-english/english.ldf
 Language: english 2017/06/06 v3.3r English support from the babel system
 Package babel Info: Hyphen rules for 'canadian' set to \l@english
 (babel)             (\language0). Reported on input line 102.
@@ -103,23 +118,30 @@ Package babel Info: Hyphen rules for 'australian' set to \l@ukenglish
 (babel)             (\language22). Reported on input line 105.
 Package babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish
 (babel)             (\language22). Reported on input line 108.
-)) (/usr/local/texlive/2025/texmf-dist/tex/generic/babel/locale/en/babel-english.tex
+))
+(/usr/local/texlive/2025/texmf-dist/tex/generic/babel/locale/en/babel-english.t
+ex
 Package babel Info: Importing font and identification data for english
 (babel)             from babel-en.ini. Reported on input line 11.
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2024/06/23 v1.3e Standard LaTeX Color (DPC)
- (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics-cfg/color.cfg
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 149.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/dvipsnam.def
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/dvipsnam.def
 File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/mathcolor.ltx)) (/usr/local/texlive/2025/texmf-dist/tex/latex/footmisc/footmisc.sty
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/footmisc/footmisc.sty
 Package: footmisc 2024/12/24 v6.0g a miscellany of footnote facilities
 \FN@temptoken=\toks20
 \footnotemargin=\dimen151
 \@outputbox@depth=\dimen152
- (/usr/local/texlive/2025/texmf-dist/tex/latex/bigfoot/perpage.sty
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/bigfoot/perpage.sty
 Package: perpage 2014/10/25 2.0 Reset/sort counters per page
 \c@abspage=\count275
 )
@@ -128,17 +150,22 @@ Package footmisc Info: Declaring symbol style bringhurst on input line 699.
 Package footmisc Info: Declaring symbol style chicago on input line 707.
 Package footmisc Info: Declaring symbol style wiley on input line 716.
 Package footmisc Info: Declaring symbol style lamport-robust on input line 727.
+
 Package footmisc Info: Declaring symbol style lamport* on input line 747.
-Package footmisc Info: Declaring symbol style lamport*-robust on input line 768.
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/natbib/natbib.sty
+Package footmisc Info: Declaring symbol style lamport*-robust on input line 768
+.
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip65
 \bibsep=\skip66
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count277
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/base/ifthen.sty
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/tools/multicol.sty
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2024/09/14 v1.9i multicolumn formatting (FMi)
 \c@tracingmulticols=\count278
 \mult@box=\box52
@@ -207,7 +234,8 @@ Package: multicol 2024/09/14 v1.9i multicolumn formatting (FMi)
 \mult@nat@firstbox=\box96
 \colbreak@box=\box97
 \mc@col@check@num=\count287
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/tocbibind/tocbibind.sty
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/tocbibind/tocbibind.sty
 Package: tocbibind 2010/10/13 v1.5k extra ToC listings
 Package tocbibind Info: The document has chapter divisions on input line 50.
 
@@ -216,27 +244,38 @@ Package tocbibind Note: Using chapter style headings, unless overridden.
 
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/nomencl/nomencl.sty
 Package: nomencl 2021/11/10 v5.6 Nomenclature package
- (/usr/local/texlive/2025/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/xkeyval/xkeyval.sty
 Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
- (/usr/local/texlive/2025/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/local/texlive/2025/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+
+(/usr/local/texlive/2025/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/local/texlive/2025/texmf-dist/tex/generic/xkeyval/xkvutils.tex
 \XKV@toks=\toks21
 \XKV@tempa@toks=\toks22
 )
 \XKV@depth=\count288
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-)) (/usr/local/texlive/2025/texmf-dist/tex/latex/koma-script/tocbasic.sty
+))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/koma-script/tocbasic.sty
 Package: tocbasic 2024/10/24 v3.43 KOMA-Script package (handling toc-files)
- (/usr/local/texlive/2025/texmf-dist/tex/latex/koma-script/scrbase.sty
-Package: scrbase 2024/10/24 v3.43 KOMA-Script package (KOMA-Script-independent basics and keyval usage)
- (/usr/local/texlive/2025/texmf-dist/tex/latex/koma-script/scrlfile.sty
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/koma-script/scrbase.sty
+Package: scrbase 2024/10/24 v3.43 KOMA-Script package (KOMA-Script-independent 
+basics and keyval usage)
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/koma-script/scrlfile.sty
 Package: scrlfile 2024/10/24 v3.43 KOMA-Script package (file load hooks)
- (/usr/local/texlive/2025/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
 Package: scrlfile-hook 2024/10/24 v3.43 KOMA-Script package (using LaTeX hooks)
- (/usr/local/texlive/2025/texmf-dist/tex/latex/koma-script/scrlogo.sty
+
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/koma-script/scrlogo.sty
 Package: scrlogo 2024/10/24 v3.43 KOMA-Script package (logo)
 )))
 Applying: [2021/05/01] Usage of raw or classic option list on input line 254.
-Already applied: [0000/00/00] Usage of raw or classic option list on input line 370.
+Already applied: [0000/00/00] Usage of raw or classic option list on input line
+ 370.
 )
 \scr@dte@tocline@numberwidth=\skip69
 \scr@dte@tocline@numbox=\box98
@@ -251,58 +290,79 @@ Package tocbasic Info: setting babel extension for `nls' on input line 188.
 \openout3 = `thesis.nlo'.
 
 Package nomencl Info: Writing nomenclature file thesis.nlo on input line 67.
- (/usr/local/texlive/2025/texmf-dist/tex/generic/iftex/ifpdf.sty
+
+(/usr/local/texlive/2025/texmf-dist/tex/generic/iftex/ifpdf.sty
 Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
- (/usr/local/texlive/2025/texmf-dist/tex/generic/iftex/iftex.sty
+
+(/usr/local/texlive/2025/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2024/12/12 v1.0g TeX engine tests
-)) (/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/hyperref.sty
+))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2024-11-05 v7.01l Hypertext links for LaTeX
- (/usr/local/texlive/2025/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
-) (/usr/local/texlive/2025/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-) (/usr/local/texlive/2025/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pdfescape/pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
- (/usr/local/texlive/2025/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+
+(/usr/local/texlive/2025/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
 Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
-) (/usr/local/texlive/2025/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
-Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
- (/usr/local/texlive/2025/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2025/texmf-dist/tex/generic/infwarerr/infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-)) (/usr/local/texlive/2025/texmf-dist/tex/latex/hycolor/hycolor.sty
+))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/nameref.sty
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
- (/usr/local/texlive/2025/texmf-dist/tex/latex/refcount/refcount.sty
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
-) (/usr/local/texlive/2025/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/gettitlestring/gettitlestring.s
+ty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
  (/usr/local/texlive/2025/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
 \c@section@level=\count289
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count290
-) (/usr/local/texlive/2025/texmf-dist/tex/generic/stringenc/stringenc.sty
-Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
+)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/stringenc/stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
+)
 )
 \@linkdim=\dimen164
 \Hy@linkcounter=\count291
 \Hy@pagecounter=\count292
- (/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/pd1enc.def
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2024-11-05 v7.01l Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
-) (/usr/local/texlive/2025/texmf-dist/tex/generic/intcalc/intcalc.sty
+)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
 \Hy@SavedSpaceFactor=\count293
- (/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/puenc.def
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2024-11-05 v7.01l Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
@@ -311,7 +371,8 @@ Package hyperref Info: Option `plainpages' set `false' on input line 4040.
 Package hyperref Info: Option `pdfpagelabels' set `true' on input line 4040.
 Package hyperref Info: Option `bookmarks' set `true' on input line 4040.
 Package hyperref Info: Option `bookmarksopen' set `true' on input line 4040.
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 4040.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 4040
+.
 Package hyperref Info: Option `breaklinks' set `true' on input line 4040.
 Package hyperref Info: Option `linktocpage' set `true' on input line 4040.
 Package hyperref Info: Option `colorlinks' set `false' on input line 4040.
@@ -324,28 +385,36 @@ Package hyperref Info: Plain pages OFF on input line 4172.
 Package hyperref Info: Backreferencing ON on input line 4175.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4424.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/backref.sty
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/backref.sty
 Package: backref 2023-11-26 v1.44 Bibliographical back referencing
- (/usr/local/texlive/2025/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
- (/usr/local/texlive/2025/texmf-dist/tex/latex/base/atveryend-ltx.sty
-Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
+(/usr/local/texlive/2025/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
 with kernel methods
-) (/usr/local/texlive/2025/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
- (/usr/local/texlive/2025/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
-Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
 ))
-Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+85.
 ))
 \c@Hy@tempcnt=\count294
- (/usr/local/texlive/2025/texmf-dist/tex/latex/url/url.sty
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4763.
 \XeTeXLinkMargin=\dimen165
- (/usr/local/texlive/2025/texmf-dist/tex/generic/bitset/bitset.sty
+
+(/usr/local/texlive/2025/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 )
 \Fld@menulength=\count295
@@ -358,7 +427,8 @@ Package hyperref Info: backreferencing ON on input line 6055.
 Package hyperref Info: Link coloring OFF on input line 6062.
 Package hyperref Info: Link coloring with OCG OFF on input line 6067.
 Package hyperref Info: PDF/A mode OFF on input line 6072.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/base/atbegshi-ltx.sty
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
@@ -367,54 +437,71 @@ package with kernel methods
 \c@Hfootnote=\count298
 )
 Package hyperref Info: Driver: hpdftex.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/hpdftex.def
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2024-11-05 v7.01l Hyperref driver for pdfTeX
 \Fld@listcount=\count299
 \c@bookmark@seq@number=\count300
 \Hy@SectionHShift=\skip71
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/graphicx.sty
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
 \Gin@req@height=\dimen168
 \Gin@req@width=\dimen169
-)) (/usr/local/texlive/2025/texmf-dist/tex/latex/base/alltt.sty
+))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/base/alltt.sty
 Package: alltt 2024/07/07 v2.0g defines alltt environment
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/multirow/multirow.sty
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
 \multirow@colwidth=\skip72
 \multirow@cntb=\count301
 \multirow@dima=\skip73
 \bigstrutjot=\dimen170
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/glossaries/base/glossaries.sty
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/glossaries/base/glossaries.sty
 Package: glossaries 2025/03/03 v4.56 (NLCT)
- (/usr/local/texlive/2025/texmf-dist/tex/latex/mfirstuc/mfirstuc.sty
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/mfirstuc/mfirstuc.sty
 Package: mfirstuc 2022/10/14 v2.08 (NLCT)
 \@glsmfirst=\toks23
 \@glsmrest=\toks24
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/xfor/xfor.sty
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/xfor/xfor.sty
 Package: xfor 2009/02/05 v1.05 (NLCT)
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsgen.sty
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks25
 \ex@=\dimen171
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/tracklang/tracklang.sty
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/tracklang/tracklang.sty
 Package: tracklang 2025/03/04 v1.6.5 (NLCT) Track Languages
- (/usr/local/texlive/2025/texmf-dist/tex/generic/tracklang/tracklang.tex)) (/usr/local/texlive/2025/texmf-dist/tex/latex/translator/translator.sty
+
+(/usr/local/texlive/2025/texmf-dist/tex/generic/tracklang/tracklang.tex))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/translator/translator.sty
 Package: translator 2021-05-31 v1.12d Easy translation of strings in LaTeX
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/glossaries-english/glossaries-english.ldf
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/glossaries-english/glossaries-eng
+lish.ldf
 File: glossaries-english.ldf 2014/11/23 v1.0
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/datatool/datatool-base.sty
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/datatool/datatool-base.sty
 Package: datatool-base 2025/03/05 v3.0.1 (NLCT)
- (/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsmath.sty
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2024/11/05 v2.17t AMS math features
 \@mathmargin=\skip74
 
 For additional information on amsmath, use the `?' option.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2021/08/26 v2.01 AMS text
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsbsy.sty
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen172
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsopn.sty
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
 \inf@bad=\count302
@@ -464,7 +551,8 @@ LaTeX Info: Redefining \Relbar on input line 970.
 \mathdisplay@stack=\toks29
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/datatool/datatool-l3fp.def
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/datatool/datatool-l3fp.def
 File: datatool-l3fp.def 2025/03/05 v3.0.1 (NLCT)
 )
 \@dtl@toks=\toks30
@@ -472,7 +560,8 @@ File: datatool-l3fp.def 2025/03/05 v3.0.1 (NLCT)
 \dtl@tmplength=\skip77
 \l__datatool_measure_box=\box101
 \dtl@sortresult=\count315
- (/usr/local/texlive/2025/texmf-dist/tex/latex/datatool/datatool-utf8.ldf
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/datatool/datatool-utf8.ldf
 File: datatool-utf8.ldf 2025/03/05 v3.0.1 (NLCT)
 )
 \@dtl@datatype=\count316
@@ -498,9 +587,13 @@ File: datatool-utf8.ldf 2025/03/05 v3.0.1 (NLCT)
 \l__datatool_prefix_int=\count334
 \l__datatool_suffix_int=\count335
 \@dtl@foreach@level=\count336
- (/usr/local/texlive/2025/texmf-dist/tex/latex/datatool-english/datatool-english.ldf
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/datatool-english/datatool-english
+.ldf
 File: datatool-english.ldf 2025/03/01 v1.0 (NLCT)
- (/usr/local/texlive/2025/texmf-dist/tex/latex/datatool-english/datatool-english-utf8.ldf
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/datatool-english/datatool-english
+-utf8.ldf
 File: datatool-english-utf8.ldf 2025/03/01 v1.0 (NLCT)
 ))
 \dtl@codeA=\count337
@@ -513,12 +606,18 @@ File: datatool-english-utf8.ldf 2025/03/01 v1.0 (NLCT)
 \glslabeltok=\toks33
 \glsshorttok=\toks34
 \glslongtok=\toks35
- (/usr/local/texlive/2025/texmf-dist/tex/latex/glossaries/styles/glossary-hypernav.sty
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/glossaries/styles/glossary-hypern
+av.sty
 Package: glossary-hypernav 2025/03/03 v4.56 (NLCT)
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/glossaries/styles/glossary-list.sty
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/glossaries/styles/glossary-list.s
+ty
 Package: glossary-list 2025/03/03 v4.56 (NLCT)
 \glslistdottedwidth=\skip79
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/glossaries/styles/glossary-long.sty
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/glossaries/styles/glossary-long.s
+ty
 Package: glossary-long 2025/03/03 v4.56 (NLCT)
  (/usr/local/texlive/2025/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2024-10-27 v4.22 Multi-page Table package (DPC)
@@ -541,7 +640,9 @@ Package: longtable 2024-10-27 v4.22 Multi-page Table package (DPC)
 )
 \glsdescwidth=\skip84
 \glspagelistwidth=\skip85
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/glossaries/styles/glossary-super.sty
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/glossaries/styles/glossary-super.
+sty
 Package: glossary-super 2025/03/03 v4.56 (NLCT)
  (/usr/local/texlive/2025/texmf-dist/tex/latex/supertabular/supertabular.sty
 Package: supertabular 2024/07/20 v4.2c the supertabular environment
@@ -560,7 +661,9 @@ Package: supertabular 2024/07/20 v4.2c the supertabular environment
 \ST@toadd=\dimen191
 \ST@dimen=\dimen192
 \ST@pbox=\box107
-)) (/usr/local/texlive/2025/texmf-dist/tex/latex/glossaries/styles/glossary-tree.sty
+))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/glossaries/styles/glossary-tree.s
+ty
 Package: glossary-tree 2025/03/03 v4.56 (NLCT)
 \glstreeindent=\skip89
 ))
@@ -575,7 +678,8 @@ Package glossaries Info: Writing glossary file thesis.glo on input line 32.
 Package glossaries Info: Writing glossary file thesis.acn on input line 32.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/mathtools/mathtools.sty
 Package: mathtools 2024/10/04 v1.31 mathematical typesetting tools
- (/usr/local/texlive/2025/texmf-dist/tex/latex/tools/calc.sty
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count346
 \calc@Bcount=\count347
@@ -587,7 +691,8 @@ LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count348
 \calc@Cskip=\skip92
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/mathtools/mhsetup.sty
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
 \g_MT_multlinerow_int=\count349
@@ -601,7 +706,8 @@ Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 \l_MT_below_shortintertext_sep=\dimen257
 \xmathstrut@box=\box108
 \xmathstrut@dim=\dimen258
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/listings.sty
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count350
 \lst@gtempboxa=\box109
 \lst@token=\toks37
@@ -614,28 +720,41 @@ Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 \lst@newlines=\count354
 \lst@lineno=\count355
 \lst@maxwidth=\dimen262
- (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstpatch.sty
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstpatch.sty
 File: lstpatch.sty 2024/09/23 1.10c (Carsten Heinz)
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstmisc.sty
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
 \c@lstnumber=\count356
 \lst@skipnumbers=\count357
 \lst@framebox=\box110
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/listings.cfg
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2024/09/23 1.10c listings configuration
 ))
 Package: listings 2024/09/23 1.10c (Carsten Heinz)
- (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstmisc.sty
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count358
 \l__pdf_internal_box=\box111
-) (./thesis.aux (./Latex/Macros/MacroFile1.aux) (./0_frontmatter/abstract.aux) (./0_frontmatter/declaration.aux) (./0_frontmatter/acknowledgement.aux) (./0_frontmatter/dedication.aux) (./0_frontmatter/glossary.aux) (./1_introduction/introduction.aux) (./2_chapter2/chapter2.aux) (./3_chapter3/chapter3.aux) (./4_chapter4/chapter4.aux) (./5_chapter5/chapter5.aux) (./6_conclusions/conclusions.aux))
+)
+(./thesis.aux (./Latex/Macros/MacroFile1.aux) (./0_frontmatter/abstract.aux)
+(./0_frontmatter/declaration.aux) (./0_frontmatter/acknowledgement.aux)
+(./0_frontmatter/dedication.aux) (./0_frontmatter/glossary.aux)
+(./1_introduction/introduction.aux) (./2_chapter2/chapter2.aux)
+(./3_chapter3/chapter3.aux) (./4_chapter4/chapter4.aux)
+(./5_chapter5/chapter5.aux) (./6_conclusions/conclusions.aux))
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 148.
@@ -656,7 +775,8 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 148.
 LaTeX Font Info:    ... okay on input line 148.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 148.
 LaTeX Font Info:    ... okay on input line 148.
- (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+
+(/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count359
 \scratchdimen=\dimen263
@@ -671,22 +791,27 @@ LaTeX Font Info:    ... okay on input line 148.
 \everyMPtoPDFconversion=\toks39
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: longtable package is loaded.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/caption/ltcaption.sty
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/caption/ltcaption.sty
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
 Package caption Info: supertabular package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package backref Info: ** backref set up for natbib ** on input line 148.
 Package hyperref Info: Link coloring OFF on input line 148.
- (./thesis.out) (./thesis.out)
+
+(./thesis.out) (./thesis.out)
 \@outlinefile=\write7
 \openout7 = `thesis.out'.
 
@@ -696,10 +821,11 @@ Package tocbasic Info: setting babel extension for `lol' on input line 148.
 \openout2 = `Latex/Macros/MacroFile1.aux'.
 
  (./Latex/Macros/MacroFile1.tex)
-<0_frontmatter/figures/logonew2020.jpg, id=180, 569.0058pt x 284.5029pt>
+<0_frontmatter/figures/logonew2020.jpg, id=176, 569.0058pt x 284.5029pt>
 File: 0_frontmatter/figures/logonew2020.jpg Graphic file (type jpg)
 <use 0_frontmatter/figures/logonew2020.jpg>
-Package pdftex.def Info: 0_frontmatter/figures/logonew2020.jpg  used on input line 163.
+Package pdftex.def Info: 0_frontmatter/figures/logonew2020.jpg  used on input l
+ine 163.
 (pdftex.def)             Requested size: 256.05025pt x 128.02512pt.
 
 
@@ -710,7 +836,8 @@ Package pdftex.def Info: 0_frontmatter/figures/logonew2020.jpg  used on input li
 
 
 
-{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./0_frontmatter/figures/logonew2020.jpg>]
+{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./0_fro
+ntmatter/figures/logonew2020.jpg>]
 
 [2]
 
@@ -742,7 +869,8 @@ Package pdftex.def Info: 0_frontmatter/figures/logonew2020.jpg  used on input li
  (./0_frontmatter/acknowledgement.tex
 
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has 
+been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.11 \end{acknowledgements}
@@ -754,7 +882,8 @@ l.11 \end{acknowledgements}
  (./0_frontmatter/dedication.tex
 
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.ii}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{page.ii}) has
+ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.10 \end{dedication}
@@ -764,19 +893,22 @@ l.10 \end{dedication}
 
 ]) (./thesis.toc
 LaTeX Font Info:    Trying to load font information for U+msa on input line 6.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 6.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.iii}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{page.iii}) ha
+s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.25 ...ity in ML for Ageing}{9}{subsection.2.3.4}
+l.25 ....4}Gaps in the Literature}{9}{section.2.4}
                                                   % [3
 
 
@@ -788,7 +920,8 @@ l.25 ...ity in ML for Ageing}{9}{subsection.2.3.4}
 
 
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.iv}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{page.iv}) has
+ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.244 \listoftables
@@ -799,7 +932,8 @@ l.244 \listoftables
 
 
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.v}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{page.v}) has 
+been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.245 \listoffigures
@@ -808,7 +942,8 @@ l.245 \listoffigures
 ]
 
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.vi}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{page.vi}) has
+ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.245 \listoffigures
@@ -830,6 +965,11 @@ l.245 \listoffigures
  (./0_frontmatter/glossary.tex
 \@gls@deffile=\write11
 \openout11 = `thesis.glsdefs'.
+
+
+
+Package glossaries Warning: Entry `AI' has already been defined in the document
+ environment (ignoring new definition) on input line 52.
 
 ) (./thesis.acr)
 
@@ -853,9 +993,10 @@ Chapter 1.
 [1
 
 
-]
+{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 
-[2{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+
+[2]
 
 [3]
 
@@ -886,16 +1027,19 @@ Chapter 2.
 
  (./3_chapter3/chapter3.tex
 Chapter 3.
-<3_chapter3/figures/image02.jpg, id=469, 401.5pt x 401.5pt>
+<3_chapter3/figures/image02.jpg, id=454, 401.5pt x 401.5pt>
 File: 3_chapter3/figures/image02.jpg Graphic file (type jpg)
 <use 3_chapter3/figures/image02.jpg>
 Package pdftex.def Info: 3_chapter3/figures/image02.jpg  used on input line 20.
+
 (pdftex.def)             Requested size: 288.7942pt x 288.81021pt.
 
-Package natbib Warning: Citation `mydownloadedimage' on page 11 undefined on input line 20.
+Package natbib Warning: Citation `mydownloadedimage' on page 11 undefined on in
+put line 20.
 
 
-Package natbib Warning: Citation `mydownloadedimage' on page 11 undefined on input line 20.
+Package natbib Warning: Citation `mydownloadedimage' on page 11 undefined on in
+put line 20.
 
 
 
@@ -937,37 +1081,48 @@ Chapter 4.
  (./5_chapter5/chapter5.tex
 Chapter 5.
 
-Package natbib Warning: Citation `mybook' on page 17 undefined on input line 26.
+Package natbib Warning: Citation `mybook' on page 17 undefined on input line 26
+.
 
 
-Package natbib Warning: Citation `mybookchapter' on page 17 undefined on input line 27.
+Package natbib Warning: Citation `mybookchapter' on page 17 undefined on input 
+line 27.
 
 
-Package natbib Warning: Citation `mybookcontribution' on page 17 undefined on input line 28.
+Package natbib Warning: Citation `mybookcontribution' on page 17 undefined on i
+nput line 28.
 
 
-Package natbib Warning: Citation `mycddvd' on page 17 undefined on input line 29.
+Package natbib Warning: Citation `mycddvd' on page 17 undefined on input line 2
+9.
 
 
-Package natbib Warning: Citation `myjournal' on page 17 undefined on input line 30.
+Package natbib Warning: Citation `myjournal' on page 17 undefined on input line
+ 30.
 
 
-Package natbib Warning: Citation `mypatent' on page 17 undefined on input line 31.
+Package natbib Warning: Citation `mypatent' on page 17 undefined on input line 
+31.
 
 
 Package natbib Warning: Citation `myphd' on page 17 undefined on input line 32.
 
 
-Package natbib Warning: Citation `myproceeding' on page 17 undefined on input line 33.
+
+Package natbib Warning: Citation `myproceeding' on page 17 undefined on input l
+ine 33.
 
 
-Package natbib Warning: Citation `mytechreport' on page 17 undefined on input line 34.
+Package natbib Warning: Citation `mytechreport' on page 17 undefined on input l
+ine 34.
 
 
-Package natbib Warning: Citation `myunpublishedreport' on page 17 undefined on input line 35.
+Package natbib Warning: Citation `myunpublishedreport' on page 17 undefined on 
+input line 35.
 
 
-Package natbib Warning: Citation `mywebvideos' on page 17 undefined on input line 36.
+Package natbib Warning: Citation `mywebvideos' on page 17 undefined on input li
+ne 36.
 
 
 
@@ -978,19 +1133,24 @@ Package natbib Warning: Citation `mywebvideos' on page 17 undefined on input lin
 
 ]
 
-Package natbib Warning: Citation `mywebpaper' on page 18 undefined on input line 37.
+Package natbib Warning: Citation `mywebpaper' on page 18 undefined on input lin
+e 37.
 
 
-Package natbib Warning: Citation `mywebarticlejournal' on page 18 undefined on input line 38.
+Package natbib Warning: Citation `mywebarticlejournal' on page 18 undefined on 
+input line 38.
 
 
-Package natbib Warning: Citation `mywebpage' on page 18 undefined on input line 39.
+Package natbib Warning: Citation `mywebpage' on page 18 undefined on input line
+ 39.
 
 
-Package natbib Warning: Citation `mydownloadedimage' on page 18 undefined on input line 40.
+Package natbib Warning: Citation `mydownloadedimage' on page 18 undefined on in
+put line 40.
 
 
-Package natbib Warning: Citation `mybookchapter' on page 18 undefined on input line 46.
+Package natbib Warning: Citation `mybookchapter' on page 18 undefined on input 
+line 46.
 
 )
 
@@ -1025,8 +1185,10 @@ Chapter 6.
 [24
 
 ] (./7_appendixes/ahrs_triad_mote.c
-LaTeX Font Info:    Trying to load font information for OML+cmr on input line 35.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/base/omlcmr.fd
+LaTeX Font Info:    Trying to load font information for OML+cmr on input line 3
+5.
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2024/11/19 v2.5n Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <6> not available
@@ -1034,7 +1196,8 @@ LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <6> not available
 
 
 [25]
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 62.
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 6
+2.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2024/11/19 v2.5n Standard LaTeX font definitions
 )
@@ -1069,75 +1232,102 @@ Package natbib Warning: There were undefined citations.
 
 
 
-[33] (./thesis.aux (./Latex/Macros/MacroFile1.aux) (./0_frontmatter/abstract.aux) (./0_frontmatter/declaration.aux) (./0_frontmatter/acknowledgement.aux) (./0_frontmatter/dedication.aux) (./0_frontmatter/glossary.aux) (./1_introduction/introduction.aux) (./2_chapter2/chapter2.aux) (./3_chapter3/chapter3.aux) (./4_chapter4/chapter4.aux) (./5_chapter5/chapter5.aux) (./6_conclusions/conclusions.aux))
+[33] (./thesis.aux (./Latex/Macros/MacroFile1.aux)
+(./0_frontmatter/abstract.aux) (./0_frontmatter/declaration.aux)
+(./0_frontmatter/acknowledgement.aux) (./0_frontmatter/dedication.aux)
+(./0_frontmatter/glossary.aux) (./1_introduction/introduction.aux)
+(./2_chapter2/chapter2.aux) (./3_chapter3/chapter3.aux)
+(./4_chapter4/chapter4.aux) (./5_chapter5/chapter5.aux)
+(./6_conclusions/conclusions.aux))
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: BC5888086B0F3D140F2F532FADE6A87D;8209.
+(rerunfilecheck)             Checksum: 31E727DEEFA84F282884E26B1CB78864;8030.
 Package rerunfilecheck Info: File `thesis.brf' has not changed.
-(rerunfilecheck)             Checksum: C599B56FBF3E3399A8F785DC9C5D7908;2632.
+(rerunfilecheck)             Checksum: CCE107A1529FEDA07D8436498260D420;2730.
  )
 (\end occurred when \iftrue on line 107 was incomplete) 
 Here is how much of TeX's memory you used:
- 26481 strings out of 473190
- 476109 string characters out of 5715801
+ 26493 strings out of 473190
+ 476070 string characters out of 5715801
  1642630 words of memory out of 5000000
- 49007 multiletter control sequences out of 15000+600000
- 569443 words of font info for 74 fonts, out of 8000000 for 9000
+ 49020 multiletter control sequences out of 15000+600000
+ 569784 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 125i,12n,121p,2471b,2190s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 125i,12n,121p,2363b,2190s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-pdfTeX warning (dest): name{glo:DNN} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{glo:LDA} has been referenced but does not exist, replaced by a fixed one
+pdfTeX warning (dest): name{glo:SHAP} has been referenced but does not exist, r
+eplaced by a fixed one
 
 
-pdfTeX warning (dest): name{glo:MPOD} has been referenced but does not exist, replaced by a fixed one
+pdfTeX warning (dest): name{glo:DNN} has been referenced but does not exist, re
+placed by a fixed one
 
 
-pdfTeX warning (dest): name{glo:WHO} has been referenced but does not exist, replaced by a fixed one
+pdfTeX warning (dest): name{glo:LDA} has been referenced but does not exist, re
+placed by a fixed one
 
 
-pdfTeX warning (dest): name{glo:SHAP} has been referenced but does not exist, replaced by a fixed one
+pdfTeX warning (dest): name{glo:MPOD} has been referenced but does not exist, r
+eplaced by a fixed one
 
 
-pdfTeX warning (dest): name{glo:GDS} has been referenced but does not exist, replaced by a fixed one
+pdfTeX warning (dest): name{glo:WHO} has been referenced but does not exist, re
+placed by a fixed one
 
 
-pdfTeX warning (dest): name{glo:CESD} has been referenced but does not exist, replaced by a fixed one
+pdfTeX warning (dest): name{glo:AUC} has been referenced but does not exist, re
+placed by a fixed one
 
 
-pdfTeX warning (dest): name{glo:TUG} has been referenced but does not exist, replaced by a fixed one
+pdfTeX warning (dest): name{glo:GBM} has been referenced but does not exist, re
+placed by a fixed one
 
 
-pdfTeX warning (dest): name{glo:FI} has been referenced but does not exist, replaced by a fixed one
+pdfTeX warning (dest): name{glo:RF} has been referenced but does not exist, rep
+laced by a fixed one
 
 
-pdfTeX warning (dest): name{glo:AUC} has been referenced but does not exist, replaced by a fixed one
+pdfTeX warning (dest): name{glo:HRS} has been referenced but does not exist, re
+placed by a fixed one
 
 
-pdfTeX warning (dest): name{glo:GBM} has been referenced but does not exist, replaced by a fixed one
+pdfTeX warning (dest): name{glo:TILDA} has been referenced but does not exist, 
+replaced by a fixed one
 
 
-pdfTeX warning (dest): name{glo:RF} has been referenced but does not exist, replaced by a fixed one
+pdfTeX warning (dest): name{glo:ML} has been referenced but does not exist, rep
+laced by a fixed one
 
 
-pdfTeX warning (dest): name{glo:ML} has been referenced but does not exist, replaced by a fixed one
+pdfTeX warning (dest): name{glo:AI} has been referenced but does not exist, rep
+laced by a fixed one
 
-
-pdfTeX warning (dest): name{glo:HRS} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{glo:TILDA} has been referenced but does not exist, replaced by a fixed one
-
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on thesis.pdf (49 pages, 507472 bytes).
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
+/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></
+usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></us
+r/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr
+/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/
+local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/lo
+cal/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/loca
+l/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/
+texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/te
+xlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texli
+ve/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/
+2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2
+025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/202
+5/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2025/te
+xmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2025/texm
+f-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-
+dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on thesis.pdf (49 pages, 512239 bytes).
 PDF statistics:
- 909 PDF objects out of 1000 (max. 8388607)
- 811 compressed objects within 9 object streams
- 287 named destinations out of 1000 (max. 500000)
- 363 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 901 PDF objects out of 1000 (max. 8388607)
+ 801 compressed objects within 9 object streams
+ 286 named destinations out of 1000 (max. 500000)
+ 355 words of extra memory for PDF output out of 10000 (max. 10000000)
 

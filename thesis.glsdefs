@@ -54,6 +54,34 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{AI}%
+{%
+name={\acronymfont {\glsentryshort {AI}}},%
+sort={AI},%
+type={acronym},%
+first={AI},%
+firstplural={AIs},%
+text={AI},%
+plural={AIs},%
+description={Artificial Intelligence},%
+descriptionplural={Artificial Intelligence},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Artificial Intelligence},%
+longplural={Artificial Intelligences},%
+short={AI},%
+shortplural={AIs},%
+counter={page},%
+parent={},%
+%
+}%
+
 \glsdefs@newdocentry{WHO}%
 {%
 name={\acronymfont {\glsentryshort {WHO}}},%
@@ -1001,34 +1029,6 @@ long={Deep Neural Network},%
 longplural={Deep Neural Networks},%
 short={DNN},%
 shortplural={DNNs},%
-counter={page},%
-parent={},%
-%
-}%
-
-\glsdefs@newdocentry{AI}%
-{%
-name={\acronymfont {\glsentryshort {AI}}},%
-sort={AI},%
-type={acronym},%
-first={AI},%
-firstplural={AIs},%
-text={AI},%
-plural={AIs},%
-description={Artificial Intelligence},%
-descriptionplural={Artificial Intelligence},%
-symbol={\relax },%
-symbolplural={\relax },%
-user1={},%
-user2={},%
-user3={},%
-user4={},%
-user5={},%
-user6={},%
-long={Artificial Intelligence},%
-longplural={Artificial Intelligences},%
-short={AI},%
-shortplural={AIs},%
 counter={page},%
 parent={},%
 %
