@@ -34,12 +34,25 @@
 \makeglossaries
 
 %%%USE TABLE LIKE STYLING FOR GLOSSARY
+% \newglossarystyle{tableacronyms}{%
+%   \setglossarystyle{long}%
+%   \renewenvironment{theglossary}%
+%     {\begin{longtable}{@{}l p{\dimexpr\linewidth-2\tabcolsep-1em}@{}}}%
+%     {\end{longtable}}%
+%   % no \renewcommand{\glossentry} here
+% }
+
+%%FIXED ACRONYM HYPERLINK wasn't working (BUG) - issue link jumped to the start of the document
 \newglossarystyle{tableacronyms}{%
   \setglossarystyle{long}%
   \renewenvironment{theglossary}%
     {\begin{longtable}{@{}l p{\dimexpr\linewidth-2\tabcolsep-1em}@{}}}%
     {\end{longtable}}%
-  % no \renewcommand{\glossentry} here
+  \renewcommand*{\glossentry}[2]{%
+    \glsentryitem{##1}%  <-- keeps the anchor for hyperlinks
+    \glstarget{##1}{\textbf{\glsentryshort{##1}}} & \glsentrylong{##1} \\%
+  }%
+  \renewcommand*{\glspostdescription}{}%
 }
 
 \newcommand{\urlwofont}[1]
