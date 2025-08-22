@@ -26,6 +26,90 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{ISSDA}%
+{%
+name={\acronymfont {\glsentryshort {ISSDA}}},%
+sort={ISSDA},%
+type={acronym},%
+first={ISSDA},%
+firstplural={ISSDAs},%
+text={ISSDA},%
+plural={ISSDAs},%
+description={The Irish Social Science Data Archive},%
+descriptionplural={The Irish Social Science Data Archive},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={The Irish Social Science Data Archive},%
+longplural={The Irish Social Science Data Archives},%
+short={ISSDA},%
+shortplural={ISSDAs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{IDS}%
+{%
+name={\acronymfont {\glsentryshort {IDS}}},%
+sort={IDS},%
+type={acronym},%
+first={IDS},%
+firstplural={IDSs},%
+text={IDS},%
+plural={IDSs},%
+description={The Intellectual Disability Supplement},%
+descriptionplural={The Intellectual Disability Supplement},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={The Intellectual Disability Supplement},%
+longplural={The Intellectual Disability Supplements},%
+short={IDS},%
+shortplural={IDSs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{GDPR}%
+{%
+name={\acronymfont {\glsentryshort {GDPR}}},%
+sort={GDPR},%
+type={acronym},%
+first={GDPR},%
+firstplural={GDPRs},%
+text={GDPR},%
+plural={GDPRs},%
+description={General Data Protection Regulation},%
+descriptionplural={General Data Protection Regulation},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={General Data Protection Regulation},%
+longplural={General Data Protection Regulations},%
+short={GDPR},%
+shortplural={GDPRs},%
+counter={page},%
+parent={},%
+%
+}%
+
 \glsdefs@newdocentry{ML}%
 {%
 name={\acronymfont {\glsentryshort {ML}}},%
@@ -175,8 +259,8 @@ first={HRS},%
 firstplural={HRSs},%
 text={HRS},%
 plural={HRSs},%
-description={Health and Retirement Study, (a longitudinal study of ageing in the United States)},%
-descriptionplural={Health and Retirement Study, (a longitudinal study of ageing in the United States)},%
+description={The Health and Retirement Study, (a longitudinal study of ageing in the United States)},%
+descriptionplural={The Health and Retirement Study, (a longitudinal study of ageing in the United States)},%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
@@ -185,8 +269,8 @@ user3={},%
 user4={},%
 user5={},%
 user6={},%
-long={Health and Retirement Study, (a longitudinal study of ageing in the United States)},%
-longplural={Health and Retirement Study, (a longitudinal study of ageing in the United States)s},%
+long={The Health and Retirement Study, (a longitudinal study of ageing in the United States)},%
+longplural={The Health and Retirement Study, (a longitudinal study of ageing in the United States)s},%
 short={HRS},%
 shortplural={HRSs},%
 counter={page},%
@@ -203,8 +287,8 @@ first={SHARE},%
 firstplural={SHAREs},%
 text={SHARE},%
 plural={SHAREs},%
-description={Survey of Health, Ageing and Retirement in Europe},%
-descriptionplural={Survey of Health, Ageing and Retirement in Europe},%
+description={The Survey of Health, Aging and Retirement in Europe},%
+descriptionplural={The Survey of Health, Aging and Retirement in Europe},%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
@@ -213,10 +297,38 @@ user3={},%
 user4={},%
 user5={},%
 user6={},%
-long={Survey of Health, Ageing and Retirement in Europe},%
-longplural={Survey of Health, Ageing and Retirement in Europes},%
+long={The Survey of Health, Aging and Retirement in Europe},%
+longplural={The Survey of Health, Aging and Retirement in Europes},%
 short={SHARE},%
 shortplural={SHAREs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{ELSA}%
+{%
+name={\acronymfont {\glsentryshort {ELSA}}},%
+sort={ELSA},%
+type={acronym},%
+first={ELSA},%
+firstplural={ELSAs},%
+text={ELSA},%
+plural={ELSAs},%
+description={The English Longitudinal Study of Aging},%
+descriptionplural={The English Longitudinal Study of Aging},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={The English Longitudinal Study of Aging},%
+longplural={The English Longitudinal Study of Agings},%
+short={ELSA},%
+shortplural={ELSAs},%
 counter={page},%
 parent={},%
 %

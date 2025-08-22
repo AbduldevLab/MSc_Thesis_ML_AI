@@ -4,7 +4,7 @@
 \contentsline {chapter}{List of Abbreviations}{ix}{table.0.1}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Background and Context}{1}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Research Problem and Motivation}{2}{section.1.2}%
+\contentsline {section}{\numberline {1.2}Research Problem and Motivation}{3}{section.1.2}%
 \contentsline {subsection}{\numberline {1.2.1}Limited Integration of Multidimensional Data}{3}{subsection.1.2.1}%
 \contentsline {subsection}{\numberline {1.2.2}Underuse of Longitudinal Dynamics}{3}{subsection.1.2.2}%
 \contentsline {subsection}{\numberline {1.2.3}Lack of Explainability}{3}{subsection.1.2.3}%
