@@ -474,6 +474,34 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{HADS}%
+{%
+name={\acronymfont {\glsentryshort {HADS}}},%
+sort={HADS},%
+type={acronym},%
+first={HADS},%
+firstplural={HADSs},%
+text={HADS},%
+plural={HADSs},%
+description={Hospital Anxiety and Depression Scale},%
+descriptionplural={Hospital Anxiety and Depression Scale},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Hospital Anxiety and Depression Scale},%
+longplural={Hospital Anxiety and Depression Scales},%
+short={HADS},%
+shortplural={HADSs},%
+counter={page},%
+parent={},%
+%
+}%
+
 \glsdefs@newdocentry{CVD}%
 {%
 name={\acronymfont {\glsentryshort {CVD}}},%

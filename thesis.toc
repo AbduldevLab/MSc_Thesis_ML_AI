@@ -1,7 +1,7 @@
 \babel@toc {english}{}\relax 
 \contentsline {chapter}{List of Tables}{v}{chapter*.2}%
 \contentsline {chapter}{List of Figures}{vii}{chapter*.3}%
-\contentsline {chapter}{List of Abbreviations}{ix}{table.0.1}%
+\contentsline {chapter}{List of Abbreviations}{x}{table.0.1}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Background and Context}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Research Problem and Motivation}{3}{section.1.2}%
@@ -16,29 +16,29 @@
 \contentsline {section}{\numberline {2.2}Chronic Disease and Ageing}{7}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}Frailty and Physical Function}{7}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}Mental Health in Older Adults}{8}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Nutrition and Biological Ageing}{8}{subsection.2.2.3}%
-\contentsline {section}{\numberline {2.3}Machine Learning in Ageing and Chronic Disease}{8}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Feature Sets in ML Studies}{8}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}ML Models Used}{8}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Performance and Validation}{9}{subsection.2.3.3}%
-\contentsline {subsection}{\numberline {2.3.4}Explainability in ML for Ageing}{9}{subsection.2.3.4}%
-\contentsline {section}{\numberline {2.4}Gaps in the Literature}{9}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Chapter Summary}{10}{section.2.5}%
-\contentsline {chapter}{\numberline {3}Data and Preprocessing}{11}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Insert a Figure}{11}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Creating a list}{12}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Creating a Table}{12}{subsection.3.2.1}%
-\contentsline {section}{\numberline {3.3}Quote}{13}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Methodology}{15}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Math}{15}{section.4.1}%
-\contentsline {chapter}{\numberline {5}Results}{17}{chapter.5}%
-\contentsline {section}{\numberline {5.1}References}{17}{section.5.1}%
-\contentsline {chapter}{\numberline {6}Conclusions and Future Directions}{19}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Summary}{19}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Conclusions}{19}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Contributions}{19}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Future Work}{19}{section.6.4}%
-\contentsline {chapter}{Appendix A: Insert figure in Appendix}{21}{section*.9}%
-\contentsline {chapter}{Appendix B: Insert Text in Appendix}{23}{section*.11}%
-\contentsline {chapter}{Appendix C: Insert C++/Java et al. Code in Appendix}{27}{lstnumber.-1.143}%
-\contentsline {chapter}{References}{29}{appendix*.14}%
+\contentsline {subsection}{\numberline {2.2.3}Nutrition and Biological Ageing}{9}{subsection.2.2.3}%
+\contentsline {section}{\numberline {2.3}Machine Learning in Ageing and Chronic Disease}{11}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Feature Sets in ML Studies}{11}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}ML Models Used}{11}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Performance and Validation}{11}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Explainability in ML for Ageing}{11}{subsection.2.3.4}%
+\contentsline {section}{\numberline {2.4}Gaps in the Literature}{12}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Chapter Summary}{12}{section.2.5}%
+\contentsline {chapter}{\numberline {3}Data and Preprocessing}{13}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Insert a Figure}{13}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Creating a list}{14}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Creating a Table}{14}{subsection.3.2.1}%
+\contentsline {section}{\numberline {3.3}Quote}{15}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Methodology}{17}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Math}{17}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Results}{19}{chapter.5}%
+\contentsline {section}{\numberline {5.1}References}{19}{section.5.1}%
+\contentsline {chapter}{\numberline {6}Conclusions and Future Directions}{21}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Summary}{21}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Conclusions}{21}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Contributions}{21}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Future Work}{21}{section.6.4}%
+\contentsline {chapter}{Appendix A: Insert figure in Appendix}{23}{section*.9}%
+\contentsline {chapter}{Appendix B: Insert Text in Appendix}{25}{section*.11}%
+\contentsline {chapter}{Appendix C: Insert C++/Java et al. Code in Appendix}{29}{lstnumber.-1.143}%
+\contentsline {chapter}{References}{31}{appendix*.14}%

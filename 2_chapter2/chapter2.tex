@@ -1,4 +1,4 @@
-% this file is called up by thesis.tex
+{% this file is called up by thesis.tex
 % content in this file will be fed into the main document
 
 %: ----------------------- name of chapter  -------------------------
@@ -17,37 +17,35 @@
 %: ----------------------- contents from here ------------------------
 
 \section{Introduction} 
-\begin{itemize}
-    \item Purpose of this chapter
-    \item Brief overview on TILDA as a unique dataset (rich, longitudinal, multi-domai...)
-    \item Scope: frailty, mental health, chronic disease, multimorbidity, nutrition, and ML models
-\end{itemize}
+
+This chapter reviews literature on ageing, chronic disease, and predictive modelling using \gls{TILDA}. The focus is on three domains central to later-life health: frailty and physical function, mental health, and nutrition and biological ageing. The review also considers how machine learning has been applied to these areas and identifies gaps that motivate the present study.
 
 \section{Chronic Disease and Ageing}
-\begin{itemize}
-    \item The burden of chronic conditions in older adults
-    \item Healthy ageing framework \gls{WHO}
-    \item Importance of multimorbidity, frailty, mental health
-\end{itemize}
+Chronic conditions are the main drivers of morbidity and reduced quality of life in older adults. Multimorbidity, frailty, and mental health difficulties often coexist, compounding risks of functional decline. In line with the \gls{WHO} healthy ageing framework, research using \gls{TILDA} highlights frailty, mental health, and nutrition as interconnected determinants of later-life outcomes. The following subsections examine each domain in turn.
 
 \subsection{Frailty and Physical Function}
-\begin{itemize}
-    \item Gait speed, grip strength, functional mobility decline 
-    \item Predictors of frailty transitions (\cite{mccarthyAssociationMetabolicSyndrome2023}, \cite{huangAgeModifyAssociations2019}, \cite{oconnellOrthostaticHypotensionOrthostatic2015})
-\end{itemize}
 
-\subsection{Mental Health in Older Adults}
-\begin{itemize}
-    \item Depression, anxiety, loneliness, social connectedness (\cite{santiniProtectivePropertiesActBelongCommit2017}, \cite{Symposia2011}, \cite{briggsWishLaterLife2021})
-    \item Links between physical activity and depression (\cite{mcdowellAssociationsPhysicalActivity2018}, \cite{lairdPhysicalActivityDose2023}, \cite{lairdPhysicalActivityDepression2023})
-\end{itemize}
+Frailty reflects reduced physiological reserve and heightened vulnerability to adverse outcomes. In \gls{TILDA}, it has been measured using both the frailty phenotype and the frailty index, with gait speed, grip strength, and mobility decline as key indicators. These markers are attractive because they are easy to collect at scale and strongly predict morbidity and mortality.
 
+Longitudinal analyses show that frailty is not a fixed trajectory but a dynamic process. Multi-state modelling, for instance, revealed that many prefrail individuals transition back to a non-frail state, while frailty itself is associated with high mortality risk \cite{romero-ortunoTransitionsFrailtyPhenotype2021}. Other work links metabolic syndrome to increased risk of frailty, underscoring the influence of cardiometabolic health \cite{mccarthyAssociationMetabolicSyndrome2023}. At the same time, predictors such as obesity and vision problems show age-dependent effects, with obesity exerting stronger influence in midlife and protective factors like grip strength becoming more important later in life \cite{huangAgeModifyAssociations2019}.
+Despite these insights, the evidence base is constrained by observational designs, reliance on self-report, and the tendency to analyse predictors in isolation. External validation beyond Ireland is also limited, which raises questions of generalisability. These issues highlight the need for integrative approaches that capture the multidimensionality of frailty and point to the potential role of machine learning methods (Chapter~\ref{chap:Methodology}) to model frailty transitions with greater precision.
+
+\subsection{Mental Health in Older Adults}%ABC indictar explain more
+Mental health is a critical determinant of quality of life in older adults, with depression, anxiety, loneliness, and social isolation commonly observed in this population. Evidence from \gls{TILDA} demonstrates that mental health outcomes are intricately linked to both physical health and social engagement. For instance, studies leveraging Wave 1-2 data indicate that higher engagement in physical, social, and cognitive activities—captured via composite ABC indicators—was associated with lower prevalence and incidence of depression and anxiety \cite{santiniProtectivePropertiesActBelongCommit2017}. This suggests that lifestyle and social integration act as protective factors against mental health decline.
+
+However, there are nuances in these findings. While social participation often buffers against anxiety and depressive symptoms, the effect on cognitive impairment appears weaker and less consistent, highlighting domain-specific variability. Moreover, some studies report that self-reported measures of mental health and activity may introduce bias, potentially inflating associations \cite{santiniProtectivePropertiesActBelongCommit2017}, \cite{juolaO117NursingStaff2014}. These limitations underscore the need for objective and multi-modal assessment methods.
+
+Physical activity emerges as a particularly robust predictor. Analyses of Wave 1-5 datasets reveal that higher accelerometer-measured moderate-to-vigorous physical activity correlates with lower depressive symptoms, even when controlling for demographic and clinical covariates \cite{lairdPhysicalActivityDose2023}. Notably, these associations appear dose-dependent, indicating that even sub-recommended activity levels can confer measurable mental health benefits. This aligns with findings from longitudinal cohorts showing that incident falls and functional decline predict subsequent depressive symptoms, mediated partly by fear of falling \cite{jacobFallsIncreaseRisk2023}. These studies illustrate the complex interplay between mental health, physical function, and risk exposure in ageing populations.
+
+Critically, while these findings demonstrate clear associations, the literature is dominated by observational designs with limited external validation. The majority of studies focus on adults aged 50+, predominantly within the Irish context, which limits generalisability to more ethnically and socioeconomically diverse populations. Additionally, mental health constructs are frequently operationalised via broad self-report scales \gls{CESD}, \gls{HADS}, without corroborating clinical or biomarker data. Taken together, these gaps highlight the importance of integrating objective, longitudinal measures of mental health alongside multidimensional predictors to improve the predictive accuracy and interpretability of models (see Chapter~\ref{chap:Methodology} for ML approaches).
 \subsection{Nutrition and Biological Ageing}
-\begin{itemize}
-    \item Vitamin D, lutein, zeaxanthin, \gls{MPOD} (\cite{murphyPlasmaLuteinZeaxanthin2023}, \cite{mccarthyAssociationVitaminDeficiency2022}, lairdVitaminDeficiencyIreland2020, feeneyLowMacularPigment2013)
-    \item Malnutrition and its predictors (\cite{bardonPredictorsIncidentMalnutrition2020})
-    \item Biological vs chronological ageing (\cite{mccarthyMetabolicSyndromeAccelerates2023}, \cite{aziziEvidenceAssociationAllostatic2024})
-\end{itemize}
+Nutrition is increasingly recognised as a modifiable determinant of biological ageing and frailty. Within \gls{TILDA}, key nutritional biomarkers—such as vitamin D, lutein, and zeaxanthin—have been linked to functional and cognitive outcomes \cite{murphyPlasmaLuteinZeaxanthin2023}, \cite{mccarthyAssociationVitaminDeficiency2022}, \cite{lairdVitaminDeficiencyIreland2020}. For example, plasma lutein and zeaxanthin levels measured in Wave 1-5 were associated with slower frailty progression and improved physical performance, suggesting that blood levels of these carotenoids reflect long-term exposure to a healthy-promoting diet. \cite{murphyPlasmaLuteinZeaxanthin2023}. Similarly, low vitamin D status was consistently related to increased risk of type 2 diabetes and musculoskeletal deficits, particularly among older adults with limited sunlight exposure \cite{mccarthyAssociationVitaminDeficiency2022}, \cite{lairdVitaminDeficiencyIreland2020}.
+
+Malnutrition, operationalised via BMI thresholds and unintentional weight loss, also predicts adverse outcomes. Evidence indicates that functional decline, hospitalisation, and limited social support increase malnutrition risk, with differential effects by sex \cite{bardonPredictorsIncidentMalnutrition2020}. These findings suggest that interventions targeting both dietary intake and social determinants may mitigate nutritional risk, yet the literature rarely integrates these variables comprehensively.
+
+The distinction between chronological and biological ageing is central to understanding these nutritional impacts. Biological age, estimated using biomarkers such as epigenetic clocks or frailty indices, often diverges from chronological age, reflecting cumulative environmental, lifestyle, and physiological exposures \cite{mccarthyMetabolicSyndromeAccelerates2023}, \cite{aziziEvidenceAssociationAllostatic2024}. In this context, metabolic syndrome and nutritional deficiencies have been linked to accelerated biological ageing, highlighting potential intervention targets to slow physiological decline \cite{mccarthyMetabolicSyndromeAccelerates2023}, \cite{donoghueUsingConditionalInference2023}. Notably, these studies emphasise that biological ageing measures provide finer-grained predictions of vulnerability than chronological age alone, particularly when integrated with multi-domain predictors in longitudinal cohorts.
+
+Critically evaluating the literature reveals several limitations. Most studies are cross-sectional, with limited temporal resolution to capture diet-induced changes over time. Sample sizes for nutritional biomarker studies are often smaller than those for functional assessments, reducing statistical power. Additionally, while the relationships between nutrition and ageing outcomes are generally consistent, effect sizes vary, and causality remains difficult to establish due to confounding by comorbidities, socioeconomic factors, and lifestyle behaviours. These gaps point to opportunities for more sophisticated, integrative modelling approaches, including machine learning pipelines that combine nutritional biomarkers with functional, clinical, and psychosocial data.
 
 \section{Machine Learning in Ageing and Chronic Disease}
 \begin{itemize}

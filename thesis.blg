@@ -1,0 +1,75 @@
+This is BibTeX, Version 0.99d (TeX Live 2025)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: thesis.aux
+A level-1 auxiliary file: Latex/Macros/MacroFile1.aux
+A level-1 auxiliary file: 0_frontmatter/abstract.aux
+A level-1 auxiliary file: 0_frontmatter/declaration.aux
+A level-1 auxiliary file: 0_frontmatter/acknowledgement.aux
+A level-1 auxiliary file: 0_frontmatter/dedication.aux
+A level-1 auxiliary file: 0_frontmatter/glossary.aux
+A level-1 auxiliary file: 1_introduction/introduction.aux
+A level-1 auxiliary file: 2_chapter2/chapter2.aux
+A level-1 auxiliary file: 3_chapter3/chapter3.aux
+A level-1 auxiliary file: 4_chapter4/chapter4.aux
+A level-1 auxiliary file: 5_chapter5/chapter5.aux
+A level-1 auxiliary file: 6_conclusions/conclusions.aux
+The style file: unsrtnat.bst
+Database file #1: References-Bibtex.bib
+Warning--I didn't find a database entry for "mydownloadedimage"
+Warning--I didn't find a database entry for "poem"
+Warning--I didn't find a database entry for "mybook"
+Warning--I didn't find a database entry for "mybookchapter"
+Warning--I didn't find a database entry for "mybookcontribution"
+Warning--I didn't find a database entry for "mycddvd"
+Warning--I didn't find a database entry for "myjournal"
+Warning--I didn't find a database entry for "mypatent"
+Warning--I didn't find a database entry for "myphd"
+Warning--I didn't find a database entry for "myproceeding"
+Warning--I didn't find a database entry for "mytechreport"
+Warning--I didn't find a database entry for "myunpublishedreport"
+Warning--I didn't find a database entry for "mywebvideos"
+Warning--I didn't find a database entry for "mywebpaper"
+Warning--I didn't find a database entry for "mywebarticlejournal"
+Warning--I didn't find a database entry for "mywebpage"
+You've used 30 entries,
+            2481 wiz_defined-function locations,
+            832 strings with 18260 characters,
+and the built_in function-call counts, 16198 in all, are:
+= -- 1144
+> -- 1468
+< -- 4
++ -- 523
+- -- 460
+* -- 1659
+:= -- 2906
+add.period$ -- 145
+call.type$ -- 30
+change.case$ -- 61
+chr.to.int$ -- 27
+cite$ -- 30
+duplicate$ -- 573
+empty$ -- 1084
+format.name$ -- 494
+if$ -- 3201
+int.to.chr$ -- 4
+int.to.str$ -- 31
+missing$ -- 28
+newline$ -- 213
+num.names$ -- 90
+pop$ -- 164
+preamble$ -- 1
+purify$ -- 30
+quote$ -- 0
+skip$ -- 296
+stack$ -- 0
+substring$ -- 623
+swap$ -- 93
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 210
+warning$ -- 0
+while$ -- 99
+width$ -- 0
+write$ -- 506
+(There were 16 warnings)

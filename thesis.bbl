@@ -1,4 +1,4 @@
-\begin{thebibliography}{29}
+\begin{thebibliography}{30}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -101,6 +101,13 @@ Orna~A Donoghue, Belinda Hernandez, Matthew D~L O'Connell, and Rose~Anne Kenny.
 \newblock ISSN 1758-535X.
 \newblock \doi{10.1093/gerona/glac156}.
 
+\bibitem[{Romero-Ortuno} et~al.(2021){Romero-Ortuno}, Hartley, Davis, Knight, Rizzo, Hern{\'a}ndez, Kenny, and O'Halloran]{romero-ortunoTransitionsFrailtyPhenotype2021}
+Roman {Romero-Ortuno}, Peter Hartley, James Davis, Silvin~P. Knight, Rossella Rizzo, Belinda Hern{\'a}ndez, Rose~Anne Kenny, and Aisling~M. O'Halloran.
+\newblock Transitions in frailty phenotype states and components over 8 years: {{Evidence}} from {{The Irish Longitudinal Study}} on {{Ageing}}.
+\newblock \emph{Archives of Gerontology and Geriatrics}, 95:\penalty0 104401, 2021.
+\newblock ISSN 0167-4943.
+\newblock \doi{10.1016/j.archger.2021.104401}.
+
 \bibitem[McCarthy et~al.(2023{\natexlab{a}})McCarthy, Laird, O'Halloran, Fallon, Ortu{\~n}o, and Kenny]{mccarthyAssociationMetabolicSyndrome2023}
 Kevin McCarthy, Eamon Laird, Aisling~M. O'Halloran, Padraic Fallon, Rom{\'a}n~Romero Ortu{\~n}o, and Rose~Anne Kenny.
 \newblock Association between metabolic syndrome and risk of both prevalent and incident frailty in older adults: {{Findings}} from {{The Irish Longitudinal Study}} on {{Ageing}} ({{TILDA}}).
@@ -115,13 +122,6 @@ Chuanying Huang, Shuqin Sun, Xiaocao Tian, Tong Wang, Tianyu Wang, Haiping Duan,
 \newblock ISSN 0167-4943.
 \newblock \doi{10.1016/j.archger.2019.05.020}.
 
-\bibitem[O'Connell et~al.(2015)O'Connell, Savva, Fan, and Kenny]{oconnellOrthostaticHypotensionOrthostatic2015}
-Matthew D.~L. O'Connell, George~M. Savva, Chie~Wei Fan, and Rose~Anne Kenny.
-\newblock Orthostatic hypotension, orthostatic intolerance and frailty: {{The Irish Longitudinal Study}} on {{Aging-TILDA}}.
-\newblock \emph{Archives of Gerontology and Geriatrics}, 60\penalty0 (3):\penalty0 507--513, 2015.
-\newblock ISSN 0167-4943.
-\newblock \doi{10.1016/j.archger.2015.01.008}.
-
 \bibitem[Santini et~al.(2017)Santini, Koyanagi, Tyrovolas, Haro, Donovan, Nielsen, and Koushede]{santiniProtectivePropertiesActBelongCommit2017}
 Ziggi~Ivan Santini, Ai~Koyanagi, Stefanos Tyrovolas, Josep~Maria Haro, Robert~J. Donovan, Line Nielsen, and Vibeke Koushede.
 \newblock The protective properties of {{Act-Belong-Commit}} indicators against incident depression, anxiety, and cognitive impairment among older {{Irish}} adults: {{Findings}} from a prospective community-based study.
@@ -129,19 +129,19 @@ Ziggi~Ivan Santini, Ai~Koyanagi, Stefanos Tyrovolas, Josep~Maria Haro, Robert~J.
 \newblock ISSN 0531-5565.
 \newblock \doi{10.1016/j.exger.2017.02.074}.
 
-\bibitem[de~Jager and Haigh(2011)]{Symposia2011}
-Celeste de~Jager and Ann~Marie Haigh.
-\newblock Symposia.
-\newblock \emph{International Psychogeriatrics}, 23:\penalty0 S12--S96, 2011.
-\newblock ISSN 1041-6102.
-\newblock \doi{10.1017/S104161021100127X}.
+\bibitem[Juola et~al.(2014)Juola, Bjorkman, Kautiainen, Pylkkanen, {Finne-Soveri}, Soini, Pitk{\"a}l{\"a}, and Bell]{juolaO117NursingStaff2014}
+A.~L. Juola, M.~P. Bjorkman, H.~Kautiainen, S.~Pylkkanen, U.~H. {Finne-Soveri}, H.~Soini, K.~H. Pitk{\"a}l{\"a}, and J.~S. Bell.
+\newblock O1.17: {{Nursing}} staff education to reduce potentially harmful medication use among older people in assisted living facilities: Effects of randomized controlled trial on cognition and falls.
+\newblock \emph{European Geriatric Medicine}, 5:\penalty0 S50--S51, 2014.
+\newblock ISSN 1878-7649.
+\newblock \doi{10.1016/S1878-7649(14)70100-7}.
 
-\bibitem[Briggs et~al.(2021)Briggs, Ward, and Kenny]{briggsWishLaterLife2021}
-Robert Briggs, Mark Ward, and Rose~Anne Kenny.
-\newblock The `{{Wish}} to {{Die}}' in later life: Prevalence, longitudinal course and mortality. {{Data}} from {{TILDA}}.
-\newblock \emph{Age and Ageing}, 50\penalty0 (4):\penalty0 1321--1328, July 2021.
-\newblock ISSN 0002-0729.
-\newblock \doi{10.1093/ageing/afab010}.
+\bibitem[Jacob et~al.(2023)Jacob, Kostev, Shin, Smith, Oh, Abduljabbar, Haro, and Koyanagi]{jacobFallsIncreaseRisk2023}
+Louis Jacob, Karel Kostev, Jae~Il Shin, Lee Smith, Hans Oh, Adel~S. Abduljabbar, Josep~Maria Haro, and Ai~Koyanagi.
+\newblock Falls increase the risk for incident anxiety and depressive symptoms among adults aged {$\geq$}50 years: {{An}} analysis of the {{Irish}} longitudinal study on ageing.
+\newblock \emph{Archives of Gerontology and Geriatrics}, 114:\penalty0 105098, 2023.
+\newblock ISSN 0167-4943.
+\newblock \doi{10.1016/j.archger.2023.105098}.
 
 \bibitem[McCarthy et~al.(2022)McCarthy, Laird, O'Halloran, Walsh, Healy, Fitzpatrick, Walsh, Hern{\'a}ndez, Fallon, Molloy, and Kenny]{mccarthyAssociationVitaminDeficiency2022}
 Kevin McCarthy, Eamon Laird, Aisling~M. O'Halloran, Cathal Walsh, Martin Healy, Annette~L. Fitzpatrick, James~B. Walsh, Belinda Hern{\'a}ndez, Padraic Fallon, Anne~M. Molloy, and Rose~Anne Kenny.
@@ -149,6 +149,11 @@ Kevin McCarthy, Eamon Laird, Aisling~M. O'Halloran, Cathal Walsh, Martin Healy, 
 \newblock \emph{EClinicalMedicine}, 53:\penalty0 101654, November 2022.
 \newblock ISSN 2589-5370.
 \newblock \doi{10.1016/j.eclinm.2022.101654}.
+
+\bibitem[Laird and Kenny(2020)]{lairdVitaminDeficiencyIreland2020}
+Eamon Laird and Rose~Anne Kenny.
+\newblock Vitamin {{D}} deficiency in {{Ireland}} -- implications for {{COVID-19}}. {{Results}} from the {{Irish Longitudinal Study}} on {{Ageing}} ({{TILDA}}).
+\newblock Technical report, The Irish Longitudinal Study on Ageing, April 2020.
 
 \bibitem[McCarthy et~al.(2023{\natexlab{b}})McCarthy, O'Halloran, Fallon, Kenny, and McCrory]{mccarthyMetabolicSyndromeAccelerates2023}
 Kevin McCarthy, Aisling~M. O'Halloran, Padraic Fallon, Rose~Anne Kenny, and Cathal McCrory.
