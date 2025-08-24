@@ -22,9 +22,9 @@ The financial and societal burden is substantial. In Europe, poor diet is a majo
 
 In parallel, (\gls{AI}) and (\gls{ML}) are increasingly applied in healthcare to support risk prediction and personalised intervention. However, European regulations such as the \gls{GDPR} and the forthcoming \gls{EU} \gls{AI} Act impose strict requirements for transparency, explainability, and governance. This regulatory context underscores the importance of interpretable and ethically robust \gls{ML} approaches.
 
-Traditional risk prediction models have largely relied on clinical biomarkers such as blood pressure and lipid profiles. Yet, growing evidence shows that broader predictors—including nutrition~\cite{murphyPlasmaLuteinZeaxanthin2023}, physical activity~\cite{lairdPhysicalActivityDose2023}, mental health~\cite{mcdowellAssociationsPhysicalActivity2018}, and social determinants~\cite{mccrorySocialDisadvantageSocial2016}—enhance predictive performance.  
+Traditional risk prediction models have largely relied on clinical biomarkers such as blood pressure and lipid profiles. Yet, growing evidence shows that broader predictors—including nutrition~\cite{murphyPlasmaLuteinZeaxanthin2023}, physical activity~\cite{lairdPhysicalActivityDose2023}, mental health~\cite{mcdowellAssociationsPhysicalActivity2018}, and social determinants \cite{mccrorySocialDisadvantageSocial2016} improve predictive performance.  
 
-(\gls{TILDA})\footnote{\gls{TILDA} data are pseudonymised and accessed under licence via \gls{ISSDA}. Use adheres to UL S\&E ethics approval and data governance requirements.} provides a nationally representative cohort of adults aged 50+ in Ireland, surveyed across multiple domains in repeated waves (waves 1–5). The raw wave datasets capture the full richness of \gls{TILDA}-specific measures relevant to Irish health, policy, and society. In parallel, the Harmonized \gls{TILDA} dataset restructures selected variables to align with the RAND (\gls{HRS}) framework, enabling cross-national comparison with equivalent studies such as \gls{HRS} (US), \gls{ELSA} (UK), \gls{SHARE} (continental Europe). This harmonisation enhances international comparability, though at the cost of excluding some study-specific variables. An additional dataset, the \gls{IDS}, extends coverage to individuals with disabilities, improving inclusivity and reducing sampling bias. Together, these resources offer both detailed national data and a platform for internationally comparable, generalisable analyses.
+(\gls{TILDA})\footnote{\gls{TILDA} data are pseudonymised and accessed under licence via \gls{ISSDA}. Use adheres to UL S\&E ethics approval and data governance requirements.} provides a nationally representative cohort of adults aged 50+ in Ireland, surveyed across multiple domains in repeated waves (waves 1-5). The raw wave datasets capture the full richness of \gls{TILDA}-specific measures relevant to Irish health, policy, and society. In parallel, the Harmonized \gls{TILDA} dataset restructures selected variables to align with the RAND (\gls{HRS}) framework, enabling cross-national comparison with equivalent studies such as \gls{HRS} (US), \gls{ELSA} (UK), \gls{SHARE} (continental Europe). This harmonisation enhances international comparability, though at the cost of excluding some study-specific variables. An additional dataset, the \gls{IDS}, extends coverage to individuals with disabilities, improving inclusivity and reducing sampling bias. Together, these resources offer both detailed national data and a platform for internationally comparable, generalisable analyses.
 
 Despite these advantages, existing \gls{ML} research on chronic disease prediction faces persistent limitations: over-reliance on clinical predictors, limited incorporation of lifestyle and social variables, predominantly cross-sectional study designs that fail to capture trajectories, and a lack of interpretability consistent with emerging \gls{AI} governance standards.  
 
@@ -35,13 +35,13 @@ This thesis addresses these gaps by integrating \gls{TILDA}’s longitudinal, mu
 %Emphasis more on a personal level why you are interested in this topic
 \section{Research Problem and Motivation} 
 
-Despite increasing policy interest in lifestyle and nutrition and advances in \gls{ML} methods, approaches to chronic disease prediction in older adults remain constrained in several ways.
+Despite increasing policy interest in lifestyle and nutrition and advances in \gls{ML} methods, approaches to chronic disease prediction in older adults remain limited in several ways.
 
 \subsection{Limited Integration of Multidimensional Data}
 Most models prioritise clinical variables while underutilising modifiable lifestyle and nutrition factors~\cite{murphyPlasmaLuteinZeaxanthin2023, lairdPhysicalActivityDepression2023}.
 
 \subsection{Underuse of Longitudinal Dynamics}
-Few studies exploit repeated measures to capture trajectories of risk, such as frailty progression~\cite{moguilnerImportanceAgePrediction2021}.
+Few studies leverage repeated measures to capture developments of risk, such as frailty progression~\cite{moguilnerImportanceAgePrediction2021}.
 
 \subsection{Lack of Explainability}
 Many \gls{ML} models are not interpretable, limiting clinical adoption and failing to meet emerging regulatory requirements for trustworthy \gls{AI} in healthcare~\cite{donoghueUsingConditionalInference2023}.
@@ -59,7 +59,7 @@ This thesis develops and validates \gls{ML} models that integrate nutrition, lif
   \item Preprocess and harmonise \gls{TILDA} waves 1-5, and engineer multidomain features (nutrition, activity, mobility, mental health, clinical indicators).
   \item Develop and compare baseline statistical models (e.g., logistic regression) with advanced \gls{ML} methods (\gls{RF}, \gls{GBM}).
   \item Evaluate models using discrimination (\gls{AUC}), calibration, and error metrics (accuracy, precision, recall, F1-score), perform ablation analyses to assess the incremental value of lifestyle and nutrition predictors.
-  \item Identify actionable predictors (e.g., vitamin D status, gait speed reserve) and highlight modifiable risk factors for intervention.%More examples perhaps?
+  \item Identify actionable predictors (e.g., vitamin D status, gait speed reserve) and highlight modifiable risk factors for intervention.
   \item Document ethical, governance, and reproducibility practices for handling longitudinal pseudonymised health data.
 \end{itemize}
 
