@@ -17,13 +17,13 @@
 \contentsline {subsection}{\numberline {2.2.1}Frailty and Physical Function}{7}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}Mental Health in Older Adults}{8}{subsection.2.2.2}%
 \contentsline {subsection}{\numberline {2.2.3}Nutrition and Biological Ageing}{9}{subsection.2.2.3}%
-\contentsline {section}{\numberline {2.3}Machine Learning in Ageing and Chronic Disease}{11}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Feature Sets in ML Studies}{11}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}ML Models Used}{11}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Performance and Validation}{11}{subsection.2.3.3}%
+\contentsline {section}{\numberline {2.3}Machine Learning in Ageing and Chronic Disease}{10}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Feature Sets in ML Studies}{10}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}ML Models Used}{10}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Performance and Validation}{10}{subsection.2.3.3}%
 \contentsline {subsection}{\numberline {2.3.4}Explainability in ML for Ageing}{11}{subsection.2.3.4}%
-\contentsline {section}{\numberline {2.4}Gaps in the Literature}{12}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Chapter Summary}{12}{section.2.5}%
+\contentsline {section}{\numberline {2.4}Gaps in the Literature}{11}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Chapter Summary}{11}{section.2.5}%
 \contentsline {chapter}{\numberline {3}Data and Preprocessing}{13}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Insert a Figure}{13}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Creating a list}{14}{section.3.2}%
