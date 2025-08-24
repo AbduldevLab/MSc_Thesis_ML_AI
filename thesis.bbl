@@ -1,4 +1,4 @@
-\begin{thebibliography}{28}
+\begin{thebibliography}{27}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -157,26 +157,12 @@ Zahra Azizi, Rebecca~J. Hirst, Alan~O' Dowd, Cathal McCrory, Rose~Anne Kenny, Fi
 \newblock ISSN 0167-4943.
 \newblock \doi{10.1016/j.archger.2023.105155}.
 
-\bibitem[Zhang et~al.(2025)Zhang, Robinson, Whelan, Jollans, Wang, Nees, Chu, Bobou, Du, Cristea, Banaschewski, Barker, Bokde, Grigis, Garavan, Heinz, Br{\"u}hl, Martinot, Martinot, Artiges, Orfanos, Poustka, Hohmann, Millenet, Fr{\"o}hner, Smolka, Vaidya, Walter, Winterer, Broulidakis, {van Noort}, Stringaris, Penttil{\"a}, Grimmer, Insensee, Becker, Zhang, King, Sinclair, Schumann, Schmidt, and Desrivi{\`e}res]{zhangMachineLearningModels2025}
-Zuo Zhang, Lauren Robinson, Robert Whelan, Lee Jollans, Zijian Wang, Frauke Nees, Congying Chu, Marina Bobou, Dongping Du, Ilinca Cristea, Tobias Banaschewski, Gareth~J. Barker, Arun L.~W. Bokde, Antoine Grigis, Hugh Garavan, Andreas Heinz, R{\"u}diger Br{\"u}hl, Jean-Luc Martinot, Marie-Laure~Paill{\`e}re Martinot, Eric Artiges, Dimitri~Papadopoulos Orfanos, Luise Poustka, Sarah Hohmann, Sabina Millenet, Juliane~H. Fr{\"o}hner, Michael~N. Smolka, Nilakshi Vaidya, Henrik Walter, Jeanne Winterer, M.~John Broulidakis, Betteke~Maria {van Noort}, Argyris Stringaris, Jani Penttil{\"a}, Yvonne Grimmer, Corinna Insensee, Andreas Becker, Yuning Zhang, Sinead King, Julia Sinclair, Gunter Schumann, Ulrike Schmidt, and Sylvane Desrivi{\`e}res.
-\newblock Machine learning models for diagnosis and risk prediction in eating disorders, depression, and alcohol use disorder.
-\newblock \emph{Journal of Affective Disorders}, 379:\penalty0 889--899, June 2025.
-\newblock ISSN 0165-0327.
-\newblock \doi{10.1016/j.jad.2024.12.053}.
-
 \bibitem[Xu et~al.(2023)Xu, Mingyang, Yang, Zheng, and Che]{xuTailoredMachineLearning2023}
 Xuezhong Xu, Xue Mingyang, Jie Yang, Hailong Zheng, and Zhifei Che.
 \newblock Tailored machine learning for evaluating the long-term diabetes risk in older individuals: Findings from the {{Irish Longitudinal Study}} on {{Ageing}} ({{TILDA}}).
 \newblock \emph{BMJ Open}, 13\penalty0 (5):\penalty0 e072991, May 2023.
 \newblock ISSN 2044-6055.
 \newblock \doi{10.1136/bmjopen-2023-072991}.
-
-\bibitem[{Bayen, Eleonore} et~al.(2018){Bayen, Eleonore}, {Laurent, Cleret de Langavan}, and {Yaffe, Kristine}]{bayeneleonoreUnsupervisedMachineLearning2018}
-{Bayen, Eleonore}, {Laurent, Cleret de Langavan}, and {Yaffe, Kristine}.
-\newblock Unsupervised {{Machine Learning}} to {{Identify High Likelihood}} of {{Dementia}} in {{Population-Based Surveys}}: {{Development}} and {{Validation Study}}.
-\newblock \emph{Journal of Medical Internet Research}, 20\penalty0 (7), July 2018.
-\newblock ISSN 1438-8871.
-\newblock \doi{10.2196/10493}.
 
 \bibitem[Boyle et~al.(2021)Boyle, Jollans, {Rueda-Delgado}, Rizzo, Yener, McMorrow, Knight, Carey, Robertson, {Emek-Sava{\c s}}, Stern, Kenny, and Whelan]{boyleBrainpredictedAgeDifference2021}
 Rory Boyle, Lee Jollans, Laura~M. {Rueda-Delgado}, Rossella Rizzo, G{\"o}rsev~G. Yener, Jason~P. McMorrow, Silvin~P. Knight, Daniel Carey, Ian~H. Robertson, Derya~D. {Emek-Sava{\c s}}, Yaakov Stern, Rose~Anne Kenny, and Robert Whelan.
@@ -185,12 +171,19 @@ Rory Boyle, Lee Jollans, Laura~M. {Rueda-Delgado}, Rossella Rizzo, G{\"o}rsev~G.
 \newblock ISSN 1931-7565.
 \newblock \doi{10.1007/s11682-020-00260-3}.
 
-\bibitem[A.~Shirsath et~al.(2024)A.~Shirsath, O'Connor, Boyle, Newman, Knight, Hernandez, Whelan, Meaney, and Kenny]{a.shirsathSlowerSpeedBlood2024}
-Morgana A.~Shirsath, John~D. O'Connor, Rory Boyle, Louise Newman, Silvin~P. Knight, Belinda Hernandez, Robert Whelan, James~F. Meaney, and Rose~Anne Kenny.
-\newblock Slower speed of blood pressure recovery after standing is associated with accelerated brain ageing: {{Evidence}} from {{The Irish Longitudinal Study}} on {{Ageing}} ({{TILDA}}).
-\newblock \emph{Cerebral Circulation - Cognition and Behavior}, 6:\penalty0 100212, January 2024.
-\newblock ISSN 2666-2450.
-\newblock \doi{10.1016/j.cccb.2024.100212}.
+\bibitem[Zarudsky and Prashchayeu(2014)]{zarudskyP277OneleggedBalance2014}
+A.~A. Zarudsky and K.~I. Prashchayeu.
+\newblock P277: {{One-legged}} balance test and falls in old patients with cardiovascular diseases.
+\newblock \emph{European Geriatric Medicine}, 5:\penalty0 S171--S172, 2014.
+\newblock ISSN 1878-7649.
+\newblock \doi{10.1016/S1878-7649(14)70448-6}.
+
+\bibitem[Matthews et~al.(2022)Matthews, Ward, Nolan, Normand, Kenny, and May]{matthewsPredictingMortalityIrish2022}
+Soraya Matthews, Mark Ward, Anne Nolan, Charles Normand, Rose~Anne Kenny, and Peter May.
+\newblock Predicting mortality in {{The Irish Longitudinal Study}} on {{Ageing}} ({{TILDA}}): Development of a four-year index and comparison with international measures.
+\newblock \emph{BMC Geriatr}, 22:\penalty0 510, June 2022.
+\newblock ISSN 1471-2318.
+\newblock \doi{10.1186/s12877-022-03196-z}.
 
 \bibitem[Davis et~al.(2021{\natexlab{b}})Davis, Knight, Rizzo, Donoghue, Kenny, and {Romero-Ortuno}]{davisLinearRegressionbasedMachine2021}
 James Davis, Silvin~P. Knight, Rossella Rizzo, Orna~A. Donoghue, Rose~Anne Kenny, and Roman {Romero-Ortuno}.

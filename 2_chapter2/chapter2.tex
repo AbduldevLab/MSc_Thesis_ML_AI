@@ -20,7 +20,7 @@
 
 This chapter reviews literature on ageing, chronic disease, and predictive modelling using \gls{TILDA}. The focus is on three domains central to later-life health: frailty and physical function, mental health, and nutrition and biological ageing. The review also considers how machine learning has been applied to these areas and identifies gaps that motivate the present study.
 
-\section{Chronic Disease and Ageing}
+\section{Chronic Disease and Ageing}\label{sec:ChronicDiseaseAndAgeing}
 
 Chronic conditions are leading causes of morbidity and reduced quality of life in older adults. Multimorbidity, frailty, and mental health difficulties frequently overlap, accelerating functional decline. In line with the \gls{WHO} healthy ageing framework, research using \gls{TILDA} highlights frailty, mental health, and nutrition as interconnected determinants of later-life outcomes. The following subsections examine each domain in turn.
 
@@ -51,36 +51,23 @@ A central debate is the distinction between chronological and biological age. Bi
 Taken together, nutrition interacts with biological, metabolic, and social systems. Isolating single nutrients risks oversimplification. Integrative modelling that combines biomarkers, clinical factors, and social determinants—supported by machine learning pipelines—offers a more promising route.
 
 \section{Machine Learning in Ageing and Chronic Disease}
-\begin{itemize}
-    \item Overview: Why ML is valuable in ageing research \cite{zhangMachineLearningModels2025}
-    \item Transition from regression-based models → ensemble ML → deep learning(cite a example here)
-\end{itemize}
-
+\gls{ML} is increasingly applied in ageing research because it can capture non-linear and multidimensional relationships that traditional regression models—such as logistic regression—often miss \cite{xuTailoredMachineLearning2023, boyleBrainpredictedAgeDifference2021}. 
 \subsection{Feature Sets in ML Studies}
-\begin{itemize}
-    \item Clinical, sociodemographic, lifestyle, cognition, psychosocial
-    \item Over-reliance on physical health predictors vs underuse of nutrition/social variables
-\end{itemize}
+Studies using \gls{ML} in ageing research include many types of predictors: clinical measures, sociodemographic factors, lifestyle habits, cognitive tests, and psychosocial variables. A recurring pattern, however, is that models often emphasize easily measured physical health data—such as comorbidity counts, mobility scores, or vital signs—while more complex but important predictors, including nutrition and social factors, are underrepresented \cite{zarudskyP277OneleggedBalance2014}. 
+This imbalance may limit the ability of models to capture the full complexity of ageing, especially considering that mental health and nutrition exert independent and interacting effects on later-life outcomes (see \hyperref[sec:ChronicDiseaseAndAgeing]{Section 2.2}). Models that focus only on readily available clinical data risk reproducing the same biases seen in traditional regression approaches.
 
 \subsection{ML Models Used}
-\begin{itemize}
-    \item Logistic regression, Markov models, \gls{LDA} (traditional)
-    \item Ensembles \gls{RF}, \gls{GBM}, \gls{DNN} – e.g., (\cite{xuTailoredMachineLearning2023}) diabetes prediction
-    \item Unsupervised clustering for dementia (\cite{bayeneleonoreUnsupervisedMachineLearning2018})
-    \item Brain age prediction models (\cite{boyleBrainpredictedAgeDifference2021}, \cite{a.shirsathSlowerSpeedBlood2024})
-\end{itemize}
+The methodological approaches used in ageing research span both traditional and advanced models. Logistic regression and Markov models remain common baselines due to their interpretability and simplicity, yet they are often unable to capture non-linearities or higher-order interactions. More recent work has shifted towards ensemble methods such as random forests (\gls{RF}) and gradient boosting machines (\gls{GBM}), as well as deep neural networks (\gls{DNN}), which generally achieve higher predictive accuracy.
 
+Similarly, \cite{matthewsPredictingMortalityIrish2022} evaluated mortality prediction using a standard logistic regression model with demographic, clinical, and functional predictors, achieving an AUC of 0.78. By contrast, ensemble methods in \cite{xuTailoredMachineLearning2023} reached 0.854 for diabetes prediction, illustrating how flexible, non-linear models can better capture complex interactions among ageing-related predictors.
 \subsection{Performance and Validation}
-\begin{itemize}
-    \item \gls{AUC}, R² ranges across tasks (diabetes, gait speed, mortality, depression)
-    \item Limitations: internal validation only, cross-sectional data, no generalisation
-\end{itemize}
+Predictive performance across studies is generally moderate to strong, with \gls{AUC} values between 0.70 and 0.90 for outcomes like diabetes, gait speed, depression, and mortality. This indicates that models can distinguish reasonably well between individuals who will or will not experience an outcome. 
+
+However, there are important limitations. Many studies rely only on internal validation, testing models on the same data used for training. This can inflate performance estimates and reduce confidence in applying the model to new populations. Additionally, most research is cross-sectional, capturing associations at a single point in time rather than true longitudinal trends, so causal and temporal relationships remain unclear. When combined with the underuse of nutrition and social predictors, these issues indicate that current models may not fully represent the multidimensional nature of ageing and could produce context-specific results rather than generalisable predictions \cite{zarudskyP277OneleggedBalance2014}.
 
 \subsection{Explainability in ML for Ageing}
-\begin{itemize}
-    \item \gls{SHAP}, TreeExplainer examples (\cite{xuTailoredMachineLearning2023}, \cite{davisLinearRegressionbasedMachine2021}, \cite{davisComparisonGaitSpeed2021})
-    \item Challenges of black-box models in clinical practice
-\end{itemize}
+As ML models become more complex, interpretability emerges as a critical challenge. Tools such as \gls{SHAP} values and TreeExplainer have been used to rank feature importance and provide local explanations \cite{xuTailoredMachineLearning2023,davisLinearRegressionbasedMachine2021,davisComparisonGaitSpeed2021}. These methods improve transparency and can highlight unexpected drivers of outcomes, such as psychosocial variables being stronger predictors than biomedical ones. Nonetheless, black-box concerns remain, especially for deep learning models, where feature interactions are difficult to track.
+For ageing research, where clinical adoption requires both accuracy and trust, explainability is not optional but essential. Current efforts show promise but remain fragmented, with no consensus on best practice. This gap links directly to the broader methodological limitations discussed in the next section on gaps in the literature.
 
 \section{Gaps in the Literature}
 \begin{itemize}
