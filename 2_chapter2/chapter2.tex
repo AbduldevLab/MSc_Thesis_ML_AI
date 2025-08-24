@@ -45,13 +45,13 @@ Nutrition is increasingly recognised as a modifiable factor in ageing and frailt
 
 Malnutrition also reflects social and functional risks. \cite{bardonPredictorsIncidentMalnutrition2020} found that hospitalisation, functional loss, and poor social support increased malnutrition risk, with notable sex differences. This highlights a limitation in much nutritional research: biological markers are studied without integrating social context.
 
-%I'm following this new referencing style 'numbered' instead of 'et al'... can I mention the first authors name like i've done here with Mcarthy and Azizi in contrary to above, In which I haven't. Leave comment for supervisor to check if this is ok
 The difference between biological and chronological age is a major point of debate. Biomarker-based metrics that better capture these cumulative exposures, like frailty indices or epigenetic clocks, frequently vary from chronological age. McCarthy and Azizi link metabolic syndrome and nutritional deficits to accelerated biological ageing \cite{mccarthyMetabolicSyndromeAccelerates2023,aziziEvidenceAssociationAllostatic2024}. Although the majority of the evidence is cross-sectional and has little ability to capture changes over time, these indicators offer a more precise prediction of vulnerability. Reliability is also decreased in biomarker research with small sample sizes.
 
 Taken together, nutrition interacts with biological, metabolic, and social systems. Isolating single nutrients risks oversimplification. Integrative modelling that combines biomarkers, clinical factors, and social determinants—supported by machine learning pipelines—offers a more promising route.
 
 \section{Machine Learning in Ageing and Chronic Disease}
 \gls{ML} is increasingly applied in ageing research because it can capture non-linear and multidimensional relationships that traditional regression models—such as logistic regression—often miss \cite{xuTailoredMachineLearning2023, boyleBrainpredictedAgeDifference2021}. 
+
 \subsection{Feature Sets in ML Studies}
 Studies using \gls{ML} in ageing research include many types of predictors: clinical measures, sociodemographic factors, lifestyle habits, cognitive tests, and psychosocial variables. A recurring pattern, however, is that models often underline easily measured physical health data—such as comorbidity counts, mobility scores, or vital signs—while more complex but important predictors, including nutrition and social factors, are underrepresented \cite{zarudskyP277OneleggedBalance2014}. 
 This imbalance may limit the ability of models to capture the full complexity of ageing, especially considering that mental health and nutrition exert independent and interacting effects on later-life outcomes (see \hyperref[sec:ChronicDiseaseAndAgeing]{Section 2.2}). Models that focus only on readily available clinical data risk reproducing the same biases seen in traditional regression approaches.
@@ -60,6 +60,7 @@ This imbalance may limit the ability of models to capture the full complexity of
 The methodological approaches used in ageing research span both traditional and advanced models. Logistic regression and Markov models remain common baselines due to their interpretability and simplicity, yet they are often unable to capture non-linearities or higher-order interactions. More recent work has shifted towards ensemble methods such as random forests (\gls{RF}) and gradient boosting machines (\gls{GBM}), as well as deep neural networks (\gls{DNN}), which generally achieve higher predictive accuracy.
 
 Similarly, \cite{matthewsPredictingMortalityIrish2022} evaluated mortality prediction using a standard logistic regression model with demographic, clinical, and functional predictors, achieving an AUC of 0.78, whereas, ensemble methods in \cite{xuTailoredMachineLearning2023} reached 0.854 for diabetes prediction, showing how flexible, non-linear models can better capture complex interactions among ageing-related predictors.
+
 \subsection{Performance and Validation}
 Predictive performance across studies is generally moderate to strong, with \gls{AUC} values between 0.70 and 0.90 for outcomes like diabetes, gait speed, depression, and mortality. This indicates that models can distinguish reasonably well between individuals who will or will not experience an outcome. 
 
