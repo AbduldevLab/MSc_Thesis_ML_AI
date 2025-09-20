@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.9)  24 AUG 2025 19:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.9)  20 SEP 2025 10:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -884,21 +884,16 @@ Chapter 2.
 
 [11]
 
-[12])
+[12]
 
-[13]
+[13])
+
+[14]
 \openout2 = `3_chapter3/chapter3.aux'.
 
  (./3_chapter3/chapter3.tex
-
-[14
-
-
-
-
-]
 Chapter 3.
-<3_chapter3/figures/image02.jpg, id=507, 401.5pt x 401.5pt>
+<3_chapter3/figures/image02.jpg, id=530, 401.5pt x 401.5pt>
 File: 3_chapter3/figures/image02.jpg Graphic file (type jpg)
 <use 3_chapter3/figures/image02.jpg>
 Package pdftex.def Info: 3_chapter3/figures/image02.jpg  used on input line 20.
@@ -911,7 +906,12 @@ Package natbib Warning: Citation `mydownloadedimage' on page 15 undefined on inp
 
 
 
-[15 <./3_chapter3/figures/image02.jpg>]
+[15
+
+
+
+
+ <./3_chapter3/figures/image02.jpg>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -1084,7 +1084,7 @@ L3 programming layer <2025-01-18>
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 3058EEE8361ED0432A325571420A319E;8029.
 Package rerunfilecheck Info: File `thesis.brf' has not changed.
-(rerunfilecheck)             Checksum: F20C52D1FB9389D5FC740B89FDAB6E6E;2586.
+(rerunfilecheck)             Checksum: 439EB6BC5C318EC4C70A054AD7A632EF;3368.
  )
 (\end occurred inside a group at level 1)
 
@@ -1098,12 +1098,12 @@ Here is how much of TeX's memory you used:
  49167 multiletter control sequences out of 15000+600000
  571483 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 125i,12n,121p,2471b,2559s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 125i,12n,121p,2471b,2556s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on thesis.pdf (53 pages, 526948 bytes).
+Output written on thesis.pdf (53 pages, 530672 bytes).
 PDF statistics:
- 957 PDF objects out of 1000 (max. 8388607)
- 851 compressed objects within 9 object streams
+ 990 PDF objects out of 1000 (max. 8388607)
+ 884 compressed objects within 9 object streams
  295 named destinations out of 1000 (max. 500000)
  355 words of extra memory for PDF output out of 10000 (max. 10000000)
 
