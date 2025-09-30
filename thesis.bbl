@@ -1,4 +1,4 @@
-\begin{thebibliography}{27}
+\begin{thebibliography}{28}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -128,6 +128,13 @@ Ziggi~Ivan Santini, Ai~Koyanagi, Stefanos Tyrovolas, Josep~Maria Haro, Robert~J.
 \newblock \emph{Experimental Gerontology}, 91:\penalty0 79--87, 2017.
 \newblock ISSN 0531-5565.
 \newblock \doi{10.1016/j.exger.2017.02.074}.
+
+\bibitem[Juola et~al.(2014)Juola, Bjorkman, Kautiainen, Pylkkanen, {Finne-Soveri}, Soini, Pitk{\"a}l{\"a}, and Bell]{juolaO117NursingStaff2014}
+A.~L. Juola, M.~P. Bjorkman, H.~Kautiainen, S.~Pylkkanen, U.~H. {Finne-Soveri}, H.~Soini, K.~H. Pitk{\"a}l{\"a}, and J.~S. Bell.
+\newblock O1.17: {{Nursing}} staff education to reduce potentially harmful medication use among older people in assisted living facilities: Effects of randomized controlled trial on cognition and falls.
+\newblock \emph{European Geriatric Medicine}, 5:\penalty0 S50--S51, 2014.
+\newblock ISSN 1878-7649.
+\newblock \doi{10.1016/S1878-7649(14)70100-7}.
 
 \bibitem[Jacob et~al.(2023)Jacob, Kostev, Shin, Smith, Oh, Abduljabbar, Haro, and Koyanagi]{jacobFallsIncreaseRisk2023}
 Louis Jacob, Karel Kostev, Jae~Il Shin, Lee Smith, Hans Oh, Adel~S. Abduljabbar, Josep~Maria Haro, and Ai~Koyanagi.

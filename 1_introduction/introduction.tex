@@ -4,7 +4,7 @@
 %: ----------------------- introduction file header -----------------------
 \chapter{Introduction}
 
-% the code below specifies where the figures are stored
+
 \ifpdf
     \graphicspath{{1_introduction/figures/PNG/}{1_introduction/figures/PDF/}{1_introduction/figures/}}
 \else
@@ -32,7 +32,7 @@ This thesis addresses these gaps by integrating \gls{TILDA}’s longitudinal, mu
 \cleardoublepage
 % ----------------------------------------------------------------------
 % Research Problem
-%Emphasis more on a personal level why you are interested in this topic
+% ----------------------------------------------------------------------
 \section{Research Problem and Motivation} 
 
 Despite increasing policy interest in lifestyle and nutrition and advances in \gls{ML} methods, approaches to chronic disease prediction in older adults remain limited in several ways.
@@ -41,9 +41,9 @@ Despite increasing policy interest in lifestyle and nutrition and advances in \g
 Most models prioritise clinical variables while underutilising modifiable lifestyle and nutrition factors~\cite{murphyPlasmaLuteinZeaxanthin2023, lairdPhysicalActivityDepression2023}.
 
 \subsection{Underuse of Longitudinal Dynamics}
-Few studies leverage repeated measures to capture developments of risk, such as frailty progression~\cite{moguilnerImportanceAgePrediction2021}.
+Few studies leverage repeated measures to capture developments of risk, such as frailty progression~\cite{moguilnerImportanceAgePrediction2021}.%Todo: Add more examples and deeper comparisons
 
-\subsection{Lack of Explainability}
+\subsection{Lack of Explainability}% Todo: Expand on this point and maybe use a different more solid example
 Many \gls{ML} models are not interpretable, limiting clinical adoption and failing to meet emerging regulatory requirements for trustworthy \gls{AI} in healthcare~\cite{donoghueUsingConditionalInference2023}.
 
 Addressing these challenges is essential to improve predictive accuracy, support evidence-based interventions, and ensure alignment with evolving policy and regulatory priorities.
@@ -81,8 +81,8 @@ This research makes contributions at three levels:
 
 \begin{itemize}
     \item \emph{Chapter Two:} Literature review on \gls{ML} prediction of chronic disease in ageing populations, with emphasis on lifestyle and nutrition predictors and methodological considerations.
-    \item \emph{Chapter Three:} \gls{TILDA} study design, data preprocessing, harmonisation, and feature engineering.(Flow Charts..)
-    \item \emph{Chapter Four:} Modelling framework, including baseline and advanced \gls{ML}, hyperparameter tuning, validation, and evaluation metrics.(Code snippets..)
+    \item \emph{Chapter Three:} \gls{TILDA} study design, data preprocessing, harmonisation, and feature engineering (Flow Charts...).
+    \item \emph{Chapter Four:} Modelling framework, including baseline and advanced \gls{ML}, hyperparameter tuning, validation, and evaluation metrics(Code snippets...).
     \item \emph{Chapter Five:} Results, model comparison, feature importance, and ablation analyses.
     \item \emph{Chapter Six:} Discussion of implications, limitations, ethical considerations, and future directions.
 \end{itemize}
@@ -99,9 +99,9 @@ Supporting documents are included in the appendix:
 
 \vspace{5 mm}
 
-A digital archive accompanies this dissertation (access request required):
+Access request required:
 
 \begin{itemize}
 \item \emph{Folder 1}: Preprocessing and feature-engineering scripts (documentation only, no raw \gls{TILDA} data).
-\item \emph{Folder 2}: Model training/evaluation code and configuration files to reproduce reported results.
+\item \emph{Folder 2}: Model training/evaluation code and configuration files to reproduce the reported results.
 \end{itemize}
