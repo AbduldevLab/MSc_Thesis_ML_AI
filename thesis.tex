@@ -22,7 +22,7 @@
 %: Style file for Latex
 % Most style definitions are in the external file PhDthesisPSnPDF.
 % In this template package, it can be found in ./Latex/Classes/
-\documentclass[twoside,12pt]{Latex/Classes/PhDthesisPSnPDF}
+\documentclass[twoside,12pt, openany]{Latex/Classes/PhDthesisPSnPDF}
 
 \usepackage{natbib}
 \usepackage{url}
@@ -42,14 +42,14 @@
 %   % no \renewcommand{\glossentry} here
 % }
 
-%%FIXED ACRONYM HYPERLINK wasn't working (BUG) - issue link jumped to the start of the document
-\newglossarystyle{tableacronyms}{%
-  \setglossarystyle{long}%
-  \renewenvironment{theglossary}%
-    {\begin{longtable}{@{}l p{\dimexpr\linewidth-2\tabcolsep-1em}@{}}}%
-    {\end{longtable}}%
+%%FIXED ACRONYM HYPERLINK wasn't working (BUG) - issue - hyperlink jumped to the start of the doc
+\newglossarystyle{tableacronyms}{
+  \setglossarystyle{long}
+  \renewenvironment{theglossary}
+    {\begin{longtable}{@{}l p{\dimexpr\linewidth-2\tabcolsep-1em}@{}}}
+    {\end{longtable}}
   \renewcommand*{\glossentry}[2]{%
-    \glsentryitem{##1}%  <-- keeps the anchor for hyperlinks
+    \glsentryitem{##1}%   
     \glstarget{##1}{\textbf{\glsentryshort{##1}}} & \glsentrylong{##1} \\%
   }%
   \renewcommand*{\glspostdescription}{}%
@@ -177,7 +177,7 @@
 % Your research institution may require reviewer names, etc.
 % This cover back side is required by Dresden Med Fac; uncomment if needed.
 
-\newpage
+% \newpage
 
 
  \begin{tabbing}
@@ -186,41 +186,6 @@
  \>  \= University \emph{of} Limerick \\
  \>  \= Ireland \\
  \end{tabbing}
-
-
- \begin{tabbing}
-2. Supervisor: \= Dr. Name Surname \\
- \>  \= Name of Research Centre or Department \\
- \>  \= University \emph{of} Limerick \\
- \>  \= Ireland \\
-\end{tabbing}
-
-\begin{tabbing}
-1. Reviewer: \= Dr. Name Surname \\
- \>  \= Name of Research Centre or Department\\
- \>  \= University of  \\
- \>  \= Country \\
-\end{tabbing}
-
- \begin{tabbing}
-2. Reviewer: \= Dr. Name Surname \\
- \>  \= Name of Research Centre or Department \\
- \>  \= University of  \\
- \>  \= Country \\
-\end{tabbing}
-
- \begin{tabbing}
-1. Chair: \= Dr. Name Surname \\
- \>  \= Name of Research Centre or Department \\
- \>  \= University \emph{of} Limerick \\
- \>  \= Ireland \\
-\end{tabbing}
-
-
-Day of the defense: day month year
-
-\vspace{10mm}
-\hspace{60mm}Signature from head of PhD committee:
 
 
 

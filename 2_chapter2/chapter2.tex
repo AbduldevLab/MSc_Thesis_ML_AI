@@ -8,87 +8,125 @@
 %: ----------------------- paths to graphics ------------------------
 
 % change according to folder and file names
-\ifpdf
-    \graphicspath{{2_chapter2/figures/PNG/}{2_chapter2/figures/PDF/}{2_chapter2/figures/}}
-\else
-    \graphicspath{{2_chapter2/figures/EPS/}{2_chapter2/figures/}}
-\fi
+% \ifpdf
+%     \graphicspath{{2_chapter2/figures/PNG/}{2_chapter2/figures/PDF/}{2_chapter2/figures/}}
+% \else
+%     \graphicspath{{2_chapter2/figures/EPS/}{2_chapter2/figures/}}
+% \fi
 
 %: ----------------------- contents from here ------------------------
 
-\section{Introduction} 
-
-This chapter reviews literature on ageing, chronic disease, and predictive modelling using \gls{TILDA}. The focus is on three domains central to later-life health: frailty and physical function, mental health, and nutrition and biological ageing. This review also considers how machine learning has been applied to these areas and identifies gaps that motivate this study.
-
-\section{Chronic Disease and Ageing}\label{sec:ChronicDiseaseAndAgeing}
-
-Chronic conditions are leading causes of morbidity and reduced quality of life in older adults. Multimorbidity, frailty, and mental health difficulties frequently overlap, accelerating functional decline. In line with the \gls{WHO} healthy ageing framework, research using \gls{TILDA} highlights frailty, mental health, and nutrition as interconnected determinants of later-life outcomes. The following subsections examine each domain in turn.
+This chapter reviews literature on ageing, chronic disease, and predictive modelling using \gls{TILDA}. 
+The focus is on three domains central to later life health: frailty and physical function, mental health, and nutrition and biological ageing. 
+Chronic conditions including multimorbidity, frailty, and mental health difficulties are leading causes of morbidity and reduced quality of life in older adults, often overlapping to accelerate functional decline. 
+In line with the \gls{WHO} healthy ageing framework, research using \gls{TILDA} highlights frailty, mental health, and nutrition as interconnected determinants of later life outcomes. 
+The following subsections examine each domain in turn.\label{sec:ChronicDiseaseAndAgeing}
 
 \subsection{Frailty and Physical Function}
 
-Frailty is a reflection of higher vulnerability and declining physiological reserve. In \gls{TILDA}, it is captured through both the frailty phenotype and the frailty index, with gait speed, grip strength, and mobility decline serving as practical predictors. These measures strongly predict hospitalisation and mortality.
+Frailty is a reflection of higher vulnerability and declining physiological reserve. 
+In \gls{TILDA}, it is captured through both the frailty phenotype and the frailty index, with gait speed, grip strength, and mobility decline serving as practical predictors. 
+These measures strongly predict hospitalisation and mortality.
 
-Evidence suggests that frailty is dynamic, not irreversible. For example, multi-state modelling showed that many prefrail adults transition back to non-frail, although established frailty strongly predicts mortality \cite{romero-ortunoTransitionsFrailtyPhenotype2021}. Metabolic syndrome, on the other hand, speeds up the onset of frailty, which suggests a metabolic pathway of vulnerability. \cite{mccarthyAssociationMetabolicSyndrome2023}. Another detail is that age matters:  obesity predicts mobility decline earlier in life,  whereas later in life, traits that protect against this, including grip strength, become more significant. \cite{huangAgeModifyAssociations2019}. These findings partly conflict: frailty appears both reversible and progressive, depending on risk context.
+Evidence suggests that frailty is dynamic, not irreversible. 
+For example, multi state modelling showed that many prefrail adults transition back to non frail, although established frailty strongly predicts mortality \cite{romero-ortunoTransitionsFrailtyPhenotype2021}. 
+Metabolic syndrome, on the other hand, speeds up the onset of frailty, which suggests a metabolic pathway of vulnerability. \cite{mccarthyAssociationMetabolicSyndrome2023}. 
+Another detail is that age matters:  obesity predicts mobility decline earlier in life,  whereas later in life, traits that protect against this, including grip strength, become more significant. \cite{huangAgeModifyAssociations2019}. 
+These findings partly conflict: frailty appears both reversible and progressive, depending on risk context.
 
-Limitations remain. Causal inference is limited by observational designs, and predictors are frequently examined separately, ignoring interactions. Most frailty models have only been with the \gls{TILDA} dataset and with this present study focuses on the same \gls{TILDA} but with an expansion on the harmonised set to explore more longitudinal prediction within this context. These gaps point to the need for multidimensional approaches. Traditional regression models may not fully capture age-dependent interactions or reversibility, suggesting a role for more flexible methods such as machine learning.
+Limitations remain. Causal inference is limited by observational designs, and predictors are frequently examined separately, ignoring interactions. 
+Most frailty models have only been with the \gls{TILDA} dataset and with this present study focuses on the same \gls{TILDA} but with an expansion on the harmonised set to explore more longitudinal prediction within this context. 
+These gaps point to the need for multidimensional approaches. 
+Traditional regression models may not fully capture age dependent interactions or reversibility, suggesting a role for more flexible methods such as machine learning.
 
 \subsection{Mental Health in Older Adults}
 
-Mental health, including depression, anxiety, loneliness, and social isolation, strongly shapes quality of life. Evidence from \gls{TILDA} shows strong links to both physical and social factors. \cite{santiniProtectivePropertiesActBelongCommit2017} found that participation in physical, social, and cognitive activities—summarised by the Act-Belong-Commit (ABC) indicator—was associated with lower depression and anxiety. This suggests social integration and lifestyle protect mental wellbeing. However, \cite{juolaO117NursingStaff2014} reported that self-reported measures may exaggerate such associations..., raising concerns of bias. These two findings conflict: the effect of social engagement is strong when self-reported, weaker when objectively assessed.
+Mental health, including depression, anxiety, loneliness, and social isolation, strongly shapes quality of life. 
+Evidence from \gls{TILDA} shows strong links to both physical and social factors. \cite{santiniProtectivePropertiesActBelongCommit2017} found that participation in physical, social, and cognitive activities—summarised by the Act-Belong-Commit (ABC) indicator—was associated with lower depression and anxiety. 
+This suggests social integration and lifestyle protect mental wellbeing. However, \cite{juolaO117NursingStaff2014} reported that self reported measures may exaggerate such associations..., raising concerns of bias. 
+These two findings conflict: the effect of social engagement is strong when self reported, weaker when objectively assessed.
 
-Objective data strengthen the case for activity. Accelerometer-based measures show a dose-response link between moderate-to-vigorous activity and lower depressive symptoms \cite{lairdPhysicalActivityDose2023}. Yet reverse pathways are also evident: incident falls and functional decline predict later depression, refereed by fear of falling \cite{jacobFallsIncreaseRisk2023}. Together, these results reveal a bidirectional relationship—mental health both influences and is influenced by physical decline.
+Objective data strengthen the case for activity. Accelerometer based measures show a dose response link between moderate to vigorous activity and lower depressive symptoms \cite{lairdPhysicalActivityDose2023}. 
+Yet reverse pathways are also evident: incident falls and functional decline predict later depression, refereed by fear of falling \cite{jacobFallsIncreaseRisk2023}. 
+Together, these results reveal a bidirectional relationship—mental health both influences and is influenced by physical decline.
 
-Most studies rely on broad self-report scales such as \gls{CESD} or \gls{HADS}, with little biomarker or clinical validation. Samples remain heavily Irish based and 50+ in age, limiting wider relevance. This literature suggests mental health in ageing cannot be modelled as a one-way effect. It requires longitudinal, multidimensional approaches that can capture mutual pathways—an area where machine learning is well suited.
+Most studies rely on broad self report scales such as \gls{CESD} or \gls{HADS}, with little biomarker or clinical validation. 
+Samples remain heavily Irish based and 50+ in age, limiting wider relevance. 
+This literature suggests mental health in ageing cannot be modelled as a one way effect. 
+It requires longitudinal, multidimensional approaches that can capture mutual pathways—an area where machine learning is well suited.
 
 \subsection{Nutrition and Biological Ageing}
-Nutrition is increasingly recognised as a modifiable factor in ageing and frailty. Biomarkers like vitamin D, lutein, and zeaxanthin have been linked to physical and cognitive outcomes in \gls{TILDA}. \cite{murphyPlasmaLuteinZeaxanthin2023} showed that higher plasma lutein and zeaxanthin—dietary carotenoids found in leafy vegetables—were linked to slower frailty progression. By contrast, \cite{mccarthyAssociationVitaminDeficiency2022} found vitamin D deficiency predicted diabetes and musculoskeletal decline, especially among adults with low sunlight exposure. These studies point to different nutritional mechanisms: antioxidant protection versus metabolic regulation.
+Nutrition is increasingly recognised as a modifiable factor in ageing and frailty. 
+Biomarkers like vitamin D, lutein, and zeaxanthin have been linked to physical and cognitive outcomes in \gls{TILDA}. \cite{murphyPlasmaLuteinZeaxanthin2023} showed that higher plasma lutein and zeaxanthin—dietary carotenoids found in leafy vegetables—were linked to slower frailty progression. 
+By contrast, \cite{mccarthyAssociationVitaminDeficiency2022} found vitamin D deficiency predicted diabetes and musculoskeletal decline, especially among adults with low sunlight exposure. 
+These studies point to different nutritional mechanisms: antioxidant protection versus metabolic regulation.
 
-Malnutrition also reflects social and functional risks. \cite{bardonPredictorsIncidentMalnutrition2020} found that hospitalisation, functional loss, and poor social support increased malnutrition risk, with notable sex differences. This highlights a limitation in much nutritional research: biological markers are studied without integrating social context.
+Malnutrition also reflects social and functional risks. \cite{bardonPredictorsIncidentMalnutrition2020} found that hospitalisation, functional loss, and poor social support increased malnutrition risk, with notable sex differences. 
+This highlights a limitation in much nutritional research: biological markers are studied without integrating social context.
 
-The difference between biological and chronological age is a major point of debate. Biomarker-based metrics that better capture these cumulative exposures, like frailty indices or epigenetic clocks, frequently vary from chronological age. McCarthy and Azizi link metabolic syndrome and nutritional deficits to accelerated biological ageing \cite{mccarthyMetabolicSyndromeAccelerates2023,aziziEvidenceAssociationAllostatic2024}. Although the majority of the evidence is cross-sectional and has little ability to capture changes over time, these indicators offer a more precise prediction of vulnerability. Reliability is also decreased in biomarker research with small sample sizes.
+The difference between biological and chronological age is a major point of debate. 
+Biomarker based metrics that better capture these cumulative exposures, like frailty indices or epigenetic clocks, frequently vary from chronological age. 
+McCarthy and Azizi link metabolic syndrome and nutritional deficits to accelerated biological ageing \cite{mccarthyMetabolicSyndromeAccelerates2023,aziziEvidenceAssociationAllostatic2024}. 
+Although the majority of the evidence is cross sectional and has little ability to capture changes over time, these indicators offer a more precise prediction of vulnerability. 
+Reliability is also decreased in biomarker research with small sample sizes.
 
-Taken together, nutrition interacts with biological, metabolic, and social systems. Isolating single nutrients risks oversimplification. Integrative modelling that combines biomarkers, clinical factors, and social determinants—supported by machine learning pipelines—offers a more promising route.
+Taken together, nutrition interacts with biological, metabolic, and social systems. 
+Isolating single nutrients risks oversimplification. Integrative modelling that combines biomarkers, clinical factors, and social determinants—supported by machine learning pipelines—offers a more promising route.
 
 \section{Machine Learning in Ageing and Chronic Disease}
-\gls{ML} is increasingly applied in ageing research because it can capture non-linear and multidimensional relationships that traditional regression models—such as logistic regression—often miss \cite{xuTailoredMachineLearning2023, boyleBrainpredictedAgeDifference2021}. 
+\gls{ML} is increasingly applied in ageing research because it can capture non linear and multidimensional relationships that traditional regression models, such as logistic regression,often miss \cite{xuTailoredMachineLearning2023, boyleBrainpredictedAgeDifference2021}. 
 
 \subsection{Feature Sets in ML Studies}
-Studies using \gls{ML} in ageing research include many types of predictors: clinical measures, sociodemographic factors, lifestyle habits, cognitive tests, and psychosocial variables. A recurring pattern, however, is that models often underline easily measured physical health data—such as comorbidity counts, mobility scores, or vital signs—while more complex but important predictors, including nutrition and social factors, are underrepresented \cite{zarudskyP277OneleggedBalance2014}. 
-This imbalance may limit the ability of models to capture the full complexity of ageing, especially considering that mental health and nutrition exert independent and interacting effects on later-life outcomes see(\hyperref[sec:ChronicDiseaseAndAgeing]{Section 2.2}). Models that focus only on readily available clinical data risk reproducing the same biases seen in traditional regression approaches.
+Studies using \gls{ML} in ageing research include many types of predictors: clinical measures, sociodemographic factors, lifestyle habits, cognitive tests, and psychosocial variables. 
+A recurring pattern, however, is that models often underline easily measured physical health data—such as comorbidity counts, mobility scores, or vital signs—while more complex but important predictors, including nutrition and social factors, are underrepresented \cite{zarudskyP277OneleggedBalance2014}. 
+This imbalance may limit the ability of models to capture the full complexity of ageing, especially considering that mental health and nutrition exert independent and interacting effects on later life outcomes see (\hyperref[sec:ChronicDiseaseAndAgeing]{here}). 
+Models that focus only on readily available clinical data risk reproducing the same biases seen in traditional regression approaches.
 
 \subsection{ML Models Used}
-The methodological approaches used in ageing research span both traditional and advanced models. Logistic regression and Markov models remain common baselines due to their interpretability and simplicity, yet they are often unable to capture non-linearities or higher-order interactions. More recent work has shifted towards ensemble methods such as random forests (\gls{RF}) and gradient boosting machines (\gls{GBM}), as well as deep neural networks (\gls{DNN}), which generally achieve higher predictive accuracy.
+The methodological approaches used in ageing research span both traditional and advanced models. 
+Logistic regression and Markov models remain common baselines due to their interpretability and simplicity, yet they are often unable to capture non linearities or higher order interactions. 
+More recent work has shifted towards ensemble methods such as random forests (\gls{RF}) and gradient boosting machines (\gls{GBM}), as well as deep neural networks (\gls{DNN}), which generally achieve higher predictive accuracy.
 
-Similarly, \cite{matthewsPredictingMortalityIrish2022} evaluated mortality prediction using a standard logistic regression model with demographic, clinical, and functional predictors, achieving an \gls{AUC} of 0.78, whereas, ensemble methods in \cite{xuTailoredMachineLearning2023} reached 0.854 for diabetes prediction, showing how flexible, non-linear models can better capture complex interactions among ageing-related predictors.
+Similarly, \cite{matthewsPredictingMortalityIrish2022} evaluated mortality prediction using a standard logistic regression model with demographic, clinical, and functional predictors, achieving an \gls{AUC} of 0.78, whereas, ensemble methods in \cite{xuTailoredMachineLearning2023} reached 0.854 for diabetes prediction, showing how flexible, non linear models can better capture complex interactions among ageing related predictors.
 
 \subsection{Performance and Validation}
-Predictive performance across studies is generally moderate to strong, with \gls{AUC} values between 0.70 and 0.90 for outcomes like diabetes, gait speed, depression, and mortality. This indicates that models can distinguish reasonably well between individuals who will or will not experience an outcome. 
+Predictive performance across studies is generally moderate to strong, with \gls{AUC} values between 0.70 and 0.90 for outcomes like diabetes, gait speed, depression, and mortality. 
+This indicates that models can distinguish reasonably well between individuals who will or will not experience an outcome. 
 
-However, there are important limitations. Many studies rely only on internal validation, testing models on the same data used for training. This can inflate performance estimates and reduce confidence in applying the model to new populations. To add, Most studies are cross-sectional, so causal or temporal effects cannot be assessed. When combined with the underuse of nutrition and social predictors, these issues indicate that current models may not fully represent the multidimensional nature of ageing and could produce context-specific results rather than generalisable predictions \cite{zarudskyP277OneleggedBalance2014}.
+However, there are important limitations. Many studies rely only on internal validation, testing models on the same data used for training. 
+This can inflate performance estimates and reduce confidence in applying the model to new populations. 
+To add, Most studies are cross sectional, so causal or temporal effects cannot be assessed. 
+When combined with the underuse of nutrition and social predictors, these issues indicate that current models may not fully represent the multidimensional nature of ageing and could produce context specific results rather than generalisable predictions \cite{zarudskyP277OneleggedBalance2014}.
 
 \subsection{Explainability in ML for Ageing}
-As \gls{ML} models become more complex, interpretability emerges as a critical challenge. Explainability tools like \gls{SHAP} can highlight feature importance, but their use is inconsistent, particularly in deep learning models \cite{xuTailoredMachineLearning2023,davisLinearRegressionbasedMachine2021,davisComparisonGaitSpeed2021}. These methods improve transparency and can highlight unexpected drivers of outcomes, such as psychosocial variables being stronger predictors than biomedical ones, yet black-box concerns remain, especially for deep learning models, where feature interactions are difficult to track.
-For ageing research, where clinical adoption requires both accuracy and trust, explainability is not optional but essential. Current efforts show promise but remain fragmented, with no consensus on best practice. This gap links directly to the broader methodological limits discussed in the next section on gaps in the literature.
+As \gls{ML} models become more complex, interpretability emerges as a critical challenge. Explainability tools like \gls{SHAP} can highlight feature importance, but their use is inconsistent, particularly in deep learning models \cite{xuTailoredMachineLearning2023,davisLinearRegressionbasedMachine2021,davisComparisonGaitSpeed2021}. 
+These methods improve transparency and can highlight unexpected drivers of outcomes, such as psychosocial variables being stronger predictors than biomedical ones, yet black box concerns remain, especially for deep learning models, where feature interactions are difficult to track.
+For ageing research, where clinical adoption requires both accuracy and trust, explainability is not optional but essential. 
+Current efforts show promise but remain fragmented, with no consensus on best practice. 
+This gap links directly to the broader methodological limits discussed in the next section on gaps in the literature.
 
 \section{Gaps in the Literature}
 First, most studies rely on \gls{TILDA} or similar cohorts of Irish and predominantly older adults (50+). This limits confidence in how well results transfer to other populations. The present project focuses on \gls{TILDA} to study ageing in depth but also makes use of the harmonised dataset, which links \gls{TILDA} with comparable UK and US cohorts. This helps place findings in a broader international context while retaining a core emphasis on older adults.
 
-Second, there is an over-reliance on physical health predictors such as comorbidity counts and mobility measures, while nutrition, social, religious or spiritual, and environmental variables are often overlooked. As shown in \cite{murphyPlasmaLuteinZeaxanthin2023}, nutritional biomarkers like lutein and zeaxanthin are strong predictors of frailty, yet these are rarely integrated into broader \gls{ML} pipelines. By contrast, studies such as \cite{bardonPredictorsIncidentMalnutrition2020} highlight the role of social support and functional decline in malnutrition risk. Together, these examples show that excluding nutrition and social factors risks producing models that reinforce the same biomedical biases seen in regression-heavy work.
+Second, there is an over reliance on physical health predictors such as comorbidity counts and mobility measures, while nutrition, social, religious or spiritual, and environmental variables are often overlooked. As shown in \cite{murphyPlasmaLuteinZeaxanthin2023}, nutritional biomarkers like lutein and zeaxanthin are strong predictors of frailty, yet these are rarely integrated into broader \gls{ML} pipelines. By contrast, studies such as \cite{bardonPredictorsIncidentMalnutrition2020} highlight the role of social support and functional decline in malnutrition risk. Together, these examples show that excluding nutrition and social factors risks producing models that reinforce the same biomedical biases seen in regression heavy work.
 
-Third, methodological choices remain conservative. Regression models still dominate, while more advanced approaches such as deep neural networks or transformers are rarely explored. For instance, \cite{matthewsPredictingMortalityIrish2022} achieved an \gls{AUC} of 0.78 using logistic regression for mortality prediction in \gls{TILDA}, whereas \cite{xuTailoredMachineLearning2023} reported an \gls{AUC} of 0.854 with ensemble methods for diabetes incidence. This contrast demonstrates both the dominance of regression and its weaker performance compared to flexible \gls{ML} models. Where ensemble or brain-age approaches have been attempted, validation is almost always internal, with little cross-cohort testing, inflating performance estimates and undermining clinical translation.
+Third, methodological choices remain conservative. Regression models still dominate, while more advanced approaches such as deep neural networks or transformers are rarely explored. For instance, \cite{matthewsPredictingMortalityIrish2022} achieved an \gls{AUC} of 0.78 using logistic regression for mortality prediction in \gls{TILDA}, whereas \cite{xuTailoredMachineLearning2023} reported an \gls{AUC} of 0.854 with ensemble methods for diabetes incidence. This contrast demonstrates both the dominance of regression and its weaker performance compared to flexible \gls{ML} models. Where ensemble or brain age approaches have been attempted, validation is almost always internal, with little cross cohort testing, inflating performance estimates and undermining clinical translation.
 
-Fourth, many outcomes remain underexplored. Studies on dementia or frailty frequently focus on cognitive or physical decline while leaving aside outcomes critical to older adults, such as pain, sleep quality, and subjective quality of life. For example, \cite{murphyPlasmaLuteinZeaxanthin2023} used cross-sectional plasma biomarkers to study frailty but did not assess sleep or pain, while gait-speed models such as \cite{davisComparisonGaitSpeed2021} similarly neglect subjective quality of life. This shows how reliance on narrow outcomes leaves broader aspects of wellbeing unmeasured.
+Fourth, many outcomes remain underexplored. Studies on dementia or frailty frequently focus on cognitive or physical decline while leaving aside outcomes critical to older adults, such as pain, sleep quality, and subjective quality of life. For example, \cite{murphyPlasmaLuteinZeaxanthin2023} used cross sectional plasma biomarkers to study frailty but did not assess sleep or pain, while gait speed models such as \cite{davisComparisonGaitSpeed2021} similarly neglect subjective quality of life. This shows how reliance on narrow outcomes leaves broader aspects of wellbeing unmeasured.
 
-Fifth, cross-sectional bias and data handling weaken reliability. Much nutritional work, such as \cite{murphyPlasmaLuteinZeaxanthin2023}, relies on single time-point biomarker data, which cannot capture longitudinal change. By contrast, studies applying multi-wave \gls{TILDA} data \cite{romero-ortunoTransitionsFrailtyPhenotype2021} demonstrate the added value of modelling temporal dynamics. Similarly, missing data are often handled through listwise deletion, as in \cite{matthewsPredictingMortalityIrish2022}, which risks biasing results toward healthier participants, whereas more robust imputation approaches remain underused.
+Fifth, cross sectional bias and data handling weaken reliability. Much nutritional work, such as \cite{murphyPlasmaLuteinZeaxanthin2023}, relies on single time point biomarker data, which cannot capture longitudinal change. By contrast, studies applying multi wave \gls{TILDA} data \cite{romero-ortunoTransitionsFrailtyPhenotype2021} demonstrate the added value of modelling temporal dynamics. Similarly, missing data are often handled through listwise deletion, as in \cite{matthewsPredictingMortalityIrish2022}, which risks biasing results toward healthier participants, whereas more robust imputation approaches remain underused.
 
 Finally, interpretability challenges persist. While tools like \gls{SHAP} have been applied to highlight feature importance \cite{xuTailoredMachineLearning2023,davisLinearRegressionbasedMachine2021}, their use is inconsistent, and consensus on best practice has yet to emerge. Without transparent explanations, even accurate models may face barriers to clinical acceptance. Taken together, these examples show that ageing research continues to rely on narrow predictors, conservative models, and weak validation. Addressing these gaps requires integrative, diverse, and transparent approaches that link multidimensional predictors with explainable \gls{ML}.
 
 \section{Chapter Summary}
-This chapter reviewed evidence on ageing and chronic disease across three domains—frailty and physical function, mental health, and nutrition and biological ageing—and examined how machine learning has been applied to predict later-life outcomes. The findings showed that while frailty is partly reversible, it remains strongly tied to mortality; that mental health both shapes and is shaped by physical decline; and that nutrition interacts with biological, metabolic, and social systems in ways that are often underestimated. 
+This chapter reviewed evidence on ageing and chronic disease across three domains—frailty and physical function, mental health, and nutrition and biological ageing—and examined how machine learning has been applied to predict later life outcomes. 
+The findings showed that while frailty is partly reversible, it remains strongly tied to mortality; that mental health both shapes and is shaped by physical decline; and that nutrition interacts with biological, metabolic, and social systems in ways that are often underestimated. 
 
 While machine learning has improved prediction accuracy in ageing research, challenges remain in integrating diverse predictors and ensuring interpretability and longitudinal validation.
 
-This study builds on previous research by leveraging \gls{TILDA} alongside the harmonised dataset linking UK and US cohorts, enabling longitudinal prediction of ageing outcomes. The main contribution lies in integrating nutrition, lifestyle, and clinical predictors, applying temporal modelling, and emphasising interpretability, addressing key limitations identified in prior work. These directions motivate the methodological choices outlined in Chapter~\ref{chap:Methodology}.
+This study builds on previous research by leveraging \gls{TILDA} alongside the harmonised dataset linking UK and US cohorts, enabling longitudinal prediction of ageing outcomes. 
+The main contribution lies in integrating nutrition, lifestyle, and clinical predictors, applying temporal modelling, and emphasising interpretability, addressing key limitations identified in prior work. 
+These directions motivate the methodological choices outlined in Chapter~\ref{chap:Methodology}.
 
 
 
