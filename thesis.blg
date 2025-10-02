@@ -15,7 +15,6 @@ A level-1 auxiliary file: 5_chapter5/chapter5.aux
 A level-1 auxiliary file: 6_conclusions/conclusions.aux
 The style file: unsrtnat.bst
 Database file #1: References-Bibtex.bib
-Warning--I didn't find a database entry for "mydownloadedimage"
 Warning--I didn't find a database entry for "poem"
 Warning--I didn't find a database entry for "mybook"
 Warning--I didn't find a database entry for "mybookchapter"
@@ -31,6 +30,7 @@ Warning--I didn't find a database entry for "mywebvideos"
 Warning--I didn't find a database entry for "mywebpaper"
 Warning--I didn't find a database entry for "mywebarticlejournal"
 Warning--I didn't find a database entry for "mywebpage"
+Warning--I didn't find a database entry for "mydownloadedimage"
 You've used 28 entries,
             2481 wiz_defined-function locations,
             818 strings with 16570 characters,
