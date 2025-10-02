@@ -2,38 +2,14 @@ This is BibTeX, Version 0.99d (TeX Live 2025)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: thesis.aux
 A level-1 auxiliary file: Latex/Macros/MacroFile1.aux
-A level-1 auxiliary file: 0_frontmatter/abstract.aux
-A level-1 auxiliary file: 0_frontmatter/declaration.aux
-A level-1 auxiliary file: 0_frontmatter/acknowledgement.aux
-A level-1 auxiliary file: 0_frontmatter/dedication.aux
 A level-1 auxiliary file: 0_frontmatter/glossary.aux
 A level-1 auxiliary file: 1_introduction/introduction.aux
 A level-1 auxiliary file: 2_chapter2/chapter2.aux
-A level-1 auxiliary file: 3_chapter3/chapter3.aux
-A level-1 auxiliary file: 4_chapter4/chapter4.aux
-A level-1 auxiliary file: 5_chapter5/chapter5.aux
-A level-1 auxiliary file: 6_conclusions/conclusions.aux
 The style file: unsrtnat.bst
 Database file #1: References-Bibtex.bib
-Warning--I didn't find a database entry for "poem"
-Warning--I didn't find a database entry for "mybook"
-Warning--I didn't find a database entry for "mybookchapter"
-Warning--I didn't find a database entry for "mybookcontribution"
-Warning--I didn't find a database entry for "mycddvd"
-Warning--I didn't find a database entry for "myjournal"
-Warning--I didn't find a database entry for "mypatent"
-Warning--I didn't find a database entry for "myphd"
-Warning--I didn't find a database entry for "myproceeding"
-Warning--I didn't find a database entry for "mytechreport"
-Warning--I didn't find a database entry for "myunpublishedreport"
-Warning--I didn't find a database entry for "mywebvideos"
-Warning--I didn't find a database entry for "mywebpaper"
-Warning--I didn't find a database entry for "mywebarticlejournal"
-Warning--I didn't find a database entry for "mywebpage"
-Warning--I didn't find a database entry for "mydownloadedimage"
 You've used 28 entries,
             2481 wiz_defined-function locations,
-            818 strings with 16570 characters,
+            794 strings with 16177 characters,
 and the built_in function-call counts, 14429 in all, are:
 = -- 1084
 > -- 1174
@@ -72,4 +48,3 @@ warning$ -- 0
 while$ -- 94
 width$ -- 0
 write$ -- 476
-(There were 16 warnings)

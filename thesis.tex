@@ -195,16 +195,16 @@
 % Your institution may have specific regulations if you need an abstract and where it is to be placed in the document. The default here is just after title.
 %: Declaration of originality
 
-\include{0_frontmatter/abstract}
-\include{0_frontmatter/declaration}
+% \include{0_frontmatter/abstract}
+% \include{0_frontmatter/declaration}
 
 
 %: ----------------------- tie in front matter ------------------------
 
 \frontmatter
 
-\include{0_frontmatter/acknowledgement}
-\include{0_frontmatter/dedication}
+% \include{0_frontmatter/acknowledgement}
+% \include{0_frontmatter/dedication}
 
 
 %: ----------------------- contents ------------------------
@@ -217,7 +217,7 @@
 
 %: ----------------------- list of figures/tables ------------------------
 
-\listoftables  % print list of tables
+% \listoftables  % print list of tables
 \listoffigures	% print list of figures
 
 
@@ -255,10 +255,10 @@
 
 \include{1_introduction/introduction}	
 \include{2_chapter2/chapter2}
-\include{3_chapter3/chapter3}			
-\include{4_chapter4/chapter4}
-\include{5_chapter5/chapter5}	
-\include{6_conclusions/conclusions} 
+% \include{3_chapter3/chapter3}			
+% \include{4_chapter4/chapter4}
+% \include{5_chapter5/chapter5}	
+% \include{6_conclusions/conclusions} 
 
 % for reference list see line 361
 % description of lab methods
@@ -274,20 +274,20 @@
 
 
 % here we start the Appendix
-\appendix
+% \appendix
 
 % Definition of each Chapter in the Appendix is done via the following two lines
-\chapter*{Appendix A}
-\section*{Insert a figure}
+% \chapter*{Appendix A}
+% \section*{Insert a figure}
 
 
 % here is how to add a figure in the appendix�. it is the same as any other place in the latex document
 % \figuremacroW{7_appendixes/image01}{Title of Figure}{Description. [Source: (\Citealt{mydownloadedimage})]}{0.8}
 
 % here is how we close the chapter
-\addcontentsline{toc}{chapter}{Appendix A: Insert figure in Appendix}
-\chaptermark{Appendix}
-\markboth{Appendix}{Appendix}
+% \addcontentsline{toc}{chapter}{Appendix A: Insert figure in Appendix}
+% \chaptermark{Appendix}
+% \markboth{Appendix}{Appendix}
 
 
 
@@ -297,42 +297,42 @@
 
 
 % here we open a new chapter in Appendix etc. etc..
-\chapter*{Appendix B}
-\section*{Title}
+% \chapter*{Appendix B}
+% \section*{Title}
 
-Type here you text as usual . . .
-
-
-\addcontentsline{toc}{chapter}{Appendix B: Insert Text in Appendix}
-\chaptermark{Appendix}
-\markboth{Appendix}{Appendix}
+% Type here you text as usual . . .
 
 
-
-
-\chapter*{Appendix C}
-\section*{Code for estimating attitude}
-
-AHRS\_TRIAD.C
+% \addcontentsline{toc}{chapter}{Appendix B: Insert Text in Appendix}
+% \chaptermark{Appendix}
+% \markboth{Appendix}{Appendix}
 
 
 
 
-\lstset{language=C++}
-\lstset{basicstyle=\tiny, 
-breaklines=true, 
-frame=shadowbox, 
-rulesepcolor=\color{c++green}, 
-keywordstyle=\color{c++purple}\bfseries, 
-stringstyle=\color{c++red}, 
-commentstyle=\color{c++green},}  % edit these parameters if you want to change the way your code is displayed
+% \chapter*{Appendix C}
+% \section*{Code for estimating attitude}
 
-%Load your code file below
-\lstinputlisting[fontadjust=\true]{7_appendixes/ahrs_triad_mote.c}
+% AHRS\_TRIAD.C
 
-\addcontentsline{toc}{chapter}{Appendix C: Insert C++/Java et al. Code in Appendix}
-\chaptermark{Appendix}
-\markboth{Appendix}{Appendix}
+
+
+
+% \lstset{language=C++}
+% \lstset{basicstyle=\tiny, 
+% breaklines=true, 
+% frame=shadowbox, 
+% rulesepcolor=\color{c++green}, 
+% keywordstyle=\color{c++purple}\bfseries, 
+% stringstyle=\color{c++red}, 
+% commentstyle=\color{c++green},}  % edit these parameters if you want to change the way your code is displayed
+
+% %Load your code file below
+% \lstinputlisting[fontadjust=\true]{7_appendixes/ahrs_triad_mote.c}
+
+% \addcontentsline{toc}{chapter}{Appendix C: Insert C++/Java et al. Code in Appendix}
+% \chaptermark{Appendix}
+% \markboth{Appendix}{Appendix}
 
 %
 
