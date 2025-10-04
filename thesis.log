@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.9)  2 OCT 2025 22:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.9)  4 OCT 2025 22:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -806,14 +806,16 @@ Chapter 1.
 ]
 
 [4]
-<0_frontmatter/figures/gantt_chart.png, id=265, 1378.14874pt x 460.72125pt>
+<0_frontmatter/figures/gantt_chart.png, id=269, 1378.14874pt x 460.72125pt>
 File: 0_frontmatter/figures/gantt_chart.png Graphic file (type png)
 <use 0_frontmatter/figures/gantt_chart.png>
-Package pdftex.def Info: 0_frontmatter/figures/gantt_chart.png  used on input line 78.
+Package pdftex.def Info: 0_frontmatter/figures/gantt_chart.png  used on input line 82.
 (pdftex.def)             Requested size: 412.56496pt x 137.92218pt.
-)
 
-[5 <./0_frontmatter/figures/gantt_chart.png>]
+
+[5 <./0_frontmatter/figures/gantt_chart.png>])
+
+[6]
 \openout2 = `2_chapter2/chapter2.aux'.
 
  (./2_chapter2/chapter2.tex
@@ -824,17 +826,12 @@ Package hyperref Warning: Difference (2) between bookmark levels is greater
 
 
 
-[6
+[7
 
 
 
 
 ]
-
-[7]
-Underfull \vbox (badness 1281) has occurred while \output is active []
-
-
 
 [8]
 
@@ -844,29 +841,35 @@ Underfull \vbox (badness 1281) has occurred while \output is active []
 
 [11]
 
-LaTeX Warning: Reference `chap:Methodology' on page 12 undefined on input line 129.
+[12]
 
-)
+[13]
 
-[12] (./thesis.bbl (./thesis.brf)
+LaTeX Warning: Reference `chap:Methodology' on page 14 undefined on input line 143.
+
+
+
+[14])
+
+[15] (./thesis.bbl (./thesis.brf)
 \tf@brf=\write11
 \openout11 = `thesis.brf'.
 
 
 
-[13
+[16
 
 
 
 ]
 
-[14]
+[17]
 
-[15]
+[18]
 
-[16])
+[19])
 
-[17] (./thesis.aux (./Latex/Macros/MacroFile1.aux) (./0_frontmatter/glossary.aux) (./1_introduction/introduction.aux) (./2_chapter2/chapter2.aux))
+[20] (./thesis.aux (./Latex/Macros/MacroFile1.aux) (./0_frontmatter/glossary.aux) (./1_introduction/introduction.aux) (./2_chapter2/chapter2.aux))
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -878,7 +881,7 @@ LaTeX Warning: There were undefined references.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 6C36413CD7B8209692AE3466A4E2E6BE;4170.
 Package rerunfilecheck Info: File `thesis.brf' has not changed.
-(rerunfilecheck)             Checksum: C4188258B01058C1045D8358CFA2D591;3359.
+(rerunfilecheck)             Checksum: 3C2187F260D6E6DF17C6DAB284FFC497;3367.
  )
 (\end occurred inside a group at level 1)
 
@@ -886,18 +889,18 @@ Package rerunfilecheck Info: File `thesis.brf' has not changed.
 ### bottom level
 (\end occurred when \iftrue on line 118 was incomplete) 
 Here is how much of TeX's memory you used:
- 25562 strings out of 473190
- 460840 string characters out of 5715801
+ 25567 strings out of 473190
+ 460923 string characters out of 5715801
  1168166 words of memory out of 5000000
- 48347 multiletter control sequences out of 15000+600000
+ 48349 multiletter control sequences out of 15000+600000
  570532 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  125i,12n,121p,2474b,893s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on thesis.pdf (25 pages, 528084 bytes).
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on thesis.pdf (28 pages, 541468 bytes).
 PDF statistics:
- 525 PDF objects out of 1000 (max. 8388607)
- 468 compressed objects within 5 object streams
- 95 named destinations out of 1000 (max. 500000)
+ 548 PDF objects out of 1000 (max. 8388607)
+ 486 compressed objects within 5 object streams
+ 98 named destinations out of 1000 (max. 500000)
  179 words of extra memory for PDF output out of 10000 (max. 10000000)
 
