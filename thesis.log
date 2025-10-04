@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.9)  1 OCT 2025 23:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.9)  4 OCT 2025 21:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -776,7 +776,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 pdfTeX warning (ext4): destination with the same identifier (name{page.iii}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.24 ....1}Creating a Table}{14}{subsection.3.2.1}
+l.24 ....1}Creating a Table}{16}{subsection.3.2.1}
                                                   % [3
 
 
@@ -851,9 +851,9 @@ Chapter 1.
 
 [3
 
-])
+]
 
-[4]
+[4])
 
 [5]
 \openout2 = `2_chapter2/chapter2.aux'.
@@ -874,9 +874,6 @@ Package hyperref Warning: Difference (2) between bookmark levels is greater
 ]
 
 [7]
-Underfull \vbox (badness 1281) has occurred while \output is active []
-
-
 
 [8]
 
@@ -884,27 +881,31 @@ Underfull \vbox (badness 1281) has occurred while \output is active []
 
 [10]
 
-[11])
+[11]
 
 [12]
+
+[13])
+
+[14]
 \openout2 = `3_chapter3/chapter3.aux'.
 
  (./3_chapter3/chapter3.tex
 Chapter 3.
-<3_chapter3/figures/image02.jpg, id=489, 401.5pt x 401.5pt>
+<3_chapter3/figures/image02.jpg, id=501, 401.5pt x 401.5pt>
 File: 3_chapter3/figures/image02.jpg Graphic file (type jpg)
 <use 3_chapter3/figures/image02.jpg>
 Package pdftex.def Info: 3_chapter3/figures/image02.jpg  used on input line 20.
 (pdftex.def)             Requested size: 288.7942pt x 288.81021pt.
 
-Package natbib Warning: Citation `mydownloadedimage' on page 13 undefined on input line 20.
+Package natbib Warning: Citation `mydownloadedimage' on page 15 undefined on input line 20.
 
 
-Package natbib Warning: Citation `mydownloadedimage' on page 13 undefined on input line 20.
+Package natbib Warning: Citation `mydownloadedimage' on page 15 undefined on input line 20.
 
 
 
-[13
+[15
 
 
 
@@ -914,64 +915,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[14]
+[16]
 
-Package natbib Warning: Citation `poem' on page 15 undefined on input line 81.
+Package natbib Warning: Citation `poem' on page 17 undefined on input line 81.
 
 )
 
-[15]
+[17]
 \openout2 = `4_chapter4/chapter4.aux'.
 
  (./4_chapter4/chapter4.tex
 Chapter 4.
-
-
-[16
-
-
-
-
-])
-
-[17]
-\openout2 = `5_chapter5/chapter5.aux'.
-
- (./5_chapter5/chapter5.tex
-Chapter 5.
-
-Package natbib Warning: Citation `mybook' on page 18 undefined on input line 26.
-
-
-Package natbib Warning: Citation `mybookchapter' on page 18 undefined on input line 27.
-
-
-Package natbib Warning: Citation `mybookcontribution' on page 18 undefined on input line 28.
-
-
-Package natbib Warning: Citation `mycddvd' on page 18 undefined on input line 29.
-
-
-Package natbib Warning: Citation `myjournal' on page 18 undefined on input line 30.
-
-
-Package natbib Warning: Citation `mypatent' on page 18 undefined on input line 31.
-
-
-Package natbib Warning: Citation `myphd' on page 18 undefined on input line 32.
-
-
-Package natbib Warning: Citation `myproceeding' on page 18 undefined on input line 33.
-
-
-Package natbib Warning: Citation `mytechreport' on page 18 undefined on input line 34.
-
-
-Package natbib Warning: Citation `myunpublishedreport' on page 18 undefined on input line 35.
-
-
-Package natbib Warning: Citation `mywebvideos' on page 18 undefined on input line 36.
-
 
 
 [18
@@ -979,30 +933,47 @@ Package natbib Warning: Citation `mywebvideos' on page 18 undefined on input lin
 
 
 
-]
-
-Package natbib Warning: Citation `mywebpaper' on page 19 undefined on input line 37.
-
-
-Package natbib Warning: Citation `mywebarticlejournal' on page 19 undefined on input line 38.
-
-
-Package natbib Warning: Citation `mywebpage' on page 19 undefined on input line 39.
-
-
-Package natbib Warning: Citation `mydownloadedimage' on page 19 undefined on input line 40.
-
-
-Package natbib Warning: Citation `mybookchapter' on page 19 undefined on input line 46.
-
-)
+])
 
 [19]
-\openout2 = `6_conclusions/conclusions.aux'.
+\openout2 = `5_chapter5/chapter5.aux'.
 
- (./6_conclusions/conclusions.tex
-Chapter 6.
-)
+ (./5_chapter5/chapter5.tex
+Chapter 5.
+
+Package natbib Warning: Citation `mybook' on page 20 undefined on input line 26.
+
+
+Package natbib Warning: Citation `mybookchapter' on page 20 undefined on input line 27.
+
+
+Package natbib Warning: Citation `mybookcontribution' on page 20 undefined on input line 28.
+
+
+Package natbib Warning: Citation `mycddvd' on page 20 undefined on input line 29.
+
+
+Package natbib Warning: Citation `myjournal' on page 20 undefined on input line 30.
+
+
+Package natbib Warning: Citation `mypatent' on page 20 undefined on input line 31.
+
+
+Package natbib Warning: Citation `myphd' on page 20 undefined on input line 32.
+
+
+Package natbib Warning: Citation `myproceeding' on page 20 undefined on input line 33.
+
+
+Package natbib Warning: Citation `mytechreport' on page 20 undefined on input line 34.
+
+
+Package natbib Warning: Citation `myunpublishedreport' on page 20 undefined on input line 35.
+
+
+Package natbib Warning: Citation `mywebvideos' on page 20 undefined on input line 36.
+
+
 
 [20
 
@@ -1011,13 +982,43 @@ Chapter 6.
 
 ]
 
-[21
+Package natbib Warning: Citation `mywebpaper' on page 21 undefined on input line 37.
+
+
+Package natbib Warning: Citation `mywebarticlejournal' on page 21 undefined on input line 38.
+
+
+Package natbib Warning: Citation `mywebpage' on page 21 undefined on input line 39.
+
+
+Package natbib Warning: Citation `mydownloadedimage' on page 21 undefined on input line 40.
+
+
+Package natbib Warning: Citation `mybookchapter' on page 21 undefined on input line 46.
+
+)
+
+[21]
+\openout2 = `6_conclusions/conclusions.aux'.
+
+ (./6_conclusions/conclusions.tex
+Chapter 6.
+)
+
+[22
+
 
 
 
 ]
 
-[22
+[23
+
+
+
+]
+
+[24
 
 ] (./7_appendixes/ahrs_triad_mote.c
 LaTeX Font Info:    Trying to load font information for OML+cmr on input line 35.
@@ -1028,7 +1029,7 @@ LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <6> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 35.
 
 
-[23
+[25
 
 ]
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 62.
@@ -1042,29 +1043,29 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[24]) (./thesis.bbl (./thesis.brf)
+[26]) (./thesis.bbl (./thesis.brf)
 \tf@brf=\write12
 \openout12 = `thesis.brf'.
 
 
 
-[25]
+[27]
 
-[26
+[28
 
 ]
 
-[27]
+[29]
 
-[28]
+[30]
 
-[29])
+[31])
 
 Package natbib Warning: There were undefined citations.
 
 
 
-[30] (./thesis.aux (./Latex/Macros/MacroFile1.aux) (./0_frontmatter/abstract.aux) (./0_frontmatter/declaration.aux) (./0_frontmatter/acknowledgement.aux) (./0_frontmatter/dedication.aux) (./0_frontmatter/glossary.aux) (./1_introduction/introduction.aux) (./2_chapter2/chapter2.aux) (./3_chapter3/chapter3.aux) (./4_chapter4/chapter4.aux) (./5_chapter5/chapter5.aux) (./6_conclusions/conclusions.aux))
+[32] (./thesis.aux (./Latex/Macros/MacroFile1.aux) (./0_frontmatter/abstract.aux) (./0_frontmatter/declaration.aux) (./0_frontmatter/acknowledgement.aux) (./0_frontmatter/dedication.aux) (./0_frontmatter/glossary.aux) (./1_introduction/introduction.aux) (./2_chapter2/chapter2.aux) (./3_chapter3/chapter3.aux) (./4_chapter4/chapter4.aux) (./5_chapter5/chapter5.aux) (./6_conclusions/conclusions.aux))
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -1072,7 +1073,7 @@ L3 programming layer <2025-01-18>
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 7BB0828F1DDA0789C0B25CC94803BC89;6687.
 Package rerunfilecheck Info: File `thesis.brf' has not changed.
-(rerunfilecheck)             Checksum: C4188258B01058C1045D8358CFA2D591;3359.
+(rerunfilecheck)             Checksum: 1D1A18D77EB7927762A0E03F410690BE;3362.
  )
 (\end occurred inside a group at level 1)
 
@@ -1080,18 +1081,18 @@ Package rerunfilecheck Info: File `thesis.brf' has not changed.
 ### bottom level
 (\end occurred when \iftrue on line 117 was incomplete) 
 Here is how much of TeX's memory you used:
- 26640 strings out of 473190
- 478499 string characters out of 5715801
+ 26642 strings out of 473190
+ 478513 string characters out of 5715801
  1642713 words of memory out of 5000000
  49169 multiletter control sequences out of 15000+600000
  571483 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  125i,12n,121p,2471b,2558s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on thesis.pdf (44 pages, 526977 bytes).
+Output written on thesis.pdf (46 pages, 532226 bytes).
 PDF statistics:
- 923 PDF objects out of 1000 (max. 8388607)
- 826 compressed objects within 9 object streams
- 281 named destinations out of 1000 (max. 500000)
+ 937 PDF objects out of 1000 (max. 8388607)
+ 838 compressed objects within 9 object streams
+ 283 named destinations out of 1000 (max. 500000)
  307 words of extra memory for PDF output out of 10000 (max. 10000000)
 
