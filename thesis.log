@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.9)  5 OCT 2025 00:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.9)  5 OCT 2025 22:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -704,7 +704,7 @@ Package tocbasic Info: setting babel extension for `lol' on input line 159.
 \openout2 = `Latex/Macros/MacroFile1.aux'.
 
  (./Latex/Macros/MacroFile1.tex)
-<0_frontmatter/figures/logonew2020.jpg, id=88, 569.0058pt x 284.5029pt>
+<0_frontmatter/figures/logonew2020.jpg, id=104, 569.0058pt x 284.5029pt>
 File: 0_frontmatter/figures/logonew2020.jpg Graphic file (type jpg)
 <use 0_frontmatter/figures/logonew2020.jpg>
 Package pdftex.def Info: 0_frontmatter/figures/logonew2020.jpg  used on input line 174.
@@ -734,22 +734,18 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 5.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-))
-\tf@toc=\write8
-\openout8 = `thesis.toc'.
-
-
+)
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.221 \listoffigures
-                    	% print list of figures [1
+l.25 ...ine {2.6}Chapter Summary}{15}{section.2.6}
+                                                  % [1
 
-] (./thesis.lof)
-\tf@lof=\write9
-\openout9 = `thesis.lof'.
+])
+\tf@toc=\write8
+\openout8 = `thesis.toc'.
 
 
 
@@ -757,8 +753,28 @@ l.221 \listoffigures
 pdfTeX warning (ext4): destination with the same identifier (name{page.ii}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
+l.221 \listoffigures
+                    	% print list of figures [2] (./thesis.lof)
+\tf@lof=\write9
+\openout9 = `thesis.lof'.
+
+
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.iii}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
 l.225 \cleardoublepage
-                       [2
+                       [3
+
+]
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.iv}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.225 \cleardoublepage
+                       [4
 
 ]
 \openout2 = `0_frontmatter/glossary.aux'.
@@ -767,13 +783,7 @@ l.225 \cleardoublepage
 \@gls@deffile=\write10
 \openout10 = `thesis.glsdefs'.
 
-) (./thesis.acr
-pdfTeX warning (ext4): destination with the same identifier (name{page.iii}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.59 \end{theglossary}
-                      \glossarypostamble [3
-
+) (./thesis.acr [5
 
 
 
@@ -781,12 +791,7 @@ l.59 \end{theglossary}
 
 ])
 
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.iv}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.246 \mainmatter
-                  [4]
+[6]
 \openout2 = `1_introduction/introduction.aux'.
 
  (./1_introduction/introduction.tex
@@ -806,7 +811,7 @@ Chapter 1.
 ]
 
 [4]
-<0_frontmatter/figures/gantt_chart.png, id=269, 1378.14874pt x 460.72125pt>
+<0_frontmatter/figures/gantt_chart.png, id=299, 1378.14874pt x 460.72125pt>
 File: 0_frontmatter/figures/gantt_chart.png Graphic file (type png)
 <use 0_frontmatter/figures/gantt_chart.png>
 Package pdftex.def Info: 0_frontmatter/figures/gantt_chart.png  used on input line 82.
@@ -820,10 +825,6 @@ Package pdftex.def Info: 0_frontmatter/figures/gantt_chart.png  used on input li
 
  (./2_chapter2/chapter2.tex
 Chapter 2.
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 25.
-
 
 
 [7
@@ -845,31 +846,33 @@ Package hyperref Warning: Difference (2) between bookmark levels is greater
 
 [13]
 
-LaTeX Warning: Reference `chap:Methodology' on page 14 undefined on input line 143.
+[14]
+
+LaTeX Warning: Reference `chap:Methodology' on page 15 undefined on input line 174.
 
 
 
-[14])
+[15])
 
-[15] (./thesis.bbl (./thesis.brf)
+[16] (./thesis.bbl (./thesis.brf)
 \tf@brf=\write11
 \openout11 = `thesis.brf'.
 
 
 
-[16
+[17
 
 
 
 ]
 
-[17]
-
 [18]
 
-[19])
+[19]
 
-[20] (./thesis.aux (./Latex/Macros/MacroFile1.aux) (./0_frontmatter/glossary.aux) (./1_introduction/introduction.aux) (./2_chapter2/chapter2.aux))
+[20])
+
+[21] (./thesis.aux (./Latex/Macros/MacroFile1.aux) (./0_frontmatter/glossary.aux) (./1_introduction/introduction.aux) (./2_chapter2/chapter2.aux))
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -879,28 +882,24 @@ L3 programming layer <2025-01-18>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 6C36413CD7B8209692AE3466A4E2E6BE;4170.
+(rerunfilecheck)             Checksum: 0594023367C8BCDBEB0B9966026E3E2B;5324.
 Package rerunfilecheck Info: File `thesis.brf' has not changed.
-(rerunfilecheck)             Checksum: 3C2187F260D6E6DF17C6DAB284FFC497;3367.
+(rerunfilecheck)             Checksum: 94C646690DEF51A1E5D20F1BAE74D73E;3327.
  )
-(\end occurred inside a group at level 1)
-
-### simple group (level 1) entered at line 1 ({)
-### bottom level
 (\end occurred when \iftrue on line 118 was incomplete) 
 Here is how much of TeX's memory you used:
- 25567 strings out of 473190
- 460923 string characters out of 5715801
+ 25578 strings out of 473190
+ 461049 string characters out of 5715801
  1168166 words of memory out of 5000000
- 48349 multiletter control sequences out of 15000+600000
+ 48353 multiletter control sequences out of 15000+600000
  570532 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 125i,12n,121p,2474b,893s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on thesis.pdf (28 pages, 541743 bytes).
+ 125i,12n,121p,2474b,785s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on thesis.pdf (31 pages, 554282 bytes).
 PDF statistics:
- 548 PDF objects out of 1000 (max. 8388607)
- 486 compressed objects within 5 object streams
- 98 named destinations out of 1000 (max. 500000)
- 179 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 587 PDF objects out of 1000 (max. 8388607)
+ 519 compressed objects within 6 object streams
+ 105 named destinations out of 1000 (max. 500000)
+ 211 words of extra memory for PDF output out of 10000 (max. 10000000)
 
