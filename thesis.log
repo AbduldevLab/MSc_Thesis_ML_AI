@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.9)  5 OCT 2025 22:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.9)  5 OCT 2025 22:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -825,16 +825,20 @@ l.224 \cleardoublepage
 \@gls@deffile=\write11
 \openout11 = `thesis.glsdefs'.
 
-) (./thesis.acr [7
+) (./thesis.acr)
+
+[7
 
 
 
 
 
 
-])
+]
 
-[8]
+[8
+
+]
 \openout2 = `1_introduction/introduction.aux'.
 
  (./1_introduction/introduction.tex
@@ -842,7 +846,6 @@ Chapter 1.
 
 
 [1
-
 
 
 {/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
@@ -890,7 +893,7 @@ Chapter 2.
 
  (./3_chapter3/chapter3.tex
 Chapter 3.
-<3_chapter3/figures/image02.jpg, id=526, 401.5pt x 401.5pt>
+<3_chapter3/figures/image02.jpg, id=524, 401.5pt x 401.5pt>
 File: 3_chapter3/figures/image02.jpg Graphic file (type jpg)
 <use 3_chapter3/figures/image02.jpg>
 Package pdftex.def Info: 3_chapter3/figures/image02.jpg  used on input line 20.
@@ -1069,24 +1072,24 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: C74D3F67D69DAE2F5FA7024859914868;7924.
+(rerunfilecheck)             Checksum: 4D9D9E7AB9B202168ADAC9D30600DC68;7841.
 Package rerunfilecheck Info: File `thesis.brf' has not changed.
 (rerunfilecheck)             Checksum: EB251309BDE1F7AA995C2FBF72CEBA32;3325.
  )
 (\end occurred when \iftrue on line 117 was incomplete) 
 Here is how much of TeX's memory you used:
- 26651 strings out of 473190
- 478626 string characters out of 5715801
- 1643713 words of memory out of 5000000
+ 26650 strings out of 473190
+ 478619 string characters out of 5715801
+ 1642713 words of memory out of 5000000
  49173 multiletter control sequences out of 15000+600000
  571483 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  125i,12n,121p,2471b,2190s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on thesis.pdf (47 pages, 535377 bytes).
+Output written on thesis.pdf (47 pages, 535277 bytes).
 PDF statistics:
- 961 PDF objects out of 1000 (max. 8388607)
- 861 compressed objects within 9 object streams
- 288 named destinations out of 1000 (max. 500000)
+ 959 PDF objects out of 1000 (max. 8388607)
+ 859 compressed objects within 9 object streams
+ 287 named destinations out of 1000 (max. 500000)
  339 words of extra memory for PDF output out of 10000 (max. 10000000)
 

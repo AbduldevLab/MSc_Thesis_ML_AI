@@ -50,7 +50,10 @@ This complexity highlights the need for probabilistic models that can update bel
 \begin{equation*}
 P(Y \mid X) = \frac{P(X \mid Y) P(Y)}{P(X)}
 \end{equation*}
-where $P(Y \mid X)$ is the posterior probability of outcome $Y$ given features $X$. This enables us to incorporate prior knowledge and observed data, improving the interpretability of feature outcome relationships in ageing.
+where $P(Y \mid X)$ is the posterior probability of outcome $Y$ given features $X$. 
+
+\subsection{Bayesian Updating of Frailty Risk}
+This enables us to incorporate prior knowledge and observed data, improving the interpretability of feature outcome relationships in ageing.
 Here, $P(Y \mid X)$ is the posterior probability = ( Likelihood * Prior / Evidence ), representing the updated belief about the outcome after observing features. 
 $P(Y)$ is the prior probability, reflecting baseline risk. 
 $P(X \mid Y)$ is the likelihood, quantifying the probability of observed features given the outcome, and 
@@ -72,11 +75,8 @@ These two findings conflict: the effect of social engagement is strong when self
 Objective data strengthen the case for activity. Accelerometer based measures show a dose response link between moderate to vigorous activity and lower depressive symptoms \cite{lairdPhysicalActivityDose2023}. 
 Yet reverse pathways are also evident: incident falls and functional decline predict later depression, refereed by fear of falling \cite{jacobFallsIncreaseRisk2023}. 
 Together, these results reveal a bidirectional relationship, mental health both influences and is influenced by physical decline.
-
 Most studies rely on broad self report scales such as \gls{CESD} or \gls{HADS}, with little biomarker or clinical validation. 
-Samples remain heavily Irish based and 50+ in age, limiting wider relevance. 
 
-\subsection{Probabilistic Modelling of Mental Health Outcomes}
 This literature suggests mental health in ageing cannot be modelled as a one way effect. 
 It requires longitudinal, multidimensional approaches that can capture mutual pathways, an area where machine learning is well suited especially when combined with probabilistic models that estimate the likelihood and posterior probability of mental health outcomes given multiple interacting features.
 
