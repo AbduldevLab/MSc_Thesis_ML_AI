@@ -20,23 +20,23 @@
 \contentsline {subsection}{\numberline {2.4.2}ML Models Used}{11}{subsection.2.4.2}%
 \contentsline {subsection}{\numberline {2.4.3}Performance and Validation}{11}{subsection.2.4.3}%
 \contentsline {subsection}{\numberline {2.4.4}Explainability in ML for Ageing}{12}{subsection.2.4.4}%
-\contentsline {section}{\numberline {2.5}Gaps in the Literature}{12}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Chapter Summary}{14}{section.2.6}%
-\contentsline {chapter}{\numberline {3}Data and Preprocessing}{16}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Insert a Figure}{16}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Creating a list}{17}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Creating a Table}{17}{subsection.3.2.1}%
-\contentsline {section}{\numberline {3.3}Quote}{18}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Methodology}{19}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Math}{19}{section.4.1}%
-\contentsline {chapter}{\numberline {5}Results}{21}{chapter.5}%
-\contentsline {section}{\numberline {5.1}References}{21}{section.5.1}%
-\contentsline {chapter}{\numberline {6}Conclusions and Future Directions}{23}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Summary}{23}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Conclusions}{23}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Contributions}{23}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Future Work}{23}{section.6.4}%
-\contentsline {chapter}{Appendix A: Insert figure in Appendix}{24}{section*.9}%
-\contentsline {chapter}{Appendix B: Insert Text in Appendix}{25}{section*.11}%
-\contentsline {chapter}{Appendix C: Insert C++/Java et al. Code in Appendix}{28}{lstnumber.-1.143}%
-\contentsline {chapter}{References}{29}{appendix*.14}%
+\contentsline {section}{\numberline {2.5}Gaps in the Literature}{13}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Chapter Summary}{15}{section.2.6}%
+\contentsline {chapter}{\numberline {3}Data and Preprocessing}{17}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Insert a Figure}{17}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Creating a list}{18}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Creating a Table}{18}{subsection.3.2.1}%
+\contentsline {section}{\numberline {3.3}Quote}{19}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Methodology}{20}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Math}{20}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Results}{22}{chapter.5}%
+\contentsline {section}{\numberline {5.1}References}{22}{section.5.1}%
+\contentsline {chapter}{\numberline {6}Conclusions and Future Directions}{24}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Summary}{24}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Conclusions}{24}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Contributions}{24}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Future Work}{24}{section.6.4}%
+\contentsline {chapter}{Appendix A: Insert figure in Appendix}{25}{section*.11}%
+\contentsline {chapter}{Appendix B: Insert Text in Appendix}{26}{section*.13}%
+\contentsline {chapter}{Appendix C: Insert C++/Java et al. Code in Appendix}{29}{lstnumber.-1.143}%
+\contentsline {chapter}{References}{30}{appendix*.16}%
