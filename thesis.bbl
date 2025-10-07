@@ -5,203 +5,336 @@
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[Bencivenga et~al.(2020)Bencivenga, Komici, Nocella, Grieco, Spezzano, Puzone, Cannavo, Cittadini, Corbi, Ferrara, and Rengo]{bencivengaAtrialFibrillationElderly2020}
-Leonardo Bencivenga, Klara Komici, Pierangela Nocella, Fabrizio~Vincenzo Grieco, Angela Spezzano, Brunella Puzone, Alessandro Cannavo, Antonio Cittadini, Graziamaria Corbi, Nicola Ferrara, and Giuseppe Rengo.
+\bibitem[Bencivenga et~al.(2020)Bencivenga, Komici, Nocella, Grieco, Spezzano,
+  Puzone, Cannavo, Cittadini, Corbi, Ferrara, and
+  Rengo]{bencivengaAtrialFibrillationElderly2020}
+Leonardo Bencivenga, Klara Komici, Pierangela Nocella, Fabrizio~Vincenzo
+  Grieco, Angela Spezzano, Brunella Puzone, Alessandro Cannavo, Antonio
+  Cittadini, Graziamaria Corbi, Nicola Ferrara, and Giuseppe Rengo.
 \newblock Atrial fibrillation in the elderly: A risk factor beyond stroke.
 \newblock \emph{Ageing Research Reviews}, 61:\penalty0 101092, 2020.
 \newblock ISSN 1568-1637.
 \newblock \doi{10.1016/j.arr.2020.101092}.
 
-\bibitem[Bardon et~al.(2020)Bardon, Streicher, Corish, Clarke, Power, Kenny, O'Connor, Laird, O'Connor, Visser, Volkert, Gibney, and {MaNuEL Consortium}]{bardonPredictorsIncidentMalnutrition2020}
-Laura~A Bardon, Melanie Streicher, Clare~A Corish, Michelle Clarke, Lauren~C Power, Rose~Anne Kenny, Deirdre~M O'Connor, Eamon Laird, Eibhlis~M O'Connor, Marjolein Visser, Dorothee Volkert, Eileen~R Gibney, and {MaNuEL Consortium}.
-\newblock Predictors of {{Incident Malnutrition}} in {{Older Irish Adults}} from the {{Irish Longitudinal Study}} on {{Ageing Cohort}}---{{A MaNuEL}} study.
-\newblock \emph{J Gerontol A Biol Sci Med Sci}, 75\penalty0 (2):\penalty0 249--256, January 2020.
+\bibitem[Bardon et~al.(2020)Bardon, Streicher, Corish, Clarke, Power, Kenny,
+  O'Connor, Laird, O'Connor, Visser, Volkert, Gibney, and {MaNuEL
+  Consortium}]{bardonPredictorsIncidentMalnutrition2020}
+Laura~A Bardon, Melanie Streicher, Clare~A Corish, Michelle Clarke, Lauren~C
+  Power, Rose~Anne Kenny, Deirdre~M O'Connor, Eamon Laird, Eibhlis~M O'Connor,
+  Marjolein Visser, Dorothee Volkert, Eileen~R Gibney, and {MaNuEL Consortium}.
+\newblock Predictors of {{Incident Malnutrition}} in {{Older Irish Adults}}
+  from the {{Irish Longitudinal Study}} on {{Ageing Cohort}}---{{A MaNuEL}}
+  study.
+\newblock \emph{J Gerontol A Biol Sci Med Sci}, 75\penalty0 (2):\penalty0
+  249--256, January 2020.
 \newblock ISSN 1079-5006.
 \newblock \doi{10.1093/gerona/gly225}.
 
-\bibitem[Davis et~al.(2021{\natexlab{a}})Davis, Knight, Donoghue, Hern{\'a}ndez, Rizzo, Kenny, and {Romero-Ortuno}]{davisComparisonGaitSpeed2021}
-James R.~C. Davis, Silvin~P. Knight, Orna~A. Donoghue, Belinda Hern{\'a}ndez, Rossella Rizzo, Rose~Anne Kenny, and Roman {Romero-Ortuno}.
-\newblock Comparison of {{Gait Speed Reserve}}, {{Usual Gait Speed}}, and {{Maximum Gait Speed}} of {{Adults Aged}} 50+ in {{Ireland Using Explainable Machine Learning}}.
+\bibitem[Davis et~al.(2021{\natexlab{a}})Davis, Knight, Donoghue,
+  Hern{\'a}ndez, Rizzo, Kenny, and
+  {Romero-Ortuno}]{davisComparisonGaitSpeed2021}
+James R.~C. Davis, Silvin~P. Knight, Orna~A. Donoghue, Belinda Hern{\'a}ndez,
+  Rossella Rizzo, Rose~Anne Kenny, and Roman {Romero-Ortuno}.
+\newblock Comparison of {{Gait Speed Reserve}}, {{Usual Gait Speed}}, and
+  {{Maximum Gait Speed}} of {{Adults Aged}} 50+ in {{Ireland Using Explainable
+  Machine Learning}}.
 \newblock \emph{Front Netw Physiol}, 1:\penalty0 754477, 2021{\natexlab{a}}.
 \newblock ISSN 2674-0109.
 \newblock \doi{10.3389/fnetp.2021.754477}.
 
-\bibitem[Moore et~al.(2017)Moore, Bennett, and Normand]{mooreCountingTimeLived2017}
+\bibitem[Moore et~al.(2017)Moore, Bennett, and
+  Normand]{mooreCountingTimeLived2017}
 Patrick~V. Moore, Kathleen Bennett, and Charles Normand.
-\newblock Counting the time lived, the time left or illness? {{Age}}, proximity to death, morbidity and prescribing expenditures.
+\newblock Counting the time lived, the time left or illness? {{Age}}, proximity
+  to death, morbidity and prescribing expenditures.
 \newblock \emph{Social Science \& Medicine}, 184:\penalty0 1--14, 2017.
 \newblock ISSN 0277-9536.
 \newblock \doi{10.1016/j.socscimed.2017.04.038}.
 
-\bibitem[Huang et~al.(2020)Huang, Su, Jiang, and Zhu]{huangSexDifferencesAssociations2020}
+\bibitem[Huang et~al.(2020)Huang, Su, Jiang, and
+  Zhu]{huangSexDifferencesAssociations2020}
 Ying Huang, Yuhao Su, Ying Jiang, and Meilan Zhu.
-\newblock Sex differences in the associations between blood pressure and anxiety and depression scores in a middle-aged and elderly population: {{The Irish Longitudinal Study}} on {{Ageing}} ({{TILDA}}).
-\newblock \emph{Journal of Affective Disorders}, 274:\penalty0 118--125, September 2020.
+\newblock Sex differences in the associations between blood pressure and
+  anxiety and depression scores in a middle-aged and elderly population: {{The
+  Irish Longitudinal Study}} on {{Ageing}} ({{TILDA}}).
+\newblock \emph{Journal of Affective Disorders}, 274:\penalty0 118--125,
+  September 2020.
 \newblock ISSN 0165-0327.
 \newblock \doi{10.1016/j.jad.2020.05.133}.
 
 \bibitem[{World Health Organization Europe}(2025)]{WhoNutritionReport}
 {World Health Organization Europe}.
-\newblock New data: Noncommunicable diseases cause 1.8 million avoidable deaths and cost {{US}}\$ 514 billion every year, reveals new {{WHO}}/{{Europe}} report.
-\newblock https://www.who.int/europe/news/item/27-06-2025-new-data--noncommunicable-diseases-cause-1-8-million-avoidable-deaths-and-cost-us-514-billion-USD-every-year--reveals-new-who-europe-report, 2025.
+\newblock New data: Noncommunicable diseases cause 1.8 million avoidable deaths
+  and cost {{US}}\$ 514 billion every year, reveals new {{WHO}}/{{Europe}}
+  report.
+\newblock
+  https://www.who.int/europe/news/item/27-06-2025-new-data--noncommunicable-diseases-cause-1-8-million-avoidable-deaths-and-cost-us-514-billion-USD-every-year--reveals-new-who-europe-report,
+  2025.
 
 \bibitem[Rice and Normand(2012)]{RICE2012}
 Niamh Rice and Charles Normand.
 \newblock The cost associated with disease-related malnutrition in {{Ireland}}.
-\newblock \emph{Public Health Nutr}, 15\penalty0 (10):\penalty0 1966--1972, October 2012.
+\newblock \emph{Public Health Nutr}, 15\penalty0 (10):\penalty0 1966--1972,
+  October 2012.
 \newblock ISSN 1475-2727.
 \newblock \doi{10.1017/S1368980011003624}.
 
-\bibitem[Murphy et~al.(2023)Murphy, Duggan, Davis, O'Halloran, Knight, Kenny, McCarthy, and {Romero-Ortuno}]{murphyPlasmaLuteinZeaxanthin2023}
-Caoileann~H. Murphy, Eoin Duggan, James Davis, Aisling~M. O'Halloran, Silvin~P. Knight, Rose~Anne Kenny, Sinead~N. McCarthy, and Roman {Romero-Ortuno}.
-\newblock Plasma lutein and zeaxanthin concentrations associated with musculoskeletal health and incident frailty in {{The Irish Longitudinal Study}} on {{Ageing}} ({{TILDA}}).
+\bibitem[Murphy et~al.(2023)Murphy, Duggan, Davis, O'Halloran, Knight, Kenny,
+  McCarthy, and {Romero-Ortuno}]{murphyPlasmaLuteinZeaxanthin2023}
+Caoileann~H. Murphy, Eoin Duggan, James Davis, Aisling~M. O'Halloran, Silvin~P.
+  Knight, Rose~Anne Kenny, Sinead~N. McCarthy, and Roman {Romero-Ortuno}.
+\newblock Plasma lutein and zeaxanthin concentrations associated with
+  musculoskeletal health and incident frailty in {{The Irish Longitudinal
+  Study}} on {{Ageing}} ({{TILDA}}).
 \newblock \emph{Experimental Gerontology}, 171:\penalty0 112013, 2023.
 \newblock ISSN 0531-5565.
 \newblock \doi{10.1016/j.exger.2022.112013}.
 
-\bibitem[Laird et~al.(2023{\natexlab{a}})Laird, Rasmussen, Kenny, and Herring]{lairdPhysicalActivityDose2023}
+\bibitem[Laird et~al.(2023{\natexlab{a}})Laird, Rasmussen, Kenny, and
+  Herring]{lairdPhysicalActivityDose2023}
 Eamon Laird, Charlotte~Lund Rasmussen, Rose~Anne Kenny, and Matthew~P. Herring.
-\newblock Physical {{Activity Dose}} and {{Depression}} in a {{Cohort}} of {{Older Adults}} in {{The Irish Longitudinal Study}} on {{Ageing}}.
-\newblock \emph{JAMA Netw Open}, 6\penalty0 (7):\penalty0 e2322489, July 2023{\natexlab{a}}.
+\newblock Physical {{Activity Dose}} and {{Depression}} in a {{Cohort}} of
+  {{Older Adults}} in {{The Irish Longitudinal Study}} on {{Ageing}}.
+\newblock \emph{JAMA Netw Open}, 6\penalty0 (7):\penalty0 e2322489, July
+  2023{\natexlab{a}}.
 \newblock ISSN 2574-3805.
 \newblock \doi{10.1001/jamanetworkopen.2023.22489}.
 
-\bibitem[McDowell et~al.(2018)McDowell, Dishman, Hallgren, MacDonncha, and Herring]{mcdowellAssociationsPhysicalActivity2018}
+\bibitem[McDowell et~al.(2018)McDowell, Dishman, Hallgren, MacDonncha, and
+  Herring]{mcdowellAssociationsPhysicalActivity2018}
 C.~P. McDowell, R.~K. Dishman, M.~Hallgren, C.~MacDonncha, and M.~P. Herring.
-\newblock Associations of physical activity and depression: {{Results}} from the {{Irish Longitudinal Study}} on {{Ageing}}.
+\newblock Associations of physical activity and depression: {{Results}} from
+  the {{Irish Longitudinal Study}} on {{Ageing}}.
 \newblock \emph{Experimental Gerontology}, 112:\penalty0 68--75, 2018.
 \newblock ISSN 0531-5565.
 \newblock \doi{10.1016/j.exger.2018.09.004}.
 
-\bibitem[McCrory et~al.(2016)McCrory, Finucane, O'Hare, Frewen, Nolan, Layte, Kearney, and Kenny]{mccrorySocialDisadvantageSocial2016}
-Cathal McCrory, Ciaran Finucane, Celia O'Hare, John Frewen, Hugh Nolan, Richard Layte, Patricia~M. Kearney, and Rose~Anne Kenny.
-\newblock Social {{Disadvantage}} and {{Social Isolation Are Associated With}} a {{Higher Resting Heart Rate}}: {{Evidence From The Irish Longitudinal Study}} on {{Ageing}}.
-\newblock \emph{J Gerontol B Psychol Sci Soc Sci}, 71\penalty0 (3):\penalty0 463--473, May 2016.
+\bibitem[McCrory et~al.(2016)McCrory, Finucane, O'Hare, Frewen, Nolan, Layte,
+  Kearney, and Kenny]{mccrorySocialDisadvantageSocial2016}
+Cathal McCrory, Ciaran Finucane, Celia O'Hare, John Frewen, Hugh Nolan, Richard
+  Layte, Patricia~M. Kearney, and Rose~Anne Kenny.
+\newblock Social {{Disadvantage}} and {{Social Isolation Are Associated With}}
+  a {{Higher Resting Heart Rate}}: {{Evidence From The Irish Longitudinal
+  Study}} on {{Ageing}}.
+\newblock \emph{J Gerontol B Psychol Sci Soc Sci}, 71\penalty0 (3):\penalty0
+  463--473, May 2016.
 \newblock ISSN 1079-5014.
 \newblock \doi{10.1093/geronb/gbu163}.
 
-\bibitem[Laird et~al.(2023{\natexlab{b}})Laird, Herring, Carson, Woods, Walsh, Kenny, and Rasmussen]{lairdPhysicalActivityDepression2023}
-Eamon Laird, Matthew~P. Herring, Brian~P. Carson, Catherine~B. Woods, Cathal Walsh, Rose~Anne Kenny, and Charlotte~Lund Rasmussen.
-\newblock Physical activity for depression among the chronically {{Ill}}: {{Results}} from older diabetics in the {{Irish}} longitudinal study on ageing.
-\newblock \emph{Psychiatry Research}, 326:\penalty0 115274, August 2023{\natexlab{b}}.
+\bibitem[Laird et~al.(2023{\natexlab{b}})Laird, Herring, Carson, Woods, Walsh,
+  Kenny, and Rasmussen]{lairdPhysicalActivityDepression2023}
+Eamon Laird, Matthew~P. Herring, Brian~P. Carson, Catherine~B. Woods, Cathal
+  Walsh, Rose~Anne Kenny, and Charlotte~Lund Rasmussen.
+\newblock Physical activity for depression among the chronically {{Ill}}:
+  {{Results}} from older diabetics in the {{Irish}} longitudinal study on
+  ageing.
+\newblock \emph{Psychiatry Research}, 326:\penalty0 115274, August
+  2023{\natexlab{b}}.
 \newblock ISSN 0165-1781.
 \newblock \doi{10.1016/j.psychres.2023.115274}.
 
-\bibitem[Moguilner et~al.(2021)Moguilner, Knight, Davis, O'Halloran, Kenny, and {Romero-Ortuno}]{moguilnerImportanceAgePrediction2021}
-Sebastian Moguilner, Silvin~P. Knight, James R.~C. Davis, Aisling~M. O'Halloran, Rose~Anne Kenny, and Roman {Romero-Ortuno}.
-\newblock The {{Importance}} of {{Age}} in the {{Prediction}} of {{Mortality}} by a {{Frailty Index}}: {{A Machine Learning Approach}} in the {{Irish Longitudinal Study}} on {{Ageing}}.
+\bibitem[Moguilner et~al.(2021)Moguilner, Knight, Davis, O'Halloran, Kenny, and
+  {Romero-Ortuno}]{moguilnerImportanceAgePrediction2021}
+Sebastian Moguilner, Silvin~P. Knight, James R.~C. Davis, Aisling~M.
+  O'Halloran, Rose~Anne Kenny, and Roman {Romero-Ortuno}.
+\newblock The {{Importance}} of {{Age}} in the {{Prediction}} of {{Mortality}}
+  by a {{Frailty Index}}: {{A Machine Learning Approach}} in the {{Irish
+  Longitudinal Study}} on {{Ageing}}.
 \newblock \emph{Geriatrics (Basel)}, 6\penalty0 (3):\penalty0 84, August 2021.
 \newblock ISSN 2308-3417.
 \newblock \doi{10.3390/geriatrics6030084}.
 
-\bibitem[Donoghue et~al.(2023)Donoghue, Hernandez, O'Connell, and Kenny]{donoghueUsingConditionalInference2023}
+\bibitem[Donoghue et~al.(2023)Donoghue, Hernandez, O'Connell, and
+  Kenny]{donoghueUsingConditionalInference2023}
 Orna~A Donoghue, Belinda Hernandez, Matthew D~L O'Connell, and Rose~Anne Kenny.
-\newblock Using {{Conditional Inference Forests}} to {{Examine Predictive Ability}} for {{Future Falls}} and {{Syncope}} in {{Older Adults}}: {{Results}} from {{The Irish Longitudinal Study}} on {{Ageing}}.
-\newblock \emph{J Gerontol A Biol Sci Med Sci}, 78\penalty0 (4):\penalty0 673--682, April 2023.
+\newblock Using {{Conditional Inference Forests}} to {{Examine Predictive
+  Ability}} for {{Future Falls}} and {{Syncope}} in {{Older Adults}}:
+  {{Results}} from {{The Irish Longitudinal Study}} on {{Ageing}}.
+\newblock \emph{J Gerontol A Biol Sci Med Sci}, 78\penalty0 (4):\penalty0
+  673--682, April 2023.
 \newblock ISSN 1758-535X.
 \newblock \doi{10.1093/gerona/glac156}.
 
-\bibitem[{Romero-Ortuno} et~al.(2021){Romero-Ortuno}, Hartley, Davis, Knight, Rizzo, Hern{\'a}ndez, Kenny, and O'Halloran]{romero-ortunoTransitionsFrailtyPhenotype2021}
-Roman {Romero-Ortuno}, Peter Hartley, James Davis, Silvin~P. Knight, Rossella Rizzo, Belinda Hern{\'a}ndez, Rose~Anne Kenny, and Aisling~M. O'Halloran.
-\newblock Transitions in frailty phenotype states and components over 8 years: {{Evidence}} from {{The Irish Longitudinal Study}} on {{Ageing}}.
-\newblock \emph{Archives of Gerontology and Geriatrics}, 95:\penalty0 104401, 2021.
+\bibitem[{Romero-Ortuno} et~al.(2021){Romero-Ortuno}, Hartley, Davis, Knight,
+  Rizzo, Hern{\'a}ndez, Kenny, and
+  O'Halloran]{romero-ortunoTransitionsFrailtyPhenotype2021}
+Roman {Romero-Ortuno}, Peter Hartley, James Davis, Silvin~P. Knight, Rossella
+  Rizzo, Belinda Hern{\'a}ndez, Rose~Anne Kenny, and Aisling~M. O'Halloran.
+\newblock Transitions in frailty phenotype states and components over 8 years:
+  {{Evidence}} from {{The Irish Longitudinal Study}} on {{Ageing}}.
+\newblock \emph{Archives of Gerontology and Geriatrics}, 95:\penalty0 104401,
+  2021.
 \newblock ISSN 0167-4943.
 \newblock \doi{10.1016/j.archger.2021.104401}.
 
-\bibitem[McCarthy et~al.(2023{\natexlab{a}})McCarthy, Laird, O'Halloran, Fallon, Ortu{\~n}o, and Kenny]{mccarthyAssociationMetabolicSyndrome2023}
-Kevin McCarthy, Eamon Laird, Aisling~M. O'Halloran, Padraic Fallon, Rom{\'a}n~Romero Ortu{\~n}o, and Rose~Anne Kenny.
-\newblock Association between metabolic syndrome and risk of both prevalent and incident frailty in older adults: {{Findings}} from {{The Irish Longitudinal Study}} on {{Ageing}} ({{TILDA}}).
-\newblock \emph{Experimental Gerontology}, 172:\penalty0 112056, 2023{\natexlab{a}}.
+\bibitem[McCarthy et~al.(2023{\natexlab{a}})McCarthy, Laird, O'Halloran,
+  Fallon, Ortu{\~n}o, and Kenny]{mccarthyAssociationMetabolicSyndrome2023}
+Kevin McCarthy, Eamon Laird, Aisling~M. O'Halloran, Padraic Fallon,
+  Rom{\'a}n~Romero Ortu{\~n}o, and Rose~Anne Kenny.
+\newblock Association between metabolic syndrome and risk of both prevalent and
+  incident frailty in older adults: {{Findings}} from {{The Irish Longitudinal
+  Study}} on {{Ageing}} ({{TILDA}}).
+\newblock \emph{Experimental Gerontology}, 172:\penalty0 112056,
+  2023{\natexlab{a}}.
 \newblock ISSN 0531-5565.
 \newblock \doi{10.1016/j.exger.2022.112056}.
 
-\bibitem[Huang et~al.(2019)Huang, Sun, Tian, Wang, Wang, Duan, and Wu]{huangAgeModifyAssociations2019}
-Chuanying Huang, Shuqin Sun, Xiaocao Tian, Tong Wang, Tianyu Wang, Haiping Duan, and Yili Wu.
-\newblock Age modify the associations of obesity, physical activity, vision and grip strength with functional mobility in {{Irish}} aged 50 and older.
-\newblock \emph{Archives of Gerontology and Geriatrics}, 84:\penalty0 103895, 2019.
+\bibitem[Huang et~al.(2019)Huang, Sun, Tian, Wang, Wang, Duan, and
+  Wu]{huangAgeModifyAssociations2019}
+Chuanying Huang, Shuqin Sun, Xiaocao Tian, Tong Wang, Tianyu Wang, Haiping
+  Duan, and Yili Wu.
+\newblock Age modify the associations of obesity, physical activity, vision and
+  grip strength with functional mobility in {{Irish}} aged 50 and older.
+\newblock \emph{Archives of Gerontology and Geriatrics}, 84:\penalty0 103895,
+  2019.
 \newblock ISSN 0167-4943.
 \newblock \doi{10.1016/j.archger.2019.05.020}.
 
-\bibitem[Santini et~al.(2017)Santini, Koyanagi, Tyrovolas, Haro, Donovan, Nielsen, and Koushede]{santiniProtectivePropertiesActBelongCommit2017}
-Ziggi~Ivan Santini, Ai~Koyanagi, Stefanos Tyrovolas, Josep~Maria Haro, Robert~J. Donovan, Line Nielsen, and Vibeke Koushede.
-\newblock The protective properties of {{Act-Belong-Commit}} indicators against incident depression, anxiety, and cognitive impairment among older {{Irish}} adults: {{Findings}} from a prospective community-based study.
+\bibitem[Santini et~al.(2017)Santini, Koyanagi, Tyrovolas, Haro, Donovan,
+  Nielsen, and Koushede]{santiniProtectivePropertiesActBelongCommit2017}
+Ziggi~Ivan Santini, Ai~Koyanagi, Stefanos Tyrovolas, Josep~Maria Haro,
+  Robert~J. Donovan, Line Nielsen, and Vibeke Koushede.
+\newblock The protective properties of {{Act-Belong-Commit}} indicators against
+  incident depression, anxiety, and cognitive impairment among older {{Irish}}
+  adults: {{Findings}} from a prospective community-based study.
 \newblock \emph{Experimental Gerontology}, 91:\penalty0 79--87, 2017.
 \newblock ISSN 0531-5565.
 \newblock \doi{10.1016/j.exger.2017.02.074}.
 
-\bibitem[Juola et~al.(2014)Juola, Bjorkman, Kautiainen, Pylkkanen, {Finne-Soveri}, Soini, Pitk{\"a}l{\"a}, and Bell]{juolaO117NursingStaff2014}
-A.~L. Juola, M.~P. Bjorkman, H.~Kautiainen, S.~Pylkkanen, U.~H. {Finne-Soveri}, H.~Soini, K.~H. Pitk{\"a}l{\"a}, and J.~S. Bell.
-\newblock O1.17: {{Nursing}} staff education to reduce potentially harmful medication use among older people in assisted living facilities: Effects of randomized controlled trial on cognition and falls.
+\bibitem[Juola et~al.(2014)Juola, Bjorkman, Kautiainen, Pylkkanen,
+  {Finne-Soveri}, Soini, Pitk{\"a}l{\"a}, and Bell]{juolaO117NursingStaff2014}
+A.~L. Juola, M.~P. Bjorkman, H.~Kautiainen, S.~Pylkkanen, U.~H. {Finne-Soveri},
+  H.~Soini, K.~H. Pitk{\"a}l{\"a}, and J.~S. Bell.
+\newblock O1.17: {{Nursing}} staff education to reduce potentially harmful
+  medication use among older people in assisted living facilities: Effects of
+  randomized controlled trial on cognition and falls.
 \newblock \emph{European Geriatric Medicine}, 5:\penalty0 S50--S51, 2014.
 \newblock ISSN 1878-7649.
 \newblock \doi{10.1016/S1878-7649(14)70100-7}.
 
-\bibitem[Jacob et~al.(2023)Jacob, Kostev, Shin, Smith, Oh, Abduljabbar, Haro, and Koyanagi]{jacobFallsIncreaseRisk2023}
-Louis Jacob, Karel Kostev, Jae~Il Shin, Lee Smith, Hans Oh, Adel~S. Abduljabbar, Josep~Maria Haro, and Ai~Koyanagi.
-\newblock Falls increase the risk for incident anxiety and depressive symptoms among adults aged {$\geq$}50 years: {{An}} analysis of the {{Irish}} longitudinal study on ageing.
-\newblock \emph{Archives of Gerontology and Geriatrics}, 114:\penalty0 105098, 2023.
+\bibitem[Jacob et~al.(2023)Jacob, Kostev, Shin, Smith, Oh, Abduljabbar, Haro,
+  and Koyanagi]{jacobFallsIncreaseRisk2023}
+Louis Jacob, Karel Kostev, Jae~Il Shin, Lee Smith, Hans Oh, Adel~S.
+  Abduljabbar, Josep~Maria Haro, and Ai~Koyanagi.
+\newblock Falls increase the risk for incident anxiety and depressive symptoms
+  among adults aged {$\geq$}50 years: {{An}} analysis of the {{Irish}}
+  longitudinal study on ageing.
+\newblock \emph{Archives of Gerontology and Geriatrics}, 114:\penalty0 105098,
+  2023.
 \newblock ISSN 0167-4943.
 \newblock \doi{10.1016/j.archger.2023.105098}.
 
-\bibitem[McCarthy et~al.(2022)McCarthy, Laird, O'Halloran, Walsh, Healy, Fitzpatrick, Walsh, Hern{\'a}ndez, Fallon, Molloy, and Kenny]{mccarthyAssociationVitaminDeficiency2022}
-Kevin McCarthy, Eamon Laird, Aisling~M. O'Halloran, Cathal Walsh, Martin Healy, Annette~L. Fitzpatrick, James~B. Walsh, Belinda Hern{\'a}ndez, Padraic Fallon, Anne~M. Molloy, and Rose~Anne Kenny.
-\newblock Association between vitamin {{D}} deficiency and the risk of prevalent type 2 diabetes and incident prediabetes: {{A}} prospective cohort study using data from {{The Irish Longitudinal Study}} on {{Ageing}} ({{TILDA}}).
+\bibitem[McCarthy et~al.(2022)McCarthy, Laird, O'Halloran, Walsh, Healy,
+  Fitzpatrick, Walsh, Hern{\'a}ndez, Fallon, Molloy, and
+  Kenny]{mccarthyAssociationVitaminDeficiency2022}
+Kevin McCarthy, Eamon Laird, Aisling~M. O'Halloran, Cathal Walsh, Martin Healy,
+  Annette~L. Fitzpatrick, James~B. Walsh, Belinda Hern{\'a}ndez, Padraic
+  Fallon, Anne~M. Molloy, and Rose~Anne Kenny.
+\newblock Association between vitamin {{D}} deficiency and the risk of
+  prevalent type 2 diabetes and incident prediabetes: {{A}} prospective cohort
+  study using data from {{The Irish Longitudinal Study}} on {{Ageing}}
+  ({{TILDA}}).
 \newblock \emph{EClinicalMedicine}, 53:\penalty0 101654, November 2022.
 \newblock ISSN 2589-5370.
 \newblock \doi{10.1016/j.eclinm.2022.101654}.
 
-\bibitem[McCarthy et~al.(2023{\natexlab{b}})McCarthy, O'Halloran, Fallon, Kenny, and McCrory]{mccarthyMetabolicSyndromeAccelerates2023}
-Kevin McCarthy, Aisling~M. O'Halloran, Padraic Fallon, Rose~Anne Kenny, and Cathal McCrory.
-\newblock Metabolic syndrome accelerates epigenetic ageing in older adults: {{Findings}} from {{The Irish Longitudinal Study}} on {{Ageing}} ({{TILDA}}).
-\newblock \emph{Experimental Gerontology}, 183:\penalty0 112314, 2023{\natexlab{b}}.
+\bibitem[McCarthy et~al.(2023{\natexlab{b}})McCarthy, O'Halloran, Fallon,
+  Kenny, and McCrory]{mccarthyMetabolicSyndromeAccelerates2023}
+Kevin McCarthy, Aisling~M. O'Halloran, Padraic Fallon, Rose~Anne Kenny, and
+  Cathal McCrory.
+\newblock Metabolic syndrome accelerates epigenetic ageing in older adults:
+  {{Findings}} from {{The Irish Longitudinal Study}} on {{Ageing}} ({{TILDA}}).
+\newblock \emph{Experimental Gerontology}, 183:\penalty0 112314,
+  2023{\natexlab{b}}.
 \newblock ISSN 0531-5565.
 \newblock \doi{10.1016/j.exger.2023.112314}.
 
-\bibitem[Azizi et~al.(2024)Azizi, Hirst, Dowd, McCrory, Kenny, Newell, and Setti]{aziziEvidenceAssociationAllostatic2024}
-Zahra Azizi, Rebecca~J. Hirst, Alan~O' Dowd, Cathal McCrory, Rose~Anne Kenny, Fiona~N. Newell, and Annalisa Setti.
-\newblock Evidence for an association between allostatic load and multisensory integration in middle-aged and older adults.
-\newblock \emph{Archives of Gerontology and Geriatrics}, 116:\penalty0 105155, 2024.
+\bibitem[Azizi et~al.(2024)Azizi, Hirst, Dowd, McCrory, Kenny, Newell, and
+  Setti]{aziziEvidenceAssociationAllostatic2024}
+Zahra Azizi, Rebecca~J. Hirst, Alan~O' Dowd, Cathal McCrory, Rose~Anne Kenny,
+  Fiona~N. Newell, and Annalisa Setti.
+\newblock Evidence for an association between allostatic load and multisensory
+  integration in middle-aged and older adults.
+\newblock \emph{Archives of Gerontology and Geriatrics}, 116:\penalty0 105155,
+  2024.
 \newblock ISSN 0167-4943.
 \newblock \doi{10.1016/j.archger.2023.105155}.
 
-\bibitem[Xu et~al.(2023)Xu, Mingyang, Yang, Zheng, and Che]{xuTailoredMachineLearning2023}
+\bibitem[Xu et~al.(2023)Xu, Mingyang, Yang, Zheng, and
+  Che]{xuTailoredMachineLearning2023}
 Xuezhong Xu, Xue Mingyang, Jie Yang, Hailong Zheng, and Zhifei Che.
-\newblock Tailored machine learning for evaluating the long-term diabetes risk in older individuals: Findings from the {{Irish Longitudinal Study}} on {{Ageing}} ({{TILDA}}).
+\newblock Tailored machine learning for evaluating the long-term diabetes risk
+  in older individuals: Findings from the {{Irish Longitudinal Study}} on
+  {{Ageing}} ({{TILDA}}).
 \newblock \emph{BMJ Open}, 13\penalty0 (5):\penalty0 e072991, May 2023.
 \newblock ISSN 2044-6055.
 \newblock \doi{10.1136/bmjopen-2023-072991}.
 
-\bibitem[Boyle et~al.(2021)Boyle, Jollans, {Rueda-Delgado}, Rizzo, Yener, McMorrow, Knight, Carey, Robertson, {Emek-Sava{\c s}}, Stern, Kenny, and Whelan]{boyleBrainpredictedAgeDifference2021}
-Rory Boyle, Lee Jollans, Laura~M. {Rueda-Delgado}, Rossella Rizzo, G{\"o}rsev~G. Yener, Jason~P. McMorrow, Silvin~P. Knight, Daniel Carey, Ian~H. Robertson, Derya~D. {Emek-Sava{\c s}}, Yaakov Stern, Rose~Anne Kenny, and Robert Whelan.
-\newblock Brain-predicted age difference score is related to specific cognitive functions: A multi-site replication analysis.
-\newblock \emph{Brain Imaging Behav}, 15\penalty0 (1):\penalty0 327--345, February 2021.
+\bibitem[Boyle et~al.(2021)Boyle, Jollans, {Rueda-Delgado}, Rizzo, Yener,
+  McMorrow, Knight, Carey, Robertson, {Emek-Sava{\c s}}, Stern, Kenny, and
+  Whelan]{boyleBrainpredictedAgeDifference2021}
+Rory Boyle, Lee Jollans, Laura~M. {Rueda-Delgado}, Rossella Rizzo,
+  G{\"o}rsev~G. Yener, Jason~P. McMorrow, Silvin~P. Knight, Daniel Carey,
+  Ian~H. Robertson, Derya~D. {Emek-Sava{\c s}}, Yaakov Stern, Rose~Anne Kenny,
+  and Robert Whelan.
+\newblock Brain-predicted age difference score is related to specific cognitive
+  functions: A multi-site replication analysis.
+\newblock \emph{Brain Imaging Behav}, 15\penalty0 (1):\penalty0 327--345,
+  February 2021.
 \newblock ISSN 1931-7565.
 \newblock \doi{10.1007/s11682-020-00260-3}.
 
 \bibitem[Zarudsky and Prashchayeu(2014)]{zarudskyP277OneleggedBalance2014}
 A.~A. Zarudsky and K.~I. Prashchayeu.
-\newblock P277: {{One-legged}} balance test and falls in old patients with cardiovascular diseases.
+\newblock P277: {{One-legged}} balance test and falls in old patients with
+  cardiovascular diseases.
 \newblock \emph{European Geriatric Medicine}, 5:\penalty0 S171--S172, 2014.
 \newblock ISSN 1878-7649.
 \newblock \doi{10.1016/S1878-7649(14)70448-6}.
 
-\bibitem[Matthews et~al.(2022)Matthews, Ward, Nolan, Normand, Kenny, and May]{matthewsPredictingMortalityIrish2022}
-Soraya Matthews, Mark Ward, Anne Nolan, Charles Normand, Rose~Anne Kenny, and Peter May.
-\newblock Predicting mortality in {{The Irish Longitudinal Study}} on {{Ageing}} ({{TILDA}}): Development of a four-year index and comparison with international measures.
+\bibitem[Matthews et~al.(2022)Matthews, Ward, Nolan, Normand, Kenny, and
+  May]{matthewsPredictingMortalityIrish2022}
+Soraya Matthews, Mark Ward, Anne Nolan, Charles Normand, Rose~Anne Kenny, and
+  Peter May.
+\newblock Predicting mortality in {{The Irish Longitudinal Study}} on
+  {{Ageing}} ({{TILDA}}): Development of a four-year index and comparison with
+  international measures.
 \newblock \emph{BMC Geriatr}, 22:\penalty0 510, June 2022.
 \newblock ISSN 1471-2318.
 \newblock \doi{10.1186/s12877-022-03196-z}.
 
-\bibitem[Davis et~al.(2021{\natexlab{b}})Davis, Knight, Rizzo, Donoghue, Kenny, and {Romero-Ortuno}]{davisLinearRegressionbasedMachine2021}
-James Davis, Silvin~P. Knight, Rossella Rizzo, Orna~A. Donoghue, Rose~Anne Kenny, and Roman {Romero-Ortuno}.
-\newblock A linear regression-based machine learning pipeline for the discovery of clinically relevant correlates of gait speed reserve from multiple physiological systems.
-\newblock In \emph{2021 29th {{European Signal Processing Conference}} ({{EUSIPCO}})}, pages 1266--1270, August 2021{\natexlab{b}}.
+\bibitem[Davis et~al.(2021{\natexlab{b}})Davis, Knight, Rizzo, Donoghue, Kenny,
+  and {Romero-Ortuno}]{davisLinearRegressionbasedMachine2021}
+James Davis, Silvin~P. Knight, Rossella Rizzo, Orna~A. Donoghue, Rose~Anne
+  Kenny, and Roman {Romero-Ortuno}.
+\newblock A linear regression-based machine learning pipeline for the discovery
+  of clinically relevant correlates of gait speed reserve from multiple
+  physiological systems.
+\newblock In \emph{2021 29th {{European Signal Processing Conference}}
+  ({{EUSIPCO}})}, pages 1266--1270, August 2021{\natexlab{b}}.
 \newblock \doi{10.23919/EUSIPCO54536.2021.9616187}.
 
-\bibitem[Zhang et~al.(2025)Zhang, Robinson, Whelan, Jollans, Wang, Nees, Chu, Bobou, Du, Cristea, Banaschewski, Barker, Bokde, Grigis, Garavan, Heinz, Br{\"u}hl, Martinot, Martinot, Artiges, Orfanos, Poustka, Hohmann, Millenet, Fr{\"o}hner, Smolka, Vaidya, Walter, Winterer, Broulidakis, {van Noort}, Stringaris, Penttil{\"a}, Grimmer, Insensee, Becker, Zhang, King, Sinclair, Schumann, Schmidt, and Desrivi{\`e}res]{zhangMachineLearningModels2025}
-Zuo Zhang, Lauren Robinson, Robert Whelan, Lee Jollans, Zijian Wang, Frauke Nees, Congying Chu, Marina Bobou, Dongping Du, Ilinca Cristea, Tobias Banaschewski, Gareth~J. Barker, Arun L.~W. Bokde, Antoine Grigis, Hugh Garavan, Andreas Heinz, R{\"u}diger Br{\"u}hl, Jean-Luc Martinot, Marie-Laure~Paill{\`e}re Martinot, Eric Artiges, Dimitri~Papadopoulos Orfanos, Luise Poustka, Sarah Hohmann, Sabina Millenet, Juliane~H. Fr{\"o}hner, Michael~N. Smolka, Nilakshi Vaidya, Henrik Walter, Jeanne Winterer, M.~John Broulidakis, Betteke~Maria {van Noort}, Argyris Stringaris, Jani Penttil{\"a}, Yvonne Grimmer, Corinna Insensee, Andreas Becker, Yuning Zhang, Sinead King, Julia Sinclair, Gunter Schumann, Ulrike Schmidt, and Sylvane Desrivi{\`e}res.
-\newblock Machine learning models for diagnosis and risk prediction in eating disorders, depression, and alcohol use disorder.
-\newblock \emph{Journal of Affective Disorders}, 379:\penalty0 889--899, June 2025.
+\bibitem[Zhang et~al.(2025)Zhang, Robinson, Whelan, Jollans, Wang, Nees, Chu,
+  Bobou, Du, Cristea, Banaschewski, Barker, Bokde, Grigis, Garavan, Heinz,
+  Br{\"u}hl, Martinot, Martinot, Artiges, Orfanos, Poustka, Hohmann, Millenet,
+  Fr{\"o}hner, Smolka, Vaidya, Walter, Winterer, Broulidakis, {van Noort},
+  Stringaris, Penttil{\"a}, Grimmer, Insensee, Becker, Zhang, King, Sinclair,
+  Schumann, Schmidt, and Desrivi{\`e}res]{zhangMachineLearningModels2025}
+Zuo Zhang, Lauren Robinson, Robert Whelan, Lee Jollans, Zijian Wang, Frauke
+  Nees, Congying Chu, Marina Bobou, Dongping Du, Ilinca Cristea, Tobias
+  Banaschewski, Gareth~J. Barker, Arun L.~W. Bokde, Antoine Grigis, Hugh
+  Garavan, Andreas Heinz, R{\"u}diger Br{\"u}hl, Jean-Luc Martinot,
+  Marie-Laure~Paill{\`e}re Martinot, Eric Artiges, Dimitri~Papadopoulos
+  Orfanos, Luise Poustka, Sarah Hohmann, Sabina Millenet, Juliane~H.
+  Fr{\"o}hner, Michael~N. Smolka, Nilakshi Vaidya, Henrik Walter, Jeanne
+  Winterer, M.~John Broulidakis, Betteke~Maria {van Noort}, Argyris Stringaris,
+  Jani Penttil{\"a}, Yvonne Grimmer, Corinna Insensee, Andreas Becker, Yuning
+  Zhang, Sinead King, Julia Sinclair, Gunter Schumann, Ulrike Schmidt, and
+  Sylvane Desrivi{\`e}res.
+\newblock Machine learning models for diagnosis and risk prediction in eating
+  disorders, depression, and alcohol use disorder.
+\newblock \emph{Journal of Affective Disorders}, 379:\penalty0 889--899, June
+  2025.
 \newblock ISSN 0165-0327.
 \newblock \doi{10.1016/j.jad.2024.12.053}.
 
