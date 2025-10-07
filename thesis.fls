@@ -214,6 +214,12 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/glossaries/styles/glossary-tr
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/glossaries/styles/glossary-tree.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/float/float.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/pdflscape/pdflscape-nometadata.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/pdflscape/pdflscape-nometadata.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/graphics/lscape.sty
+INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/graphics/lscape.sty
 OUTPUT thesis.glo
 OUTPUT thesis.acn
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/mathtools/mathtools.sty
