@@ -1230,6 +1230,34 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{brainPAD}%
+{%
+name={\acronymfont {\glsentryshort {brainPAD}}},%
+sort={brainPAD},%
+type={acronym},%
+first={brainPAD},%
+firstplural={brainPADs},%
+text={brainPAD},%
+plural={brainPADs},%
+description={Brain predicted age difference},%
+descriptionplural={Brain predicted age difference},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Brain predicted age difference},%
+longplural={Brain predicted age differences},%
+short={brainPAD},%
+shortplural={brainPADs},%
+counter={page},%
+parent={},%
+%
+}%
+
 \glsdefs@newdocentry{RF}%
 {%
 name={\acronymfont {\glsentryshort {RF}}},%

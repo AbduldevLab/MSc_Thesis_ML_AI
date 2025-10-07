@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.9)  6 OCT 2025 13:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.9)  7 OCT 2025 01:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -740,7 +740,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.25 ...ine {2.6}Chapter Summary}{15}{section.2.6}
+l.25 ...ine {2.6}Chapter Summary}{16}{section.2.6}
                                                   % [1
 
 ])
@@ -843,36 +843,50 @@ Chapter 2.
 [11]
 
 [12]
+Overfull \hbox (4.08002pt too wide) in paragraph at lines 193--193
+[]\OT1/cmr/m/n/10.95 Longitudinal
+ []
+
+
+LaTeX Warning: Float too large for page by 79.35474pt on input line 194.
+
+
 
 [13]
 
 [14]
 
-LaTeX Warning: Reference `chap:Methodology' on page 15 undefined on input line 170.
+[15
 
+]
 
+[16]
 
-[15])
+LaTeX Warning: Reference `chap:Methodology' on page 17 undefined on input line 221.
 
-[16] (./thesis.bbl (./thesis.brf)
+)
+
+[17] (./thesis.bbl (./thesis.brf)
 \tf@brf=\write11
 \openout11 = `thesis.brf'.
 
 
 
-[17
+[18
 
 
 
 ]
 
-[18]
-
 [19]
 
-[20])
+[20]
 
-[21] (./thesis.aux (./Latex/Macros/MacroFile1.aux) (./0_frontmatter/glossary.aux) (./1_introduction/introduction.aux) (./2_chapter2/chapter2.aux))
+[21]
+
+[22])
+
+[23] (./thesis.aux (./Latex/Macros/MacroFile1.aux) (./0_frontmatter/glossary.aux) (./1_introduction/introduction.aux) (./2_chapter2/chapter2.aux))
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -882,24 +896,60 @@ L3 programming layer <2025-01-18>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 0594023367C8BCDBEB0B9966026E3E2B;5324.
+(rerunfilecheck)             Checksum: DD8D64BC2636A8CCE0280603FED7759B;5324.
 Package rerunfilecheck Info: File `thesis.brf' has not changed.
-(rerunfilecheck)             Checksum: 94C646690DEF51A1E5D20F1BAE74D73E;3327.
+(rerunfilecheck)             Checksum: 6CC9DCEC8EC6EB4495DB9D3C09DB6DA0;4218.
  )
 (\end occurred when \iftrue on line 118 was incomplete) 
 Here is how much of TeX's memory you used:
- 25578 strings out of 473190
- 461049 string characters out of 5715801
- 1168166 words of memory out of 5000000
- 48353 multiletter control sequences out of 15000+600000
+ 25638 strings out of 473190
+ 462167 string characters out of 5715801
+ 1190166 words of memory out of 5000000
+ 48397 multiletter control sequences out of 15000+600000
  570532 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  125i,12n,121p,2474b,785s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on thesis.pdf (31 pages, 554304 bytes).
+
+pdfTeX warning (dest): name{glo:brainPAD} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{glo:MGS} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{glo:UGS} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{glo:MVPA} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{glo:OR} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{glo:PA} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{glo:BMI} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{glo:TUG} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{glo:PRAUC} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{glo:AUROC} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{glo:CV} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{glo:FOF} has been referenced but does not exist, replaced by a fixed one
+
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on thesis.pdf (33 pages, 576485 bytes).
 PDF statistics:
- 587 PDF objects out of 1000 (max. 8388607)
- 519 compressed objects within 6 object streams
- 105 named destinations out of 1000 (max. 500000)
+ 688 PDF objects out of 1000 (max. 8388607)
+ 614 compressed objects within 7 object streams
+ 121 named destinations out of 1000 (max. 500000)
  211 words of extra memory for PDF output out of 10000 (max. 10000000)
 

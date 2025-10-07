@@ -21,6 +21,6 @@
 \contentsline {subsection}{\numberline {2.4.2}ML Models Used}{12}{subsection.2.4.2}%
 \contentsline {subsection}{\numberline {2.4.3}Performance and Validation}{12}{subsection.2.4.3}%
 \contentsline {subsection}{\numberline {2.4.4}Explainability in ML for Ageing}{13}{subsection.2.4.4}%
-\contentsline {section}{\numberline {2.5}Gaps in the Literature}{13}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Chapter Summary}{15}{section.2.6}%
-\contentsline {chapter}{References}{17}{chapter*.6}%
+\contentsline {section}{\numberline {2.5}Gaps in the Literature}{15}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Chapter Summary}{16}{section.2.6}%
+\contentsline {chapter}{References}{18}{chapter*.7}%
