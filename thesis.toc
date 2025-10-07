@@ -20,7 +20,7 @@
 \contentsline {subsection}{\numberline {2.4.2}ML Models Used}{11}{subsection.2.4.2}%
 \contentsline {subsection}{\numberline {2.4.3}Performance and Validation}{11}{subsection.2.4.3}%
 \contentsline {subsection}{\numberline {2.4.4}Explainability in ML for Ageing}{12}{subsection.2.4.4}%
-\contentsline {section}{\numberline {2.5}Gaps in the Literature}{13}{section.2.5}%
+\contentsline {section}{\numberline {2.5}Gaps in the Literature}{14}{section.2.5}%
 \contentsline {section}{\numberline {2.6}Chapter Summary}{15}{section.2.6}%
 \contentsline {chapter}{\numberline {3}Data and Preprocessing}{17}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Insert a Figure}{17}{section.3.1}%
@@ -36,7 +36,7 @@
 \contentsline {section}{\numberline {6.2}Conclusions}{24}{section.6.2}%
 \contentsline {section}{\numberline {6.3}Contributions}{24}{section.6.3}%
 \contentsline {section}{\numberline {6.4}Future Work}{24}{section.6.4}%
-\contentsline {chapter}{Appendix A: Insert figure in Appendix}{25}{section*.11}%
-\contentsline {chapter}{Appendix B: Insert Text in Appendix}{26}{section*.13}%
+\contentsline {chapter}{Appendix A: Insert figure in Appendix}{25}{section*.10}%
+\contentsline {chapter}{Appendix B: Insert Text in Appendix}{26}{section*.12}%
 \contentsline {chapter}{Appendix C: Insert C++/Java et al. Code in Appendix}{29}{lstnumber.-1.143}%
-\contentsline {chapter}{References}{30}{appendix*.16}%
+\contentsline {chapter}{References}{30}{appendix*.15}%

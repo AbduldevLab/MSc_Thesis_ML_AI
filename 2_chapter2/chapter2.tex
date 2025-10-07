@@ -77,7 +77,7 @@ This suggests social integration and lifestyle protect mental wellbeing. However
 These two findings conflict: the effect of social engagement is strong when self reported, weaker when objectively assessed.
 
 Objective data strengthen the case for activity. Accelerometer based measures show a dose response link between moderate to vigorous activity and lower depressive symptoms \cite{lairdPhysicalActivityDose2023}. 
-Yet reverse pathways are also evident: incident falls and functional decline predict later depression, refereed by fear of falling \cite{jacobFallsIncreaseRisk2023}. 
+Yet reverse pathways are also evident: incident falls and functional decline predict later depression, refereed by \gls{FOF} \cite{jacobFallsIncreaseRisk2023}. 
 Together, these results reveal a bidirectional relationship, mental health both influences and is influenced by physical decline.
 Most studies rely on broad self report scales such as \gls{CESD} or \gls{HADS}, with little biomarker or clinical validation. 
 
@@ -107,7 +107,7 @@ The effect of nutrition on ageing outcomes can be formalised probabilistically u
 P(\text{Outcome} \mid \text{Nutritional Status}) = \frac{P(\text{Nutritional Status} \mid \text{Outcome}) P(\text{Outcome})}{P(\text{Nutritional Status})},
 \end{equation*}
 where the likelihood function $P(\text{Nutritional Status} \mid \text{Outcome})$ quantifies how observed nutritional biomarkers relate to health states, and the posterior $P(\text{Outcome} \mid \text{Nutritional Status})$ captures updated beliefs about outcomes, including uncertainty in small sample studies.
-This helps identify which biomarkers are most informative for predicting ageing outcomes which supports feature selection in ML models.
+This helps identify which biomarkers are most informative for predicting ageing outcomes which supports feature selection in \gls{ML} models.
 
 \subsection{Contextual and Integrative Considerations}
 Malnutrition also reflects social and functional risks. \cite{bardonPredictorsIncidentMalnutrition2020} found that hospitalisation, functional loss, and poor social support increased malnutrition risk, with notable sex differences. 
@@ -155,44 +155,44 @@ These methods improve transparency and can highlight unexpected drivers of outco
 For ageing research, where clinical adoption requires both accuracy and trust, explainability is not optional but essential. 
 Current efforts show promise but remain fragmented, with no consensus on best practice. 
 This gap links directly to the broader methodological limits discussed in the next section on gaps in the literature.
-\cleardoublepage
+
 % ---------------------------------------------------------------------------
 % Summary of Literature - Table
-
-% --- Table 1 ---
 \begin{table}[htbp]
 \centering
-\caption{Summary  of studies on frailty and mental health using \gls{TILDA}.}
-\label{tab:lit_frailty_mental_health}
+\caption{Summary of selected studies on ageing using \gls{TILDA}}
+\label{tab:lr_table}
 \small
-\begin{tabular}{p{3cm} p{3cm} p{2.5cm} p{6cm}}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{p{2.5cm} p{2.5cm} p{2cm} p{4cm} p{4cm} p{4cm} p{4cm}}
 \hline
-\textbf{Theme} & \textbf{Author} & \textbf{Dataset} & \textbf{Outcome and Main Findings} \\
+\textbf{Theme} & \textbf{Author/year} & \textbf{Dataset} & \textbf{Variables/features} & \textbf{Methods/model type} & \textbf{Key Findings/outcome} & \textbf{Limitations} \\
 \hline
-Frailty and Physical Function & Romero-Ortuno (2021) & Wave 1--5 & Outcome: Frailty transitions and mortality. Findings: Multi-state Markov model showed 32\% of prefrail adults reverted to non-frail; frailty strongly predicted 31\% mortality. \\
+Frailty & Romero-Ortuno (2021) \cite{romero-ortunoTransitionsFrailtyPhenotype2021} & Wave 1-5 & Frailty state, Frailty phenotype (FP) components (Exhaustion(EX), Unexplained weight loss(WL), Weakness(WK), Slowness(SL), Low physical activity(LA)) & Multi state Markov model, longitudinal 8 year follow up & 32\% of pre frail to non frail; frailty strongly predicted 31\% mortality & Self report bias; observational design \\
 \hline
-Falls and Fear of Falling & Donoghue (2023) & Wave 1--3 & Outcome: Recurrent/injurious falls. Findings: Conditional inference forest model identified gait, mobility, and medication as top predictors; overall accuracy 69.7\%. \\
+Falls + \gls{ML} & Donoghue (2023) \cite{donoghueUsingConditionalInference2023} & Wave 1-3 & Gait, mobility, medications, history of falls & Conditional inference forest; 5-fold \gls{CV}; undersampling for imbalance & Accuracy up to 69.7\%; for adults aged 50-64.& \gls{AUROC} values were $<= 0.69$ and \gls{PRAUC} $<= 0.39$ indicating low predictive accuracy; no external validation; cross sectional; Class imbalance \\
 \hline
-\end{tabular}
-\end{table}
+\gls{FOF} & Zarudsky (2014) \cite{zarudskyP277OneleggedBalance2014} & Wave 1 & Age, sex, fall history & Cross sectional prevalence analysis & 23.3\% prevalence; higher in women; 70\% with \gls{FOF} had no recent falls in the last 12 months & Self reported; cross sectional \\
+\hline
+Functional Mobility & Huang (2019) \cite{huangAgeModifyAssociations2019} & Wave 1-2 & Measured by \gls{TUG}, grip strength, physical activity, vision, \gls{BMI}, age & Linear regression, stratified analyses & Age modifies effects; \gls{PA} and grip protect mobility; vision benefit only in middle aged (Beta = -0.032, P = 0.002) & Observational; 2-year follow-up \\
+\hline
+\multirow{2}{*}{Depression} 
+& Jacob (2023) \cite{jacobFallsIncreaseRisk2023} & Wave 1-2 & Falls, \gls{FOF}, \gls{HADS}-A, \gls{CESD} & Prospective logistic regression & Falls predicted incident anxiety (\gls{OR}=1.58) and depression (\gls{OR}=1.43) & Self-reported falls; short follow up; mediation effect partially explored \\
+& Laird (2023) \cite{lairdPhysicalActivityDepression2023} & Wave 1-5 & \gls{MVPA}, walking, sociodemographics & Longitudinal regression; mixed model & Higher physical activity reduced depressive symptoms; dose response effect & Self-reported \gls{PA}; observational; limited causal inference \\
+\hline
+\multirow{2}{*}{Nutrition} 
+& Murphy (2023) \cite{murphyPlasmaLuteinZeaxanthin2023} & Wave 1-5 & Plasma lutein, zeaxanthin & Linear/ordinal logistic regression & Higher carotenoids linked to slower frailty progression Lower odds of becoming frail (ORs = 0.57-0.89) & Observational; not predictive of longitudinal muscle changes \\
+& Bardon (2020) \cite{bardonPredictorsIncidentMalnutrition2020} & Wave 1-2 & Hospitalisation, functional status, social support, sex, falls & Logistic regression; sex-stratified analyses & Functional decline, hospitalisation, poor support increased malnutrition risk; sex differences & Observational(short follow up (2 years)); limited generalisability >65 years, self reported\\
+\hline
+\multirow{3}{*}{\gls{ML}} 
+& Xu (2023) \cite{xuTailoredMachineLearning2023} & Wave 1-3 & 105 predictors from 40,000+ variables (social, clinical, mental, family) & Stacked ensemble: \gls{RF}, XRT, GLM, \gls{GBM}, \gls{DNN}; \gls{SHAP} explainability & AUC=0.854 for 2 year diabetes prediction; top predictors LDL, cirrhosis, sex & No external validation; short follow up; ensemble complexity limits deployment \\
+& Davis (2021) \cite{davisComparisonGaitSpeed2021} & Wave 3 & Age, grip strength, chair stands, \gls{BMI}, cognitive tests & Histogram gradient boosting regression; \gls{SHAP} & r$^2$  test: \gls{UGS}$\approx$0.41, \gls{MGS}$\approx$0.46, GSR$\approx$0.21 & Modest predictive power; cross sectional; no external validation \\
+& Zhang (2025) \cite{zhangMachineLearningModels2025} & Longitudinal IMAGEN cohort & Psychopathology, personality, cognition, substance use, environment & Regularized logistic regression; diagnostic & Longitudinal AUC: ED=0.71, MDD=0.64, AUD=0.67; shared transdiagnostic predictors & Limited age range; no external replication \\
+& Boyle (2021) \cite{boyleBrainpredictedAgeDifference2021} & Wave 3 & \gls{brainPAD}; processing speed; attention; cognitive flexibility; verbal fluency & Linear regression, correlation analyses & Higher \gls{brainPAD} associated with lower cognitive performance across multiple domains & Cross sectional; no causal inference; limited sample \\
 
-% --- Table 2 ---
-\begin{table}[htbp]
-\centering
-\caption{Summary of studies on nutrition and machine learning in ageing.}
-\label{tab:lit_nutrition_ml}
-\small
-\begin{tabular}{p{3cm} p{3cm} p{2.5cm} p{6cm}}
-\hline
-\textbf{Theme} & \textbf{Author} & \textbf{Dataset} & \textbf{Outcome and Main Findings} \\
-\hline
-Nutrition & Murphy (2023) & Wave 1--5 & Outcome: Frailty progression. Findings: Higher plasma lutein and zeaxanthin linked to slower frailty progression. \\
-\hline
-Machine Learning & Xu (2023) & Wave 1--3 & Outcome: Diabetes prediction. Findings: Ensemble models identified key predictors and achieved AUC = 0.85, outperforming traditional regression models. \\
-\hline
-\end{tabular}
+\end{tabular}}
 \end{table}
-
+\clearpage
 % ---------------------------------------------------------------------------
 % Gaps in the Literature
 \section{Gaps in the Literature}
@@ -200,7 +200,7 @@ First, most studies rely on \gls{TILDA} or similar cohorts of Irish and predomin
 
 Second, there is an over reliance on physical health predictors such as comorbidity counts and mobility measures, while nutrition, social, religious or spiritual, and environmental variables are often overlooked. As shown in \cite{murphyPlasmaLuteinZeaxanthin2023}, nutritional biomarkers like lutein and zeaxanthin are strong predictors of frailty, yet these are rarely integrated into broader \gls{ML} pipelines. By contrast, studies such as \cite{bardonPredictorsIncidentMalnutrition2020} highlight the role of social support and functional decline in malnutrition risk. Together, these examples show that excluding nutrition and social factors risks producing models that reinforce the same biomedical biases seen in regression heavy work. From a Bayesian viewpoint, the omission of key features reduces the explanatory power of the model and weakens the posterior probability $P(\text{Outcome} \mid \text{All Features})$ compared to $P(\text{Outcome} \mid \text{Limited Features})$. Including a richer set of features increases the likelihood that the model accurately reflects the true data generating process.
 
-Third, methodological choices remain conservative. Regression models still dominate, while more advanced approaches such as deep neural networks or transformers are rarely explored. For instance, \cite{matthewsPredictingMortalityIrish2022} achieved an \gls{AUC} of 0.78 using logistic regression for mortality prediction in \gls{TILDA}, whereas \cite{xuTailoredMachineLearning2023} reported an \gls{AUC} of 0.854 with ensemble methods for diabetes incidence. This contrast demonstrates both the dominance of regression and its weaker performance compared to flexible \gls{ML} models. Where ensemble or brain age approaches have been attempted, validation is almost always internal, with little cross cohort testing, inflating performance estimates and undermining clinical translation. Weak validation and limited feature sets reduce the generalisability of the estimated conditional probabilities and increase the risk of overfitting. Maximum likelihood estimation and Bayesian inference can provide a formal framework for assessing model fit and updating predictions as more diverse and representative data become available.
+Third, methodological choices remain conservative. Regression models still dominate, while more advanced approaches such as deep neural networks or transformers are rarely explored. For instance, \cite{matthewsPredictingMortalityIrish2022} achieved an \gls{AUC} of 0.78 using logistic regression for mortality prediction in \gls{TILDA}, whereas \cite{xuTailoredMachineLearning2023} reported an \gls{AUC} of 0.854 with ensemble methods for diabetes incidence. This contrast demonstrates both the dominance of regression and its weaker performance compared to flexible \gls{ML} models. Where ensemble or brain age approaches have been attempted, validation is almost always internal, with little cross cohort testing. Weak validation and limited feature sets reduce the generalisability of the estimated conditional probabilities and increase the risk of overfitting. Maximum likelihood estimation and Bayesian inference can provide a formal framework for assessing model fit and updating predictions as more diverse and representative data become available.
 
 Fourth, many outcomes remain underexplored. Studies on dementia or frailty frequently focus on cognitive or physical decline while leaving aside outcomes critical to older adults, such as pain, sleep quality, and subjective quality of life. For example, \cite{murphyPlasmaLuteinZeaxanthin2023} used cross sectional plasma biomarkers to study frailty but did not assess sleep or pain, while gait speed models such as \cite{davisComparisonGaitSpeed2021} similarly neglect subjective quality of life. This shows how reliance on narrow outcomes leaves broader aspects of wellbeing unmeasured.
 

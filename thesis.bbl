@@ -1,4 +1,4 @@
-\begin{thebibliography}{28}
+\begin{thebibliography}{29}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -197,5 +197,12 @@ James Davis, Silvin~P. Knight, Rossella Rizzo, Orna~A. Donoghue, Rose~Anne Kenny
 \newblock A linear regression-based machine learning pipeline for the discovery of clinically relevant correlates of gait speed reserve from multiple physiological systems.
 \newblock In \emph{2021 29th {{European Signal Processing Conference}} ({{EUSIPCO}})}, pages 1266--1270, August 2021{\natexlab{b}}.
 \newblock \doi{10.23919/EUSIPCO54536.2021.9616187}.
+
+\bibitem[Zhang et~al.(2025)Zhang, Robinson, Whelan, Jollans, Wang, Nees, Chu, Bobou, Du, Cristea, Banaschewski, Barker, Bokde, Grigis, Garavan, Heinz, Br{\"u}hl, Martinot, Martinot, Artiges, Orfanos, Poustka, Hohmann, Millenet, Fr{\"o}hner, Smolka, Vaidya, Walter, Winterer, Broulidakis, {van Noort}, Stringaris, Penttil{\"a}, Grimmer, Insensee, Becker, Zhang, King, Sinclair, Schumann, Schmidt, and Desrivi{\`e}res]{zhangMachineLearningModels2025}
+Zuo Zhang, Lauren Robinson, Robert Whelan, Lee Jollans, Zijian Wang, Frauke Nees, Congying Chu, Marina Bobou, Dongping Du, Ilinca Cristea, Tobias Banaschewski, Gareth~J. Barker, Arun L.~W. Bokde, Antoine Grigis, Hugh Garavan, Andreas Heinz, R{\"u}diger Br{\"u}hl, Jean-Luc Martinot, Marie-Laure~Paill{\`e}re Martinot, Eric Artiges, Dimitri~Papadopoulos Orfanos, Luise Poustka, Sarah Hohmann, Sabina Millenet, Juliane~H. Fr{\"o}hner, Michael~N. Smolka, Nilakshi Vaidya, Henrik Walter, Jeanne Winterer, M.~John Broulidakis, Betteke~Maria {van Noort}, Argyris Stringaris, Jani Penttil{\"a}, Yvonne Grimmer, Corinna Insensee, Andreas Becker, Yuning Zhang, Sinead King, Julia Sinclair, Gunter Schumann, Ulrike Schmidt, and Sylvane Desrivi{\`e}res.
+\newblock Machine learning models for diagnosis and risk prediction in eating disorders, depression, and alcohol use disorder.
+\newblock \emph{Journal of Affective Disorders}, 379:\penalty0 889--899, June 2025.
+\newblock ISSN 0165-0327.
+\newblock \doi{10.1016/j.jad.2024.12.053}.
 
 \end{thebibliography}
