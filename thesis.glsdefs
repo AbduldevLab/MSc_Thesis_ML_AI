@@ -334,6 +334,34 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{NOS}%
+{%
+name={\acronymfont {\glsentryshort {NOS}}},%
+sort={NOS},%
+type={acronym},%
+first={NOS},%
+firstplural={NOSs},%
+text={NOS},%
+plural={NOSs},%
+description={Newcastle-Ottawa Scale},%
+descriptionplural={Newcastle-Ottawa Scale},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Newcastle-Ottawa Scale},%
+longplural={Newcastle-Ottawa Scales},%
+short={NOS},%
+shortplural={NOSs},%
+counter={page},%
+parent={},%
+%
+}%
+
 \glsdefs@newdocentry{AUC}%
 {%
 name={\acronymfont {\glsentryshort {AUC}}},%

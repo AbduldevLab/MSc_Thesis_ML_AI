@@ -9,35 +9,36 @@
 \contentsline {section}{\numberline {1.4}Thesis Outline}{5}{section.1.4}%
 \contentsline {chapter}{\numberline {2}Literature Review}{6}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Methodology}{6}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Frailty and Physical Function}{6}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Probabilistic Interpretation of Frailty}{8}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Bayesian Updating of Frailty Risk}{9}{subsection.2.2.2}%
-\contentsline {section}{\numberline {2.3}Mental Health in Older Adults}{9}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Nutrition and Biological Ageing}{10}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Bayesian Perspective on Nutritional Biomarkers}{11}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Contextual and Integrative Considerations}{11}{subsection.2.4.2}%
-\contentsline {section}{\numberline {2.5}Machine Learning in Ageing and Chronic Disease}{12}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}Feature Sets in ML Studies}{12}{subsection.2.5.1}%
-\contentsline {subsection}{\numberline {2.5.2}ML Models Used}{12}{subsection.2.5.2}%
-\contentsline {subsection}{\numberline {2.5.3}Performance and Validation}{13}{subsection.2.5.3}%
-\contentsline {subsection}{\numberline {2.5.4}Explainability in ML for Ageing}{13}{subsection.2.5.4}%
-\contentsline {section}{\numberline {2.6}Gaps in the Literature}{15}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Chapter Summary}{16}{section.2.7}%
-\contentsline {chapter}{\numberline {3}Data and Preprocessing}{18}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Insert a Figure}{18}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Creating a list}{19}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Creating a Table}{19}{subsection.3.2.1}%
-\contentsline {section}{\numberline {3.3}Quote}{20}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Methodology}{21}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Math}{21}{section.4.1}%
-\contentsline {chapter}{\numberline {5}Results}{23}{chapter.5}%
-\contentsline {section}{\numberline {5.1}References}{23}{section.5.1}%
-\contentsline {chapter}{\numberline {6}Conclusions and Future Directions}{25}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Summary}{25}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Conclusions}{25}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Contributions}{25}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Future Work}{25}{section.6.4}%
-\contentsline {chapter}{Appendix A: Insert figure in Appendix}{26}{section*.11}%
-\contentsline {chapter}{Appendix B: Insert Text in Appendix}{27}{section*.13}%
-\contentsline {chapter}{Appendix C: Insert C++/Java et al. Code in Appendix}{30}{lstnumber.-1.143}%
-\contentsline {chapter}{References}{31}{appendix*.16}%
+\contentsline {subsection}{\numberline {2.1.1}Quality and Relevance Evaluation}{8}{subsection.2.1.1}%
+\contentsline {section}{\numberline {2.2}Frailty and Physical Function}{10}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Probabilistic Interpretation of Frailty}{10}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Bayesian Updating of Frailty Risk}{11}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}Mental Health in Older Adults}{11}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Nutrition and Biological Ageing}{12}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Bayesian Perspective on Nutritional Biomarkers}{13}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Contextual and Integrative Considerations}{13}{subsection.2.4.2}%
+\contentsline {section}{\numberline {2.5}Machine Learning in Ageing and Chronic Disease}{14}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Feature Sets in ML Studies}{14}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}ML Models Used}{14}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.3}Performance and Validation}{15}{subsection.2.5.3}%
+\contentsline {subsection}{\numberline {2.5.4}Explainability in ML for Ageing}{15}{subsection.2.5.4}%
+\contentsline {section}{\numberline {2.6}Gaps in the Literature}{18}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Chapter Summary}{19}{section.2.7}%
+\contentsline {chapter}{\numberline {3}Data and Preprocessing}{21}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Insert a Figure}{21}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Creating a list}{22}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Creating a Table}{22}{subsection.3.2.1}%
+\contentsline {section}{\numberline {3.3}Quote}{23}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Methodology}{24}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Math}{24}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Results}{26}{chapter.5}%
+\contentsline {section}{\numberline {5.1}References}{26}{section.5.1}%
+\contentsline {chapter}{\numberline {6}Conclusions and Future Directions}{28}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Summary}{28}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Conclusions}{28}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Contributions}{28}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Future Work}{28}{section.6.4}%
+\contentsline {chapter}{Appendix A: Insert figure in Appendix}{29}{section*.11}%
+\contentsline {chapter}{Appendix B: Insert Text in Appendix}{30}{section*.13}%
+\contentsline {chapter}{Appendix C: Insert C++/Java et al. Code in Appendix}{33}{lstnumber.-1.143}%
+\contentsline {chapter}{References}{34}{appendix*.16}%

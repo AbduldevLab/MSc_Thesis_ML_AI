@@ -31,45 +31,48 @@ Warning--I didn't find a database entry for "mywebvideos"
 Warning--I didn't find a database entry for "mywebpaper"
 Warning--I didn't find a database entry for "mywebarticlejournal"
 Warning--I didn't find a database entry for "mywebpage"
-You've used 29 entries,
+Warning--empty journal in oxmanGuidelinesReadingLiterature
+Warning--empty year in oxmanGuidelinesReadingLiterature
+Warning--empty year in oxmanGuidelinesReadingLiterature
+You've used 37 entries,
             2481 wiz_defined-function locations,
-            825 strings with 17683 characters,
-and the built_in function-call counts, 15879 in all, are:
-= -- 1126
-> -- 1429
-< -- 4
-+ -- 509
-- -- 448
-* -- 1626
-:= -- 2839
-add.period$ -- 142
-call.type$ -- 29
-change.case$ -- 58
-chr.to.int$ -- 26
-cite$ -- 29
-duplicate$ -- 560
-empty$ -- 1070
-format.name$ -- 481
-if$ -- 3145
-int.to.chr$ -- 4
-int.to.str$ -- 30
-missing$ -- 28
-newline$ -- 208
-num.names$ -- 87
-pop$ -- 158
+            882 strings with 19803 characters,
+and the built_in function-call counts, 18956 in all, are:
+= -- 1391
+> -- 1591
+< -- 9
++ -- 574
+- -- 496
+* -- 1887
+:= -- 3338
+add.period$ -- 173
+call.type$ -- 37
+change.case$ -- 74
+chr.to.int$ -- 33
+cite$ -- 40
+duplicate$ -- 701
+empty$ -- 1342
+format.name$ -- 541
+if$ -- 3783
+int.to.chr$ -- 5
+int.to.str$ -- 38
+missing$ -- 34
+newline$ -- 255
+num.names$ -- 111
+pop$ -- 223
 preamble$ -- 1
-purify$ -- 29
+purify$ -- 37
 quote$ -- 0
-skip$ -- 289
+skip$ -- 366
 stack$ -- 0
-substring$ -- 639
-swap$ -- 90
+substring$ -- 768
+swap$ -- 114
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 203
-warning$ -- 0
-while$ -- 98
+type$ -- 259
+warning$ -- 3
+while$ -- 124
 width$ -- 0
-write$ -- 493
-(There were 16 warnings)
+write$ -- 607
+(There were 19 warnings)

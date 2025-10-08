@@ -22,12 +22,37 @@ Chronic conditions including multimorbidity, frailty, and mental health difficul
 In line with the \gls{WHO} healthy ageing framework, research using \gls{TILDA} highlights frailty, mental health, and nutrition as interconnected determinants of later life outcomes. 
 The following subsections examine each domain in turn.\label{sec:ChronicDiseaseAndAgeing}
 
-\section{Methodology}
-\label{sec:LRMethodology}
+% ----------------------------------------------------------------------
+% LR Methodology
+\section{Methodology}\label{sec:LRMethodology}
+
+Several sources describe how systematic and integrative reviews are commonly carried out in fields such as software engineering, health, and education. The approach followed key principles for systematic mapping for example, defining research questions, identifying relevant studies through structured database searches, applying inclusion and exclusion criteria, and categorising results as outlined in \cite{petersenGuidelinesConductingSystematic2015} with integrative synthesis methods. 
+This process was guided by an initial research matrix that outlined the topic, research questions, data sources, and expected outcomes, serving as a blueprint for literature search, selection, and refinement.
+
+The integrative literature review, guided by \cite{torracoWritingIntegrativeLiterature2005}, helped me structure and connect findings across studies, and identify key themes, while \cite{roccoLiteratureReviewsConceptual2009} and \cite{oxmanGuidelinesReadingLiterature} helped me understand how to organise and connect ideas within an integrative review. 
+From software engineering, \cite{kitchenhamSystematicLiteratureReviews2009a} clarified how systematic reviews can be used to identify research gaps. \cite{ashrafSystematicReviewSystematic2021} demonstrated how mapping and synthesis can highlight trends and future directions. 
+Together, these examples helped me design a structured yet flexible approach suited to research in ageing, artificial intelligence, and health. 
+
+I first defined the main topic of interest, which focused on chronic disease prediction using nutrition, lifestyle, and clinical data from TILDA. Relevant databases (e.g., ScienceDirect, PubMed) were searched using combinations of keywords such as “Irish Longitudinal Study on Ageing”, “machine learning”, “chronic disease”, “nutrition”, “diet”, and “physical activity”. 
+The full search strings and the number of articles initially retrieved from each database are shown in Table\ref{tab:PetersenSearch}. 
+Some search strings returned few or irrelevant results, particularly for \gls{ML} related \gls{TILDA} studies, highlighting a key research gap. Iterations continued until suitable combinations consistently returned relevant studies.
+Duplicates were removed using Zotero's reference management features. The remaining studies were individually and manually checked for relevance to 'ageing', 'chronic disease', and \gls{ML}. Using Zotero's notes functionality, I created an initial table capturing key elements for each paper, including model type, features used, and main findings for each paper in the collection.
+This initial table guided a further refinement of the results into two sub tables: (1) studies critically related to \gls{TILDA}, (2) studies using \gls{TILDA} data with \gls{ML} for predictive contexts, which revealed minimal to no integration with \gls{TILDA}. This gap motivated the design and direction of this research.
+Based on these analyses, a separate snapshot table was developed during the systematic mapping phase to summarise key research 'gaps' and 'opportunities', while Table~\ref{tab:lr_table} presents the subset of selected studies on ageing using \gls{TILDA} and \gls{ML}. 
+These steps were aligned with the research matrix created at the beginning, ensuring that the refinement of studies and synthesis of findings stayed closely tied to the original research goals.
+
+\subsection{Quality and Relevance Evaluation} 
+Developing a custom table based on the \gls{NOS}, which provided a structured way to assess the strength of evidence and methodological quality across studies. The \gls{NOS} based scoring offered cumulative insights that helped prioritise studies, informing the later synthesis of findings and identification of gaps.
+Applying this, I annotated each paper in Zotero with notes on dataset, key variables, analytical approach, and main findings to ensure a consistent, critical appraisal.
+For the systematic component, I followed the steps such as systematically extracting and synthesizing data to identify trends (e.g., Markov models, logistic regression, 5-fold cross validation) and research gaps \cite{kitchenhamSystematicLiteratureReviews2009a}, complemented by the DoctoralWriting resources \cite{doctoralwritingCreatingLiteratureReview2016a,doctoralwritingCreatingLiteratureReview2016b}, which clarified how to define research questions and develop logical arguments. 
+The structure was further developed by analyzing \cite{petersenGuidelinesConductingSystematic2015}, whose updated guidelines supported the initial design of my search matrix which came first before creating the Literature review collection and inspired the combined format for Table \ref{tab:PetersenSearch}. 
+
+The integration of a research matrix with systematic mapping and integrative synthesis ensured that the methodology was well suited to capturing the complexity of ageing, nutrition, chronic disease risk and predictive modelling studies with and without \gls{TILDA}.
+
 \begin{table}[htbp]
 \centering
 \caption{Database searches and number of studies per database}
-\label{tab:search}
+\label{tab:PetersenSearch}
 \small
 \resizebox{\textwidth}{!}{
 \begin{tabular}{p{3cm} p{10cm} p{3cm}}
@@ -35,15 +60,15 @@ The following subsections examine each domain in turn.\label{sec:ChronicDiseaseA
 \textbf{Database} & \textbf{Search} & \textbf{Results} \\
 \hline
 \multirow{2}{*}{Oxford Academic} &
-(TILDA OR "Irish Longitudinal Study on Ageing") AND (chronic disease OR diabetes OR cardiovascular) AND (nutrition OR diet OR "physical activity") & 1081 \\
-\\ & (TILDA OR "Irish Longitudinal Study on Ageing") AND ("machine learning" OR "predictive model" OR "risk prediction") & 0 \\
+(TILDA OR Irish Longitudinal Study on Ageing)AND (chronic disease OR diabetes OR cardiovascular) AND (nutrition OR diet OR "physical activity") & 1081 \\
+\\ & (TILDA OR "Irish Longitudinal Study on Ageing") AND ("machine learning" OR "predictive model" OR "risk prediction") & 71 \\
 \hline
 \multirow{2}{*}{IEEE Xplore} &
 TILDA OR "Irish Longitudinal Study on Ageing" & 56 \\
 \\ & (TILDA OR "Irish Longitudinal Study on Ageing") AND ("machine learning" OR "predictive model" OR "risk prediction") & 7 \\
 \hline
 \multirow{2}{*}{ScienceDirect} &
-(TILDA OR "Irish Longitudinal Study on Ageing") AND ("chronic disease" OR cardiovascular OR diabetes) AND (nutrition OR diet OR lifestyle OR "physical activity") & 50 \\
+(TILDA OR "Irish Longitudinal Study on Ageing") AND ("chronic disease" OR cardiovascular OR diabetes) AND (nutrition OR diet OR lifestyle OR "physical activity") & 257 \\
 \\ & (TILDA OR "Irish Longitudinal Study on Ageing") AND ("machine learning" OR "predictive model") AND ("chronic disease" OR diabetes) AND (nutrition OR "physical activity") & 20 \\
 \hline
 \multirow{2}{*}{PubMed} &
@@ -52,7 +77,7 @@ TILDA OR "Irish Longitudinal Study on Ageing" & 56 \\
 \hline
 \end{tabular}}
 \end{table}
-%ToDo: Include research matrix, systematic mapping LR table, search strings, db used, :- methods section outlining the process in the literature review. 
+\clearpage
 % ----------------------------------------------------------------------
 % Frailty and Physical Function
 \section{Frailty and Physical Function}

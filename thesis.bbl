@@ -1,4 +1,4 @@
-\begin{thebibliography}{29}
+\begin{thebibliography}{37}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -100,6 +100,53 @@ Orna~A Donoghue, Belinda Hernandez, Matthew D~L O'Connell, and Rose~Anne Kenny.
 \newblock \emph{J Gerontol A Biol Sci Med Sci}, 78\penalty0 (4):\penalty0 673--682, April 2023.
 \newblock ISSN 1758-535X.
 \newblock \doi{10.1093/gerona/glac156}.
+
+\bibitem[Petersen et~al.(2015)Petersen, Vakkalanka, and Kuzniarz]{petersenGuidelinesConductingSystematic2015}
+Kai Petersen, Sairam Vakkalanka, and Ludwik Kuzniarz.
+\newblock Guidelines for conducting systematic mapping studies in software engineering: {{An}} update.
+\newblock \emph{Information and Software Technology}, 64:\penalty0 1--18, August 2015.
+\newblock ISSN 0950-5849.
+\newblock \doi{10.1016/j.infsof.2015.03.007}.
+
+\bibitem[Torraco(2005)]{torracoWritingIntegrativeLiterature2005}
+Richard~J. Torraco.
+\newblock Writing {{Integrative Literature Reviews}}: {{Guidelines}} and {{Examples}}.
+\newblock \emph{Human Resource Development Review}, 4\penalty0 (3):\penalty0 356--367, September 2005.
+\newblock ISSN 1534-4843, 1552-6712.
+\newblock \doi{10.1177/1534484305278283}.
+
+\bibitem[Rocco and Plakhotnik(2009)]{roccoLiteratureReviewsConceptual2009}
+Tonette~S. Rocco and Maria~S. Plakhotnik.
+\newblock Literature {{Reviews}}, {{Conceptual Frameworks}}, and {{Theoretical Frameworks}}: {{Terms}}, {{Functions}}, and {{Distinctions}}.
+\newblock \emph{Human Resource Development Review}, 8\penalty0 (1):\penalty0 120--130, March 2009.
+\newblock ISSN 1534-4843, 1552-6712.
+\newblock \doi{10.1177/1534484309332617}.
+
+\bibitem[Oxman and Guyatt()]{oxmanGuidelinesReadingLiterature}
+Andrew~D Oxman and Gordon~H Guyatt.
+\newblock Guidelines for reading literature reviews.
+
+\bibitem[Kitchenham et~al.(2009)Kitchenham, Pearl~Brereton, Budgen, Turner, Bailey, and Linkman]{kitchenhamSystematicLiteratureReviews2009a}
+Barbara Kitchenham, O.~Pearl~Brereton, David Budgen, Mark Turner, John Bailey, and Stephen Linkman.
+\newblock Systematic literature reviews in software engineering -- {{A}} systematic literature review.
+\newblock \emph{Information and Software Technology}, 51\penalty0 (1):\penalty0 7--15, January 2009.
+\newblock ISSN 09505849.
+\newblock \doi{10.1016/j.infsof.2008.09.009}.
+
+\bibitem[Ashraf et~al.(2021)Ashraf, Yang, Zhang, Denden, Tlili, Liu, Huang, and Burgos]{ashrafSystematicReviewSystematic2021}
+Muhammad~Azeem Ashraf, Meijia Yang, Yufeng Zhang, Mouna Denden, Ahmed Tlili, Jiayi Liu, Ronghuai Huang, and Daniel Burgos.
+\newblock A {{Systematic Review}} of {{Systematic Reviews}} on {{Blended Learning}}: {{Trends}}, {{Gaps}} and {{Future Directions}}.
+\newblock \emph{Psychology Research and Behavior Management}, 14:\penalty0 1525--1541, October 2021.
+\newblock ISSN null.
+\newblock \doi{10.2147/PRBM.S331741}.
+
+\bibitem[{doctoralwriting}(2016{\natexlab{a}})]{doctoralwritingCreatingLiteratureReview2016a}
+{doctoralwriting}.
+\newblock Creating the literature review: Research questions and arguments, February 2016{\natexlab{a}}.
+
+\bibitem[{doctoralwriting}(2016{\natexlab{b}})]{doctoralwritingCreatingLiteratureReview2016b}
+{doctoralwriting}.
+\newblock Creating the literature review: Research questions and arguments ({{Part}} 3 of 4), February 2016{\natexlab{b}}.
 
 \bibitem[{Romero-Ortuno} et~al.(2021){Romero-Ortuno}, Hartley, Davis, Knight, Rizzo, Hern{\'a}ndez, Kenny, and O'Halloran]{romero-ortunoTransitionsFrailtyPhenotype2021}
 Roman {Romero-Ortuno}, Peter Hartley, James Davis, Silvin~P. Knight, Rossella Rizzo, Belinda Hern{\'a}ndez, Rose~Anne Kenny, and Aisling~M. O'Halloran.
