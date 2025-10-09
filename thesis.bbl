@@ -1,9 +1,16 @@
-\begin{thebibliography}{38}
+\begin{thebibliography}{41}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Kitchenham et~al.(2009)Kitchenham, Pearl~Brereton, Budgen, Turner, Bailey, and Linkman]{kitchenhamSystematicLiteratureReviews2009a}
+Barbara Kitchenham, O.~Pearl~Brereton, David Budgen, Mark Turner, John Bailey, and Stephen Linkman.
+\newblock Systematic literature reviews in software engineering -- {{A}} systematic literature review.
+\newblock \emph{Information and Software Technology}, 51\penalty0 (1):\penalty0 7--15, January 2009.
+\newblock ISSN 09505849.
+\newblock \doi{10.1016/j.infsof.2008.09.009}.
 
 \bibitem[Haddaway et~al.(2022)Haddaway, Page, Pritchard, and McGuinness]{haddawayPRISMA2020PackageShiny2022}
 Neal Haddaway, Matthew~J Page, Chris~C Pritchard, and Luke~A McGuinness.
@@ -130,19 +137,61 @@ Tonette~S. Rocco and Maria~S. Plakhotnik.
 Andrew~D Oxman and Gordon~H Guyatt.
 \newblock Guidelines for reading literature reviews.
 
-\bibitem[Kitchenham et~al.(2009)Kitchenham, Pearl~Brereton, Budgen, Turner, Bailey, and Linkman]{kitchenhamSystematicLiteratureReviews2009a}
-Barbara Kitchenham, O.~Pearl~Brereton, David Budgen, Mark Turner, John Bailey, and Stephen Linkman.
-\newblock Systematic literature reviews in software engineering -- {{A}} systematic literature review.
-\newblock \emph{Information and Software Technology}, 51\penalty0 (1):\penalty0 7--15, January 2009.
-\newblock ISSN 09505849.
-\newblock \doi{10.1016/j.infsof.2008.09.009}.
-
 \bibitem[Ashraf et~al.(2021)Ashraf, Yang, Zhang, Denden, Tlili, Liu, Huang, and Burgos]{ashrafSystematicReviewSystematic2021}
 Muhammad~Azeem Ashraf, Meijia Yang, Yufeng Zhang, Mouna Denden, Ahmed Tlili, Jiayi Liu, Ronghuai Huang, and Daniel Burgos.
 \newblock A {{Systematic Review}} of {{Systematic Reviews}} on {{Blended Learning}}: {{Trends}}, {{Gaps}} and {{Future Directions}}.
 \newblock \emph{Psychology Research and Behavior Management}, 14:\penalty0 1525--1541, October 2021.
 \newblock ISSN null.
 \newblock \doi{10.2147/PRBM.S331741}.
+
+\bibitem[Xu et~al.(2023)Xu, Mingyang, Yang, Zheng, and Che]{xuTailoredMachineLearning2023}
+Xuezhong Xu, Xue Mingyang, Jie Yang, Hailong Zheng, and Zhifei Che.
+\newblock Tailored machine learning for evaluating the long-term diabetes risk in older individuals: Findings from the {{Irish Longitudinal Study}} on {{Ageing}} ({{TILDA}}).
+\newblock \emph{BMJ Open}, 13\penalty0 (5):\penalty0 e072991, May 2023.
+\newblock ISSN 2044-6055.
+\newblock \doi{10.1136/bmjopen-2023-072991}.
+
+\bibitem[Boyle et~al.(2021)Boyle, Jollans, {Rueda-Delgado}, Rizzo, Yener, McMorrow, Knight, Carey, Robertson, {Emek-Sava{\c s}}, Stern, Kenny, and Whelan]{boyleBrainpredictedAgeDifference2021}
+Rory Boyle, Lee Jollans, Laura~M. {Rueda-Delgado}, Rossella Rizzo, G{\"o}rsev~G. Yener, Jason~P. McMorrow, Silvin~P. Knight, Daniel Carey, Ian~H. Robertson, Derya~D. {Emek-Sava{\c s}}, Yaakov Stern, Rose~Anne Kenny, and Robert Whelan.
+\newblock Brain-predicted age difference score is related to specific cognitive functions: A multi-site replication analysis.
+\newblock \emph{Brain Imaging Behav}, 15\penalty0 (1):\penalty0 327--345, February 2021.
+\newblock ISSN 1931-7565.
+\newblock \doi{10.1007/s11682-020-00260-3}.
+
+\bibitem[{Tzemah-Shahar} et~al.(2022){Tzemah-Shahar}, Hochner, Iktilat, and Agmon]{tzemah-shaharWhatCanWe2022}
+Roy {Tzemah-Shahar}, Hagit Hochner, Khalil Iktilat, and Maayan Agmon.
+\newblock What can we learn from physical capacity about biological age? {{A}} systematic review.
+\newblock \emph{Ageing Research Reviews}, 77:\penalty0 101609, May 2022.
+\newblock ISSN 1568-1637.
+\newblock \doi{10.1016/j.arr.2022.101609}.
+
+\bibitem[A.~Shirsath et~al.(2024)A.~Shirsath, O'Connor, Boyle, Newman, Knight, Hernandez, Whelan, Meaney, and Kenny]{a.shirsathSlowerSpeedBlood2024}
+Morgana A.~Shirsath, John~D. O'Connor, Rory Boyle, Louise Newman, Silvin~P. Knight, Belinda Hernandez, Robert Whelan, James~F. Meaney, and Rose~Anne Kenny.
+\newblock Slower speed of blood pressure recovery after standing is associated with accelerated brain ageing: {{Evidence}} from {{The Irish Longitudinal Study}} on {{Ageing}} ({{TILDA}}).
+\newblock \emph{Cerebral Circulation - Cognition and Behavior}, 6:\penalty0 100212, January 2024.
+\newblock ISSN 2666-2450.
+\newblock \doi{10.1016/j.cccb.2024.100212}.
+
+\bibitem[{Romero-Ortuno} et~al.(2021){Romero-Ortuno}, Hartley, Davis, Knight, Rizzo, Hern{\'a}ndez, Kenny, and O'Halloran]{romero-ortunoTransitionsFrailtyPhenotype2021}
+Roman {Romero-Ortuno}, Peter Hartley, James Davis, Silvin~P. Knight, Rossella Rizzo, Belinda Hern{\'a}ndez, Rose~Anne Kenny, and Aisling~M. O'Halloran.
+\newblock Transitions in frailty phenotype states and components over 8 years: {{Evidence}} from {{The Irish Longitudinal Study}} on {{Ageing}}.
+\newblock \emph{Archives of Gerontology and Geriatrics}, 95:\penalty0 104401, 2021.
+\newblock ISSN 0167-4943.
+\newblock \doi{10.1016/j.archger.2021.104401}.
+
+\bibitem[Zhang et~al.(2025)Zhang, Robinson, Whelan, Jollans, Wang, Nees, Chu, Bobou, Du, Cristea, Banaschewski, Barker, Bokde, Grigis, Garavan, Heinz, Br{\"u}hl, Martinot, Martinot, Artiges, Orfanos, Poustka, Hohmann, Millenet, Fr{\"o}hner, Smolka, Vaidya, Walter, Winterer, Broulidakis, {van Noort}, Stringaris, Penttil{\"a}, Grimmer, Insensee, Becker, Zhang, King, Sinclair, Schumann, Schmidt, and Desrivi{\`e}res]{zhangMachineLearningModels2025}
+Zuo Zhang, Lauren Robinson, Robert Whelan, Lee Jollans, Zijian Wang, Frauke Nees, Congying Chu, Marina Bobou, Dongping Du, Ilinca Cristea, Tobias Banaschewski, Gareth~J. Barker, Arun L.~W. Bokde, Antoine Grigis, Hugh Garavan, Andreas Heinz, R{\"u}diger Br{\"u}hl, Jean-Luc Martinot, Marie-Laure~Paill{\`e}re Martinot, Eric Artiges, Dimitri~Papadopoulos Orfanos, Luise Poustka, Sarah Hohmann, Sabina Millenet, Juliane~H. Fr{\"o}hner, Michael~N. Smolka, Nilakshi Vaidya, Henrik Walter, Jeanne Winterer, M.~John Broulidakis, Betteke~Maria {van Noort}, Argyris Stringaris, Jani Penttil{\"a}, Yvonne Grimmer, Corinna Insensee, Andreas Becker, Yuning Zhang, Sinead King, Julia Sinclair, Gunter Schumann, Ulrike Schmidt, and Sylvane Desrivi{\`e}res.
+\newblock Machine learning models for diagnosis and risk prediction in eating disorders, depression, and alcohol use disorder.
+\newblock \emph{Journal of Affective Disorders}, 379:\penalty0 889--899, June 2025.
+\newblock ISSN 0165-0327.
+\newblock \doi{10.1016/j.jad.2024.12.053}.
+
+\bibitem[Sutin et~al.(2023)Sutin, Luchetti, Aschwanden, Stephan, Sesker, and Terracciano]{sutinSenseMeaningPurpose2023}
+Dr~Angelina~R. Sutin, Martina Luchetti, Damaris Aschwanden, Yannick Stephan, Amanda~A. Sesker, and Antonio Terracciano.
+\newblock Sense of meaning and purpose in life and risk of incident dementia: {{New}} data and meta-analysis.
+\newblock \emph{Archives of Gerontology and Geriatrics}, 105:\penalty0 104847, 2023.
+\newblock ISSN 0167-4943.
+\newblock \doi{10.1016/j.archger.2022.104847}.
 
 \bibitem[{doctoralwriting}(2016{\natexlab{a}})]{doctoralwritingCreatingLiteratureReview2016a}
 {doctoralwriting}.
@@ -152,19 +201,12 @@ Muhammad~Azeem Ashraf, Meijia Yang, Yufeng Zhang, Mouna Denden, Ahmed Tlili, Jia
 {doctoralwriting}.
 \newblock Creating the literature review: Research questions and arguments ({{Part}} 3 of 4), February 2016{\natexlab{b}}.
 
-\bibitem[{Romero-Ortuno} et~al.(2021){Romero-Ortuno}, Hartley, Davis, Knight, Rizzo, Hern{\'a}ndez, Kenny, and O'Halloran]{romero-ortunoTransitionsFrailtyPhenotype2021}
-Roman {Romero-Ortuno}, Peter Hartley, James Davis, Silvin~P. Knight, Rossella Rizzo, Belinda Hern{\'a}ndez, Rose~Anne Kenny, and Aisling~M. O'Halloran.
-\newblock Transitions in frailty phenotype states and components over 8 years: {{Evidence}} from {{The Irish Longitudinal Study}} on {{Ageing}}.
-\newblock \emph{Archives of Gerontology and Geriatrics}, 95:\penalty0 104401, 2021.
-\newblock ISSN 0167-4943.
-\newblock \doi{10.1016/j.archger.2021.104401}.
-
-\bibitem[McCarthy et~al.(2023{\natexlab{a}})McCarthy, Laird, O'Halloran, Fallon, Ortu{\~n}o, and Kenny]{mccarthyAssociationMetabolicSyndrome2023}
-Kevin McCarthy, Eamon Laird, Aisling~M. O'Halloran, Padraic Fallon, Rom{\'a}n~Romero Ortu{\~n}o, and Rose~Anne Kenny.
-\newblock Association between metabolic syndrome and risk of both prevalent and incident frailty in older adults: {{Findings}} from {{The Irish Longitudinal Study}} on {{Ageing}} ({{TILDA}}).
-\newblock \emph{Experimental Gerontology}, 172:\penalty0 112056, 2023{\natexlab{a}}.
-\newblock ISSN 0531-5565.
-\newblock \doi{10.1016/j.exger.2022.112056}.
+\bibitem[Zarudsky and Prashchayeu(2014)]{zarudskyP277OneleggedBalance2014}
+A.~A. Zarudsky and K.~I. Prashchayeu.
+\newblock P277: {{One-legged}} balance test and falls in old patients with cardiovascular diseases.
+\newblock \emph{European Geriatric Medicine}, 5:\penalty0 S171--S172, 2014.
+\newblock ISSN 1878-7649.
+\newblock \doi{10.1016/S1878-7649(14)70448-6}.
 
 \bibitem[Huang et~al.(2019)Huang, Sun, Tian, Wang, Wang, Duan, and Wu]{huangAgeModifyAssociations2019}
 Chuanying Huang, Shuqin Sun, Xiaocao Tian, Tong Wang, Tianyu Wang, Haiping Duan, and Yili Wu.
@@ -172,6 +214,20 @@ Chuanying Huang, Shuqin Sun, Xiaocao Tian, Tong Wang, Tianyu Wang, Haiping Duan,
 \newblock \emph{Archives of Gerontology and Geriatrics}, 84:\penalty0 103895, 2019.
 \newblock ISSN 0167-4943.
 \newblock \doi{10.1016/j.archger.2019.05.020}.
+
+\bibitem[Jacob et~al.(2023)Jacob, Kostev, Shin, Smith, Oh, Abduljabbar, Haro, and Koyanagi]{jacobFallsIncreaseRisk2023}
+Louis Jacob, Karel Kostev, Jae~Il Shin, Lee Smith, Hans Oh, Adel~S. Abduljabbar, Josep~Maria Haro, and Ai~Koyanagi.
+\newblock Falls increase the risk for incident anxiety and depressive symptoms among adults aged {$\geq$}50 years: {{An}} analysis of the {{Irish}} longitudinal study on ageing.
+\newblock \emph{Archives of Gerontology and Geriatrics}, 114:\penalty0 105098, 2023.
+\newblock ISSN 0167-4943.
+\newblock \doi{10.1016/j.archger.2023.105098}.
+
+\bibitem[McCarthy et~al.(2023{\natexlab{a}})McCarthy, Laird, O'Halloran, Fallon, Ortu{\~n}o, and Kenny]{mccarthyAssociationMetabolicSyndrome2023}
+Kevin McCarthy, Eamon Laird, Aisling~M. O'Halloran, Padraic Fallon, Rom{\'a}n~Romero Ortu{\~n}o, and Rose~Anne Kenny.
+\newblock Association between metabolic syndrome and risk of both prevalent and incident frailty in older adults: {{Findings}} from {{The Irish Longitudinal Study}} on {{Ageing}} ({{TILDA}}).
+\newblock \emph{Experimental Gerontology}, 172:\penalty0 112056, 2023{\natexlab{a}}.
+\newblock ISSN 0531-5565.
+\newblock \doi{10.1016/j.exger.2022.112056}.
 
 \bibitem[Santini et~al.(2017)Santini, Koyanagi, Tyrovolas, Haro, Donovan, Nielsen, and Koushede]{santiniProtectivePropertiesActBelongCommit2017}
 Ziggi~Ivan Santini, Ai~Koyanagi, Stefanos Tyrovolas, Josep~Maria Haro, Robert~J. Donovan, Line Nielsen, and Vibeke Koushede.
@@ -186,13 +242,6 @@ A.~L. Juola, M.~P. Bjorkman, H.~Kautiainen, S.~Pylkkanen, U.~H. {Finne-Soveri}, 
 \newblock \emph{European Geriatric Medicine}, 5:\penalty0 S50--S51, 2014.
 \newblock ISSN 1878-7649.
 \newblock \doi{10.1016/S1878-7649(14)70100-7}.
-
-\bibitem[Jacob et~al.(2023)Jacob, Kostev, Shin, Smith, Oh, Abduljabbar, Haro, and Koyanagi]{jacobFallsIncreaseRisk2023}
-Louis Jacob, Karel Kostev, Jae~Il Shin, Lee Smith, Hans Oh, Adel~S. Abduljabbar, Josep~Maria Haro, and Ai~Koyanagi.
-\newblock Falls increase the risk for incident anxiety and depressive symptoms among adults aged {$\geq$}50 years: {{An}} analysis of the {{Irish}} longitudinal study on ageing.
-\newblock \emph{Archives of Gerontology and Geriatrics}, 114:\penalty0 105098, 2023.
-\newblock ISSN 0167-4943.
-\newblock \doi{10.1016/j.archger.2023.105098}.
 
 \bibitem[McCarthy et~al.(2022)McCarthy, Laird, O'Halloran, Walsh, Healy, Fitzpatrick, Walsh, Hern{\'a}ndez, Fallon, Molloy, and Kenny]{mccarthyAssociationVitaminDeficiency2022}
 Kevin McCarthy, Eamon Laird, Aisling~M. O'Halloran, Cathal Walsh, Martin Healy, Annette~L. Fitzpatrick, James~B. Walsh, Belinda Hern{\'a}ndez, Padraic Fallon, Anne~M. Molloy, and Rose~Anne Kenny.
@@ -215,27 +264,6 @@ Zahra Azizi, Rebecca~J. Hirst, Alan~O' Dowd, Cathal McCrory, Rose~Anne Kenny, Fi
 \newblock ISSN 0167-4943.
 \newblock \doi{10.1016/j.archger.2023.105155}.
 
-\bibitem[Xu et~al.(2023)Xu, Mingyang, Yang, Zheng, and Che]{xuTailoredMachineLearning2023}
-Xuezhong Xu, Xue Mingyang, Jie Yang, Hailong Zheng, and Zhifei Che.
-\newblock Tailored machine learning for evaluating the long-term diabetes risk in older individuals: Findings from the {{Irish Longitudinal Study}} on {{Ageing}} ({{TILDA}}).
-\newblock \emph{BMJ Open}, 13\penalty0 (5):\penalty0 e072991, May 2023.
-\newblock ISSN 2044-6055.
-\newblock \doi{10.1136/bmjopen-2023-072991}.
-
-\bibitem[Boyle et~al.(2021)Boyle, Jollans, {Rueda-Delgado}, Rizzo, Yener, McMorrow, Knight, Carey, Robertson, {Emek-Sava{\c s}}, Stern, Kenny, and Whelan]{boyleBrainpredictedAgeDifference2021}
-Rory Boyle, Lee Jollans, Laura~M. {Rueda-Delgado}, Rossella Rizzo, G{\"o}rsev~G. Yener, Jason~P. McMorrow, Silvin~P. Knight, Daniel Carey, Ian~H. Robertson, Derya~D. {Emek-Sava{\c s}}, Yaakov Stern, Rose~Anne Kenny, and Robert Whelan.
-\newblock Brain-predicted age difference score is related to specific cognitive functions: A multi-site replication analysis.
-\newblock \emph{Brain Imaging Behav}, 15\penalty0 (1):\penalty0 327--345, February 2021.
-\newblock ISSN 1931-7565.
-\newblock \doi{10.1007/s11682-020-00260-3}.
-
-\bibitem[Zarudsky and Prashchayeu(2014)]{zarudskyP277OneleggedBalance2014}
-A.~A. Zarudsky and K.~I. Prashchayeu.
-\newblock P277: {{One-legged}} balance test and falls in old patients with cardiovascular diseases.
-\newblock \emph{European Geriatric Medicine}, 5:\penalty0 S171--S172, 2014.
-\newblock ISSN 1878-7649.
-\newblock \doi{10.1016/S1878-7649(14)70448-6}.
-
 \bibitem[Matthews et~al.(2022)Matthews, Ward, Nolan, Normand, Kenny, and May]{matthewsPredictingMortalityIrish2022}
 Soraya Matthews, Mark Ward, Anne Nolan, Charles Normand, Rose~Anne Kenny, and Peter May.
 \newblock Predicting mortality in {{The Irish Longitudinal Study}} on {{Ageing}} ({{TILDA}}): Development of a four-year index and comparison with international measures.
@@ -248,12 +276,5 @@ James Davis, Silvin~P. Knight, Rossella Rizzo, Orna~A. Donoghue, Rose~Anne Kenny
 \newblock A linear regression-based machine learning pipeline for the discovery of clinically relevant correlates of gait speed reserve from multiple physiological systems.
 \newblock In \emph{2021 29th {{European Signal Processing Conference}} ({{EUSIPCO}})}, pages 1266--1270, August 2021{\natexlab{b}}.
 \newblock \doi{10.23919/EUSIPCO54536.2021.9616187}.
-
-\bibitem[Zhang et~al.(2025)Zhang, Robinson, Whelan, Jollans, Wang, Nees, Chu, Bobou, Du, Cristea, Banaschewski, Barker, Bokde, Grigis, Garavan, Heinz, Br{\"u}hl, Martinot, Martinot, Artiges, Orfanos, Poustka, Hohmann, Millenet, Fr{\"o}hner, Smolka, Vaidya, Walter, Winterer, Broulidakis, {van Noort}, Stringaris, Penttil{\"a}, Grimmer, Insensee, Becker, Zhang, King, Sinclair, Schumann, Schmidt, and Desrivi{\`e}res]{zhangMachineLearningModels2025}
-Zuo Zhang, Lauren Robinson, Robert Whelan, Lee Jollans, Zijian Wang, Frauke Nees, Congying Chu, Marina Bobou, Dongping Du, Ilinca Cristea, Tobias Banaschewski, Gareth~J. Barker, Arun L.~W. Bokde, Antoine Grigis, Hugh Garavan, Andreas Heinz, R{\"u}diger Br{\"u}hl, Jean-Luc Martinot, Marie-Laure~Paill{\`e}re Martinot, Eric Artiges, Dimitri~Papadopoulos Orfanos, Luise Poustka, Sarah Hohmann, Sabina Millenet, Juliane~H. Fr{\"o}hner, Michael~N. Smolka, Nilakshi Vaidya, Henrik Walter, Jeanne Winterer, M.~John Broulidakis, Betteke~Maria {van Noort}, Argyris Stringaris, Jani Penttil{\"a}, Yvonne Grimmer, Corinna Insensee, Andreas Becker, Yuning Zhang, Sinead King, Julia Sinclair, Gunter Schumann, Ulrike Schmidt, and Sylvane Desrivi{\`e}res.
-\newblock Machine learning models for diagnosis and risk prediction in eating disorders, depression, and alcohol use disorder.
-\newblock \emph{Journal of Affective Disorders}, 379:\penalty0 889--899, June 2025.
-\newblock ISSN 0165-0327.
-\newblock \doi{10.1016/j.jad.2024.12.053}.
 
 \end{thebibliography}
