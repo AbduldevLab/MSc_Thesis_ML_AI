@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.9)  9 OCT 2025 00:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.9)  9 OCT 2025 17:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -874,10 +874,16 @@ Chapter 2.
 [8]
 
 [9]
+<0_frontmatter/figures/prisma.pdf, id=487, 1178.4025pt x 632.3625pt>
+File: 0_frontmatter/figures/prisma.pdf Graphic file (type pdf)
+<use 0_frontmatter/figures/prisma.pdf>
+Package pdftex.def Info: 0_frontmatter/figures/prisma.pdf  used on input line 84.
+(pdftex.def)             Requested size: 412.56496pt x 221.39774pt.
+
 
 [10
 
-]
+ <./0_frontmatter/figures/prisma.pdf>]
 
 [11]
 
@@ -888,12 +894,12 @@ Chapter 2.
 [14]
 
 [15]
-Overfull \hbox (4.08002pt too wide) in paragraph at lines 249--249
+Overfull \hbox (4.08002pt too wide) in paragraph at lines 257--257
 []\OT1/cmr/m/n/10.95 Longitudinal
  []
 
 
-LaTeX Warning: Float too large for page by 79.35474pt on input line 250.
+LaTeX Warning: Float too large for page by 79.35474pt on input line 258.
 
 
 
@@ -912,7 +918,7 @@ LaTeX Warning: Float too large for page by 79.35474pt on input line 250.
 
  (./3_chapter3/chapter3.tex
 Chapter 3.
-<3_chapter3/figures/image02.jpg, id=667, 401.5pt x 401.5pt>
+<3_chapter3/figures/image02.jpg, id=684, 401.5pt x 401.5pt>
 File: 3_chapter3/figures/image02.jpg Graphic file (type jpg)
 <use 3_chapter3/figures/image02.jpg>
 Package pdftex.def Info: 3_chapter3/figures/image02.jpg  used on input line 20.
@@ -1093,16 +1099,16 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 3C80B992445BDEA1B3367A76F0EF0E8E;8237.
+(rerunfilecheck)             Checksum: 149F35A6BC05F89B6D1A1C11B1B9BA51;8237.
 Package rerunfilecheck Info: File `thesis.brf' has not changed.
-(rerunfilecheck)             Checksum: 112D197208BE76FF5313853933CA8F64;5012.
+(rerunfilecheck)             Checksum: 96907294B0B21AC844A25A10D9B0EF99;5079.
  )
 (\end occurred when \iftrue on line 117 was incomplete) 
 Here is how much of TeX's memory you used:
- 26802 strings out of 473190
- 482701 string characters out of 5715801
+ 26818 strings out of 473190
+ 483305 string characters out of 5715801
  1643713 words of memory out of 5000000
- 49293 multiletter control sequences out of 15000+600000
+ 49307 multiletter control sequences out of 15000+600000
  571483 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  125i,12n,121p,2471b,2190s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1110,10 +1116,10 @@ Here is how much of TeX's memory you used:
 pdfTeX warning (dest): name{glo:NOS} has been referenced but does not exist, replaced by a fixed one
 
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on thesis.pdf (53 pages, 568077 bytes).
+Output written on thesis.pdf (53 pages, 582488 bytes).
 PDF statistics:
- 1137 PDF objects out of 1200 (max. 8388607)
- 1026 compressed objects within 11 object streams
- 319 named destinations out of 1000 (max. 500000)
- 355 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1156 PDF objects out of 1200 (max. 8388607)
+ 1040 compressed objects within 11 object streams
+ 321 named destinations out of 1000 (max. 500000)
+ 360 words of extra memory for PDF output out of 10000 (max. 10000000)
 

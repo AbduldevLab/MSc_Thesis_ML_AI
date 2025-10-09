@@ -36,22 +36,22 @@ Together, these examples helped me design a structured yet flexible approach sui
 I first defined the main topic of interest, which focused on chronic disease prediction using nutrition, lifestyle, and clinical data from TILDA. Relevant databases (e.g., ScienceDirect, PubMed) were searched using combinations of keywords such as “Irish Longitudinal Study on Ageing”, “machine learning”, “chronic disease”, “nutrition”, “diet”, and “physical activity”. 
 The full search strings and the number of articles initially retrieved from each database are shown in Table\ref{tab:PetersenSearch}. 
 Some search strings returned few or irrelevant results, particularly for \gls{ML} related \gls{TILDA} studies, highlighting a key research gap. Iterations continued until suitable combinations consistently returned relevant studies.
-Duplicates were removed using Zotero's reference management features. The remaining studies were individually and manually checked for relevance to 'ageing', 'chronic disease', and \gls{ML}. Using Zotero's notes functionality, I created an initial table capturing key elements for each paper, including model type, features used, and main findings for each paper in the collection.
+Duplicates were removed using Zotero's reference management feature. The remaining studies were individually and manually checked for relevance to 'ageing', 'chronic disease', and \gls{ML}. Using Zotero's notes functionality, the initially created table captured key elements for each paper, including model type, features used, and main findings for each paper in the collection, as illustrated in the PRISMA flow diagram (Figure~\ref{fig:prisma}).
+
 This initial table guided a further refinement of the results into two sub tables: (1) studies critically related to \gls{TILDA}, (2) studies using \gls{TILDA} data with \gls{ML} for predictive contexts, which revealed minimal to no integration with \gls{TILDA}. This gap motivated the design and direction of this research.
 Based on these analyses, a separate snapshot table was developed during the systematic mapping phase to summarise key research 'gaps' and 'opportunities', while Table~\ref{tab:lr_table} presents the subset of selected studies on ageing using \gls{TILDA} and \gls{ML}. 
 These steps were aligned with the research matrix created at the beginning, ensuring that the refinement of studies and synthesis of findings stayed closely tied to the original research goals.
 
 \subsection{Quality and Relevance Evaluation} 
-Developing a custom table based on the \gls{NOS}, which provided a structured way to assess the strength of evidence and methodological quality across studies. The \gls{NOS} based scoring offered cumulative insights that helped prioritise studies, informing the later synthesis of findings and identification of gaps.
+Developing a custom table based on the \gls{NOS}, provided a structured way to assess the strength of evidence and methodological quality across studies. The \gls{NOS} based scoring offered cumulative insights that helped prioritise studies, informing the later synthesis of findings and identification of gaps.
 Applying this, I annotated each paper in Zotero with notes on dataset, key variables, analytical approach, and main findings to ensure a consistent, critical appraisal.
 For the systematic component, I followed the steps such as systematically extracting and synthesizing data to identify trends (e.g., Markov models, logistic regression, 5-fold cross validation) and research gaps \cite{kitchenhamSystematicLiteratureReviews2009a}, complemented by the DoctoralWriting resources \cite{doctoralwritingCreatingLiteratureReview2016a,doctoralwritingCreatingLiteratureReview2016b}, which clarified how to define research questions and develop logical arguments. 
-The structure was further developed by analyzing \cite{petersenGuidelinesConductingSystematic2015}, whose updated guidelines supported the initial design of my search matrix which came first before creating the Literature review collection and inspired the combined format for Table \ref{tab:PetersenSearch}. 
 
 The integration of a research matrix with systematic mapping and integrative synthesis ensured that the methodology was well suited to capturing the complexity of ageing, nutrition, chronic disease risk and predictive modelling studies with and without \gls{TILDA}.
 
 \begin{table}[htbp]
 \centering
-\caption{Database searches and number of studies per database}
+\caption{Database searches and number of studies per database \ref{tab:PetersenSearch}.}
 \label{tab:PetersenSearch}
 \small
 \resizebox{\textwidth}{!}{
@@ -78,6 +78,14 @@ TILDA OR "Irish Longitudinal Study on Ageing" & 56 \\
 \end{tabular}}
 \end{table}
 \clearpage
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{0_frontmatter/figures/prisma.pdf}
+\caption{PRISMA chart showing the study selection process for the systematic mapping and integrative review \cite{haddawayPRISMA2020PackageShiny2022}.}
+\label{fig:prisma}
+\end{figure}
+% also we need to add the nos scale table/figure
 % ----------------------------------------------------------------------
 % Frailty and Physical Function
 \section{Frailty and Physical Function}
