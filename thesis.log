@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.9)  10 OCT 2025 00:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.9)  10 OCT 2025 01:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -873,7 +873,7 @@ Chapter 2.
 <0_frontmatter/figures/prisma.pdf, id=480, 1178.4025pt x 632.3625pt>
 File: 0_frontmatter/figures/prisma.pdf Graphic file (type pdf)
 <use 0_frontmatter/figures/prisma.pdf>
-Package pdftex.def Info: 0_frontmatter/figures/prisma.pdf  used on input line 75.
+Package pdftex.def Info: 0_frontmatter/figures/prisma.pdf  used on input line 74.
 (pdftex.def)             Requested size: 412.56496pt x 221.39774pt.
 
 
@@ -882,12 +882,12 @@ Package pdftex.def Info: 0_frontmatter/figures/prisma.pdf  used on input line 75
 [9
 
 ]
-Overfull \hbox (4.08002pt too wide) in paragraph at lines 155--155
+Overfull \hbox (4.08002pt too wide) in paragraph at lines 154--154
 []\OT1/cmr/m/n/10.95 Longitudinal
  []
 
 
-LaTeX Warning: Float too large for page by 79.35474pt on input line 156.
+LaTeX Warning: Float too large for page by 79.35474pt on input line 155.
 
 
 
@@ -1126,7 +1126,7 @@ pdfTeX warning (dest): name{glo:SR} has been referenced but does not exist, repl
 pdfTeX warning (dest): name{glo:SLR} has been referenced but does not exist, replaced by a fixed one
 
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on thesis.pdf (54 pages, 586370 bytes).
+Output written on thesis.pdf (54 pages, 586328 bytes).
 PDF statistics:
  1214 PDF objects out of 1440 (max. 8388607)
  1094 compressed objects within 11 object streams
