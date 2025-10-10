@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.9)  10 OCT 2025 01:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.9)  10 OCT 2025 06:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -870,10 +870,10 @@ Chapter 2.
 ]
 
 [7]
-<0_frontmatter/figures/prisma.pdf, id=483, 1178.4025pt x 632.3625pt>
+<0_frontmatter/figures/prisma.pdf, id=484, 1178.4025pt x 632.3625pt>
 File: 0_frontmatter/figures/prisma.pdf Graphic file (type pdf)
 <use 0_frontmatter/figures/prisma.pdf>
-Package pdftex.def Info: 0_frontmatter/figures/prisma.pdf  used on input line 74.
+Package pdftex.def Info: 0_frontmatter/figures/prisma.pdf  used on input line 75.
 (pdftex.def)             Requested size: 412.56496pt x 221.39774pt.
 
 
@@ -882,12 +882,12 @@ Package pdftex.def Info: 0_frontmatter/figures/prisma.pdf  used on input line 74
 [9
 
 ]
-Overfull \hbox (4.08002pt too wide) in paragraph at lines 154--154
+Overfull \hbox (4.08002pt too wide) in paragraph at lines 155--155
 []\OT1/cmr/m/n/10.95 Longitudinal
  []
 
 
-LaTeX Warning: Float too large for page by 79.35474pt on input line 155.
+LaTeX Warning: Float too large for page by 79.35474pt on input line 156.
 
 
 
@@ -1105,31 +1105,22 @@ L3 programming layer <2025-01-18>
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 2E2F000680FE6A386CF7D94045FED9D8;8806.
 Package rerunfilecheck Info: File `thesis.brf' has not changed.
-(rerunfilecheck)             Checksum: B1B04B2F61536D5A409243DA4996ABB3;6215.
+(rerunfilecheck)             Checksum: E8D4C3F89D2C630D7D7E7655F94AF714;6215.
  )
 (\end occurred when \iftrue on line 117 was incomplete) 
 Here is how much of TeX's memory you used:
- 26908 strings out of 473190
- 484955 string characters out of 5715801
+ 26907 strings out of 473190
+ 484946 string characters out of 5715801
  1643713 words of memory out of 5000000
  49388 multiletter control sequences out of 15000+600000
  571483 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  125i,13n,121p,2471b,2190s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{glo:NOS} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{glo:SR} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{glo:SLR} has been referenced but does not exist, replaced by a fixed one
-
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on thesis.pdf (54 pages, 586570 bytes).
+Output written on thesis.pdf (54 pages, 586848 bytes).
 PDF statistics:
  1219 PDF objects out of 1440 (max. 8388607)
  1098 compressed objects within 11 object streams
- 330 named destinations out of 1000 (max. 500000)
+ 329 named destinations out of 1000 (max. 500000)
  376 words of extra memory for PDF output out of 10000 (max. 10000000)
 
