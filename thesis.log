@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.9)  10 OCT 2025 01:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.9)  10 OCT 2025 06:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -827,11 +827,11 @@ Chapter 1.
 <0_frontmatter/figures/gantt_chart.png, id=355, 1378.14874pt x 460.72125pt>
 File: 0_frontmatter/figures/gantt_chart.png Graphic file (type png)
 <use 0_frontmatter/figures/gantt_chart.png>
-Package pdftex.def Info: 0_frontmatter/figures/gantt_chart.png  used on input line 81.
+Package pdftex.def Info: 0_frontmatter/figures/gantt_chart.png  used on input line 80.
 (pdftex.def)             Requested size: 1378.14539pt x 460.72012pt.
 
 
-LaTeX Warning: Float too large for page by 26.31453pt on input line 84.
+LaTeX Warning: Float too large for page by 26.31453pt on input line 83.
 
 
 
@@ -899,11 +899,11 @@ LaTeX Warning: Float too large for page by 79.35474pt on input line 156.
 
 [20]
 
-LaTeX Warning: Reference `chap:Methodology' on page 21 undefined on input line 322.
+[21]
 
+LaTeX Warning: Reference `chap:Methodology' on page 22 undefined on input line 316.
 
-
-[21])
+)
 
 [22] (./thesis.bbl (./thesis.brf)
 \tf@brf=\write12
@@ -939,7 +939,7 @@ LaTeX Warning: There were undefined references.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: DEDB5321C1363279772CE90B2B2D003B;6409.
 Package rerunfilecheck Info: File `thesis.brf' has not changed.
-(rerunfilecheck)             Checksum: 85B33E9C8DA130FF59E6950702EABFAF;6244.
+(rerunfilecheck)             Checksum: D50A774071E4CFA14613C9139D016208;6244.
  )
 (\end occurred when \iftrue on line 119 was incomplete) 
 Here is how much of TeX's memory you used:
@@ -951,7 +951,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  125i,13n,121p,2474b,785s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on thesis.pdf (39 pages, 607980 bytes).
+Output written on thesis.pdf (39 pages, 607990 bytes).
 PDF statistics:
  857 PDF objects out of 1000 (max. 8388607)
  767 compressed objects within 8 object streams
