@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.9)  7 OCT 2025 15:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.9)  10 OCT 2025 01:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -712,7 +712,7 @@ Package tocbasic Info: setting babel extension for `lol' on input line 160.
 \openout2 = `Latex/Macros/MacroFile1.aux'.
 
  (./Latex/Macros/MacroFile1.tex)
-<0_frontmatter/figures/logonew2020.jpg, id=108, 569.0058pt x 284.5029pt>
+<0_frontmatter/figures/logonew2020.jpg, id=124, 569.0058pt x 284.5029pt>
 File: 0_frontmatter/figures/logonew2020.jpg Graphic file (type jpg)
 <use 0_frontmatter/figures/logonew2020.jpg>
 Package pdftex.def Info: 0_frontmatter/figures/logonew2020.jpg  used on input line 175.
@@ -748,7 +748,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.25 ...5}Gaps in the Literature}{16}{section.2.5}
+l.25 ... Sets in ML Studies}{18}{subsection.2.5.1}
                                                   % [1
 
 ])
@@ -824,7 +824,7 @@ Chapter 1.
 ]
 
 [4]
-<0_frontmatter/figures/gantt_chart.png, id=318, 1378.14874pt x 460.72125pt>
+<0_frontmatter/figures/gantt_chart.png, id=354, 1378.14874pt x 460.72125pt>
 File: 0_frontmatter/figures/gantt_chart.png Graphic file (type png)
 <use 0_frontmatter/figures/gantt_chart.png>
 Package pdftex.def Info: 0_frontmatter/figures/gantt_chart.png  used on input line 81.
@@ -856,58 +856,78 @@ Chapter 2.
 ]
 
 [9]
+<0_frontmatter/figures/prisma.pdf, id=402, 1178.4025pt x 632.3625pt>
+File: 0_frontmatter/figures/prisma.pdf Graphic file (type pdf)
+<use 0_frontmatter/figures/prisma.pdf>
+Package pdftex.def Info: 0_frontmatter/figures/prisma.pdf  used on input line 75.
+(pdftex.def)             Requested size: 412.56496pt x 221.39774pt.
 
-[10]
 
-[11]
+[10 <./0_frontmatter/figures/prisma.pdf>]
 
-[12]
+[11
 
-[13]
-Overfull \hbox (4.08002pt too wide) in paragraph at lines 193--193
+]
+Overfull \hbox (4.08002pt too wide) in paragraph at lines 155--155
 []\OT1/cmr/m/n/10.95 Longitudinal
  []
 
 
-LaTeX Warning: Float too large for page by 79.35474pt on input line 194.
+LaTeX Warning: Float too large for page by 79.35474pt on input line 156.
 
 
 
-[14]
-
-[15]
-
-[16
+[12
 
 ]
 
+[13]
+
+[14
+
+]
+
+[15]
+
+[16]
+
 [17]
 
-LaTeX Warning: Reference `chap:Methodology' on page 18 undefined on input line 221.
+[18]
 
-)
+[19]
 
-[18] (./thesis.bbl (./thesis.brf)
+[20]
+
+LaTeX Warning: Reference `chap:Methodology' on page 21 undefined on input line 322.
+
+
+
+[21])
+
+[22] (./thesis.bbl (./thesis.brf)
 \tf@brf=\write12
 \openout12 = `thesis.brf'.
 
 
 
-[19
+[23
 
 
 
 ]
 
-[20]
+[24]
 
-[21]
+[25]
 
-[22]
+[26]
 
-[23])
+[27]
 
-[24] (./thesis.aux (./Latex/Macros/MacroFile1.aux) (./0_frontmatter/glossary.aux) (./1_introduction/introduction.aux) (./2_chapter2/chapter2.aux))
+[28])
+
+[29] (./thesis.aux (./Latex/Macros/MacroFile1.aux) (./0_frontmatter/glossary.aux) (./1_introduction/introduction.aux) (./2_chapter2/chapter2.aux))
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -917,24 +937,24 @@ L3 programming layer <2025-01-18>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 7F011D4F14B03CE3802C999111B33643;5444.
+(rerunfilecheck)             Checksum: DEDB5321C1363279772CE90B2B2D003B;6409.
 Package rerunfilecheck Info: File `thesis.brf' has not changed.
-(rerunfilecheck)             Checksum: 41F91BA7C2B237070613908BC298051F;4222.
+(rerunfilecheck)             Checksum: 85B33E9C8DA130FF59E6950702EABFAF;6244.
  )
 (\end occurred when \iftrue on line 119 was incomplete) 
 Here is how much of TeX's memory you used:
- 25717 strings out of 473190
- 464303 string characters out of 5715801
- 1190987 words of memory out of 5000000
- 48462 multiletter control sequences out of 15000+600000
+ 25920 strings out of 473190
+ 469657 string characters out of 5715801
+ 1189987 words of memory out of 5000000
+ 48639 multiletter control sequences out of 15000+600000
  570532 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 125i,12n,121p,2474b,785s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 125i,13n,121p,2474b,785s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on thesis.pdf (34 pages, 577738 bytes).
+Output written on thesis.pdf (39 pages, 607829 bytes).
 PDF statistics:
- 698 PDF objects out of 1000 (max. 8388607)
- 623 compressed objects within 7 object streams
- 122 named destinations out of 1000 (max. 500000)
- 219 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 854 PDF objects out of 1000 (max. 8388607)
+ 765 compressed objects within 8 object streams
+ 148 named destinations out of 1000 (max. 500000)
+ 256 words of extra memory for PDF output out of 10000 (max. 10000000)
 

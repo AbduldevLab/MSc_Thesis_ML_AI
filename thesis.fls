@@ -387,6 +387,11 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT ./0_frontmatter/figures/prisma.pdf
+INPUT ./0_frontmatter/figures/prisma.pdf
+INPUT ./0_frontmatter/figures/prisma.pdf
+INPUT ./0_frontmatter/figures/prisma.pdf
+INPUT ./0_frontmatter/figures/prisma.pdf
 INPUT ./thesis.bbl
 INPUT ./thesis.bbl
 INPUT thesis.bbl

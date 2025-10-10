@@ -334,6 +334,90 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{NOS}%
+{%
+name={\acronymfont {\glsentryshort {NOS}}},%
+sort={NOS},%
+type={acronym},%
+first={NOS},%
+firstplural={NOSs},%
+text={NOS},%
+plural={NOSs},%
+description={Newcastle-Ottawa Scale},%
+descriptionplural={Newcastle-Ottawa Scale},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Newcastle-Ottawa Scale},%
+longplural={Newcastle-Ottawa Scales},%
+short={NOS},%
+shortplural={NOSs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{SR}%
+{%
+name={\acronymfont {\glsentryshort {SR}}},%
+sort={SR},%
+type={acronym},%
+first={SR},%
+firstplural={SRs},%
+text={SR},%
+plural={SRs},%
+description={Systematic Review},%
+descriptionplural={Systematic Review},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Systematic Review},%
+longplural={Systematic Reviews},%
+short={SR},%
+shortplural={SRs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{SLR}%
+{%
+name={\acronymfont {\glsentryshort {SLR}}},%
+sort={SLR},%
+type={acronym},%
+first={SLR},%
+firstplural={SLRs},%
+text={SLR},%
+plural={SLRs},%
+description={Systematic Literature Review},%
+descriptionplural={Systematic Literature Review},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Systematic Literature Review},%
+longplural={Systematic Literature Reviews},%
+short={SLR},%
+shortplural={SLRs},%
+counter={page},%
+parent={},%
+%
+}%
+
 \glsdefs@newdocentry{AUC}%
 {%
 name={\acronymfont {\glsentryshort {AUC}}},%
