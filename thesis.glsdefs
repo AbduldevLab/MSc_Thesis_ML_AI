@@ -1529,4 +1529,152 @@ user3={},%
 user4={},%
 user5={},%
 user6={},%
-long={Co
+long={Confidence Interval},%
+longplural={Confidence Intervals},%
+short={CI},%
+shortplural={CIs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{RMSE}%
+{%
+name={\acronymfont {\glsentryshort {RMSE}}},%
+sort={RMSE},%
+type={acronym},%
+first={RMSE},%
+firstplural={RMSEs},%
+text={RMSE},%
+plural={RMSEs},%
+description={Root Mean Squared Error},%
+descriptionplural={Root Mean Squared Error},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Root Mean Squared Error},%
+longplural={Root Mean Squared Errors},%
+short={RMSE},%
+shortplural={RMSEs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{PRAUC}%
+{%
+name={\acronymfont {\glsentryshort {PRAUC}}},%
+sort={PR-AUC},%
+type={acronym},%
+first={PR-AUC},%
+firstplural={PR-AUCs},%
+text={PR-AUC},%
+plural={PR-AUCs},%
+description={Precision-Recall Area Under the Curve},%
+descriptionplural={Precision-Recall Area Under the Curve},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Precision-Recall Area Under the Curve},%
+longplural={Precision-Recall Area Under the Curves},%
+short={PR-AUC},%
+shortplural={PR-AUCs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{AUROC}%
+{%
+name={\acronymfont {\glsentryshort {AUROC}}},%
+sort={AUROC},%
+type={acronym},%
+first={AUROC},%
+firstplural={AUROCs},%
+text={AUROC},%
+plural={AUROCs},%
+description={Area Under the Receiver Operating Characteristic Curve},%
+descriptionplural={Area Under the Receiver Operating Characteristic Curve},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Area Under the Receiver Operating Characteristic Curve},%
+longplural={Area Under the Receiver Operating Characteristic Curves},%
+short={AUROC},%
+shortplural={AUROCs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{SHAP}%
+{%
+name={\acronymfont {\glsentryshort {SHAP}}},%
+sort={SHAP},%
+type={acronym},%
+first={SHAP},%
+firstplural={SHAPs},%
+text={SHAP},%
+plural={SHAPs},%
+description={Shapley Additive Explanations},%
+descriptionplural={Shapley Additive Explanations},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Shapley Additive Explanations},%
+longplural={Shapley Additive Explanationss},%
+short={SHAP},%
+shortplural={SHAPs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{PCA}%
+{%
+name={\acronymfont {\glsentryshort {PCA}}},%
+sort={PCA},%
+type={acronym},%
+first={PCA},%
+firstplural={PCAs},%
+text={PCA},%
+plural={PCAs},%
+description={Principal Component Analysis},%
+descriptionplural={Principal Component Analysis},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Principal Component Analysis},%
+longplural={Principal Component Analysiss},%
+short={PCA},%
+shortplural={PCAs},%
+counter={page},%
+parent={},%
+%
+}%
+
