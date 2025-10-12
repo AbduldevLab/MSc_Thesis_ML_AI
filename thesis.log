@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.9)  12 OCT 2025 18:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.9)  12 OCT 2025 18:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -756,7 +756,19 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has b
 l.11 \end{acknowledgements}
                             [1
 
-]) (./thesis.toc
+
+])
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.ii}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.209 \cleardoublepage
+                       [2
+
+
+
+] (./thesis.toc
 LaTeX Font Info:    Trying to load font information for U+msa on input line 6.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -767,13 +779,11 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.ii}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{page.iii}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.25 ... Sets in ML Studies}{18}{subsection.2.5.1}
-                                                  % [2
-
-
+                                                  % [3
 
 ])
 \tf@toc=\write8
@@ -782,22 +792,22 @@ l.25 ... Sets in ML Studies}{18}{subsection.2.5.1}
 
 
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.iii}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{page.iv}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.220 \listoftables
-                     % print list of tables [3] (./thesis.lot)
+l.222 \listoftables
+                     % print list of tables [4] (./thesis.lot)
 \tf@lot=\write9
 \openout9 = `thesis.lot'.
 
 
 
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.iv}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{page.v}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.221 \listoffigures
-                    	% print list of figures [4
+l.223 \listoffigures
+                    	% print list of figures [5
 
 ] (./thesis.lof)
 \tf@lof=\write10
@@ -806,11 +816,11 @@ l.221 \listoffigures
 
 
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.v}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{page.vi}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.229 \include{0_frontmatter/glossary}
-                                       [5
+l.227 \cleardoublepage
+                       [6
 
 ]
 \openout2 = `0_frontmatter/glossary.aux'.
@@ -819,12 +829,8 @@ l.229 \include{0_frontmatter/glossary}
 \@gls@deffile=\write11
 \openout11 = `thesis.glsdefs'.
 
-) (./thesis.acr
-pdfTeX warning (ext4): destination with the same identifier (name{page.vi}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.111 \end{theglossary}
-                       \glossarypostamble [6
+) (./thesis.acr [7
+
 
 
 
@@ -832,11 +838,7 @@ l.111 \end{theglossary}
 
 ])
 
-[7]
-
-[8
-
-]
+[8]
 \openout2 = `1_introduction/introduction.aux'.
 
  (./1_introduction/introduction.tex
@@ -844,6 +846,7 @@ Chapter 1.
 
 
 [1
+
 
 
 {/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
@@ -973,7 +976,7 @@ LaTeX Warning: There were undefined references.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 8C28D3A9FF9D08325FFBF47E14A0A5BD;6361.
 Package rerunfilecheck Info: File `thesis.brf' has not changed.
-(rerunfilecheck)             Checksum: 7939DAD1F32D8EB18B6C9687C083FA8B;6241.
+(rerunfilecheck)             Checksum: DA4C9C17DE616A5060D8AF334A42A6EE;6240.
  )
 (\end occurred when \iftrue on line 118 was incomplete) 
 Here is how much of TeX's memory you used:
@@ -985,7 +988,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  125i,13n,121p,2471b,785s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on thesis.pdf (43 pages, 611898 bytes).
+Output written on thesis.pdf (43 pages, 611832 bytes).
 PDF statistics:
  876 PDF objects out of 1000 (max. 8388607)
  782 compressed objects within 8 object streams
