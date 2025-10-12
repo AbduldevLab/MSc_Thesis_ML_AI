@@ -35,6 +35,36 @@ This combined guidance informed a structured yet flexible methodology suitable f
 \subsection{Search Strategy and Database Screening}
 The main topic of interest was chronic disease prediction using nutrition, lifestyle, and clinical data from TILDA. Relevant databases (e.g., ScienceDirect, PubMed) were searched using combinations of keywords such as “Irish Longitudinal Study on Ageing”, “machine learning”, “chronic disease”, “nutrition”, “diet”, and “physical activity”. 
 
+The search covered studies published from 2011 to 2025. Figure~\ref{fig:mapping_years} summarises the number of studies identified per year, highlighting trends and gaps over time.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  ybar,
+  bar width=10pt,
+  width=\textwidth,
+  height=0.4\textheight,
+  xlabel={Year},
+  ylabel={Number of Mapping Studies},
+  symbolic x coords={2011,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025},
+  xtick=data,
+  x tick label style={rotate=45, anchor=east},
+  nodes near coords,
+  ymin=0
+]
+\addplot coordinates {
+  (2011,1) (2013,2) (2014,3) (2015,2) (2016,2)
+  (2017,4) (2018,6) (2019,3) (2020,7) (2021,11)
+  (2022,13) (2023,14) (2024,7) (2025,3)
+};
+\end{axis}
+\end{tikzpicture}
+\caption{Publications per year.}
+\label{fig:mapping_years}
+\end{figure}
+\clearpage
+
 % Table: string db search 
 \begin{table}[htbp]
 \centering
@@ -64,6 +94,7 @@ TILDA OR "Irish Longitudinal Study on Ageing" & 56 \\
 \hline
 \end{tabular}}
 \end{table}
+\clearpage
  
 Some search strings returned few or irrelevant results, particularly for \gls{ML} related \gls{TILDA} studies, highlighting a key research gap. Iterations continued until suitable combinations consistently returned relevant studies.
 Duplicates were removed using Zotero's reference management feature. The remaining studies were individually and manually checked for relevance to 'ageing', 'chronic disease', and \gls{ML}. Using Zotero's notes functionality, the initially created table captured key elements for each paper, including model type, features used, and main findings for each paper in the collection, as illustrated in the PRISMA flow diagram (Figure~\ref{fig:prisma}).
@@ -320,4 +351,3 @@ These directions motivate the methodological choices outlined in Chapter~\ref{ch
 % ---------------------------------------------------------------------------
 %: ----------------------- end of thesis sub-document ------------------------
 % ---------------------------------------------------------------------------
-
