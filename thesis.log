@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.9)  11 OCT 2025 22:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.9)  11 OCT 2025 22:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -696,7 +696,7 @@ Package tocbasic Info: setting babel extension for `lol' on input line 158.
 \openout2 = `Latex/Macros/MacroFile1.aux'.
 
  (./Latex/Macros/MacroFile1.tex)
-<0_frontmatter/figures/logonew2020.jpg, id=184, 569.0058pt x 284.5029pt>
+<0_frontmatter/figures/logonew2020.jpg, id=192, 569.0058pt x 284.5029pt>
 File: 0_frontmatter/figures/logonew2020.jpg Graphic file (type jpg)
 <use 0_frontmatter/figures/logonew2020.jpg>
 Package pdftex.def Info: 0_frontmatter/figures/logonew2020.jpg  used on input line 173.
@@ -870,7 +870,7 @@ Chapter 2.
 ]
 
 [7]
-<0_frontmatter/figures/prisma.pdf, id=484, 1178.4025pt x 632.3625pt>
+<0_frontmatter/figures/prisma.pdf, id=494, 1178.4025pt x 632.3625pt>
 File: 0_frontmatter/figures/prisma.pdf Graphic file (type pdf)
 <use 0_frontmatter/figures/prisma.pdf>
 Package pdftex.def Info: 0_frontmatter/figures/prisma.pdf  used on input line 75.
@@ -920,7 +920,7 @@ LaTeX Warning: Float too large for page by 79.35474pt on input line 156.
 
  (./3_chapter3/chapter3.tex
 Chapter 3.
-<3_chapter3/figures/image02.jpg, id=727, 401.5pt x 401.5pt>
+<3_chapter3/figures/image02.jpg, id=737, 401.5pt x 401.5pt>
 File: 3_chapter3/figures/image02.jpg Graphic file (type jpg)
 <use 3_chapter3/figures/image02.jpg>
 Package pdftex.def Info: 3_chapter3/figures/image02.jpg  used on input line 20.
@@ -1040,13 +1040,15 @@ Chapter 6.
 
 ]
 
-[29
+[29]
+
+[30
 
 
 
 ]
 
-[30
+[31
 
 ] (./7_appendixes/ahrs_triad_mote.c
 LaTeX Font Info:    Trying to load font information for OML+cmr on input line 35.
@@ -1057,7 +1059,7 @@ LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <6> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 35.
 
 
-[31
+[32
 
 ]
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 62.
@@ -1071,19 +1073,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[32]) (./thesis.bbl (./thesis.brf)
+[33]) (./thesis.bbl (./thesis.brf)
 \tf@brf=\write12
 \openout12 = `thesis.brf'.
 
 
 
-[33]
+[34]
 
-[34
+[35
 
 ]
-
-[35]
 
 [36]
 
@@ -1091,36 +1091,38 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [38]
 
-[39])
+[39]
+
+[40])
 
 Package natbib Warning: There were undefined citations.
 
 
 
-[40] (./thesis.aux (./Latex/Macros/MacroFile1.aux) (./0_frontmatter/abstract.aux) (./0_frontmatter/declaration.aux) (./0_frontmatter/acknowledgement.aux) (./0_frontmatter/dedication.aux) (./0_frontmatter/glossary.aux) (./1_introduction/introduction.aux) (./2_chapter2/chapter2.aux) (./3_chapter3/chapter3.aux) (./4_chapter4/chapter4.aux) (./5_chapter5/chapter5.aux) (./6_conclusions/conclusions.aux))
+[41] (./thesis.aux (./Latex/Macros/MacroFile1.aux) (./0_frontmatter/abstract.aux) (./0_frontmatter/declaration.aux) (./0_frontmatter/acknowledgement.aux) (./0_frontmatter/dedication.aux) (./0_frontmatter/glossary.aux) (./1_introduction/introduction.aux) (./2_chapter2/chapter2.aux) (./3_chapter3/chapter3.aux) (./4_chapter4/chapter4.aux) (./5_chapter5/chapter5.aux) (./6_conclusions/conclusions.aux))
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 8619E8247F9E2D7F55D834EB468ECC0A;8758.
+(rerunfilecheck)             Checksum: E11AE3F610B0D2A1BF9B22575DBF55E7;9170.
 Package rerunfilecheck Info: File `thesis.brf' has not changed.
 (rerunfilecheck)             Checksum: E8D4C3F89D2C630D7D7E7655F94AF714;6215.
  )
 (\end occurred when \iftrue on line 117 was incomplete) 
 Here is how much of TeX's memory you used:
- 26907 strings out of 473190
- 484946 string characters out of 5715801
+ 26912 strings out of 473190
+ 485021 string characters out of 5715801
  1643713 words of memory out of 5000000
- 49388 multiletter control sequences out of 15000+600000
+ 49390 multiletter control sequences out of 15000+600000
  571483 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  125i,13n,121p,2471b,2190s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on thesis.pdf (54 pages, 586811 bytes).
+Output written on thesis.pdf (55 pages, 588033 bytes).
 PDF statistics:
- 1219 PDF objects out of 1440 (max. 8388607)
- 1098 compressed objects within 11 object streams
- 329 named destinations out of 1000 (max. 500000)
- 376 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1236 PDF objects out of 1440 (max. 8388607)
+ 1113 compressed objects within 12 object streams
+ 332 named destinations out of 1000 (max. 500000)
+ 392 words of extra memory for PDF output out of 10000 (max. 10000000)
 
