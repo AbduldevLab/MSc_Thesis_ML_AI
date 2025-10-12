@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.9)  11 OCT 2025 22:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.9)  12 OCT 2025 12:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -650,7 +650,7 @@ File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count359
 \l__pdf_internal_box=\box113
-) (./thesis.aux (./Latex/Macros/MacroFile1.aux) (./0_frontmatter/glossary.aux) (./1_introduction/introduction.aux) (./2_chapter2/chapter2.aux))
+) (./thesis.aux (./Latex/Macros/MacroFile1.aux) (./0_frontmatter/abstract.aux) (./0_frontmatter/declaration.aux) (./0_frontmatter/acknowledgement.aux) (./0_frontmatter/glossary.aux) (./1_introduction/introduction.aux) (./2_chapter2/chapter2.aux))
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 160.
@@ -731,10 +731,40 @@ Package pdftex.def Info: 0_frontmatter/figures/logonew2020.jpg  used on input li
 [2]
 
 [3]
+\openout2 = `0_frontmatter/abstract.aux'.
+
+ (./0_frontmatter/abstract.tex
 
 [4
 
-] (./thesis.toc
+])
+\openout2 = `0_frontmatter/declaration.aux'.
+
+ (./0_frontmatter/declaration.tex
+
+[5
+
+
+
+])
+
+[6
+
+
+
+]
+\openout2 = `0_frontmatter/acknowledgement.aux'.
+
+ (./0_frontmatter/acknowledgement.tex
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.11 \end{acknowledgements}
+                            [1
+
+]) (./thesis.toc
 LaTeX Font Info:    Trying to load font information for U+msa on input line 6.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -745,11 +775,13 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{page.ii}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.25 ... Sets in ML Studies}{18}{subsection.2.5.1}
-                                                  % [1
+                                                  % [2
+
+
 
 ])
 \tf@toc=\write8
@@ -758,22 +790,22 @@ l.25 ... Sets in ML Studies}{18}{subsection.2.5.1}
 
 
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.ii}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{page.iii}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.221 \listoftables
-                     % print list of tables [2] (./thesis.lot)
+                     % print list of tables [3] (./thesis.lot)
 \tf@lot=\write9
 \openout9 = `thesis.lot'.
 
 
 
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.iii}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{page.iv}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.222 \listoffigures
-                    	% print list of figures [3
+                    	% print list of figures [4
 
 ] (./thesis.lof)
 \tf@lof=\write10
@@ -782,11 +814,11 @@ l.222 \listoffigures
 
 
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.iv}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{page.v}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.226 \cleardoublepage
-                       [4
+l.230 \include{0_frontmatter/glossary}
+                                       [5
 
 ]
 \openout2 = `0_frontmatter/glossary.aux'.
@@ -795,8 +827,12 @@ l.226 \cleardoublepage
 \@gls@deffile=\write11
 \openout11 = `thesis.glsdefs'.
 
-) (./thesis.acr [5
-
+) (./thesis.acr
+pdfTeX warning (ext4): destination with the same identifier (name{page.vi}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.108 \end{theglossary}
+                       \glossarypostamble [6
 
 
 
@@ -804,7 +840,11 @@ l.226 \cleardoublepage
 
 ])
 
-[6]
+[7]
+
+[8
+
+]
 \openout2 = `1_introduction/introduction.aux'.
 
  (./1_introduction/introduction.tex
@@ -812,7 +852,6 @@ Chapter 1.
 
 
 [1
-
 
 
 {/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
@@ -824,7 +863,7 @@ Chapter 1.
 ]
 
 [4]
-<0_frontmatter/figures/gantt_chart.png, id=355, 1378.14874pt x 460.72125pt>
+<0_frontmatter/figures/gantt_chart.png, id=372, 1378.14874pt x 460.72125pt>
 File: 0_frontmatter/figures/gantt_chart.png Graphic file (type png)
 <use 0_frontmatter/figures/gantt_chart.png>
 Package pdftex.def Info: 0_frontmatter/figures/gantt_chart.png  used on input line 80.
@@ -856,7 +895,7 @@ Chapter 2.
 ]
 
 [9]
-<0_frontmatter/figures/prisma.pdf, id=405, 1178.4025pt x 632.3625pt>
+<0_frontmatter/figures/prisma.pdf, id=422, 1178.4025pt x 632.3625pt>
 File: 0_frontmatter/figures/prisma.pdf Graphic file (type pdf)
 <use 0_frontmatter/figures/prisma.pdf>
 Package pdftex.def Info: 0_frontmatter/figures/prisma.pdf  used on input line 75.
@@ -927,7 +966,7 @@ LaTeX Warning: Reference `chap:Methodology' on page 22 undefined on input line 3
 
 [28])
 
-[29] (./thesis.aux (./Latex/Macros/MacroFile1.aux) (./0_frontmatter/glossary.aux) (./1_introduction/introduction.aux) (./2_chapter2/chapter2.aux))
+[29] (./thesis.aux (./Latex/Macros/MacroFile1.aux) (./0_frontmatter/abstract.aux) (./0_frontmatter/declaration.aux) (./0_frontmatter/acknowledgement.aux) (./0_frontmatter/glossary.aux) (./1_introduction/introduction.aux) (./2_chapter2/chapter2.aux))
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -939,22 +978,22 @@ LaTeX Warning: There were undefined references.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 8C28D3A9FF9D08325FFBF47E14A0A5BD;6361.
 Package rerunfilecheck Info: File `thesis.brf' has not changed.
-(rerunfilecheck)             Checksum: D50A774071E4CFA14613C9139D016208;6244.
+(rerunfilecheck)             Checksum: 7939DAD1F32D8EB18B6C9687C083FA8B;6241.
  )
 (\end occurred when \iftrue on line 119 was incomplete) 
 Here is how much of TeX's memory you used:
- 25920 strings out of 473190
- 469657 string characters out of 5715801
+ 26004 strings out of 473190
+ 472895 string characters out of 5715801
  1189987 words of memory out of 5000000
- 48639 multiletter control sequences out of 15000+600000
+ 48701 multiletter control sequences out of 15000+600000
  570532 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  125i,13n,121p,2474b,785s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on thesis.pdf (39 pages, 607949 bytes).
+Output written on thesis.pdf (43 pages, 611847 bytes).
 PDF statistics:
- 857 PDF objects out of 1000 (max. 8388607)
- 767 compressed objects within 8 object streams
- 148 named destinations out of 1000 (max. 500000)
+ 875 PDF objects out of 1000 (max. 8388607)
+ 781 compressed objects within 8 object streams
+ 150 named destinations out of 1000 (max. 500000)
  256 words of extra memory for PDF output out of 10000 (max. 10000000)
 
