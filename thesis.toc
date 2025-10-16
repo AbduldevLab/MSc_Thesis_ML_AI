@@ -31,7 +31,7 @@
 \contentsline {section}{\numberline {3.2}Creating a list}{23}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Creating a Table}{23}{subsection.3.2.1}%
 \contentsline {section}{\numberline {3.3}Quote}{24}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Methodology}{25}{chapter.4}%
+\contentsline {chapter}{\numberline {4}Methods}{25}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Math}{25}{section.4.1}%
 \contentsline {chapter}{\numberline {5}Results}{27}{chapter.5}%
 \contentsline {section}{\numberline {5.1}References}{27}{section.5.1}%
