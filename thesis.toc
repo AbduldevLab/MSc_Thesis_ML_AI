@@ -33,7 +33,7 @@
 \contentsline {section}{\numberline {3.3}Quote}{24}{section.3.3}%
 \contentsline {chapter}{\numberline {4}Methods}{25}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Math}{25}{section.4.1}%
-\contentsline {chapter}{\numberline {5}Results}{27}{chapter.5}%
+\contentsline {chapter}{\numberline {5}Empirical Evaluation}{27}{chapter.5}%
 \contentsline {section}{\numberline {5.1}References}{27}{section.5.1}%
 \contentsline {chapter}{\numberline {6}Conclusions and Future Directions}{29}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Summary}{29}{section.6.1}%
