@@ -22,6 +22,8 @@
 *.xdv
 *.log
 *.fdb_latexmk
+*.nlo
+*.glsdefs
 # Output PDF (optional — ignore if you only want to track .tex)
 # thesis.pdf
 
