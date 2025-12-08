@@ -2,7 +2,7 @@
 % content in this file will be fed into the main document
 
 \chapter{Technical Approach} % top level followed by section, subsection
-
+\label{ch:technical}
 \ifpdf
     \graphicspath{{3_chapter3/figures/PNG/}{3_chapter3/figures/PDF/}{3_chapter3/figures/}}
 \else
@@ -11,86 +11,134 @@
 
 % ----------------------- contents from here ------------------------
 
+\section{Data Preprocessing and Quality Control}
+The primary objective of preprocessing was to convert all features, regardless of their initial data type (numeric, categorical, or complex string hybrids), into a standardised $\texttt{float64}$ format, with non response and sentinel values uniformly encoded as $-1.0$. This ensured that subsequent analyses, including feature engineering and machine learning modeling, could be applied consistently across all variables and waves.
 
+\subsection{Data Loading and Overview}
+All raw \gls{TILDA} wave datasets were loaded into a Python environment. The dimensions of the raw datasets, before any feature exclusion or harmonisation, are summarised in Table~\ref{tab:dataset_shape}, illustrating the slight variation in the number of variables captured in each subsequent wave. Initial exploration included checking:
 
-
-\section{Insert a Figure}
- We refer to a figure in the text like this:  (Figure \ref{image02}).
- 
- \figuremacroW{image02}{Title of Figure}{Description. [Source: (\Citealt{mydownloadedimage})]}{0.7} 
- 
-
-
-\section{Creating a list}
-
-\begin{itemize} \itemsep1pt \parskip0pt \parsep0pt
-\item \textbf{(2000)} item 1. 
-\item \textbf{(2004)} item 2. 
-\item \textbf{(2010)} item 3. 
-\item \textbf{(2013)} item 4. 
+\begin{itemize}
+    \item Data types for all columns
+    \item Missing values
+    \item Basic summary statistics (mean, median, min, max)
+    \item Simple visualisations (histograms, distributions) to identify anomalies
 \end{itemize}
 
+These steps helped identify obvious inconsistencies, missing entries, and potential outliers.
 
-\subsection{Creating a Table}
-
-\begin{table}[htpp]
-\caption{Table Title}
-\begin{center}
-\begin{tabular}{| p{3cm} | c | c | c |}
-\hline 
- & Resolution & Min & Max \\ \hline 
-Gyroscope & 4.5mV / {$^{\circ}$}/s & 0.27 $^{\circ}$/s & 406 $^{\circ}$/s \\ \hline
-Accelerometer & 600mV /g &  0.002g & 2g \\ \hline
-Magnetometer & 385mV/ gauss & 0.317 gauss & 6 gauss \\ \hline
-\end{tabular}
-\end{center}
-\label{Sensors' Resolution}
-\end{table}%
-
-
-% here is how to do a page break
-\pagebreak
-%done
-
-\section{Quote}
- An in-text quote is declared in the following way:
-
-\begin{quote}
-
-Recycling is the way forward! Recycling is the way forward! Recycling is the way forward! Recycling is the way forward! Recycling is the way forward! Recycling is the way forward! Recycling is the way forward! Recycling is the way forward! Recycling is the way forward! Recycling is the way forward! Recycling is the way forward! Recycling is the way forward! Recycling is the way forward! Recycling is the way forward! Recycling is the way forward! Recycling is the way forward! Recycling is the way forward! Recycling is the way forward! Recycling is the way forward!    (CommonSense, p. 0) 
-
- \end{quote}
-
-Another way of doing it is:
-\begin{quote}
-{
+\begin{table}[htbp]
 \centering
-\emph{There are in our existence spots of time, \\
-That with distinct pre-eminence retain \\
-A renovating virtue, whence-depressed \\
-By false opinion and contentious thought, \\
-Or aught of heavier or more deadly weight, \\
-In trivial occupations, and the round \\
-Of ordinary intercourse-our minds \\ 
-Are nourished and invisibly repaired; \\ 
-A virtue, by which pleasure is enhanced, \\ 
-That penetrates, enables us to mount, \\ 
-When high, more high, and lifts us up when fallen. \\ 
-}
+\caption{Dimensions (Rows and Features) of Raw and Harmonised Datasets}
+\label{tab:dataset_shape}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Dataset} & \textbf{Row (participants)} & \textbf{Column (variables)} \\
+\hline
+Wave 1 & 8501 & 809 \\
+Wave 2 & 7206 & 482 \\
+Wave 3 & 6397 & 639 \\
+Wave 4 & 5713 & 592 \\
+Wave 5 & 4978 & 577 \\
+Harmonized & 8501 & 453 \\
+\hline
+\end{tabular}
+\end{table}
 
-(\Citealt[verses 208-218]{poem})
+\subsection{Cleaning Engine}
+The foundation of the preprocessing stage was the systematic classification of all raw variables based on their data quality profile. An initial exploratory analysis across the five \gls{TILDA} waves identified nine distinct raw data scenarios, ranging from simple native missingness and sentinel codes to complex multi class string hybrids (\textbf{summarised in Appendix~\ref{tab:cleaning_scenario_tables}}). The core methodological challenge was not merely to clean these variables, but to design a reproducible pipeline that \emph{guaranteed numerical homogeneity} for downstream \gls{ML} model consumption.
 
-}
+To achieve this, the nine raw scenarios were compressed and prioritised into a \emph{Six Step Cleaning Engine}. This sequential structure was engineered based on the principle of \emph{cumulative simplification:} simpler, more definitive issues must be resolved first, thereby reducing ambiguity and maximising the yield of "clean numeric" variables for subsequent, more complex parsing operations. Specifically, the engine was designed to:
+
+\begin{itemize}
+    \item \textbf{Handling sentinel / Missingness (Steps 1-2):} By dedicating the initial phase to uniformly handling both native blanks and proprietary sentinel non response codes, the engine ensured all subsequent steps could operate on the valid data space, preventing inconsistent treatment of missing values.
+    \item \textbf{Prioritise Numerical Recovery (Step 3):} Following missingness handling, the next priority was to cleanse noise (units, boundary symbols) from variables fundamentally intended as numeric, rapidly increasing the count of the target $\texttt{float64}$ type.
+    \item \textbf{Order Categorical Complexity (Steps 4-6):} The remaining categorical scenarios were ordered by transformation confidence. Explicit domain specific mappings (Step 4) are applied before generic, rule based binary classifications (Step 5), leaving only the most complex, text heavy, or mixed type variables for the final, comprehensive parsing step (Step 6).
+\end{itemize}
+
+This structured, sequential approach, outlined in Figure~\ref{fig:cleaning_flow}, ensures robustness against wave specific inconsistencies by defining a fixed order of operations where the output of one step becomes the clean input for the next.
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+    node distance=12mm,
+    every node/.style={rectangle, rounded corners, draw=black, align=center, minimum width=5.2cm, minimum height=1.1cm}
+]
+
+\node (step1) {Step 1:\\Empty / Blank Handling};
+\node (step2) [below=of step1] {Step 2:\\Sentinel Standardisation};
+\node (step3) [below=of step2] {Step 3:\\Numeric Cleaning \& Unit Removal};
+\node (step4) [below=of step3] {Step 4:\\Censored / Ordinal Mapping};
+\node (step5) [below=of step4] {Step 5:\\Binary Classification};
+\node (step6) [below=of step5] {Step 6:\\Multi-class / Mixed Parsing};
+
+\draw[->, thick] (step1) -- (step2);
+\draw[->, thick] (step2) -- (step3);
+\draw[->, thick] (step3) -- (step4);
+\draw[->, thick] (step4) -- (step5);
+\draw[->, thick] (step5) -- (step6);
+
+\end{tikzpicture}
+\caption{Six Step Scenario Cleaning Engine Applied Sequentially to All \gls{TILDA} Waves}
+\label{fig:cleaning_flow}
+\end{figure}
+
+\begin{enumerate}
+    \item \textbf{Empty / Blank Values}: Converts native nulls (\texttt{NaN}), empty strings, and whitespace to the appropriate sentinel ($-1.0$).
+    \item \textbf{Sentinel Values}: Standardises all known proprietary codes (e.g., $-98$, $-99$) to the uniform sentinel value $-1.0$.
+    \item \textbf{Numeric Transformation}: Handles variables containing non numeric clutter like units (e.g., cm, kg) and converts censored values (e.g., ``50+'' $\rightarrow 50.0$).
+    \item \textbf{Censored Categorical}: Applies explicit, domain specific mappings for known ordinal ranges (e.g., health scales) into pre defined numeric codes.
+    \item \textbf{Binary Categorical}: Automatically identifies and maps two non sentinel values (e.g., Yes $\rightarrow 1.0$, No $\rightarrow 0.0$).
+    \item \textbf{Multi-Class / Mixed}: The final, comprehensive step for remaining text heavy categorical data, including sequential parsing for time formats, percentages, textual numbers, and Likert scales.
+\end{enumerate}
+
+% \begin{table}[htbp]
+% \centering
+% \caption{Scenario Cleaning Engine Applied to Each Wave (Implemented Steps)}
+% \label{tab:cleaning_steps}
+% \begin{tabular}{|c|l|p{9cm}|}
+% \hline
+% \textbf{Step} & \textbf{Scenario Addressed} & \textbf{Key Transformation Logic} \\
+% \hline
+% 1 & Empty / Blank Values & Converts native nulls (\texttt{NaN}), empty strings (\texttt{""}), and whitespace to the appropriate sentinel ($-1.0$ for numeric, \texttt{"-1.0"} for category types). \\
+% \hline
+% 2 & Sentinel Values & Standardises all known TILDA proprietary codes (e.g., $-98$, $-99$, $95$, $99$) and their string equivalents (e.g., \texttt{"Refused"}, \texttt{"Don't know"}) to the uniform sentinel value $-1.0$. \\
+% \hline
+% 3 & Numeric Transformation & Handles variables primarily intended as numeric but containing non numeric clutter. This includes removing units (e.g., cm, kg), currency symbols, and converting boundary/censored values (e.g., 50+ $\rightarrow 50.0$, ``10-20'' $\rightarrow 15.0$) to a float representation. \\
+% \hline
+% 4 & Censored Categorical & Applies explicit, domain specific mappings for known ordinal ranges (e.g., alcohol frequency categories, specific health scales) directly into pre-defined numeric codes/midpoints. \\
+% \hline
+% 5 & Binary Categorical & Automatically identifies columns with two non-sentinel values and applies semantic mapping (e.g., Male $\rightarrow 1.0$, Female $\rightarrow 0.0$; Yes $\rightarrow 1.0$, No $\rightarrow 0.0$). \\
+% \hline
+% 6 & Multi-Class / Mixed & The final, comprehensive step for remaining text-heavy categorical data. Includes sequential parsing for: (1) time formats (hh:mm), (2) percentages, (3) textual numbers (``one'', ``few''), (4) complex frequency expressions, and (5) Likert scales/Ordinals (e.g., ``strongly agree'' $\rightarrow 4.0$). Remaining unique non parseable categories were assigned deterministic integer IDs. \\
+% \hline
+% \end{tabular}
+% \end{table}
 
 
-\end{quote}
+\section{Feature Structuring and Thematic Grouping}
+To manage the high dimensionality of the resulting dataset, features were organised into six distinct thematic groups based on established aging literature and the core research goals. Table~\ref{tab:feature_groups} summarises these groups.
 
+\begin{table}[htbp]
+\centering
+\caption{Thematic Grouping of Longitudinal Features}
+\label{tab:feature_groups}
+\begin{tabular}{|c|l|l|l|}
+\hline
+\textbf{ID} & \textbf{Thematic Group} & \textbf{Description} & \textbf{Representative Variables} \\
+\hline
+1 & Socio Demographic \& Context & Baseline factors for stratification and understanding social determinants & Age, Gender, Education, Income \gls{INC}, Marital Status \gls{SOC} \\
+2 & Physical Health \& Clinical Baseline & Traditional medical and self reported health indicators & Self-Rated Health \gls{SCR}, \gls{BMI}, Blood Pressure \gls{BP}, Comorbidity Count \gls{MD} \\
+3 & Functional Status \& Frailty & Measures capturing the direct impact of aging & Frailty Index components \gls{FR}, Gait Speed, Falls History \emph{SCQFalls}, \gls{ADL}/IADL \gls{DIS} \\
+4 & Lifestyle \& Behavioural & Modifiable risk factors relevant for intervention targeting & Smoking Status, Alcohol Consumption \emph{SCQAlco}, Physical Activity \emph{IPAQ} \\
+5 & Nutrition \& Metabolic Biomarkers & Objective measures of nutritional status & Plasma Carotenoids, Lutein, Zeaxanthin, Vitamin D/B12, Cholesterol \\
+6 & Psychological \& Cognitive & Mental well being and cognitive function & Depression Scores \gls{CESD}, Loneliness \emph{MHucla}, Memory/Processing Speed \gls{COG} \gls{CRT} \\
+\hline
+\end{tabular}
+\end{table}
 
+This thematic structure guided feature engineering, ensuring balanced representation across the multidimensional health domains in older adults.
 
-
-
-
-
+\section{Summary}
+Chapter 3 detailed the preprocessing, cleaning, and harmonisation steps applied to the \gls{TILDA} waves. The six step cleaning engine, coupled with longitudinal alignment and thematic grouping, produced a structured and analysable dataset ready for modeling and hypothesis testing in subsequent chapters.
 
 % ---------------------------------------------------------------------------
 % ----------------------- end of thesis sub-document ------------------------

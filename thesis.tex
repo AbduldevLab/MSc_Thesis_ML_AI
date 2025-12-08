@@ -30,7 +30,9 @@
 \usepackage{multirow}
 \usepackage{color}
 \usepackage{tikz}
+\usetikzlibrary{positioning}
 \usepackage{pgfplots}
+\usepackage{tabularx}
 \pgfplotsset{compat=1.18}
 
 \usepackage[acronym]{glossaries}
@@ -280,7 +282,13 @@
 
 % Definition of each Chapter in the Appendix is done via the following two lines
 \chapter*{Appendix A}
-\section*{Insert a figure}
+\section*{Scenario Cleaning Pipeline Tables}
+% Include the file containing the actual tables (Table 1 through Table 6)
+\input{7_appendixes/appendixA_cleaning_tables}
+% This adds the chapter title to the Table of Contents
+\addcontentsline{toc}{chapter}{Appendix A: Scenario Cleaning Pipeline Tables}
+\chaptermark{Appendix}
+\markboth{Appendix}{Appendix}
 
 
 % here is how to add a figure in the appendix�. it is the same as any other place in the latex document
