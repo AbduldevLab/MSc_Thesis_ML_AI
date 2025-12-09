@@ -10,136 +10,113 @@
 \fi
 
 % ----------------------- contents from here ------------------------
+\section{Study Design}
 
-\section{Data Preprocessing and Quality Control}
-The primary objective of preprocessing was to convert all features, regardless of their initial data type (numeric, categorical, or complex string hybrids), into a standardised $\texttt{float64}$ format, with non response and sentinel values uniformly encoded as $-1.0$. This ensured that subsequent analyses, including feature engineering and machine learning modeling, could be applied consistently across all variables and waves.
+\gls{TILDA} is a prospective cohort study examining the social, economic, and health circumstances of community dwelling adults aged 50 years and older in Ireland. The present study extends this design by incorporating data from five waves of TILDA, as well as the external RAND harmonised dataset, which aligns TILDA with comparable UK and US cohorts.
 
-\subsection{Data Loading and Overview}
-All raw \gls{TILDA} wave datasets were loaded into a Python environment. The dimensions of the raw datasets, before any feature exclusion or harmonisation, are summarised in Table~\ref{tab:dataset_shape}, illustrating the slight variation in the number of variables captured in each subsequent wave. Initial exploration included checking:
+\section{Cohort Definition}
 
+The analysis included all participants who provided data in at least one of the \gls{TILDA} waves. This thesis retained the full eligible sample to maximise statistical power for machine learning. Participants were excluded only when they had no usable data after preprocessing (i.e., all features were missing or non informative).
+
+No exclusions were applied based on age, medical conditions, cognitive status, or attendance at the health assessment. Filtering occurred primarily at the \emph{variable level}, where features with excessive missingness, no variation, or non informative structure were removed (see Chapter~\ref{chap:Implementation Details}).
+
+\subsection{Inclusion/Exclusion criteria}
 \begin{itemize}
-    \item Data types for all columns
-    \item Missing values
-    \item Basic summary statistics (mean, median, min, max)
-    \item Simple visualisations (histograms, distributions) to identify anomalies
+    \item \textbf{Participant Inclusion:} All respondents who contributed data in at least one of the TILDA waves were included, regardless of age.
+    \item \textbf{Usable Data Requirement:} Participants were excluded only when every available feature was missing or non-informative after preprocessing.
+    \item \textbf{Longitudinal Retention:} Individuals were retained even if they participated in only a subset of waves, enabling maximum dataset utilisation.
+    \item \textbf{No Health or Cognitive Exclusions:} No participant was removed on the basis of medical diagnoses, cognitive scores, mobility limitations, or non-attendance at the health centre assessment.
 \end{itemize}
 
-These steps helped identify obvious inconsistencies, missing entries, and potential outliers.
+The filtering process was therefore driven by data integrity rather than clinical eligibility. Figure~\ref{fig:variable_filter_criteria}.
+
+\section{Data Collection}
+
+Data were collected across five waves:
+
+\begin{itemize}
+    \item \textbf{Wave 1:} 2009-2011
+    \item \textbf{Wave 2:} 2012-2013
+    \item \textbf{Wave 3:} 2014-2015
+    \item \textbf{Wave 4:} 2016-2018
+    \item \textbf{Wave 5:} 2018-2020
+\end{itemize}
+
+\textbf{Note:} The Harmonised dataset was obtained from the \gls{RAND} \gls{TILDA} repository and is designed to align \gls{TILDA} with comparable surveys such as \gls{RAND} gls{HRS}, \gls{ELSA}, and \gls{SHARE}. At present, the harmonised version is limited to Waves 1 and 2 and includes variables from the Demographics, Family, and Health sections. 
+This dataset contains cleaned and processed variables with consistent naming conventions and model based imputations where applicable. It is included here for reference and comparability with other longitudinal aging studies, but it is \emph{not} the output of the preprocessing and cleaning pipeline applied to the full five wave dataset used in this thesis for machine learning analyses.
+
+Each wave included three components:
+\begin{enumerate}
+    \item \textbf{\gls{CAPI}:} Home based, computer assisted personal interviews
+    \item \textbf{\gls{SCQ}:} A paper based self completion survey focused on mental health, lifestyle, and subjective well being
+    \item \textbf{Health Assessment:} Clinical and biomarker measurements in centers or at home
+\end{enumerate}
+These criteria ensured that participants could provide reliable data for longitudinal analyses. 
+
+\subsection{Raw Dataset Dimensions and Manual Filtering}
+Before any processing, all raw \gls{TILDA} datasets were inspected to understand dimensionality and structure. Table~\ref{tab:raw_dataset_shape} summarises the number of participants and variables per wave. Initial inspection involved:
+
+\begin{itemize}
+    \item inspecting datatypes for every column,
+    \item quantifying missingness, sentinel values, and unique entries,
+    \item generating descriptive statistics (mean, median, min, max),
+    \item and visuals (histograms, distributions) to identify anomalies.
+\end{itemize}
 
 \begin{table}[htbp]
 \centering
-\caption{Dimensions (Rows and Features) of Raw and Harmonised Datasets}
-\label{tab:dataset_shape}
+\caption{Dimensions of Raw TILDA and Harmonised Datasets (Pre-Filtering)}
+\label{tab:raw_dataset_shape}
 \begin{tabular}{|c|c|c|}
 \hline
-\textbf{Dataset} & \textbf{Row (participants)} & \textbf{Column (variables)} \\
+\textbf{Dataset} & \textbf{Participants (N)} & \textbf{Raw Variables (N)} \\
 \hline
-Wave 1 & 8501 & 809 \\
-Wave 2 & 7206 & 482 \\
-Wave 3 & 6397 & 639 \\
-Wave 4 & 5713 & 592 \\
-Wave 5 & 4978 & 577 \\
-Harmonized & 8501 & 453 \\
+Wave 1 & 8501 & 1619 \\
+Wave 2 & 7206 & 724 \\
+Wave 3 & 6397 & 1029 \\
+Wave 4 & 5713 & 990 \\
+Wave 5 & 4978 & 983 \\
+Harmonised & 8501 & 572 \\
 \hline
 \end{tabular}
 \end{table}
 
-\subsection{Cleaning Engine}
-The foundation of the preprocessing stage was the systematic classification of all raw variables based on their data quality profile. An initial exploratory analysis across the five \gls{TILDA} waves identified nine distinct raw data scenarios, ranging from simple native missingness and sentinel codes to complex multi class string hybrids (\textbf{summarised in Appendix~\ref{tab:cleaning_scenario_tables}}). The core methodological challenge was not merely to clean these variables, but to design a reproducible pipeline that \emph{guaranteed numerical homogeneity} for downstream \gls{ML} model consumption.
+\subsection{Variable Filtering Criteria}
 
-To achieve this, the nine raw scenarios were compressed and prioritised into a \emph{Six Step Cleaning Engine}. This sequential structure was engineered based on the principle of \emph{cumulative simplification:} simpler, more definitive issues must be resolved first, thereby reducing ambiguity and maximising the yield of "clean numeric" variables for subsequent, more complex parsing operations. Specifically, the engine was designed to:
+The manual variable filtering process involved applying a set of predefined thresholds to remove non-informative or structurally invalid variables prior to automated preprocessing. These criteria included thresholds for missingness, uniqueness, dominant category frequency, datatype quality, and administrative identifiers (see mapping table in Appendix~\ref{appendix_variable_filtering}).
 
-\begin{itemize}
-    \item \textbf{Handling sentinel / Missingness (Steps 1-2):} By dedicating the initial phase to uniformly handling both native blanks and proprietary sentinel non response codes, the engine ensured all subsequent steps could operate on the valid data space, preventing inconsistent treatment of missing values.
-    \item \textbf{Prioritise Numerical Recovery (Step 3):} Following missingness handling, the next priority was to cleanse noise (units, boundary symbols) from variables fundamentally intended as numeric, rapidly increasing the count of the target $\texttt{float64}$ type.
-    \item \textbf{Order Categorical Complexity (Steps 4-6):} The remaining categorical scenarios were ordered by transformation confidence. Explicit domain specific mappings (Step 4) are applied before generic, rule based binary classifications (Step 5), leaving only the most complex, text heavy, or mixed type variables for the final, comprehensive parsing step (Step 6).
-\end{itemize}
-
-This structured, sequential approach, outlined in Figure~\ref{fig:cleaning_flow}, ensures robustness against wave specific inconsistencies by defining a fixed order of operations where the output of one step becomes the clean input for the next.
 \begin{figure}[htbp]
 \centering
-\begin{tikzpicture}[
-    node distance=12mm,
-    every node/.style={rectangle, rounded corners, draw=black, align=center, minimum width=5.2cm, minimum height=1.1cm}
-]
-
-\node (step1) {Step 1:\\Empty / Blank Handling};
-\node (step2) [below=of step1] {Step 2:\\Sentinel Standardisation};
-\node (step3) [below=of step2] {Step 3:\\Numeric Cleaning \& Unit Removal};
-\node (step4) [below=of step3] {Step 4:\\Censored / Ordinal Mapping};
-\node (step5) [below=of step4] {Step 5:\\Binary Classification};
-\node (step6) [below=of step5] {Step 6:\\Multi-class / Mixed Parsing};
-
-\draw[->, thick] (step1) -- (step2);
-\draw[->, thick] (step2) -- (step3);
-\draw[->, thick] (step3) -- (step4);
-\draw[->, thick] (step4) -- (step5);
-\draw[->, thick] (step5) -- (step6);
-
-\end{tikzpicture}
-\caption{Six Step Scenario Cleaning Engine Applied Sequentially to All \gls{TILDA} Waves}
-\label{fig:cleaning_flow}
+\includegraphics[height=1.25\textwidth]{variable_filter_criteria.png}
+\caption{Flowchart of manual filtering applied to raw variables for each TILDA wave. Placeholder counts indicate the number of variables remaining after each filtering step.}
+\label{fig:variable_filter_criteria}
 \end{figure}
 
-\begin{enumerate}
-    \item \textbf{Empty / Blank Values}: Converts native nulls (\texttt{NaN}), empty strings, and whitespace to the appropriate sentinel ($-1.0$).
-    \item \textbf{Sentinel Values}: Standardises all known proprietary codes (e.g., $-98$, $-99$) to the uniform sentinel value $-1.0$.
-    \item \textbf{Numeric Transformation}: Handles variables containing non numeric clutter like units (e.g., cm, kg) and converts censored values (e.g., ``50+'' $\rightarrow 50.0$).
-    \item \textbf{Censored Categorical}: Applies explicit, domain specific mappings for known ordinal ranges (e.g., health scales) into pre defined numeric codes.
-    \item \textbf{Binary Categorical}: Automatically identifies and maps two non sentinel values (e.g., Yes $\rightarrow 1.0$, No $\rightarrow 0.0$).
-    \item \textbf{Multi-Class / Mixed}: The final, comprehensive step for remaining text heavy categorical data, including sequential parsing for time formats, percentages, textual numbers, and Likert scales.
-\end{enumerate}
-
-% \begin{table}[htbp]
-% \centering
-% \caption{Scenario Cleaning Engine Applied to Each Wave (Implemented Steps)}
-% \label{tab:cleaning_steps}
-% \begin{tabular}{|c|l|p{9cm}|}
-% \hline
-% \textbf{Step} & \textbf{Scenario Addressed} & \textbf{Key Transformation Logic} \\
-% \hline
-% 1 & Empty / Blank Values & Converts native nulls (\texttt{NaN}), empty strings (\texttt{""}), and whitespace to the appropriate sentinel ($-1.0$ for numeric, \texttt{"-1.0"} for category types). \\
-% \hline
-% 2 & Sentinel Values & Standardises all known TILDA proprietary codes (e.g., $-98$, $-99$, $95$, $99$) and their string equivalents (e.g., \texttt{"Refused"}, \texttt{"Don't know"}) to the uniform sentinel value $-1.0$. \\
-% \hline
-% 3 & Numeric Transformation & Handles variables primarily intended as numeric but containing non numeric clutter. This includes removing units (e.g., cm, kg), currency symbols, and converting boundary/censored values (e.g., 50+ $\rightarrow 50.0$, ``10-20'' $\rightarrow 15.0$) to a float representation. \\
-% \hline
-% 4 & Censored Categorical & Applies explicit, domain specific mappings for known ordinal ranges (e.g., alcohol frequency categories, specific health scales) directly into pre-defined numeric codes/midpoints. \\
-% \hline
-% 5 & Binary Categorical & Automatically identifies columns with two non-sentinel values and applies semantic mapping (e.g., Male $\rightarrow 1.0$, Female $\rightarrow 0.0$; Yes $\rightarrow 1.0$, No $\rightarrow 0.0$). \\
-% \hline
-% 6 & Multi-Class / Mixed & The final, comprehensive step for remaining text-heavy categorical data. Includes sequential parsing for: (1) time formats (hh:mm), (2) percentages, (3) textual numbers (``one'', ``few''), (4) complex frequency expressions, and (5) Likert scales/Ordinals (e.g., ``strongly agree'' $\rightarrow 4.0$). Remaining unique non parseable categories were assigned deterministic integer IDs. \\
-% \hline
-% \end{tabular}
-% \end{table}
-
-
 \section{Feature Structuring and Thematic Grouping}
-To manage the high dimensionality of the resulting dataset, features were organised into six distinct thematic groups based on established aging literature and the core research goals. Table~\ref{tab:feature_groups} summarises these groups.
+%Thematic grouping of features
 
+To manage dimensionality and facilitate interpretability, all feature (variables) were grouped into six thematic domains grounded in ageing and health literature. Table~\ref{tab:feature_groups} provides a summary.
+
+% --- TABLE ---
 \begin{table}[htbp]
 \centering
 \caption{Thematic Grouping of Longitudinal Features}
 \label{tab:feature_groups}
-\begin{tabular}{|c|l|l|l|}
+\begin{tabular}{|c|p{4cm}|p{5cm}|p{5cm}|}
 \hline
 \textbf{ID} & \textbf{Thematic Group} & \textbf{Description} & \textbf{Representative Variables} \\
 \hline
-1 & Socio Demographic \& Context & Baseline factors for stratification and understanding social determinants & Age, Gender, Education, Income \gls{INC}, Marital Status \gls{SOC} \\
-2 & Physical Health \& Clinical Baseline & Traditional medical and self reported health indicators & Self-Rated Health \gls{SCR}, \gls{BMI}, Blood Pressure \gls{BP}, Comorbidity Count \gls{MD} \\
-3 & Functional Status \& Frailty & Measures capturing the direct impact of aging & Frailty Index components \gls{FR}, Gait Speed, Falls History \emph{SCQFalls}, \gls{ADL}/IADL \gls{DIS} \\
-4 & Lifestyle \& Behavioural & Modifiable risk factors relevant for intervention targeting & Smoking Status, Alcohol Consumption \emph{SCQAlco}, Physical Activity \emph{IPAQ} \\
-5 & Nutrition \& Metabolic Biomarkers & Objective measures of nutritional status & Plasma Carotenoids, Lutein, Zeaxanthin, Vitamin D/B12, Cholesterol \\
-6 & Psychological \& Cognitive & Mental well being and cognitive function & Depression Scores \gls{CESD}, Loneliness \emph{MHucla}, Memory/Processing Speed \gls{COG} \gls{CRT} \\
+1 & Socio Demographic \& Context & Baseline stratification factors & Age, Gender, Education, Income \gls{INC}, Marital Status \gls{SOC} \\
+2 & Physical Health \& Clinical Baseline & Self-reported and clinical indicators & Self-Rated Health \gls{SCR}, \gls{BMI}, Blood Pressure \gls{BP}, Comorbidity Count \gls{MD} \\
+3 & Functional Status \& Frailty & Measures of mobility and physical decline & Frailty Index \gls{FR}, Gait Speed, Falls History \textit{SCQFalls}, \gls{ADL}/IADL \gls{DIS} \\
+4 & Lifestyle \& Behavioural & Modifiable health related behaviours & Smoking, Alcohol Intake \textit{SCQAlco}, Physical Activity \textit{IPAQ} \\
+5 & Nutrition \& Metabolic Biomarkers & Objective nutritional and metabolic markers & Plasma Carotenoids, Lutein, Zeaxanthin, Vitamin D/B12, Cholesterol \\
+6 & Psychological \& Cognitive & Mental health and cognitive performance & \gls{CESD}, Loneliness \textit{MHucla}, \gls{COG}, \gls{CRT} \\
 \hline
 \end{tabular}
 \end{table}
 
-This thematic structure guided feature engineering, ensuring balanced representation across the multidimensional health domains in older adults.
-
-\section{Summary}
-Chapter 3 detailed the preprocessing, cleaning, and harmonisation steps applied to the \gls{TILDA} waves. The six step cleaning engine, coupled with longitudinal alignment and thematic grouping, produced a structured and analysable dataset ready for modeling and hypothesis testing in subsequent chapters.
-
+Inspection of raw data revealed heterogeneous variable types, missing values, and wave-specific inconsistencies. This motivated the structured preprocessing, feature engineering, and longitudinal alignment strategies described in Chapter~\ref{chap:Implementation Details}. The raw and harmonised dataset overview, participant numbers, and variable counts provide context for the preprocessing and cleaning steps that follow.
 % ---------------------------------------------------------------------------
 % ----------------------- end of thesis sub-document ------------------------
 % ---------------------------------------------------------------------------
