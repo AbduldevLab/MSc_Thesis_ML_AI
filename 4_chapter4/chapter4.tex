@@ -18,12 +18,12 @@
 
 \section{Data Preprocessing}
 
-The primary aim of preprocessing was to convert all features, regardless of their original datatype (numeric, categorical, text based, or mixed formats), into a standardised numerical representation suitable for machine learning. All non response and sentinel values were consistently mapped to $\texttt{-1.0}$, and all valid values were converted to $\texttt{float64}$. This ensured compatibility across the five \gls{TILDA} waves and enabled uniform downstream feature engineering and modelling.
-\subsection{Data Overview}
-% explain this is what we have after teh mnual cleaing described in chapter 3 we used this to visuaise in depth etc etc and tehne went on to clean...
+The preprocessing pipeline primary aim was to convert all features, regardless of their original datatype (float, categorical, object, or mixed formats), into a standardised numerical representation suitable for machine learning. All non response and sentinel values were consistently mapped to $\texttt{-1.0}$, and all valid values were converted to $\texttt{float64}$. This ensured compatibility across the \gls{TILDA} waves and enabled uniform downstream for feature engineering and modelling.
+\subsection{Input data dimensions (post manual filtering)}
+The dimensions of the triaged datasets, which serve as the input for the scripted cleaning engine, are reported below.
 \begin{table}[htbp]
 \centering
-\caption{Dimensions (Rows and Features) of Raw and Harmonised Datasets}
+\caption{Input Dimensions for Cleaning Pipeline (Post Manual Variable Filtering)}
 \label{tab:dataset_shape}
 \begin{tabular}{|c|c|c|}
 \hline
@@ -34,21 +34,21 @@ Wave 2 & 7206 & 482 \\
 Wave 3 & 6397 & 639 \\
 Wave 4 & 5713 & 592 \\
 Wave 5 & 4978 & 577 \\
-Harmonised & 8501 & 453 \\
+Harmonised (RAND) & 8501 & 453 \\
 \hline
 \end{tabular}
 \end{table}
 
 \subsection{Cleaning Engine}
 
-The preprocessing strategy was built around a systematic classification of raw variable types. An exploratory audit across the five waves revealed nine distinct data scenarios (summarised in Appendix~\ref{tab:cleaning_scenario_tables}), ranging from simple numeric fields to complex multi-class string hybrids. The challenge was not merely to clean variables, but to construct a reproducible pipeline that produced \emph{numerical homogeneity} across all waves.
+The preprocessing strategy was built around a systematic classification of raw variable types. An exploratory audit across the waves revealed nine distinct data scenarios (summarised in Appendix~\ref{tab:cleaning_scenario_tables}), ranging from simple numeric fields to complex multi-class string hybrids. The challenge was not merely to clean variables, but to construct a reproducible pipeline that produced \emph{numerical homogeneity} across all waves.
 
-To accomplish this, the nine scenarios were organised into a \emph{Six-Step Cleaning Engine}. The steps reflect a principle of cumulative simplification: resolving simple and unambiguous cases first increases the proportion of clean numerical variables before addressing more complex structures.
+To accomplish this, the nine scenarios were organised into a \emph{Six Step Cleaning Engine}. The steps reflect a principle of cumulative simplification: resolving simple and unambiguous cases first increases the proportion of \emph{clean numerical} variables before addressing more complex structures.
 
 \begin{itemize}
-    \item \textbf{Steps 1–2: Missingness and sentinel standardisation.} These steps ensured consistent encoding of \texttt{-1.0} across all waves.
-    \item \textbf{Step 3: Numeric recovery.} Units, symbols, and censored numeric strings (e.g., ``50+'') were stripped and converted.
-    \item \textbf{Steps 4–6: Categorical complexity.} Ordinal, binary, and multi-class textual variables were processed in order of transformation confidence, with Step 6 applying the most general parsing rules.
+    \item \textbf{Steps 1--2: Missingness and sentinel standardisation.} These steps ensured consistent encoding of \texttt{-1.0} across all waves.
+    \item \textbf{Step 3: Numeric recovery.} Units, symbols, and censored numeric strings (e.g., ''50+'') were stripped and converted.
+    \item \textbf{Steps 4--6: Categorical complexity.} Ordinal, binary, and multi-class textual variables were processed in order of transformation confidence, with Step 6 applying the most general parsing rules.
 \end{itemize}
 
 This structured sequence ensured that each wave passed through the same deterministic cleaning logic. Figure~\ref{fig:cleaning_flow} shows the flow of the pipeline.
@@ -63,7 +63,7 @@ This structured sequence ensured that each wave passed through the same determin
 
 \node (step1) {Step 1:\\Empty / Blank Handling};
 \node (step2) [below=of step1] {Step 2:\\Sentinel Standardisation};
-\node (step3) [below=of step2] {Step 3:\\Numeric Cleaning \& Unit Removal};
+\node (step3) [below=of step2] {Step 3:\\Numeric Cleaning};
 \node (step4) [below=of step3] {Step 4:\\Censored / Ordinal Mapping};
 \node (step5) [below=of step4] {Step 5:\\Binary Classification};
 \node (step6) [below=of step5] {Step 6:\\Multi-class / Mixed Parsing};
@@ -75,31 +75,22 @@ This structured sequence ensured that each wave passed through the same determin
 \draw[->, thick] (step5) -- (step6);
 
 \end{tikzpicture}
-\caption{Flowchart of the Six-Step Cleaning Pipeline applied to all \gls{TILDA} waves. See count tables in Appendix~\ref{tab:cleaning_scenario_tables} for detailed scenario progression at each step.}
+\caption{Flowchart of the Six Step Cleaning Pipeline applied to all \gls{TILDA} waves. See count tables in Appendix~\ref{tab:step6_full} for detailed scenario progression at each step.}
 \label{fig:cleaning_flow}
 \end{figure}
 
 \begin{enumerate}
     \item \textbf{Empty / Blank Values:} Converts all \texttt{NaN}, empty strings, and whitespace to \texttt{-1.0}.
     \item \textbf{Sentinel Values:} Standardises wave specific non-response codes (e.g., $-98, -99$) to \texttt{-1.0}.
-    \item \textbf{Numeric Transformation:} Removes non-numeric characters and converts censored or annotated values to numerical equivalents.
-    \item \textbf{Censored Categorical:} Applies known ordinal transformations (e.g., health scales, Likert ranges).
+    \item \textbf{Numeric Transformation:} Removes non numeric characters and converts censored or annotated values to numerical equivalents.
+    \item \textbf{Censored Categorical:} Applies known ordinal transformations (e.g., health scales, Likert ranges) conducted manually , low count == (hard coded mappings).
     \item \textbf{Binary Categorical:} Automatically maps two level variables (e.g., Yes/No, Male/Female) to \texttt{0.0/1.0}.
-    \item \textbf{Multi-Class / Mixed:} Applies text parsing, numerical extraction, and rule based mappings to remaining multi-class variables.
+    \item \textbf{Multi-Class / Mixed:} Applies text parsing, numerical extraction, and rule based mappings to remaining multi-class variables (most complex).
 \end{enumerate}
 
-\section{Data Integration and Longitudinal Alignment}
+\section{Data integration and longitudinal alignment}
 
 Following cleaning, features were aligned across waves based on:
-
-\section{Summary}
-
-This chapter detailed the preprocessing pipeline applied to the five \gls{TILDA} waves. The approach centred on a reproducible Six-Step Cleaning Engine, combined with systematic wave-to-wave standardisation and thematic feature organisation. These steps produced a structured dataset suitable for longitudinal analysis and machine learning modelling. No cross-cohort harmonisation was performed; any references to a “Harmonised” dataset refer solely to the external RAND Harmonised TILDA.
-
-
-
-
-
 % ---------------------------------------------------------------------------
 % ----------------------- end of thesis sub-document ------------------------
 % ---------------------------------------------------------------------------

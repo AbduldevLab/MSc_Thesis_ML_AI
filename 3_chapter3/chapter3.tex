@@ -11,61 +11,47 @@
 
 % ----------------------- contents from here ------------------------
 \section{Study Design}
+\gls{TILDA} is a prospective cohort study examining the social, economic, and health circumstances of community dwelling adults in Ireland. This thesis uses data from five core \gls{TILDA} waves (Waves 1--5). For contextual comparison and benchmarking against international cohorts, the externally produced \gls{RAND} Harmonised \gls{TILDA} dataset (available for Waves 1--2) is used. The primary analytical work focuses on the full five wave \gls{TILDA} dataset.
 
-\gls{TILDA} is a prospective cohort study examining the social, economic, and health circumstances of community dwelling adults aged 50 years and older in Ireland. The present study extends this design by incorporating data from five waves of TILDA, as well as the external RAND harmonised dataset, which aligns TILDA with comparable UK and US cohorts.
+\textbf{Note on the Harmonised dataset:} The \gls{RAND} harmonised \gls{TILDA} (Waves 1--2) is an external produced resource that maps a subset of \gls{TILDA} variables to a common naming and coding scheme to enable cross national comparisons with the \gls{RAND} \gls{HRS} and other harmonised surveys. It is not the output of the thesis preprocessing pipeline applied to the full five wave dataset.
 
 \section{Cohort Definition}
+All participants who provided data in at least one \gls{TILDA} wave were considered eligible. To maximise the available sample for machine learning, no exclusions were applied on the basis of age, medical conditions, mobility, cognitive status, or health centre attendance.
 
-The analysis included all participants who provided data in at least one of the \gls{TILDA} waves. This thesis retained the full eligible sample to maximise statistical power for machine learning. Participants were excluded only when they had no usable data after preprocessing (i.e., all features were missing or non informative).
-
-No exclusions were applied based on age, medical conditions, cognitive status, or attendance at the health assessment. Filtering occurred primarily at the \emph{variable level}, where features with excessive missingness, no variation, or non informative structure were removed (see Chapter~\ref{chap:Implementation Details}).
-
-\subsection{Inclusion/Exclusion criteria}
+Participants were removed only when, after the combined manual filtering and automated preprocessing pipeline, they had no remaining usable variables. Filtering therefore occurred primarily at the \emph{variable level}, with features removed for extreme missingness, lack of variation, or non informative structure (see Chapter~\ref{chap:Implementation Details}). This approach preserves the largest possible sample while ensuring all retained inputs are analytically meaningful.
+\subsection{Cohort inclusion criteria}
 \begin{itemize}
-    \item \textbf{Participant Inclusion:} All respondents who contributed data in at least one of the TILDA waves were included, regardless of age.
-    \item \textbf{Usable Data Requirement:} Participants were excluded only when every available feature was missing or non-informative after preprocessing.
-    \item \textbf{Longitudinal Retention:} Individuals were retained even if they participated in only a subset of waves, enabling maximum dataset utilisation.
-    \item \textbf{No Health or Cognitive Exclusions:} No participant was removed on the basis of medical diagnoses, cognitive scores, mobility limitations, or non-attendance at the health centre assessment.
+    \item \textbf{Participant inclusion:} All respondents who contributed data in at least one wave were included in the initial sample.
+    \item \textbf{Usable data requirement:} Participants were excluded only when, after manual filtering and preprocessing, no usable variables remained.
+    \item \textbf{Longitudinal retention:} Individuals were retained regardless of how many waves they contributed to, enabling initial maximum dataset utilisation.
+    \item \textbf{No clinical exclusions:} No participant was removed due to medical diagnoses, cognitive scores, functional limitations, or non attendance at the health centre assessment.
 \end{itemize}
-
-The filtering process was therefore driven by data integrity rather than clinical eligibility. Figure~\ref{fig:variable_filter_criteria}.
+This approach prioritises data integrity and sample size for machine learning applications rather than clinical eligibility criteria common in classical epidemiological analyses. Figure~\ref{fig:variable_filter_criteria}.
 
 \section{Data Collection}
-
-Data were collected across five waves:
+Data used in this thesis were collected across five waves:
 
 \begin{itemize}
-    \item \textbf{Wave 1:} 2009-2011
-    \item \textbf{Wave 2:} 2012-2013
-    \item \textbf{Wave 3:} 2014-2015
-    \item \textbf{Wave 4:} 2016-2018
-    \item \textbf{Wave 5:} 2018-2020
+    \item \textbf{Wave 1:} 2009--2011
+    \item \textbf{Wave 2:} 2012--2013
+    \item \textbf{Wave 3:} 2014--2015
+    \item \textbf{Wave 4:} 2016--2018
+    \item \textbf{Wave 5:} 2018--2020
 \end{itemize}
 
-\textbf{Note:} The Harmonised dataset was obtained from the \gls{RAND} \gls{TILDA} repository and is designed to align \gls{TILDA} with comparable surveys such as \gls{RAND} gls{HRS}, \gls{ELSA}, and \gls{SHARE}. At present, the harmonised version is limited to Waves 1 and 2 and includes variables from the Demographics, Family, and Health sections. 
-This dataset contains cleaned and processed variables with consistent naming conventions and model based imputations where applicable. It is included here for reference and comparability with other longitudinal aging studies, but it is \emph{not} the output of the preprocessing and cleaning pipeline applied to the full five wave dataset used in this thesis for machine learning analyses.
-
-Each wave included three components:
+Each wave included three primary components:
 \begin{enumerate}
     \item \textbf{\gls{CAPI}:} Home based, computer assisted personal interviews
     \item \textbf{\gls{SCQ}:} A paper based self completion survey focused on mental health, lifestyle, and subjective well being
     \item \textbf{Health Assessment:} Clinical and biomarker measurements in centers or at home
 \end{enumerate}
-These criteria ensured that participants could provide reliable data for longitudinal analyses. 
 
-\subsection{Raw Dataset Dimensions and Manual Filtering}
-Before any processing, all raw \gls{TILDA} datasets were inspected to understand dimensionality and structure. Table~\ref{tab:raw_dataset_shape} summarises the number of participants and variables per wave. Initial inspection involved:
-
-\begin{itemize}
-    \item inspecting datatypes for every column,
-    \item quantifying missingness, sentinel values, and unique entries,
-    \item generating descriptive statistics (mean, median, min, max),
-    \item and visuals (histograms, distributions) to identify anomalies.
-\end{itemize}
+\subsection{Data Overview}
+Before any processing, all raw \gls{TILDA} datasets were inspected manually and filtering was conducted in Excel to remove clearly non informative variables (administrative identifiers, constant columns, and variables with extreme missingness). Table~\ref{tab:raw_dataset_shape} reports the raw dimensions (rows = participants; columns = variables) prior to filtering.
 
 \begin{table}[htbp]
 \centering
-\caption{Dimensions of Raw TILDA and Harmonised Datasets (Pre-Filtering)}
+\caption{Dimensions of Raw \gls{TILDA} and Harmonised Datasets (Pre Filtering)}
 \label{tab:raw_dataset_shape}
 \begin{tabular}{|c|c|c|}
 \hline
@@ -76,47 +62,56 @@ Wave 2 & 7206 & 724 \\
 Wave 3 & 6397 & 1029 \\
 Wave 4 & 5713 & 990 \\
 Wave 5 & 4978 & 983 \\
-Harmonised & 8501 & 572 \\
+Harmonised (RAND) & 8501 & 572 \\
 \hline
 \end{tabular}
 \end{table}
 
-\subsection{Variable Filtering Criteria}
+\subsection{Variable filtering criteria}
 
-The manual variable filtering process involved applying a set of predefined thresholds to remove non-informative or structurally invalid variables prior to automated preprocessing. These criteria included thresholds for missingness, uniqueness, dominant category frequency, datatype quality, and administrative identifiers (see mapping table in Appendix~\ref{appendix_variable_filtering}).
+The manual checks applied were rules-of-thumb used to rapidly triage variables before automated cleaning:
+\begin{itemize}
+    \item \textbf{Missingness:} Drop variables with $>80\%$ missing values.
+    \item \textbf{Unique values:} Drop variables with a single unique value; flag small cardinality variables (2--10 unique values) for retention.
+    \item \textbf{Dominant category:} Flag variables where the top category frequency is extremely high (e.g., $>90\%$) for manual review.
+    \item \textbf{Datatypes / administrative fields:} Drop obvious identifiers and administrative labels (IDs, version tags, weights) unless required for linking.
+\end{itemize}
 
+These manual steps produced a smaller, cleaner variable set that was then subjected to the automated Six Step Cleaning Engine described in Chapter~\ref{chap:Implementation Details}.
+\subsection{Variable filtering flowchart}
+
+Figure~\ref{fig:variable_filter_criteria} shows the schematic of the manual filtering decisions and the intended placeholders for variable counts remaining after each step.
 \begin{figure}[htbp]
 \centering
 \includegraphics[height=1.25\textwidth]{variable_filter_criteria.png}
-\caption{Flowchart of manual filtering applied to raw variables for each TILDA wave. Placeholder counts indicate the number of variables remaining after each filtering step.}
+\caption{Flowchart of the manual variable filtering criteria. Placeholder counts indicate the number of variables remaining after each filtering step for each dataset.}
 \label{fig:variable_filter_criteria}
 \end{figure}
 
-\section{Feature Structuring and Thematic Grouping}
+\section{Thematic Grouping}
 %Thematic grouping of features
+After the manual inspection described above, the variable counts per wave were reduced. Table~\ref{tab:dataset_shape} reports the variable counts after manual filtering and prior to the automated cleaning pipeline.
 
-To manage dimensionality and facilitate interpretability, all feature (variables) were grouped into six thematic domains grounded in ageing and health literature. Table~\ref{tab:feature_groups} provides a summary.
-
-% --- TABLE ---
+To reduce dimensionality and improve interpretability, features were organised into six thematic domains consistent with ageing literature and the study aims. Table~\ref{tab:feature_groups} summarises these domains and representative variables.
 \begin{table}[htbp]
 \centering
-\caption{Thematic Grouping of Longitudinal Features}
+\caption{Thematic grouping of longitudinal features}
 \label{tab:feature_groups}
 \begin{tabular}{|c|p{4cm}|p{5cm}|p{5cm}|}
 \hline
 \textbf{ID} & \textbf{Thematic Group} & \textbf{Description} & \textbf{Representative Variables} \\
 \hline
 1 & Socio Demographic \& Context & Baseline stratification factors & Age, Gender, Education, Income \gls{INC}, Marital Status \gls{SOC} \\
-2 & Physical Health \& Clinical Baseline & Self-reported and clinical indicators & Self-Rated Health \gls{SCR}, \gls{BMI}, Blood Pressure \gls{BP}, Comorbidity Count \gls{MD} \\
+2 & Physical Health \& Clinical Baseline & Self reported and clinical indicators & Self Rated Health \gls{SCR}, \gls{BMI}, Blood Pressure \gls{BP}, Comorbidity Count \gls{MD} \\
 3 & Functional Status \& Frailty & Measures of mobility and physical decline & Frailty Index \gls{FR}, Gait Speed, Falls History \textit{SCQFalls}, \gls{ADL}/IADL \gls{DIS} \\
-4 & Lifestyle \& Behavioural & Modifiable health related behaviours & Smoking, Alcohol Intake \textit{SCQAlco}, Physical Activity \textit{IPAQ} \\
+4 & Lifestyle \& Behavioural & Modifiable health related behaviours & Smoking, Alcohol Intake \textit{SCQAlco}, Physical Activity \gls{IPAQ} \\
 5 & Nutrition \& Metabolic Biomarkers & Objective nutritional and metabolic markers & Plasma Carotenoids, Lutein, Zeaxanthin, Vitamin D/B12, Cholesterol \\
 6 & Psychological \& Cognitive & Mental health and cognitive performance & \gls{CESD}, Loneliness \textit{MHucla}, \gls{COG}, \gls{CRT} \\
 \hline
 \end{tabular}
 \end{table}
 
-Inspection of raw data revealed heterogeneous variable types, missing values, and wave-specific inconsistencies. This motivated the structured preprocessing, feature engineering, and longitudinal alignment strategies described in Chapter~\ref{chap:Implementation Details}. The raw and harmonised dataset overview, participant numbers, and variable counts provide context for the preprocessing and cleaning steps that follow.
+Inspection of raw data revealed heterogeneous variable types, missing values, and wave specific inconsistencies. The resulting dataset dimensions, after this initial manual variable filtering, are presented in Chapter~\ref{chap:Implementation Details}. These filtered datasets then serve as the input for the systematic, automated data cleaning and longitudinal alignment pipeline, detailed in the following chapter.
 % ---------------------------------------------------------------------------
 % ----------------------- end of thesis sub-document ------------------------
 % ---------------------------------------------------------------------------

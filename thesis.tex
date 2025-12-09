@@ -281,45 +281,35 @@
 \appendix
 
 % Definition of each Chapter in the Appendix is done via the following two lines
+\setcounter{table}{0}
+\setcounter{chapter}{1}
+\renewcommand{\thetable}{\Alph{chapter}.\arabic{table}}
+
+% --- Appendix A ---
 \chapter*{Appendix A}
-\section*{Scenario Cleaning Pipeline Tables}
-% Include the file containing the actual tables (Table 1 through Table 6)
+\section*{Scenario Cleaning Pipeline Tables}  
 \input{7_appendixes/appendixA_cleaning_tables}
+
 % This adds the chapter title to the Table of Contents
 \addcontentsline{toc}{chapter}{Appendix A: Scenario Cleaning Pipeline Tables}
 \chaptermark{Appendix}
 \markboth{Appendix}{Appendix}
 
 
-% here is how to add a figure in the appendix�. it is the same as any other place in the latex document
-% \figuremacroW{7_appendixes/image01}{Title of Figure}{Description. [Source: (\Citealt{mydownloadedimage})]}{0.8}
-
-% here is how we close the chapter
-\addcontentsline{toc}{chapter}{Appendix A: Insert figure in Appendix}
-\chaptermark{Appendix}
-\markboth{Appendix}{Appendix}
-
-
-
-
-
-
-
-
-% here we open a new chapter in Appendix etc. etc..
+% --- Appendix B ---
 \chapter*{Appendix B}
 \section*{Title}
 
 Type here you text as usual . . .
 
 
-\addcontentsline{toc}{chapter}{Appendix B: Insert Text in Appendix}
+% \addcontentsline{toc}{chapter}{Appendix B: Insert Text in Appendix}
 \chaptermark{Appendix}
 \markboth{Appendix}{Appendix}
 
 
 
-
+% --- Appendix C ---
 \chapter*{Appendix C}
 \section*{Code for estimating attitude}
 
@@ -340,7 +330,7 @@ commentstyle=\color{c++green},}  % edit these parameters if you want to change t
 %Load your code file below
 \lstinputlisting[fontadjust=\true]{7_appendixes/ahrs_triad_mote.c}
 
-\addcontentsline{toc}{chapter}{Appendix C: Insert C++/Java et al. Code in Appendix}
+% \addcontentsline{toc}{chapter}{Appendix C: Insert C++/Java et al. Code in Appendix}
 \chaptermark{Appendix}
 \markboth{Appendix}{Appendix}
 

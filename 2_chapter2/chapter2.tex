@@ -8,11 +8,11 @@
 %: ----------------------- paths to graphics ------------------------
 
 % change according to folder and file names
-% \ifpdf
-%     \graphicspath{{2_chapter2/figures/PNG/}{2_chapter2/figures/PDF/}{2_chapter2/figures/}}
-% \else
-%     \graphicspath{{2_chapter2/figures/EPS/}{2_chapter2/figures/}}
-% \fi
+\ifpdf
+    \graphicspath{{2_chapter2/figures/PNG/}{2_chapter2/figures/PDF/}{2_chapter2/figures/}}
+\else
+    \graphicspath{{2_chapter2/figures/EPS/}{2_chapter2/figures/}}
+\fi
 
 %: ----------------------- contents from here ------------------------
 
@@ -32,7 +32,7 @@ The integrative literature review \cite{torracoWritingIntegrativeLiterature2005}
 This combined guidance informed a structured yet flexible methodology suitable for ageing, AI, and health research. 
 
 
-\subsection{Search Strategy and Database Screening}
+\subsection{Search strategy and database screening}
 The main topic of interest was chronic disease prediction using nutrition, lifestyle, and clinical data from TILDA. Relevant databases (e.g., ScienceDirect, PubMed) were searched using combinations of keywords such as “Irish Longitudinal Study on Ageing”, “machine learning”, “chronic disease”, “nutrition”, “diet”, and “physical activity”. 
 
 The search covered studies published from 2011 to 2025. Figure~\ref{fig:mapping_years} summarises the number of studies identified per year, highlighting trends and gaps over time.
@@ -108,13 +108,13 @@ Duplicates were removed using Zotero's reference management feature. The remaini
 \label{fig:prisma}
 \end{figure}
 \clearpage
-\subsection{Quality and Relevance Evaluation} 
+\subsection{Quality and relevance evaluation} 
 
 To systematically assess the quality of the included studies, a customisable version of \gls{NOS} was applied, Table~\ref{tab:NOS}. 
-The \gls{NOS} evaluates studies across three domains: Selection (S1-S4), Comparability (C1-C2), and Outcome (O1-O3). 
+The \gls{NOS} evaluates studies across three domains: Selection (S1--S4), Comparability (C1--C2), and Outcome (O1--O3). 
 Selection criteria assess the representativeness of the sample, clarity of exposure measurement, and temporal alignment of outcomes. 
 Comparability examines the control of key confounders, while Outcome evaluates measurement validity, follow up adequacy, and completeness. 
-Each domain is scored 0-1, recall Bernoulli random variable (0 = criterion not met, 1 = criterion met), and the total score reflects the overall study quality.
+Each domain is scored 0--1, recall Bernoulli random variable (0 = criterion not met, 1 = criterion met), and the total score reflects the overall study quality.
 
 This initial table guided a further refinement of the results into two sub tables: (1) studies critically related to \gls{TILDA}, (2) studies using \gls{TILDA} data with \gls{ML} for predictive contexts, which revealed minimal to no integration with \gls{TILDA}.
 % NOS Scale Table
@@ -161,24 +161,24 @@ For the systematic component, I systematically extracted and synthesised data to
 \hline
 \textbf{Theme} & \textbf{Author/year} & \textbf{Dataset} & \textbf{Variables/features} & \textbf{Methods/model type} & \textbf{Key Findings/outcome} & \textbf{Limitations} \\
 \hline
-Frailty & Romero-Ortuno (2021) \cite{romero-ortunoTransitionsFrailtyPhenotype2021} & Wave 1-5 & Frailty state, Frailty phenotype (FP) components (Exhaustion(EX), Unexplained weight loss(WL), Weakness(WK), Slowness(SL), Low physical activity(LA)) & Multi state Markov model, longitudinal 8 year follow up & 32\% of pre frail to non frail; frailty strongly predicted 31\% mortality & Self report bias; observational design \\
+Frailty & Romero-Ortuno (2021) \cite{romero-ortunoTransitionsFrailtyPhenotype2021} & Wave 1--5 & Frailty state, Frailty phenotype (FP) components (Exhaustion(EX), Unexplained weight loss(WL), Weakness(WK), Slowness(SL), Low physical activity(LA)) & Multi state Markov model, longitudinal 8 year follow up & 32\% of pre frail to non frail; frailty strongly predicted 31\% mortality & Self report bias; observational design \\
 \hline
-Falls + \gls{ML} & Donoghue (2023) \cite{donoghueUsingConditionalInference2023} & Wave 1-3 & Gait, mobility, medications, history of falls & Conditional inference forest; 5-fold \gls{CV}; undersampling for imbalance & Accuracy up to 69.7\%; for adults aged 50-64.& \gls{AUROC} values were $<= 0.69$ and PRAUC $<= 0.39$ indicating low predictive accuracy; no external validation; cross sectional; Class imbalance \\
+Falls + \gls{ML} & Donoghue (2023) \cite{donoghueUsingConditionalInference2023} & Wave 1--3 & Gait, mobility, medications, history of falls & Conditional inference forest; 5-fold \gls{CV}; undersampling for imbalance & Accuracy up to 69.7\%; for adults aged 50--64.& \gls{AUROC} values were $<= 0.69$ and PRAUC $<= 0.39$ indicating low predictive accuracy; no external validation; cross sectional; Class imbalance \\
 \hline
 \gls{FOF} & Zarudsky (2014) \cite{zarudskyP277OneleggedBalance2014} & Wave 1 & Age, sex, fall history & Cross sectional prevalence analysis & 23.3\% prevalence; higher in women; 70\% with \gls{FOF} had no recent falls in the last 12 months & Self reported; cross sectional \\
 \hline
-Functional Mobility & Huang (2019) \cite{huangAgeModifyAssociations2019} & Wave 1-2 & Measured by \gls{TUG}, grip strength, physical activity, vision, \gls{BMI}, age & Linear regression, stratified analyses & Age modifies effects; \gls{PA} and grip protect mobility; vision benefit only in middle aged (Beta = -0.032, P = 0.002) & Observational; 2 year follow up \\
+Functional Mobility & Huang (2019) \cite{huangAgeModifyAssociations2019} & Wave 1--2 & Measured by \gls{TUG}, grip strength, physical activity, vision, \gls{BMI}, age & Linear regression, stratified analyses & Age modifies effects; \gls{PA} and grip protect mobility; vision benefit only in middle aged (Beta = -0.032, P = 0.002) & Observational; 2 year follow up \\
 \hline
 \multirow{2}{*}{Depression} 
-& Jacob (2023) \cite{jacobFallsIncreaseRisk2023} & Wave 1-2 & Falls, \gls{FOF}, HADS-A, \gls{CESD} & Prospective logistic regression & Falls predicted incident anxiety (\gls{OR}=1.58) and depression (\gls{OR}=1.43) & Self reported falls; short follow up; mediation effect partially explored \\
-& Laird (2023) \cite{lairdPhysicalActivityDepression2023} & Wave 1-5 & \gls{MVPA}, walking, sociodemographics & Longitudinal regression; mixed model & Higher physical activity reduced depressive symptoms; dose response effect & Self reported \gls{PA}; observational; limited causal inference \\
+& Jacob (2023) \cite{jacobFallsIncreaseRisk2023} & Wave 1--2 & Falls, \gls{FOF}, HADS-A, \gls{CESD} & Prospective logistic regression & Falls predicted incident anxiety (\gls{OR}=1.58) and depression (\gls{OR}=1.43) & Self reported falls; short follow up; mediation effect partially explored \\
+& Laird (2023) \cite{lairdPhysicalActivityDepression2023} & Wave 1--5 & \gls{MVPA}, walking, sociodemographics & Longitudinal regression; mixed model & Higher physical activity reduced depressive symptoms; dose response effect & Self reported \gls{PA}; observational; limited causal inference \\
 \hline
 \multirow{2}{*}{Nutrition} 
-& Murphy (2023) \cite{murphyPlasmaLuteinZeaxanthin2023} & Wave 1-5 & Plasma lutein, zeaxanthin & Linear/ordinal logistic regression & Higher carotenoids linked to slower frailty progression Lower odds of becoming frail (ORs = 0.57-0.89) & Observational; not predictive of longitudinal muscle changes \\
-& Bardon (2020) \cite{bardonPredictorsIncidentMalnutrition2020} & Wave 1-2 & Hospitalisation, functional status, social support, sex, falls & Logistic regression; sex stratified analyses & Functional decline, hospitalisation, poor support increased malnutrition risk; sex differences & Observational(short follow up (2 years)); limited generalisability >65 years, self reported\\
+& Murphy (2023) \cite{murphyPlasmaLuteinZeaxanthin2023} & Wave 1--5 & Plasma lutein, zeaxanthin & Linear/ordinal logistic regression & Higher carotenoids linked to slower frailty progression Lower odds of becoming frail (ORs = 0.57--0.89) & Observational; not predictive of longitudinal muscle changes \\
+& Bardon (2020) \cite{bardonPredictorsIncidentMalnutrition2020} & Wave 1--2 & Hospitalisation, functional status, social support, sex, falls & Logistic regression; sex stratified analyses & Functional decline, hospitalisation, poor support increased malnutrition risk; sex differences & Observational(short follow up (2 years)); limited generalisability >65 years, self reported\\
 \hline
 \multirow{3}{*}{\gls{ML}} 
-& Xu (2023) \cite{xuTailoredMachineLearning2023} & Wave 1-3 & 105 predictors from 40,000+ variables (social, clinical, mental, family) & Stacked ensemble: \gls{RF}, XRT, GLM, \gls{GBM}, \gls{DNN}; \gls{SHAP} explainability & AUC=0.854 for 2 year diabetes prediction; top predictors LDL, cirrhosis, sex & No external validation; short follow up; ensemble complexity limits deployment \\
+& Xu (2023) \cite{xuTailoredMachineLearning2023} & Wave 1--3 & 105 predictors from 40,000+ variables (social, clinical, mental, family) & Stacked ensemble: \gls{RF}, XRT, GLM, \gls{GBM}, \gls{DNN}; \gls{SHAP} explainability & AUC=0.854 for 2 year diabetes prediction; top predictors LDL, cirrhosis, sex & No external validation; short follow up; ensemble complexity limits deployment \\
 & Davis (2021) \cite{davisComparisonGaitSpeed2021} & Wave 3 & Age, grip strength, chair stands, \gls{BMI}, cognitive tests & Histogram gradient boosting regression; \gls{SHAP} & r$^2$  test: \gls{UGS}$\approx$0.41, \gls{MGS}$\approx$0.46, GSR$\approx$0.21 & Modest predictive power; cross sectional; no external validation \\
 & Zhang (2025) \cite{zhangMachineLearningModels2025} & Longitudinal IMAGEN cohort & Psychopathology, personality, cognition, substance use, environment & Regularised logistic regression; diagnostic & Longitudinal AUC: ED=0.71, MDD=0.64, AUD=0.67; shared transdiagnostic predictors & Limited age range; no external replication \\
 & Boyle (2021) \cite{boyleBrainpredictedAgeDifference2021} & Wave 3 & \gls{brainPAD}; processing speed; attention; cognitive flexibility; verbal fluency & Linear regression, correlation analyses & Higher \gls{brainPAD} associated with lower cognitive performance across multiple domains & Cross sectional; no causal inference; limited sample \\
@@ -191,13 +191,13 @@ The integration of a research matrix with systematic mapping and integrative syn
 
 % ----------------------------------------------------------------------
 % Frailty and Physical Function
-\section{Frailty and Physical Function}
+\section{Frailty and physical function}
 
 Frailty is a reflection of higher vulnerability and declining physiological reserve. 
 In \gls{TILDA}, it is captured through both the frailty phenotype and the frailty index, with gait speed, grip strength, and mobility decline serving as practical predictors. 
 These measures strongly predict hospitalisation and mortality.
 
-\subsection{Probabilistic Interpretation of Frailty}
+\subsection{Probabilistic interpretation of frailty}
 One can argue that from a probabilistic perspective, the chance of an adverse outcome (such as mortality, $Y$) given observed features (such as frailty markers, $X$) as a conditional probability $P(Y \mid X)$. 
 This allows us to deduce which frailty features are most predictive of adverse outcomes. Features may be independent, dependent, or mutually exclusive. 
 
@@ -221,21 +221,15 @@ P(Y \mid X) = \frac{P(X \mid Y) P(Y)}{P(X)}
 \end{equation*}
 where $P(Y \mid X)$ is the posterior probability of outcome $Y$ given features $X$. 
 
-\subsection{Bayesian Updating of Frailty Risk}
-This enables us to incorporate prior knowledge and observed data, improving the interpretability of feature outcome relationships in ageing.
-Here, $P(Y \mid X)$ is the posterior probability = ( Likelihood * Prior / Evidence ), representing the updated belief about the outcome after observing features. 
-$P(Y)$ is the prior probability, reflecting baseline risk. 
-$P(X \mid Y)$ is the likelihood, quantifying the probability of observed features given the outcome, and $P(X)$ is the evidence (the overall probability of the features). 
-This framework allows us to update predictions as new data is observed, improving interpretability in feature outcome relationships.
-
-Limitations remain. Causal inference is limited by observational designs, and predictors are frequently examined separately, ignoring interactions. 
+\subsection{Bayesian updating of frailty risk}
+Causal inference is limited by observational designs, and predictors are frequently examined separately, ignoring interactions. 
 Most frailty models have only been with the \gls{TILDA} dataset and with this present study focuses on the same \gls{TILDA} but with an expansion on the harmonised set to explore more longitudinal prediction within this context. 
 These gaps point to the need for multidimensional approaches. 
 Traditional regression models may not fully capture age dependent interactions, suggesting a role for more flexible methods such as machine learning techniques and models.
 
 % ----------------------------------------------------------------------
 % Mental Health in Older Adults
-\section{Mental Health in Older Adults}
+\section{Mental health in older adults}
 
 Mental health, including depression, anxiety, loneliness, and social isolation, strongly shapes quality of life. 
 Evidence from \gls{TILDA} shows strong links to both physical and social factors. \cite{santiniProtectivePropertiesActBelongCommit2017} found that participation in physical, social, and cognitive activities summarised by the Act-Belong-Commit (ABC) indicator was associated with lower depression and anxiety. 
@@ -258,13 +252,13 @@ Probabilistic modelling helps determine which features have the strongest effect
 
 % ----------------------------------------------------------------------
 % Nutrition and Biological Ageing
-\section{Nutrition and Biological Ageing}
+\section{Nutrition and biological ageing}
 Nutrition is increasingly recognised as a modifiable factor in ageing and frailty. 
 Biomarkers like vitamin D, lutein, and zeaxanthin have been linked to physical and cognitive outcomes in \gls{TILDA}. \cite{murphyPlasmaLuteinZeaxanthin2023} showed that higher plasma lutein and zeaxanthin dietary carotenoids found in leafy vegetables were linked to slower frailty progression. 
 By contrast, \cite{mccarthyAssociationVitaminDeficiency2022} found vitamin D deficiency predicted diabetes and musculoskeletal decline, especially among adults with low sunlight exposure. 
 These studies point to different nutritional mechanisms: antioxidant protection versus metabolic regulation.
 
-\subsection{Bayesian Perspective on Nutritional Biomarkers}
+\subsection{Bayesian perspective on nutritional biomarkers}
 The effect of nutrition on ageing outcomes can be formalised probabilistically using Bayes theorem:
 \begin{equation*}
 P(\text{Outcome} \mid \text{Nutritional Status}) = \frac{P(\text{Nutritional Status} \mid \text{Outcome}) P(\text{Outcome})}{P(\text{Nutritional Status})},
@@ -272,7 +266,7 @@ P(\text{Outcome} \mid \text{Nutritional Status}) = \frac{P(\text{Nutritional Sta
 where the likelihood function $P(\text{Nutritional Status} \mid \text{Outcome})$ quantifies how observed nutritional biomarkers relate to health states, and the posterior $P(\text{Outcome} \mid \text{Nutritional Status})$ captures updated beliefs about outcomes, including uncertainty in small sample studies.
 This helps identify which biomarkers are most informative for predicting ageing outcomes which supports feature selection in \gls{ML} models.
 
-\subsection{Contextual and Integrative Considerations}
+\subsection{Contextual and integrative considerations}
 Malnutrition also reflects social and functional risks. \cite{bardonPredictorsIncidentMalnutrition2020} found that hospitalisation, functional loss, and poor social support increased malnutrition risk, with notable sex differences. 
 This highlights a limitation in much nutritional research: biological markers are studied without integrating social context.
 
@@ -287,16 +281,16 @@ Isolating single nutrients risks oversimplification. Integrative modelling that 
 
 % ----------------------------------------------------------------------
 % Machine Learning in Ageing and Chronic Disease
-\section{Machine Learning in Ageing and Chronic Disease}
+\section{Machine Learning in ageing and chronic disease}
 \gls{ML} is increasingly applied in ageing research because it can capture non linear and multidimensional relationships that traditional regression models, such as logistic regression,often miss \cite{xuTailoredMachineLearning2023, boyleBrainpredictedAgeDifference2021}. 
 
-\subsection{Feature Sets in ML Studies}
+\subsection{Feature sets in ML studies}
 Studies using \gls{ML} in ageing research include many types of predictors: clinical measures, sociodemographic factors, lifestyle habits, cognitive tests, and psychosocial variables. 
 A recurring pattern, however, is that models often underline easily measured physical health data, such as comorbidity counts, mobility scores, or vital signs, while more complex but important predictors, including nutrition and social factors, are underrepresented \cite{zarudskyP277OneleggedBalance2014}. 
 This imbalance may limit the ability of models to capture the full complexity of ageing, especially considering that mental health and nutrition exert independent and interacting effects on later life outcomes see (\hyperref[sec:ChronicDiseaseAndAgeing]{here}). 
 Models that focus only on readily available clinical data risk reproducing the same biases seen in traditional regression approaches.
 
-\subsection{ML Models Used}
+\subsection{ML models used}
 The methodological approaches used in ageing research span both traditional and advanced models. 
 Logistic regression and Markov models remain common baselines due to their interpretability and simplicity, yet they are often unable to capture non linearities or higher order interactions. 
 More recent work has shifted towards ensemble methods such as random forests (\gls{RF}) and gradient boosting machines (\gls{GBM}), as well as deep neural networks (\gls{DNN}), which generally achieve higher predictive accuracy.
@@ -312,7 +306,7 @@ This can inflate performance estimates and reduce confidence in applying the mod
 To add, Most studies are cross sectional, so causal or temporal effects cannot be assessed. 
 When combined with the underuse of nutrition and social predictors, these issues indicate that current models may not fully represent the multidimensional nature of ageing and could produce context specific results rather than generalisable predictions \cite{zarudskyP277OneleggedBalance2014}.
 
-\subsection{Explainability in ML for Ageing}
+\subsection{Explainability in ML for ageing}
 As \gls{ML} models become more complex, interpretability emerges as a critical challenge. Explainability tools like \gls{SHAP} can highlight feature importance, but their use is inconsistent, particularly in deep learning models \cite{xuTailoredMachineLearning2023,davisLinearRegressionbasedMachine2021,davisComparisonGaitSpeed2021}. 
 These methods improve transparency and can highlight unexpected drivers of outcomes, such as psychosocial variables being stronger predictors than biomedical ones, yet black box concerns remain, especially for deep learning models, where feature interactions are difficult to track.
 For ageing research, where clinical adoption requires both accuracy and trust, explainability is not optional but essential. 
@@ -342,12 +336,7 @@ The findings showed that while frailty is partly reversible, it remains strongly
 
 While machine learning has improved prediction accuracy in ageing research, challenges remain in integrating diverse predictors and ensuring interpretability and longitudinal validation.
 
-This study builds on previous research by leveraging \gls{TILDA} alongside the harmonised dataset linking UK and US cohorts, enabling longitudinal prediction of ageing outcomes. 
-The main contribution lies in integrating nutrition, lifestyle, and clinical predictors, applying temporal modelling, and emphasising interpretability, addressing key limitations identified in prior work. 
-These directions motivate the methodological choices outlined in Chapter~\ref{chap:Implementation Details}.
-
-
-
+Addressing these challenges requires the integrative, diverse, and transparent approaches described in this thesis. These gaps motivate the methodological choices and implementation details outlined in Chapter~\ref{chap:Implementation Details}.
 % ---------------------------------------------------------------------------
 %: ----------------------- end of thesis sub-document ------------------------
 % ---------------------------------------------------------------------------
