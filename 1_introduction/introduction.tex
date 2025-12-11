@@ -8,20 +8,19 @@
 %: ----------------------- introduction content ----------------------- 
 % ----------------------------------------------------------------------
 
-Chronic conditions are leading contributors to morbidity and mortality in ageing populations~\cite{bencivengaAtrialFibrillationElderly2020, bardonPredictorsIncidentMalnutrition2020}. These conditions are associated with declines in functional capacity (e.g., \gls{UGS}, \gls{GRIP}~\cite{davisComparisonGaitSpeed2021}), increased healthcare utilisation~\cite{mooreCountingTimeLived2017}, and reduced quality of life~\cite{huangSexDifferencesAssociations2020}.  
+Ageing populations experience substantial changes across physical, nutritional, cognitive, and psychosocial domains, each shaping vulnerability to chronic disease and functional decline~\cite{davisComparisonGaitSpeed2021, mooreCountingTimeLived2017, huangSexDifferencesAssociations2020}. Understanding how these multidomain factors interact over time is essential for early risk identification.
 
 The financial and societal burden is substantial. In Europe, poor diet is a major risk factor for non communicable diseases, contributing billions in healthcare costs annually~\cite{WhoNutritionReport}. In Ireland, malnutrition alone is estimated to cost over €1.4 billion per year~\cite{RICE2012}. Recognising this, international and national policies including the \gls{WHO} Global Action Plan on Noncommunicable Diseases and Ireland's \emph{Healthy Ireland} framework highlights nutrition and lifestyle interventions as central to healthcare strategy.
 
-In parallel, \gls{AI} and \gls{ML} are increasingly applied in healthcare to support risk prediction and personalised intervention. However, European regulations such as the \gls{GDPR} and the forthcoming \gls{EU} \gls{AI} Act impose strict requirements for transparency, explainability, and governance. This regulatory context underscores the importance of interpretable and ethically robust \gls{ML} approaches.
+European regulatory frameworks such as the \gls{GDPR} and proposed \gls{EU} \gls{AI} Act emphasise transparency and explainability, highlighting the need for interpretable \gls{ML} models in healthcare.
 
-Traditional risk prediction models have largely relied on clinical biomarkers such as blood pressure and lipid profiles. Yet, growing evidence shows that broader predictors including nutrition~\cite{murphyPlasmaLuteinZeaxanthin2023}, \gls{PA}~\cite{lairdPhysicalActivityDose2023}, \gls{MH}~\cite{mcdowellAssociationsPhysicalActivity2018}, and \gls{SOC}~\cite{mccrorySocialDisadvantageSocial2016} improve predictive performance. Estimating the likelihood of developing a condition given certain risk factors helps quantify the influence of these predictors in clinical decision making. 
+Traditional risk prediction models have largely relied on clinical biomarkers such as \gls{BP} and lipid profiles. Yet, growing evidence shows that broader predictors including nutrition~\cite{murphyPlasmaLuteinZeaxanthin2023}, \gls{PA}~\cite{lairdPhysicalActivityDose2023}, \gls{MH}~\cite{mcdowellAssociationsPhysicalActivity2018}, and \gls{SOC}~\cite{mccrorySocialDisadvantageSocial2016} improve predictive performance. Estimating the likelihood of developing a condition given certain risk factors helps quantify the influence of these predictors in clinical decision making. 
 
-\gls{TILDA}\footnote{\gls{TILDA} data are pseudonymised and accessed under license via \gls{ISSDA}. Use adheres to UL S\&E ethics approval and data governance requirements.} provides a nationally representative cohort of adults aged 50+ in Ireland, surveyed across multiple domains in repeated waves (waves 1--5). The raw wave datasets capture the full richness of \gls{TILDA} specific measures. This thesis develops a pipeline to preprocess and align these five raw waves for longitudinal analysis. For benchmarking and international comparison, the \gls{RAND} Harmonised \gls{TILDA} dataset (harmonisation currently available for Waves 1 and 2 only) is also used. This aligns selected variables with the \gls{HRS} framework to enable comparison with studies such as \gls{HRS} (US), \gls{ELSA} (UK), and \gls{SHARE} (continental Europe), though at the cost of excluding some study specific variables.
+\gls{TILDA}\footnote{\gls{TILDA} data are pseudonymised and accessed under license via \gls{ISSDA}. Use adheres to UL S\&E ethics approval and data governance requirements.} provides a national representative cohort of adults aged $50+$ in Ireland, surveyed repeatedly across multiple domains. For benchmarking and international comparison, the externally produced \gls{RAND} Harmonised \gls{TILDA} dataset (available for Waves 1 and 2) aligns selected variables with the \gls{HRS} framework. Full preprocessing and alignment details are mentioned in Chapter~\ref{ch:chapter3}.
 
 Despite these advantages, existing \gls{ML} research on chronic disease prediction faces persistent limitations: over reliance on clinical predictors, limited incorporation of lifestyle and \gls{SOC} variables, predominantly cross sectional study designs that fail to capture trajectories, and a lack of interpretability consistent with emerging \gls{AI} governance standards.  
 
-This thesis addresses these gaps by integrating \gls{TILDA}'s longitudinal, multidomain data with interpretable \gls{ML} methods, demonstrating how nutrition, \gls{PA}, and \gls{MH} can be combined with traditional clinical markers to improve prediction of ageing related outcomes.
-\cleardoublepage
+This thesis addresses these gaps by leveraging longitudinal \gls{TILDA} data across multiple domains, using interpretable \gls{ML} methods to combine modifiable health behaviours, psychosocial factors, and established clinical measures to enhance prediction of ageing-related outcomes.
 % ----------------------------------------------------------------------
 % Research Problem
 \section{Research problem and motivation} 
@@ -29,7 +28,7 @@ This thesis addresses these gaps by integrating \gls{TILDA}'s longitudinal, mult
 Despite increasing policy interest in lifestyle and nutrition and advances in \gls{ML} methods, approaches to chronic disease prediction in older adults remain limited in several ways.
 
 \begin{itemize}
-    \item \textbf{Limited Integration of Multidimensional Data:} Most models prioritise clinical variables while underutilising modifiable lifestyle and nutrition factors~\cite{murphyPlasmaLuteinZeaxanthin2023, lairdPhysicalActivityDepression2023}.
+    \item \textbf{Limited Integration of Multidomain Predictors:} Existing models focus primarily on clinical measurements and often neglect modifiable behavioural, dietary, and psychosocial factors~\cite{murphyPlasmaLuteinZeaxanthin2023, lairdPhysicalActivityDepression2023}.
     \item \textbf{Underuse of Longitudinal Dynamics:} Few studies leverage repeated measures to capture developments of risk, such as \gls{FR} progression~\cite{moguilnerImportanceAgePrediction2021}.
     Probabilistic reasoning can help estimate the likelihood of developing a condition at a future time given earlier measurements, for example calculating $P(\text{\gls{FR} at wave 5} \mid \text{\gls{UGS} at wave 1}, \text{Nutrition at wave 2})$.
 
@@ -60,9 +59,9 @@ The goal of this thesis is to develop and validate \gls{ML} models that integrat
 This research makes contributions at three levels:
 
 \begin{itemize}
-  \item \textbf{Empirical:} Demonstrates how nutrition, lifestyle, and \gls{MH} features enhance prediction when combined with established clinical baselines.  
-  \item \textbf{Methodological:} Provides a reproducible pipeline for harmonising longitudinal \gls{TILDA} data and integrating multidomain features into \gls{ML} workflows.  
-  \item \textbf{Clinical:} Identifies modifiable predictors with relevance for targeted interventions and policy to promote healthy ageing.  
+  \item \textbf{Empirical:} Demonstrates how behavioural, dietary, and \gls{MH} features complement established clinical measures to enhance predictive performance.
+  \item \textbf{Methodological:} Provides a reproducible pipeline for aligning longitudinal \gls{TILDA} data across domains and integrating diverse features into \gls{ML} workflows.
+  \item \textbf{Clinical:} Highlights actionable modifiable factors alongside traditional clinical indicators for targeted interventions and policy.  
 \end{itemize}
 
 % ----------------------------------------------------------------------
