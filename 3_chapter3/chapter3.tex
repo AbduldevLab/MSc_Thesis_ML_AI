@@ -1,7 +1,7 @@
 % this file is called up by thesis.tex
 % content in this file will be fed into the main document
 
-\chapter{Technical Approach} \label{ch:technical} % top level followed by section, subsection
+\chapter{Technical Approach} \label{ch:chapter3} % top level followed by section, subsection
 
 \ifpdf
     \graphicspath{{3_chapter3/figures/PNG/}{3_chapter3/figures/PDF/}{3_chapter3/figures/}}
@@ -11,14 +11,12 @@
 
 % ----------------------- contents from here ------------------------
 \section{Study Design}
-\gls{TILDA} is a prospective cohort study examining the social, economic, and health circumstances of community dwelling adults in Ireland. This thesis uses data from five core \gls{TILDA} waves (Waves 1--5). For contextual comparison and benchmarking against international cohorts, the externally produced \gls{RAND} Harmonised \gls{TILDA} dataset (available for Waves 1--2) is used. The primary analytical work focuses on the full five wave \gls{TILDA} dataset.
-
-\textbf{Note on the Harmonised dataset:} The \gls{RAND} harmonised \gls{TILDA} (Waves 1--2) is an external produced resource that maps a subset of \gls{TILDA} variables to a common naming and coding scheme to enable cross national comparisons with the \gls{RAND} \gls{HRS} and other harmonised surveys. It is not the output of the thesis preprocessing pipeline applied to the full five wave dataset.
+\gls{TILDA} provides longitudinal data across five waves for community dwelling adults in Ireland. This thesis uses data from five core \gls{TILDA} waves (Waves 1--5). For contextual comparison and benchmarking against international cohorts (see Chapter~\ref{ch:chapter1}) however, it is important to note this is an external resource and not the output of the thesis's primary preprocessing pipeline. The primary analytical work focuses on the full five wave \gls{TILDA} dataset.
 
 \section{Cohort Definition}
 All participants who provided data in at least one \gls{TILDA} wave were considered eligible. To maximise the available sample for machine learning, no exclusions were applied on the basis of age, medical conditions, mobility, cognitive status, or health centre attendance.
 
-Participants were removed only when, after the combined manual filtering and automated preprocessing pipeline, they had no remaining usable variables. Filtering therefore occurred primarily at the \emph{variable level}, with features removed for extreme missingness, lack of variation, or non informative structure (see Chapter~\ref{chap:Implementation Details}). This approach preserves the largest possible sample while ensuring all retained inputs are analytically meaningful.
+Participants were removed only when, after the combined manual filtering and automated preprocessing pipeline, they had no remaining usable variables. Filtering therefore occurred primarily at the \emph{variable level}, with features removed for extreme missingness, lack of variation, or non informative structure (see Chapter~\ref{ch:chapter4}). This approach preserves the largest possible sample while ensuring all retained inputs are analytically meaningful.
 \subsection{Cohort inclusion criteria}
 \begin{itemize}
     \item \textbf{Participant inclusion:} All respondents who contributed data in at least one wave were included in the initial sample.
@@ -62,7 +60,7 @@ Wave 2 & 7206 & 724 \\
 Wave 3 & 6397 & 1029 \\
 Wave 4 & 5713 & 990 \\
 Wave 5 & 4978 & 983 \\
-Harmonised (RAND) & 8501 & 572 \\
+Harmonised \gls{RAND} & 8501 & 572 \\
 \hline
 \end{tabular}
 \end{table}
@@ -77,7 +75,7 @@ The manual checks applied were rules-of-thumb used to rapidly triage variables b
     \item \textbf{Datatypes / administrative fields:} Drop obvious identifiers and administrative labels (IDs, version tags, weights) unless required for linking.
 \end{itemize}
 
-These manual steps produced a smaller, cleaner variable set that was then subjected to the automated Six Step Cleaning Engine described in Chapter~\ref{chap:Implementation Details}.
+These manual steps produced a reduced variable set, which was subsequently processed by the automated Six Step Cleaning Engine (see Chapter~\ref{ch:chapter4}).
 \subsection{Variable filtering flowchart}
 
 Figure~\ref{fig:variable_filter_criteria} shows the schematic of the manual filtering decisions and the intended placeholders for variable counts remaining after each step.
@@ -101,17 +99,16 @@ To reduce dimensionality and improve interpretability, features were organised i
 \hline
 \textbf{ID} & \textbf{Thematic Group} & \textbf{Description} & \textbf{Representative Variables} \\
 \hline
-1 & Socio Demographic \& Context & Baseline stratification factors & Age, Gender, Education, Income \gls{INC}, Marital Status \gls{SOC} \\
+1 & Socio Demographic \& Context & Baseline stratification factors & Age, Gender, Education, \gls{INC}, Marital Status \gls{SOC} \\
 2 & Physical Health \& Clinical Baseline & Self reported and clinical indicators & Self Rated Health \gls{SCR}, \gls{BMI}, Blood Pressure \gls{BP}, Comorbidity Count \gls{MD} \\
-3 & Functional Status \& Frailty & Measures of mobility and physical decline & Frailty Index \gls{FR}, Gait Speed, Falls History \textit{SCQFalls}, \gls{ADL}/IADL \gls{DIS} \\
-4 & Lifestyle \& Behavioural & Modifiable health related behaviours & Smoking, Alcohol Intake \textit{SCQAlco}, Physical Activity \gls{IPAQ} \\
+3 & Functional Status \& \gls{FR} & Measures of mobility and physical decline & \gls{FR} Index \gls{FR}, \gls{UGS}, Falls History \textit{SCQFalls}, \gls{IADL} \gls{DIS} \\
+4 & Lifestyle \& Behavioural & Modifiable health related behaviours & Smoking, Alcohol Intake \textit{SCQAlco}, \gls{PA} \gls{IPAQ} \\
 5 & Nutrition \& Metabolic Biomarkers & Objective nutritional and metabolic markers & Plasma Carotenoids, Lutein, Zeaxanthin, Vitamin D/B12, Cholesterol \\
 6 & Psychological \& Cognitive & Mental health and cognitive performance & \gls{CESD}, Loneliness \textit{MHucla}, \gls{COG}, \gls{CRT} \\
 \hline
 \end{tabular}
 \end{table}
 
-Inspection of raw data revealed heterogeneous variable types, missing values, and wave specific inconsistencies. The resulting dataset dimensions, after this initial manual variable filtering, are presented in Chapter~\ref{chap:Implementation Details}. These filtered datasets then serve as the input for the systematic, automated data cleaning and longitudinal alignment pipeline, detailed in the following chapter.
 % ---------------------------------------------------------------------------
 % ----------------------- end of thesis sub-document ------------------------
 % ---------------------------------------------------------------------------

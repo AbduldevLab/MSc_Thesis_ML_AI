@@ -1,7 +1,7 @@
 % this file is called up by thesis.tex
 % content in this file will be fed into the main document
 
-\chapter{Implementation Details} \label{chap:Implementation Details} % top level followed by section, subsection
+\chapter{Implementation Details} \label{ch:chapter4} % top level followed by section, subsection
 
 
 % ----------------------- paths to graphics ------------------------
@@ -20,7 +20,7 @@
 
 The preprocessing pipeline primary aim was to convert all features, regardless of their original datatype (float, categorical, object, or mixed formats), into a standardised numerical representation suitable for machine learning. All non response and sentinel values were consistently mapped to $\texttt{-1.0}$, and all valid values were converted to $\texttt{float64}$. This ensured compatibility across the \gls{TILDA} waves and enabled uniform downstream for feature engineering and modelling.
 \subsection{Input data dimensions (post manual filtering)}
-The dimensions of the triaged datasets, which serve as the input for the scripted cleaning engine, are reported below.
+The dimensions of the triaged datasets, which serve as the input for the automated cleaning engine, are reported below.
 \begin{table}[htbp]
 \centering
 \caption{Input Dimensions for Cleaning Pipeline (Post Manual Variable Filtering)}
@@ -34,7 +34,7 @@ Wave 2 & 7206 & 482 \\
 Wave 3 & 6397 & 639 \\
 Wave 4 & 5713 & 592 \\
 Wave 5 & 4978 & 577 \\
-Harmonised (RAND) & 8501 & 453 \\
+Harmonised \gls{RAND} & 8501 & 453 \\
 \hline
 \end{tabular}
 \end{table}
@@ -51,7 +51,7 @@ To accomplish this, the nine scenarios were organised into a \emph{Six Step Clea
     \item \textbf{Steps 4--6: Categorical complexity.} Ordinal, binary, and multi-class textual variables were processed in order of transformation confidence, with Step 6 applying the most general parsing rules.
 \end{itemize}
 
-This structured sequence ensured that each wave passed through the same deterministic cleaning logic. Figure~\ref{fig:cleaning_flow} shows the flow of the pipeline.
+This deterministic sequence applied the same cleaning logic across all waves, as detailed in Chapter~\ref{ch:chapter3}. Figure~\ref{fig:cleaning_flow} shows the flow of the pipeline.
 
 % --- FIGURE ---
 \begin{figure}[htbp]
@@ -83,9 +83,9 @@ This structured sequence ensured that each wave passed through the same determin
     \item \textbf{Empty / Blank Values:} Converts all \texttt{NaN}, empty strings, and whitespace to \texttt{-1.0}.
     \item \textbf{Sentinel Values:} Standardises wave specific non-response codes (e.g., $-98, -99$) to \texttt{-1.0}.
     \item \textbf{Numeric Transformation:} Removes non numeric characters and converts censored or annotated values to numerical equivalents.
-    \item \textbf{Censored Categorical:} Applies known ordinal transformations (e.g., health scales, Likert ranges) conducted manually , low count == (hard coded mappings).
+    \item \textbf{Censored Categorical:} Applies known ordinal transformations and hard coded (low scenario count) mappings to variables (e.g., health scales, Likert ranges).
     \item \textbf{Binary Categorical:} Automatically maps two level variables (e.g., Yes/No, Male/Female) to \texttt{0.0/1.0}.
-    \item \textbf{Multi-Class / Mixed:} Applies text parsing, numerical extraction, and rule based mappings to remaining multi-class variables (most complex).
+    \item \textbf{Multi-class / Mixed:} Applies text parsing, numerical extraction, and rule based mappings to remaining multi-class variables (most complex).
 \end{enumerate}
 
 \section{Data integration and longitudinal alignment}
