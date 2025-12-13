@@ -11,12 +11,15 @@
 
 % ----------------------- contents from here ------------------------
 \section{Study Design}
+
 \gls{TILDA} provides longitudinal data across five waves for community dwelling adults in Ireland. This thesis uses data from five core \gls{TILDA} waves (Waves 1--5). For contextual comparison and benchmarking against international cohorts (see Chapter~\ref{ch:chapter1}) however, it is important to note this is an external resource and not the output of the thesis's primary preprocessing pipeline. The primary analytical work focuses on the full five wave \gls{TILDA} dataset.
 
 \section{Cohort Definition}
+
 All participants who provided data in at least one \gls{TILDA} wave were considered eligible. To maximise the available sample for machine learning, no exclusions were applied on the basis of age, medical conditions, mobility, cognitive status, or health centre attendance.
 
 Participants were removed only when, after the combined manual filtering and automated preprocessing pipeline, they had no remaining usable variables. Filtering therefore occurred primarily at the \emph{variable level}, with features removed for extreme missingness, lack of variation, or non informative structure (see Chapter~\ref{ch:chapter4}). This approach preserves the largest possible sample while ensuring all retained inputs are analytically meaningful.
+
 \subsection{Cohort inclusion criteria}
 \begin{itemize}
     \item \textbf{Participant inclusion:} All respondents who contributed data in at least one wave were included in the initial sample.
@@ -24,9 +27,10 @@ Participants were removed only when, after the combined manual filtering and aut
     \item \textbf{Longitudinal retention:} Individuals were retained regardless of how many waves they contributed to, enabling initial maximum dataset utilisation.
     \item \textbf{No clinical exclusions:} No participant was removed due to medical diagnoses, cognitive scores, functional limitations, or non attendance at the health centre assessment.
 \end{itemize}
-This approach prioritises data integrity and sample size for machine learning applications rather than clinical eligibility criteria common in classical epidemiological analyses. Figure~\ref{fig:variable_filter_criteria}.
+This approach prioritises data integrity and sample size for machine learning applications rather than clinical eligibility criteria common in classical epidemiological analyses.
 
 \section{Data Collection}
+
 Data used in this thesis were collected across five waves:
 
 \begin{itemize}
@@ -37,6 +41,8 @@ Data used in this thesis were collected across five waves:
     \item \textbf{Wave 5:} 2018--2020
 \end{itemize}
 
+All \gls{TILDA} data were pseudonymised prior to release, with each participant assigned a unique identifier (id) and household and cluster identifiers (\texttt{household, cluster}) to allow for linking across waves while maintaining anonymity. The data for each wave include a structured home interview (\gls{CAPI}), a paper based self completion questionnaire (\gls{SCQ}), and a health assessment when applicable (Wave 1 and Wave 3). Each component followed consistent protocols to ensure longitudinal comparability.
+
 Each wave included three primary components:
 \begin{enumerate}
     \item \textbf{\gls{CAPI}:} Home based, computer assisted personal interviews
@@ -45,7 +51,7 @@ Each wave included three primary components:
 \end{enumerate}
 
 \subsection{Data Overview}
-Before any processing, all raw \gls{TILDA} datasets were inspected manually and filtering was conducted in Excel to remove clearly non informative variables (administrative identifiers, constant columns, and variables with extreme missingness). Table~\ref{tab:raw_dataset_shape} reports the raw dimensions (rows = participants; columns = variables) prior to filtering.
+Before any processing, all raw \gls{TILDA} datasets were inspected manually and filtering was conducted in Excel to remove clearly non informative variables (administrative identifiers, constant columns, and variables with extreme missingness). Table~\ref{tab:raw_dataset_shape} reports the raw dimensions (rows = participants, columns = variables) prior to filtering.
 
 \begin{table}[htbp]
 \centering
@@ -66,19 +72,20 @@ Harmonised \gls{RAND} & 8501 & 572 \\
 \end{table}
 
 \subsection{Variable filtering criteria}
-
 The manual checks applied were rules-of-thumb used to rapidly triage variables before automated cleaning:
 \begin{itemize}
     \item \textbf{Missingness:} Drop variables with $>80\%$ missing values.
-    \item \textbf{Unique values:} Drop variables with a single unique value; flag small cardinality variables (2--10 unique values) for retention.
+    \item \textbf{Unique values:} Drop variables with a single unique value, flag small cardinality variables (2--10 unique values) for retention.
     \item \textbf{Dominant category:} Flag variables where the top category frequency is extremely high (e.g., $>90\%$) for manual review.
-    \item \textbf{Datatypes / administrative fields:} Drop obvious identifiers and administrative labels (IDs, version tags, weights) unless required for linking.
+    \item \textbf{Datatypes / administrative fields:} Obvious identifiers and administrative fields ( \texttt{IDs, version tags, sampling weights}) were identified using the pseudonymised microdata files (\gls{PMF}) and the accompanying wave specific documentation. Each variable’s name and description were exported from the \gls{PMF} metadata into CSV files 
+    (%let's add code for this to the appendix%), 
+    allowing a systematic review of each variable prior to filtering. This process ensured that only analytically meaningful features were retained while enabling reproducibility and traceability of the final dataset.
 \end{itemize}
 
-These manual steps produced a reduced variable set, which was subsequently processed by the automated Six Step Cleaning Engine (see Chapter~\ref{ch:chapter4}).
-\subsection{Variable filtering flowchart}
+These manual steps produced a reduced variable set, which was subsequently processed by the automated six scenario step cleaning engine (see Chapter~\ref{ch:chapter4}).
 
-Figure~\ref{fig:variable_filter_criteria} shows the schematic of the manual filtering decisions and the intended placeholders for variable counts remaining after each step.
+\subsection{Variable filtering flowchart}
+Figure~\ref{fig:variable_filter_criteria} illustrates the stepwise filtering approach. Variables were removed or flagged based on missingness, low variation, dominant categories, or irrelevance for predictive modelling. This process reduced dimensionality while preserving meaningful longitudinal information for to come feature engineering and machine learning analyses.
 \begin{figure}[htbp]
 \centering
 \includegraphics[height=1.25\textwidth]{variable_filter_criteria.png}
@@ -87,10 +94,12 @@ Figure~\ref{fig:variable_filter_criteria} shows the schematic of the manual filt
 \end{figure}
 
 \section{Thematic Grouping}
-%Thematic grouping of features
-After the manual inspection described above, the variable counts per wave were reduced. Table~\ref{tab:dataset_shape} reports the variable counts after manual filtering and prior to the automated cleaning pipeline.
 
-To reduce dimensionality and improve interpretability, features were organised into six thematic domains consistent with ageing literature and the study aims. Table~\ref{tab:feature_groups} summarises these domains and representative variables.
+After the manual inspection described above, the variable counts per wave were reduced, featuring only retained variables of interest. Table~\ref{tab:dataset_shape} reports the variable counts after manual filtering and prior to the automated cleaning pipeline.
+
+These were organised into six thematic domains, informed by ageing literature and aligned with the study objectives. Variables from \gls{CAPI} and \gls{SCQ} followed standard module prefixes and coding conventions as defined in the \gls{TILDA} \gls{PMF} documentation 
+( %lets create a table copying what is presnted in teh pmf documention will help link to our own themtic grouping%). 
+Derived variables were included using domain specific prefixes (e.g., \gls{ADL}, \gls{BP}, gls{COG}) to support interpretability and consistency across waves. Table~\ref{tab:feature_groups} summarises these domains and representative variables. This mapping directly supported the automated six scenario cleaning engine (Chapter~\ref{ch:chapter4}) and ensured that feature selection for machine learning preserved domain coverage.
 \begin{table}[htbp]
 \centering
 \caption{Thematic grouping of longitudinal features}
