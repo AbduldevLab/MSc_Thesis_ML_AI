@@ -36,7 +36,7 @@ Wave 2 & 7206 & 482 \\
 Wave 3 & 6397 & 639 \\
 Wave 4 & 5713 & 592 \\
 Wave 5 & 4978 & 577 \\
-Harmonised \gls{RAND} & 8501 & 453 \\
+Harmonised & 8501 & 453 \\
 \hline
 \end{tabular}
 \end{table}
@@ -54,7 +54,7 @@ The pipeline's first stage utilised an automated function (see appendix~\ref{app
 To ensure robustness, the classification output was immediately processed by a validation routine that generated a comprehensive dictionary of all variables, specific to its respective grouped detected scenario after each step (used for manual inspection), their detected scenario, and a sample of transformed values. This dictionary generated inside the ``show\_grouped\_vars\_for\_scenarios" function was formatted to create a automatic friendly ``.md'' file for rapid, surface level verification, which honed the final mapping dictionary~\ref{app:cleaning_pipeline_code}. This process of using automated detection followed by visual, manual validation was essential for correcting errors in classification logic before the subsequent scenario transformations were executed in the pipeline.
 
 \subsubsection*{Stage 2: Deterministic six step cleaning sequence}
-The nine input scenarios were processed by the \emph{Six step cleaning engine}. Resolving simple and unambiguous cases first increased the proportion of clean numerical variables before addressing complex structures, which involved the censored and multi-class scenarios (Figure~\ref{fig:cleaning_flow}). This deterministic sequence applied the same logic across all waves to ensure consistent data alignment (see appendix~\ref{app:cleaning_pipeline_code}).
+The nine input scenarios were processed by the \emph{Six step cleaning engine}. Resolving simple and unambiguous cases first increased the proportion of clean numerical variables before addressing complex structures, which involved the censored and multi-class scenarios (figure~\ref{fig:cleaning_flow}). This deterministic sequence applied the same logic across all waves to ensure consistent data alignment (see appendix~\ref{app:cleaning_pipeline_code}).
 
 \begin{figure}[htbp]
 \centering
@@ -77,7 +77,7 @@ The nine input scenarios were processed by the \emph{Six step cleaning engine}. 
 \draw[->, thick] (step5) -- (step6);
 
 \end{tikzpicture}
-\caption{Flowchart of the Six Step Cleaning Pipeline applied to all \gls{TILDA} waves. See full transformation tables in Appendix~\ref{tab:step6_full} and \ref{app:cleaning_pipeline_code} for detailed scenario progression code at each step.}
+\caption{Flowchart of the Final six step cleaning pipeline applied to all \gls{TILDA} waves. See full transformation tables in appendix~\ref{tab:step6_full} and \ref{app:cleaning_pipeline_code} for detailed scenario progression code at each step.}
 \label{fig:cleaning_flow}
 \end{figure}
 
