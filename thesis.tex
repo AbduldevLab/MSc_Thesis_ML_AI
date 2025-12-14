@@ -4,7 +4,7 @@
 % Template for Undergrad/Master/PhD Thesis
 % -----------------
 %Refresh the tex project by running the following commands in the terminal:
-% rm *.glo *.gls *.glsdefs *.acn *.acr *.alg *.bbl *.blg *.lof *.lot *.out *.toc
+% rm -f *.glo *.gls *.glsdefs *.acn *.acr *.alg *.bbl *.blg *.lof *.lot *.out *.toc
 
 % pdflatex thesis
 % makeglossaries thesis or bibtex thesis 
@@ -198,7 +198,7 @@
 
 % Your institution may have specific regulations if you need an abstract and where it is to be placed in the document. The default here is just after title.
 %: Declaration of originality
-
+\include{0_frontmatter/glossary}
 \include{0_frontmatter/abstract}
 \include{0_frontmatter/declaration}
 
@@ -230,7 +230,7 @@
 % \renewcommand{\nomname}{List of Abbreviations}
 % Tie in external source file for definitions: /0_frontmatter/glossary.tex
 % Glossary entries can also be defined in the main text. See glossary.tex
-\include{0_frontmatter/glossary} 
+% \include{0_frontmatter/glossary} 
 % \begin{multicols}{2} % \begin{multicols}{#columns}[header text][space]
 % \begin{footnotesize} % scriptsize(7) < footnotesize(8) < small (9) < normal (10)
 % \setlength{\nomlabelwidth}{2.5cm}
@@ -298,8 +298,6 @@
 }
 \lstinputlisting[fontadjust=\true]{7_appendixes/loader.py}
 
-% This adds the chapter title to the Table of Contents
-\addcontentsline{toc}{chapter}{Appendix A: Python code for exporting PMF metadata}
 \chaptermark{Appendix}
 \markboth{Appendix}{Appendix}
 
@@ -309,7 +307,6 @@
 % \section*{Scenario Cleaning Pipeline Tables}  
 \input{7_appendixes/cleaning_tables}
 
-\addcontentsline{toc}{chapter}{Appendix B: Scenario Cleaning Pipeline Tables}
 \chaptermark{Appendix}
 \markboth{Appendix}{Appendix}
 
@@ -332,7 +329,6 @@
 }
 \lstinputlisting[fontadjust=\true]{7_appendixes/var_mapping.py}
 
-\addcontentsline{toc}{chapter}{Appendix C: First Stage Variable Mapping Code}
 \chaptermark{Appendix}
 \markboth{Appendix}{Appendix}
 
@@ -354,7 +350,6 @@
 }
 \lstinputlisting[fontadjust=\true]{7_appendixes/cleaning_pipeline.py}
 
-\addcontentsline{toc}{chapter}{Appendix D: Second Stage deterministic six step cleaning engine}
 \chaptermark{Appendix}
 \markboth{Appendix}{Appendix}
 % Supporting documents are included in the appendix:
