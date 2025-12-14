@@ -36,8 +36,8 @@ Data used in this thesis were collected across five waves:
     \item \textbf{Wave 1:} 2009--2011
     \item \textbf{Wave 2:} 2012--2013
     \item \textbf{Wave 3:} 2014--2015
-    \item \textbf{Wave 4:} 2016--2018
-    \item \textbf{Wave 5:} 2018--2020
+    \item \textbf{Wave 4:} 2016
+    \item \textbf{Wave 5:} 2018--2019
 \end{itemize}
 
 All \gls{TILDA} data were pseudonymised prior to release. Each participant received a unique identifier (`id') along with household and cluster identifiers (`household', `cluster') to permit longitudinal linkage while preserving anonymity. Each wave included three primary components:
@@ -48,7 +48,7 @@ All \gls{TILDA} data were pseudonymised prior to release. Each participant recei
 \end{enumerate}
 
 \subsection{Data Overview}
-Before processing, raw \gls{TILDA} datasets were manually inspected, and clearly non informative variables (e.g., administrative identifiers, constant columns, high missingness) were removed. Table~\ref{tab:raw_dataset_shape} shows the raw dimensions of each dataset.
+Before processing, raw \gls{TILDA} datasets were manually inspected, and clear non informative variables (e.g., administrative identifiers, constant columns, high missingness) were removed. Table~\ref{tab:raw_dataset_shape} shows the raw dimensions of each dataset.
 
 \begin{table}[htbp]
 \centering
@@ -63,25 +63,24 @@ Wave 2 & 7206 & 724 \\
 Wave 3 & 6397 & 1029 \\
 Wave 4 & 5713 & 990 \\
 Wave 5 & 4978 & 983 \\
-Harmonised \gls{RAND} & 8501 & 572 \\
+Harmonised & 8501 & 572 \\
 \hline
 \end{tabular}
 \end{table}
 
-\subsection{Variable filtering criteria}
+\subsection{Variable filtering criteria} \label{ch:manual_cleaning}
 Manual filtering used rules-of-thumb prior to automated cleaning:
 \begin{itemize}
-    \item \textbf{Missingness:} Drop variables with $>80\%$ missing values.
-    \item \textbf{Unique values:} Drop variables with a single value, flag small cardinality variables (2--10 unique values) for retention.
+    \item \textbf{Missingness:} Drop variables with $>80\%$ missing values. This threshold balances retaining sufficient feature coverage with ensuring statistical reliability. Variables exceeding 80\% missingness provide limited information in most cases, increase imputation uncertainty, and reduce effective sample size, which is particularly critical in longitudinal machine learning analyses.
+    \item \textbf{Unique values:} Drop variables with a single observed value, as they contain no discriminative information and cannot contribute to modelling or inference. Variables with low cardinality (2--4 unique values) were retained for review, as they frequently represent meaningful categorical responses (e.g., binary indicators or ordinal scales) relevant to ageing outcomes.
     \item \textbf{Dominant category:} Flag variables with extremely frequent categories (e.g., $>90\%$) for review.
-    \item \textbf{Identifiers / administrative fields:} Obvious IDs, version tags, and sampling weights were identified using the \gls{PMF} metadata. Variable names and descriptions were exported from each wave's \gls{PMF} file into CSV files (code provided in Appendix~\ref{app:pmf_code} ) to systematically document and review features prior to filtering. This ensured analytic relevance and traceability.
+    \item \textbf{Identifiers / administrative fields:} IDs, version tags, and sampling weights were identified using the \gls{PMF} metadata. Variable names and descriptions were exported from each wave's \gls{PMF} file into CSV files (code provided in Appendix~\ref{app:pmf_code} ) to systematically document and review features prior to filtering. These exports enabled structured manual inspection and traceability between raw \gls{PMF} metadata and downstream feature selection decisions.
 \end{itemize}
 
-These manual checks produced a reduced variable set, subsequently processed using the automated six scenario cleaning engine (Chapter~\ref{ch:chapter4}).
+These manual checks produced a reduced variable set, subsequently processed using the automated nine scenario cleaning pipeline (Chapter~\ref{ch:chapter4}).
 
 \subsection{Variable filtering flowchart}
-Figure~\ref{fig:variable_filter_criteria} shows the stepwise variable filtering process. This flowchart guided the removal or flagging of variables based on missingness, low variation, dominant categories, or irrelevance. Dimensionality reduction improved interpretability while preserving longitudinal structure for feature engineering and machine learning.
-
+As part of this workflow, \gls{PMF} metadata exports were first reviewed in spreadsheet form, where variables deemed non informative were visually flagged (e.g., marked in red). Candidate variables retained after manual review (described in~\ref{ch:manual_cleaning}) were consolidated using spreadsheet formula (e.g., \texttt{=TEXTJOIN(", ", TRUE, J2:J\textit{n})}), which concatenated all non excluded variable names into a comma separated list. Here, \textit{n} is the final row index of retained variables, with \texttt{J2} corresponding to the first data row below the column header. These lists were manually transferred into wave specific \gls{JSON} files, which were subsequently used by the Python pipeline to selectively load and filter only the retained variables from the original \gls{SPSS} ($\texttt{.sav}$) and Stata ($\texttt{.dta}$) data files. This procedure ensured a reproducible and traceable workflow from manual selection to automated preprocessing, as illustrated in the flowchart (Figure~\ref{fig:variable_filter_criteria}).
 \begin{figure}[htbp]
 \centering
 \includegraphics[height=1.25\textwidth]{variable_filter_criteria.png}
@@ -91,17 +90,16 @@ Figure~\ref{fig:variable_filter_criteria} shows the stepwise variable filtering 
 
 \section{Thematic Grouping}
 
-After manual filtering, retained variables were organised into six thematic domains aligned with ageing literature and study objectives. The grouping process followed the standard \gls{PMF} naming conventions (Table~\ref{tab:pmf_prefixes}). Specifically, each variable's prefix indicated its data source or domain, which allowed us to systematically assign variables to one of six thematic domains. This ensured that features included in each domain were conceptually coherent and analytically meaningful. 
+After manual filtering, retained variables were organised into six thematic domains aligned with ageing literature and study objectives. The grouping process followed the standard \gls{PMF} naming conventions (Table~\ref{tab:pmf_prefixes}). Specifically, each variable's prefix indicated its data source or domain, which allowed to systematically assign variables to one of six thematic domains. This ensured that features included in each domain were conceptually coherent and analytically meaningful. 
 
 \subsection{Derived variable prefixes}
 
 To systematically process \gls{TILDA} variables, each variable was assigned a prefix indicating its data source or research domain. Variables collected through the home based \gls{CAPI} follow a two letter module code plus three digit question code format (e.g., \texttt{ph121}). For questions with multiple responses or loops across participants or objects, an underscore and number indicates the specific response or loop iteration (e.g., \texttt{ph201\_05}).
 
-Variables from the self completion questionnaire (\gls{SCQ}) are prefixed with `\gls{SCQ}'. Derived variables, constructed from either \gls{CAPI} or \gls{SCQ} data, use an uppercase code corresponding to the research area (Table~\ref{tab:pmf_prefixes}). These prefixes provide a consistent framework for categorising variables and underpin the subsequent assignment of features into thematic domains for downstream analysis.
-
+Variables from the self completion questionnaire (\gls{SCQ}) are prefixed with `\gls{SCQ}'. Derived variables, constructed from either \gls{CAPI} or \gls{SCQ} data, use an uppercase code corresponding to the research area (Table~\ref{tab:pmf_prefixes}). These prefixes provide a consistent framework for categorising variables and guided the systematic assignment of features into thematic domains for downstream analysis.
 \begin{table}[htbp]
 \centering
-\caption{PMF Derived Variable Prefixes and Research Areas (\cite{tilda2023pmf})}
+\caption{PMF Derived Variable Prefixes (\cite{tilda2023pmf})}
 \label{tab:pmf_prefixes}
 \begin{tabular}{|l|l|}
 \hline
@@ -109,21 +107,21 @@ Variables from the self completion questionnaire (\gls{SCQ}) are prefixed with `
 \hline
 ADL & Activities of daily living \\
 BEH & Health behaviours \\
-BLOODS & Blood sample results \\
-BP & Blood pressure \\
-COG & Cognitive scales and questions \\
-CRT & Choice reaction time \\
+BLOODS & Results of blood sample analysis \\
+BP & Blood pressure from sphygmomanometer \\
+COG & Scales and questions on cognition \\
+CRT & Choice reaction time (cognitive test) \\
 DIS & Disability, functional impairment, helpers \\
-FR & Frailty, gait, exercise, falls \\
+FR & Frailty, gait, exercise, falls and fractures \\
 G2G & Gateway to Global Aging Data \\
 GRIP & Grip strength \\
 IADL & Instrumental activities of daily living \\
 INC & Income variables \\
 MD & Medication data \\
-MH & Mental health scales and questions \\
+MH & Scales and questions on mental health and wellbeing \\
 SCR & Screening tests \\
-SES & Socio-economic class variables \\
-SOC & Social support and relationships \\
+SES & Social class and socio \\
+SOC & Social \\
 \hline
 \end{tabular}
 \end{table}
@@ -132,7 +130,7 @@ SOC & Social support and relationships \\
 
 Using the \gls{PMF} prefixes as a guide, variables were systematically mapped to six thematic groups (Table~\ref{tab:feature_groups}). Each thematic group captures a conceptually coherent domain, reflecting physical, cognitive, social, and behavioural aspects of ageing. This categorisation served two key purposes in the thesis: 
 
-1. It structured the data for the automated six scenario cleaning engine (Chapter~\ref{ch:chapter4}), ensuring consistent application of filtering rules and facilitating reproducible preprocessing.
+1. It structured the data for the automated nine scenario cleaning engine (Chapter~\ref{ch:chapter4}), ensuring consistent application of filtering rules and facilitating reproducible preprocessing.
 
 2. It aligned feature selection with the analytic focus of the thesis, enabling machine learning models to leverage variables that are both conceptually meaningful and longitudinally robust across multiple waves.
 
