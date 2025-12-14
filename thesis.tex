@@ -34,7 +34,7 @@
 \usepackage{pgfplots}
 \usepackage{tabularx}
 \pgfplotsset{compat=1.18}
-
+\usepackage[utf8]{inputenc}
 \usepackage[acronym]{glossaries}
 \makeglossaries
 
@@ -280,35 +280,38 @@
 % here we start the Appendix
 \appendix
 
-% Definition of each Chapter in the Appendix is done via the following two lines
-\setcounter{table}{0}
-\setcounter{chapter}{1}
-\renewcommand{\thetable}{\Alph{chapter}.\arabic{table}}
-
 % --- Appendix A ---
-\chapter*{Appendix A}
-\label{tab:appendix}
-\section*{Scenario Cleaning Pipeline Tables}  
-\input{7_appendixes/appendixA_cleaning_tables}
+\chapter{Python code for exporting PMF metadata to CSV}
+\label{app:pmf_code}
+% \section*{Python code for exporting PMF metadata to CSV}
+\lstset{language=Python,
+        basicstyle=\footnotesize\ttfamily,
+        breaklines=true,
+        frame=shadowbox,
+        keywordstyle=\color{blue}\bfseries,
+        stringstyle=\color{c++red},
+        commentstyle=\color{c++green},
+        numbers=left,
+        numberstyle=\tiny,
+        stepnumber=1,
+        numbersep=5pt
+}
+\lstinputlisting[fontadjust=\true]{7_appendixes/loader.py}
 
 % This adds the chapter title to the Table of Contents
-\addcontentsline{toc}{chapter}{Appendix A: Scenario Cleaning Pipeline Tables}
+\addcontentsline{toc}{chapter}{Appendix A: Python code for exporting PMF metadata}
 \chaptermark{Appendix}
 \markboth{Appendix}{Appendix}
-
 
 % --- Appendix B ---
-\chapter*{Appendix B}
-\section*{Title}
+\chapter{Scenario Cleaning Pipeline Tables}  
+\label{tab:cleaning_tables}
+% \section*{Scenario Cleaning Pipeline Tables}  
+\input{7_appendixes/cleaning_tables}
 
-Type here you text as usual . . .
-
-
-% \addcontentsline{toc}{chapter}{Appendix B: Insert Text in Appendix}
+\addcontentsline{toc}{chapter}{Appendix B: Scenario Cleaning Pipeline Tables}
 \chaptermark{Appendix}
 \markboth{Appendix}{Appendix}
-
-
 
 % --- Appendix C ---
 \chapter*{Appendix C}

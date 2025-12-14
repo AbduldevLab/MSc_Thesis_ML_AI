@@ -32,7 +32,6 @@ This approach prioritises data integrity and sample size for machine learning ap
 \section{Data Collection}
 
 Data used in this thesis were collected across five waves:
-
 \begin{itemize}
     \item \textbf{Wave 1:} 2009--2011
     \item \textbf{Wave 2:} 2012--2013
@@ -41,17 +40,15 @@ Data used in this thesis were collected across five waves:
     \item \textbf{Wave 5:} 2018--2020
 \end{itemize}
 
-All \gls{TILDA} data were pseudonymised prior to release, with each participant assigned a unique identifier (id) and household and cluster identifiers (\texttt{household, cluster}) to allow for linking across waves while maintaining anonymity. The data for each wave include a structured home interview (\gls{CAPI}), a paper based self completion questionnaire (\gls{SCQ}), and a health assessment when applicable (Wave 1 and Wave 3). Each component followed consistent protocols to ensure longitudinal comparability.
-
-Each wave included three primary components:
+All \gls{TILDA} data were pseudonymised prior to release. Each participant received a unique identifier (`id') along with household and cluster identifiers (`household', `cluster') to permit longitudinal linkage while preserving anonymity. Each wave included three primary components:
 \begin{enumerate}
-    \item \textbf{\gls{CAPI}:} Home based, computer assisted personal interviews
-    \item \textbf{\gls{SCQ}:} A paper based self completion survey focused on mental health, lifestyle, and subjective well being
-    \item \textbf{Health Assessment:} Clinical and biomarker measurements in centers or at home
+    \item \textbf{\gls{CAPI}:} Home based, computer assisted personal interviews covering health, socio demographics, and family.
+    \item \textbf{\gls{SCQ}:} Paper based self completion questionnaires capturing sensitive information on mental health, lifestyle, and wellbeing.
+    \item \textbf{Health Assessment:} Clinical and biomarker measurements conducted in dedicated centers or at home (Wave 1 and Wave 3).
 \end{enumerate}
 
 \subsection{Data Overview}
-Before any processing, all raw \gls{TILDA} datasets were inspected manually and filtering was conducted in Excel to remove clearly non informative variables (administrative identifiers, constant columns, and variables with extreme missingness). Table~\ref{tab:raw_dataset_shape} reports the raw dimensions (rows = participants, columns = variables) prior to filtering.
+Before processing, raw \gls{TILDA} datasets were manually inspected, and clearly non informative variables (e.g., administrative identifiers, constant columns, high missingness) were removed. Table~\ref{tab:raw_dataset_shape} shows the raw dimensions of each dataset.
 
 \begin{table}[htbp]
 \centering
@@ -72,34 +69,75 @@ Harmonised \gls{RAND} & 8501 & 572 \\
 \end{table}
 
 \subsection{Variable filtering criteria}
-The manual checks applied were rules-of-thumb used to rapidly triage variables before automated cleaning:
+Manual filtering used rules-of-thumb prior to automated cleaning:
 \begin{itemize}
     \item \textbf{Missingness:} Drop variables with $>80\%$ missing values.
-    \item \textbf{Unique values:} Drop variables with a single unique value, flag small cardinality variables (2--10 unique values) for retention.
-    \item \textbf{Dominant category:} Flag variables where the top category frequency is extremely high (e.g., $>90\%$) for manual review.
-    \item \textbf{Datatypes / administrative fields:} Obvious identifiers and administrative fields ( \texttt{IDs, version tags, sampling weights}) were identified using the pseudonymised microdata files (\gls{PMF}) and the accompanying wave specific documentation. Each variable’s name and description were exported from the \gls{PMF} metadata into CSV files 
-    (%let's add code for this to the appendix%), 
-    allowing a systematic review of each variable prior to filtering. This process ensured that only analytically meaningful features were retained while enabling reproducibility and traceability of the final dataset.
+    \item \textbf{Unique values:} Drop variables with a single value, flag small cardinality variables (2--10 unique values) for retention.
+    \item \textbf{Dominant category:} Flag variables with extremely frequent categories (e.g., $>90\%$) for review.
+    \item \textbf{Identifiers / administrative fields:} Obvious IDs, version tags, and sampling weights were identified using the \gls{PMF} metadata. Variable names and descriptions were exported from each wave's \gls{PMF} file into CSV files (code provided in Appendix~\ref{app:pmf_code} ) to systematically document and review features prior to filtering. This ensured analytic relevance and traceability.
 \end{itemize}
 
-These manual steps produced a reduced variable set, which was subsequently processed by the automated six scenario step cleaning engine (see Chapter~\ref{ch:chapter4}).
+These manual checks produced a reduced variable set, subsequently processed using the automated six scenario cleaning engine (Chapter~\ref{ch:chapter4}).
 
 \subsection{Variable filtering flowchart}
-Figure~\ref{fig:variable_filter_criteria} illustrates the stepwise filtering approach. Variables were removed or flagged based on missingness, low variation, dominant categories, or irrelevance for predictive modelling. This process reduced dimensionality while preserving meaningful longitudinal information for to come feature engineering and machine learning analyses.
+Figure~\ref{fig:variable_filter_criteria} shows the stepwise variable filtering process. This flowchart guided the removal or flagging of variables based on missingness, low variation, dominant categories, or irrelevance. Dimensionality reduction improved interpretability while preserving longitudinal structure for feature engineering and machine learning.
+
 \begin{figure}[htbp]
 \centering
 \includegraphics[height=1.25\textwidth]{variable_filter_criteria.png}
-\caption{Flowchart of the manual variable filtering criteria. Placeholder counts indicate the number of variables remaining after each filtering step for each dataset.}
+\caption{Flowchart of the manual variable filtering criteria. Placeholder counts indicate remaining variables per dataset after each step.}
 \label{fig:variable_filter_criteria}
 \end{figure}
 
 \section{Thematic Grouping}
 
-After the manual inspection described above, the variable counts per wave were reduced, featuring only retained variables of interest. Table~\ref{tab:dataset_shape} reports the variable counts after manual filtering and prior to the automated cleaning pipeline.
+After manual filtering, retained variables were organised into six thematic domains aligned with ageing literature and study objectives. The grouping process followed the standard \gls{PMF} naming conventions (Table~\ref{tab:pmf_prefixes}). Specifically, each variable's prefix indicated its data source or domain, which allowed us to systematically assign variables to one of six thematic domains. This ensured that features included in each domain were conceptually coherent and analytically meaningful. 
 
-These were organised into six thematic domains, informed by ageing literature and aligned with the study objectives. Variables from \gls{CAPI} and \gls{SCQ} followed standard module prefixes and coding conventions as defined in the \gls{TILDA} \gls{PMF} documentation 
-( %lets create a table copying what is presnted in teh pmf documention will help link to our own themtic grouping%). 
-Derived variables were included using domain specific prefixes (e.g., \gls{ADL}, \gls{BP}, gls{COG}) to support interpretability and consistency across waves. Table~\ref{tab:feature_groups} summarises these domains and representative variables. This mapping directly supported the automated six scenario cleaning engine (Chapter~\ref{ch:chapter4}) and ensured that feature selection for machine learning preserved domain coverage.
+\subsection{Derived variable prefixes}
+
+To systematically process \gls{TILDA} variables, each variable was assigned a prefix indicating its data source or research domain. Variables collected through the home based \gls{CAPI} follow a two letter module code plus three digit question code format (e.g., \texttt{ph121}). For questions with multiple responses or loops across participants or objects, an underscore and number indicates the specific response or loop iteration (e.g., \texttt{ph201\_05}).
+
+Variables from the self completion questionnaire (\gls{SCQ}) are prefixed with `\gls{SCQ}'. Derived variables, constructed from either \gls{CAPI} or \gls{SCQ} data, use an uppercase code corresponding to the research area (Table~\ref{tab:pmf_prefixes}). These prefixes provide a consistent framework for categorising variables and underpin the subsequent assignment of features into thematic domains for downstream analysis.
+
+\begin{table}[htbp]
+\centering
+\caption{PMF Derived Variable Prefixes and Research Areas (\cite{tilda2023pmf})}
+\label{tab:pmf_prefixes}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Variable Prefix} & \textbf{Research Area} \\
+\hline
+ADL & Activities of daily living \\
+BEH & Health behaviours \\
+BLOODS & Blood sample results \\
+BP & Blood pressure \\
+COG & Cognitive scales and questions \\
+CRT & Choice reaction time \\
+DIS & Disability, functional impairment, helpers \\
+FR & Frailty, gait, exercise, falls \\
+G2G & Gateway to Global Aging Data \\
+GRIP & Grip strength \\
+IADL & Instrumental activities of daily living \\
+INC & Income variables \\
+MD & Medication data \\
+MH & Mental health scales and questions \\
+SCR & Screening tests \\
+SES & Socio-economic class variables \\
+SOC & Social support and relationships \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Feature groups}
+
+Using the \gls{PMF} prefixes as a guide, variables were systematically mapped to six thematic groups (Table~\ref{tab:feature_groups}). Each thematic group captures a conceptually coherent domain, reflecting physical, cognitive, social, and behavioural aspects of ageing. This categorisation served two key purposes in the thesis: 
+
+1. It structured the data for the automated six scenario cleaning engine (Chapter~\ref{ch:chapter4}), ensuring consistent application of filtering rules and facilitating reproducible preprocessing.
+
+2. It aligned feature selection with the analytic focus of the thesis, enabling machine learning models to leverage variables that are both conceptually meaningful and longitudinally robust across multiple waves.
+
+The six thematic groups integrate information from \gls{CAPI}, \gls{SCQ}, and derived variables, covering socio demographic context, physical health, functional status, lifestyle behaviours, nutrition/metabolic biomarkers, and psychological/cognitive measures. This structured grouping enhances interpretability, ensures comprehensive domain coverage, and provides a foundation for downstream predictive modelling and risk assessment.
+
 \begin{table}[htbp]
 \centering
 \caption{Thematic grouping of longitudinal features}
@@ -108,7 +146,7 @@ Derived variables were included using domain specific prefixes (e.g., \gls{ADL},
 \hline
 \textbf{ID} & \textbf{Thematic Group} & \textbf{Description} & \textbf{Representative Variables} \\
 \hline
-1 & Socio Demographic \& Context & Baseline stratification factors & Age, Gender, Education, \gls{INC}, Marital Status \gls{SOC} \\
+1 & Socio Demographic \& Context & Baseline stratification factors & Age, Gender, Education, \gls{INC}, Marital Status, \gls{SOC} \\
 2 & Physical Health \& Clinical Baseline & Self reported and clinical indicators & Self Rated Health \gls{SCR}, \gls{BMI}, \gls{BP}, Comorbidity Count \gls{MD} \\
 3 & Functional Status \& \gls{FR} & Measures of mobility and physical decline & \gls{FR} Index \gls{FR}, \gls{UGS}, Falls History \textit{SCQFalls}, \gls{IADL} \gls{DIS} \\
 4 & Lifestyle \& Behavioural & Modifiable health related behaviours & Smoking, Alcohol Intake \textit{SCQAlco}, \gls{PA} \gls{IPAQ} \\
@@ -117,7 +155,3 @@ Derived variables were included using domain specific prefixes (e.g., \gls{ADL},
 \hline
 \end{tabular}
 \end{table}
-
-% ---------------------------------------------------------------------------
-% ----------------------- end of thesis sub-document ------------------------
-% ---------------------------------------------------------------------------

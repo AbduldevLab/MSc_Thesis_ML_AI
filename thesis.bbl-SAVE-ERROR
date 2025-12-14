@@ -1,0 +1,2685 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{davisComparisonGaitSpeed2021}{article}{}{}
+      \name{author}{7}{}{%
+        {{hash=9b2eeaa377522b985cedeb5d39bb3c8c}{%
+           family={Davis},
+           familyi={D\bibinitperiod},
+           given={James\bibnamedelimb R.\bibnamedelimi C.},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=a1bea4dbf473034073ba1598c0fa1d27}{%
+           family={Knight},
+           familyi={K\bibinitperiod},
+           given={Silvin\bibnamedelima P.},
+           giveni={S\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=8105bb0412ac2009f0e3d185acbb96f9}{%
+           family={Donoghue},
+           familyi={D\bibinitperiod},
+           given={Orna\bibnamedelima A.},
+           giveni={O\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=51de116308ee40903d00d357542f0cf3}{%
+           family={Hernández},
+           familyi={H\bibinitperiod},
+           given={Belinda},
+           giveni={B\bibinitperiod}}}%
+        {{hash=74048d5a3d92f207a27d0856d5f0ad8a}{%
+           family={Rizzo},
+           familyi={R\bibinitperiod},
+           given={Rossella},
+           giveni={R\bibinitperiod}}}%
+        {{hash=900692698d3b6559f0df62c0b382164e}{%
+           family={Kenny},
+           familyi={K\bibinitperiod},
+           given={Rose\bibnamedelima Anne},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=732234f00554e251804daaa8ff52001a}{%
+           family={{Romero-Ortuno}},
+           familyi={R\bibinitperiod},
+           given={Roman},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{1b092333a3885edc53a30bd122f49ae4}
+      \strng{fullhash}{d0941b936783d206057a89a7ab182116}
+      \strng{fullhashraw}{d0941b936783d206057a89a7ab182116}
+      \strng{bibnamehash}{1b092333a3885edc53a30bd122f49ae4}
+      \strng{authorbibnamehash}{1b092333a3885edc53a30bd122f49ae4}
+      \strng{authornamehash}{1b092333a3885edc53a30bd122f49ae4}
+      \strng{authorfullhash}{d0941b936783d206057a89a7ab182116}
+      \strng{authorfullhashraw}{d0941b936783d206057a89a7ab182116}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Gait speed is a measure of general fitness. Changing from usual (UGS) to maximum (MGS) gait speed requires coordinated action of many body systems. Gait speed reserve (GSR) is defined as MGS-UGS. From a shortlist of 88 features across five categories including sociodemographic, cognitive, and physiological, we aimed to find and compare the sets of predictors that best describe UGS, MGS, and GSR. For this, we leveraged data from 3,925 adults aged 50+ from Wave 3 of The Irish Longitudinal Study on Ageing (TILDA). Features were selected by a histogram gradient boosting regression-based stepwise feature selection pipeline. Each model's feature importance and input-output relationships were explored using TreeExplainer from the Shapely Additive Explanations explainable machine learning package. The mean R a d j 2 (SD) from fivefold cross-validation on training data and the R a d j 2 ~ score on test data were 0.38 (0.04) and 0.41 for UGS, 0.45 (0.04) and 0.46 for MGS, and 0.19 (0.02) and 0.21 for GSR. Each model selected features across all categories. Features common to all models were age, grip strength, chair stands time, mean motor reaction time, and height. Exclusive to UGS and MGS were educational attainment, fear of falling, Montreal cognitive assessment errors, and orthostatic intolerance. Exclusive to MGS and GSR were body mass index (BMI), and number of medications. No features were selected exclusively for UGS and GSR. Features unique to UGS were resting-state pulse interval, Center for Epidemiologic Studies Depression Scale (CESD) depression, sit-to-stand difference in diastolic blood pressure, and left visual acuity. Unique to MGS were standard deviation in sustained attention to response task times, resting-state heart rate, smoking status, total heartbeat power during paced breathing, and visual acuity. Unique to GSR were accuracy proportion in a sound-induced flash illusion test, Mini-mental State Examination errors, and number of cardiovascular conditions. No interactions were present in the GSR model. The four features that overall gave the most impactful interactions in the UGS and MGS models were age, chair stands time, grip strength, and BMI. These findings may help provide new insights into the multisystem predictors of gait speed and gait speed reserve in older adults and support a network physiology approach to their study.}
+      \field{issn}{2674-0109}
+      \field{journaltitle}{Front Netw Physiol}
+      \field{langid}{english}
+      \field{title}{Comparison of {{Gait Speed Reserve}}, {{Usual Gait Speed}}, and {{Maximum Gait Speed}} of {{Adults Aged}} 50+ in {{Ireland Using Explainable Machine Learning}}}
+      \field{volume}{1}
+      \field{year}{2021}
+      \field{pages}{754477}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3389/fnetp.2021.754477
+      \endverb
+      \verb{file}
+      \verb /Users/mrarab/Zotero/storage/682I2ZCM/Davis et al. - 2021 - Comparison of Gait Speed Reserve, Usual Gait Speed, and Maximum Gait Speed of Adults Aged 50+ in Ire.pdf
+      \endverb
+      \keyw{explainable,gait,gradient,maximum,physiological,reserve,speed,walking}
+    \endentry
+    \entry{mooreCountingTimeLived2017}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=c37683140cdd3e952acb1681db58de56}{%
+           family={Moore},
+           familyi={M\bibinitperiod},
+           given={Patrick\bibnamedelima V.},
+           giveni={P\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+        {{hash=e93aa5a211e47a00247d6049be9ddc71}{%
+           family={Bennett},
+           familyi={B\bibinitperiod},
+           given={Kathleen},
+           giveni={K\bibinitperiod}}}%
+        {{hash=ee986359d45200c93defd38e8c86385a}{%
+           family={Normand},
+           familyi={N\bibinitperiod},
+           given={Charles},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{5535cb45c9d81b66289b767a1c567643}
+      \strng{fullhash}{5535cb45c9d81b66289b767a1c567643}
+      \strng{fullhashraw}{5535cb45c9d81b66289b767a1c567643}
+      \strng{bibnamehash}{5535cb45c9d81b66289b767a1c567643}
+      \strng{authorbibnamehash}{5535cb45c9d81b66289b767a1c567643}
+      \strng{authornamehash}{5535cb45c9d81b66289b767a1c567643}
+      \strng{authorfullhash}{5535cb45c9d81b66289b767a1c567643}
+      \strng{authorfullhashraw}{5535cb45c9d81b66289b767a1c567643}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The objective is to understand what really drives prescription expenditure at the end of life in order to inform future expenditure projections and service planning. To achieve this objective an empirical analysis of public medication expenditure on the older population (individuals {$\geq$} 70 years of age) in Ireland (n = 231,780) was undertaken. A two part model is used to analysis the individual effects of age, proximity to death (PTD) and morbidity using individual patient-level data from administrative pharmacy records for 2006--2009 covering the population of community medication users. Decedents (n = 14,084) consistently use more medications and incur larger expenditures than similar survivors, especially in the last 6 months of life. The data show a positive and statistically significant impact of PTD on prescribing expenditures with minimal effect for age alone even accounting for patient morbidities. Nevertheless improved measures of morbidity are required to fully test the hypothesis that age and PTD are proxies for morbidity. The evidence presented refutes age as a driver of prescription expenditure and highlights the importance of accounting for mortality in future expenditure projections.}
+      \field{issn}{0277-9536}
+      \field{journaltitle}{Social Science \& Medicine}
+      \field{title}{Counting the Time Lived, the Time Left or Illness? {{Age}}, Proximity to Death, Morbidity and Prescribing Expenditures}
+      \field{volume}{184}
+      \field{year}{2017}
+      \field{pages}{1\bibrangedash 14}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1016/j.socscimed.2017.04.038
+      \endverb
+      \verb{file}
+      \verb /Users/mrarab/Zotero/storage/WK59FWX6/Moore et al. - 2017 - Counting the time lived, the time left or illness Age, proximity to death, morbidity and prescribin.pdf
+      \endverb
+      \keyw{Ageing,Healthcare expenditure,Medication,Morbidity,Proximity to death}
+    \endentry
+    \entry{huangSexDifferencesAssociations2020}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=07da2ad0d080188097acdb1ce63432a9}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Ying},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=29546fd8e62ed2a59441df4ca27aa0d1}{%
+           family={Su},
+           familyi={S\bibinitperiod},
+           given={Yuhao},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=06523b7d517f4a379f3cec46cfc96353}{%
+           family={Jiang},
+           familyi={J\bibinitperiod},
+           given={Ying},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=5f0c5306d9e32fc3f8e7fb372ff8988c}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Meilan},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{00fc94ef2511554270ea11c67f8ae18c}
+      \strng{fullhash}{26f0f0aa2211de9b603f29174e61874a}
+      \strng{fullhashraw}{26f0f0aa2211de9b603f29174e61874a}
+      \strng{bibnamehash}{00fc94ef2511554270ea11c67f8ae18c}
+      \strng{authorbibnamehash}{00fc94ef2511554270ea11c67f8ae18c}
+      \strng{authornamehash}{00fc94ef2511554270ea11c67f8ae18c}
+      \strng{authorfullhash}{26f0f0aa2211de9b603f29174e61874a}
+      \strng{authorfullhashraw}{26f0f0aa2211de9b603f29174e61874a}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Background Anxiety and depression are considered risk factors for cardiovascular diseases (CVDs), but their relationship to blood pressure (BP) is still uncertain. Lifestyle factors and age-related comorbidities may confound these relationships. Our study aimed to evaluate the associations between BP and anxiety and depression scores in a population aged {$\geq$}49 years. Methods Data on 8504 participants from The Irish Longitudinal Study on Ageing (TILDA) were analyzed for associations between BP and anxiety and depression questionnaire scores, accounting for relevant confounding factors. Results Multivariable analyses showed negative associations between systolic BP and anxiety and depression scores, independent of age, body mass index (BMI), marital status, education level, smoking status, alcohol consumption, level of physical activity, self-reported CVDs ({$\geq$}2) and antihypertensive medication use in men (coefficient=-0.112, P=0.013; coefficient=-0.051, P=0.026) but not in women (coefficient=-0.001, P=0.855; coefficient=-0.005, P=0.556). Diastolic BP was not associated with anxiety or depression scores in either men (coefficient=-0.018, P=0.223; coefficient=-0.001, P=0.924) or women (coefficient=-0.007, P=0.338; coefficient=-0.015, P=0.293) after adjusting for these same confounding factors. After a follow-up of 4 years, lower BP in subjects not using antihypertensive medications was significantly associated with more anxiety and depression events. Limitation Time-varying confounding factors may have interfered with our results. Conclusion Our results show that systolic BP in a middle-aged and elderly population is negatively associated with anxiety and depression scores in men but not women after adjustment for a range of lifestyle factors. These results contrast with the predisposition of anxious or depressed participants to CVDs in later life when decades of unhealthy lifestyles have persisted.}
+      \field{issn}{0165-0327}
+      \field{journaltitle}{Journal of Affective Disorders}
+      \field{month}{9}
+      \field{shorttitle}{Sex Differences in the Associations between Blood Pressure and Anxiety and Depression Scores in a Middle-Aged and Elderly Population}
+      \field{title}{Sex Differences in the Associations between Blood Pressure and Anxiety and Depression Scores in a Middle-Aged and Elderly Population: {{The Irish Longitudinal Study}} on {{Ageing}} ({{TILDA}})}
+      \field{urlday}{3}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{volume}{274}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \field{pages}{118\bibrangedash 125}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1016/j.jad.2020.05.133
+      \endverb
+      \verb{file}
+      \verb /Users/mrarab/Zotero/storage/QAWCBTNT/Huang et al. - 2020 - Sex differences in the associations between blood pressure and anxiety and depression scores in a mi.pdf;/Users/mrarab/Zotero/storage/RHQBJ9RX/S0165032719328885.html
+      \endverb
+      \keyw{Anxiety,Blood pressure,Depression,Longitudinal study,Middle-aged and elderly population}
+    \endentry
+    \entry{WhoNutritionReport}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=fb468a86924157dbf562fd1cd69a0a88}{%
+           family={{World Health Organization Europe}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{fb468a86924157dbf562fd1cd69a0a88}
+      \strng{fullhash}{fb468a86924157dbf562fd1cd69a0a88}
+      \strng{fullhashraw}{fb468a86924157dbf562fd1cd69a0a88}
+      \strng{bibnamehash}{fb468a86924157dbf562fd1cd69a0a88}
+      \strng{authorbibnamehash}{fb468a86924157dbf562fd1cd69a0a88}
+      \strng{authornamehash}{fb468a86924157dbf562fd1cd69a0a88}
+      \strng{authorfullhash}{fb468a86924157dbf562fd1cd69a0a88}
+      \strng{authorfullhashraw}{fb468a86924157dbf562fd1cd69a0a88}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Noncommunicable diseases (NCDs) remain the leading cause of death and disability in the world, including in the WHO European Region. Here, 1 in 5 men and 1 in 10 women die before 70 years of age because of NCDs such as cardiovascular diseases, cancers, chronic respiratory diseases and diabetes.}
+      \field{howpublished}{https://www.who.int/europe/news/item/27-06-2025-new-data--noncommunicable-diseases-cause-1-8-million-avoidable-deaths-and-cost-us-514-billion-USD-every-year--reveals-new-who-europe-report}
+      \field{journaltitle}{New data: non-communicable diseases cause 1.8 million avoidable deaths and cost US{\textbackslash}\$ 514 billion every year}
+      \field{langid}{english}
+      \field{shorttitle}{New Data}
+      \field{title}{New Data: Noncommunicable Diseases Cause 1.8 Million Avoidable Deaths and Cost {{US}}\$ 514 Billion Every Year, Reveals New {{WHO}}/{{Europe}} Report}
+      \field{urlday}{21}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /Users/mrarab/Zotero/storage/ZLKDS7TN/27-06-2025-new-data--noncommunicable-diseases-cause-1-8-million-avoidable-deaths-and-cost-us-51.html
+      \endverb
+    \endentry
+    \entry{RICE2012}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=d02bd761eefdd83c943a252d3f3d358d}{%
+           family={Rice},
+           familyi={R\bibinitperiod},
+           given={Niamh},
+           giveni={N\bibinitperiod}}}%
+        {{hash=ee986359d45200c93defd38e8c86385a}{%
+           family={Normand},
+           familyi={N\bibinitperiod},
+           given={Charles},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{652eb2351d4c8a394b717322e1c2a6d7}
+      \strng{fullhash}{652eb2351d4c8a394b717322e1c2a6d7}
+      \strng{fullhashraw}{652eb2351d4c8a394b717322e1c2a6d7}
+      \strng{bibnamehash}{652eb2351d4c8a394b717322e1c2a6d7}
+      \strng{authorbibnamehash}{652eb2351d4c8a394b717322e1c2a6d7}
+      \strng{authornamehash}{652eb2351d4c8a394b717322e1c2a6d7}
+      \strng{authorfullhash}{652eb2351d4c8a394b717322e1c2a6d7}
+      \strng{authorfullhashraw}{652eb2351d4c8a394b717322e1c2a6d7}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{OBJECTIVE: The present study aimed to establish the annual public expenditure arising from the health and social care of patients with diet-related malnutrition (DRM) in the Republic of Ireland. DESIGN: Costs were calculated by (i) estimating the prevalence of DRM in health-care settings derived from age-standardised comparisons between available Irish data and large-scale UK surveys and (ii) applying relevant costs from official sources to estimates of health-care utilisation by adults with DRM. No attempt has been made to estimate separately the costs of DRM and any associated disease, since each can be a cause or consequence of the other. The methods used are adapted from an evaluation of the cost of malnutrition in the UK by the British Association for Parenteral and Enteral Nutrition (2009). Settings Hospitals, nursing homes, out-patient clinics, primary-care clinics and home care. SUBJECTS: All adult patients receiving hospital in-patient, out-patient or specified community health-care services. RESULTS: The annual public health and social care cost associated with adult malnourished patients in Ireland is estimated at over {\texteuro}1.4 billion, representing 10 \% of the health-care budget. Most of this cost arises in acute hospital or residential care settings (i.e. 70 \%), with nutritional support estimated to account for {$<$}3 \% of spend. CONCLUSIONS: The cost associated with the care of patients with DRM is substantial and may rise as the proportion of older people within the population increases, a group at increased risk of DRM. Despite growing pressure on health-care budgets, little attention has been focused on the economic burden associated with DRM in Ireland or the potential for savings arising from improved detection and treatment of those at risk.}
+      \field{issn}{1475-2727}
+      \field{journaltitle}{Public Health Nutr}
+      \field{langid}{english}
+      \field{month}{10}
+      \field{number}{10}
+      \field{title}{The Cost Associated with Disease-Related Malnutrition in {{Ireland}}}
+      \field{volume}{15}
+      \field{year}{2012}
+      \field{pages}{1966\bibrangedash 1972}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1017/S1368980011003624
+      \endverb
+      \verb{file}
+      \verb /Users/mrarab/Zotero/storage/5VD8BUES/Rice and Normand - 2012 - The cost associated with disease-related malnutrition in Ireland.pdf
+      \endverb
+      \keyw{Age Factors,Diet,Health Care Costs,Health Expenditures,Home Care Services,Hospitalization,Humans,Ireland,Malnutrition,Nursing Homes,Nutritional Support,Prevalence,Public Health}
+    \endentry
+    \entry{murphyPlasmaLuteinZeaxanthin2023}{article}{}{}
+      \name{author}{8}{}{%
+        {{hash=81e38c15c3a50e00d51e389359b3e9a5}{%
+           family={Murphy},
+           familyi={M\bibinitperiod},
+           given={Caoileann\bibnamedelima H.},
+           giveni={C\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=d0641848124eaed62309c3c9a829ed98}{%
+           family={Duggan},
+           familyi={D\bibinitperiod},
+           given={Eoin},
+           giveni={E\bibinitperiod}}}%
+        {{hash=55844b5e6e88aae765588dd1d8e21c8d}{%
+           family={Davis},
+           familyi={D\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod}}}%
+        {{hash=fabea5c8972aea08b1a02e4633ae84c7}{%
+           family={O'Halloran},
+           familyi={O\bibinitperiod},
+           given={Aisling\bibnamedelima M.},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=a1bea4dbf473034073ba1598c0fa1d27}{%
+           family={Knight},
+           familyi={K\bibinitperiod},
+           given={Silvin\bibnamedelima P.},
+           giveni={S\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=900692698d3b6559f0df62c0b382164e}{%
+           family={Kenny},
+           familyi={K\bibinitperiod},
+           given={Rose\bibnamedelima Anne},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=08c83b8fd9ff0b0575eac098d95f8e5b}{%
+           family={McCarthy},
+           familyi={M\bibinitperiod},
+           given={Sinead\bibnamedelima N.},
+           giveni={S\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=732234f00554e251804daaa8ff52001a}{%
+           family={{Romero-Ortuno}},
+           familyi={R\bibinitperiod},
+           given={Roman},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{223241f14d56e640edabeddab4b92c47}
+      \strng{fullhash}{0c5c1d6a2dea01854c9e298b4f36d2d9}
+      \strng{fullhashraw}{0c5c1d6a2dea01854c9e298b4f36d2d9}
+      \strng{bibnamehash}{223241f14d56e640edabeddab4b92c47}
+      \strng{authorbibnamehash}{223241f14d56e640edabeddab4b92c47}
+      \strng{authornamehash}{223241f14d56e640edabeddab4b92c47}
+      \strng{authorfullhash}{0c5c1d6a2dea01854c9e298b4f36d2d9}
+      \strng{authorfullhashraw}{0c5c1d6a2dea01854c9e298b4f36d2d9}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Introduction Lutein and zeaxanthin are diet-derived carotenoids that are proposed to help mitigate frailty risk and age-related declines in musculoskeletal health via their anti-oxidant and anti-inflammatory properties. Therefore, this study aimed to investigate the association between lutein and zeaxanthin status and indices of musculoskeletal health and incident frailty among community-dwelling adults aged {$\geq$}50 years in the Irish Longitudinal Study on Ageing (TILDA). Methods Cross-sectional analyses (n = 4513) of plasma lutein and zeaxanthin concentrations and grip strength, usual gait speed, timed up-and-go (TUG), probable sarcopenia (defined as grip strength {$<$}27 kg in men, {$<$}16 kg in women), and bone mass (assessed using calcaneal broadband ultrasound stiffness index) were performed at Wave 1 (2009--2011; baseline). In the longitudinal analyses (n = 1425--3100), changes in usual gait speed (at Wave 3, 2014--2015), grip strength (Wave 4, 2016) and TUG (at Wave 5, 2018), incident probable sarcopenia (at Wave 4) and incident frailty (Fried's phenotype, Frailty Index, FRAIL Scale, Clinical Frailty Scale-classification tree, at Wave 5) were determined. Data were analysed using linear and ordinal logistic regression, adjusted for confounders. Results Cross-sectionally, plasma lutein and zeaxanthin concentrations were positively associated with usual gait speed (B [95 \% CI] per 100-nmol/L higher concentration: Lutein 0.59 [0.18, 1.00], Zeaxanthin 1.46 [0.37, 2.55] cm/s) and inversely associated with TUG time (Lutein -0.07 [-0.11, -0.03], Zeaxanthin -0.14 [-0.25, -0.04] s; all p {$<$} 0.01), but not with grip strength or probable sarcopenia (p {$>$} 0.05). Plasma lutein concentration was positively associated with bone stiffness index (0.54 [0.15, 0.93], p {$<$} 0.01). Longitudinally, among participants who were non-frail at Wave 1, higher plasma lutein and zeaxanthin concentrations were associated lower odds of progressing to a higher frailty category (e.g. prefrailty or frailty) by Wave 5 (ORs 0.57--0.89, p {$<$} 0.05) based on the Fried's phenotype, FRAIL Scale and the Clinical Frailty Scale, and in the case of zeaxanthin, Frailty Index. Neither plasma lutein nor zeaxanthin concentrations were associated with changes in musculoskeletal indices or incident probable sarcopenia (p {$>$} 0.05). Conclusion Higher plasma lutein and zeaxanthin concentrations at baseline were associated with a reduced likelihood of incident frailty after 8 years of follow up. Baseline plasma lutein and zeaxanthin concentrations were also positively associated with several indices of musculoskeletal health cross-sectionally but were not predictive of longitudinal changes in these outcomes over 4--8 years.}
+      \field{issn}{0531-5565}
+      \field{journaltitle}{Experimental Gerontology}
+      \field{title}{Plasma Lutein and Zeaxanthin Concentrations Associated with Musculoskeletal Health and Incident Frailty in {{The Irish Longitudinal Study}} on {{Ageing}} ({{TILDA}})}
+      \field{volume}{171}
+      \field{year}{2023}
+      \field{pages}{112013}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.exger.2022.112013
+      \endverb
+      \verb{file}
+      \verb /Users/mrarab/Zotero/storage/H9K99JP2/Murphy et al. - 2023 - Plasma lutein and zeaxanthin concentrations associated with musculoskeletal health and incident frai.pdf
+      \endverb
+      \keyw{Ageing,Carotenoids,Frailty,Musculoskeletal health,Nutrition,Sarcopenia}
+    \endentry
+    \entry{lairdPhysicalActivityDose2023}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=f4ec8e3f9be1f495a52b4c48069573a3}{%
+           family={Laird},
+           familyi={L\bibinitperiod},
+           given={Eamon},
+           giveni={E\bibinitperiod}}}%
+        {{hash=f3a8c3ffaa9c72d3375d4b3afe6600ba}{%
+           family={Rasmussen},
+           familyi={R\bibinitperiod},
+           given={Charlotte\bibnamedelima Lund},
+           giveni={C\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=900692698d3b6559f0df62c0b382164e}{%
+           family={Kenny},
+           familyi={K\bibinitperiod},
+           given={Rose\bibnamedelima Anne},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=c307c508d5e7a94aaac9fb1c1e1caff6}{%
+           family={Herring},
+           familyi={H\bibinitperiod},
+           given={Matthew\bibnamedelima P.},
+           giveni={M\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \strng{namehash}{c6b1ef82ddf7dbe43e0aab4078198606}
+      \strng{fullhash}{ade7b1d0be584408486bedb26cfad12f}
+      \strng{fullhashraw}{ade7b1d0be584408486bedb26cfad12f}
+      \strng{bibnamehash}{c6b1ef82ddf7dbe43e0aab4078198606}
+      \strng{authorbibnamehash}{c6b1ef82ddf7dbe43e0aab4078198606}
+      \strng{authornamehash}{c6b1ef82ddf7dbe43e0aab4078198606}
+      \strng{authorfullhash}{ade7b1d0be584408486bedb26cfad12f}
+      \strng{authorfullhashraw}{ade7b1d0be584408486bedb26cfad12f}
+      \field{extraname}{1}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{IMPORTANCE: Among older adults (aged {$\geq$}50 years), depression is associated with an increased risk of physical, social, and cognitive dysfunction. Regular moderate to vigorous physical activity (MVPA) has been associated with lower odds of depression. However, the lowest dose for protection against depression and the extent to which exceeding this level conveys additional protection are unknown. OBJECTIVE: To evaluate different MVPA doses, depressive symptoms, and major depression status in a large cohort of older adults with and without chronic disease. DESIGN, SETTING, AND PARTICIPANTS: A longitudinal cohort study of the same 4016 individuals at each of 5 time points (ie, waves) from The Irish Longitudinal Study on Ageing was conducted. Data were collected from October 2009 to December 2018, and data were analyzed from June 15 to August 8, 2022. EXPOSURES: Continuous MVPA (metabolic equivalent of task [MET]-minutes per week [MET-min/wk]), 3 dose categories, and 5 dose categories measured with the International Physical Activity Questionnaire. MAIN OUTCOMES AND MEASURES: Depressive symptoms and major depression status were measured using the short form of the Centre for Epidemiological Studies Depression scale along with the Composite International Diagnostic Interview for diagnosis of a major depressive episode during the past 12 months. Multivariable negative random-effects binomial regression models, adjusted for relevant covariates, quantified associations across time. RESULTS: Among the 4016 participants at each wave of the study (2205 women [54.9\%]; mean [SD] age, 61.0 [8.1] years) during 10.0 years of follow-up, depression rates increased from a mean of 8.2\% (95\% CI, 7.4\%-9.1\%) to 12.2\% (95\% CI, 11.2\%-13.2\%). Bonferroni-corrected post hoc analysis indicated that participants performing 400 to less than 600 MET-min/wk had a 16\% lower rate of depressive symptoms (adjusted incidence rate ratio [AIRR], 0.84; 95\% CI, 0.81-0.86) and 43\% lower odds of depression (adjusted odds ratio [AOR], 0.57; 95\% CI, 0.49-0.66) compared with 0 MET-min/wk. Those with chronic disease performing 600 to less than 1200 MET-min/wk had an 8\% (AIRR, 0.92; 95\% CI, 0.86-0.98) lower rate of depressive symptoms and 44\% (AOR, 0.56; 95\% CI, 0.42-0.74) lower odds of depression compared with 0 MET-min/wk. Those without disease required more than 2400 MET-min/wk for similar protection for depressive symptoms (AIRR, 0.81; 95\% CI, 0.73-0.90). CONCLUSIONS AND RELEVANCE: In this cohort study of older adults, significant antidepressant benefits were noted for MVPA doses below current recommendations for overall health, although greater doses were associated with larger AIRR reductions. It may be useful for public health interventions to investigate the achievability of lower physical activity thresholds among older adults with and without chronic illness to reduce the risk of depression.}
+      \field{issn}{2574-3805}
+      \field{journaltitle}{JAMA Netw Open}
+      \field{langid}{english}
+      \field{month}{7}
+      \field{number}{7}
+      \field{title}{Physical {{Activity Dose}} and {{Depression}} in a {{Cohort}} of {{Older Adults}} in {{The Irish Longitudinal Study}} on {{Ageing}}}
+      \field{volume}{6}
+      \field{year}{2023}
+      \field{pages}{e2322489}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1001/jamanetworkopen.2023.22489
+      \endverb
+      \verb{file}
+      \verb /Users/mrarab/Zotero/storage/BH8SPW7V/Laird et al. - 2023 - Physical Activity Dose and Depression in a Cohort of Older Adults in The Irish Longitudinal Study on.pdf
+      \endverb
+      \keyw{Aged,Aging,Chronic Disease,Cohort Studies,Depression,Depressive Disorder Major,Exercise,Female,Humans,Longitudinal Studies,Middle Aged}
+    \endentry
+    \entry{mcdowellAssociationsPhysicalActivity2018}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=922e7937f083bbd5e710215bd0280692}{%
+           family={McDowell},
+           familyi={M\bibinitperiod},
+           given={C.\bibnamedelimi P.},
+           giveni={C\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=4c694544b2eaef0c2faedadbc1a5c3aa}{%
+           family={Dishman},
+           familyi={D\bibinitperiod},
+           given={R.\bibnamedelimi K.},
+           giveni={R\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=bd1898d8dae698168d27c4b9417aa184}{%
+           family={Hallgren},
+           familyi={H\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=06773d0a46f5e553ae1a681623b9e9e5}{%
+           family={MacDonncha},
+           familyi={M\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=12fe642f5110aa996237a2927a8736a9}{%
+           family={Herring},
+           familyi={H\bibinitperiod},
+           given={M.\bibnamedelimi P.},
+           giveni={M\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \strng{namehash}{22368566211f823a543cb5cf6be7f7bc}
+      \strng{fullhash}{d2b2bfc49cda770f98750fa07f76e958}
+      \strng{fullhashraw}{d2b2bfc49cda770f98750fa07f76e958}
+      \strng{bibnamehash}{22368566211f823a543cb5cf6be7f7bc}
+      \strng{authorbibnamehash}{22368566211f823a543cb5cf6be7f7bc}
+      \strng{authornamehash}{22368566211f823a543cb5cf6be7f7bc}
+      \strng{authorfullhash}{d2b2bfc49cda770f98750fa07f76e958}
+      \strng{authorfullhashraw}{d2b2bfc49cda770f98750fa07f76e958}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Physical activity (PA) can protect against depression, but few studies have assessed whether meeting PA guidelines is sufficient, or if benefits can be derived from greater volumes of PA. The present study examines cross-sectional and prospective associations between different volumes of moderate-to-vigorous PA (MVPA) and walking, and depressive symptoms and status. Participants (n = 4556; 56.7\% female) aged {$\geq$} 50 years completed the International PA Questionnaire (IPAQ) at baseline and the Center for Epidemiological Studies Depression Scale at baseline and two years later. Prevalence and incidence of depression were 9.0\% (n = 410) and 5.0\% (n = 207), respectively. After full adjustment, odds of prevalent depression were: 40\% (OR = 0.60, 95\%CI: 0.48--0.76) lower among those meeting PA guidelines; 23\% (OR = 0.77, 0.49--1.21) and 43\% (OR = 0.57, 0.45--0.73) lower among those in moderate and high categories, respectively; and, 22\% (OR = 0.78, 0.61--1.01) and 44.0\% (OR = 0.56, 0.42--0.74) lower among those in moderate and high walking tertiles, respectively. Odds of incident depression were: 23\% (OR = 0.77, 0.58--1.04) lower among those meeting PA guidelines; 37\% (OR = 0.63, 0.32--1.22) and 20.0\% (OR = 0.80, 0.59--1.09) lower among those in moderate and high categories, respectively; and, 21\% (OR = 0.79, 0.56--1.12) and 25\% (OR = 0.75, 0.52--1.07) lower among those in moderate and high walking tertiles, respectively. Moderate and high volumes of MVPA were significantly associated with lower odds of concurrent depression, and significantly and non-significantly associated with reduced odds of incident depression, respectively. Meeting recommended levels of MVPA and walking were associated with significantly lower odds of concurrent depression, and non-significantly reduced odds of the development of depression over two years.}
+      \field{issn}{0531-5565}
+      \field{journaltitle}{Experimental Gerontology}
+      \field{title}{Associations of Physical Activity and Depression: {{Results}} from the {{Irish Longitudinal Study}} on {{Ageing}}}
+      \field{volume}{112}
+      \field{year}{2018}
+      \field{pages}{68\bibrangedash 75}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1016/j.exger.2018.09.004
+      \endverb
+      \verb{file}
+      \verb /Users/mrarab/Zotero/storage/82ET3555/McDowell et al. - 2018 - Associations of physical activity and depression Results from the Irish Longitudinal Study on Agein.pdf
+      \endverb
+      \keyw{Cross-sectional,Depression,Elderly,Physical activity,Prospective}
+    \endentry
+    \entry{mccrorySocialDisadvantageSocial2016}{article}{}{}
+      \name{author}{8}{}{%
+        {{hash=ab25d1c00fab082aa7be8d3177e1449b}{%
+           family={McCrory},
+           familyi={M\bibinitperiod},
+           given={Cathal},
+           giveni={C\bibinitperiod}}}%
+        {{hash=c2b0c79c2310f25f00e5653c019a4fc3}{%
+           family={Finucane},
+           familyi={F\bibinitperiod},
+           given={Ciaran},
+           giveni={C\bibinitperiod}}}%
+        {{hash=d66e01cb30487a417169bb732538e4fe}{%
+           family={O'Hare},
+           familyi={O\bibinitperiod},
+           given={Celia},
+           giveni={C\bibinitperiod}}}%
+        {{hash=37408f4a04e9b08d46cb200c047556cb}{%
+           family={Frewen},
+           familyi={F\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+        {{hash=265a280dcc3bd76786a6870670d5bd0a}{%
+           family={Nolan},
+           familyi={N\bibinitperiod},
+           given={Hugh},
+           giveni={H\bibinitperiod}}}%
+        {{hash=a8d25fbd2cd08393b931027429ef40ae}{%
+           family={Layte},
+           familyi={L\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod}}}%
+        {{hash=1909ed2ac83efefc1766e18fada6e4b2}{%
+           family={Kearney},
+           familyi={K\bibinitperiod},
+           given={Patricia\bibnamedelima M.},
+           giveni={P\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=900692698d3b6559f0df62c0b382164e}{%
+           family={Kenny},
+           familyi={K\bibinitperiod},
+           given={Rose\bibnamedelima Anne},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{8a5b9c13c87c39cd9149ad5dc51428b0}
+      \strng{fullhash}{9e6033683845f8f184902169a09d1bfc}
+      \strng{fullhashraw}{9e6033683845f8f184902169a09d1bfc}
+      \strng{bibnamehash}{8a5b9c13c87c39cd9149ad5dc51428b0}
+      \strng{authorbibnamehash}{8a5b9c13c87c39cd9149ad5dc51428b0}
+      \strng{authornamehash}{8a5b9c13c87c39cd9149ad5dc51428b0}
+      \strng{authorfullhash}{9e6033683845f8f184902169a09d1bfc}
+      \strng{authorfullhashraw}{9e6033683845f8f184902169a09d1bfc}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{A high resting heart rate (RHR) represents a major risk factor for cardiovascular disease and individuals from poorer backgrounds have a higher RHR compared with their more advantaged peers. This study investigates the pathways through which low socioeconomic status (SES) contributes to a higher RHR.The sample involved data for 4,888 respondents who were participating in the first wave of The Irish Longitudinal Study on Ageing. Respondents completed a detailed interview at home and underwent a 5-min baseline electrocardiograph recording as part of a clinic-based health assessment. SES was indexed using household income. The mean difference in RHR between those at polarized ends of the income distribution was 2.80 beats per minute (bpm) (95\% CI = 1.54, 4.06; p \&lt; .001), with the magnitude of the socioeconomic differential being greater for men (4.15 bpm; 95\% CI = 2.18, 6.12; p \&lt; .001) compared with women (1.57 bpm; 95\% CI = 0.04, 3.10; p \&lt; .05). Psychosocial factors including social network size and loneliness accounted for a sizeable proportion of the socioeconomic differential in RHR, particularly among men. The finding that poorer people have a higher RHR reinforces the need for additional research exploring the pathways through which social inequalities are translated into biological inequalities.}
+      \field{issn}{1079-5014}
+      \field{journaltitle}{J Gerontol B Psychol Sci Soc Sci}
+      \field{month}{5}
+      \field{number}{3}
+      \field{shorttitle}{Social {{Disadvantage}} and {{Social Isolation Are Associated With}} a {{Higher Resting Heart Rate}}}
+      \field{title}{Social {{Disadvantage}} and {{Social Isolation Are Associated With}} a {{Higher Resting Heart Rate}}: {{Evidence From The Irish Longitudinal Study}} on {{Ageing}}}
+      \field{urlday}{3}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{volume}{71}
+      \field{year}{2016}
+      \field{urldateera}{ce}
+      \field{pages}{463\bibrangedash 473}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1093/geronb/gbu163
+      \endverb
+      \verb{file}
+      \verb /Users/mrarab/Zotero/storage/PGER8SZE/McCrory et al. - 2016 - Social Disadvantage and Social Isolation Are Associated With a Higher Resting Heart Rate Evidence F.pdf;/Users/mrarab/Zotero/storage/KIXW65XD/gbu163.html
+      \endverb
+    \endentry
+    \entry{lairdPhysicalActivityDepression2023}{article}{}{}
+      \name{author}{7}{}{%
+        {{hash=f4ec8e3f9be1f495a52b4c48069573a3}{%
+           family={Laird},
+           familyi={L\bibinitperiod},
+           given={Eamon},
+           giveni={E\bibinitperiod}}}%
+        {{hash=c307c508d5e7a94aaac9fb1c1e1caff6}{%
+           family={Herring},
+           familyi={H\bibinitperiod},
+           given={Matthew\bibnamedelima P.},
+           giveni={M\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=4aa8488ad41bc0684a69ad463d39992b}{%
+           family={Carson},
+           familyi={C\bibinitperiod},
+           given={Brian\bibnamedelima P.},
+           giveni={B\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=35d598d30cf332a561bb13cb1b919e59}{%
+           family={Woods},
+           familyi={W\bibinitperiod},
+           given={Catherine\bibnamedelima B.},
+           giveni={C\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=952350e843168b80e8355859706825dc}{%
+           family={Walsh},
+           familyi={W\bibinitperiod},
+           given={Cathal},
+           giveni={C\bibinitperiod}}}%
+        {{hash=900692698d3b6559f0df62c0b382164e}{%
+           family={Kenny},
+           familyi={K\bibinitperiod},
+           given={Rose\bibnamedelima Anne},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=f3a8c3ffaa9c72d3375d4b3afe6600ba}{%
+           family={Rasmussen},
+           familyi={R\bibinitperiod},
+           given={Charlotte\bibnamedelima Lund},
+           giveni={C\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{c6b1ef82ddf7dbe43e0aab4078198606}
+      \strng{fullhash}{fb2f56a3958dc74ba3e9ff61b4513e89}
+      \strng{fullhashraw}{fb2f56a3958dc74ba3e9ff61b4513e89}
+      \strng{bibnamehash}{c6b1ef82ddf7dbe43e0aab4078198606}
+      \strng{authorbibnamehash}{c6b1ef82ddf7dbe43e0aab4078198606}
+      \strng{authornamehash}{c6b1ef82ddf7dbe43e0aab4078198606}
+      \strng{authorfullhash}{fb2f56a3958dc74ba3e9ff61b4513e89}
+      \strng{authorfullhashraw}{fb2f56a3958dc74ba3e9ff61b4513e89}
+      \field{extraname}{2}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Among chronically-ill older adults, the benefits of moderate-to-vigorous physical activity (MVPA) are established. Comorbid depressive symptoms and Major Depression are prevalent among the chronically-ill, but how different doses of MVPA may protect against depression remains understudied. Thus, using 10 years of data from The Irish Longitudinal Study on Ageing, we quantified longitudinal associations between MVPA doses and depressive symptoms and Major Depression among chronically-ill older adults living with type 2 diabetes (T2DM). Continuous MVPA (MET.min.week-1), three dose and five dose MVPA categories were examined. Depressive symptoms and Major Depression were measured using the center for Epidemiological Studies Depression and the Composite International Diagnostic Interview for Major Depressive Episode. Negative binomial regression and logistic models, adjusted for covariates, quantified associations across time. Among the 2,262 participants, those adhering to the WHO guidelines of 600-{$<$}1,200 MET.min.week-1 had 28\% lower odds of Major Depression compared to those not achieving the guidelines (OR: 0.72; 95\%CI: 0.53--0.98). For depressive symptoms, a higher MVPA dose was required with a 13\% (IRR: 0.87; 95\%CI: 0.82--0.93) lower rate of symptoms among those exceeding recommendations (1200-{$<$}2,400 MET.min.week-1). Interventions should focus on enhancing achievability of and compliance with these MVPA doses among the chronically-ill, including T2DM, to protect against depression.}
+      \field{issn}{0165-1781}
+      \field{journaltitle}{Psychiatry Research}
+      \field{month}{8}
+      \field{shorttitle}{Physical Activity for Depression among the Chronically {{Ill}}}
+      \field{title}{Physical Activity for Depression among the Chronically {{Ill}}: {{Results}} from Older Diabetics in the {{Irish}} Longitudinal Study on Ageing}
+      \field{urlday}{3}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{volume}{326}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \field{pages}{115274}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.psychres.2023.115274
+      \endverb
+      \verb{file}
+      \verb /Users/mrarab/Zotero/storage/D47MVAAG/Laird et al. - 2023 - Physical activity for depression among the chronically Ill Results from older diabetics in the Iris.pdf;/Users/mrarab/Zotero/storage/QJUJY9Y5/S016517812300224X.html
+      \endverb
+      \keyw{Depression,Dose response,Older adults,Physical activity,Type 2 diabetes}
+    \endentry
+    \entry{moguilnerImportanceAgePrediction2021}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=47fdf1eab0f14ed1e130533d23f0f18a}{%
+           family={Moguilner},
+           familyi={M\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod}}}%
+        {{hash=a1bea4dbf473034073ba1598c0fa1d27}{%
+           family={Knight},
+           familyi={K\bibinitperiod},
+           given={Silvin\bibnamedelima P.},
+           giveni={S\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=9b2eeaa377522b985cedeb5d39bb3c8c}{%
+           family={Davis},
+           familyi={D\bibinitperiod},
+           given={James\bibnamedelimb R.\bibnamedelimi C.},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=fabea5c8972aea08b1a02e4633ae84c7}{%
+           family={O'Halloran},
+           familyi={O\bibinitperiod},
+           given={Aisling\bibnamedelima M.},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=900692698d3b6559f0df62c0b382164e}{%
+           family={Kenny},
+           familyi={K\bibinitperiod},
+           given={Rose\bibnamedelima Anne},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=732234f00554e251804daaa8ff52001a}{%
+           family={{Romero-Ortuno}},
+           familyi={R\bibinitperiod},
+           given={Roman},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{5d7309f899d9023c11e0228a7f8f2e18}
+      \strng{fullhash}{d6b74e89bc83403c407f9c0da97cf96f}
+      \strng{fullhashraw}{d6b74e89bc83403c407f9c0da97cf96f}
+      \strng{bibnamehash}{5d7309f899d9023c11e0228a7f8f2e18}
+      \strng{authorbibnamehash}{5d7309f899d9023c11e0228a7f8f2e18}
+      \strng{authornamehash}{5d7309f899d9023c11e0228a7f8f2e18}
+      \strng{authorfullhash}{d6b74e89bc83403c407f9c0da97cf96f}
+      \strng{authorfullhashraw}{d6b74e89bc83403c407f9c0da97cf96f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{The quantification of biological age in humans is an important scientific endeavor in the face of ageing populations. The frailty index (FI) methodology is based on the accumulation of health deficits and captures variations in health status within individuals of the same age. The aims of this study were to assess whether the addition of age to an FI improves its mortality prediction and whether the associations of the individual FI items differ in strength. We utilized data from The Irish Longitudinal Study on Ageing to conduct, by sex, machine learning analyses of the ability of a 32-item FI to predict 8-year mortality in 8174 wave 1 participants aged 50 or more years. By wave 5, 559 men and 492 women had died. In the absence of age, the FI was an acceptable predictor of mortality with AUCs of 0.7. When age was included, AUCs improved to 0.8 in men and 0.9 in women. After age, deficits related to physical function and self-rated health tended to have higher importance scores. Not all FI variables seemed equally relevant to predict mortality, and age was by far the most relevant feature. Chronological age should remain an important consideration when interpreting the prognostic significance of an FI.}
+      \field{issn}{2308-3417}
+      \field{journaltitle}{Geriatrics (Basel)}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{number}{3}
+      \field{shorttitle}{The {{Importance}} of {{Age}} in the {{Prediction}} of {{Mortality}} by a {{Frailty Index}}}
+      \field{title}{The {{Importance}} of {{Age}} in the {{Prediction}} of {{Mortality}} by a {{Frailty Index}}: {{A Machine Learning Approach}} in the {{Irish Longitudinal Study}} on {{Ageing}}}
+      \field{volume}{6}
+      \field{year}{2021}
+      \field{pages}{84}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/geriatrics6030084
+      \endverb
+      \verb{file}
+      \verb /Users/mrarab/Zotero/storage/XNLN93HX/Moguilner et al. - 2021 - The Importance of Age in the Prediction of Mortality by a Frailty Index A Machine Learning Approach.pdf
+      \endverb
+      \keyw{age distribution,frailty,longitudinal studies,mortality,sex differences,supervised machine learning}
+    \endentry
+    \entry{donoghueUsingConditionalInference2023}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=8105bb0412ac2009f0e3d185acbb96f9}{%
+           family={Donoghue},
+           familyi={D\bibinitperiod},
+           given={Orna\bibnamedelima A},
+           giveni={O\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=82e481ab7b857d838cf2f6ac4e7f4123}{%
+           family={Hernandez},
+           familyi={H\bibinitperiod},
+           given={Belinda},
+           giveni={B\bibinitperiod}}}%
+        {{hash=3c9396c453d12f769163df7d3a2dd333}{%
+           family={O'Connell},
+           familyi={O\bibinitperiod},
+           given={Matthew\bibnamedelimb D\bibnamedelima L},
+           giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=900692698d3b6559f0df62c0b382164e}{%
+           family={Kenny},
+           familyi={K\bibinitperiod},
+           given={Rose\bibnamedelima Anne},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{cee120d6d3ebb22a9b54e66d21959b68}
+      \strng{fullhash}{b2ff2a906ae59d41fec69f4e31d4f0df}
+      \strng{fullhashraw}{b2ff2a906ae59d41fec69f4e31d4f0df}
+      \strng{bibnamehash}{cee120d6d3ebb22a9b54e66d21959b68}
+      \strng{authorbibnamehash}{cee120d6d3ebb22a9b54e66d21959b68}
+      \strng{authornamehash}{cee120d6d3ebb22a9b54e66d21959b68}
+      \strng{authorfullhash}{b2ff2a906ae59d41fec69f4e31d4f0df}
+      \strng{authorfullhashraw}{b2ff2a906ae59d41fec69f4e31d4f0df}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{The extent to which gait and mobility measures predict falls relative to other risk factors is unclear. This study examined the predictive accuracy of over 70 baseline risk factors, including gait and mobility, for future falls and syncope using conditional inference forest models.Data from 3 waves of The Irish Longitudinal Study on Ageing (TILDA), a population-based study of community-dwelling adults aged {$\geq$}50 years were used (n = 4 706). Outcome variables were recurrent falls, injurious falls, unexplained falls, and syncope occurring over 4-year follow-up. The predictive accuracy was calculated using 5-fold cross-validation; as there was a class imbalance, the algorithm was trained using undersampling of the larger class. Classification rate, the area under the receiver operating characteristic curve (AUROC), and area under the precision recall curve (PRAUC) assessed predictive accuracy.Highest overall accuracy was 69.7\% for recurrent falls in 50--64-year olds. AUROC and PRAUC were {$\leq$}0.69 and {$\leq$}0.39, respectively, for all outcomes indicating low predictive accuracy. History of falls, unsteadiness while walking, fear of falling, mobility, medications, mental health, and cardiovascular health and function were the most important predictors for most outcomes.Conditional inference forest models using over 70 risk factors resulted in low predictive accuracy for future recurrent, injurious and unexplained falls, and syncope in community-dwelling adults. Gait and mobility impairments were important predictors of most outcomes but did not discriminate well between fallers and non-fallers. Results highlight the importance of multifactorial risk assessment and intervention and validate key modifiable risk factors for future falls and syncope.}
+      \field{issn}{1758-535X}
+      \field{journaltitle}{J Gerontol A Biol Sci Med Sci}
+      \field{month}{4}
+      \field{number}{4}
+      \field{shorttitle}{Using {{Conditional Inference Forests}} to {{Examine Predictive Ability}} for {{Future Falls}} and {{Syncope}} in {{Older Adults}}}
+      \field{title}{Using {{Conditional Inference Forests}} to {{Examine Predictive Ability}} for {{Future Falls}} and {{Syncope}} in {{Older Adults}}: {{Results}} from {{The Irish Longitudinal Study}} on {{Ageing}}}
+      \field{urlday}{4}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{volume}{78}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \field{pages}{673\bibrangedash 682}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1093/gerona/glac156
+      \endverb
+      \verb{file}
+      \verb /Users/mrarab/Zotero/storage/A9WKW5DQ/Donoghue et al. - 2023 - Using Conditional Inference Forests to Examine Predictive Ability for Future Falls and Syncope in Ol.pdf;/Users/mrarab/Zotero/storage/JH7TJIGJ/glac156.html
+      \endverb
+    \endentry
+    \entry{petersenGuidelinesConductingSystematic2015}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=b1fabf9697f0dac32839ca9d4eea8d88}{%
+           family={Petersen},
+           familyi={P\bibinitperiod},
+           given={Kai},
+           giveni={K\bibinitperiod}}}%
+        {{hash=79c554063521ebc5c0a5ac1935cdc9f4}{%
+           family={Vakkalanka},
+           familyi={V\bibinitperiod},
+           given={Sairam},
+           giveni={S\bibinitperiod}}}%
+        {{hash=3f64c7e80e35fbadcd0f758dff76f137}{%
+           family={Kuzniarz},
+           familyi={K\bibinitperiod},
+           given={Ludwik},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{df3d901e4bc28bbd638fddd5b5046ed0}
+      \strng{fullhash}{df3d901e4bc28bbd638fddd5b5046ed0}
+      \strng{fullhashraw}{df3d901e4bc28bbd638fddd5b5046ed0}
+      \strng{bibnamehash}{df3d901e4bc28bbd638fddd5b5046ed0}
+      \strng{authorbibnamehash}{df3d901e4bc28bbd638fddd5b5046ed0}
+      \strng{authornamehash}{df3d901e4bc28bbd638fddd5b5046ed0}
+      \strng{authorfullhash}{df3d901e4bc28bbd638fddd5b5046ed0}
+      \strng{authorfullhashraw}{df3d901e4bc28bbd638fddd5b5046ed0}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Context Systematic mapping studies are used to structure a research area, while systematic reviews are focused on gathering and synthesizing evidence. The most recent guidelines for systematic mapping are from 2008. Since that time, many suggestions have been made of how to improve systematic literature reviews (SLRs). There is a need to evaluate how researchers conduct the process of systematic mapping and identify how the guidelines should be updated based on the lessons learned from the existing systematic maps and SLR guidelines. Objective To identify how the systematic mapping process is conducted (including search, study selection, analysis and presentation of data, etc.); to identify improvement potentials in conducting the systematic mapping process and updating the guidelines accordingly. Method We conducted a systematic mapping study of systematic maps, considering some practices of systematic review guidelines as well (in particular in relation to defining the search and to conduct a quality assessment). Results In a large number of studies multiple guidelines are used and combined, which leads to different ways in conducting mapping studies. The reason for combining guidelines was that they differed in the recommendations given. Conclusion The most frequently followed guidelines are not sufficient alone. Hence, there was a need to provide an update of how to conduct systematic mapping studies. New guidelines have been proposed consolidating existing findings.}
+      \field{issn}{0950-5849}
+      \field{journaltitle}{Information and Software Technology}
+      \field{month}{8}
+      \field{shorttitle}{Guidelines for Conducting Systematic Mapping Studies in Software Engineering}
+      \field{title}{Guidelines for Conducting Systematic Mapping Studies in Software Engineering: {{An}} Update}
+      \field{urlday}{26}
+      \field{urlmonth}{2}
+      \field{urlyear}{2024}
+      \field{volume}{64}
+      \field{year}{2015}
+      \field{urldateera}{ce}
+      \field{pages}{1\bibrangedash 18}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.1016/j.infsof.2015.03.007
+      \endverb
+      \verb{file}
+      \verb /Users/mrarab/Zotero/storage/UYDR8K82/Petersen et al. - 2015 - Guidelines for conducting systematic mapping studi.pdf
+      \endverb
+      \keyw{Guidelines,Software engineering,Systematic mapping studies}
+    \endentry
+    \entry{torracoWritingIntegrativeLiterature2005}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=3005dfaa0fef45be6b22a017494ae32c}{%
+           family={Torraco},
+           familyi={T\bibinitperiod},
+           given={Richard\bibnamedelima J.},
+           giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{3005dfaa0fef45be6b22a017494ae32c}
+      \strng{fullhash}{3005dfaa0fef45be6b22a017494ae32c}
+      \strng{fullhashraw}{3005dfaa0fef45be6b22a017494ae32c}
+      \strng{bibnamehash}{3005dfaa0fef45be6b22a017494ae32c}
+      \strng{authorbibnamehash}{3005dfaa0fef45be6b22a017494ae32c}
+      \strng{authornamehash}{3005dfaa0fef45be6b22a017494ae32c}
+      \strng{authorfullhash}{3005dfaa0fef45be6b22a017494ae32c}
+      \strng{authorfullhashraw}{3005dfaa0fef45be6b22a017494ae32c}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{The integrative literature review is a distinctive form of research that generates new knowledge about the topic reviewed. Little guidance is available on how to write an integrative literature review. This article discusses how to organize and write an integrative literature review and cites examples of published integrative literature reviews that illustrate how this type of research has made substantive contributions to the knowledge base of human resource development.}
+      \field{issn}{1534-4843, 1552-6712}
+      \field{journaltitle}{Human Resource Development Review}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{number}{3}
+      \field{shorttitle}{Writing {{Integrative Literature Reviews}}}
+      \field{title}{Writing {{Integrative Literature Reviews}}: {{Guidelines}} and {{Examples}}}
+      \field{urlday}{8}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{volume}{4}
+      \field{year}{2005}
+      \field{urldateera}{ce}
+      \field{pages}{356\bibrangedash 367}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1177/1534484305278283
+      \endverb
+      \verb{file}
+      \verb /Users/mrarab/Zotero/storage/UPZ6MTQG/Torraco - 2005 - Writing Integrative Literature Reviews Guidelines and Examples.pdf
+      \endverb
+    \endentry
+    \entry{roccoLiteratureReviewsConceptual2009}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=2593dd7b1fc0f6d3f03c7e49e741141a}{%
+           family={Rocco},
+           familyi={R\bibinitperiod},
+           given={Tonette\bibnamedelima S.},
+           giveni={T\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=f9d5e24827466161436e835dce443ac1}{%
+           family={Plakhotnik},
+           familyi={P\bibinitperiod},
+           given={Maria\bibnamedelima S.},
+           giveni={M\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{579339d997c390fa7513aaab7a181cc4}
+      \strng{fullhash}{579339d997c390fa7513aaab7a181cc4}
+      \strng{fullhashraw}{579339d997c390fa7513aaab7a181cc4}
+      \strng{bibnamehash}{579339d997c390fa7513aaab7a181cc4}
+      \strng{authorbibnamehash}{579339d997c390fa7513aaab7a181cc4}
+      \strng{authornamehash}{579339d997c390fa7513aaab7a181cc4}
+      \strng{authorfullhash}{579339d997c390fa7513aaab7a181cc4}
+      \strng{authorfullhashraw}{579339d997c390fa7513aaab7a181cc4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{This essay starts with a discussion of the literature review, theoretical framework, and conceptual framework as components of a manuscript. This discussion includes similarities and distinctions among these components and their relation to other sections of a manuscript such as the problem statement, discussion, and implications. The essay concludes with an overview of the literature review, theoretical framework, and conceptual framework as separate types of manuscripts. Understanding similarities and differences among the literature review, theoretical framework, and conceptual framework can help novice and experienced researchers in organizing, conceptualizing, and conducting their research, whether qualitative, quantitative, or mixed-methods.}
+      \field{issn}{1534-4843, 1552-6712}
+      \field{journaltitle}{Human Resource Development Review}
+      \field{langid}{english}
+      \field{month}{3}
+      \field{number}{1}
+      \field{shorttitle}{Literature {{Reviews}}, {{Conceptual Frameworks}}, and {{Theoretical Frameworks}}}
+      \field{title}{Literature {{Reviews}}, {{Conceptual Frameworks}}, and {{Theoretical Frameworks}}: {{Terms}}, {{Functions}}, and {{Distinctions}}}
+      \field{urlday}{8}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{volume}{8}
+      \field{year}{2009}
+      \field{urldateera}{ce}
+      \field{pages}{120\bibrangedash 130}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1177/1534484309332617
+      \endverb
+      \verb{file}
+      \verb /Users/mrarab/Zotero/storage/9QVE5ZZW/Rocco and Plakhotnik - 2009 - Literature Reviews, Conceptual Frameworks, and Theoretical Frameworks Terms, Functions, and Distinc.pdf
+      \endverb
+    \endentry
+    \entry{oxmanGuidelinesReadingLiterature}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=ad972c7b953d6f7d418d8afd8e29386e}{%
+           family={Oxman},
+           familyi={O\bibinitperiod},
+           given={Andrew\bibnamedelima D},
+           giveni={A\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=babe806b174afc0531291082ee000b21}{%
+           family={Guyatt},
+           familyi={G\bibinitperiod},
+           given={Gordon\bibnamedelima H},
+           giveni={G\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{cfd10a9da085430f3f4f0f44e96c2914}
+      \strng{fullhash}{cfd10a9da085430f3f4f0f44e96c2914}
+      \strng{fullhashraw}{cfd10a9da085430f3f4f0f44e96c2914}
+      \strng{bibnamehash}{cfd10a9da085430f3f4f0f44e96c2914}
+      \strng{authorbibnamehash}{cfd10a9da085430f3f4f0f44e96c2914}
+      \strng{authornamehash}{cfd10a9da085430f3f4f0f44e96c2914}
+      \strng{authorfullhash}{cfd10a9da085430f3f4f0f44e96c2914}
+      \strng{authorfullhashraw}{cfd10a9da085430f3f4f0f44e96c2914}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{title}{Guidelines for Reading Literature Reviews}
+      \verb{file}
+      \verb /Users/mrarab/Zotero/storage/HSA6UR3Z/Oxman and Guyatt - Guidelines for reading literature reviews.pdf
+      \endverb
+    \endentry
+    \entry{kitchenhamSystematicLiteratureReviews2009a}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=19919e365e4f12f6028593c952a9bacf}{%
+           family={Kitchenham},
+           familyi={K\bibinitperiod},
+           given={Barbara},
+           giveni={B\bibinitperiod}}}%
+        {{hash=3453b68f864e540a8c3802365ec51e23}{%
+           family={Pearl\bibnamedelima Brereton},
+           familyi={P\bibinitperiod\bibinitdelim B\bibinitperiod},
+           given={O.},
+           giveni={O\bibinitperiod}}}%
+        {{hash=c3879154809891887a27016663fe556f}{%
+           family={Budgen},
+           familyi={B\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=5a8d8b77cef37ded3cef9f4690d80b5a}{%
+           family={Turner},
+           familyi={T\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod}}}%
+        {{hash=8d046a0e21a1a263119b456093c46c3d}{%
+           family={Bailey},
+           familyi={B\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+        {{hash=cce706e69ca1e8779190328485df9f12}{%
+           family={Linkman},
+           familyi={L\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{627d879eb7e32c946f726138157eda31}
+      \strng{fullhash}{fea32d255ee75e3bd3e2d75a5e65ed53}
+      \strng{fullhashraw}{fea32d255ee75e3bd3e2d75a5e65ed53}
+      \strng{bibnamehash}{627d879eb7e32c946f726138157eda31}
+      \strng{authorbibnamehash}{627d879eb7e32c946f726138157eda31}
+      \strng{authornamehash}{627d879eb7e32c946f726138157eda31}
+      \strng{authorfullhash}{fea32d255ee75e3bd3e2d75a5e65ed53}
+      \strng{authorfullhashraw}{fea32d255ee75e3bd3e2d75a5e65ed53}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Background: In 2004 the concept of evidence-based software engineering (EBSE) was introduced at the ICSE04 conference. Aims: This study assesses the impact of systematic literature reviews (SLRs) which are the recommended EBSE method for aggregating evidence. Method: We used the standard systematic literature review method employing a manual search of 10 journals and 4 conference proceedings. Results: Of 20 relevant studies, eight addressed research trends rather than technique evaluation. Seven SLRs addressed cost estimation. The quality of SLRs was fair with only three scoring less than 2 out of 4. Conclusions: Currently, the topic areas covered by SLRs are limited. European researchers, particularly those at the Simula Laboratory appear to be the leading exponents of systematic literature reviews. The series of cost estimation SLRs demonstrate the potential value of EBSE for synthesising evidence and making it available to practitioners.}
+      \field{issn}{09505849}
+      \field{journaltitle}{Information and Software Technology}
+      \field{langid}{english}
+      \field{month}{1}
+      \field{number}{1}
+      \field{title}{Systematic Literature Reviews in Software Engineering -- {{A}} Systematic Literature Review}
+      \field{urlday}{8}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{volume}{51}
+      \field{year}{2009}
+      \field{urldateera}{ce}
+      \field{pages}{7\bibrangedash 15}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1016/j.infsof.2008.09.009
+      \endverb
+      \verb{file}
+      \verb /Users/mrarab/Zotero/storage/HPIQIV9J/Kitchenham et al. - 2009 - Systematic literature reviews in software engineering – A systematic literature review.pdf
+      \endverb
+    \endentry
+    \entry{ashrafSystematicReviewSystematic2021}{article}{}{}
+      \name{author}{8}{}{%
+        {{hash=0b009c54c97fab3c54dca68d57045b32}{%
+           family={Ashraf},
+           familyi={A\bibinitperiod},
+           given={Muhammad\bibnamedelima Azeem},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=cb040c0572785a7ad019600eb3a3fdc7}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Meijia},
+           giveni={M\bibinitperiod}}}%
+        {{hash=4b001f7abb5f2445c55fa67416725a5d}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Yufeng},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=dda1b49daa66165430f21390b169f6e9}{%
+           family={Denden},
+           familyi={D\bibinitperiod},
+           given={Mouna},
+           giveni={M\bibinitperiod}}}%
+        {{hash=8464560ea2e3d9cd3569a3a219bcd4d9}{%
+           family={Tlili},
+           familyi={T\bibinitperiod},
+           given={Ahmed},
+           giveni={A\bibinitperiod}}}%
+        {{hash=312e5dbb10260d2d193039f442cbbd82}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Jiayi},
+           giveni={J\bibinitperiod}}}%
+        {{hash=f6de58983b92b41ac1975c613f51ba1a}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Ronghuai},
+           giveni={R\bibinitperiod}}}%
+        {{hash=fbc33b9515f7d9633569d26507ac866b}{%
+           family={Burgos},
+           familyi={B\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Dove Medical Press}%
+      }
+      \strng{namehash}{a7fc559c2c268bea9b573e1e634cb97c}
+      \strng{fullhash}{191269526ac9512e83453418013ec1da}
+      \strng{fullhashraw}{191269526ac9512e83453418013ec1da}
+      \strng{bibnamehash}{a7fc559c2c268bea9b573e1e634cb97c}
+      \strng{authorbibnamehash}{a7fc559c2c268bea9b573e1e634cb97c}
+      \strng{authornamehash}{a7fc559c2c268bea9b573e1e634cb97c}
+      \strng{authorfullhash}{191269526ac9512e83453418013ec1da}
+      \strng{authorfullhashraw}{191269526ac9512e83453418013ec1da}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Blended Learning (BL) is one of the most used methods in education to promote active learning and enhance students' learning outcomes. Although BL has existed for over a decade, there are still several challenges associated with it. For instance, the teachers' and students' individual differences, such as their behaviors and attitudes, might impact their adoption of BL. These challenges are further exacerbated by the COVID-19 pandemic, as schools and universities had to combine both online and offline courses to keep up with health regulations. This study conducts a systematic review of systematic reviews on BL, based on PRISMA (Preferred Reporting Items for Systematic Reviews and Meta-Analyses) guidelines, to identify BL trends, gaps and future directions. The obtained findings highlight that BL was mostly investigated in higher education and targeted students in the first place. Additionally, most of the BL research is coming from developed countries, calling for cross-collaborations to facilitate BL adoption in developing countries in particular. Furthermore, a lack of ICT skills and infrastructure are the most encountered challenges by teachers, students and institutions. The findings of this study can create a roadmap to facilitate the adoption of BL. The findings of this study could facilitate the design and adoption of BL which is one of the possible solutions to face major health challenges, such as the COVID-19 pandemic.}
+      \field{issn}{null}
+      \field{journaltitle}{Psychology Research and Behavior Management}
+      \field{month}{10}
+      \field{shorttitle}{A {{Systematic Review}} of {{Systematic Reviews}} on {{Blended Learning}}}
+      \field{title}{A {{Systematic Review}} of {{Systematic Reviews}} on {{Blended Learning}}: {{Trends}}, {{Gaps}} and {{Future Directions}}}
+      \field{urlday}{28}
+      \field{urlmonth}{3}
+      \field{urlyear}{2024}
+      \field{volume}{14}
+      \field{year}{2021}
+      \field{urldateera}{ce}
+      \field{pages}{1525\bibrangedash 1541}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.2147/PRBM.S331741
+      \endverb
+      \verb{file}
+      \verb /Users/mrarab/Zotero/storage/L44RXBYJ/Ashraf et al. - 2021 - A Systematic Review of Systematic Reviews on Blend.pdf
+      \endverb
+      \keyw{blended learning,distance education,flipped learning,hybrid learning,literature review,research trend}
+    \endentry
+    \entry{haddawayPRISMA2020PackageShiny2022}{misc}{}{}
+      \name{author}{4}{}{%
+        {{hash=1f2b02ca9ea5d362bb3dc958d6149a77}{%
+           family={Haddaway},
+           familyi={H\bibinitperiod},
+           given={Neal},
+           giveni={N\bibinitperiod}}}%
+        {{hash=016b86afb0a98379bf77b3f074f34761}{%
+           family={Page},
+           familyi={P\bibinitperiod},
+           given={Matthew\bibnamedelima J},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=1ff7284f4d9bafe70fb527288d5b27a7}{%
+           family={Pritchard},
+           familyi={P\bibinitperiod},
+           given={Chris\bibnamedelima C},
+           giveni={C\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=b7314b4cde4c01764b4b3580e015b768}{%
+           family={McGuinness},
+           familyi={M\bibinitperiod},
+           given={Luke\bibnamedelima A},
+           giveni={L\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{46fabbfd1af75e3cdbe9e9cc8cbf5743}
+      \strng{fullhash}{bf334573089e1aa637ffc67843e72cf3}
+      \strng{fullhashraw}{bf334573089e1aa637ffc67843e72cf3}
+      \strng{bibnamehash}{46fabbfd1af75e3cdbe9e9cc8cbf5743}
+      \strng{authorbibnamehash}{46fabbfd1af75e3cdbe9e9cc8cbf5743}
+      \strng{authornamehash}{46fabbfd1af75e3cdbe9e9cc8cbf5743}
+      \strng{authorfullhash}{bf334573089e1aa637ffc67843e72cf3}
+      \strng{authorfullhashraw}{bf334573089e1aa637ffc67843e72cf3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Produce PRISMA-2020 compliant flow diagrams}
+      \field{journaltitle}{Campbell Systematic Reviews}
+      \field{shorttitle}{{{PRISMA2020}}}
+      \field{title}{{{PRISMA2020}}: An {{R}} Package and {{Shiny}} App for Producing {{PRISMA}} 2020-Compliant Flow Diagrams, with Interactivity for Optimised Digital Transparency and {{Open Synthesis}}}
+      \field{urlday}{9}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{year}{2022}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1002/cl2.1230
+      \endverb
+      \verb{file}
+      \verb /Users/mrarab/Zotero/storage/JFHFBCGB/Haddaway et al. - 2022 - PRISMA2020 an R package and Shiny app for producing PRISMA 2020-compliant flow diagrams, with inter.pdf
+      \endverb
+    \endentry
+    \entry{xuTailoredMachineLearning2023}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=757aa645054a755578b1c808cedc0625}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Xuezhong},
+           giveni={X\bibinitperiod}}}%
+        {{hash=25c19001dea074578854d9453ef29bc2}{%
+           family={Mingyang},
+           familyi={M\bibinitperiod},
+           given={Xue},
+           giveni={X\bibinitperiod}}}%
+        {{hash=4656453b716273b4ea07ab731e9b6dd5}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Jie},
+           giveni={J\bibinitperiod}}}%
+        {{hash=32906aec57d1195d69365d43c3d37ccd}{%
+           family={Zheng},
+           familyi={Z\bibinitperiod},
+           given={Hailong},
+           giveni={H\bibinitperiod}}}%
+        {{hash=22cfb846d371fa6e98e7b549cf6cf04e}{%
+           family={Che},
+           familyi={C\bibinitperiod},
+           given={Zhifei},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{fe70a58bf965c17dca4eb8c35c9b23b8}
+      \strng{fullhash}{ff3cd0c79d4b91b54eeab2041316d087}
+      \strng{fullhashraw}{ff3cd0c79d4b91b54eeab2041316d087}
+      \strng{bibnamehash}{fe70a58bf965c17dca4eb8c35c9b23b8}
+      \strng{authorbibnamehash}{fe70a58bf965c17dca4eb8c35c9b23b8}
+      \strng{authornamehash}{fe70a58bf965c17dca4eb8c35c9b23b8}
+      \strng{authorfullhash}{ff3cd0c79d4b91b54eeab2041316d087}
+      \strng{authorfullhashraw}{ff3cd0c79d4b91b54eeab2041316d087}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{OBJECTIVES: The prevalence of diabetes has increased globally, leading to a significant disease burden and financial cost. Early prediction is crucial to control its prevalence. DESIGN: A prospective cohort study. SETTING: National representative study on Irish. PARTICIPANTS: 8504 individuals aged 50 years or older were included. PRIMARY AND SECONDARY OUTCOME MEASURES: Surveys were conducted to collect over 40\,000 variables related to social, financial, health, mental and family status. Feature selection was performed using logistic regression. Different machine/deep learning algorithms were trained, including distributed random forest, extremely randomised trees, a generalised linear model with regularisation, a gradient boosting machine and a deep neural network. These algorithms were integrated into a stacked ensemble to generate the best model. The model was tested using various metrics, such as the area under the curve (AUC), log loss, mean per classification error, mean square error (MSE) and root MSE (RMSE). The SHapley Additive exPlanations (SHAP) method was used to interpret the established model. RESULTS: After 2 years, 105 baseline features were identified as major contributors to diabetes risk, including sex, low-density lipoprotein cholesterol and cirrhosis. The best model achieved high accuracy, robustness and discrimination in predicting diabetes risk, with an AUC of 0.854, log loss of 0.187, mean per classification error of 0.267, RMSE of 0.229 and MSE of 0.052 in the independent test set. The model was also shown to be well calibrated. The SHAP algorithm provided insights into the decision-making process of the model. CONCLUSIONS: These findings could help physicians in the early identification of high-risk patients and implement targeted interventions to reduce diabetes incidence.}
+      \field{issn}{2044-6055}
+      \field{journaltitle}{BMJ Open}
+      \field{langid}{english}
+      \field{month}{5}
+      \field{number}{5}
+      \field{shorttitle}{Tailored Machine Learning for Evaluating the Long-Term Diabetes Risk in Older Individuals}
+      \field{title}{Tailored Machine Learning for Evaluating the Long-Term Diabetes Risk in Older Individuals: Findings from the {{Irish Longitudinal Study}} on {{Ageing}} ({{TILDA}})}
+      \field{volume}{13}
+      \field{year}{2023}
+      \field{pages}{e072991}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1136/bmjopen-2023-072991
+      \endverb
+      \verb{file}
+      \verb /Users/mrarab/Zotero/storage/6PYJWM9M/Xu et al. - 2023 - Tailored machine learning for evaluating the long-term diabetes risk in older individuals findings.pdf
+      \endverb
+      \keyw{Aged,Aging,Algorithms,Diabetes & endocrinology,DIABETES & ENDOCRINOLOGY,Diabetes Mellitus,Humans,Longitudinal Studies,Machine Learning,Prospective Studies}
+    \endentry
+    \entry{boyleBrainpredictedAgeDifference2021}{article}{}{}
+      \name{author}{13}{}{%
+        {{hash=598aff27c45c573accc01186fb5ce134}{%
+           family={Boyle},
+           familyi={B\bibinitperiod},
+           given={Rory},
+           giveni={R\bibinitperiod}}}%
+        {{hash=75d5298b39c942752f621ed4ee2c0493}{%
+           family={Jollans},
+           familyi={J\bibinitperiod},
+           given={Lee},
+           giveni={L\bibinitperiod}}}%
+        {{hash=26d215eeb3262a107c5072acc46a1c86}{%
+           family={{Rueda-Delgado}},
+           familyi={R\bibinitperiod},
+           given={Laura\bibnamedelima M.},
+           giveni={L\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=74048d5a3d92f207a27d0856d5f0ad8a}{%
+           family={Rizzo},
+           familyi={R\bibinitperiod},
+           given={Rossella},
+           giveni={R\bibinitperiod}}}%
+        {{hash=b46a4184085f8dcec5ee2b8fe519972a}{%
+           family={Yener},
+           familyi={Y\bibinitperiod},
+           given={Görsev\bibnamedelima G.},
+           giveni={G\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=047ed7498d35ccc6d05cfaf1b193122b}{%
+           family={McMorrow},
+           familyi={M\bibinitperiod},
+           given={Jason\bibnamedelima P.},
+           giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=a1bea4dbf473034073ba1598c0fa1d27}{%
+           family={Knight},
+           familyi={K\bibinitperiod},
+           given={Silvin\bibnamedelima P.},
+           giveni={S\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=53f5cfa8d17dd773bf20f03e64410e36}{%
+           family={Carey},
+           familyi={C\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+        {{hash=2ebf744dd7460debe397cd47373410bb}{%
+           family={Robertson},
+           familyi={R\bibinitperiod},
+           given={Ian\bibnamedelima H.},
+           giveni={I\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=a66bd26fbcd14c6dded292466bed14b3}{%
+           family={{Emek-Savaş}},
+           familyi={E\bibinitperiod},
+           given={Derya\bibnamedelima D.},
+           giveni={D\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=22f4281043e480f9e9d3cedc5dc28709}{%
+           family={Stern},
+           familyi={S\bibinitperiod},
+           given={Yaakov},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=900692698d3b6559f0df62c0b382164e}{%
+           family={Kenny},
+           familyi={K\bibinitperiod},
+           given={Rose\bibnamedelima Anne},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=f80701ddca04957c6cd26232a5798027}{%
+           family={Whelan},
+           familyi={W\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{a0ca16d414377b4aadf8f148837b8ee0}
+      \strng{fullhash}{64806d02dd71a9b0d1192295eebba39e}
+      \strng{fullhashraw}{64806d02dd71a9b0d1192295eebba39e}
+      \strng{bibnamehash}{a0ca16d414377b4aadf8f148837b8ee0}
+      \strng{authorbibnamehash}{a0ca16d414377b4aadf8f148837b8ee0}
+      \strng{authornamehash}{a0ca16d414377b4aadf8f148837b8ee0}
+      \strng{authorfullhash}{64806d02dd71a9b0d1192295eebba39e}
+      \strng{authorfullhashraw}{64806d02dd71a9b0d1192295eebba39e}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Brain-predicted age difference scores are calculated by subtracting chronological age from 'brain' age, which is estimated using neuroimaging data. Positive scores reflect accelerated ageing and are associated with increased mortality risk and poorer physical function. To date, however, the relationship between brain-predicted age difference scores and specific cognitive functions has not been systematically examined using appropriate statistical methods. First, applying machine learning to 1359~T1-weighted MRI scans, we predicted the relationship between chronological age and voxel-wise grey matter data. This model was then applied to MRI data from three independent datasets, significantly predicting chronological age in each dataset: Dokuz Eylül University (n\,=\,175), the Cognitive Reserve/Reference Ability Neural Network study (n\,=\,380), and The Irish Longitudinal Study on Ageing (n\,=\,487). Each independent dataset had rich neuropsychological data. Brain-predicted age difference scores were significantly negatively correlated with performance on measures of general cognitive status (two datasets); processing speed, visual attention, and cognitive flexibility (three datasets); visual attention and cognitive flexibility (two datasets); and semantic verbal fluency (two datasets). As such, there is firm evidence of correlations between increased brain-predicted age differences and reduced cognitive function in some domains that are implicated in cognitive ageing.}
+      \field{issn}{1931-7565}
+      \field{journaltitle}{Brain Imaging Behav}
+      \field{langid}{english}
+      \field{month}{2}
+      \field{number}{1}
+      \field{shorttitle}{Brain-Predicted Age Difference Score Is Related to Specific Cognitive Functions}
+      \field{title}{Brain-Predicted Age Difference Score Is Related to Specific Cognitive Functions: A Multi-Site Replication Analysis}
+      \field{volume}{15}
+      \field{year}{2021}
+      \field{pages}{327\bibrangedash 345}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.1007/s11682-020-00260-3
+      \endverb
+      \verb{file}
+      \verb /Users/mrarab/Zotero/storage/BIRFP4WS/Boyle et al. - 2021 - Brain-predicted age difference score is related to specific cognitive functions a multi-site replic.pdf
+      \endverb
+      \keyw{Biomarkers,Brain,Brain ageing,Cognition,Cognitive ageing,Cognitive function,Humans,Longitudinal Studies,Machine learning,Magnetic Resonance Imaging,MRI,Neuroimaging,Neuropsychological Tests}
+    \endentry
+    \entry{tzemah-shaharWhatCanWe2022}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=de39b211072967534fbc7c6c9e5aa062}{%
+           family={{Tzemah-Shahar}},
+           familyi={T\bibinitperiod},
+           given={Roy},
+           giveni={R\bibinitperiod}}}%
+        {{hash=dd0d53facf59ce250a193f9e708453db}{%
+           family={Hochner},
+           familyi={H\bibinitperiod},
+           given={Hagit},
+           giveni={H\bibinitperiod}}}%
+        {{hash=2a34fae6ac893ec398a5069f9531d304}{%
+           family={Iktilat},
+           familyi={I\bibinitperiod},
+           given={Khalil},
+           giveni={K\bibinitperiod}}}%
+        {{hash=dd8f39a7eb75dcf8f599b8b50787895f}{%
+           family={Agmon},
+           familyi={A\bibinitperiod},
+           given={Maayan},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{142620e470ecfab978bb719e8452ab29}
+      \strng{fullhash}{fa26464e1d3756ddebaad10039c75583}
+      \strng{fullhashraw}{fa26464e1d3756ddebaad10039c75583}
+      \strng{bibnamehash}{142620e470ecfab978bb719e8452ab29}
+      \strng{authorbibnamehash}{142620e470ecfab978bb719e8452ab29}
+      \strng{authornamehash}{142620e470ecfab978bb719e8452ab29}
+      \strng{authorfullhash}{fa26464e1d3756ddebaad10039c75583}
+      \strng{authorfullhashraw}{fa26464e1d3756ddebaad10039c75583}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Objective To systematically investigate the relationship between objective measures of physical capacity (e.g., cardio-respiratory fitness or daily step count) and biological age, measured in different ways. Data source PubMed; SCOPUS - Elsevier API; and Web of Science - ISI 1984-present, as well as contextual search engines used to identify additional relevant publications. Study selection Cross-sectional and longitudinal studies that assessed the association between objectively measured physical capacity and biological aging in adult individuals (age{$>$}18). Results Analysis of 28 studies demonstrated that physical capacity is positively associated with biological aging; the most dominant measures of physical capacity are muscular strength or gait speed. The majority of the studies estimated biological aging by a single methodology -- either Leukocyte Telomere Length or DNA methylation levels. Conclusions This systematic review of the objective physical capacity measures used to estimate aging finds that the current literature is limited insofar as it overlooks the potential contribution of many feasible markers. We recommend measuring physical capacity in the context of aging using a wide range of modifiable behavioral markers, beyond simple muscle strength or simple gait speed. Forming a feasible and diversified method for estimating physical capacity through which it will also be possible to estimate biological aging in wide population studies is essential for the development of interventions that may alleviate the burden of age-related disease.}
+      \field{issn}{1568-1637}
+      \field{journaltitle}{Ageing Research Reviews}
+      \field{month}{5}
+      \field{shorttitle}{What Can We Learn from Physical Capacity about Biological Age?}
+      \field{title}{What Can We Learn from Physical Capacity about Biological Age? {{A}} Systematic Review}
+      \field{urlday}{4}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{volume}{77}
+      \field{year}{2022}
+      \field{urldateera}{ce}
+      \field{pages}{101609}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.arr.2022.101609
+      \endverb
+      \verb{file}
+      \verb /Users/mrarab/Zotero/storage/LQAP5HQF/Tzemah-Shahar et al. - 2022 - What can we learn from physical capacity about biological age A systematic review.pdf;/Users/mrarab/Zotero/storage/QIXIIWVR/S1568163722000514.html
+      \endverb
+      \keyw{Aging,Exercise,Physical activity,Physical fitness}
+    \endentry
+    \entry{a.shirsathSlowerSpeedBlood2024}{article}{}{}
+      \name{author}{9}{}{%
+        {{hash=ad17c17cfe549759076fa46ef699ea48}{%
+           family={A.\bibnamedelimi Shirsath},
+           familyi={A\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={Morgana},
+           giveni={M\bibinitperiod}}}%
+        {{hash=54fe4d2b5d5470bb06441340a4f57af3}{%
+           family={O'Connor},
+           familyi={O\bibinitperiod},
+           given={John\bibnamedelima D.},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=598aff27c45c573accc01186fb5ce134}{%
+           family={Boyle},
+           familyi={B\bibinitperiod},
+           given={Rory},
+           giveni={R\bibinitperiod}}}%
+        {{hash=51e4d6349703fb481cd8bf92cd8bab1d}{%
+           family={Newman},
+           familyi={N\bibinitperiod},
+           given={Louise},
+           giveni={L\bibinitperiod}}}%
+        {{hash=a1bea4dbf473034073ba1598c0fa1d27}{%
+           family={Knight},
+           familyi={K\bibinitperiod},
+           given={Silvin\bibnamedelima P.},
+           giveni={S\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=82e481ab7b857d838cf2f6ac4e7f4123}{%
+           family={Hernandez},
+           familyi={H\bibinitperiod},
+           given={Belinda},
+           giveni={B\bibinitperiod}}}%
+        {{hash=f80701ddca04957c6cd26232a5798027}{%
+           family={Whelan},
+           familyi={W\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+        {{hash=69053cf6cf3291703875ed8df6c99f21}{%
+           family={Meaney},
+           familyi={M\bibinitperiod},
+           given={James\bibnamedelima F.},
+           giveni={J\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=900692698d3b6559f0df62c0b382164e}{%
+           family={Kenny},
+           familyi={K\bibinitperiod},
+           given={Rose\bibnamedelima Anne},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{4ec9e56b72cf7e84b1839db5a5e90678}
+      \strng{fullhash}{ced1d3615db687e92b4cd5cbf1692d65}
+      \strng{fullhashraw}{ced1d3615db687e92b4cd5cbf1692d65}
+      \strng{bibnamehash}{4ec9e56b72cf7e84b1839db5a5e90678}
+      \strng{authorbibnamehash}{4ec9e56b72cf7e84b1839db5a5e90678}
+      \strng{authornamehash}{4ec9e56b72cf7e84b1839db5a5e90678}
+      \strng{authorfullhash}{ced1d3615db687e92b4cd5cbf1692d65}
+      \strng{authorfullhashraw}{ced1d3615db687e92b4cd5cbf1692d65}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Background Impaired recovery of blood pressure (BP) in response to standing up is a prevalent condition in older individuals. We evaluated the relationship between the early recovery of hemodynamic responses to standing and brain health in adults over 50. Methods Participants from The Irish Longitudinal Study on Ageing (TILDA) (n=411; age 67.6 {\textpm} 7.3 years; 53.4 \% women) performed an active stand challenge while blood pressure and heart rate were continuously monitored. The recovery of these parameters was determined as the slope of the BP and HR response, following the initial drop/rise after standing. We have previously reported a novel and validated measure of brain ageing using MRI data, which measures the difference between biological brain age and chronological age, providing a brain-predicted age difference (brainPAD) score. Results Slower recovery of systolic and diastolic BP was found to be significantly associated with higher brainPAD scores (i.e., biologically older brains), where a one-year increase in brainPAD was associated with a decrease of 0.02 mmHg/s and 0.01 mmHg/s in systolic and diastolic BP recovery, respectively, after standing. Heart rate (HR) recovery was not significantly associated with brainPAD score. Conclusion These results demonstrate that slower systolic and diastolic BP recovery in the early phase after standing is associated with accelerated brain ageing in older individuals. This suggests that the BP response to standing, measured using beat-to-beat monitoring, has the potential to be used as a marker of accelerated brain ageing, relying on a simple procedure and devices that are easily accessible.}
+      \field{issn}{2666-2450}
+      \field{journaltitle}{Cerebral Circulation - Cognition and Behavior}
+      \field{month}{1}
+      \field{shorttitle}{Slower Speed of Blood Pressure Recovery after Standing Is Associated with Accelerated Brain Ageing}
+      \field{title}{Slower Speed of Blood Pressure Recovery after Standing Is Associated with Accelerated Brain Ageing: {{Evidence}} from {{The Irish Longitudinal Study}} on {{Ageing}} ({{TILDA}})}
+      \field{urlday}{4}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{volume}{6}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \field{pages}{100212}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.cccb.2024.100212
+      \endverb
+      \verb{file}
+      \verb /Users/mrarab/Zotero/storage/VY87JZU3/A. Shirsath et al. - 2024 - Slower speed of blood pressure recovery after standing is associated with accelerated brain ageing.pdf;/Users/mrarab/Zotero/storage/EI9ABT57/S2666245024000138.html
+      \endverb
+      \keyw{Active stand,Brain ageing,Cerebral autoregulation,Orthostatic hypotension}
+    \endentry
+    \entry{romero-ortunoTransitionsFrailtyPhenotype2021}{article}{}{}
+      \name{author}{8}{}{%
+        {{hash=732234f00554e251804daaa8ff52001a}{%
+           family={{Romero-Ortuno}},
+           familyi={R\bibinitperiod},
+           given={Roman},
+           giveni={R\bibinitperiod}}}%
+        {{hash=6b4230c763ca9d5e107e60ef0205a711}{%
+           family={Hartley},
+           familyi={H\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+        {{hash=55844b5e6e88aae765588dd1d8e21c8d}{%
+           family={Davis},
+           familyi={D\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod}}}%
+        {{hash=a1bea4dbf473034073ba1598c0fa1d27}{%
+           family={Knight},
+           familyi={K\bibinitperiod},
+           given={Silvin\bibnamedelima P.},
+           giveni={S\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=74048d5a3d92f207a27d0856d5f0ad8a}{%
+           family={Rizzo},
+           familyi={R\bibinitperiod},
+           given={Rossella},
+           giveni={R\bibinitperiod}}}%
+        {{hash=51de116308ee40903d00d357542f0cf3}{%
+           family={Hernández},
+           familyi={H\bibinitperiod},
+           given={Belinda},
+           giveni={B\bibinitperiod}}}%
+        {{hash=900692698d3b6559f0df62c0b382164e}{%
+           family={Kenny},
+           familyi={K\bibinitperiod},
+           given={Rose\bibnamedelima Anne},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=fabea5c8972aea08b1a02e4633ae84c7}{%
+           family={O'Halloran},
+           familyi={O\bibinitperiod},
+           given={Aisling\bibnamedelima M.},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{0ac50af9bce91b22fb213be658c99f2a}
+      \strng{fullhash}{4522161c1331dd7ed7240e6445620df2}
+      \strng{fullhashraw}{4522161c1331dd7ed7240e6445620df2}
+      \strng{bibnamehash}{0ac50af9bce91b22fb213be658c99f2a}
+      \strng{authorbibnamehash}{0ac50af9bce91b22fb213be658c99f2a}
+      \strng{authornamehash}{0ac50af9bce91b22fb213be658c99f2a}
+      \strng{authorfullhash}{4522161c1331dd7ed7240e6445620df2}
+      \strng{authorfullhashraw}{4522161c1331dd7ed7240e6445620df2}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Aim Fried's frailty phenotype (FP) is defined by exhaustion (EX), unexplained weight loss (WL), weakness (WK), slowness (SL) and low physical activity (LA). Three or more components define the frail state, and one or two the prefrail. We described longitudinal transitions of FP states and components in The Irish Longitudinal Study on Ageing (TILDA). Methods We included participants aged {$\geq$}50 years with FP information at TILDA wave 1 (2010), who were followed-up over four longitudinal waves (2012, 2014, 2016, 2018). Next-wave transition probabilities were estimated with multi-state Markov models. Results 5683 wave 1 participants were included (2612 men and 3071 women; mean age 63.1 years). Probabilities from non-frail to prefrail, and non-frail to frail were 27\% and 2\%, respectively. Prefrail had a 32\% probability of reversal to non-frail, and a 10\% risk of progression to frail. Frail had an 18\% probability of reversal to prefrail and 31\% risk of death. Probabilities of transitioning from not having to having a component were: 17\% for LA, 11\% for SL, 9\% for EX, 7\% for WL and 6\% for WK. Probabilities of having a FP component and dying were: 17\% for WL, 15\% for WK, 14\% for SL, 13\% for EX, and 10\% for LA. Probabilities of having a component and recovering at the next wave were: 59\% for WL, 58\% for EX, 40\% for WK, 35\% for LA and 23\% for SL. Conclusions FP states and components are characterized by dynamic longitudinal transitions. Opportunities exist for reducing the probability of adverse transitions.}
+      \field{issn}{0167-4943}
+      \field{journaltitle}{Archives of Gerontology and Geriatrics}
+      \field{title}{Transitions in Frailty Phenotype States and Components over 8 Years: {{Evidence}} from {{The Irish Longitudinal Study}} on {{Ageing}}}
+      \field{volume}{95}
+      \field{year}{2021}
+      \field{pages}{104401}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.archger.2021.104401
+      \endverb
+      \verb{file}
+      \verb /Users/mrarab/Zotero/storage/92BSPRX9/Romero-Ortuno et al. - 2021 - Transitions in frailty phenotype states and components over 8 years Evidence from The Irish Longitu.pdf
+      \endverb
+      \keyw{Aged,Frailty,Longitudinal,Surveys,Transition}
+    \endentry
+    \entry{bardonPredictorsIncidentMalnutrition2020}{article}{}{}
+      \name{author}{13}{}{%
+        {{hash=91ff51c34f63deaa7661bf60e5650810}{%
+           family={Bardon},
+           familyi={B\bibinitperiod},
+           given={Laura\bibnamedelima A},
+           giveni={L\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=68ab9adecba96cb37ee1d6f9554f1526}{%
+           family={Streicher},
+           familyi={S\bibinitperiod},
+           given={Melanie},
+           giveni={M\bibinitperiod}}}%
+        {{hash=aeb9551d150483f98ec3f97bbfdeff0b}{%
+           family={Corish},
+           familyi={C\bibinitperiod},
+           given={Clare\bibnamedelima A},
+           giveni={C\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=8df8a35ed488d8aa5b785efdc4e64dfe}{%
+           family={Clarke},
+           familyi={C\bibinitperiod},
+           given={Michelle},
+           giveni={M\bibinitperiod}}}%
+        {{hash=180a59199886d1e8dcf1e69433be470b}{%
+           family={Power},
+           familyi={P\bibinitperiod},
+           given={Lauren\bibnamedelima C},
+           giveni={L\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=900692698d3b6559f0df62c0b382164e}{%
+           family={Kenny},
+           familyi={K\bibinitperiod},
+           given={Rose\bibnamedelima Anne},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=8f66834cba7f9ebac1eb077c7989d26d}{%
+           family={O'Connor},
+           familyi={O\bibinitperiod},
+           given={Deirdre\bibnamedelima M},
+           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=f4ec8e3f9be1f495a52b4c48069573a3}{%
+           family={Laird},
+           familyi={L\bibinitperiod},
+           given={Eamon},
+           giveni={E\bibinitperiod}}}%
+        {{hash=51ef7d2e36cd5d1c425469ebf3855b38}{%
+           family={O'Connor},
+           familyi={O\bibinitperiod},
+           given={Eibhlis\bibnamedelima M},
+           giveni={E\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=8ef9174cd211e69caac0ed85ec984460}{%
+           family={Visser},
+           familyi={V\bibinitperiod},
+           given={Marjolein},
+           giveni={M\bibinitperiod}}}%
+        {{hash=1e31b4a55413417183ec7c48638bfded}{%
+           family={Volkert},
+           familyi={V\bibinitperiod},
+           given={Dorothee},
+           giveni={D\bibinitperiod}}}%
+        {{hash=610724587b11ee82e7b46710166fb449}{%
+           family={Gibney},
+           familyi={G\bibinitperiod},
+           given={Eileen\bibnamedelima R},
+           giveni={E\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=9a7c9ba228a7d96f0551a10e9fd43db9}{%
+           family={{MaNuEL Consortium}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{abfabc41b2b401365fc205952276fd8a}
+      \strng{fullhash}{bbb1038afb6cccdbd9b1d27eab005e7c}
+      \strng{fullhashraw}{bbb1038afb6cccdbd9b1d27eab005e7c}
+      \strng{bibnamehash}{abfabc41b2b401365fc205952276fd8a}
+      \strng{authorbibnamehash}{abfabc41b2b401365fc205952276fd8a}
+      \strng{authornamehash}{abfabc41b2b401365fc205952276fd8a}
+      \strng{authorfullhash}{bbb1038afb6cccdbd9b1d27eab005e7c}
+      \strng{authorfullhashraw}{bbb1038afb6cccdbd9b1d27eab005e7c}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Older adults are at increased risk of malnutrition, which is associated with poorer health, quality of life, and worse disease outcomes. This study identifies predictors of incident malnutrition using data from a subsample (n = 1,841) of The Irish Longitudinal Study on Ageing. Participants were excluded if they were less than 65 years, missing body mass index data at baseline or follow-up, missing baseline weight loss data or malnourished at baseline (body mass index \&lt;20 kg/m2 or unplanned weight loss {$\geq$}4.5 kg in the previous year). Logistic regression analysis was performed with incident malnutrition (body mass index \&lt;20 kg/m2 and/or calculated weight loss \&gt;10\% over follow-up) as the dependent variable. Factors showing significant (p \&lt; .05) univariate associations with incident malnutrition were entered into a multivariate model. The analysis was then repeated, stratified by sex. The 2-year incidence of malnutrition was 10.7\%. Unmarried/separated/divorced status (vs married but not widowed), hospitalization in the previous year, difficulties walking 100 m, or climbing stairs independently predicted incident malnutrition at follow-up. When examined by sex, hospitalization in the previous year, falls during follow-up, and self-reported difficulties climbing stairs predicted malnutrition in males. Receiving social support and cognitive impairment predicted malnutrition in females. The development of malnutrition has a range of predictors. These can be assessed using simple questions to identify vulnerable persons.}
+      \field{issn}{1079-5006}
+      \field{journaltitle}{J Gerontol A Biol Sci Med Sci}
+      \field{month}{1}
+      \field{number}{2}
+      \field{title}{Predictors of {{Incident Malnutrition}} in {{Older Irish Adults}} from the {{Irish Longitudinal Study}} on {{Ageing Cohort}}---{{A MaNuEL}} Study}
+      \field{urlday}{3}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{volume}{75}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \field{pages}{249\bibrangedash 256}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1093/gerona/gly225
+      \endverb
+      \verb{file}
+      \verb /Users/mrarab/Zotero/storage/QRPMKLT8/Bardon et al. - 2020 - Predictors of Incident Malnutrition in Older Irish Adults from the Irish Longitudinal Study on Agein.pdf
+      \endverb
+    \endentry
+    \entry{zhangMachineLearningModels2025}{article}{}{}
+      \name{author}{42}{}{%
+        {{hash=6e71f95e7f7769c5466ca58a0e227414}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Zuo},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=ea8dc5001d63ef0e7ee9037c372f7d0f}{%
+           family={Robinson},
+           familyi={R\bibinitperiod},
+           given={Lauren},
+           giveni={L\bibinitperiod}}}%
+        {{hash=f80701ddca04957c6cd26232a5798027}{%
+           family={Whelan},
+           familyi={W\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+        {{hash=75d5298b39c942752f621ed4ee2c0493}{%
+           family={Jollans},
+           familyi={J\bibinitperiod},
+           given={Lee},
+           giveni={L\bibinitperiod}}}%
+        {{hash=1b3a68812c65e5ec9a55123c111c95f4}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Zijian},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=8c4dacd16df425588628309a60171dcb}{%
+           family={Nees},
+           familyi={N\bibinitperiod},
+           given={Frauke},
+           giveni={F\bibinitperiod}}}%
+        {{hash=fbe6536f7ed3edf738595468229b1196}{%
+           family={Chu},
+           familyi={C\bibinitperiod},
+           given={Congying},
+           giveni={C\bibinitperiod}}}%
+        {{hash=523d33ab5446b64060835471ef4410c2}{%
+           family={Bobou},
+           familyi={B\bibinitperiod},
+           given={Marina},
+           giveni={M\bibinitperiod}}}%
+        {{hash=05f3dd975242ea985a719b0e6924bd5d}{%
+           family={Du},
+           familyi={D\bibinitperiod},
+           given={Dongping},
+           giveni={D\bibinitperiod}}}%
+        {{hash=a3c9565a9898abd1bcc328e7fe1583ea}{%
+           family={Cristea},
+           familyi={C\bibinitperiod},
+           given={Ilinca},
+           giveni={I\bibinitperiod}}}%
+        {{hash=4aff2da3b30b451372c8025627f08e33}{%
+           family={Banaschewski},
+           familyi={B\bibinitperiod},
+           given={Tobias},
+           giveni={T\bibinitperiod}}}%
+        {{hash=5fcbb71a48ae0b41ed646647cc8233aa}{%
+           family={Barker},
+           familyi={B\bibinitperiod},
+           given={Gareth\bibnamedelima J.},
+           giveni={G\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=0c19853ad9368bd226b706fde47f83ff}{%
+           family={Bokde},
+           familyi={B\bibinitperiod},
+           given={Arun\bibnamedelimb L.\bibnamedelimi W.},
+           giveni={A\bibinitperiod\bibinitdelim L\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=c101507b62dce4d4f76bc6a3429a189a}{%
+           family={Grigis},
+           familyi={G\bibinitperiod},
+           given={Antoine},
+           giveni={A\bibinitperiod}}}%
+        {{hash=cc604a7c436574b47b19213d371ef70f}{%
+           family={Garavan},
+           familyi={G\bibinitperiod},
+           given={Hugh},
+           giveni={H\bibinitperiod}}}%
+        {{hash=85145be8f8ea598710fb1cfdc30f804f}{%
+           family={Heinz},
+           familyi={H\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+        {{hash=e23028a22c476a76e7c947b8821881e4}{%
+           family={Brühl},
+           familyi={B\bibinitperiod},
+           given={Rüdiger},
+           giveni={R\bibinitperiod}}}%
+        {{hash=256e7e5e92bdefd1e7a0fe5b9fda44b1}{%
+           family={Martinot},
+           familyi={M\bibinitperiod},
+           given={Jean-Luc},
+           giveni={J\bibinithyphendelim L\bibinitperiod}}}%
+        {{hash=ad54af0c45c0daf0823469e10440a6f2}{%
+           family={Martinot},
+           familyi={M\bibinitperiod},
+           given={Marie-Laure\bibnamedelima Paillère},
+           giveni={M\bibinithyphendelim L\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=07607250f7f677a64d07b725e653ab03}{%
+           family={Artiges},
+           familyi={A\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod}}}%
+        {{hash=7d4cc97635b0656dc98b56dbedb0f3bf}{%
+           family={Orfanos},
+           familyi={O\bibinitperiod},
+           given={Dimitri\bibnamedelima Papadopoulos},
+           giveni={D\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=985f3cefe46b4588ac06d66d1b14684f}{%
+           family={Poustka},
+           familyi={P\bibinitperiod},
+           given={Luise},
+           giveni={L\bibinitperiod}}}%
+        {{hash=1fa3700d98dfc4764e53af3a4d37a8cc}{%
+           family={Hohmann},
+           familyi={H\bibinitperiod},
+           given={Sarah},
+           giveni={S\bibinitperiod}}}%
+        {{hash=5ea21f2cffcaa7046ea4e9e7d229e2da}{%
+           family={Millenet},
+           familyi={M\bibinitperiod},
+           given={Sabina},
+           giveni={S\bibinitperiod}}}%
+        {{hash=a96bdf646939a4b97461129b8f633459}{%
+           family={Fröhner},
+           familyi={F\bibinitperiod},
+           given={Juliane\bibnamedelima H.},
+           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=dbd5126a54fa815009aa914ea684578e}{%
+           family={Smolka},
+           familyi={S\bibinitperiod},
+           given={Michael\bibnamedelima N.},
+           giveni={M\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=2f9a5f5f67346062b9e8ece0f750e498}{%
+           family={Vaidya},
+           familyi={V\bibinitperiod},
+           given={Nilakshi},
+           giveni={N\bibinitperiod}}}%
+        {{hash=6e86eae014dbaa5af2f2713b94c583cb}{%
+           family={Walter},
+           familyi={W\bibinitperiod},
+           given={Henrik},
+           giveni={H\bibinitperiod}}}%
+        {{hash=5dc20cfe53dcc5edc95c02636853229a}{%
+           family={Winterer},
+           familyi={W\bibinitperiod},
+           given={Jeanne},
+           giveni={J\bibinitperiod}}}%
+        {{hash=fe284b92309d4d328eb8dbfee33f71a1}{%
+           family={Broulidakis},
+           familyi={B\bibinitperiod},
+           given={M.\bibnamedelimi John},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=8de00748500d6dc803cc86d97be0bb56}{%
+           family={{van Noort}},
+           familyi={v\bibinitperiod},
+           given={Betteke\bibnamedelima Maria},
+           giveni={B\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=06184086fa9fafd57802f850bb300363}{%
+           family={Stringaris},
+           familyi={S\bibinitperiod},
+           given={Argyris},
+           giveni={A\bibinitperiod}}}%
+        {{hash=79f9b3ab3302680ea19d5221f8131b71}{%
+           family={Penttilä},
+           familyi={P\bibinitperiod},
+           given={Jani},
+           giveni={J\bibinitperiod}}}%
+        {{hash=f91bc7886111807e15c0a6b3a660be9c}{%
+           family={Grimmer},
+           familyi={G\bibinitperiod},
+           given={Yvonne},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=be5024e26a2b5b66048446da76ca077f}{%
+           family={Insensee},
+           familyi={I\bibinitperiod},
+           given={Corinna},
+           giveni={C\bibinitperiod}}}%
+        {{hash=1065f3f7d9e03553a0d56e92b753c230}{%
+           family={Becker},
+           familyi={B\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+        {{hash=b32f17655743d3556256719fa250cd60}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Yuning},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=acdd8a327e42b685e8d930e79b95f04a}{%
+           family={King},
+           familyi={K\bibinitperiod},
+           given={Sinead},
+           giveni={S\bibinitperiod}}}%
+        {{hash=a369e9fe4a6daf085ac37b232b35f9ef}{%
+           family={Sinclair},
+           familyi={S\bibinitperiod},
+           given={Julia},
+           giveni={J\bibinitperiod}}}%
+        {{hash=fa6499c3a037e3f81aee91ec9cdba3e6}{%
+           family={Schumann},
+           familyi={S\bibinitperiod},
+           given={Gunter},
+           giveni={G\bibinitperiod}}}%
+        {{hash=c5b1c6b285303755c7433850720a8ba2}{%
+           family={Schmidt},
+           familyi={S\bibinitperiod},
+           given={Ulrike},
+           giveni={U\bibinitperiod}}}%
+        {{hash=673ad7479ca6aefe14b76411cfb5146e}{%
+           family={Desrivières},
+           familyi={D\bibinitperiod},
+           given={Sylvane},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{c7bd76ba4e9310f22f5f62442ac3b6d7}
+      \strng{fullhash}{1129f69e1078d6ed35e02a1751d9795f}
+      \strng{fullhashraw}{1129f69e1078d6ed35e02a1751d9795f}
+      \strng{bibnamehash}{c7bd76ba4e9310f22f5f62442ac3b6d7}
+      \strng{authorbibnamehash}{c7bd76ba4e9310f22f5f62442ac3b6d7}
+      \strng{authornamehash}{c7bd76ba4e9310f22f5f62442ac3b6d7}
+      \strng{authorfullhash}{1129f69e1078d6ed35e02a1751d9795f}
+      \strng{authorfullhashraw}{1129f69e1078d6ed35e02a1751d9795f}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Background Early diagnosis and treatment of mental illnesses is hampered by the lack of reliable markers. This study used machine learning models to uncover diagnostic and risk prediction markers for eating disorders (EDs), major depressive disorder (MDD), and alcohol use disorder (AUD). Methods Case-control samples (aged 18--25~years), including participants with Anorexia Nervosa (AN), Bulimia Nervosa (BN), MDD, AUD, and matched controls, were used for diagnostic classification. For risk prediction, we used a longitudinal population-based sample (IMAGEN study), assessing adolescents at ages 14, 16 and 19. Regularized logistic regression models incorporated broad data domains spanning psychopathology, personality, cognition, substance use, and environment. Results The classification of EDs was highly accurate, even when excluding body mass index from the analysis. The area under the receiver operating characteristic curves (AUC-ROC [95~\% CI]) reached 0.92 [0.86--0.97] for AN and 0.91 [0.85--0.96] for BN. The classification accuracies for MDD (0.91 [0.88--0.94]) and AUD (0.80 [0.74--0.85]) were also high. The models demonstrated high transdiagnostic potential, as those trained for EDs were also accurate in classifying AUD and MDD from healthy controls, and vice versa (AUC-ROCs, 0.75--0.93). Shared predictors, such as neuroticism, hopelessness, and symptoms of attention-deficit/hyperactivity disorder, were identified as reliable classifiers. In the longitudinal population sample, the models exhibited moderate performance in predicting the development of future ED symptoms (0.71 [0.67--0.75]), depressive symptoms (0.64 [0.60--0.68]), and harmful drinking (0.67 [0.64--0.70]). Conclusions Our findings demonstrate the potential of combining multi-domain data for precise diagnostic and risk prediction applications in psychiatry.}
+      \field{issn}{0165-0327}
+      \field{journaltitle}{Journal of Affective Disorders}
+      \field{month}{6}
+      \field{title}{Machine Learning Models for Diagnosis and Risk Prediction in Eating Disorders, Depression, and Alcohol Use Disorder}
+      \field{urlday}{4}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{volume}{379}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \field{pages}{889\bibrangedash 899}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1016/j.jad.2024.12.053
+      \endverb
+      \verb{file}
+      \verb /Users/mrarab/Zotero/storage/A36LFT9F/Zhang et al. - 2025 - Machine learning models for diagnosis and risk prediction in eating disorders, depression, and alcoh.pdf;/Users/mrarab/Zotero/storage/T75QMJML/S016503272402041X.html
+      \endverb
+      \keyw{Alcohol use disorder,Eating disorders,Major depressive disorder,Predictive modeling,Risk factors}
+    \endentry
+    \entry{sutinSenseMeaningPurpose2023}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=5bba488cb3ed74359a18d3228ddcf0a5}{%
+           family={Sutin},
+           familyi={S\bibinitperiod},
+           given={Dr\bibnamedelima Angelina\bibnamedelima R.},
+           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=09f47bc39ce1bb47ca4e4d727be6e77e}{%
+           family={Luchetti},
+           familyi={L\bibinitperiod},
+           given={Martina},
+           giveni={M\bibinitperiod}}}%
+        {{hash=6db8ddfe20cbbcd690e19879363cac71}{%
+           family={Aschwanden},
+           familyi={A\bibinitperiod},
+           given={Damaris},
+           giveni={D\bibinitperiod}}}%
+        {{hash=d82f6b236b22bf29e1ce437408815f51}{%
+           family={Stephan},
+           familyi={S\bibinitperiod},
+           given={Yannick},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=430428cc20f4d7d74f53ada03b1e9579}{%
+           family={Sesker},
+           familyi={S\bibinitperiod},
+           given={Amanda\bibnamedelima A.},
+           giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=52c7b1ea247945d5d1a46f2b0fa6f93e}{%
+           family={Terracciano},
+           familyi={T\bibinitperiod},
+           given={Antonio},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{77afc561552e1b31de1dee425655c618}
+      \strng{fullhash}{347fb7804099dae7fd7bbdcd23f98245}
+      \strng{fullhashraw}{347fb7804099dae7fd7bbdcd23f98245}
+      \strng{bibnamehash}{77afc561552e1b31de1dee425655c618}
+      \strng{authorbibnamehash}{77afc561552e1b31de1dee425655c618}
+      \strng{authornamehash}{77afc561552e1b31de1dee425655c618}
+      \strng{authorfullhash}{347fb7804099dae7fd7bbdcd23f98245}
+      \strng{authorfullhashraw}{347fb7804099dae7fd7bbdcd23f98245}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Purpose: A greater sense of meaning and purpose in life is associated with lower dementia risk. The present research examines meaning and incident dementia in the largest sample to date, the UK Biobank, and combines the findings with the published literature on meaning/purpose and dementia risk in a meta-analysis. Method: Participants from the UK Biobank reported on their meaning in life in the 2016/2017 mental health assessment (N=153,445). All-cause and cause-specific dementia were derived from hospital and death records through November 2021. Cox regression was used to test the association between meaning in life and risk of incident dementia. Results from the UK Biobank were combined with published studies identified through a systematic literature review in a random-effect meta-analysis (k=8; total N=214,270). Results: UK Biobank participants were followed up to five years after their assessment of meaning in life; 551 participants developed dementia. For every one-point higher feeling of meaning, there was a 35\% decreased risk of all-cause dementia (HR=.74, 95\% CI=.67-.82, p{$<$}.001). The association was similar controlling for clinical and behavioral risk factors and was not moderated by age, sex, education, or APOE risk status. Similar associations were found for Alzheimer's disease and vascular dementia. The meta-analysis supported the protective association between meaning/purpose and lower dementia risk (HR=.76, 95\% CI=.72-.79, p{$<$}.001). Conclusions: The present research supports the growing literature that meaning and purpose in life have a robust association with lower risk of developing dementia. Meaning/purpose is a promising intervention target for healthier cognitive outcomes in older adulthood.}
+      \field{issn}{0167-4943}
+      \field{journaltitle}{Archives of Gerontology and Geriatrics}
+      \field{title}{Sense of Meaning and Purpose in Life and Risk of Incident Dementia: {{New}} Data and Meta-Analysis}
+      \field{volume}{105}
+      \field{year}{2023}
+      \field{pages}{104847}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.archger.2022.104847
+      \endverb
+      \verb{file}
+      \verb /Users/mrarab/Zotero/storage/DXMAH7C8/Sutin et al. - 2023 - Sense of meaning and purpose in life and risk of incident dementia New data and meta-analysis.pdf
+      \endverb
+      \keyw{Alzheimer's disease,Meaning in life,meta-analysis,prospective,Purpose in life,vascular dementia}
+    \endentry
+    \entry{doctoralwritingCreatingLiteratureReview2016a}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=7c6da2306f679cf60ec9fa7031855bec}{%
+           family={{doctoralwriting}},
+           familyi={d\bibinitperiod}}}%
+      }
+      \strng{namehash}{7c6da2306f679cf60ec9fa7031855bec}
+      \strng{fullhash}{7c6da2306f679cf60ec9fa7031855bec}
+      \strng{fullhashraw}{7c6da2306f679cf60ec9fa7031855bec}
+      \strng{bibnamehash}{7c6da2306f679cf60ec9fa7031855bec}
+      \strng{authorbibnamehash}{7c6da2306f679cf60ec9fa7031855bec}
+      \strng{authornamehash}{7c6da2306f679cf60ec9fa7031855bec}
+      \strng{authorfullhash}{7c6da2306f679cf60ec9fa7031855bec}
+      \strng{authorfullhashraw}{7c6da2306f679cf60ec9fa7031855bec}
+      \field{extraname}{1}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Arnold Wentzel teaches economics, teaching methodology in business, and also~research writing skills across social science disciplines at the University of Johannesburg. This is the first in a four{\dots}}
+      \field{journaltitle}{DoctoralWriting}
+      \field{langid}{english}
+      \field{month}{2}
+      \field{shorttitle}{Creating the Literature Review}
+      \field{title}{Creating the Literature Review: Research Questions and Arguments}
+      \field{urlday}{8}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{year}{2016}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /Users/mrarab/Zotero/storage/EV2TLT2I/creating-the-literature-review-research-questions-and-arguments.html
+      \endverb
+    \endentry
+    \entry{doctoralwritingCreatingLiteratureReview2016b}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=7c6da2306f679cf60ec9fa7031855bec}{%
+           family={{doctoralwriting}},
+           familyi={d\bibinitperiod}}}%
+      }
+      \strng{namehash}{7c6da2306f679cf60ec9fa7031855bec}
+      \strng{fullhash}{7c6da2306f679cf60ec9fa7031855bec}
+      \strng{fullhashraw}{7c6da2306f679cf60ec9fa7031855bec}
+      \strng{bibnamehash}{7c6da2306f679cf60ec9fa7031855bec}
+      \strng{authorbibnamehash}{7c6da2306f679cf60ec9fa7031855bec}
+      \strng{authornamehash}{7c6da2306f679cf60ec9fa7031855bec}
+      \strng{authorfullhash}{7c6da2306f679cf60ec9fa7031855bec}
+      \strng{authorfullhashraw}{7c6da2306f679cf60ec9fa7031855bec}
+      \field{extraname}{2}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{by Arnold Wentzel PART 3: PLANNING THE STRUCTURE AND FLOW In Part 2, I explained how to generate the content of the literature review. At this stage it is just a list of assumptions (those labelled{\dots}}
+      \field{journaltitle}{DoctoralWriting}
+      \field{langid}{english}
+      \field{month}{2}
+      \field{shorttitle}{Creating the Literature Review}
+      \field{title}{Creating the Literature Review: Research Questions and Arguments ({{Part}} 3 of 4)}
+      \field{urlday}{8}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{year}{2016}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /Users/mrarab/Zotero/storage/VWSJD4UU/creating-the-literature-review-research-questions-and-arguments-part-3-of-4.html
+      \endverb
+    \endentry
+    \entry{zarudskyP277OneleggedBalance2014}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=ee55a5aa2f8f6cb71f02c3b0f60f71b0}{%
+           family={Zarudsky},
+           familyi={Z\bibinitperiod},
+           given={A.\bibnamedelimi A.},
+           giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=688e516aeb439c1501e4da7866d9834d}{%
+           family={Prashchayeu},
+           familyi={P\bibinitperiod},
+           given={K.\bibnamedelimi I.},
+           giveni={K\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+      }
+      \strng{namehash}{0001c31cc38e94cf891b22c194b0be70}
+      \strng{fullhash}{0001c31cc38e94cf891b22c194b0be70}
+      \strng{fullhashraw}{0001c31cc38e94cf891b22c194b0be70}
+      \strng{bibnamehash}{0001c31cc38e94cf891b22c194b0be70}
+      \strng{authorbibnamehash}{0001c31cc38e94cf891b22c194b0be70}
+      \strng{authornamehash}{0001c31cc38e94cf891b22c194b0be70}
+      \strng{authorfullhash}{0001c31cc38e94cf891b22c194b0be70}
+      \strng{authorfullhashraw}{0001c31cc38e94cf891b22c194b0be70}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1878-7649}
+      \field{journaltitle}{European Geriatric Medicine}
+      \field{title}{P277: {{One-legged}} Balance Test and Falls in Old Patients with Cardiovascular Diseases}
+      \field{volume}{5}
+      \field{year}{2014}
+      \field{pages}{S171\bibrangedash S172}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1016/S1878-7649(14)70448-6
+      \endverb
+      \verb{file}
+      \verb /Users/mrarab/Zotero/storage/BC2VISDA/Zarudsky and Prashchayeu - 2014 - P277 One-legged balance test and falls in old patients with cardiovascular diseases.pdf
+      \endverb
+    \endentry
+    \entry{huangAgeModifyAssociations2019}{article}{}{}
+      \name{author}{7}{}{%
+        {{hash=f8111945fa9f8b4ae1949ecd2f893eee}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Chuanying},
+           giveni={C\bibinitperiod}}}%
+        {{hash=5a9d33fdf65e34c2d57cdfc005eb41b2}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Shuqin},
+           giveni={S\bibinitperiod}}}%
+        {{hash=617c275907df21ce6cff2da411bb19b3}{%
+           family={Tian},
+           familyi={T\bibinitperiod},
+           given={Xiaocao},
+           giveni={X\bibinitperiod}}}%
+        {{hash=fd43e70e50bdee025388fc70cac570d6}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Tong},
+           giveni={T\bibinitperiod}}}%
+        {{hash=6aa30d34d455af1d2fd335466afc296d}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Tianyu},
+           giveni={T\bibinitperiod}}}%
+        {{hash=c884e49c38a3c60b28ce346eba4bc783}{%
+           family={Duan},
+           familyi={D\bibinitperiod},
+           given={Haiping},
+           giveni={H\bibinitperiod}}}%
+        {{hash=8e699559468da1c0dbf53648464056c6}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Yili},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{31dd52175f3252714cbcd8a0e666f45f}
+      \strng{fullhash}{5bb62252281db7a438a90a33e7d074c5}
+      \strng{fullhashraw}{5bb62252281db7a438a90a33e7d074c5}
+      \strng{bibnamehash}{31dd52175f3252714cbcd8a0e666f45f}
+      \strng{authorbibnamehash}{31dd52175f3252714cbcd8a0e666f45f}
+      \strng{authornamehash}{31dd52175f3252714cbcd8a0e666f45f}
+      \strng{authorfullhash}{5bb62252281db7a438a90a33e7d074c5}
+      \strng{authorfullhashraw}{5bb62252281db7a438a90a33e7d074c5}
+      \field{extraname}{2}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Objective To estimate whether the associations of obesity, physical activity, vision and grip strength with functional mobility were modified by age. Methods Data from The Irish Longitudinal Study on Ageing (2009--2012) were analyzed and 5001 individuals were included in this study. Mobility was assessed by the timed up and go test (TUG-test). Main exposure variables were obesity, physical activity, visual acuity and grip strength at baseline. Multiple linear regression models were fitted to assess the associations of baseline main exposure variables with 2-year follow-up functional mobility and potential confounders were adjusted. Stratified analyses by age were used to assess the interaction between main exposures and age on functional mobility. Results Multiple linear regression models identified significant interactions of obesity (P {$<$} 0.001), vigorous physical activity (P = 0.001), vision (P {$<$} 0.001) and grip strength (P {$<$} 0.001) with age on functional mobility. Stratified analyses suggested that the risk effect of obesity on functional mobility was greater in middle-aged group ({$\beta$} = 0.025, P {$<$} 0.001) than in older group ({$\beta$} = 0.016, P = 0.017). The protective effects of high level of physical activity and grip strength on functional mobility were stronger in older group ({$\beta$} = -0.023, P = 0.004 for physical activity; {$\beta$} = -0.002, P {$<$} 0.001 for grip strength) than in middle-aged group ({$\beta$} = -0.012, P = 0.008 for physical activity; {$\beta$} = -0.0015, P {$<$} 0.001 for grip strength). The benefit of better vision on functional mobility was observed in middle-aged group only ({$\beta$} = -0.032, P = 0.002). Conclusion Non-obesity, higher level of physical activity, vision and grip strength at baseline were associated with better mobility performance among middle-aged and older Irish. And these associations were modified by age.}
+      \field{issn}{0167-4943}
+      \field{journaltitle}{Archives of Gerontology and Geriatrics}
+      \field{title}{Age Modify the Associations of Obesity, Physical Activity, Vision and Grip Strength with Functional Mobility in {{Irish}} Aged 50 and Older}
+      \field{volume}{84}
+      \field{year}{2019}
+      \field{pages}{103895}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.archger.2019.05.020
+      \endverb
+      \verb{file}
+      \verb /Users/mrarab/Zotero/storage/MJFCTT2R/Huang et al. - 2019 - Age modify the associations of obesity, physical activity, vision and grip strength with functional.pdf
+      \endverb
+      \keyw{Effect modification,Functional mobility,Grip strength,Obesity,Physical activity,Vision}
+    \endentry
+    \entry{jacobFallsIncreaseRisk2023}{article}{}{}
+      \name{author}{8}{}{%
+        {{hash=621fb043a2793904e7e7c189566416c7}{%
+           family={Jacob},
+           familyi={J\bibinitperiod},
+           given={Louis},
+           giveni={L\bibinitperiod}}}%
+        {{hash=816a41fb4ad18421c689c264902db2d1}{%
+           family={Kostev},
+           familyi={K\bibinitperiod},
+           given={Karel},
+           giveni={K\bibinitperiod}}}%
+        {{hash=29c7a10871d105405c8dfb4ac156d3e2}{%
+           family={Shin},
+           familyi={S\bibinitperiod},
+           given={Jae\bibnamedelima Il},
+           giveni={J\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+        {{hash=0f51311aca17549279ae7c940792a5b7}{%
+           family={Smith},
+           familyi={S\bibinitperiod},
+           given={Lee},
+           giveni={L\bibinitperiod}}}%
+        {{hash=54de6f431f31be38350835c212c8fc6e}{%
+           family={Oh},
+           familyi={O\bibinitperiod},
+           given={Hans},
+           giveni={H\bibinitperiod}}}%
+        {{hash=a9dab958ab4e653893479cf5ecb17d90}{%
+           family={Abduljabbar},
+           familyi={A\bibinitperiod},
+           given={Adel\bibnamedelima S.},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=9ffc11faeab89a9db12f22e00beabdea}{%
+           family={Haro},
+           familyi={H\bibinitperiod},
+           given={Josep\bibnamedelima Maria},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=12e4c32b983d2bb9a76a88cdd6629ba2}{%
+           family={Koyanagi},
+           familyi={K\bibinitperiod},
+           given={Ai},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{ec603a235afc1544d9cf3309caabc9de}
+      \strng{fullhash}{b47d457068cfec69bb5ea9c201664461}
+      \strng{fullhashraw}{b47d457068cfec69bb5ea9c201664461}
+      \strng{bibnamehash}{ec603a235afc1544d9cf3309caabc9de}
+      \strng{authorbibnamehash}{ec603a235afc1544d9cf3309caabc9de}
+      \strng{authornamehash}{ec603a235afc1544d9cf3309caabc9de}
+      \strng{authorfullhash}{b47d457068cfec69bb5ea9c201664461}
+      \strng{authorfullhashraw}{b47d457068cfec69bb5ea9c201664461}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Background Little is known about the potential impact of falls on the onset of common mental disorders in older adults. Thus, we aimed to investigate the longitudinal association between falls and incident anxiety and depressive symptoms in adults aged {$\geq$}50 years living in Ireland. Methods Data from the Irish Longitudinal Study on Ageing were analyzed (Wave 1: 2009--2011; and Wave 2: 2012--2013). The presence of falls and injurious falls in the past 12 months was assessed at Wave 1. Anxiety and depressive symptoms were assessed at Wave 1 and Wave 2 using the anxiety subscale of the Hospital Anxiety and Depression Scale (HADS-A) and the 20-item Center for Epidemiologic Studies Depression (CES-D), respectively. Covariates included sex, age, education, marital status, disability, and the number of chronic physical conditions. The association of falls at baseline with incident anxiety and depressive symptoms at follow-up was estimated by multivariable logistic regression. Results This study included 6,862 individuals (51.5\% women; mean [SD] age 63.1 [8.9] years). After adjusting for covariates, falls were significantly associated with anxiety (OR = 1.58, 95\%CI = 1.06--2.35) and depressive symptoms (OR = 1.43, 95\%CI = 1.06--1.92). These associations were no longer significant after including fear of falling in the models. Similar findings were obtained for injurious falls, although the relationship with anxiety symptoms was not statistically significant. Conclusions This prospective study of older adults from Ireland found significant associations between falls and incident anxiety and depressive symptoms. Future research may focus on whether interventions to reduce fear of falling could also alleviate anxiety and depressive symptoms.}
+      \field{issn}{0167-4943}
+      \field{journaltitle}{Archives of Gerontology and Geriatrics}
+      \field{title}{Falls Increase the Risk for Incident Anxiety and Depressive Symptoms among Adults Aged {$\geq$}50 Years: {{An}} Analysis of the {{Irish}} Longitudinal Study on Ageing}
+      \field{volume}{114}
+      \field{year}{2023}
+      \field{pages}{105098}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.archger.2023.105098
+      \endverb
+      \verb{file}
+      \verb /Users/mrarab/Zotero/storage/4AHKH7MS/Jacob et al. - 2023 - Falls increase the risk for incident anxiety and depressive symptoms among adults aged ≥50 years An.pdf
+      \endverb
+      \keyw{Anxiety symptoms,Depressive symptoms,Falls,Ireland,Older adults,Prospective study}
+    \endentry
+    \entry{mccarthyAssociationMetabolicSyndrome2023}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=a279464c4ebca342ddcec2a93960cd8d}{%
+           family={McCarthy},
+           familyi={M\bibinitperiod},
+           given={Kevin},
+           giveni={K\bibinitperiod}}}%
+        {{hash=f4ec8e3f9be1f495a52b4c48069573a3}{%
+           family={Laird},
+           familyi={L\bibinitperiod},
+           given={Eamon},
+           giveni={E\bibinitperiod}}}%
+        {{hash=fabea5c8972aea08b1a02e4633ae84c7}{%
+           family={O'Halloran},
+           familyi={O\bibinitperiod},
+           given={Aisling\bibnamedelima M.},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=8ebbf754ed1716703daa5d2ce64b58a7}{%
+           family={Fallon},
+           familyi={F\bibinitperiod},
+           given={Padraic},
+           giveni={P\bibinitperiod}}}%
+        {{hash=9140d45460dd2610561b404b2632f99f}{%
+           family={Ortuño},
+           familyi={O\bibinitperiod},
+           given={Román\bibnamedelima Romero},
+           giveni={R\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=900692698d3b6559f0df62c0b382164e}{%
+           family={Kenny},
+           familyi={K\bibinitperiod},
+           given={Rose\bibnamedelima Anne},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{44e0a8c3fec7ee06501ec7c733c7cafe}
+      \strng{fullhash}{6fc6ea9c2eec44242a9277eb4148eb72}
+      \strng{fullhashraw}{6fc6ea9c2eec44242a9277eb4148eb72}
+      \strng{bibnamehash}{44e0a8c3fec7ee06501ec7c733c7cafe}
+      \strng{authorbibnamehash}{44e0a8c3fec7ee06501ec7c733c7cafe}
+      \strng{authornamehash}{44e0a8c3fec7ee06501ec7c733c7cafe}
+      \strng{authorfullhash}{6fc6ea9c2eec44242a9277eb4148eb72}
+      \strng{authorfullhashraw}{6fc6ea9c2eec44242a9277eb4148eb72}
+      \field{extraname}{1}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Objectives Metabolic syndrome (MetS) is a risk factor for cardiovascular disease, diabetes, and all-cause mortality. Frailty is a condition of decreased multi-system physiological reserve where one has increased vulnerability to stressors. This study aimed to examine if MetS is associated with prevalent and incident frailty over a 4-year follow-up period in an aged population. Methods This study used data from waves 1 (2009--2011) and 3 (2014--2015) of The Irish Longitudinal Study on Ageing. Those aged {$<$}50 years or without baseline health assessment data were excluded. Baseline MetS status was determined using the National Cholesterol Education Program Third Adult Treatment Panel criteria. Frailty status was identified at both waves, operationalised using Fried's frailty phenotype (FP) and Rockwood's frailty index (FI). Ordinal logistic regression examined the cross-sectional association between MetS and prevalent frailty status. Those with prevalent pre-frailty or frailty were excluded and ordinal logistic regression models examined the association between MetS and incident frailty. Lastly, MetS' longitudinal associations with the five individual components of Fried's FP were examined. Models were adjusted for age, sex, education, smoking, chronic disease history and renal function. Results Ordinal logistic regression models (n {$>$} 5100), showed MetS was associated with prevalent frailty as assessed by both FP (odds ratio (OR) 1.29, p {$<$} 0.001) and FI (OR 1.65, p {$<$} 0.001). Of those who were non-frail at baseline, 2247 participants had longitudinal FP data, while 3546 participants had longitudinal FI data. Models demonstrated that MetS was associated with an increased likelihood of incident frailty for both FP (OR 1.57, p {$<$} 0.001) and FI (OR 1.29, p = 0.014). MetS was found to be associated with incident low physical activity (OR 1.57, p = 0.001) and incident unintentional weight loss (OR 1.59, p = 0.025). Conclusions MetS in those {$\geq$}50 years was found to be associated with an increased likelihood of incident frailty over a 4-year period, by 57 \% when measured by FP and 29 \% by FI. MetS should be considered a risk factor for frailty and be taken into considered in any comprehensive geriatric assessment given frailty's dynamic nature and MetS being potentially modifiable.}
+      \field{issn}{0531-5565}
+      \field{journaltitle}{Experimental Gerontology}
+      \field{title}{Association between Metabolic Syndrome and Risk of Both Prevalent and Incident Frailty in Older Adults: {{Findings}} from {{The Irish Longitudinal Study}} on {{Ageing}} ({{TILDA}})}
+      \field{volume}{172}
+      \field{year}{2023}
+      \field{pages}{112056}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.exger.2022.112056
+      \endverb
+      \verb{file}
+      \verb /Users/mrarab/Zotero/storage/QTQS94WG/Lee et al. - 2023 - Prefrailty subtypes differentially predict 5-year mortality in the functionally independent geriatri.pdf
+      \endverb
+      \keyw{Frailty,Insulin resistance,Metabolic syndrome,Obesity,Pre-frailty}
+    \endentry
+    \entry{santiniProtectivePropertiesActBelongCommit2017}{article}{}{}
+      \name{author}{7}{}{%
+        {{hash=6122a211e9f315e21595c45992a81d95}{%
+           family={Santini},
+           familyi={S\bibinitperiod},
+           given={Ziggi\bibnamedelima Ivan},
+           giveni={Z\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+        {{hash=12e4c32b983d2bb9a76a88cdd6629ba2}{%
+           family={Koyanagi},
+           familyi={K\bibinitperiod},
+           given={Ai},
+           giveni={A\bibinitperiod}}}%
+        {{hash=dab4788e664bfbbc646d818669093051}{%
+           family={Tyrovolas},
+           familyi={T\bibinitperiod},
+           given={Stefanos},
+           giveni={S\bibinitperiod}}}%
+        {{hash=9ffc11faeab89a9db12f22e00beabdea}{%
+           family={Haro},
+           familyi={H\bibinitperiod},
+           given={Josep\bibnamedelima Maria},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=d916be4ec0747a73040b08d7b2b8d7cc}{%
+           family={Donovan},
+           familyi={D\bibinitperiod},
+           given={Robert\bibnamedelima J.},
+           giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=0e25618ceeecfd221bdbe9e55e9a9b8c}{%
+           family={Nielsen},
+           familyi={N\bibinitperiod},
+           given={Line},
+           giveni={L\bibinitperiod}}}%
+        {{hash=ee4776d6e1a68ad245952db3e9f0c40c}{%
+           family={Koushede},
+           familyi={K\bibinitperiod},
+           given={Vibeke},
+           giveni={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{4714d61c951a1cc87c08162f63f2ce3f}
+      \strng{fullhash}{9a65ab36de1ecd0bb72ef9f7241438e6}
+      \strng{fullhashraw}{9a65ab36de1ecd0bb72ef9f7241438e6}
+      \strng{bibnamehash}{4714d61c951a1cc87c08162f63f2ce3f}
+      \strng{authorbibnamehash}{4714d61c951a1cc87c08162f63f2ce3f}
+      \strng{authornamehash}{4714d61c951a1cc87c08162f63f2ce3f}
+      \strng{authorfullhash}{9a65ab36de1ecd0bb72ef9f7241438e6}
+      \strng{authorfullhashraw}{9a65ab36de1ecd0bb72ef9f7241438e6}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The Act-Belong-Commit campaign is the world's first comprehensive, population-wide, community-based program designed to promote mental health. The campaign targets individuals to engage in mentally healthy activities, while at the same time, encouraging community organizations that offer such activities, to increase participation in their activities. Using nationally-representative data from Ireland, the aim of this study was to prospectively assess the association between indicators of the Act-Belong-Commit behavioral domains and incident depression, anxiety, and cognitive impairment. Data from two consecutive waves of the Irish Longitudinal Study on Ageing (TILDA) were analyzed. The analytical sample consisted of 6098 adults aged {$\geq$}50years. Validated scales for depression, anxiety, and cognitive impairment were used. The number of social/recreational activities engaged in was used as an indicator of Act, social network integration as an indicator of Belong, and frequency of participation in these social/recreational activities as an indicator of Commit. Multivariable logistic regression analyses were conducted to assess associations between baseline indicators of Act-Belong-Commit and incident depression, anxiety, and cognitive impairment at two-year follow-up. The adjusted model showed that each increase in the number of social/recreational activities (Act) inversely predicted the onset of depression, anxiety, and cognitive impairment. The same was the case for social network integration (Belong); that is, being well integrated into social networks was a significant protective factor against all mental health outcomes. Finally, frequency of participation in social/recreational activities (Commit) significantly and inversely predicted the onset of depression and anxiety, while the protective effect against cognitive impairment was only marginally significant. Act-Belong-Commit indicators are shown to be protective against mental disorders and cognitive impairment among older Irish adults. This provides further evidence for the campaign's potential efficacy and has potentially wide-ranging implications for preventing the deterioration of mental health and cognitive decline in the aging community.}
+      \field{issn}{0531-5565}
+      \field{journaltitle}{Experimental Gerontology}
+      \field{title}{The Protective Properties of {{Act-Belong-Commit}} Indicators against Incident Depression, Anxiety, and Cognitive Impairment among Older {{Irish}} Adults: {{Findings}} from a Prospective Community-Based Study}
+      \field{volume}{91}
+      \field{year}{2017}
+      \field{pages}{79\bibrangedash 87}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1016/j.exger.2017.02.074
+      \endverb
+      \verb{file}
+      \verb /Users/mrarab/Zotero/storage/9ITURHS8/Santini et al. - 2017 - The protective properties of Act-Belong-Commit indicators against incident depression, anxiety, and.pdf
+      \endverb
+    \endentry
+    \entry{juolaO117NursingStaff2014}{article}{}{}
+      \name{author}{8}{}{%
+        {{hash=e7970388360aac989630f28ce41346f7}{%
+           family={Juola},
+           familyi={J\bibinitperiod},
+           given={A.\bibnamedelimi L.},
+           giveni={A\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=ef112885885612d55897a9cda610ddb8}{%
+           family={Bjorkman},
+           familyi={B\bibinitperiod},
+           given={M.\bibnamedelimi P.},
+           giveni={M\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=d6b40c4108cd6177b8701cdc74e3fec7}{%
+           family={Kautiainen},
+           familyi={K\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=5d22780d3edab5bf0cc11478694d7bb9}{%
+           family={Pylkkanen},
+           familyi={P\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=b4e4afa0e468d346715d4219b1c1dce7}{%
+           family={{Finne-Soveri}},
+           familyi={F\bibinitperiod},
+           given={U.\bibnamedelimi H.},
+           giveni={U\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=f14923a98ec0c61999b1aea2f7c795c8}{%
+           family={Soini},
+           familyi={S\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=de36b25509cd4c8eb72806384f243037}{%
+           family={Pitkälä},
+           familyi={P\bibinitperiod},
+           given={K.\bibnamedelimi H.},
+           giveni={K\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=b325c069ba584d7afe84b2cffd384202}{%
+           family={Bell},
+           familyi={B\bibinitperiod},
+           given={J.\bibnamedelimi S.},
+           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{9711f82d2a79e1418788e6f2ffe817ba}
+      \strng{fullhash}{c2bbb0347a7dc65f68ac95d839df03be}
+      \strng{fullhashraw}{c2bbb0347a7dc65f68ac95d839df03be}
+      \strng{bibnamehash}{9711f82d2a79e1418788e6f2ffe817ba}
+      \strng{authorbibnamehash}{9711f82d2a79e1418788e6f2ffe817ba}
+      \strng{authornamehash}{9711f82d2a79e1418788e6f2ffe817ba}
+      \strng{authorfullhash}{c2bbb0347a7dc65f68ac95d839df03be}
+      \strng{authorfullhashraw}{c2bbb0347a7dc65f68ac95d839df03be}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1878-7649}
+      \field{journaltitle}{European Geriatric Medicine}
+      \field{title}{O1.17: {{Nursing}} Staff Education to Reduce Potentially Harmful Medication Use among Older People in Assisted Living Facilities: Effects of Randomized Controlled Trial on Cognition and Falls}
+      \field{volume}{5}
+      \field{year}{2014}
+      \field{pages}{S50\bibrangedash S51}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1016/S1878-7649(14)70100-7
+      \endverb
+      \verb{file}
+      \verb /Users/mrarab/Zotero/storage/NJ2FP643/Juola et al. - 2014 - O1.17 Nursing staff education to reduce potentially harmful medication use among older people in as.pdf
+      \endverb
+    \endentry
+    \entry{mccarthyAssociationVitaminDeficiency2022}{article}{}{}
+      \name{author}{11}{}{%
+        {{hash=a279464c4ebca342ddcec2a93960cd8d}{%
+           family={McCarthy},
+           familyi={M\bibinitperiod},
+           given={Kevin},
+           giveni={K\bibinitperiod}}}%
+        {{hash=f4ec8e3f9be1f495a52b4c48069573a3}{%
+           family={Laird},
+           familyi={L\bibinitperiod},
+           given={Eamon},
+           giveni={E\bibinitperiod}}}%
+        {{hash=fabea5c8972aea08b1a02e4633ae84c7}{%
+           family={O'Halloran},
+           familyi={O\bibinitperiod},
+           given={Aisling\bibnamedelima M.},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=952350e843168b80e8355859706825dc}{%
+           family={Walsh},
+           familyi={W\bibinitperiod},
+           given={Cathal},
+           giveni={C\bibinitperiod}}}%
+        {{hash=ffa1787eb93e306c8e66d3684f077e04}{%
+           family={Healy},
+           familyi={H\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=f89e8c5eb1a23d1f62aa065794effb58}{%
+           family={Fitzpatrick},
+           familyi={F\bibinitperiod},
+           given={Annette\bibnamedelima L.},
+           giveni={A\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=eac4a60fced9bb9409005dfbbcbc9a8d}{%
+           family={Walsh},
+           familyi={W\bibinitperiod},
+           given={James\bibnamedelima B.},
+           giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=51de116308ee40903d00d357542f0cf3}{%
+           family={Hernández},
+           familyi={H\bibinitperiod},
+           given={Belinda},
+           giveni={B\bibinitperiod}}}%
+        {{hash=8ebbf754ed1716703daa5d2ce64b58a7}{%
+           family={Fallon},
+           familyi={F\bibinitperiod},
+           given={Padraic},
+           giveni={P\bibinitperiod}}}%
+        {{hash=56b85757081ee51dd5c3473e28e3e35c}{%
+           family={Molloy},
+           familyi={M\bibinitperiod},
+           given={Anne\bibnamedelima M.},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=900692698d3b6559f0df62c0b382164e}{%
+           family={Kenny},
+           familyi={K\bibinitperiod},
+           given={Rose\bibnamedelima Anne},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{44e0a8c3fec7ee06501ec7c733c7cafe}
+      \strng{fullhash}{fb0328c5850dc582b37b99ce73193fe8}
+      \strng{fullhashraw}{fb0328c5850dc582b37b99ce73193fe8}
+      \strng{bibnamehash}{44e0a8c3fec7ee06501ec7c733c7cafe}
+      \strng{authorbibnamehash}{44e0a8c3fec7ee06501ec7c733c7cafe}
+      \strng{authornamehash}{44e0a8c3fec7ee06501ec7c733c7cafe}
+      \strng{authorfullhash}{fb0328c5850dc582b37b99ce73193fe8}
+      \strng{authorfullhashraw}{fb0328c5850dc582b37b99ce73193fe8}
+      \field{extraname}{2}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{BACKGROUND: It is hypothesized that vitamin D contributes to the aetiology of type 2 diabetes mellitus (diabetes). This study's objective was to examine the relationships between baseline vitamin D status (as measured by plasma 25-hydroxyvitamin D concentration) and both prevalent diabetes and prospective risk of developing diabetes, including prediabetes, in a population with historically low levels of vitamin D. METHODS: In this prospective cohort study, data from The Irish Longitudinal Study on Ageing (TILDA), a nationally representative cohort of adults aged {$\geq$}50 years residing in Ireland were analysed, including wave 1 (October 2009-June 2011) (n~=~5272) and wave 3 (March 2014-October 2015) (n~=~3828). Those aged {$<$}50 years at baseline or who did not complete the health assessment were excluded. Logistic regression models examined the associations between baseline vitamin D concentration (nmol/L) with prevalent diabetes status and incident diabetes/prediabetes collected at a 4-year follow-up. Models were adjusted for age, sex, education, body mass index, smoking history, physical activity, use of statins, and the season in which the vitamin D concentration was sampled. FINDINGS: Deficient baseline vitamin D concentration was cross-sectionally associated with an increased likelihood of having prevalent diabetes (Relative Risk Ratio [RRR] 1{$\cdot$}5, 95\% CI: 1{$\cdot$}03, 2{$\cdot$}18; p~=~0{$\cdot$}037). In longitudinal analyses evaluating diabetes status 4 years later, there was a 62\% increased likelihood (RRR: 1{$\cdot$}62, 95\% CI: 1{$\cdot$}12, 2{$\cdot$}35; p~=~0{$\cdot$}011) of developing prediabetes for those with vitamin D {$<$}30 nmol/L compared to those with {$\geq$}75 nmol/L. The rate of progression from prediabetes to diabetes between wave 1 and 3 was observed to be 32{$\cdot$}5\%. INTERPRETATION: Those with lower concentrations of vitamin D, as measured by 25-hydroxyvitamin D, may have different risk profiles with regards to their glycaemic status. Our study had limited power due to the low incidence of diabetes but showed strong associations with incident prediabetes, so further research is required. Optimising vitamin D status at a population level may significantly reduce diabetes. FUNDING: TILDA is funded by Atlantic Philanthropies, the Irish Department of Health, and Irish Life, while additional funding was provided by the Irish Department of Agriculture, Food and the Marine (13F492) to cover the cost of 25-hydroxyvitamin D analysis.}
+      \field{issn}{2589-5370}
+      \field{journaltitle}{EClinicalMedicine}
+      \field{langid}{english}
+      \field{month}{11}
+      \field{shorttitle}{Association between Vitamin {{D}} Deficiency and the Risk of Prevalent Type 2 Diabetes and Incident Prediabetes}
+      \field{title}{Association between Vitamin {{D}} Deficiency and the Risk of Prevalent Type 2 Diabetes and Incident Prediabetes: {{A}} Prospective Cohort Study Using Data from {{The Irish Longitudinal Study}} on {{Ageing}} ({{TILDA}})}
+      \field{volume}{53}
+      \field{year}{2022}
+      \field{pages}{101654}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.eclinm.2022.101654
+      \endverb
+      \verb{file}
+      \verb /Users/mrarab/Zotero/storage/5ZWEQ5ZH/McCarthy et al. - 2022 - Association between vitamin D deficiency and the risk of prevalent type 2 diabetes and incident pred.pdf
+      \endverb
+      \keyw{Diabetes,Prediabetes,Public health,TILDA,Vitamin D}
+    \endentry
+    \entry{mccarthyMetabolicSyndromeAccelerates2023}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=a279464c4ebca342ddcec2a93960cd8d}{%
+           family={McCarthy},
+           familyi={M\bibinitperiod},
+           given={Kevin},
+           giveni={K\bibinitperiod}}}%
+        {{hash=fabea5c8972aea08b1a02e4633ae84c7}{%
+           family={O'Halloran},
+           familyi={O\bibinitperiod},
+           given={Aisling\bibnamedelima M.},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=8ebbf754ed1716703daa5d2ce64b58a7}{%
+           family={Fallon},
+           familyi={F\bibinitperiod},
+           given={Padraic},
+           giveni={P\bibinitperiod}}}%
+        {{hash=900692698d3b6559f0df62c0b382164e}{%
+           family={Kenny},
+           familyi={K\bibinitperiod},
+           given={Rose\bibnamedelima Anne},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=ab25d1c00fab082aa7be8d3177e1449b}{%
+           family={McCrory},
+           familyi={M\bibinitperiod},
+           given={Cathal},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{44e0a8c3fec7ee06501ec7c733c7cafe}
+      \strng{fullhash}{f44dead309dc9845ece1e00016df3454}
+      \strng{fullhashraw}{f44dead309dc9845ece1e00016df3454}
+      \strng{bibnamehash}{44e0a8c3fec7ee06501ec7c733c7cafe}
+      \strng{authorbibnamehash}{44e0a8c3fec7ee06501ec7c733c7cafe}
+      \strng{authornamehash}{44e0a8c3fec7ee06501ec7c733c7cafe}
+      \strng{authorfullhash}{f44dead309dc9845ece1e00016df3454}
+      \strng{authorfullhashraw}{f44dead309dc9845ece1e00016df3454}
+      \field{extraname}{3}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Metabolic syndrome (MetS) is a risk factor for the development of diabetes, cardiovascular disease, and all-cause mortality. It has an estimated prevalence of 40 \% among older adults. Epigenetic clocks, which measure biological age based on DNA methylation (DNAm) patterns, are a candidate biomarker for ageing. GrimAge is one such clock which is based on levels of DNAm at 100 Cytosine-phosphate-Guanine (CpG) sites. This study hypothesised that those with MetS have `accelerated ageing' (biological age greater than their chronological age) as indexed by GrimAge. This study examined MetS's association with GrimAge age acceleration (AA) using data from a subsample of 469 participants of the Irish Longitudinal Study on Ageing (TILDA). MetS was defined by National Cholesterol Education Program Third Adult Treatment Panel (ATP III) and International Diabetes Foundation (IDF) criteria, operationalised using the conventional binary cut-off, and as a count variable ranging from 0 to 5, based on the presence of individual components. This study also explored inflammation (as measured by C reactive protein) and metabolic dysfunction (as measured by adiponectin) as possible mediating factors between MetS and GrimAge AA. We found that MetS as defined by IDF criteria was associated with GrimAge AA of 0.63 years. When MetS was treated as a count, each unit increase in MetS score was associated with over 0.3 years GrimAge AA for both ATP III and IDF criteria. Inflammation mediated approximately one third of the association between MetS and GrimAge AA, suggesting that chronic subclinical inflammation observed in MetS has a relationship with DNAm changes consistent with a faster pace of ageing. Metabolic dysfunction mediated the association between MetS and GrimAge AA to a lesser extent (16 \%). These data suggest that chronic subclinical inflammation observed in MetS has a relationship with DNAm changes consistent with a greater pace of ageing.}
+      \field{issn}{0531-5565}
+      \field{journaltitle}{Experimental Gerontology}
+      \field{title}{Metabolic Syndrome Accelerates Epigenetic Ageing in Older Adults: {{Findings}} from {{The Irish Longitudinal Study}} on {{Ageing}} ({{TILDA}})}
+      \field{volume}{183}
+      \field{year}{2023}
+      \field{pages}{112314}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.exger.2023.112314
+      \endverb
+      \verb{file}
+      \verb /Users/mrarab/Zotero/storage/HMZ2NG2F/McCarthy et al. - 2023 - Metabolic syndrome accelerates epigenetic ageing in older adults Findings from The Irish Longitudin.pdf
+      \endverb
+      \keyw{Accelerated ageing,Epigenetics,GrimAge,Mediation,Metabolic syndrome}
+    \endentry
+    \entry{aziziEvidenceAssociationAllostatic2024}{article}{}{}
+      \name{author}{7}{}{%
+        {{hash=3396c096df8d8bbf11077681252fd2c7}{%
+           family={Azizi},
+           familyi={A\bibinitperiod},
+           given={Zahra},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=0c28ef278aa52df5dfe8a60e3de80fb8}{%
+           family={Hirst},
+           familyi={H\bibinitperiod},
+           given={Rebecca\bibnamedelima J.},
+           giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=3544ec0b1f94592723d0aa13ce9819fe}{%
+           family={Dowd},
+           familyi={D\bibinitperiod},
+           given={Alan\bibnamedelima O'},
+           giveni={A\bibinitperiod\bibinitdelim O\bibinitperiod}}}%
+        {{hash=ab25d1c00fab082aa7be8d3177e1449b}{%
+           family={McCrory},
+           familyi={M\bibinitperiod},
+           given={Cathal},
+           giveni={C\bibinitperiod}}}%
+        {{hash=900692698d3b6559f0df62c0b382164e}{%
+           family={Kenny},
+           familyi={K\bibinitperiod},
+           given={Rose\bibnamedelima Anne},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=ce66da44bcda6927851b605b8c73ad2e}{%
+           family={Newell},
+           familyi={N\bibinitperiod},
+           given={Fiona\bibnamedelima N.},
+           giveni={F\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=c615946f1eb89704fa079320fff48390}{%
+           family={Setti},
+           familyi={S\bibinitperiod},
+           given={Annalisa},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{1a3e21cd3ccf9930ee6614b8557a1894}
+      \strng{fullhash}{26ebe78f701eef662f5885aed33ca795}
+      \strng{fullhashraw}{26ebe78f701eef662f5885aed33ca795}
+      \strng{bibnamehash}{1a3e21cd3ccf9930ee6614b8557a1894}
+      \strng{authorbibnamehash}{1a3e21cd3ccf9930ee6614b8557a1894}
+      \strng{authornamehash}{1a3e21cd3ccf9930ee6614b8557a1894}
+      \strng{authorfullhash}{26ebe78f701eef662f5885aed33ca795}
+      \strng{authorfullhashraw}{26ebe78f701eef662f5885aed33ca795}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Multisensory integration, the ability of the brain to integrate information from different sensory modalities, is critical for responding to environmental stimuli. While older adults show changes in multisensory integration with age, the impact of allostatic load (AL) (i.e., the effect of exposure to chronic stress, which can accelerate ageing) on multisensory perception remains understudied. We explored the relationship between multisensory integration and AL in 1,358 adults aged 50+ from The Irish Longitudinal Study on Ageing by performing a Sound Induced Flash Illusion (SIFI) task at multiple audio-visual temporal asynchronies. The AL score was created using a battery of biomarkers representing the activity of four major physiological systems: immunological, cardiovascular, metabolic, and renal. The number of biomarkers for which a participant was categorised in the highest risk quartile using sex-specific cutoffs was used to produce an overall AL score. We accounted for medication use when calculating our AL score. We analysed the accuracy of illusion trials on a SIFI task using generalised logistic mixed effects regression models adjusted for a number of covariates. Observation of cross-sectional and longitudinal results revealed that lower accuracy in integration (i.e., higher SIFI susceptibility with larger temporal asynchronies) was associated with higher AL. This confirmed the distinct patterns of multisensory integration in ageing.}
+      \field{issn}{0167-4943}
+      \field{journaltitle}{Archives of Gerontology and Geriatrics}
+      \field{title}{Evidence for an Association between Allostatic Load and Multisensory Integration in Middle-Aged and Older Adults}
+      \field{volume}{116}
+      \field{year}{2024}
+      \field{pages}{105155}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.archger.2023.105155
+      \endverb
+      \verb{file}
+      \verb /Users/mrarab/Zotero/storage/ILHG8P55/Azizi et al. - 2024 - Evidence for an association between allostatic load and multisensory integration in middle-aged and.pdf
+      \endverb
+      \keyw{Ageing,Allostatic load,Audio-visual,Multisensory,Sound-induced flash illusion}
+    \endentry
+    \entry{matthewsPredictingMortalityIrish2022}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=4fe1278f7cffd9cdb04f46538998d273}{%
+           family={Matthews},
+           familyi={M\bibinitperiod},
+           given={Soraya},
+           giveni={S\bibinitperiod}}}%
+        {{hash=cb34995401e579cb2aede764254b82b9}{%
+           family={Ward},
+           familyi={W\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod}}}%
+        {{hash=2d53014a001d5fcefa02bceaac223f2f}{%
+           family={Nolan},
+           familyi={N\bibinitperiod},
+           given={Anne},
+           giveni={A\bibinitperiod}}}%
+        {{hash=ee986359d45200c93defd38e8c86385a}{%
+           family={Normand},
+           familyi={N\bibinitperiod},
+           given={Charles},
+           giveni={C\bibinitperiod}}}%
+        {{hash=900692698d3b6559f0df62c0b382164e}{%
+           family={Kenny},
+           familyi={K\bibinitperiod},
+           given={Rose\bibnamedelima Anne},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=0d0e4fb35ed38d9b21bd04860e819562}{%
+           family={May},
+           familyi={M\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{b4d98501c7425e05c1b2fe7da8b6dc68}
+      \strng{fullhash}{5b68a826b77acc65536bab8da36a6a41}
+      \strng{fullhashraw}{5b68a826b77acc65536bab8da36a6a41}
+      \strng{bibnamehash}{b4d98501c7425e05c1b2fe7da8b6dc68}
+      \strng{authorbibnamehash}{b4d98501c7425e05c1b2fe7da8b6dc68}
+      \strng{authornamehash}{b4d98501c7425e05c1b2fe7da8b6dc68}
+      \strng{authorfullhash}{5b68a826b77acc65536bab8da36a6a41}
+      \strng{authorfullhashraw}{5b68a826b77acc65536bab8da36a6a41}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Objectives We aimed to replicate existing international (US and UK) mortality indices using Irish data. We developed and validated a four-year mortality index for adults aged 50\,+\,in Ireland and compared performance with these international indices. We then extended this model by including additional predictors (self-report and healthcare utilization) and compared its performance to our replication model. Methods Eight thousand one hundred seventy-four participants in The Irish Longitudinal Study on Ageing were split for development (n\,=\,4,121) and validation (n\,=\,4,053). Six baseline predictor categories were examined (67 variables total): demographics; cardiovascular-related illness; non-cardiovascular illness; health and lifestyle variables; functional variables; self-report (wellbeing and social connectedness) and healthcare utilization. We identified variables independently associated with four-year mortality in the development cohort and attached these variables a weight according to strength of association. We summed the weights to calculate a single index score for each participant and evaluated predicted accuracy in the validation cohort. Results Our final 14-predictor (extended) model assigned risk points for: male (1pt); age (65--69: 2pts; 70--74: 4 pts; 75--79: 4pts; 80--84: 6pts; 85\,+\,: 7pts); heart attack (1pt); cancer (3pts); smoked past age 30 (2pts); difficulty walking 100~m (2pts); difficulty using the toilet (3pts); difficulty lifting 10lbs (1pts); poor self-reported health (1pt); and hospital admission in previous year (1pt). Index discrimination was strong (ROC area\,=\,0.78). Discussion Our index is predictive of four-year mortality in community-dwelling older Irish adults. Comparisons with the international indices show that our 12-predictor (replication) model performed well and suggests that generalisability is high. Our 14-predictor (extended) model showed modest improvements compared to the 12-predictor model. Supplementary Information The online version contains supplementary material available at 10.1186/s12877-022-03196-z.}
+      \field{issn}{1471-2318}
+      \field{journaltitle}{BMC Geriatr}
+      \field{month}{6}
+      \field{shorttitle}{Predicting Mortality in {{The Irish Longitudinal Study}} on {{Ageing}} ({{TILDA}})}
+      \field{title}{Predicting Mortality in {{The Irish Longitudinal Study}} on {{Ageing}} ({{TILDA}}): Development of a Four-Year Index and Comparison with International Measures}
+      \field{urlday}{2}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{volume}{22}
+      \field{year}{2022}
+      \field{urldateera}{ce}
+      \field{pages}{510}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1186/s12877-022-03196-z
+      \endverb
+      \verb{file}
+      \verb /Users/mrarab/Zotero/storage/9JUKLC8H/Matthews et al. - 2022 - Predicting mortality in The Irish Longitudinal Study on Ageing (TILDA) development of a four-year i.pdf
+      \endverb
+    \endentry
+    \entry{davisLinearRegressionbasedMachine2021}{inproceedings}{}{}
+      \name{author}{6}{}{%
+        {{hash=55844b5e6e88aae765588dd1d8e21c8d}{%
+           family={Davis},
+           familyi={D\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod}}}%
+        {{hash=a1bea4dbf473034073ba1598c0fa1d27}{%
+           family={Knight},
+           familyi={K\bibinitperiod},
+           given={Silvin\bibnamedelima P.},
+           giveni={S\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=74048d5a3d92f207a27d0856d5f0ad8a}{%
+           family={Rizzo},
+           familyi={R\bibinitperiod},
+           given={Rossella},
+           giveni={R\bibinitperiod}}}%
+        {{hash=8105bb0412ac2009f0e3d185acbb96f9}{%
+           family={Donoghue},
+           familyi={D\bibinitperiod},
+           given={Orna\bibnamedelima A.},
+           giveni={O\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=900692698d3b6559f0df62c0b382164e}{%
+           family={Kenny},
+           familyi={K\bibinitperiod},
+           given={Rose\bibnamedelima Anne},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=732234f00554e251804daaa8ff52001a}{%
+           family={{Romero-Ortuno}},
+           familyi={R\bibinitperiod},
+           given={Roman},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{8ae4576af3d5dd492315c6e49b1fc99a}
+      \strng{fullhash}{198e7305c90d50012614d42ed7ddf4bd}
+      \strng{fullhashraw}{198e7305c90d50012614d42ed7ddf4bd}
+      \strng{bibnamehash}{8ae4576af3d5dd492315c6e49b1fc99a}
+      \strng{authorbibnamehash}{8ae4576af3d5dd492315c6e49b1fc99a}
+      \strng{authornamehash}{8ae4576af3d5dd492315c6e49b1fc99a}
+      \strng{authorfullhash}{198e7305c90d50012614d42ed7ddf4bd}
+      \strng{authorfullhashraw}{198e7305c90d50012614d42ed7ddf4bd}
+      \field{extraname}{2}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Frailty in older adults is characterized by reduced physiological reserve. Gait speed reserve (GSR: maximum minus usual gait speed) could help identify frailty and act as a proxy for physiological reserve. Utilizing data from 2397 participants aged 50+ from wave 3 of The Irish Longitudinal Study on Ageing, we developed a stepwise linear regression-based machine learning pipeline to select the most important GSR predictors from 34 manually selected features across multiple domains. Variables were selected one at a time such that they maximized the mean adjusted r-squared score from a 5-fold cross-validation. A peak score of {\textbackslash}boldsymbol(0.16 {\textbackslash}pm 0.03) was achieved with 14 variables (giving adjusted-r-squared of 0.18 and 0.16 on 80\% training and 20\% test data, respectively). The first 7 variables explained 95\% of the peak score: grip strength, MOCA cognitive score, third level education, chair stands time, sex, age, and body mass index (BMI). Of the 14 selected features, 11 had statistically significant ({\textbackslash}mathbfp {$<$} 0.05) effects in the model: sex, MOCA, third level education, chair stands time, age, BMI, grip strength, cardiac output, number of medications, fear of falling, and mean choice reaction time. Associations between GSR and multi-domain features suggest that a network physiology approach is necessary for assessing physiological reserve.}
+      \field{booktitle}{2021 29th {{European Signal Processing Conference}} ({{EUSIPCO}})}
+      \field{issn}{2076-1465}
+      \field{month}{8}
+      \field{title}{A Linear Regression-Based Machine Learning Pipeline for the Discovery of Clinically Relevant Correlates of Gait Speed Reserve from Multiple Physiological Systems}
+      \field{urlday}{4}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{year}{2021}
+      \field{urldateera}{ce}
+      \field{pages}{1266\bibrangedash 1270}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.23919/EUSIPCO54536.2021.9616187
+      \endverb
+      \verb{file}
+      \verb /Users/mrarab/Zotero/storage/WA7G5H9P/Davis et al. - 2021 - A linear regression-based machine learning pipeline for the discovery of clinically relevant correla.pdf
+      \endverb
+      \keyw{Aging,Europe,Frailty,Gait Speed Reserve,Linear Regression,Machine learning,Machine Learning,Network Physiology,Physiology,Pipelines,Signal processing,Training}
+    \endentry
+    \entry{tilda2023pmf}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=487efcc4d846b1d09ee5d1d428ff4ec8}{%
+           family={{The Irish Longitudinal Study on Ageing}},
+           familyi={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{487efcc4d846b1d09ee5d1d428ff4ec8}
+      \strng{fullhash}{487efcc4d846b1d09ee5d1d428ff4ec8}
+      \strng{fullhashraw}{487efcc4d846b1d09ee5d1d428ff4ec8}
+      \strng{bibnamehash}{487efcc4d846b1d09ee5d1d428ff4ec8}
+      \strng{authorbibnamehash}{487efcc4d846b1d09ee5d1d428ff4ec8}
+      \strng{authornamehash}{487efcc4d846b1d09ee5d1d428ff4ec8}
+      \strng{authorfullhash}{487efcc4d846b1d09ee5d1d428ff4ec8}
+      \strng{authorfullhashraw}{487efcc4d846b1d09ee5d1d428ff4ec8}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://tilda.tcd.ie/data/documentation/doc/TILDA%20Release%20Guide%20v5.5.pdf}}
+      \field{note}{Accessed: 2025-10-09}
+      \field{title}{TILDA Pseudonymised Microdata File Release Guide v5.5}
+      \field{year}{2023}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
