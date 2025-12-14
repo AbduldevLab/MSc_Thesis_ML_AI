@@ -314,13 +314,49 @@
 \markboth{Appendix}{Appendix}
 
 % --- Appendix C ---
-\chapter*{Appendix C}
-\section*{Code for }
-% \lstinputlisting[fontadjust=\true]{7_appendixes/}
+\chapter{First Stage: Scenario Variable Mapping}
+\label{app:variable_mapping_code}
+% \section*{Code for }
+\lstset{language=Python,
+        inputencoding=utf8,
+        basicstyle=\footnotesize\ttfamily,
+        breaklines=true,
+        frame=shadowbox,
+        keywordstyle=\color{blue}\bfseries,
+        stringstyle=\color{c++red},
+        commentstyle=\color{c++green},
+        numbers=left,
+        numberstyle=\tiny,
+        stepnumber=1,
+        numbersep=5pt
+}
+\lstinputlisting[fontadjust=\true]{7_appendixes/var_mapping.py}
 
+\addcontentsline{toc}{chapter}{Appendix C: First Stage Variable Mapping Code}
 \chaptermark{Appendix}
 \markboth{Appendix}{Appendix}
 
+% --- Appendix D ---
+\chapter{Second Stage: Deterministic six step cleaning engine}
+\label{app:cleaning_pipeline_code}
+% \section*{Code for }
+\lstset{language=Python,
+        basicstyle=\footnotesize\ttfamily,
+        breaklines=true,
+        frame=shadowbox,
+        keywordstyle=\color{blue}\bfseries,
+        stringstyle=\color{c++red},
+        commentstyle=\color{c++green},
+        numbers=left,
+        numberstyle=\tiny,
+        stepnumber=1,
+        numbersep=5pt
+}
+\lstinputlisting[fontadjust=\true]{7_appendixes/cleaning_pipeline.py}
+
+\addcontentsline{toc}{chapter}{Appendix D: Second Stage deterministic six step cleaning engine}
+\chaptermark{Appendix}
+\markboth{Appendix}{Appendix}
 % Supporting documents are included in the appendix:
 
 % \begin{itemize}

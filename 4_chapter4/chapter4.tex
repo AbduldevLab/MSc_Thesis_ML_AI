@@ -20,12 +20,12 @@
 
 The preprocessing pipeline primary aim was to convert all features, regardless of their original datatype (float, categorical, object, or mixed formats), into a standardised numerical representation suitable for machine learning. All non response and sentinel values were consistently mapped to the numerical placeholder $\texttt{-1.0}$, and all valid entries were converted to $\texttt{float64}$. This ensured compatibility across the \gls{TILDA} waves and enabled uniform downstream operations for feature engineering and modelling.
 
-\subsection{Input data dimensions (post manual filtering)}
-The dimensions of the triaged datasets, which serve as the input for the automated cleaning engine, are reported below. This initial manual filtering step removed non informative variables (e.g., columns with zero variation, unique participant IDs, non essential administrative fields).
+\subsection{Input data shape (post manual filtering)}
+The dimensions of the manually filtered datasets, which serve as the input for the automated cleaning engine, are reported in (table~\ref{tab:dataset_shape}). This initial manual filtering step removed non informative variables (e.g., columns with zero variation, unique participant IDs, non essential administrative fields) , resulting in a reduction of up to $\texttt{50\%}$ of the original raw variables (e.g., from 1619 to 809 in Wave 1).
 
 \begin{table}[htbp]
 \centering
-\caption{Input Dimensions for Cleaning Pipeline (Post Manual Variable Filtering)}
+\caption{Input Shape for Cleaning Pipeline (Post Manual Variable Filtering)}
 \label{tab:dataset_shape}
 \begin{tabular}{|c|c|c|}
 \hline
@@ -43,20 +43,19 @@ Harmonised \gls{RAND} & 8501 & 453 \\
 
 \subsection{Cleaning Engine}
 
-The core challenge in converting heterogeneous variable types across five waves into a single numerical standard required constructing a reproducible pipeline to achieve \emph{numerical homogeneity}. This was accomplished by developing a two stage system: \textbf{Variable scenario mapping} and the \textbf{Six step deterministic cleaning engine}.
+The core challenge in converting heterogeneous variable types across five waves into a single numerical standard required constructing a reproducible pipeline to achieve \emph{numerical homogeneity}. This was accomplished by developing a two stage system: \emph{Variable scenario mapping}, specifically inside ``detect\_column\_scenario\_mapping" function~\ref{app:variable_mapping_code} and the final \emph{six step deterministic cleaning engine}~\ref{app:cleaning_pipeline_code}.
 
 \subsubsection*{Stage 1: Variable scenario mapping and validation}
 
 An exploratory visualiser was used to systematically inspect the raw data distributions, unique values, and datatype inconsistencies across all five waves. This audit initially identified between five and seven distinct data scenarios, which were expanded and refined during development to nine total scenarios to cover the full scope of data heterogeneity: from simple numeric fields and numeric data with symbols, to likert type scales, calendar based frequency strings, and complex mixed string numeric fields. These nine initial scenarios were then systematically collapsed and categorised into the six final cleaning steps, reflecting an ordering based on transformation confidence.
 
-The pipeline's first stage utilised an automated function, powered by the \texttt{re} (Regex) python library, to classify every raw variable into one of these six final scenarios. During development, a dedicated "unknown complex" category was crucial: variables routed here indicated a failure of the detection logic. This iterative debugging process, which identified and fixed classification errors, significantly drove the robustness of the final detection mechanism by ensuring the pipeline correctly classified variables that initially appeared ambiguous.
+The pipeline's first stage utilised an automated function (see appendix~\ref{app:variable_mapping_code}), powered by the \texttt{re} (Regex) python library, to classify every raw variable into one of these nine scenarios. During development, a dedicated ``unknown complex" category was crucial: variables routed here indicated a failure of the detection logic. This iterative debugging process, which identified and fixed classification errors, significantly drove the robustness of the final detection mechanism by ensuring the pipeline correctly classified variables that initially appeared ambiguous.
 
-To ensure robustness, the classification output was immediately processed by a validation routine that generated a comprehensive dictionary of all variables, specific to its respective grouped detected scenario after each step (used for manual inspection), their detected scenario, and a sample of transformed values. This dictionary was formatted into a ``.md'' file for rapid, surface level verification, which honed the final mapping dictionary. This process of using automated detection followed by visual, manual validation was essential for correcting errors in classification logic before the subsequent scenario transformations were executed in the pipeline.
+To ensure robustness, the classification output was immediately processed by a validation routine that generated a comprehensive dictionary of all variables, specific to its respective grouped detected scenario after each step (used for manual inspection), their detected scenario, and a sample of transformed values. This dictionary generated inside the ``show\_grouped\_vars\_for\_scenarios" function was formatted to create a automatic friendly ``.md'' file for rapid, surface level verification, which honed the final mapping dictionary~\ref{app:cleaning_pipeline_code}. This process of using automated detection followed by visual, manual validation was essential for correcting errors in classification logic before the subsequent scenario transformations were executed in the pipeline.
 
 \subsubsection*{Stage 2: Deterministic six step cleaning sequence}
-The nine input scenarios were processed by the \emph{Six step cleaning engine}. Resolving simple and unambiguous cases first increased the proportion of clean numerical variables before addressing complex structures, which involved the censored and multi-class scenarios (Figure~\ref{fig:cleaning_flow}). This deterministic sequence applied the same logic across all waves to ensure consistent data alignment.
+The nine input scenarios were processed by the \emph{Six step cleaning engine}. Resolving simple and unambiguous cases first increased the proportion of clean numerical variables before addressing complex structures, which involved the censored and multi-class scenarios (Figure~\ref{fig:cleaning_flow}). This deterministic sequence applied the same logic across all waves to ensure consistent data alignment (see appendix~\ref{app:cleaning_pipeline_code}).
 
-% --- FIGURE ---
 \begin{figure}[htbp]
 \centering
 \begin{tikzpicture}[
@@ -78,18 +77,21 @@ The nine input scenarios were processed by the \emph{Six step cleaning engine}. 
 \draw[->, thick] (step5) -- (step6);
 
 \end{tikzpicture}
-\caption{Flowchart of the Six Step Cleaning Pipeline applied to all \gls{TILDA} waves. See full transformation tables in Appendix~\ref{tab:step6_full} for detailed scenario progression at each step.}
+\caption{Flowchart of the Six Step Cleaning Pipeline applied to all \gls{TILDA} waves. See full transformation tables in Appendix~\ref{tab:step6_full} and \ref{app:cleaning_pipeline_code} for detailed scenario progression code at each step.}
 \label{fig:cleaning_flow}
 \end{figure}
 
+A key difficulty in cleaning the five \gls{TILDA} waves was the lack of guaranteed ordering in categorical values for the same variable across different waves (e.g., \texttt{Wave 1}: [\texttt{Yes}, \texttt{No}], \texttt{Wave 3}: [\texttt{No}, \texttt{Yes}]). If the cleaning engine relied on a positional index (like traditional label encoding) for transformation, this inconsistency would result in different numerical codes for the same semantic category across waves (e.g., \texttt{Yes} $\rightarrow$ $\texttt{1.0}$ in Wave 1 and $\texttt{0.0}$ in Wave 3). To overcome this, the cleaning engine was designed to be \emph{order invariant} wherever possible, particularly in the later steps. For multi class scenarios (Step 6), this required an explicit, wave independent lookup based on the category string itself to ensure that a category string, once transformed to a numerical value, remained consistent regardless of its appearance order in the raw data.
+
+\clearpage
 The steps, and their technical focus, are:
 \begin{enumerate}
     \item \textbf{Empty / Blank Values:} Converts all \texttt{NaN}, empty strings, and whitespace to the standard non response value $\texttt{-1.0}$.
     \item \textbf{Sentinel Values:} Standardises wave specific non response codes (e.g., $\texttt{-98}$, $\texttt{-99}$) and documented textual sentinels (e.g., $\texttt{"dk"}$, $\texttt{"not applicable"}$) from the \gls{TILDA} \gls{PMF} release guide to the unified $\texttt{-1.0}$ placeholder.
     \item \textbf{Numeric Transformation:} Removes non numeric characters (units, symbols, white spaces) and converts censored or annotated numeric strings (e.g., $\texttt{"50+"}$, $\texttt{"<10"}$, $\texttt{"1-2.5"}$) to a numerical float equivalent (e.g., boundary value or midpoint).
     \item \textbf{Censored Categorical:} Applies explicit, known ordinal transformations and pre defined mappings to variables where text labels represent a latent numerical or ordered scale (e.g., health rating scales, likert ranges). This step was intentionally performed manually for a subset of low count variables to build intuition and reliable mapping dictionaries for the more complex subsequent scenarios. This included conversions for calendar based frequency strings like $\texttt{"twice a week"}$ to a numerical weekly equivalent.
-    \item \textbf{Binary Categorical:} Automatically maps two level variables (e.g., Yes/No, Male/Female) to $\texttt{1.0/0.0}$. The mapping relies on \emph{semantic detection rules} (e.g., assigning $\texttt{0.0}$ if the string contains $\texttt{"not"}$ or $\texttt{"no"}$ (context constrained) or a wave specific refusal code) and \emph{count detection rules} (where a variable has exactly two non missing unique values).
-    \item \textbf{Multi-class / Mixed (The Complex Scenario):} This final step processes all remaining multi label, mixed type, and string numeric hybrid columns. The challenge was more complex by the fact that the order of categorical string values for the same variable could differ across waves in some cases. To handle this, numerical assignments were made using an explicit dictionary lookup based on the original string, rather than relying on positional or alphabetical order. This ensured consistent numerical representation. The step performs extensive lexical processing, dedicated number extraction, and rule based mapping to convert dense, unstandardised text into numerical floats, ensuring all residual variable types are successfully quantified. The transformed values were subject to increased manual verification due to the variable complexity.
+    \item \textbf{Binary Categorical:} Automatically maps two level variables (e.g., Yes/No, Male/Female) to $\texttt{1.0/0.0}$. Importantly, this mapping is \emph{order invariant}: the numerical assignment does not depend on the original ordering of category labels in the raw data (e.g., \texttt{[Male, Female]} versus \texttt{[Female, Male]}). Instead, the encoding relies on \emph{semantic detection rules} (e.g., assigning $\texttt{0.0}$ to negated or absence indicating strings such as \texttt{"no"}, \texttt{"not"}, or wave specific refusal codes, under context constraints) alongside \emph{count based detection rules} (where a variable exhibits exactly two non missing unique values). This design choice ensures consistent binary representation across waves and variables, independent of label ordering or survey specific value presentation.
+    \item \textbf{Multi-class / Mixed (The Complex Scenario):} This final step processes all remaining multi label, mixed type, and string numeric hybrid columns. The challenge was more complex by the fact that the order of categorical string values for the same variable could differ across waves in some cases. To handle this, numerical assignments were made using an explicit dictionary lookup based on the original order sample value category strings, rather than relying on positional or alphabetical order. This ensured consistent numerical representation. The step performs extensive lexical processing, dedicated number extraction, and rule based mapping to convert dense, unstandardised text into numerical floats, ensuring all residual variable types are successfully quantified. The transformed values were subject to increased manual verification due to the variable complexity.
 \end{enumerate}
 
 \section{Data integration and longitudinal alignment}

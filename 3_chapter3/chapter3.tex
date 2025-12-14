@@ -40,7 +40,11 @@ Data used in this thesis were collected across five waves:
     \item \textbf{Wave 5:} 2018--2019
 \end{itemize}
 
-All \gls{TILDA} data were pseudonymised prior to release. Each participant received a unique identifier (`id') along with household and cluster identifiers (`household', `cluster') to permit longitudinal linkage while preserving anonymity. Each wave included three primary components:
+All \gls{TILDA} data were pseudonymised prior to release, meaning that personal identifiers such as names and addresses were removed or replaced with unique codes to protect participant confidentiality. Each participant received a unique identifier (`id`), along with household and cluster identifiers (`household`, `cluster`), allowing longitudinal linkage across waves without revealing individual identities. 
+
+Pseudonymisation ensures that analyses comply with data protection standards while retaining the structural and analytical integrity of the dataset. From a data cleaning and machine learning perspective, pseudonymised identifiers enable accurate merging of data across waves, preserve the longitudinal design, and support reproducible preprocessing and feature engineering. While these identifiers cannot be used for analyses of personal demographics like names or addresses, this limitation does not affect the modelling of health outcomes, lifestyle factors, or other variables of interest.
+
+Each wave included three primary components:
 \begin{enumerate}
     \item \textbf{\gls{CAPI}:} Home based, computer assisted personal interviews covering health, socio demographics, and family.
     \item \textbf{\gls{SCQ}:} Paper based self completion questionnaires capturing sensitive information on mental health, lifestyle, and wellbeing.
@@ -69,7 +73,7 @@ Harmonised & 8501 & 572 \\
 \end{table}
 
 \subsection{Variable filtering criteria} \label{ch:manual_cleaning}
-Manual filtering used rules-of-thumb prior to automated cleaning:
+Manual filtering used rule of thumb prior to automated cleaning:
 \begin{itemize}
     \item \textbf{Missingness:} Drop variables with $>80\%$ missing values. This threshold balances retaining sufficient feature coverage with ensuring statistical reliability. Variables exceeding 80\% missingness provide limited information in most cases, increase imputation uncertainty, and reduce effective sample size, which is particularly critical in longitudinal machine learning analyses.
     \item \textbf{Unique values:} Drop variables with a single observed value, as they contain no discriminative information and cannot contribute to modelling or inference. Variables with low cardinality (2--4 unique values) were retained for review, as they frequently represent meaningful categorical responses (e.g., binary indicators or ordinal scales) relevant to ageing outcomes.
@@ -153,3 +157,7 @@ The six thematic groups integrate information from \gls{CAPI}, \gls{SCQ}, and de
 \hline
 \end{tabular}
 \end{table}
+
+% ---------------------------------------------------------------------------
+% ----------------------- end of thesis sub-document ------------------------
+% ---------------------------------------------------------------------------
