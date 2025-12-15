@@ -12,13 +12,13 @@
 % ----------------------- contents from here ------------------------
 \section{Study Design}
 
-\gls{TILDA} provides longitudinal data across five waves for community dwelling adults in Ireland. This thesis uses data from five core \gls{TILDA} waves (Waves 1--5). For contextual comparison and benchmarking against international cohorts (see chapter~\ref{ch:chapter1}) however, it is important to note this is an external resource and not the output of the thesis's primary preprocessing pipeline. The primary analytical work focuses on the full five wave \gls{TILDA} dataset.
+\gls{TILDA} provides longitudinal data across five waves for community dwelling adults in Ireland. This thesis uses data from five core \gls{TILDA} waves (Waves 1--5). For contextual comparison and benchmarking against international cohorts (see chapter~\ref{ch:chapter1}), an additional external resource, the Harmonised \gls{TILDA} dataset was also inspected and prepared. The Harmonised dataset, which has been pre aligned to international standards such as the \gls{G2G}, contains a subset of variables mapped to a common cross study format and thus differs from the raw \gls{TILDA} files. Although the Harmonised dataset had already been aligned to a common international standard and was simpler to process, it was still subjected to the thesis's variable filtering and numerical standardisation steps to ensure compatibility with the five wave cleaned datasets prior to modelling.
 
 \section{Cohort Definition}
 
 All participants who provided data in at least one \gls{TILDA} wave were considered eligible. To maximise the available sample for machine learning, no exclusions were applied on the basis of age, medical conditions, mobility, cognitive status, or health centre attendance.
 
-Participants were removed only when, after the combined manual filtering and automated preprocessing pipeline, they had no remaining usable variables. Filtering therefore occurred primarily at the \emph{variable level}, with features removed for extreme missingness, lack of variation, or non informative structure (see chapter~\ref{ch:chapter4}). This approach preserves the largest possible sample while ensuring all retained inputs are analytically meaningful.
+Participants were removed only when, after the combined manual filtering and automated preprocessing pipeline, they had no remaining usable variables. Filtering, therefore, occurred primarily at the \emph{variable level}, with features removed for extreme missingness, lack of variation, or non informative structure (see chapter~\ref{ch:chapter4}). This approach preserves the largest possible sample while ensuring all retained inputs are analytically meaningful.
 
 \subsection{Cohort inclusion criteria}
 \begin{itemize}
@@ -38,6 +38,7 @@ Data used in this thesis were collected across five waves:
     \item \textbf{Wave 3:} 2014--2015
     \item \textbf{Wave 4:} 2016
     \item \textbf{Wave 5:} 2018--2019
+    \item \textbf{Harmonised:} 2016 (release)
 \end{itemize}
 
 All \gls{TILDA} data were pseudonymised prior to release, meaning that personal identifiers such as names and addresses were removed or replaced with unique codes to protect participant confidentiality. Each participant received a unique identifier (`id`), along with household and cluster identifiers (`household`, `cluster`), allowing longitudinal linkage across waves without revealing individual identities. 
@@ -52,7 +53,7 @@ Each wave included three primary components:
 \end{enumerate}
 
 \subsection{Data Overview}
-Before processing, raw \gls{TILDA} datasets were manually inspected, and clear non informative variables (e.g., administrative identifiers, constant columns, high missingness) were removed. Table~\ref{tab:raw_dataset_shape} shows the raw dimensions of each dataset.
+Before processing, raw \gls{TILDA} datasets were manually inspected, and clear noninformative variables (e.g., administrative identifiers, constant columns, high missingness) were removed. Table~\ref{tab:raw_dataset_shape} shows the raw dimensions of each dataset.
 
 \begin{table}[htbp]
 \centering
@@ -98,7 +99,7 @@ After manual filtering, retained variables were organised into six thematic doma
 
 \subsection{Derived variable prefixes}
 
-To systematically process \gls{TILDA} variables, each variable was assigned a prefix indicating its data source or research domain. Variables collected through the home based \gls{CAPI} follow a two letter module code plus three digit question code format (e.g., \texttt{ph121}). For questions with multiple responses or loops across participants or objects, an underscore and number indicates the specific response or loop iteration (e.g., \texttt{ph201\_05}).
+To systematically process \gls{TILDA} variables, each variable was assigned a prefix indicating its data source or research domain. Variables collected through the home based \gls{CAPI} follow a two letter module code plus a three digit question code format (e.g., \texttt{ph121}). For questions with multiple responses or loops across participants or objects, an underscore and number indicates the specific response or loop iteration (e.g., \texttt{ph201\_05}).
 
 Variables from the self completion questionnaire (\gls{SCQ}) are prefixed with `\gls{SCQ}'. Derived variables, constructed from either \gls{CAPI} or \gls{SCQ} data, use an uppercase code corresponding to the research area (table~\ref{tab:pmf_prefixes}). These prefixes provide a consistent framework for categorising variables and guided the systematic assignment of features into thematic domains for downstream analysis.
 \begin{table}[htbp]
