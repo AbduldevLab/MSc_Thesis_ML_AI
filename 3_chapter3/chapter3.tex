@@ -12,7 +12,7 @@
 % ----------------------- contents from here ------------------------
 \section{Study Design}
 
-\gls{TILDA} provides longitudinal data across five waves for community dwelling adults in Ireland. This thesis uses data from five core \gls{TILDA} waves (Waves 1--5). For contextual comparison and benchmarking against international cohorts (see chapter~\ref{ch:chapter1}), an additional external resource, the Harmonised \gls{TILDA} dataset was also inspected and prepared. The Harmonised dataset, which has been pre aligned to international standards such as the \gls{G2G}, contains a subset of variables mapped to a common cross study format and thus differs from the raw \gls{TILDA} files. Although the Harmonised dataset had already been aligned to a common international standard and was simpler to process, it was still subjected to the thesis's variable filtering and numerical standardisation steps to ensure compatibility with the five wave cleaned datasets prior to modelling.
+\gls{TILDA} provides longitudinal data across five waves for community dwelling adults in Ireland. This thesis uses data from five core \gls{TILDA} waves (Waves 1--5). For contextual comparison and benchmarking against international cohorts (see chapter~\ref{ch:chapter1}), an additional external resource, the harmonised \gls{TILDA} dataset, was also inspected and prepared. The harmonised dataset, which has been pre aligned to international standards such as the \gls{G2G}, contains a subset of variables mapped to a common cross study format and thus differs from the raw \gls{TILDA} files. Although the harmonised dataset had already been aligned to a common international standard and was simpler to process, it was still subjected to the thesis's variable filtering and numerical standardisation steps to ensure compatibility with the five wave cleaned datasets prior to modelling.
 
 \section{Cohort Definition}
 
@@ -49,7 +49,7 @@ Each wave included three primary components:
 \begin{enumerate}
     \item \textbf{\gls{CAPI}:} Home based, computer assisted personal interviews covering health, socio demographics, and family.
     \item \textbf{\gls{SCQ}:} Paper based self completion questionnaires capturing sensitive information on mental health, lifestyle, and wellbeing.
-    \item \textbf{Health Assessment:} Clinical and biomarker measurements conducted in dedicated centers or at home (Wave 1 and Wave 3).
+    \item \textbf{Health Assessment:} Clinical and biomarker measurements conducted in dedicated centres or at home (Wave 1 and Wave 3).
 \end{enumerate}
 
 \subsection{Data Overview}
@@ -74,7 +74,7 @@ Harmonised & 8501 & 572 \\
 \end{table}
 
 \subsection{Variable filtering criteria} \label{ch:manual_cleaning}
-Manual filtering used rule of thumb prior to automated cleaning:
+Manual filtering used a rule of thumb prior to automated cleaning:
 \begin{itemize}
     \item \textbf{Missingness:} Drop variables with $\texttt{>80\%}$ missing values. This threshold balances retaining sufficient feature coverage with ensuring statistical reliability. Variables exceeding this threshold provide limited information in most cases, increase imputation uncertainty, and reduce effective sample size, which is particularly critical in longitudinal machine learning analyses.
     \item \textbf{Unique values:} Drop variables with a single observed value, as they contain no discriminative information and cannot contribute to modelling or inference. Variables with low cardinality (2--4 unique values) were retained for review, as they frequently represent meaningful categorical responses (e.g., binary indicators or ordinal scales) relevant to ageing outcomes.
@@ -85,7 +85,7 @@ Manual filtering used rule of thumb prior to automated cleaning:
 These manual checks produced a reduced variable set, subsequently processed using the automated nine scenario cleaning pipeline described in (chapter~\ref{ch:chapter4}).
 
 \subsection{Variable filtering flowchart}
-As part of this workflow, \gls{PMF} metadata exports were first reviewed in spreadsheet form, where variables deemed non informative were visually flagged (e.g., marked in red). Candidate variables retained after manual review (described in subsection~\ref{ch:manual_cleaning}) were consolidated using spreadsheet formula (e.g., \texttt{=TEXTJOIN(", ", TRUE, J2:J\textit{n})}), which concatenated all non excluded variable names into a comma separated list. Here, \textit{n} is the final row index of retained variables, with \texttt{J2} corresponding to the first data row below the column header. These lists were manually transferred into wave specific \gls{JSON} files, which were subsequently used by the Python pipeline to selectively load and filter only the retained variables from the original \gls{SPSS} ($\texttt{.sav}$) and Stata ($\texttt{.dta}$) data files. This procedure ensured a reproducible and traceable workflow from manual selection to automated preprocessing, as illustrated in the flowchart (figure~\ref{fig:variable_filter_criteria}).
+As part of this workflow, \gls{PMF} metadata exports were first reviewed in spreadsheet form, where variables deemed non informative were visually flagged (e.g., marked in red). Candidate variables retained after manual review (described in subsection~\ref{ch:manual_cleaning}) were consolidated using a spreadsheet formula (e.g., \texttt{=TEXTJOIN(", ", TRUE, J2:J\textit{n})}), which concatenated all non excluded variable names into a comma separated list. Here, \textit{n} is the final row index of retained variables, with \texttt{J2} corresponding to the first data row below the column header. These lists were manually transferred into wave specific \gls{JSON} files, which were subsequently used by the Python pipeline to selectively load and filter only the retained variables from the original \gls{SPSS} ($\texttt{.sav}$) and Stata ($\texttt{.dta}$) data files. This procedure ensured a reproducible and traceable workflow from manual selection to automated preprocessing, as illustrated in the flowchart (figure~\ref{fig:variable_filter_criteria}).
 \begin{figure}[htbp]
 \centering
 \includegraphics[height=1.25\textwidth]{variable_filter_criteria.png}
@@ -149,7 +149,7 @@ The six thematic groups integrate information from \gls{CAPI}, \gls{SCQ}, and de
 \hline
 \textbf{ID} & \textbf{Thematic Group} & \textbf{Description} & \textbf{Representative Variables} \\
 \hline
-1 & Socio Demographic \& Context & Baseline stratification factors & Age, Gender, Education, \gls{INC}, Marital Status, \gls{SOC} \\
+1 & Socio Demographic \& Context & Baseline Stratification Factors: Age, Gender, Education, \gls{INC}, Marital Status, \gls{SOC} \\
 2 & Physical Health \& Clinical Baseline & Self reported and clinical indicators & Self Rated Health \gls{SCR}, \gls{BMI}, \gls{BP}, Comorbidity Count \gls{MD} \\
 3 & Functional Status \& \gls{FR} & Measures of mobility and physical decline & \gls{FR} Index \gls{FR}, \gls{UGS}, Falls History \textit{SCQFalls}, \gls{IADL} \gls{DIS} \\
 4 & Lifestyle \& Behavioural & Modifiable health related behaviours & Smoking, Alcohol Intake \textit{SCQAlco}, \gls{PA} \gls{IPAQ} \\
