@@ -101,7 +101,7 @@ A key difficulty in cleaning the five \gls{TILDA} waves was the lack of guarante
 
 The integrity of the automated cleaning pipeline was evaluated in two stages. First, the internal consistency of cleaned predictors was assessed against established biological relationships. Second, full model replication was performed using a secondary study to confirm predictive utility.
 
-\subsection{Pairwise Correlation Validation}
+\subsection{Pairwise correlation validation}
 Correlation analysis was conducted on the seven primary predictors identified by \cite{davisLinearRegressionbasedMachine2021} as explaining $\texttt{95\%}$ of the peak (\gls{GSR}) model performance, which is defined in this study as the difference between maximum and usual gait speed. Since the \gls{GSR} outcome itself is not natively available in the public Wave 3 dataset, validation was focused on the directional relationships between the predictors themselves. This internal consistency check ensures that the biological and clinical signals reported in the literature are preserved within the dataset (post cleaning).
 
 Figure~\ref{fig:heatmap} displays the correlation matrix for the selected predictors. These top 7 predictors were used to establish directional relationships for verifying that the numerical parsing pipeline specifically the handling of sentinel values was successful.
@@ -135,7 +135,7 @@ Education & \gls{MOCA} Score & \textbf{Positive (+)}; Third level education and 
 \end{tabular}
 \end{table}
 
-\subsection{Model Validation: Mortality Prediction}
+\subsection{Model Validation}
 Full model validation was performed by replicating the methodology of \cite{moguilnerImportanceAgePrediction2021}, which predicts 8--year mortality across Waves 1--5 using baseline Wave 1 predictors. The replication of \gls{AUC} scores in the range of $\texttt{0.70-0.90}$ serves as a functional validation, demonstrating that the cleaned dataset maintains the predictive power necessary for downstream machine learning applications.
 
 
