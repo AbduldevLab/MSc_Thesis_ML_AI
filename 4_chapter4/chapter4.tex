@@ -29,7 +29,7 @@ Applying the full pipeline guaranteed numerical consistency and prevented subtle
 
 \begin{table}[htbp]
 \centering
-\caption{Input Shape for Cleaning Pipeline (Post Manual Variable Filtering)}
+\caption{Input shape for cleaning pipeline (post manual variable filtering).}
 \label{tab:dataset_shape}
 \begin{tabular}{|c|c|c|}
 \hline
@@ -99,7 +99,7 @@ A key difficulty in cleaning the five \gls{TILDA} waves was the lack of guarante
 
 \section{Cleaning Validation}
 
-The integrity of the automated cleaning pipeline was evaluated in two stages. First, the internal consistency of cleaned predictors was assessed against established biological relationships. Second, full model replication was performed using a secondary study to confirm predictive utility.
+The robustness of the automated cleaning pipeline was evaluated in two stages. First, the internal consistency of cleaned predictors was assessed against established biological relationships. Second, full model replication was performed using a secondary study to confirm predictive utility.
 
 \subsection{Pairwise correlation validation}
 Correlation analysis was conducted on the seven primary predictors identified by \cite{davisLinearRegressionbasedMachine2021} as explaining $\texttt{95\%}$ of the peak (\gls{GSR}) model performance, which is defined in this study as the difference between maximum and usual gait speed. Since the \gls{GSR} outcome itself is not natively available in the public Wave 3 dataset, validation was focused on the directional relationships between the predictors themselves. This internal consistency check ensures that the biological and clinical signals reported in the literature are preserved within the dataset (post cleaning).
@@ -109,13 +109,13 @@ Figure~\ref{fig:heatmap} displays the correlation matrix for the selected predic
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.8\textwidth]{heatmap.png} % Adjusted height to width for standard LaTeX formatting
-\caption{Correlation heatmap of Wave 3 top 7 predictors}
+\caption{Correlation heatmap for top 7 predictors (Wave 3).}
 \label{fig:heatmap}
 \end{figure}
 
 \begin{table}[htbp]
 \centering
-\caption{Directional validation of the seven features explaining 95\% of \gls{GSR} variance as identified by \cite{davisLinearRegressionbasedMachine2021}}
+\caption{Directional validation of the seven features explaining $\texttt{95\%}$ of \gls{GSR} variance as identified by \cite{davisLinearRegressionbasedMachine2021}.}
 \label{tab:directional_validation}
 \small
 \begin{tabular}{|p{3cm}|p{3cm}|p{6.5cm}|c|}
