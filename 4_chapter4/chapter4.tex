@@ -108,7 +108,7 @@ Figure~\ref{fig:heatmap} displays the correlation matrix for the selected predic
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.8\textwidth]{heatmap.png} % Adjusted height to width for standard LaTeX formatting
+\includegraphics[width=0.8\textwidth]{heatmap.png}
 \caption{Correlation heatmap for top 7 predictors (Wave 3).}
 \label{fig:heatmap}
 \end{figure}
@@ -118,7 +118,7 @@ Figure~\ref{fig:heatmap} displays the correlation matrix for the selected predic
 \caption{Directional validation of the seven features explaining $\texttt{95\%}$ of \gls{GSR} variance as identified by \cite{davisLinearRegressionbasedMachine2021}.}
 \label{tab:directional_validation}
 \small
-\begin{tabular}{|p{3cm}|p{3cm}|p{6.5cm}|c|}
+\begin{tabular}{|p{2.5cm}|p{2.5cm}|p{6.5cm}|c|}
 \hline
 \textbf{Predictor 1} & \textbf{Predictor 2} & \textbf{Expected Direction / Justification} & \textbf{Observed $r$} \\
 \hline
@@ -136,7 +136,7 @@ Education & \gls{MOCA} Score & \textbf{Positive (+)}; Third level education and 
 \end{table}
 
 \subsection{Model Validation}
-Full model validation was performed by replicating the methodology of \cite{moguilnerImportanceAgePrediction2021}, which predicts 8--year mortality across Waves 1--5 using baseline Wave 1 predictors. The replication of \gls{AUC} scores in the range of $\texttt{0.70-0.90}$ serves as a functional validation, demonstrating that the cleaned dataset maintains the predictive power necessary for downstream machine learning applications.
+Full model validation was performed by replicating the methodology of \cite{moguilnerImportanceAgePrediction2021}, which predicts 8--year mortality across Waves 1--5 using baseline Wave 1 predictors. The replication of \gls{AUC} scores in the range of $\texttt{0.70-0.90}$ serves as a functional validation.
 
 
 % ---------------------------------------------------------------------------
