@@ -33,10 +33,11 @@
 \usetikzlibrary{positioning}
 \usepackage{pgfplots}
 \usepackage{tabularx}
-\pgfplotsset{compat=1.17}
+\pgfplotsset{compat=1.18}
 \usepackage[utf8]{inputenc}
 \usepackage[acronym]{glossaries}
 \makeglossaries
+\usepackage{pdflscape}
 
 %%%USE TABLE LIKE STYLING FOR GLOSSARY
 % \newglossarystyle{tableacronyms}{%
@@ -75,6 +76,13 @@
 \usepackage{listings}
 \lstset{language=C++}
 
+%%%TABLE SETTINGS
+\usepackage{longtable}
+\usepackage{needspace}
+\usepackage{array}
+\usepackage{multirow}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}	% left-aligned p{}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}	% centered p{}
 
 %% Define a new 'leo' style for the package that will use a smaller font.
 \makeatletter  

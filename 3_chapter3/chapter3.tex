@@ -12,7 +12,7 @@
 % ----------------------- contents from here ------------------------
 \section{Study Design}
 
-\gls{TILDA} provides longitudinal data across five waves for community dwelling adults in Ireland. This thesis uses data from five core \gls{TILDA} waves (Waves 1--5). For contextual comparison and benchmarking against international cohorts (see chapter~\ref{ch:chapter1}), an additional external resource, the harmonised \gls{TILDA} dataset, was also inspected and prepared. The harmonised dataset, which has been pre aligned to international standards such as the \gls{G2G}, contains a subset of variables mapped to a common cross study format and thus differs from the raw \gls{TILDA} files. Although the harmonised dataset had already been aligned to a common international standard and was simpler to process, it was still subjected to the thesis's variable filtering and numerical standardisation steps to ensure compatibility with the five wave cleaned datasets prior to modelling.
+\gls{TILDA} provides longitudinal data across five waves (Waves 1--5) for community dwelling adults in Ireland. For contextual comparison and benchmarking against international cohorts see Chapter~\ref{ch:chapter1}. An external, harmonised \gls{TILDA} dataset, was also inspected and prepared. The harmonised dataset, which has been pre aligned to international standards e.g., the \gls{G2G}, contains a subset of variables mapped to a common cross study format and thus differs from the raw \gls{TILDA} files. Although the harmonised dataset was simpler to process, it was still subjected to the variable filtering and numerical standardisation steps developed as part of this research to ensure compatibility with the five wave cleaned datasets prior to modelling.
 
 \section{Cohort Definition}
 
@@ -20,7 +20,6 @@ All participants who provided data in at least one \gls{TILDA} wave were conside
 
 Participants were removed only when, after the combined manual filtering and automated preprocessing pipeline, they had no remaining usable variables. Filtering, therefore, occurred primarily at the \emph{variable level}, with features removed for extreme missingness, lack of variation, or non informative structure (see chapter~\ref{ch:chapter4}). This approach preserves the largest possible sample while ensuring all retained inputs are analytically meaningful.
 
-\subsection{Cohort inclusion criteria}
 \begin{itemize}
     \item \textbf{Participant inclusion:} All respondents who contributed data in at least one wave were included in the initial sample.
     \item \textbf{Usable data requirement:} Participants were excluded only when, after manual filtering and preprocessing, no usable variables remained.
@@ -29,69 +28,56 @@ Participants were removed only when, after the combined manual filtering and aut
 \end{itemize}
 This approach prioritises data integrity and sample size for machine learning applications rather than clinical eligibility criteria common in classical epidemiological analyses.
 
-\section{Data Collection}
+\section{TILDA Data Collection and Screening}
 
-Data used in this thesis were collected across five waves:
-\begin{itemize}
-    \item \textbf{Wave 1:} 2009--2011
-    \item \textbf{Wave 2:} 2012--2013
-    \item \textbf{Wave 3:} 2014--2015
-    \item \textbf{Wave 4:} 2016
-    \item \textbf{Wave 5:} 2018--2019
-    \item \textbf{Harmonised:} 2016 (release)
-\end{itemize}
-
-All \gls{TILDA} data were pseudonymised prior to release, meaning that personal identifiers such as names and addresses were removed or replaced with unique codes to protect participant confidentiality. Each participant received a unique identifier (`id`), along with household and cluster identifiers (`household`, `cluster`), allowing longitudinal linkage across waves without revealing individual identities. 
-
-Pseudonymisation ensures that analyses comply with data protection standards while retaining the structural and analytical integrity of the dataset. From a data cleaning and machine learning perspective, pseudonymised identifiers enable accurate merging of data across waves, preserve the longitudinal design, and support reproducible preprocessing and feature engineering. While these identifiers cannot be used for analyses of personal demographics like names or addresses, this limitation does not affect the modelling of health outcomes, lifestyle factors, or other variables of interest.
-
-Each wave included three primary components:
+\gls{TILDA} data collection occurred over five longitudinal waves as detailed in  Table~\ref{tab:raw_dataset_shape}. Each wave included three primary components:
 \begin{enumerate}
     \item \textbf{\gls{CAPI}:} Home based, computer assisted personal interviews covering health, socio demographics, and family.
     \item \textbf{\gls{SCQ}:} Paper based self completion questionnaires capturing sensitive information on mental health, lifestyle, and wellbeing.
     \item \textbf{Health Assessment:} Clinical and biomarker measurements conducted in dedicated centres or at home (Wave 1 and Wave 3).
 \end{enumerate}
 
-\subsection{Data Overview}
-Before processing, raw \gls{TILDA} datasets were manually inspected, and clear noninformative variables (e.g., administrative identifiers, constant columns, high missingness) were removed. Table~\ref{tab:raw_dataset_shape} shows the raw dimensions of each dataset.
+All \gls{TILDA} data were pseudonymised prior to release, meaning that personal identifiers such as names and addresses were removed or replaced with unique codes to protect participant confidentiality. Each participant received a unique identifier (`id`), along with household and cluster identifiers (`household`, `cluster`), allowing longitudinal linkage across waves without revealing individual identities. 
+
+Pseudonymisation ensures that analyses comply with data protection standards while retaining the structural and analytical integrity of the dataset. From a data cleaning and machine learning perspective, pseudonymised identifiers enable accurate merging of data across waves, preserve the longitudinal design, and support reproducible preprocessing and feature engineering. While these identifiers cannot be used for analyses of personal demographics like names or addresses, this limitation does not affect the modelling of health outcomes, lifestyle factors, or other variables of interest.
 
 \begin{table}[htbp]
 \centering
 \caption{Dimensions of raw \gls{TILDA} and harmonised datasets (prior to filtering).}
 \label{tab:raw_dataset_shape}
-\begin{tabular}{|c|c|c|}
+
+\begin{tabular}{|L{0.2\textwidth}|L{0.2\textwidth}|C{0.2\textwidth}|C{0.23\textwidth}|}
 \hline
-\textbf{Dataset} & \textbf{Participants (N)} & \textbf{Raw Variables (N)} \\
+\textbf{Dataset} & \textbf{Collection Period} & \textbf{Participants (N)} & \textbf{Raw Variables (N)} \\
 \hline
-Wave 1 & 8501 & 1619 \\
-Wave 2 & 7206 & 724 \\
-Wave 3 & 6397 & 1029 \\
-Wave 4 & 5713 & 990 \\
-Wave 5 & 4978 & 983 \\
-Harmonised & 8501 & 572 \\
+Wave 1 & 2009--2011 & 8501 & 1619 \\
+Wave 2 & 2012--2013 & 7206 & 724 \\
+Wave 3 & 2014--2015 & 6397 & 1029 \\
+Wave 4 & 2016 & 5713 & 990 \\
+Wave 5 & 2018--2019 & 4978 & 983 \\
+Harmonised & 2016 (release) & 8501 & 572 \\
 \hline
 \end{tabular}
+
 \end{table}
 
-\subsection{Variable filtering criteria} \label{ch:manual_cleaning}
-Manual filtering used a rule of thumb prior to automated cleaning:
-\begin{itemize}
+ The raw \gls{TILDA} datasets were manually inspected using a rule of thumb to automate procedures. To reduce dataset size, non-informative variables (e.g., administrative identifiers, constant columns, high missingness) were removed as detailed below.
+\begin{itemize}\label{ch:manual_cleaning}
     \item \textbf{Missingness:} Drop variables with $\texttt{>80\%}$ missing values. This threshold balances retaining sufficient feature coverage with ensuring statistical reliability. Variables exceeding this threshold provide limited information in most cases, increase imputation uncertainty, and reduce effective sample size, which is particularly critical in longitudinal machine learning analyses.
     \item \textbf{Unique values:} Drop variables with a single observed value, as they contain no discriminative information and cannot contribute to modelling or inference. Variables with low cardinality (2--4 unique values) were retained for review, as they frequently represent meaningful categorical responses (e.g., binary indicators or ordinal scales) relevant to ageing outcomes.
     \item \textbf{Dominant category:} Flag variables where a single category occurs with extremely high frequency (e.g., $\texttt{>90\%}$), as such dominance may reduce variability and analytical usefulness.
-    \item \textbf{Identifiers / administrative fields:} IDs, version tags, and sampling weights were identified using the \gls{PMF} metadata. Variable names and descriptions were exported from each wave's \gls{PMF} file into CSV files (code provided in appendix~\ref{app:pmf_code} ) to systematically document and review features prior to filtering. These exports enabled structured manual inspection and traceability between raw \gls{PMF} metadata and downstream feature selection decisions.
+    \item \textbf{Identifiers / administrative fields:} IDs, version tags, and sampling weights were identified using the \gls{PMF} metadata. Variable names and descriptions were exported from each wave's \gls{PMF} file into CSV files (code provided in Appendix~\ref{app:pmf_code} ) to systematically document and review features prior to filtering. These exports enabled structured manual inspection and traceability between raw \gls{PMF} metadata and downstream feature selection decisions.
 \end{itemize}
 
-These manual checks produced a reduced variable set, subsequently processed using the automated nine scenario cleaning pipeline described in (chapter~\ref{ch:chapter4}).
-
-\subsection{Variable filtering flowchart}
-As part of this workflow, \gls{PMF} metadata exports were first reviewed in spreadsheet form, where variables deemed non informative were visually flagged (e.g., marked in red). Candidate variables retained after manual review (described in subsection~\ref{ch:manual_cleaning}) were consolidated using a spreadsheet formula (e.g., \texttt{=TEXTJOIN(", ", TRUE, J2:J\textit{n})}), which concatenated all non excluded variable names into a comma separated list. Here, \textit{n} is the final row index of retained variables, with \texttt{J2} corresponding to the first data row below the column header. These lists were manually transferred into wave specific \gls{JSON} files, which were subsequently used by the Python pipeline to selectively load and filter only the retained variables from the original \gls{SPSS} ($\texttt{.sav}$) and Stata ($\texttt{.dta}$) data files. This procedure ensured a reproducible and traceable workflow from manual selection to automated preprocessing, as illustrated in the flowchart (figure~\ref{fig:variable_filter_criteria}).
+As part of this workflow, \gls{PMF} metadata exports were first reviewed in spreadsheet form, where variables deemed non informative were visually flagged (e.g., marked in red). Candidate variables retained after manual review were consolidated using a spreadsheet formula (e.g., \texttt{=TEXTJOIN(", ", TRUE, J2:J\textit{n})}), which concatenated all non excluded variable names into a comma separated list. Here, \textit{n} is the final row index of retained variables, with \texttt{J2} corresponding to the first data row below the column header. These lists were manually transferred into wave specific \gls{JSON} files, which were subsequently used by the Python pipeline to selectively load and filter only the retained variables from the original \gls{SPSS} ($\texttt{.sav}$) and Stata ($\texttt{.dta}$) data files. This procedure ensured a reproducible and traceable workflow from manual selection to automated preprocessing, as illustrated in Figure~\ref{fig:variable_filter_criteria}.
 \begin{figure}[htbp]
 \centering
 \includegraphics[height=1.25\textwidth]{variable_filter_criteria.png}
 \caption{Flowchart of the manual variable filtering criteria. Placeholder counts indicate remaining variables per dataset after each step.}
 \label{fig:variable_filter_criteria}
 \end{figure}
+
+These manual checks produced a reduced variable set, subsequently processed using the automated nine scenario cleaning pipeline described in Chapter~\ref{ch:chapter4}.
 
 \section{Thematic Grouping}
 
@@ -133,31 +119,107 @@ SOC & Social \\
 
 \subsection{Feature groups}
 
-Using the \gls{PMF} prefixes as a guide, variables were systematically mapped to six thematic groups (table~\ref{tab:feature_groups}). Each thematic group captures a conceptually coherent domain, reflecting physical, cognitive, social, and behavioural aspects of ageing. This categorisation served two key purposes in the thesis: 
-
-1. It structured the data for the automated nine scenario cleaning engine (chapter~\ref{ch:chapter4}), ensuring consistent application of filtering rules and facilitating reproducible preprocessing.
-
-2. It aligned feature selection with the analytic focus of the thesis, enabling machine learning models to leverage variables that are both conceptually meaningful and longitudinally robust across multiple waves.
+Using the \gls{PMF} prefixes as a guide, variables were systematically mapped to six thematic groups (table~\ref{tab:feature_groups}). Each thematic group captures a conceptually coherent domain, reflecting physical, cognitive, social, and behavioural aspects of ageing. This categorisation served two key purposes: 
+\begin{enumerate}
+    \item It structures the data for automated cleaning (see Chapter~\ref{ch:chapter4}), ensuring consistent application of filtering rules and facilitating reproducible preprocessing and,
+    \item It aligns feature selection with the analytic focus of the research, enabling machine learning models to leverage variables that are both conceptually meaningful and longitudinally robust across multiple waves.
+\end{enumerate}
 
 The six thematic groups integrate information from \gls{CAPI}, \gls{SCQ}, and derived variables, covering socio demographic context, physical health, functional status, lifestyle behaviours, nutrition/metabolic biomarkers, and psychological/cognitive measures. This structured grouping enhances interpretability, ensures comprehensive domain coverage, and provides a foundation for downstream predictive modelling and risk assessment.
 
-\begin{table}[htbp]
-\centering
+% -------------------- Longtable (breaks only between IDs) --------------------
+\begin{longtable}{|C{0.03\linewidth}|C{0.24\linewidth}|C{0.20\linewidth}|L{0.53\linewidth}|}
 \caption{Thematic grouping of longitudinal features.}
-\label{tab:feature_groups}
-\begin{tabular}{|c|p{4cm}|p{5cm}|p{5cm}|}
+\label{tab:feature_groups}\\
 \hline
 \textbf{ID} & \textbf{Thematic Group} & \textbf{Description} & \textbf{Representative Variables} \\
 \hline
-1 & Socio Demographic \& Context & Baseline Stratification Factors & Age, Gender, Education, \gls{INC}, Marital Status, \gls{SOC} \\
-2 & Physical Health \& Clinical Baseline & Self reported and clinical indicators & Self Rated Health \gls{SCR}, \gls{BMI}, \gls{BP}, Comorbidity Count \gls{MD} \\
-3 & Functional Status \& \gls{FR} & Measures of mobility and physical decline & \gls{FR} Index \gls{FR}, \gls{UGS}, Falls History \textit{SCQFalls}, \gls{IADL} \gls{DIS} \\
-4 & Lifestyle \& Behavioural & Modifiable health related behaviours & Smoking, Alcohol Intake \textit{SCQAlco}, \gls{PA} \gls{IPAQ} \\
-5 & Nutrition \& Metabolic Biomarkers & Objective nutritional and metabolic markers & Plasma Carotenoids, Lutein, Zeaxanthin, Vitamin D/B12, Cholesterol \\
-6 & Psychological \& Cognitive & Mental health and cognitive performance & \gls{CESD}, Loneliness \textit{MHucla}, \gls{COG}, \gls{CRT} \\
+\endfirsthead
+
+\caption[]{Thematic grouping of longitudinal features (continued).}\\
 \hline
-\end{tabular}
-\end{table}
+\textbf{ID} & \textbf{Thematic Group} & \textbf{Description} & \textbf{Representative Variables} \\
+\hline
+\endhead
+
+\hline
+\endfoot
+
+\hline
+\endlastfoot
+
+% ---------------- ID 1 (6 variable rows) ----------------
+\noalign{\Needspace{9\baselineskip}}
+\multirow[c]{6}{*}{1} &
+\multirow[c]{6}{=}{Socio Demographic \& Context} &
+\multirow[c]{6}{=}{Baseline Stratification Factors} &
+Age \\ \cline{4-4}
+& & & Gender \\ \cline{4-4}
+& & & Education \\ \cline{4-4}
+& & & \gls{INC} \\ \cline{4-4}
+& & & Marital Status \\ \cline{4-4}
+& & & \gls{SOC} \\
+\hline
+
+% ---------------- ID 2 (5 variable rows) ----------------
+\noalign{\Needspace{8\baselineskip}}
+\multirow[c]{5}{*}{2} &
+\multirow[c]{5}{=}{Physical Health \& Clinical Baseline} &
+\multirow[c]{5}{=}{Self reported and clinical indicators} &
+Self Rated Health \\ \cline{4-4}
+& & & \gls{SCR} \\ \cline{4-4}
+& & & \gls{BMI} \\ \cline{4-4}
+& & & \gls{BP} \\ \cline{4-4}
+& & & Comorbidity Count \gls{MD} \\
+\hline
+
+% ---------------- ID 3 (5 variable rows) ----------------
+\noalign{\Needspace{8\baselineskip}}
+\multirow[c]{5}{*}{3} &
+\multirow[c]{5}{=}{Functional Status \& \gls{FR}} &
+\multirow[c]{5}{=}{Measures of mobility and physical decline} &
+\gls{FR} Index \\ \cline{4-4}
+& & & \gls{UGS} \\ \cline{4-4}
+& & & Falls History \\ \cline{4-4}
+& & & \gls{IADL} \\ \cline{4-4}
+& & & \gls{DIS} \\
+\hline
+
+% ---------------- ID 4 (4 variable rows) ----------------
+\noalign{\Needspace{7\baselineskip}}
+\multirow[c]{4}{*}{4} &
+\multirow[c]{4}{=}{Lifestyle \& Behavioural} &
+\multirow[c]{4}{=}{Modifiable health related behaviours} &
+Smoking \\ \cline{4-4}
+& & & Alcohol Intake \\ \cline{4-4}
+& & & \gls{PA} \\ \cline{4-4}
+& & & \gls{IPAQ} \\
+\hline
+
+% ---------------- ID 5 (5 variable rows) ----------------
+\noalign{\Needspace{8\baselineskip}}
+\multirow[c]{5}{*}{5} &
+\multirow[c]{5}{=}{Nutrition \& Metabolic Biomarkers} &
+\multirow[c]{5}{=}{Objective nutritional and metabolic markers} &
+Plasma Carotenoids \\ \cline{4-4}
+& & & Lutein \\ \cline{4-4}
+& & & Zeaxanthin \\ \cline{4-4}
+& & & Vitamin D/\allowbreak B12 \\ \cline{4-4}
+& & & Cholesterol \\
+\hline
+
+% ---------------- ID 6 (4 variable rows) ----------------
+\noalign{\Needspace{7\baselineskip}}
+\multirow[c]{4}{*}{6} &
+\multirow[c]{4}{=}{Psychological \& Cognitive} &
+\multirow[c]{4}{=}{Mental health and cognitive performance} &
+\gls{CESD} \\ \cline{4-4}
+& & & Loneliness \\ \cline{4-4}
+& & & \gls{COG} \\ \cline{4-4}
+& & & \gls{CRT} \\
+\hline
+
+\end{longtable}
 
 % ---------------------------------------------------------------------------
 % ----------------------- end of thesis sub-document ------------------------
