@@ -18,28 +18,42 @@
 
 All participants who provided data in at least one \gls{TILDA} wave were considered eligible. To maximise the available sample for machine learning, no exclusions were applied on the basis of age, medical conditions, mobility, cognitive status, or health centre attendance.
 
-Participants were removed only when, after the combined manual filtering and automated preprocessing pipeline, they had no remaining usable variables. Filtering, therefore, occurred primarily at the \emph{variable level}, with features removed for extreme missingness, lack of variation, or non informative structure (see chapter~\ref{ch:chapter4}). This approach preserves the largest possible sample while ensuring all retained inputs are analytically meaningful.
+Participants were removed only in the rare case that, following manual variable filtering, no analytically usable variables remained for that individual. Filtering occurred primarily at the \emph{variable level} during the manual screening stage, which involved features removed for extreme missingness, lack of variation, or non informative structure. This approach preserves the largest possible sample while ensuring all retained inputs are analytically meaningful for downstream analysis and model development.
 
 \begin{itemize}
     \item \textbf{Participant inclusion:} All respondents who contributed data in at least one wave were included in the initial sample.
-    \item \textbf{Usable data requirement:} Participants were excluded only when, after manual filtering and preprocessing, no usable variables remained.
+    \item \textbf{Usable data requirement:} Participants were excluded only if all retained variables were missing for that individual after manual variable screening.
     \item \textbf{Longitudinal retention:} Individuals were retained regardless of how many waves they contributed to, enabling initial maximum dataset utilisation.
     \item \textbf{No clinical exclusions:} No participant was removed due to medical diagnoses, cognitive scores, functional limitations, or non attendance at the health centre assessment.
 \end{itemize}
-This approach prioritises data integrity and sample size for machine learning applications rather than clinical eligibility criteria common in classical epidemiological analyses.
-
+This approach prioritises data integrity and sample size for machine learning applications, differing from exclusion-heavy cohort definitions often used in traditional epidemiological studies.
 \section{TILDA Data Collection and Screening}
 
-\gls{TILDA} data collection occurred over five longitudinal waves as detailed in  Table~\ref{tab:raw_dataset_shape}. Each wave included three primary components:
+\gls{TILDA} data collection occurred over five longitudinal waves as detailed in Table~\ref{tab:raw_dataset_shape}.
+
+Each wave included three primary components:
 \begin{enumerate}
     \item \textbf{\gls{CAPI}:} Home based, computer assisted personal interviews covering health, socio demographics, and family.
     \item \textbf{\gls{SCQ}:} Paper based self completion questionnaires capturing sensitive information on mental health, lifestyle, and wellbeing.
     \item \textbf{Health Assessment:} Clinical and biomarker measurements conducted in dedicated centres or at home (Wave 1 and Wave 3).
 \end{enumerate}
 
-All \gls{TILDA} data were pseudonymised prior to release, meaning that personal identifiers such as names and addresses were removed or replaced with unique codes to protect participant confidentiality. Each participant received a unique identifier (`id`), along with household and cluster identifiers (`household`, `cluster`), allowing longitudinal linkage across waves without revealing individual identities. 
+All \gls{TILDA} data were pseudonymised prior to release, meaning that personal identifiers such as names and addresses were removed or replaced with unique codes to protect participant confidentiality. Each participant received a unique identifier (`id'), along with household and cluster identifiers (`household', `cluster'), allowing longitudinal linkage across waves without revealing individual identities. 
 
 Pseudonymisation ensures that analyses comply with data protection standards while retaining the structural and analytical integrity of the dataset. From a data cleaning and machine learning perspective, pseudonymised identifiers enable accurate merging of data across waves, preserve the longitudinal design, and support reproducible preprocessing and feature engineering. While these identifiers cannot be used for analyses of personal demographics like names or addresses, this limitation does not affect the modelling of health outcomes, lifestyle factors, or other variables of interest.
+
+Prior to any data cleaning or modelling, a structured multi stage workflow was implemented to screen and reduce the dimensionality of the raw \gls{TILDA} datasets. This workflow separates automated diagnostic profiling from manual variable exclusion and ensures transparency in all variable selection decisions. 
+
+The process consisted of the following steps:
+\begin{enumerate}
+    \item \textbf{Raw data loading:} Raw \gls{TILDA} \gls{PMF} files were loaded without cleaning or recoding. Waves 1--5 were loaded from \gls{SPSS} (\texttt{.sav}) files, while the harmonised dataset was loaded from a (\texttt{Stata}) (\texttt{.dta}) file due to technical compatibility issues.
+    \item \textbf{Automated variable profiling (Python):} For every variable, summary statistics were computed programmatically, including data type, proportion of missing values, number of unique values, most frequent value, and frequency of the most frequent value. These summaries were exported to spreadsheet format for inspection.
+    \item \textbf{Manual variable screening (spreadsheet based):} Using predefined rule based thresholds, variables were manually reviewed and flagged for exclusion based on missingness, lack of variation, dominance of a single category, or administrative function.
+    \item \textbf{Creation of retained variable lists:} Variables not flagged for exclusion were programmatically concatenated in \texttt{.xlsx} and manually transferred into wave specific \gls{JSON} files representing the retained \texttt{variables of interest}.
+    \item \textbf{Reloading filtered datasets:} The \gls{JSON} files were then used to subset the original raw datasets, producing reduced datasets with identical rows but fewer variables. No cleaning, recoding, or imputation was applied at this stage.
+\end{enumerate}
+
+These reduced datasets form the direct input to the automated preprocessing and modelling pipeline described in Chapter~\ref{ch:chapter4}.
 
 \begin{table}[htbp]
 \centering
@@ -61,15 +75,18 @@ Harmonised & 2016 (release) & 8501 & 572 \\
 
 \end{table}
 
- The raw \gls{TILDA} datasets were manually inspected using a rule of thumb to automate procedures. To reduce dataset size, non-informative variables (e.g., administrative identifiers, constant columns, high missingness) were removed as detailed below.
-\begin{itemize}\label{ch:manual_cleaning}
+The raw \gls{TILDA} datasets were first profiled using python to automate variable summaries for each wave. For every variable, the following metrics were computed: data type, number of missing values, number of unique values, most frequent value, and frequency of the most frequent value. These summaries were exported to Excel for diagnostic review, enabling structured inspection prior to manual filtering. Decisions to exclude variables were then made manually based on these diagnostics, following predefined rule based thresholds. To reduce dataset size, non-informative variables (e.g., administrative identifiers, constant columns, high missingness) were removed as detailed below.
+
+Manual filtering was applied according to the following criteria:
+\begin{itemize}
     \item \textbf{Missingness:} Drop variables with $\texttt{>80\%}$ missing values. This threshold balances retaining sufficient feature coverage with ensuring statistical reliability. Variables exceeding this threshold provide limited information in most cases, increase imputation uncertainty, and reduce effective sample size, which is particularly critical in longitudinal machine learning analyses.
     \item \textbf{Unique values:} Drop variables with a single observed value, as they contain no discriminative information and cannot contribute to modelling or inference. Variables with low cardinality (2--4 unique values) were retained for review, as they frequently represent meaningful categorical responses (e.g., binary indicators or ordinal scales) relevant to ageing outcomes.
-    \item \textbf{Dominant category:} Flag variables where a single category occurs with extremely high frequency (e.g., $\texttt{>90\%}$), as such dominance may reduce variability and analytical usefulness.
+    \item \textbf{Dominant category (top frequency):} Variables where a single category (sample value) occurs in over $\texttt{>90\%}$ of observations were flagged. Such dominance indicates limited variability, reducing analytical utility and predictive value. Variables exceeding this threshold were marked for review or exclusion.
     \item \textbf{Identifiers / administrative fields:} IDs, version tags, and sampling weights were identified using the \gls{PMF} metadata. Variable names and descriptions were exported from each wave's \gls{PMF} file into CSV files (code provided in Appendix~\ref{app:pmf_code} ) to systematically document and review features prior to filtering. These exports enabled structured manual inspection and traceability between raw \gls{PMF} metadata and downstream feature selection decisions.
 \end{itemize}
 
-As part of this workflow, \gls{PMF} metadata exports were first reviewed in spreadsheet form, where variables deemed non informative were visually flagged (e.g., marked in red). Candidate variables retained after manual review were consolidated using a spreadsheet formula (e.g., \texttt{=TEXTJOIN(", ", TRUE, J2:J\textit{n})}), which concatenated all non excluded variable names into a comma separated list. Here, \textit{n} is the final row index of retained variables, with \texttt{J2} corresponding to the first data row below the column header. These lists were manually transferred into wave specific \gls{JSON} files, which were subsequently used by the Python pipeline to selectively load and filter only the retained variables from the original \gls{SPSS} ($\texttt{.sav}$) and Stata ($\texttt{.dta}$) data files. This procedure ensured a reproducible and traceable workflow from manual selection to automated preprocessing, as illustrated in Figure~\ref{fig:variable_filter_criteria}.
+As part of manual screening and filtering workflow. Variables exceeding exclusion thresholds (e.g., high missingness, single value, dominant category, administrative identifiers) were visually flagged (e.g., marked in red). Non flagged variables were programmatically concatenated using spreadsheet formulas (e.g., \texttt{=TEXTJOIN(", ", TRUE, J2:J\textit{n})}) and then manually transferred into wave specific \gls{JSON} files for each wave. These files represent the variables of interest retained after manual screening and filtering and serve as inputs for the upcoming automated data preprocessing \& cleaning in Chapter~\ref{ch:chapter4}.
+
 \begin{figure}[htbp]
 \centering
 \includegraphics[height=1.25\textwidth]{variable_filter_criteria.png}
@@ -77,17 +94,20 @@ As part of this workflow, \gls{PMF} metadata exports were first reviewed in spre
 \label{fig:variable_filter_criteria}
 \end{figure}
 
-These manual checks produced a reduced variable set, subsequently processed using the automated nine scenario cleaning pipeline described in Chapter~\ref{ch:chapter4}.
+The retained variables, defined in \gls{JSON} files, were subsequently used to subset the raw datasets. This produced reduced CSV datasets per wave, containing only the variables of interest. At this stage, no cleaning or recoding was performed. The operation served purely as dimensionality reduction, preparing the data for the automated nine-scenario cleaning pipeline described in Chapter~\ref{ch:chapter4}.
+
+Importantly, all variable exclusion decisions were completed at this stage. Subsequent preprocessing steps focus exclusively on numerical standardisation, recoding, and preparation for machine learning rather than further feature removal.
+With the variables of interest selected and the datasets reduced to a manageable dimensionality, the next stage focuses on automated preprocessing, recoding, and preparation for machine learning.
 
 \section{Thematic Grouping}
 
-After manual filtering, retained variables were organised into six thematic domains aligned with ageing literature and study objectives. The grouping process followed the standard \gls{PMF} naming conventions (table~\ref{tab:pmf_prefixes}). Specifically, each variable's prefix indicated its data source or domain, which allowed to systematically assign variables to one of six thematic domains. This ensured that features included in each domain were conceptually coherent and analytically meaningful. 
+After manual filtering, the retained variables were organised into six thematic domains based on ageing literature and study objectives. Each variable's prefix, as defined in the \gls{PMF} metadata (Table~\ref{tab:pmf_prefixes}), indicates its source or research domain. This systematic assignment ensures that each thematic group contains conceptually related features and provides a clear structure for downstream automated preprocessing and machine learning.
+% \subsection{Derived variable prefixes}
 
-\subsection{Derived variable prefixes}
+Each variable in \gls{TILDA} was assigned a prefix indicating its data source or research domain. Home based \gls{CAPI} variables use a two letter module code followed by a three digit question code (e.g., \texttt{ph121}). Variables with multiple responses or loops include an underscore and number to specify the response or iteration (e.g., \texttt{ph201\_05}).
 
-To systematically process \gls{TILDA} variables, each variable was assigned a prefix indicating its data source or research domain. Variables collected through the home based \gls{CAPI} follow a two letter module code plus a three digit question code format (e.g., \texttt{ph121}). For questions with multiple responses or loops across participants or objects, an underscore and number indicates the specific response or loop iteration (e.g., \texttt{ph201\_05}).
+Variables from the self completion questionnaire are prefixed with \gls{SCQ}, while derived variables constructed from either \gls{CAPI} or \gls{SCQ} data use uppercase codes corresponding to their research area (Table~\ref{tab:pmf_prefixes}). These prefixes provide a consistent framework for categorising features and guiding the assignment into thematic domains for downstream analysis.
 
-Variables from the self completion questionnaire (\gls{SCQ}) are prefixed with `\gls{SCQ}'. Derived variables, constructed from either \gls{CAPI} or \gls{SCQ} data, use an uppercase code corresponding to the research area (table~\ref{tab:pmf_prefixes}). These prefixes provide a consistent framework for categorising variables and guided the systematic assignment of features into thematic domains for downstream analysis.
 \begin{table}[htbp]
 \centering
 \caption{\gls{PMF} Derived variable prefixes \cite{tilda2023pmf}.}
@@ -117,12 +137,14 @@ SOC & Social \\
 \end{tabular}
 \end{table}
 
-\subsection{Feature groups}
+% \subsection{Feature groups}
 
-Using the \gls{PMF} prefixes as a guide, variables were systematically mapped to six thematic groups (table~\ref{tab:feature_groups}). Each thematic group captures a conceptually coherent domain, reflecting physical, cognitive, social, and behavioural aspects of ageing. This categorisation served two key purposes: 
+Using the \gls{PMF} prefixes as a guide, variables were assigned to six thematic groups (Table~\ref{tab:feature_groups}), each capturing a conceptually coherent domain: physical, cognitive, social, and behavioural aspects of ageing. This structure supports reproducible preprocessing and helps machine learning models focus on meaningful, longitudinally robust features. 
+
+Specifically, the thematic grouping:
 \begin{enumerate}
-    \item It structures the data for automated cleaning (see Chapter~\ref{ch:chapter4}), ensuring consistent application of filtering rules and facilitating reproducible preprocessing and,
-    \item It aligns feature selection with the analytic focus of the research, enabling machine learning models to leverage variables that are both conceptually meaningful and longitudinally robust across multiple waves.
+    \item Provides a clear framework for automated cleaning and filtering rules.
+    \item Ensures that model input variables are conceptually aligned with study objectives.
 \end{enumerate}
 
 The six thematic groups integrate information from \gls{CAPI}, \gls{SCQ}, and derived variables, covering socio demographic context, physical health, functional status, lifestyle behaviours, nutrition/metabolic biomarkers, and psychological/cognitive measures. This structured grouping enhances interpretability, ensures comprehensive domain coverage, and provides a foundation for downstream predictive modelling and risk assessment.
