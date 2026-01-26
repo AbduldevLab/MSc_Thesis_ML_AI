@@ -27,9 +27,10 @@ Participants were removed only in the rare case that, following manual variable 
     \item \textbf{No clinical exclusions:} No participant was removed due to medical diagnoses, cognitive scores, functional limitations, or non attendance at the health centre assessment.
 \end{itemize}
 This approach prioritises data integrity and sample size for machine learning applications, differing from exclusion-heavy cohort definitions often used in traditional epidemiological studies.
+
 \section{TILDA Data Collection and Screening}
 
-\gls{TILDA} data collection occurred over five longitudinal waves as detailed in Table~\ref{tab:raw_dataset_shape}.
+\gls{TILDA} data collection occurred over five longitudinal waves as detailed in Table~\ref{tab:raw_dataset_shape}. 
 
 Each wave included three primary components:
 \begin{enumerate}
@@ -75,7 +76,7 @@ Harmonised & 2016 (release) & 8501 & 572 \\
 
 \end{table}
 
-The raw \gls{TILDA} datasets were first profiled using python to automate variable summaries for each wave. For every variable, the following metrics were computed: data type, number of missing values, number of unique values, most frequent value, and frequency of the most frequent value. These summaries were exported to Excel for diagnostic review, enabling structured inspection prior to manual filtering. Decisions to exclude variables were then made manually based on these diagnostics, following predefined rule based thresholds. To reduce dataset size, non-informative variables (e.g., administrative identifiers, constant columns, high missingness) were removed as detailed below.
+ The raw \gls{TILDA} datasets were first profiled using python to automate variable summaries for each wave. For every variable, the following metrics were computed: data type, number of missing values, number of unique values, most frequent value, and frequency of the most frequent value. These summaries were exported to Excel for diagnostic review, enabling structured inspection prior to manual filtering. Decisions to exclude variables were then made manually based on these diagnostics, following predefined rule based thresholds. To reduce dataset size, non-informative variables (e.g., administrative identifiers, constant columns, high missingness) were removed as detailed below.
 
 Manual filtering was applied according to the following criteria:
 \begin{itemize}
@@ -101,7 +102,8 @@ With the variables of interest selected and the datasets reduced to a manageable
 
 \section{Thematic Grouping}
 
-After manual filtering, the retained variables were organised into six thematic domains based on ageing literature and study objectives. Each variable's prefix, as defined in the \gls{PMF} metadata (Table~\ref{tab:pmf_prefixes}), indicates its source or research domain. This systematic assignment ensures that each thematic group contains conceptually related features and provides a clear structure for downstream automated preprocessing and machine learning.
+After manual filtering, the retained variables were organised into six thematic domains based on ageing literature and study objectives. Each variable's prefix, as defined in the \gls{PMF} metadata (Table~\ref{tab:pmf_prefixes}), indicates its source or research domain. This systematic assignment ensures that each thematic group contains conceptually related features and provides a clear structure for downstream automated preprocessing and machine learning. 
+
 % \subsection{Derived variable prefixes}
 
 Each variable in \gls{TILDA} was assigned a prefix indicating its data source or research domain. Home based \gls{CAPI} variables use a two letter module code followed by a three digit question code (e.g., \texttt{ph121}). Variables with multiple responses or loops include an underscore and number to specify the response or iteration (e.g., \texttt{ph201\_05}).
