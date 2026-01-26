@@ -80,7 +80,7 @@ Following the five step workflow outlined above, Python scripts were used to pro
 
 Manual filtering was applied according to the following criteria:
 \begin{itemize}
-    \item \textbf{Missingness:} Drop variables with $\texttt{>80\%}$ missing values. This threshold balances retaining sufficient feature coverage with ensuring statistical reliability. Variables exceeding this threshold provide limited information in most cases, increase imputation uncertainty, and reduce effective sample size, which is particularly critical in longitudinal machine learning analyses.
+    \item \textbf{Missingness:} Drop variables with $>80\%$ missing values. This threshold balances retaining sufficient feature coverage with ensuring statistical reliability. Variables exceeding this threshold provide limited information in most cases, increase imputation uncertainty, and reduce effective sample size, which is particularly critical in longitudinal machine learning analyses.
     \item \textbf{Unique values:} Drop variables with a single observed value, as they contain no discriminative information and cannot contribute to modelling or inference. Variables with low cardinality (2--4 unique values) were retained for review, as they frequently represent meaningful categorical responses (e.g., binary indicators or ordinal scales) relevant to ageing outcomes.
     \item \textbf{Dominant category (top frequency):} Variables where a single category (sample value) occurs in over $>90\%$ of observations were flagged. Such dominance indicates limited variability, reducing analytical utility and predictive value. Variables exceeding this threshold were marked for review or exclusion.
     \item \textbf{Identifiers / administrative fields:} IDs, version tags, and sampling weights were identified using the \gls{PMF} metadata. Variable names and descriptions were exported from each wave's \gls{PMF} file into CSV files (code provided in Appendix~\ref{app:pmf_code} ) to systematically document and review features prior to filtering. These exports enabled structured manual inspection and traceability between raw \gls{PMF} metadata and downstream feature selection decisions.
@@ -91,7 +91,7 @@ As part of the manual screening and filtering workflow. Variables exceeding excl
 \begin{figure}[htbp]
 \centering
 \includegraphics[height=1.25\textwidth]{variable_filter_criteria.png}
-\caption{Flowchart of the five step workflow for variable screening and filtering. Placeholder counts indicate the remaining and progression of remaining variables per dataset from raw to filtered datasets after each step, ready for automated preprocessing.}
+\caption{Flowchart of the five step workflow for variable screening and filtering. Placeholder counts indicate the progression of remaining variables per dataset from raw to filtered datasets after each step, ready for automated preprocessing.}
 \label{fig:variable_filter_criteria}
 \end{figure}
 
