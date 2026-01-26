@@ -15,17 +15,7 @@
 
 
 % ----------------------- contents from here ------------------------
-
-\section{Data Preprocessing}
-
-The preprocessing pipeline's primary aim was to convert all features, regardless of their original datatype (float, categorical, object, or mixed formats), into a standardised numerical representation suitable for machine learning. All nonresponse and sentinel values were consistently mapped to the numerical placeholder $\texttt{-1.0}$, and all valid entries were converted to $\texttt{float64}$. This ensured compatibility across the \gls{TILDA} waves and enabled uniform downstream operations for feature engineering and modeling.
-
-\subsection{Input data shape (post manual filtering)}
-The dimensions of the manually filtered datasets, which serve as the input for the automated cleaning engine, are in table~\ref{tab:dataset_shape}. This initial manual filtering step removed noninformative features (e.g., columns with zero variation, unique participant IDs, and nonessential administrative fields), resulting in a substantial reduction of up to half $\texttt{50\%}$ of the original raw variable count (e.g., from 1619 to 809 in Wave 1). While the Harmonised dataset uses a reduced subset of variables pre aligned to \gls{G2G} standards, it was subjected to the same deterministic cleaning steps to ensure numerical consistency with the full five wave datasets used for modelling.
-
-Although many Harmonised \gls{TILDA} variables appeared superficially numeric, inspection of the raw values revealed that they frequently consisted of prefixed numeric labels followed by descriptive text (e.g., {``1.Rarely or none of the time (less than 1 day)"}, ``4.All of the time (5--7 days)"). While these formats might suggest that simple string stripping could recover numeric values, such an approach would have introduced semantic errors for censored range, calendar, frequency, and other hybrid response formats. For example, a Harmonised value such as ``5--7 days" would reduce to \texttt{5} if stripped, whereas the appropriate numerical representation for consistency with the five wave cleaning logic is the midpoint of the range. 
-
-Applying the full pipeline guaranteed numerical consistency and prevented subtle distortions that would otherwise arise from inconsistent handling of hybrid string numeric representations.
+Following manual variable filtering in (Chapter~\ref{ch:chapter3}), the reduced datasets, containing only the variables of interest, summarised in Table~\ref{tab:dataset_shape}. This highlights the substantial reduction in features while preserving all participants with usable data, providing a starting point for automated preprocessing.
 
 \begin{table}[htbp]
 \centering
@@ -44,6 +34,10 @@ Harmonised & 8501 & 453 \\
 \hline
 \end{tabular}
 \end{table}
+
+To further understand the characteristics of these retained variables, the datasets were profiled using an exploratory visualiser (\texttt{visualiser.ipynb}) implemented with \texttt{pandas}, \texttt{numpy}, \texttt{matplotlib}, and \texttt{seaborn}. This profiling inspected data types, missingness patterns, unique value distributions, and variable trends across waves, providing an initial diagnostic view of the datasets. For example, in Wave 1, the visualiser detected 650 categorical columns, 150 float64 columns, and 9 object columns, while the harmonised dataset contained 304 categorical columns, 148 float32 columns, and several integer columns. Age distributions confirmed that all participants were 50+ across waves, and missing value summaries indicated substantial variation (e.g., mean missing values ranging from 4.7\% in Wave 4 to 35\% in the harmonised dataset, with some variables exceeding 77\% missing).
+
+Despite this, the exploratory visualiser was limited because the raw data were not yet cleaned, many outputs were incorrect or nonsensical due to hybrid formats and inconsistent coding. For instance, several supposedly numeric variables contained prefixed text (e.g., ``1.Rarely or none of the time (less than 1 day)'', ``4.All of the time (5--7 days)'') or bracketed ranges (e.g., ``1--2'', ``3--4''), which if stripped naively would produce incorrect values. Similarly, numeric columns sometimes contained sentinel codes (e.g., -98, -99) or embedded symbols (`\$', `cm', `\%') that skewed visual summaries. These insights, revealed through systematic profiling, guided the development of the subsequent cleaning pipeline, ensuring consistent numeric logic representations (e.g., midpoints for ranges, standardised sentinel handling) and reliable downstream feature engineering and machine learning.
 
 \section{Cleaning Engine}
 
