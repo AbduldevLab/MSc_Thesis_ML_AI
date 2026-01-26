@@ -76,22 +76,22 @@ Harmonised & 2016 (release) & 8501 & 572 \\
 
 \end{table}
 
- The raw \gls{TILDA} datasets were first profiled using python to automate variable summaries for each wave. For every variable, the following metrics were computed: data type, number of missing values, number of unique values, most frequent value, and frequency of the most frequent value. These summaries were exported to Excel for diagnostic review, enabling structured inspection prior to manual filtering. Decisions to exclude variables were then made manually based on these diagnostics, following predefined rule based thresholds. To reduce dataset size, non-informative variables (e.g., administrative identifiers, constant columns, high missingness) were removed as detailed below.
+Following the five step workflow outlined above, Python scripts were used to profile all variables across each wave. For every variable, the following metrics were computed: data type, number of missing values, number of unique values, most frequent value, and frequency of the most frequent value. These summaries were exported to spreadsheet format to support structured manual review prior to variable dropping.
 
 Manual filtering was applied according to the following criteria:
 \begin{itemize}
     \item \textbf{Missingness:} Drop variables with $\texttt{>80\%}$ missing values. This threshold balances retaining sufficient feature coverage with ensuring statistical reliability. Variables exceeding this threshold provide limited information in most cases, increase imputation uncertainty, and reduce effective sample size, which is particularly critical in longitudinal machine learning analyses.
     \item \textbf{Unique values:} Drop variables with a single observed value, as they contain no discriminative information and cannot contribute to modelling or inference. Variables with low cardinality (2--4 unique values) were retained for review, as they frequently represent meaningful categorical responses (e.g., binary indicators or ordinal scales) relevant to ageing outcomes.
-    \item \textbf{Dominant category (top frequency):} Variables where a single category (sample value) occurs in over $\texttt{>90\%}$ of observations were flagged. Such dominance indicates limited variability, reducing analytical utility and predictive value. Variables exceeding this threshold were marked for review or exclusion.
+    \item \textbf{Dominant category (top frequency):} Variables where a single category (sample value) occurs in over $>90\%$ of observations were flagged. Such dominance indicates limited variability, reducing analytical utility and predictive value. Variables exceeding this threshold were marked for review or exclusion.
     \item \textbf{Identifiers / administrative fields:} IDs, version tags, and sampling weights were identified using the \gls{PMF} metadata. Variable names and descriptions were exported from each wave's \gls{PMF} file into CSV files (code provided in Appendix~\ref{app:pmf_code} ) to systematically document and review features prior to filtering. These exports enabled structured manual inspection and traceability between raw \gls{PMF} metadata and downstream feature selection decisions.
 \end{itemize}
 
-As part of manual screening and filtering workflow. Variables exceeding exclusion thresholds (e.g., high missingness, single value, dominant category, administrative identifiers) were visually flagged (e.g., marked in red). Non flagged variables were programmatically concatenated using spreadsheet formulas (e.g., \texttt{=TEXTJOIN(", ", TRUE, J2:J\textit{n})}) and then manually transferred into wave specific \gls{JSON} files for each wave. These files represent the variables of interest retained after manual screening and filtering and serve as inputs for the upcoming automated data preprocessing \& cleaning in Chapter~\ref{ch:chapter4}.
+As part of the manual screening and filtering workflow. Variables exceeding exclusion thresholds (e.g., high missingness, single value, dominant category, administrative identifiers) were visually flagged (e.g., marked in red). Non flagged variables were programmatically concatenated using spreadsheet formulas (e.g., \texttt{=TEXTJOIN(", ", TRUE, J2:J\textit{n})}) and then manually transferred into wave specific \gls{JSON} files for each wave. These files represent the variables of interest retained after manual screening and filtering and serve as inputs for the upcoming automated data preprocessing \& cleaning in Chapter~\ref{ch:chapter4}.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[height=1.25\textwidth]{variable_filter_criteria.png}
-\caption{Flowchart of the manual variable filtering criteria. Placeholder counts indicate remaining variables per dataset after each step.}
+\caption{Flowchart of the five step workflow for variable screening and filtering. Placeholder counts indicate the remaining and progression of remaining variables per dataset from raw to filtered datasets after each step, ready for automated preprocessing.}
 \label{fig:variable_filter_criteria}
 \end{figure}
 
