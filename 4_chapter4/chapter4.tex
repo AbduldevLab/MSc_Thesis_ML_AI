@@ -41,7 +41,7 @@ Despite this, the exploratory visualiser was limited because the raw data were n
 
 \section{Cleaning Engine}
 
-The core challenge in converting heterogeneous variable types across five (including harmonised) waves into a single numerical standard required constructing a reproducible pipeline to achieve \emph{numerical homogeneity,} referring to the property that all retained features are represented as consistent numerical values (float64) with a unified missing/sentinel code ($\texttt{-1.0}$), enabling uniform downstream processing. This was accomplished by developing a two stage system: \emph{variable scenario mapping}, specifically inside the ``detect\_column\_scenario\_mapping" function, ~\ref{app:variable_mapping_code} and the final \emph{six step deterministic cleaning engine}~\ref{app:cleaning_pipeline_code}.
+The core challenge in converting heterogeneous variable types across the six datasets (Table~\ref{tab:dataset_shape}) into a single numerical standard required constructing a reproducible pipeline to achieve \emph{numerical homogeneity,} referring to the property that all retained features are represented as consistent numerical values (float64) with a unified missing/sentinel code ($\texttt{-1.0}$), enabling uniform downstream processing. This was accomplished by developing a two stage system: \emph{variable scenario mapping}, specifically inside the ``detect\_column\_scenario\_mapping" function, Appendix~\ref{app:variable_mapping_code} and the final \emph{six step deterministic cleaning engine} Appendix~\ref{app:cleaning_pipeline_code}.
 
 \subsection{Stage 1: Variable scenario mapping and validation}
 
@@ -79,8 +79,41 @@ The nine input scenarios were processed by the \emph{six step cleaning engine}. 
 \label{fig:cleaning_flow}
 \end{figure}
 
-A key difficulty in cleaning the five \gls{TILDA} waves was the lack of guaranteed ordering in categorical values for the same variable across different waves (e.g., \texttt{Wave 1 feature(x)}: [\texttt{`Very Good', `Fair', `Excellent', `Good', `Poor', `DK', `RF'}] and \texttt{Wave 3 feature(x)}: [\texttt{`Excellent', `Fair', `Very Good', `RF', `Poor', `DK', `Good'}]). If the cleaning engine relied on a positional index (like traditional label encoding) for transformation, this inconsistency would result in different numerical codes for the same semantic category across waves (e.g., \texttt{Wave 1} $\rightarrow$ [\texttt{4.0, 2.0, 5.0, 3.0, 1.0, -1.0}],  \texttt{Wave 3} $\rightarrow$ [\texttt{4.0, 2.0, 5.0, 3.0, 1.0, -1.0}]). To overcome this, the cleaning engine was designed to be \emph{order invariant} wherever possible, particularly in the later steps. For multi class scenarios (Step 6), this required an explicit, wave independent lookup based on the category string itself to ensure that a category string, once transformed to a numerical value, remained consistent regardless of its appearance order in the raw data.
+A key difficulty in cleaning the five \gls{TILDA} waves was the lack of guaranteed ordering in categorical values for the same variable across different waves. Table~\ref{tab:wave_ordering_example} shows the positional location for each categorical variable in Wave 1 and Wave 3. If the cleaning engine relied on the  positional index for transformation, the inconsistent categorical ordering would result in different numerical codes for the same semantic category across waves. To overcome this, the cleaning engine was designed to be \emph{order invariant} wherever possible, particularly in the later steps (see Table X - where table X is a version of the CGPT generated one below with the code value replacing 'Pos' column and the Wave categories aligned (ie only three columns in total)). 
 
+For multi class scenarios (Step 6), this required an explicit, wave independent lookup based on the category string itself to ensure that a category string, once transformed to a numerical value, remained consistent regardless of its appearance order in the raw data.
+
+% ------------------------------------------------------------
+% Side-by-side table: Wave 1 vs Wave 3 category order + positional codes
+% ------------------------------------------------------------
+\begin{table}[htbp]
+\centering
+\caption{Inconsistent category ordering for the same feature $x$ across waves and its impact on positional (order-based) label encoding.}
+\label{tab:wave_ordering_example}
+
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.15}
+
+% Total = 0.08 + 0.21 + 0.21 + 0.25 + 0.25 = 1.00\textwidth
+\begin{tabular}{|C{0.1\textwidth}|C{0.20\textwidth}|C{0.20\textwidth}|C{0.20\textwidth}|C{0.20\textwidth}|}
+\hline
+\multirow{2}{*}{\textbf{Pos}} &
+\multicolumn{2}{c|}{\textbf{Wave 1}} &
+\multicolumn{2}{c|}{\textbf{Wave 3}} \\
+\cline{2-5}
+& \textbf{Category} & \textbf{Code} & \textbf{Category} & \textbf{Code} \\
+\hline
+1 & Very Good & 1 & Excellent & 1 \\
+2 & Fair & 2 & Fair & 2 \\
+3 & Excellent & 3 & Very Good & 3 \\
+4 & Good & 4 & RF & -1 \\
+5 & Poor & 5 & Poor & 4 \\
+6 & DK & -1 & DK & -1 \\
+7 & RF & -1 & Good & 5 \\
+\hline
+\end{tabular}
+
+\end{table}
 \subsection{Scenario steps and their technical focus}
 \begin{enumerate}
     \item \textbf{Empty / Blank Values:} Converts all \texttt{NaN}, empty strings, and whitespace to the standard non response value $\texttt{-1.0}$.
