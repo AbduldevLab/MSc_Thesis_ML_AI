@@ -37,29 +37,26 @@ Harmonised & 8501 & 453 \\
 
 For example, in Wave 1, the visualiser detected 650 categorical columns, 150 (\texttt{float64}) columns, and 9 object columns, while the harmonised dataset contained 304 categorical columns, 148 float32 columns, and several integer columns. Age distributions confirmed that all participants were $50+$ across waves, and missing value summaries indicated substantial variation (e.g., mean missing values ranging from $4.7\%$ in Wave 4 to $35\%$ in the harmonised dataset, with some variables exceeding $77\%$ missing).
 
-Despite this, the exploratory visualiser was limited because the raw data were not yet cleaned, many outputs were incorrect or nonsensical due to hybrid formats and inconsistent coding. For instance, inspection revealed that many variables across both the wave specific and harmonised datasets, while appearing numeric at first glance, in fact contained hybrid representations combining numeric prefixes with descriptive text (e.g., ``1.Rarely or none of the time (less than 1 day)'', ``4.All of the time (5--7 days)'', or prefixed labels such as ``1.male'', ``2.female''). A naive string stripping approach would therefore produce incorrect numeric values (for example, reducing ``5--7 days'' to \texttt{5}) resulting in silently introducing semantic distortion. Similarly, numeric columns sometimes contained sentinel codes (e.g., -98, -99) or embedded symbols ($`\$', `cm', `\%'$) that skewed visual summaries. 
+Despite this, the exploratory visualiser was limited because the raw data were not yet cleaned, many outputs were incorrect or nonsensical due to hybrid formats and inconsistent coding. For instance, inspection revealed that many variables across both the wave specific and harmonised datasets, while appearing numeric at first glance, in fact contained hybrid representations combining numeric prefixes with descriptive text (e.g., ``1.Rarely or none of the time (less than 1 day)'', ``4.All of the time (5--7 days)'', or prefixed labels such as ``0.not coupled'', ``1.coupled''). A naive string stripping approach would therefore produce incorrect numeric values (for example, reducing ``5--7 days'' to \texttt{5}) resulting in silently introducing semantic distortion. Similarly, numeric columns sometimes contained sentinel codes (e.g., -98, -99) or embedded symbols ($`\$', `cm', `\%'$) that skewed visual summaries. 
 
 These insights, revealed through systematic profiling, guided the development of the subsequent cleaning pipeline, ensuring consistent numeric logic representations (e.g., midpoints for ranges, standardised sentinel handling).
 
 \section{Cleaning Engine}
-
 The core challenge in converting heterogeneous variable types across the six datasets (Table~\ref{tab:dataset_shape}) was achieving a single numerical standard suitable for downstream analysis. This required enforcing \emph{numerical homogeneity}, defined here as representing all retained features as consistent numerical values (\texttt{float64}) with a unified missing or non response sentinel ($\texttt{-1.0}$). To address this, the solution was implemented as a two stage system. The first stage performs automated \emph{variable scenario detection}, identifying the structural form of each variable based on observed value patterns using the \texttt{detect\_column\_scenario\_mapping} function (Appendix~\ref{app:variable_mapping_code}). This stage includes additional diagnostic categories used during development to surface unhandled edge cases.
 
 The second stage applies a deterministic \emph{six step numerical cleaning engine} (Appendix~\ref{app:cleaning_pipeline_code}). While nine scenario categories were initially defined during development, three served exclusively as validation fallbacks and were progressively eliminated as detection coverage improved. The final pipeline therefore consists of six active transformation steps, applied sequentially and uniformly across all waves.
 
 \subsection{Stage 1: Variable scenario mapping and validation}
+Stage 1 focused on automatically identifying how each variable should be handled during cleaning. An automated detection function in Appendix~\ref{app:variable_mapping_code} was developed to classify variables based on their observed value structure, including the presence of sentinel codes, numeric annotations, ordinal labels, and mixed string numeric formats. While multiple intermediate detection categories were used during development, these served solely as internal routing logic. While all variables passed sequentially through the six step cleaning pipeline, most were fully resolved in the earlier steps (Steps 1--5). The final step (Step 6) was applied only to residual variables that could not be deterministically resolved by earlier transformations.
 
-Stage 1 focused on automatically identifying how each variable should be handled during cleaning. An automated detection function (\texttt{detect\_column\_scenario\_mapping} in Appendix~\ref{app:variable_mapping_code}) was developed to classify variables based on their observed value structure, including the presence of sentinel codes, numeric annotations, ordinal labels, and mixed string numeric formats. While multiple intermediate detection categories were used during development, these served solely as internal routing logic. While all variables passed sequentially through the six step cleaning pipeline, most were fully resolved in the earlier steps (Steps 1--5). The final step (Step 6) was applied only to residual variables that could not be deterministically resolved by earlier transformations.
+The additional detection categories (e.g., ``single value categorical'', ``special symbol mixed'', and ``unknown/complex'') were intentionally included as diagnostic fallbacks to surface unhandled edge cases due to the complexity and size of the data. As detection rules were continuously refined and coverage improved, variables initially routed to these fallback categories were progressively absorbed into earlier, well defined scenarios, resulting in zero variables remaining in these categories for the final pipeline execution.
 
-The pipeline's first stage utilised an automated detection function (Appendix~\ref{app:variable_mapping_code}), powered by the \texttt{re} (Regex) Python library, to categorise variables based on observable value patterns. During development, additional detection categories (e.g., ``single value categorical'', ``special symbol mixed'', and ``unknown/complex'') were intentionally included as diagnostic fallbacks to surface unhandled edge cases due to the complexity and size of the data. As detection rules were continuously refined and coverage improved, variables initially routed to these fallback categories were progressively absorbed into earlier, well defined scenarios, resulting in zero variables remaining in these categories for the final pipeline execution.
+To ensure robustness, the classification output was immediately processed by a validation routine that generated a comprehensive dictionary of feature states before and after cleaning, including all representative sample values for each variable. This allowed direct inspection of how the same variable was represented across waves prior to cleaning, particularly in cases where identical semantic categories appeared in different orders or formats. By comparing these grouped samples before and after each cleaning step, classification errors and inconsistent mappings were identified and corrected prior to execution of subsequent transformations.
 
-To ensure robustness, the classification output was immediately processed by a validation routine that generated a comprehensive dictionary of feature states before and after cleaning, including representative sample values for each variable. This allowed direct inspection of how the same variable was represented across different waves prior to cleaning, particularly in cases where identical semantic categories appeared in differing orders or formats. By comparing these grouped samples before and after each cleaning step, classification errors and inconsistent mappings were identified and corrected prior to execution of subsequent transformations.
-
-The dictionary generated inside the ``show\_grouped\_vars\_for\_scenarios" function was formatted to create an automatic friendly ``.md'' file for rapid, surface level verification, which honed the final mapping dictionary~\ref{app:cleaning_pipeline_code} for all features across all waves. This process of using automated detection followed by visual, manual validation was essential for correcting errors in classification logic before the subsequent scenario transformations were executed in the pipeline.
+The dictionary generated inside the ``show\_grouped\_vars\_for\_scenarios" function was formatted to create an automatic friendly ``.md'' file for rapid, surface level verification, which honed the final mapping dictionary in (Appendix~\ref{app:md_audit}) for all features across all waves. This process of using automated detection followed by visual, manual validation was essential for correcting errors in classification logic before the subsequent scenario transformations were executed in the pipeline.
 
 \subsection{Stage 2: Deterministic six step cleaning sequence}
-
-The nine input scenarios were processed by the \emph{six step cleaning engine}. Resolving simple and unambiguous cases first increased the proportion of clean numerical features before addressing more complex structures, particularly censored and multi class scenarios (Figure~\ref{fig:cleaning_flow}). This deterministic sequence applied the same logic across all waves to ensure consistent data alignment (see Appendix~\ref{app:cleaning_pipeline_code}).
+The nine input scenarios were processed sequentially by the \emph{six step cleaning engine}, resolving simple and unambiguous cases first to maximise the proportion of clean numerical features before tackling more complex structures, particularly censored and multi-class scenarios (Figure~\ref{fig:cleaning_flow}). This deterministic sequence applied identical logic across all waves, ensuring consistent data alignment (see Appendix~\ref{app:cleaning_pipeline_code}).
 
 \begin{figure}[htbp]
 \centering
@@ -82,19 +79,50 @@ The nine input scenarios were processed by the \emph{six step cleaning engine}. 
 \draw[->, thick] (step5) -- (step6);
 
 \end{tikzpicture}
-\caption{Flowchart of the final six step cleaning pipeline applied to all \gls{TILDA} waves. See full transformation tables in Appendix~\ref{tab:step6_full} and \ref{app:cleaning_pipeline_code} for detailed scenario progression code at each step.}
+\caption{Flowchart of the final six step cleaning pipeline applied to all \gls{TILDA} waves. See full transformation tables in Appendix~\ref{tab:step6_full} and \ref{app:cleaning_pipeline_code} for detailed scenario progression \texttt{.ipynb} script at each step.}
 \label{fig:cleaning_flow}
 \end{figure}
 
-To verify that semantic equivalence was preserved across waves prior to final numerical assignment, an automated audit was introduced. During pipeline execution, variables containing identical observed category sets in the same order regardless of variable name or originating wave were grouped together. Pre and post transformation values for each group were exported to a readable Markdown (\texttt{.md}) file, as shown in Appendix~\ref{app:md_audit}. This representation enabled rapid visual verification of numerical consistency and confirmed that features of known importance for downstream predictive models were preserved and correctly encoded. For example, features such as \texttt{ph001} (self-rated general health), \texttt{ph009} (comparative self-rated health), and \texttt{bh006} (smoking frequency) correspond to items identified by \cite{moguilnerImportanceAgePrediction2021} as among the most influential predictors in mortality models. Retaining these features during manual filtering (Chapter~\ref{ch:chapter3}) and encoding them consistently across waves ensures that the cleaned dataset maintains coverage and semantic integrity, preventing distortions that could potentially compromise model performance.
+The final cleaning pipeline consisted of six deterministic steps applied uniformly across all \gls{TILDA} waves, with increasingly complex transformations handled in later stages. Steps 4--6 required particular attention due to hybrid, ordinal, or multi-class formats. A summary of each step, including technical details and examples, is provided below.
 
-A key challenge in cleaning the five \gls{TILDA} waves was the lack of guaranteed ordering for categorical values of the same variable across different waves. Table~\ref{tab:wave_ordering_example} illustrates this for Wave 4 and Wave 5. Relying on positional indices for transformation would produce inconsistent numerical codes for the same semantic category across waves. To overcome this, the cleaning engine was designed to be \emph{order invariant}, particularly in the later steps.
+\begin{enumerate}
+    \item \textbf{Empty / Blank Values:} All missing entries, empty strings, and whitespace were converted to the standard non-response sentinel $\texttt{-1.0}$.
+    
+    \item \textbf{Sentinel Values:} Wave specific non-response codes (e.g., $\texttt{-98}$, $\texttt{-99}$) and textual sentinels (e.g., \texttt{"dk"}, \texttt{"not applicable"}) were mapped to the unified $\texttt{-1.0}$ placeholder.
 
-This issue is most common in the final cleaning stage (Step 6), which handles multi-class and mixed format variables. These combined ordinal labels, frequency expressions, numeric ranges, and free text descriptors, with category ordering differing across waves. Step~6 resolves this by dynamically constructing explicit mapping dictionaries from the grouped category strings observed during each execution. Unlike earlier steps, it does not reuse mappings from previous waves, ensuring that semantic equivalence drives the numerical assignments rather than position or alphabetical order.
+    \item \textbf{Numeric Transformation:} Numeric like columns containing embedded units, symbols, or hybrid strings (e.g., $\texttt{50+}$, $\texttt{<10}$, $\texttt{1-2.5}$) were parsed using regex and converted to \texttt{float64}. For ranges, midpoints or boundary values were used. For censored or annotated values, appropriate upper/lower bounds were applied. 
 
-For example, gender variables appeared under different value encodings (\texttt{sex}), with varied category orderings and numeric prefixes across waves. Values such as \texttt{['Male', 'Female']}, \texttt{['Female', 'Male']}, and prefixed forms like \texttt{['1.male', '2.female']} were all mapped to a consistent numeric representation (\texttt{1.0} for male, \texttt{0.0} for female). Similarly, multi-class variables such as insurance status (\texttt{ins3}) were converted to stable numeric identifiers with non-response consistently mapped to \texttt{-1.0}.
+    \item \textbf{Censored / Ordinal Variables:} This step addressed variables representing ordinal scales, bracketed numeric ranges, or frequency expressions (e.g., ``2--3 days a week'', ``daily''). Transformations included:
+    \begin{itemize}
+        \item Converting textual ordinal labels and Likert scale responses to numeric equivalents.  
+        \item Mapping calendar based frequency descriptors to numeric weekly equivalents.  
+        \item Manual verification for low count or unusual variables, supported by the Markdown audit outputs (Appendix~\ref{app:md_audit}), to ensure semantic meaning was preserved.  
+    \end{itemize}
 
-Similarly, multi-class variables such as insurance status (\texttt{ins3}) were dynamically parsed from textual categories into stable numeric identifiers, with non-response values consistently mapped to the sentinel value \texttt{-1.0}. This ensured that semantic equivalence, rather than positional ordering or wave specific encoding, governed numerical assignment.
+    \item \textbf{Binary Categorical Variables:} Two-level features (e.g., Yes/No, Male/Female) were dynamically encoded using a per variable mapping dictionary:
+    \begin{itemize}
+        \item Semantic rules were applied e.g., (``no'', ``not'', ``female'' $\to 0.0$) and (``yes'', ``male'' $\to 1.0$).  
+        \item Count based detection verified that variables had exactly two non-missing unique values.  
+        \item Sentinels were preserved as $\texttt{-1.0}$.  
+        \item This approach ensured order invariant encoding across waves, even when original labels or numeric prefixes differed.  
+    \end{itemize}
+
+    \item \textbf{Multi-class / Mixed Variables:} All remaining multi-class, mixed type, or string numeric hybrid variables were processed in the final step:
+    \begin{itemize}
+        \item Lexical parsing extracted numbers, ranges, units, percentages, and textual frequency descriptors into floats.  
+        \item Sentinel handling ensured all known non-response codes mapped to $\texttt{-1.0}$.  
+        \item Original values were grouped and assigned numeric identifiers in first seen order, non numeric categorical labels were assigned integer codes above the highest observed numeric value to prevent collisions.  
+        \item Manual inspection using Markdown audit files verified that semantic equivalence was maintained across waves.  
+        \item Step 6 was designed to be \emph{order invariant}, dynamically constructing mapping dictionaries from observed values during each execution rather than reusing mappings from previous waves. This preserved consistent numeric representation regardless of variable ordering or wave specific encodings.  
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Cross wave semantic verification}
+Given the absence of guaranteed category ordering across waves, preserving semantic equivalence during numerical encoding was essential to avoid introducing distortions into downstream \gls{ML} models. Pre and post transformation values for each group were exported to a readable Markdown (\texttt{.md}) file, as shown in Appendix~\ref{app:md_audit}. This representation confirmed that features of known importance for downstream predictive models were preserved and correctly encoded. For example, features such as \texttt{ph001} (self-rated general health), \texttt{ph009} (comparative self-rated health), and \texttt{bh006} (smoking frequency) correspond to items identified by \cite{moguilnerImportanceAgePrediction2021} as among the most influential predictors in mortality models. Retaining these features during the manual filtering thresholds (Chapter~\ref{ch:chapter3}) and encoding them consistently across waves ensured that the cleaned dataset maintains coverage and semantic integrity, preventing distortions that could potentially compromise model performance.
+
+A key challenge in cleaning the five \gls{TILDA} waves was the lack of guaranteed ordering for categorical values of the same variable across different waves. Table~\ref{tab:wave_ordering_example} illustrates this for Wave 4 and Wave 5.
+
+For example, gender variables appeared under different value encodings (\texttt{sex}), with varied category orderings and numeric prefixes across waves. Values such as \texttt{[`Male', `Female']}, \texttt{[`Female', `Male']}, and prefixed forms like \texttt{[``1.male', `2.female']} were all mapped to a consistent numeric representation (\texttt{1.0} for male, \texttt{0.0} for female). This ensured that semantic equivalence, rather than positional ordering or wave specific encoding, governed numerical assignment.
 
 The variable \texttt{ph001} found in Appendix~\ref{app:md_audit} corresponds to the survey question: “Now I would like to ask you some questions about your health. Would you say your health is…”. Responses are ordinal (Poor to Excellent) with non-response categories. 
 
@@ -103,6 +131,7 @@ The grouped Markdown representation reveals two critical points:
     \item Semantically identical categories are correctly grouped even under different variable names (\texttt{ph001} vs \texttt{ph009}). 
     \item Numerical encoding is invariant to category ordering, preserving ordinal meaning across waves. Without this approach, positional encoding would assign inconsistent values, potentially distorting performance for downstream models.
 \end{enumerate}
+
 % ------------------------------------------------------------
 % Side-by-side table: Wave 4 vs Wave 5 category order + positional codes
 % ------------------------------------------------------------
@@ -132,22 +161,12 @@ The grouped Markdown representation reveals two critical points:
 \end{tabular}
 \end{table}
 
-% Feedback: This list contains a significant amount of information but very little detail. I think particularly for numeric transformation we need to be far more detailed in which variables were converted especially if some ranges were converted to midpoint values etc. In my mind each of these items in the list could be expanded out into a subsection with more detail and examples to showcase the amount of work you've done more comprehensively. 
-\subsection{Scenario steps and their technical focus}
-\begin{enumerate}
-    \item \textbf{Empty / Blank Values:} Converts all \texttt{NaN}, empty strings, and whitespace to the standard non response value $\texttt{-1.0}$.
-    \item \textbf{Sentinel Values:} Standardises wave specific non response codes (e.g., $\texttt{-98}$, $\texttt{-99}$) and documented textual sentinels (e.g., $\texttt{"dk"}$, $\texttt{"not applicable"}$) from the \gls{TILDA} \gls{PMF} release guide to the unified $\texttt{-1.0}$ placeholder.
-    \item \textbf{Numeric Transformation:} Removes non numeric characters (units, symbols, white spaces) and converts censored or annotated numeric strings (e.g., $\texttt{"50+"}$, $\texttt{"<10"}$, $\texttt{"1-2.5"}$) to a numerical float equivalent (e.g., boundary value or midpoint).
-    \item \textbf{Censored Categorical:} Applies explicit, known ordinal transformations and predefined mappings to features where text labels represent a latent numerical or ordered scale (e.g., health rating scales, Likert ranges). This step was intentionally performed manually for a subset of low count features to build intuition and reliable mapping dictionaries for the more complex subsequent scenarios. This included conversions for calendar based frequency strings like $\texttt{"twice a week"}$ to a numerical weekly equivalent.
-    \item \textbf{Binary Categorical:} Automatically maps two level features (e.g., Yes/No, Male/Female) to $\texttt{1.0/0.0}$. Importantly, this mapping is \emph{order invariant}: the numerical assignment does not depend on the original ordering of category labels in the raw data (e.g., \texttt{[Male, Female]} versus \texttt{[Female, Male]}). Instead, the encoding relies on \emph{semantic detection rules} (e.g., assigning $\texttt{0.0}$ to negated or absence indicating strings such as \texttt{"no"}, \texttt{"not"}, or wave specific refusal codes, under context constraints) alongside \emph{count based detection rules} (where a variable exhibits exactly two non missing unique values). This design choice ensures consistent binary representation across waves and features, independent of label ordering or survey specific value presentation.
-    \item \textbf{Multi-class / Mixed (The Complex Scenario):} This final step processes all remaining multi label, mixed type, and string numeric hybrid columns. The challenge was made more complex by the fact that the order of categorical string values could vary across waves, as discussed previously. To handle this, numerical assignments were made using an explicit dictionary lookup based on the original order of the sample values , rather than relying on positional or alphabetical order. This ensured consistent numerical representation. The step performs extensive lexical processing, dedicated number extraction, and rule based mapping to convert dense, unstandardised text into numerical floats, ensuring all residual variable types are successfully quantified. The transformed values were subject to increased manual verification due to the variable complexity.
-\end{enumerate}
 
 \section{Cleaning Validation}
 
 The robustness of the automated cleaning pipeline was evaluated in two stages. First, the internal consistency of cleaned predictors was assessed against established biological relationships. Second, full model replication was performed using a secondary study to confirm predictive utility.
 
-\subsection{Pairwise correlation validation}
+% \subsection{Pairwise correlation validation}
 Correlation analysis was conducted on the seven primary predictors identified by \cite{davisLinearRegressionbasedMachine2021} as explaining $\texttt{95\%}$ of the peak (\gls{GSR}) model performance, which is defined in this study as the difference between maximum and usual gait speed. Since the \gls{GSR} outcome itself is not natively available in the public Wave 3 dataset, validation was focused on the directional relationships between the predictors themselves. This internal consistency check ensures that the biological and clinical signals reported in the literature are preserved within the dataset (post cleaning).
 
 Figure~\ref{fig:heatmap} displays the correlation matrix for the selected predictors. These top 7 predictors were used to establish directional relationships for verifying that the numerical parsing pipeline specifically the handling of sentinel values was successful.
@@ -181,7 +200,7 @@ Education & \gls{MOCA} Score & \textbf{Positive (+)}; Third level education and 
 \end{tabular}
 \end{table}
 
-\subsection{Model Validation}
+% \subsection{Model Validation}
 Full model validation was performed by replicating the methodology of \cite{moguilnerImportanceAgePrediction2021}, which predicts 8--year mortality across Waves 1--5 using baseline Wave 1 predictors. The replication of \gls{AUC} scores in the range of $\texttt{0.70-0.90}$ serves as a functional validation.
 
 
