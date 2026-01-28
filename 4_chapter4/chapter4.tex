@@ -15,7 +15,7 @@
 
 
 % ----------------------- contents from here ------------------------
-Following manual variable filtering in (Chapter~\ref{ch:chapter3}), the reduced datasets, containing only the variables of interest. To further understand the characteristics of these retained variables, the datasets were profiled using an exploratory visualiser (\texttt{visualiser.ipynb}) implemented with \texttt{pandas}, \texttt{numpy}, \texttt{matplotlib}, and \texttt{seaborn}. This step examined data types, missingness patterns, unique value distributions, and representative sample values across all waves, alongside an automated scenario detection audit. The purpose of this profiling stage was not transformation, but to expose structural inconsistencies and latent formatting issues that would undermine naive numerical conversion.
+Following manual variable filtering in (Chapter~\ref{ch:chapter3}), the reduced datasets, containing only the variables of interest. To further understand the characteristics of these retained variables, the datasets were profiled using an exploratory visualiser (\texttt{visualiser.ipynb}) implemented with \texttt{pandas}, \texttt{numpy}, \texttt{matplotlib}, and \texttt{seaborn}. This step examined data types, missingness patterns, unique value distributions, and representative sample values across all waves, alongside an automated scenario detection audit. The purpose of this profiling stage was not transformation but to expose structural inconsistencies and latent formatting issues that would undermine naive numerical conversion.
 
 \begin{table}[htbp]
 \centering
@@ -37,7 +37,7 @@ Harmonised & 8501 & 453 \\
 
 For example, in Wave 1, the visualiser detected 650 categorical columns, 150 (\texttt{float64}) columns, and 9 object columns, while the harmonised dataset contained 304 categorical columns, 148 float32 columns, and several integer columns. Age distributions confirmed that all participants were $50+$ across waves, and missing value summaries indicated substantial variation (e.g., mean missing values ranging from $4.7\%$ in Wave 4 to $35\%$ in the harmonised dataset, with some variables exceeding $77\%$ missing).
 
-Despite this, the exploratory visualiser was limited because the raw data were not yet cleaned, many outputs were incorrect or nonsensical due to hybrid formats and inconsistent coding. For instance, inspection revealed that many variables across both the wave specific and harmonised datasets, while appearing numeric at first glance, in fact contained hybrid representations combining numeric prefixes with descriptive text (e.g., ``1.Rarely or none of the time (less than 1 day)'', ``4.All of the time (5--7 days)'', or prefixed labels such as ``0.not coupled'', ``1.coupled''). A naive string stripping approach would therefore produce incorrect numeric values (for example, reducing ``5--7 days'' to \texttt{5}) resulting in silently introducing semantic distortion. Similarly, numeric columns sometimes contained sentinel codes (e.g., -98, -99) or embedded symbols ($`\$', `cm', `\%'$) that skewed visual summaries. 
+Despite this, the exploratory visualiser was limited because the raw data were not yet cleaned, many outputs were incorrect or nonsensical due to hybrid formats and inconsistent coding. For instance, inspection revealed that many variables across both the wave specific and harmonised datasets, while appearing numeric at first glance, in fact contained hybrid representations combining numeric prefixes with descriptive text (e.g., ``1.Rarely or none of the time (less than 1 day)'', ``4.All of the time (5--7 days)'', or prefixed labels such as ``0.not coupled'', ``1.coupled''). A naive string stripping approach would therefore produce incorrect numeric values (for example, reducing ``5--7 days'' to \texttt{5}) resulting in silently introducing semantic distortion. Similarly, numeric columns sometimes contained sentinel codes (e.g., -98, -99) or embedded symbols ($`\$', `cm', `\%'$) that skewed visual summaries.
 
 These insights, revealed through systematic profiling, guided the development of the subsequent cleaning pipeline, ensuring consistent numeric logic representations (e.g., midpoints for ranges, standardised sentinel handling).
 
@@ -99,32 +99,32 @@ The final cleaning pipeline consisted of six deterministic steps applied uniform
         \item Manual verification for low count or unusual variables, supported by the Markdown audit outputs (Appendix~\ref{app:md_audit}), to ensure semantic meaning was preserved.  
     \end{itemize}
 
-    \item \textbf{Binary Categorical Variables:} Two-level features (e.g., Yes/No, Male/Female) were dynamically encoded using a per variable mapping dictionary:
+    \item \textbf{Binary Categorical Variables:} Two-level features (e.g., Yes/No, Male/Female) were dynamically encoded using a per-variable mapping dictionary:
     \begin{itemize}
         \item Semantic rules were applied e.g., (``no'', ``not'', ``female'' $\to 0.0$) and (``yes'', ``male'' $\to 1.0$).  
         \item Count based detection verified that variables had exactly two non-missing unique values.  
         \item Sentinels were preserved as $\texttt{-1.0}$.  
-        \item This approach ensured order invariant encoding across waves, even when original labels or numeric prefixes differed.  
+        \item This approach ensured order-invariant encoding across waves, even when original labels or numeric prefixes differed.  
     \end{itemize}
 
     \item \textbf{Multi-class / Mixed Variables:} All remaining multi-class, mixed type, or string numeric hybrid variables were processed in the final step:
     \begin{itemize}
         \item Lexical parsing extracted numbers, ranges, units, percentages, and textual frequency descriptors into floats.  
         \item Sentinel handling ensured all known non-response codes mapped to $\texttt{-1.0}$.  
-        \item Original values were grouped and assigned numeric identifiers in first seen order, non numeric categorical labels were assigned integer codes above the highest observed numeric value to prevent collisions.  
+        \item Original values were grouped and assigned numeric identifiers in first-seen order; non numeric categorical labels were assigned integer codes above the highest observed numeric value to prevent collisions.  
         \item Manual inspection using Markdown audit files verified that semantic equivalence was maintained across waves.  
         \item Step 6 was designed to be \emph{order invariant}, dynamically constructing mapping dictionaries from observed values during each execution rather than reusing mappings from previous waves. This preserved consistent numeric representation regardless of variable ordering or wave specific encodings.  
     \end{itemize}
 \end{enumerate}
 
 \subsection{Cross wave semantic verification}
-Given the absence of guaranteed category ordering across waves, preserving semantic equivalence during numerical encoding was essential to avoid introducing distortions into downstream \gls{ML} models. Pre and post transformation values for each group were exported to a readable Markdown (\texttt{.md}) file, as shown in Appendix~\ref{app:md_audit}. This representation confirmed that features of known importance for downstream predictive models were preserved and correctly encoded. For example, features such as \texttt{ph001} (self-rated general health), \texttt{ph009} (comparative self-rated health), and \texttt{bh006} (smoking frequency) correspond to items identified by \cite{moguilnerImportanceAgePrediction2021} as among the most influential predictors in mortality models. Retaining these features during the manual filtering thresholds (Chapter~\ref{ch:chapter3}) and encoding them consistently across waves ensured that the cleaned dataset maintains coverage and semantic integrity, preventing distortions that could potentially compromise model performance.
+Given the absence of guaranteed category ordering across waves, preserving semantic equivalence during numerical encoding was essential to avoid introducing distortions into downstream \gls{ML} models. Pre and post-transformation values for each group were exported to a readable Markdown (\texttt{.md}) file, as shown in Appendix~\ref{app:md_audit}. This representation confirmed that features of known importance for downstream predictive models were preserved and correctly encoded. For example, features such as \texttt{ph001} (self-rated general health), \texttt{ph009} (comparative self-rated health), and \texttt{bh006} (smoking frequency) correspond to items identified by \cite{moguilnerImportanceAgePrediction2021} as among the most influential predictors in mortality models. Retaining these features during the manual filtering thresholds (Chapter~\ref{ch:chapter3}) and encoding them consistently across waves ensured that the cleaned dataset maintains coverage and semantic integrity, preventing distortions that could potentially compromise model performance.
 
 A key challenge in cleaning the five \gls{TILDA} waves was the lack of guaranteed ordering for categorical values of the same variable across different waves. Table~\ref{tab:wave_ordering_example} illustrates this for Wave 4 and Wave 5.
 
 For example, gender variables appeared under different value encodings (\texttt{sex}), with varied category orderings and numeric prefixes across waves. Values such as \texttt{[`Male', `Female']}, \texttt{[`Female', `Male']}, and prefixed forms like \texttt{[``1.male', `2.female']} were all mapped to a consistent numeric representation (\texttt{1.0} for male, \texttt{0.0} for female). This ensured that semantic equivalence, rather than positional ordering or wave specific encoding, governed numerical assignment.
 
-The variable \texttt{ph001} found in Appendix~\ref{app:md_audit} corresponds to the survey question: “Now I would like to ask you some questions about your health. Would you say your health is…”. Responses are ordinal (Poor to Excellent) with non-response categories. 
+The variable \texttt{ph001} found in Appendix~\ref{app:md_audit} corresponds to the survey question: “Now I would like to ask you some questions about your health. Would you say your health is…”? Responses are ordinal (Poor to Excellent) with non-response categories. 
 
 The grouped Markdown representation reveals two critical points: 
 \begin{enumerate}
@@ -137,7 +137,7 @@ The grouped Markdown representation reveals two critical points:
 % ------------------------------------------------------------
 \begin{table}[htbp]
 \centering
-\caption{Inconsistent category ordering for the same feature $ph009$ (\texttt{Self rated health compared to other people your age}) across waves and its impact on positional (order-based) label encoding.}
+\caption{Inconsistent category ordering for the same feature $ph009$ (\texttt{self-rated health compared to other people your age}) across waves and its impact on positional (order-based) label encoding.}
 \label{tab:wave_ordering_example}
 \setlength{\tabcolsep}{5pt}
 \renewcommand{\arraystretch}{1.15}
@@ -161,9 +161,7 @@ The grouped Markdown representation reveals two critical points:
 \end{tabular}
 \end{table}
 
-
 \section{Cleaning Validation}
-
 The robustness of the automated cleaning pipeline was evaluated in two stages. First, the internal consistency of cleaned predictors was assessed against established biological relationships. Second, full model replication was performed using a secondary study to confirm predictive utility.
 
 % \subsection{Pairwise correlation validation}
