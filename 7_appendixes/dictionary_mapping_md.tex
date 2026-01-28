@@ -1,0 +1,131 @@
+\begin{verbatim}
+# Category Transformation Mapping
+
+### ==================== WAVE1 ====================
+
+--- Scenario Empty / blank values: 0 ---
+
+No variables found.
+
+--- Scenario Numeric with sentinel: 0 ---
+
+No variables found.
+
+--- Scenario Clean numeric: 809 ---
+
+*Variables:* `sex, gd002`  
+*Pre transformed values:* ['Male', 'Female']  
+*Transformed numeric:* `[1.0, 0.0]`
+
+*Variables:* `ph001`  
+*Pre transformed values:* ['Fair', 'Good', 'Very good', 'Excellent', 'Poor', "Don't know"]  
+*Transformed numeric:* `[2.0, 3.0, 4.0, 5.0, 1.0, -1.0]`
+
+*Variables:* `bh006`  
+*Pre transformed values:* ['20-39', 10.0, -1.0, 15.0, 5.0, '60+', "Don't Know", 2.0, 8.0, 3.0, '40-59', 4.0, 7.0, 1.0, 6.0, 14.0, 12.0, 16.0, 18.0, 13.0, 9.0, 0.0, 19.0, 11.0, 17.0]  
+*Transformed numeric:* `[29.5, 10.0, -1.0, 15.0, 5.0, 60.0, -1.0, 2.0, 8.0, 3.0, 49.5, 4.0, 7.0, 1.0, 6.0, 14.0, 12.0, 16.0, 18.0, 13.0, 9.0, 0.0, 19.0, 11.0, 17.0]`
+
+--- Scenario Censored / bracketed numeric: 0 ---
+
+No variables found.
+
+--- Scenario Binary categorical: 0 ---
+
+No variables found.
+
+--- Scenario Multi class categorical / mixed: 0 ---
+
+No variables found.
+
+--- Scenario Single value categorical: 0 ---
+
+No variables found.
+
+--- Scenario Special symbol / mixed: 0 ---
+
+No variables found.
+
+--- Scenario Unknown / complex mixed: 0 ---
+
+No variables found.
+
+### ==================== WAVE2 ====================
+
+...
+
+--- Scenario Clean numeric: 482 ---
+
+*Variables:* `gd002, sex`
+*Pre transformed values:* ['Female', 'Male']  
+*Transformed numeric:* `[0.0, 1.0]`
+
+*Variables:* `bh006`  
+*Pre transformed values:* [-1.0, '10 - 19', '20 - 29', 'Less than 10', '30+', "Don't know"]  
+*Transformed numeric:* `[-1.0, 14.5, 24.5, 10.0, 30.0, -1.0]`
+
+*Variables:* `ph001`  
+*Pre transformed values:* ['Very good', 'Good', 'Fair', 'Excellent', 'Poor']  
+*Transformed numeric:* `[4.0, 3.0, 2.0, 5.0, 1.0]`
+
+...
+
+### ==================== WAVE3 ====================
+
+...
+
+--- Scenario Clean numeric: 639 ---
+
+*Variables:* `sex, gd002`  
+*Pre transformed values:* ['Female', 'Male']  
+*Transformed numeric:* `[0.0, 1.0]`
+
+*Variables:* `ph001, ph009`  
+*Pre transformed values:* ['Very Good', 'Good', 'Excellent', 'Fair', 'Poor', 'DK']  
+*Transformed numeric:* `[4.0, 3.0, 5.0, 2.0, 1.0, -1.0]`
+
+*Variables:* `bh006`  
+*Pre transformed values:* [-1.0, '10 - 19', 'Less than 10', '20 - 29', '30+', -98.0, -99.0]  
+*Transformed numeric:* `[-1.0, 14.5, 10.0, 24.5, 30.0, -1.0, -1.0]`
+
+...
+
+### ==================== WAVE4 ====================
+
+...
+
+--- Scenario Clean numeric: 592 ---
+
+*Variables:* `bh006`  
+*Pre transformed values:* [-1.0, 'Less than 10', '20 - 29', '10 - 19', '30+', "Don't know"]  
+*Transformed numeric:* `[-1.0, 10.0, 24.5, 14.5, 30.0, -1.0]`
+
+*Variables:* `gd002, sex`
+*Pre transformed values:* ['Female', 'Male']  
+*Transformed numeric:* `[0.0, 1.0]`
+
+*Variables:* `ph001`  
+*Pre transformed values:* ['Good', 'Fair', 'Poor', 'Excellent', 'Very Good', 'RF', 'DK']  
+*Transformed numeric:* `[3.0, 2.0, 1.0, 5.0, 4.0, -1.0, -1.0]`
+
+...
+
+### ==================== WAVE5 ====================
+
+...
+
+--- Scenario Clean numeric: 577 ---
+
+*Variables:* `bh006`  
+*Pre transformed values:* [-1.0, 'Less than 10', '20 - 29', '10 - 19', '30+', "Don't know"]  
+*Transformed numeric:* `[-1.0, 10.0, 24.5, 14.5, 30.0, -1.0]`
+
+*Variables:* `gd002, sex`  
+*Pre transformed values:* ['Female', 'Male']  
+*Transformed numeric:* `[0.0, 1.0]`
+
+*Variables:* `ph001`  
+*Pre transformed values:* ['Very Good', 'Fair', 'Excellent', 'Good', 'Poor']  
+*Transformed numeric:* `[4.0, 2.0, 5.0, 3.0, 1.0]`
+
+...
+\end{verbatim}
