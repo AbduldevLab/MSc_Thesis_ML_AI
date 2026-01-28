@@ -86,29 +86,32 @@ The nine input scenarios were processed by the \emph{six step cleaning engine}. 
 \label{fig:cleaning_flow}
 \end{figure}
 
-A key difficulty in cleaning the five \gls{TILDA} waves was the lack of guaranteed ordering in categorical values for the same variable across different waves. Table~\ref{tab:wave_ordering_example} shows the positional location for each categorical variable in Wave 4 and Wave 5. If the cleaning engine relied on the  positional index for transformation, the inconsistent categorical ordering would result in different numerical codes for the same semantic category across waves. To overcome this, the cleaning engine was designed to be \emph{order invariant} wherever possible, particularly in the later steps (see Table X - where table X is a version of the CGPT generated one below with the code value replacing 'Pos' column and the Wave categories aligned (ie only three columns in total)). 
+To verify that semantic equivalence was preserved across waves prior to final numerical assignment, an automated audit was introduced. During pipeline execution, variables containing identical observed category sets in the same order regardless of variable name or originating wave were grouped together. Pre and post transformation values for each group were exported to a readable Markdown (\texttt{.md}) file, as shown in Appendix~\ref{app:md_audit}. This representation enabled rapid visual verification of numerical consistency and confirmed that features of known importance for downstream predictive models were preserved and correctly encoded. For example, features such as \texttt{ph001} (self-rated general health), \texttt{ph009} (comparative self-rated health), and \texttt{bh006} (smoking frequency) correspond to items identified by \cite{moguilnerImportanceAgePrediction2021} as among the most influential predictors in mortality models. Retaining these features during manual filtering (Chapter~\ref{ch:chapter3}) and encoding them consistently across waves ensures that the cleaned dataset maintains coverage and semantic integrity, preventing distortions that could potentially compromise model performance.
 
-This issue became most pronounced in the final cleaning stage (Step 6), which addressed multi-class and  format variables. These variables frequently combined ordinal labels, frequency expressions, numeric ranges, and free text descriptors, with category ordering differing across waves. Encoding such variables using positional or alphabetical rules would therefore result in inconsistent numerical representations for semantically identical responses.
+A key challenge in cleaning the five \gls{TILDA} waves was the lack of guaranteed ordering for categorical values of the same variable across different waves. Table~\ref{tab:wave_ordering_example} illustrates this for Wave 4 and Wave 5. Relying on positional indices for transformation would produce inconsistent numerical codes for the same semantic category across waves. To overcome this, the cleaning engine was designed to be \emph{order invariant}, particularly in the later steps.
 
-The final transformation step (Step~6) therefore addresses residual multi-class and mixed-format categorical variables that cannot be deterministically resolved by earlier steps. Importantly, this step does not reuse mappings learned from previous waves. Instead, variables are cleaned dynamically based on their observed value structure within each execution, while enforcing consistent semantic interpretation across waves.
+This issue is most common in the final cleaning stage (Step 6), which handles multi-class and mixed format variables. These combined ordinal labels, frequency expressions, numeric ranges, and free text descriptors, with category ordering differing across waves. Step~6 resolves this by dynamically constructing explicit mapping dictionaries from the grouped category strings observed during each execution. Unlike earlier steps, it does not reuse mappings from previous waves, ensuring that semantic equivalence drives the numerical assignments rather than position or alphabetical order.
 
-For example, gender variables appeared under different names and value encodings across datasets (e.g., \texttt{sex}, \texttt{gd002}, \texttt{ragender}), with category ordering and numeric prefixes varying by wave. Values such as \texttt{['Male', 'Female']}, \texttt{['Female', 'Male']}, and prefixed forms such as \texttt{['1.male', '2.female']} were all mapped to a consistent numerical representation (\texttt{1.0} for male, \texttt{0.0} for female), independent of ordering or source dataset.
+For example, gender variables appeared under different value encodings (\texttt{sex}), with varied category orderings and numeric prefixes across waves. Values such as \texttt{['Male', 'Female']}, \texttt{['Female', 'Male']}, and prefixed forms like \texttt{['1.male', '2.female']} were all mapped to a consistent numeric representation (\texttt{1.0} for male, \texttt{0.0} for female). Similarly, multi-class variables such as insurance status (\texttt{ins3}) were converted to stable numeric identifiers with non-response consistently mapped to \texttt{-1.0}.
 
-Similarly, multi-class variables such as insurance status (\texttt{ins3}) were dynamically parsed from textual categories into stable numeric identifiers, with non-response values consistently mapped to the sentinel value \texttt{-1.0}. This ensured that semantic equivalence, rather than positional ordering or wave-specific encoding, governed numerical assignment.
+Similarly, multi-class variables such as insurance status (\texttt{ins3}) were dynamically parsed from textual categories into stable numeric identifiers, with non-response values consistently mapped to the sentinel value \texttt{-1.0}. This ensured that semantic equivalence, rather than positional ordering or wave specific encoding, governed numerical assignment.
 
-For multi-class scenarios (Step 6) also the final step, consistency was achieved by constructing explicit mapping dictionaries derived from grouped category strings rather than positional ordering. These mappings were informed by iterative inspection of scenario grouped sample outputs, rendered in human readable \texttt{.md} format using the \texttt{show\_grouped\_vars\_for\_scenarios} function. This ensured that semantically identical response categories were assigned stable numerical values across waves, regardless of their original ordering or survey specific presentation.
+The variable \texttt{ph001} found in Appendix~\ref{app:md_audit} corresponds to the survey question: “Now I would like to ask you some questions about your health. Would you say your health is…”. Responses are ordinal (Poor to Excellent) with non-response categories. 
 
+The grouped Markdown representation reveals two critical points: 
+\begin{enumerate}
+    \item Semantically identical categories are correctly grouped even under different variable names (\texttt{ph001} vs \texttt{ph009}). 
+    \item Numerical encoding is invariant to category ordering, preserving ordinal meaning across waves. Without this approach, positional encoding would assign inconsistent values, potentially distorting performance for downstream models.
+\end{enumerate}
 % ------------------------------------------------------------
 % Side-by-side table: Wave 4 vs Wave 5 category order + positional codes
 % ------------------------------------------------------------
 \begin{table}[htbp]
 \centering
-\caption{Inconsistent category ordering for the same feature $ph009$ across waves and its impact on positional (order-based) label encoding.}
+\caption{Inconsistent category ordering for the same feature $ph009$ (\texttt{Self rated health compared to other people your age}) across waves and its impact on positional (order-based) label encoding.}
 \label{tab:wave_ordering_example}
-
 \setlength{\tabcolsep}{5pt}
 \renewcommand{\arraystretch}{1.15}
-
 % Total = 0.08 + 0.21 + 0.21 + 0.25 + 0.25 = 1.00\textwidth
 \begin{tabular}{|C{0.1\textwidth}|C{0.20\textwidth}|C{0.20\textwidth}|C{0.20\textwidth}|C{0.20\textwidth}|}
 \hline
@@ -127,7 +130,6 @@ For multi-class scenarios (Step 6) also the final step, consistency was achieved
 7 & RF & -1.0 & RF & -1.0 \\
 \hline
 \end{tabular}
-
 \end{table}
 
 % Feedback: This list contains a significant amount of information but very little detail. I think particularly for numeric transformation we need to be far more detailed in which variables were converted especially if some ranges were converted to midpoint values etc. In my mind each of these items in the list could be expanded out into a subsection with more detail and examples to showcase the amount of work you've done more comprehensively. 
