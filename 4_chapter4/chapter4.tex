@@ -106,10 +106,10 @@ The final cleaning pipeline consisted of six deterministic steps applied uniform
         \item[-] Semantic rules were applied e.g., (``no'', ``not'', ``female'' $\to 0.0$) and (``yes'', ``male'' $\to 1.0$).  
         \item[-] Count based detection verified that variables had exactly two non-missing unique values.  
         \item[-] Features with more than two sample values were also analysed for sentinel presence:
-            \begin{itemize}
-                \item[-] If a variable had three observed values and one was a sentinel, it was treated as binary.  
-                \item[-] If a variable had four observed values and two were sentinels, it was treated as binary.  
-            \end{itemize}
+        \begin{itemize}
+        \item[-] If a variable had three observed values and one was a sentinel, it was treated as binary.  
+        \item[-] If a variable had four observed values and two were sentinels, it was treated as binary.  
+        \end{itemize}
         \item[-] Sentinels were preserved as $\texttt{-1.0}$.  
         \item[-] This approach ensured order invariant encoding across waves, even when original labels or numeric prefixes differed.
         \item[-] \textit{Example (sentinel case):} Feature \texttt{fl002\_5} with pre transformed values \texttt{[`NOT Getting in or out of bed', -1.0, `Getting in or out of bed']} was encoded as \texttt{[0.0, -1.0, 1.0]}, demonstrating how a sentinel preserves binary semantics.
@@ -124,7 +124,9 @@ The final cleaning pipeline consisted of six deterministic steps applied uniform
         \item[-] Original values were grouped and assigned numeric identifiers in first seen order, non numeric categorical labels were assigned integer codes above the highest observed numeric value to prevent collisions.  
         \item[-] Manual inspection using the Markdown audit file verified that semantic equivalence was maintained across waves.  
         \item[-] Step 6 was designed to be \emph{order invariant}, dynamically interpreting category values within each wave rather than relying on predefined lookup tables shared across waves. This preserved consistent numeric representation regardless of variable ordering or wave specific encodings.
-        \item[-] \textit{Example:} Step 5 handled simple binary variables such as \texttt{CHRany\_pain} (any pain reported) with pre transformed values \texttt{[`pain', `No pain']} and numeric mapping \texttt{[1.0, 0.0]}. In contrast, Step 6 dynamically processed multi-class variables like \texttt{we114} (pre tax wage/salary) with over 20 distinct pre transformed categories (e.g., \texttt{-1.0, `200-299', `300-399', ..., `6,000-6,999'}) into consistent numeric representations (e.g., \texttt{-1.0, 249.5, 349.5, ..., 6499.5}). This illustrates why Step 6 required wave specific, dynamic parsing to maintain semantic equivalence across diverse observed values.
+        \begin{itemize}
+        \item[-] \textit{Example:} Step 5 handled simple binary variables such as \texttt{CHRany\_pain} (any pain reported) with pre transformed values \texttt{[`pain', `No pain']} and numeric mapping \texttt{[1.0, 0.0]}. In contrast, Step 6 dynamically processed multi-class variables like \texttt{we114} (pre tax wage/salary) many of which contained over 20 distinct pre transformed categories (e.g., \texttt{-1.0, `200-299', ..., `6,000-6,999'}) into consistent numeric representations (e.g., \texttt{-1.0, 249.5, 349.5, ..., 6499.5}). This illustrates why Step 6 required wave specific, dynamic parsing to maintain semantic equivalence across diverse observed values.
+        \end{itemize}
     \end{itemize}
 \end{enumerate}
 
