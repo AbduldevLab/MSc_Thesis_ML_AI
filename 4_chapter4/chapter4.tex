@@ -15,7 +15,7 @@
 
 
 % ----------------------- contents from here ------------------------
-Following manual variable filtering in (Chapter~\ref{ch:chapter3}), the reduced datasets contained only the variables of interest. To further understand the characteristics of these retained variables, the datasets were profiled using an exploratory visualiser (\texttt{visualiser.ipynb}) implemented with \texttt{pandas}, \texttt{numpy}, \texttt{matplotlib}, and \texttt{seaborn}. This step examined data types, missingness patterns, unique value distributions, and representative sample values across all waves, alongside an automated scenario detection audit. The purpose of this profiling stage was not transformation but to expose structural inconsistencies and latent formatting issues that would undermine direct numerical conversion.
+Following manual variable filtering in (Chapter~\ref{ch:chapter3}), the reduced datasets contained only the variables of interest. To further understand the characteristics of these retained variables, the datasets were profiled using an exploratory visualiser (\texttt{.ipynb}) file implemented with \texttt{pandas}, \texttt{numpy}, \texttt{matplotlib}, and \texttt{seaborn}. This step examined data types, missingness patterns, unique value distributions, and representative sample values across all waves, alongside an automated scenario detection audit. The purpose of this profiling stage was not transformation but to expose structural inconsistencies and latent formatting issues that would undermine direct numerical conversion.
 
 \begin{table}[htbp]
 \centering
@@ -44,19 +44,21 @@ These insights, revealed through systematic profiling, guided the development of
 \section{Cleaning Engine}
 The core challenge in converting heterogeneous variable types across the six datasets (Table~\ref{tab:dataset_shape}) was achieving a single numerical standard suitable for downstream analysis. This required enforcing \emph{numerical homogeneity}, defined here as representing all retained features as consistent numerical values (\texttt{float64}) with a unified missing or non response sentinel ($\texttt{-1.0}$). To address this, the solution was implemented as a two stage system. The first stage performs automated \emph{variable scenario detection}, identifying the structural form of each variable based on observed value patterns using the \texttt{detect\_column\_scenario\_mapping} function (Appendix~\ref{app:variable_mapping_code}). This stage includes additional diagnostic categories used during development to surface unhandled edge cases.
 
-The second stage applies a deterministic \emph{six step numerical cleaning engine} (Appendix~\ref{app:cleaning_pipeline_code}). While nine scenario categories were initially defined during development, three served exclusively as validation fallbacks and were progressively eliminated as detection coverage improved. The final pipeline therefore consists of six active transformation steps, applied sequentially and uniformly across all waves.
+The second stage applies a deterministic \emph{six step numerical cleaning engine} (Appendix~\ref{app:cleaning_pipeline_code}). While nine scenario categories were initially defined during development, three served exclusively as validation fallbacks and were progressively eliminated as detection coverage improved, with full scenario to step mapping counts provided in Appendix~\ref{tab:cleaning_tables}. The final pipeline therefore consists of six active transformation steps, applied sequentially and uniformly across all waves.
 
 \subsection{Stage 1: Variable scenario mapping and validation}
 Stage 1 focused on automatically identifying how each variable should be handled during cleaning. An automated detection function in Appendix~\ref{app:variable_mapping_code} was developed to classify variables based on their observed value structure, including the presence of sentinel codes, numeric annotations, ordinal labels, and mixed string numeric formats. While multiple intermediate detection categories were used during development, these served solely as internal routing logic. While all variables passed sequentially through the six step cleaning pipeline, most were fully resolved in the earlier steps (Steps 1--5). The final step (Step 6) was applied only to residual variables that could not be deterministically resolved by earlier transformations.
 
-The additional detection categories (e.g., ``single value categorical'', ``special symbol mixed'', and ``unknown/complex'') were intentionally included as diagnostic fallbacks to surface unhandled edge cases due to the complexity and size of the data. As detection rules were continuously refined and coverage improved, variables initially routed to these fallback categories were progressively absorbed into earlier, well defined scenarios, resulting in zero variables remaining in these categories for the final pipeline execution.
+The additional detection categories (e.g., ``single value categorical'', ``special symbol mixed'', and ``unknown/complex'') were intentionally included as diagnostic fallbacks to surface unhandled edge cases due to the complexity and size of the data. As rules matured, variables initially routed to these fallback categories were progressively resolved into earlier, well defined scenarios, leaving none remaining for the final pipeline execution.
 
 To ensure robustness, the classification output was immediately processed by a validation routine that generated a comprehensive dictionary of feature states before and after cleaning, including all representative sample values for each variable. This allowed direct inspection of how the same variable was represented across waves prior to cleaning, particularly in cases where identical semantic categories appeared in different orders or formats. By comparing these grouped samples before and after each cleaning step, classification errors and inconsistent mappings were identified and corrected prior to execution of subsequent transformations.
 
-The dictionary generated inside the \texttt{show\_grouped\_vars\_for\_scenarios} function was formatted to create an automatic friendly ``.md'' file for rapid, surface level verification, which honed the final mapping dictionary in (Appendix~\ref{app:md_audit}) for all features across all waves. This process of using automated detection followed by visual, manual validation was essential for correcting errors in classification logic before the subsequent scenario transformations were executed in the pipeline.
+The dictionary generated inside the \texttt{show\_grouped\_vars\_for\_scenarios} function (Appendix~\ref{app:md_script}) was formatted to create an automatic friendly ``.md'' file for rapid, surface level verification, which honed the final mapping dictionary in (Appendix~\ref{app:md_audit}) for all features across all waves. This process of using automated detection followed by visual, manual validation was essential for correcting errors in classification logic before the subsequent scenario transformations were executed in the pipeline.
 
 \subsection{Stage 2: Deterministic six step cleaning sequence}
-The nine input scenarios were processed sequentially by the \emph{six step cleaning engine}, resolving simple and unambiguous cases first to maximise the proportion of clean numerical features before tackling more complex structures, particularly censored and multi-class scenarios (Figure~\ref{fig:cleaning_flow}). This deterministic sequence applied identical logic across all waves, ensuring consistent data alignment (see Appendix~\ref{app:cleaning_pipeline_code}).
+The nine input scenarios were processed sequentially by the \emph{six step cleaning engine}, resolving simple and unambiguous cases first to maximise the proportion of clean numerical features before tackling more complex structures, particularly censored and multi-class scenarios (Figure~\ref{fig:cleaning_flow}). This deterministic sequence applied identical transformation logic to each wave, with Step 6 deriving numerical representations directly from the observed category tokens at runtime rather than relying on predefined wave specific encodings (see Appendix~\ref{app:step6_code}).
+
+This design reflects the empirical diversity of survey encodings, where a small subset of variables only reveal their semantic structure after simpler transformations have been applied.
 
 \begin{figure}[htbp]
 \centering
@@ -79,7 +81,7 @@ The nine input scenarios were processed sequentially by the \emph{six step clean
 \draw[->, thick] (step5) -- (step6);
 
 \end{tikzpicture}
-\caption{Flowchart of the final six step cleaning pipeline applied to all \gls{TILDA} waves. See full transformation tables in Appendix~\ref{tab:step6_full} and \ref{app:cleaning_pipeline_code} for detailed scenario progression \texttt{.ipynb} script at each step.}
+\caption{Flowchart of the final six step cleaning pipeline applied to all \gls{TILDA} waves. See full transformation tables in Appendix~\ref{tab:step6_full} and \ref{app:cleaning_pipeline_code} for a detailed progression \texttt{.ipynb} script at each scenario cleaning step.}
 \label{fig:cleaning_flow}
 \end{figure}
 
@@ -99,7 +101,7 @@ The final cleaning pipeline consisted of six deterministic steps applied uniform
         \item Manual verification for low count or unusual variables, supported by the Markdown audit outputs (Appendix~\ref{app:md_audit}), to ensure semantic meaning was preserved.  
     \end{itemize}
 
-    \item \textbf{Binary Categorical Variables:} Two-level features (e.g., Yes/No, Male/Female) were dynamically encoded using a per-variable mapping dictionary:
+    \item \textbf{Binary Categorical Variables:} Two-level features (e.g., Yes/No, Male/Female) were dynamically encoded using mappings derived from the observed value set of each variable:
     \begin{itemize}
         \item Semantic rules were applied e.g., (``no'', ``not'', ``female'' $\to 0.0$) and (``yes'', ``male'' $\to 1.0$).  
         \item Count based detection verified that variables had exactly two non-missing unique values.  
@@ -107,13 +109,15 @@ The final cleaning pipeline consisted of six deterministic steps applied uniform
         \item This approach ensured order-invariant encoding across waves, even when original labels or numeric prefixes differed.  
     \end{itemize}
 
-    \item \textbf{Multi-class / Mixed Variables:} All remaining multi-class, mixed type, or string numeric hybrid variables were processed in the final step:
+    \item \textbf{Multi-class / Mixed Variables:} Variables with remaining multi-class structure, mixed types, or unresolved string numeric hybrids after earlier transformations were processed in the final step.
+    
+    Full implementation details for this step are provided in Appendix~\ref{app:step6_code}:
     \begin{itemize}
         \item Lexical parsing extracted numbers, ranges, units, percentages, and textual frequency descriptors into floats.  
         \item Sentinel handling ensured all known non-response codes mapped to $\texttt{-1.0}$.  
         \item Original values were grouped and assigned numeric identifiers in first-seen order; non numeric categorical labels were assigned integer codes above the highest observed numeric value to prevent collisions.  
         \item Manual inspection using the Markdown audit file verified that semantic equivalence was maintained across waves.  
-        \item Step 6 was designed to be \emph{order invariant}, dynamically constructing mapping dictionaries from observed values during each execution rather than reusing mappings from previous waves. This preserved consistent numeric representation regardless of variable ordering or wave specific encodings.  
+        \item Step 6 was designed to be \emph{order invariant}, dynamically interpreting category values within each wave rather than relying on predefined lookup tables shared across waves. This preserved consistent numeric representation regardless of variable ordering or wave specific encodings.  
     \end{itemize}
 \end{enumerate}
 

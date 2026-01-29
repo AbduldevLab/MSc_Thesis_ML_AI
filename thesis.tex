@@ -76,6 +76,10 @@
 \usepackage{listings}
 \lstset{language=C++}
 
+\usepackage{listingsutf8}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
 %%%TABLE SETTINGS
 \usepackage{longtable}
 \usepackage{needspace}
@@ -310,7 +314,7 @@
 \markboth{Appendix}{Appendix}
 
 % --- Appendix B ---
-\chapter{Scenario Cleaning Pipeline Tables}  
+\chapter{Scenario: Cleaning Pipeline Tables}  
 \label{tab:cleaning_tables}
 % \section*{Scenario Cleaning Pipeline Tables}  
 \input{7_appendixes/cleaning_tables}
@@ -341,23 +345,38 @@
 \markboth{Appendix}{Appendix}
 
 % --- Appendix D ---
-\chapter{MD Dictionary: Scenario Grouping and Transformation Audit Outputs}
-\label{app:md_audit}
+\chapter{Step 6: Scenario `Multi class categorical' Cleaning Function}
+\label{app:step6_code}
 % \section*{Code for }
-\begin{itemize}
-    \item \texttt{sex}: Binary biological sex indicator (e.g., \texttt{Male/Female}, \texttt{Female/Male}, prefixed encodings).
-    
-    \item \texttt{ph001}: Self-rated general health status measured on an ordinal scale. Survey question: \emph{“Now I would like to ask you some questions about your health. Would you say your health is…”}. Responses range from \emph{Poor} to \emph{Excellent}, with additional 'no response' categories.
-    
-    \item \texttt{ph009}: Comparative self-rated health relative to people of the same age. Survey question: \emph{“In general, compared to other people your age, would you say your health is…”}.
-    
-    \item \texttt{bh006}: Frequency based lifestyle variable combining numeric values, bounded ranges (e.g., \texttt{20--39}), and textual descriptors (e.g., \texttt{Less than 10}, \texttt{30+}). Survey question: \emph{“How many cigarettes do/did you smoke on average per day?”}.
-\end{itemize}
-\input{7_appendixes/mapping_dictionary_md.tex}
+\lstset{language=Python,
+        basicstyle=\footnotesize\ttfamily,
+        breaklines=true,
+        frame=shadowbox,
+        keywordstyle=\color{blue}\bfseries,
+        stringstyle=\color{c++red},
+        commentstyle=\color{c++green},
+        numbers=left,
+        numberstyle=\tiny,
+        stepnumber=1,
+        numbersep=5pt,
+        inputencoding=utf8,
+        extendedchars=true,
+        literate=
+          {’}{{'}}1
+          {‘}{{'}}1
+          {“}{{"}}1
+          {”}{{"}}1
+          {–}{{-}}1
+          {—}{{-}}1
+          {€}{{EUR}}1
+}
+\lstinputlisting[fontadjust=\true]{7_appendixes/step6.py}
 
+\chaptermark{Appendix}
+\markboth{Appendix}{Appendix}
 
 % --- Appendix E ---
-\chapter{Second Stage: Deterministic six step cleaning engine}
+\chapter{Second Stage: Deterministic six step cleaning pipeline}
 \label{app:cleaning_pipeline_code}
 % \section*{Code for }
 \lstset{language=Python,
@@ -376,6 +395,42 @@
 
 \chaptermark{Appendix}
 \markboth{Appendix}{Appendix}
+
+% --- Appendix F ---
+\chapter{MD Dictionary: Scenario Grouping and Transformation Function}
+\label{app:md_script}
+% \section*{Code for }
+\lstset{language=Python,
+        basicstyle=\footnotesize\ttfamily,
+        breaklines=true,
+        frame=shadowbox,
+        keywordstyle=\color{blue}\bfseries,
+        stringstyle=\color{c++red},
+        commentstyle=\color{c++green},
+        numbers=left,
+        numberstyle=\tiny,
+        stepnumber=1,
+        numbersep=5pt
+}
+\lstinputlisting[fontadjust=\true]{7_appendixes/mapping_dictionary_md.py}
+
+\chaptermark{Appendix}
+\markboth{Appendix}{Appendix}
+
+% --- Appendix G ---
+\chapter{MD Dictionary: Scenario Grouping and Transformation Audit Outputs}
+\label{app:md_audit}
+% \section*{Code for }
+\begin{itemize}
+    \item \texttt{sex}: Binary biological sex indicator (e.g., \texttt{Male/Female}, \texttt{Female/Male}, prefixed encodings).
+    
+    \item \texttt{ph001}: Self-rated general health status measured on an ordinal scale. Survey question: \emph{“Now I would like to ask you some questions about your health. Would you say your health is…”}. Responses range from \emph{Poor} to \emph{Excellent}, with additional 'no response' categories.
+    
+    \item \texttt{ph009}: Comparative self-rated health relative to people of the same age. Survey question: \emph{“In general, compared to other people your age, would you say your health is…”}.
+    
+    \item \texttt{bh006}: Frequency based lifestyle variable combining numeric values, bounded ranges (e.g., \texttt{20--39}), and textual descriptors (e.g., \texttt{Less than 10}, \texttt{30+}). Survey question: \emph{“How many cigarettes do/did you smoke on average per day?”}.
+\end{itemize}
+\input{7_appendixes/mapping_dictionary_md.tex}
 
 % Supporting documents are included in the appendix:
 
