@@ -72,7 +72,7 @@ This design reflects the empirical diversity of survey encodings, where a small 
 \node (step3) [below=of step2] {Step 3:\\Numeric Cleaning};
 \node (step4) [below=of step3] {Step 4:\\Censored / Ordinal Mapping};
 \node (step5) [below=of step4] {Step 5:\\Binary Classification};
-\node (step6) [below=of step5] {Step 6:\\Multi class / Mixed Parsing};
+\node (step6) [below=of step5] {Step 6:\\Multi-class / Mixed Parsing};
 
 \draw[->, thick] (step1) -- (step2);
 \draw[->, thick] (step2) -- (step3);
@@ -125,24 +125,25 @@ The final cleaning pipeline consisted of six deterministic steps applied uniform
         \item[-] Manual inspection using the Markdown audit file verified that semantic equivalence was maintained across waves.  
         \item[-] Step 6 was designed to be \emph{order invariant}, dynamically interpreting category values within each wave rather than relying on predefined lookup tables shared across waves. This preserved consistent numeric representation regardless of variable ordering or wave specific encodings.
         \begin{itemize}
-        \item[-] \textit{Example:} Step 5 handled simple binary variables such as \texttt{CHRany\_pain} (any pain reported) with pre transformed values \texttt{[`pain', `No pain']} and numeric mapping \texttt{[1.0, 0.0]}. In contrast, Step 6 dynamically processed multi-class variables like \texttt{we114} (pre tax wage/salary) many of which contained over 20 distinct pre transformed categories (e.g., \texttt{-1.0, `200-299', ..., `6,000-6,999'}) into consistent numeric representations (e.g., \texttt{-1.0, 249.5, 349.5, ..., 6499.5}). This illustrates why Step 6 required wave specific, dynamic parsing to maintain semantic equivalence across diverse observed values.
+        \item[-] \textit{Example:} Step 5 handled simple binary variables such as \texttt{CHRany\_pain} (any pain reported) with pre transformed values \texttt{[`pain', `No pain']} and numeric mapping \texttt{[1.0, 0.0]}. In contrast, Step 6 dynamically processed multi-class variables like \texttt{we114} (pre tax wage/salary) many of which contained over 20 distinct pre transformed categories (e.g., \texttt{-1.0, `200-299', `Less than 100', ..., `6,000-6,999'}) into consistent numeric representations (e.g., \texttt{-1.0, 249.5, 99, ..., 6499.5}). This illustrates why Step 6 required wave specific, dynamic parsing to maintain semantic equivalence across diverse observed values.
         \end{itemize}
     \end{itemize}
 \end{enumerate}
 
 \subsection{Cross wave semantic verification}
-Given the absence of guaranteed category ordering across waves, preserving semantic equivalence during numerical encoding was essential to avoid introducing distortions into downstream \gls{ML} modelling. Pre and post transformation values for each group were exported to a readable Markdown (\texttt{.md}) file, as shown in Appendix~\ref{app:md_audit}. This representation confirmed that features of known importance for downstream predictive models were preserved and correctly encoded. For example, features such as \texttt{ph001} (self-rated general health), \texttt{ph009} (comparative self-rated health), and \texttt{bh006} (smoking frequency) correspond to items identified by \cite{moguilnerImportanceAgePrediction2021} as among the most influential predictors in mortality models. Retaining these features from the manual filtering thresholds applied in (Chapter~\ref{ch:chapter3}) and encoding them consistently across waves ensured that the cleaned dataset maintains coverage and semantic integrity, preventing distortions that could potentially compromise model performance.
+Given the absence of guaranteed category ordering across waves, preserving semantic equivalence during numerical encoding was essential to avoid introducing distortions into downstream \gls{ML} modelling. Pre and post transformation values for each group were exported to a readable Markdown (\texttt{.md}) file, as shown in Appendix~\ref{app:md_audit}. This representation confirmed that features of known importance for downstream predictive models were preserved and correctly encoded. For example, features such as \texttt{ph001} (self-rated general health), \texttt{ph009} (comparative self-rated health), and \texttt{bh006} (smoking frequency) correspond to items identified by \cite{moguilnerImportanceAgePrediction2021} as among the most influential predictors in mortality models by the \gls{FI}. Retaining these features from the manual filtering thresholds applied in (Chapter~\ref{ch:chapter3}) and encoding them consistently across waves ensured that the cleaned dataset maintains coverage and semantic integrity, preventing distortions that could potentially compromise model performance.
 
 A key challenge in cleaning the five \gls{TILDA} waves was the lack of guaranteed ordering for categorical values of the same variable across different waves. Table~\ref{tab:wave_ordering_example} illustrates this for Wave 4 and Wave 5.
 
-For example, gender (\texttt{sex}) variables appeared under different value encodings, with varied category orderings and numeric prefixes across waves. Values such as \texttt{[`Male', `Female']}, \texttt{[`Female', `Male']}, and prefixed forms like \texttt{[``1.male', `2.female']} were all mapped to a consistent numeric representation (\texttt{1.0} for male, \texttt{0.0} for female). This ensured that semantic equivalence, rather than positional ordering or wave specific encoding, governed numerical assignment.
+For example, gender (\texttt{sex}) variables appeared under different value encodings, with varied category orderings and numeric prefixes across waves. Values such as \texttt{[`Male', `Female']}, \texttt{[`Female', `Male']}, and prefixed forms like \texttt{[``1.male', `2.female']} were all mapped to a consistent numeric representation (\texttt{1.0} for male, \texttt{0.0} for female). This ensured that semantic equivalence, rather than positional ordering or wave specific encoding, determined numerical assignment.
 
 The variable \texttt{ph001} found in Appendix~\ref{app:md_audit} corresponds to the survey question: “Now I would like to ask you some questions about your health. Would you say your health is…”?. Responses are ordinal (Poor to Excellent) with non-response categories. 
 
-The grouped Markdown representation reveals two critical points: 
+The grouped Markdown representation reveals three critical points: 
 \begin{enumerate}
-    \item Semantically identical categories are correctly grouped even under different variable names (\texttt{ph001} vs \texttt{ph009}). 
+    \item Semantically identical categories are correctly grouped even under different variable names (\texttt{ph001} vs \texttt{ph009}), enabling direct comparison of representations that would otherwise appear fragmented across waves. 
     \item Numerical encoding is invariant to category ordering, preserving ordinal meaning across waves. Without this approach, positional encoding would assign inconsistent values, potentially distorting performance for downstream models.
+    \item For variables with a large and heterogeneous set of observed values (e.g., income bands, frequency ranges, or mixed numeric text responses), the grouped view provided essential visibility into how complex category spaces were being collapsed into stable numeric representations, supporting both validation and error detection at scale.
 \end{enumerate}
 
 % ------------------------------------------------------------
