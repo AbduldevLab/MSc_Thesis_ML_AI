@@ -178,7 +178,7 @@ The grouped Markdown representation reveals three critical points:
 \section{Cleaning Validation}
 The purpose of the cleaning validation stage was to assess whether the automated numerical parsing and encoding pipeline preserved meaningful biological and statistical structure within the cleaned datasets. Rather than asserting correctness based solely on successful execution, validation was performed by evaluating whether known relationships reported in the literature could be recovered using the cleaned data under realistic data governance constraints.
 
-Due to restricted access to certain outcome variables within \gls{TILDA}, full end-to-end replication of all published models was not always feasible. In particular, access through the \texttt{Hotdesk Facility} for the official mortality outcomes is subject to additional governance requirements, including institutional \gls{GDPR} training certification and approval by the \gls{TILDA} data access committee \cite{HotDesksIrish}. Consequently, validation focused on two complementary strategies: (i) internal consistency checks against established biological and clinical relationships, and (ii) constrained replication of published modelling frameworks using available predictors and carefully documented proxy outcomes. Together, these approaches provide evidence that the cleaning pipeline produces numerically coherent datasets suitable for downstream statistical and machine learning analysis.
+Due to restricted access to certain outcome variables within \gls{TILDA}, full end-to-end replication of all published models was not always feasible. In particular, access through the \texttt{Hotdesk Facility} for the official mortality outcomes is subject to additional governance requirements, including institutional \gls{GDPR} training certification and approval by the \gls{TILDA} data access committee \cite{HotDesksIrish}. Consequently, validation focused on two complementary strategies: (i) internal consistency checks against established biological and clinical relationships, and (ii) constrained replication of published modelling frameworks using available predictors and the derived \texttt{8y\_mortality\_proxy} outcome. Together, these approaches provide evidence that the cleaning pipeline produces numerically coherent datasets suitable for downstream statistical and machine learning analysis.
 
 \subsection{Internal consistency and biological plausibility}
 The first validation stage assessed whether cleaned predictors preserved biologically and clinically plausible relationships reported in prior \gls{TILDA} based studies. This analysis focused on predictors identified by \cite{davisLinearRegressionbasedMachine2021} as accounting for approximately $95\%$ of the explained variance in \gls{GSR}, defined as the difference between maximum and usual gait speed.
@@ -218,7 +218,7 @@ Education & \gls{MOCA} Score & \textbf{Positive (+)}; Third level education and 
 \end{tabular}
 \end{table}
 
-\subsection{Model based validation under governance constraints}
+\subsection{Model based validation}
 
 To further assess the suitability of the cleaned data for downstream modelling, a constrained replication of the methodology proposed by \cite{moguilnerImportanceAgePrediction2021} was undertaken. That study predicts 8-year mortality across Waves 1--5 using a \gls{FI} constructed from multiple health deficit variables, reporting \gls{AUC} values ranging from approximately $0.70$ (\gls{FI} only) to $0.80$--$0.90$ when combined with age.
 
