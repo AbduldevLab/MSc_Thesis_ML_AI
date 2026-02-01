@@ -187,14 +187,14 @@ As a result, validation focused on two complementary strategies:
 \end{enumerate}
 Together, these validation steps demonstrate that the cleaning pipeline retains expected relational patterns and produces datasets appropriate for downstream modelling tasks.
 
-\subsection{Internal feature consistency}
+\subsection{Internal feature relationships}
 The first validation stage assessed whether cleaned predictors preserved biologically and clinically plausible relationships reported in prior \gls{TILDA} based studies. This analysis focused on predictors identified by \cite{davisLinearRegressionbasedMachine2021} as accounting for approximately $95\%$ of the explained variance in \gls{GSR}, defined as the difference between maximum and usual gait speed.
 
 As \gls{GSR} is not directly available in the public Wave 3 dataset, validation was performed by examining the directional relationships between the 7 primary predictors themselves. This approach evaluates whether the numerical encoding process, including sentinel handling, missing value treatment, and ordinal mapping, retained the expected internal structure of the data rather than reproducing outcome specific performance.
 
-Figure~\ref{fig:heatmap} presents the correlation matrix for the selected predictors following cleaning. Grip strength exhibited a negative association with both age and chair stand time, reflecting the inverse relationship between muscular strength and physical performance decline. Cognitive performance (\gls{MOCA}) demonstrated a moderate negative correlation with age and a positive association with educational attainment, consistent with known patterns of cognitive reserve in older adults. Education correlated positively with cognitive performance, and \gls{BMI} showed the expected weak negative association with age, reflecting diminished reserve in older cohorts.
+Figure~\ref{fig:heatmap} presents the correlation matrix for the selected predictors following cleaning. Grip strength exhibited a negative association with both age and chair stand time, reflecting the inverse relationship between muscular strength and physical performance decline. Cognitive performance (\gls{MOCA}) demonstrated a moderate negative correlation with age and a positive association with educational attainment, consistent with known patterns of cognitive reserve in older adults. Education correlated positively with cognitive performance, and \gls{BMI} showed the expected weak negative association with age, reflecting reduced physiological reserve in older cohorts.
 
-Table~\ref{tab:directional_validation} summarises the expected and observed directional relationships between key predictor pairs. Notably, grip strength showed moderate negative correlations with both age ($r=-0.265$) and chair stand time ($r=-0.170$), reflecting the expected inverse relationship between muscular strength and physical performance decline. Cognitive performance (\gls{MOCA}) displayed a moderate negative association with age ($r=-0.381$) and a positive association with education ($r=0.367$), consistent with known patterns of cognitive reserve in older adults. \gls{BMI} demonstrated the anticipated weak negative correlation with age ($r=-0.073$). These results confirm that the cleaning pipeline retained the expected numerical structure and relational patterns of the predictors, rather than introducing spurious associations.
+Table~\ref{tab:directional_validation} summarises the expected and observed directional relationships between key predictor pairs. Notably, grip strength showed moderate negative correlations with both age ($r=-0.265$) and chair stand time ($r=-0.170$), reflecting the expected inverse relationship between muscular strength and physical performance decline. Cognitive performance (\gls{MOCA}) displayed a moderate negative association with age ($r=-0.381$) and a positive association with education ($r=0.367$), consistent with known patterns of cognitive reserve in older adults. \gls{BMI} demonstrated the anticipated weak negative correlation with age ($r=-0.073$). These results confirm that the cleaning pipeline retained the expected numerical structure and relational patterns of the predictors, rather than introducing artificial associations.
 
 \begin{figure}[htbp]
 \centering
@@ -208,7 +208,7 @@ Table~\ref{tab:directional_validation} summarises the expected and observed dire
 \caption{Directional validation of the 7 features explaining $\texttt{95\%}$ of \gls{GSR} variance as identified by \cite{davisLinearRegressionbasedMachine2021}.}
 \label{tab:directional_validation}
 \small
-\begin{tabular}{|p{2.5cm}|p{2.5cm}|p{6.5cm}|c|}
+\begin{tabular}{|p{2.5cm}|p{2.5cm}|p{6cm}|c|}
 \hline
 \textbf{Predictor 1} & \textbf{Predictor 2} & \textbf{Expected Direction / Justification} & \textbf{Observed $r$} \\
 \hline
@@ -226,9 +226,9 @@ Education & \gls{MOCA} Score & \textbf{Positive (+)}; Third level education and 
 \end{table}
 
 \subsection{Model based validation}
-To evaluate whether the cleaned dataset retains predictive utility, a constrained replication of \cite{moguilnerImportanceAgePrediction2021} was undertaken. That study predicted 8-year mortality using a 32-item \gls{FI}. In the cleaned Wave 1 dataset, only 16 of these 32 \gls{FI} items remained following the manual variable filtering described in Chapter~\ref{ch:chapter3}, which prioritised global numeric consistency across waves.
+To evaluate whether the cleaned dataset retains predictive utility, a constrained replication of \cite{moguilnerImportanceAgePrediction2021} was undertaken. The resulting predictive performance for both model variants and sexes is summarised in Table~\ref{tab:model_replication}. The study predicted 8-year mortality using a 32-item \gls{FI}. In the cleaned Wave 1 dataset, only 16 of these 32 \gls{FI} items remained following the manual variable filtering described in Chapter~\ref{ch:chapter3}, which prioritised global numeric consistency across waves.
 
-A `\texttt{8y\_mortality\_proxy}' outcome was constructed to preserve the reported sex specific event rates (men: $14.9\%$, women: $11.1\%$) and to balance the number of deceased and alive participants for modelling purposes. The resulting balanced datasets included 1,124 men (562 deceased) and 1,046 women (523 deceased) while reflecting the underlying distribution of the Wave 1 cohort (total participants over the age of 50: 8,489; men: 3,775; women: 4,714). This proxy serves a diagnostic role: although it does not replicate true mortality, it allows evaluation of whether numerical relationships and predictive information are preserved in the cleaned data. In the original study, mortality was recorded via linkage to Ireland’s Central Register Office records \cite{wardLinkingDeathRegistration2020a}.
+A `\texttt{8y\_mortality\_proxy}' outcome was constructed to preserve the reported sex specific event rates (men: $14.9\%$, women: $11.1\%$) and to balance the number of deceased and alive participants for modelling purposes. The resulting balanced datasets included 1,124 men (562 deceased) and 1,046 women (523 deceased) while reflecting the underlying distribution of the Wave 1 cohort (total participants over the age of 50: 8,489; men: 3,775; women: 4,714). This proxy serves a diagnostic role, although it does not replicate true mortality, it allows evaluation of whether numerical relationships and predictive information are preserved in the cleaned data. In the original study, mortality was recorded via linkage to Ireland’s Central Register Office records \cite{wardLinkingDeathRegistration2020a}.
 Two model variants were tested for each sex:
 \begin{enumerate}
     \item \textbf{\gls{FI}-only model:} using the 16 available \gls{FI} items, without age.
@@ -240,17 +240,19 @@ For six \gls{FI} items (\texttt{mh0014}, \texttt{ph001}, \texttt{ph102}, \texttt
 
 \begin{table}[htbp]
 \centering
-\caption{Model replication results using \texttt{8y\_mortality\_proxy}. Comparison of predictive performance between the cleaned \gls{FI} and the partially re-mapped \gls{FI} to match paper features.}
+\caption{Model replication results: comparison of predictive performance using the cleaned and 6 recoded \gls{FI} features with the \texttt{8y\_mortality\_proxy}.}
 \label{tab:model_replication}
 \small
-\begin{tabular}{|l|c|c|}
+\begin{tabular}{|l|cc|cc|}
 \hline
-\textbf{Model / FI Version} & \textbf{Men \gls{AUC}} & \textbf{Women \gls{AUC}} \\
+\multirow{2}{*}{\textbf{Model}} &
+\multicolumn{2}{c|}{\textbf{Cleaned FI (16 items)}} &
+\multicolumn{2}{c|}{\textbf{Recoded FI (paper\cite{moguilnerImportanceAgePrediction2021} aligned)}} \\
+\cline{2-5}
+& \textbf{Men AUC} & \textbf{Women AUC} & \textbf{Men AUC} & \textbf{Women AUC} \\
 \hline
-FI-only (cleaned, 16 items) & 0.5113 & 0.5107 \\
-FI + Age (cleaned, 16 items) & 0.5214 & 0.5525 \\
-FI-only (recoded to match \cite{moguilnerImportanceAgePrediction2021}) & 0.5471 & 0.5590 \\
-FI + Age (recoded to match \cite{moguilnerImportanceAgePrediction2021}) & 0.5674 & 0.5875 \\
+FI-only & 0.5113 & 0.5107 & 0.5471 & 0.5590 \\
+FI + Age & 0.5214 & 0.5525 & 0.5674 & 0.5875 \\
 \hline
 \end{tabular}
 \end{table}
