@@ -228,7 +228,7 @@ Education & \gls{MOCA} Score & \textbf{Positive (+)}; Third level education and 
 \subsection{Model based validation}
 To evaluate whether the cleaned dataset retains predictive utility, a constrained replication of \cite{moguilnerImportanceAgePrediction2021} was undertaken. The resulting predictive performance for both model variants and sexes is summarised in Table~\ref{tab:model_replication}. The study predicted 8-year mortality using a 32-item \gls{FI}. In the cleaned Wave 1 dataset, only 16 of these 32 \gls{FI} items remained following the manual variable filtering described in Chapter~\ref{ch:chapter3}, which prioritised global numeric consistency across waves.
 
-A `\texttt{8y\_mortality\_proxy}' outcome was constructed to preserve the reported sex specific event rates (men: $14.9\%$, women: $11.1\%$) and to balance the number of deceased and alive participants for modelling purposes. The resulting balanced datasets included 1,124 men (562 deceased) and 1,046 women (523 deceased) while reflecting the underlying distribution of the Wave 1 cohort (total participants over the age of 50: 8,489; men: 3,775; women: 4,714). This proxy serves a diagnostic role, although it does not replicate true mortality, it allows evaluation of whether numerical relationships and predictive information are preserved in the cleaned data. In the original study, mortality was recorded via linkage to Ireland’s Central Register Office records \cite{wardLinkingDeathRegistration2020a}.
+A `\texttt{8y\_mortality\_proxy}' outcome was constructed to preserve the reported sex specific event rates (men: $14.9\%$, women: $11.1\%$) and to balance the number of deceased and alive participants for modelling purposes. The resulting balanced datasets included 1,114 men (557 deceased) and 982 women (491 deceased) while reflecting the underlying distribution of the Wave 1 cohort total participants (8,172) over the age of 50: [men: 3,743, women: 4,429]. This proxy serves a diagnostic role, although it does not replicate true mortality, it allows evaluation of whether numerical relationships and predictive information are preserved in the cleaned data. In the original study, mortality was recorded via linkage to Ireland’s Central Register Office records \cite{wardLinkingDeathRegistration2020a}.
 Two model variants were tested for each sex:
 \begin{enumerate}
     \item \textbf{\gls{FI}-only model:} using the 16 available \gls{FI} items, without age.
@@ -251,8 +251,8 @@ For six \gls{FI} items (\texttt{mh0014}, \texttt{ph001}, \texttt{ph102}, \texttt
 \cline{2-5}
 & \textbf{Men AUC} & \textbf{Women AUC} & \textbf{Men AUC} & \textbf{Women AUC} \\
 \hline
-FI-only & 0.5113 & 0.5107 & 0.5471 & 0.5590 \\
-FI + Age & 0.5214 & 0.5525 & 0.5674 & 0.5875 \\
+FI-only & 0.5068 & 0.5118 & 0.5672 & 0.5368 \\
+FI + Age & 0.5156 & 0.5312 & 0.5723 & 0.6052 \\
 \hline
 \end{tabular}
 \end{table}
