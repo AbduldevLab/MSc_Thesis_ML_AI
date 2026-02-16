@@ -102,7 +102,7 @@ With the variables of interest selected and the datasets reduced to a manageable
 
 \section{Thematic Grouping}
 
-After manual filtering, the retained variables were organised into six thematic domains based on ageing literature and study objectives. Each variable's prefix, as defined in the \gls{PMF} metadata (Table~\ref{tab:pmf_prefixes}), indicates its source or research domain. This systematic assignment ensures that each thematic group contains conceptually related features and provides a clear structure for downstream automated preprocessing and machine learning. 
+After manual filtering, the retained variables were organised into seven thematic domains based on ageing literature and study objectives. Each variable's prefix, as defined in the \gls{PMF} metadata (Table~\ref{tab:pmf_prefixes}), indicates its source or research domain. This systematic assignment ensures that each thematic group contains conceptually related features and provides a clear structure for downstream automated preprocessing and machine learning. 
 
 % \subsection{Derived variable prefixes}
 
@@ -157,7 +157,7 @@ G2G & Gateway to Global Aging Data \\
 
 % \subsection{Feature groups}
 
-Using the \gls{PMF} prefixes as a guide, variables were assigned to six thematic groups (Table~\ref{tab:feature_groups}), each capturing a conceptually coherent domain: physical, cognitive, social, and behavioural aspects of ageing. This structure supports reproducible preprocessing and helps machine learning models focus on meaningful, longitudinally robust features. 
+Using the \gls{PMF} prefixes as a guide, variables were assigned to seven thematic groups (Table~\ref{tab:feature_groups}), each capturing a conceptually coherent domain: physical, cognitive, social, and behavioural aspects of ageing. This structure supports reproducible preprocessing and helps machine learning models focus on meaningful, longitudinally robust features. 
 
 Specifically, the thematic grouping:
 \begin{enumerate}
@@ -165,102 +165,171 @@ Specifically, the thematic grouping:
     \item Ensures that model input variables are conceptually aligned with study objectives.
 \end{enumerate}
 
-The six thematic groups integrate information from \gls{CAPI}, \gls{SCQ}, and derived variables, covering socio demographic context, physical health, functional status, lifestyle behaviours, nutrition/metabolic biomarkers, and psychological/cognitive measures. This structured grouping enhances interpretability, ensures comprehensive domain coverage, and provides a foundation for downstream predictive modelling and risk assessment.
+The seven thematic groups integrate information from \gls{CAPI}, \gls{SCQ}, and derived variables, covering socio demographic context, physical health, functional status, lifestyle behaviours, nutrition/metabolic biomarkers, and psychological/cognitive measures. This structured grouping enhances interpretability, ensures comprehensive domain coverage, and provides a foundation for downstream predictive modelling and risk assessment.
+
+The gradient \emph{heatmap} integrated at the bottom of Table~\ref{tab:feature_groups} visually illustrates the relative dominance of each thematic domain across the five waves. Darker blue shading indicates domains with a higher number of variables, providing a quick summary of domain coverage and prominence. This integrated visualisation supports interpretation by highlighting which domains contribute the most features to the dataset.
 
 % -------------------- Longtable (breaks only between IDs) --------------------
 \clearpage
-\begin{longtable}{|C{0.03\linewidth}|C{0.24\linewidth}|C{0.20\linewidth}|L{0.53\linewidth}|}
-\caption{Thematic grouping of longitudinal features.}
+
+\begin{longtable}{|C{0.04\linewidth}|C{0.26\linewidth}|C{0.26\linewidth}|L{0.32\linewidth}|C{0.12\linewidth}|}
+\caption{Thematic domain grouping of longitudinal features.}
 \label{tab:feature_groups}\\
 \hline
-\textbf{ID} & \textbf{Thematic Group} & \textbf{Description} & \textbf{Representative Variables} \\
+\textbf{ID} & \textbf{Thematic Group} & \textbf{Description} & \textbf{Representative Variable Examples} & \textbf{Total Features} \\
 \hline
 \endfirsthead
-
-\caption[]{Thematic grouping of longitudinal features (continued).}\\
 \hline
-\textbf{ID} & \textbf{Thematic Group} & \textbf{Description} & \textbf{Representative Variables} \\
+\textbf{ID} & \textbf{Thematic Group} & \textbf{Description} & \textbf{Representative Variable Examples} & \textbf{Total Features} \\
 \hline
 \endhead
 
-\hline
-\endfoot
+1 & \textcolor{blue!50}{\textbf{Socio-Demographic \& Context}} 
+& Baseline demographic and socioeconomic indicators 
+& Age, sex, education, income, marital status 
+& 844 \\ \hline
 
-\hline
-\endlastfoot
+2 & \textcolor{green!80!black}{\textbf{Physical Health \& Clinical}} 
+& Clinical and self-reported health measures 
+& Blood pressure, \gls{BMI}, chronic disease status, self rated health 
+& 839 \\ \hline
 
-% ---------------- ID 1 (6 variable rows) ----------------
-\noalign{\Needspace{9\baselineskip}}
-\multirow[c]{6}{*}{1} &
-\multirow[c]{6}{=}{Socio Demographic \& Context} &
-\multirow[c]{6}{=}{Baseline Stratification Factors} &
-Age \\ \cline{4-4}
-& & & Gender \\ \cline{4-4}
-& & & Education \\ \cline{4-4}
-& & & \gls{INC} \\ \cline{4-4}
-& & & Marital Status \\ \cline{4-4}
-& & & \gls{SOC} \\
-\hline
+3 & \textcolor{orange!60}{\textbf{Functional Status \& Frailty}} 
+& Physical functioning and frailty markers 
+& \gls{ADL}/\gls{IADL}, grip strength, gait speed 
+& 174 \\ \hline
 
-% ---------------- ID 2 (5 variable rows) ----------------
-\noalign{\Needspace{8\baselineskip}}
-\multirow[c]{5}{*}{2} &
-\multirow[c]{5}{=}{Physical Health \& Clinical Baseline} &
-\multirow[c]{5}{=}{Self reported and clinical indicators} &
-Self Rated Health \\ \cline{4-4}
-& & & \gls{SCR} \\ \cline{4-4}
-& & & \gls{BMI} \\ \cline{4-4}
-& & & \gls{BP} \\ \cline{4-4}
-& & & Comorbidity Count \gls{MD} \\
-\hline
+4 & \textcolor{yellow!90!black}{\textbf{Lifestyle \& Behavioural}} 
+& Health behaviours and activity patterns 
+& Physical activity, smoking, alcohol use 
+& 120 \\ \hline
 
-% ---------------- ID 3 (5 variable rows) ----------------
-\noalign{\Needspace{8\baselineskip}}
-\multirow[c]{5}{*}{3} &
-\multirow[c]{5}{=}{Functional Status \& \gls{FR}} &
-\multirow[c]{5}{=}{Measures of mobility and physical decline} &
-\gls{FR} Index \\ \cline{4-4}
-& & & \gls{UGS} \\ \cline{4-4}
-& & & Falls History \\ \cline{4-4}
-& & & \gls{IADL} \\ \cline{4-4}
-& & & \gls{DIS} \\
-\hline
+5 & \textcolor{teal!60}{\textbf{Nutrition \& Metabolic}} 
+& Metabolic and biomarker indicators 
+& \gls{CRP}, creatinine, lipid markers 
+& 22 \\ \hline
 
-% ---------------- ID 4 (4 variable rows) ----------------
-\noalign{\Needspace{7\baselineskip}}
-\multirow[c]{4}{*}{4} &
-\multirow[c]{4}{=}{Lifestyle \& Behavioural} &
-\multirow[c]{4}{=}{Modifiable health related behaviours} &
-Smoking \\ \cline{4-4}
-& & & Alcohol Intake \\ \cline{4-4}
-& & & \gls{PA} \\ \cline{4-4}
-& & & \gls{IPAQ} \\
-\hline
+6 & \textcolor{purple!60}{\textbf{Psychological \& Cognitive}} 
+& Cognitive performance and mental health 
+& \gls{MMSE}, depressive symptoms, stress scale 
+& 291 \\ \hline
 
-% ---------------- ID 5 (5 variable rows) ----------------
-\noalign{\Needspace{8\baselineskip}}
-\multirow[c]{5}{*}{5} &
-\multirow[c]{5}{=}{Nutrition \& Metabolic Biomarkers} &
-\multirow[c]{5}{=}{Objective nutritional and metabolic markers} &
-Plasma Carotenoids \\ \cline{4-4}
-& & & Lutein \\ \cline{4-4}
-& & & Zeaxanthin \\ \cline{4-4}
-& & & Vitamin D/\allowbreak B12 \\ \cline{4-4}
-& & & Cholesterol \\
+7 & \textcolor{gray!80}{\textbf{Other / Administrative}} 
+& Survey metadata and structural variables 
+& sampling weight, completion status, contact names
+& 809 \\[0.5em] 
 \hline
+\multicolumn{5}{|l|}{\vspace{0.5em}} \\[-1em] 
+\multicolumn{5}{|l|}{
+  \includegraphics[width=1.15\linewidth,height=0.75\textheight,keepaspectratio]{domain_counts_heatmap.png}%
+} \\[0.5em]
 
-% ---------------- ID 6 (4 variable rows) ----------------
-\noalign{\Needspace{7\baselineskip}}
-\multirow[c]{4}{*}{6} &
-\multirow[c]{4}{=}{Psychological \& Cognitive} &
-\multirow[c]{4}{=}{Mental health and cognitive performance} &
-\gls{CESD} \\ \cline{4-4}
-& & & Loneliness \\ \cline{4-4}
-& & & \gls{COG} \\ \cline{4-4}
-& & & \gls{CRT} \\
-\hline
+\multicolumn{5}{|c|}{
+\small{Thematic domain dominance across waves (higher n of features per domain).}
+} \\ \hline
 
 \end{longtable}
+% -------------------- End of longtable --------------------
+
+% \begin{longtable}{|C{0.03\linewidth}|C{0.24\linewidth}|C{0.20\linewidth}|L{0.53\linewidth}|}
+% \caption{Thematic domain grouping of longitudinal features.}
+% \label{tab:feature_groups}\\
+% \hline
+% \textbf{ID} & \textbf{Thematic Group} & \textbf{Description} & \textbf{Representative Variables} \\
+% \hline
+% \endfirsthead
+
+% \caption[]{Thematic grouping of longitudinal features (continued).}\\
+% \hline
+% \textbf{ID} & \textbf{Thematic Group} & \textbf{Description} & \textbf{Representative Variable Examples} \\
+% \hline
+% \endhead
+
+% \hline
+% \endfoot
+
+% \hline
+% \endlastfoot
+
+% % ---------------- ID 1 (6 variable rows) ----------------
+% \noalign{\Needspace{9\baselineskip}}
+% \multirow[c]{6}{*}{1} &
+% \multirow[c]{6}{=}{Socio Demographic \& Context} &
+% \multirow[c]{6}{=}{Baseline Stratification Factors} &
+% Age \\ \cline{4-4}
+% & & & Gender \\ \cline{4-4}
+% & & & Education \\ \cline{4-4}
+% & & & \gls{INC} \\ \cline{4-4}
+% & & & Marital Status \\ \cline{4-4}
+% & & & \gls{SOC} \\
+% \hline
+
+% % ---------------- ID 2 (5 variable rows) ----------------
+% \noalign{\Needspace{8\baselineskip}}
+% \multirow[c]{5}{*}{2} &
+% \multirow[c]{5}{=}{Physical Health \& Clinical Baseline} &
+% \multirow[c]{5}{=}{Self reported and clinical indicators} &
+% Self Rated Health \\ \cline{4-4}
+% & & & \gls{SCR} \\ \cline{4-4}
+% & & & \gls{BMI} \\ \cline{4-4}
+% & & & \gls{BP} \\ \cline{4-4}
+% & & & Comorbidity Count \gls{MD} \\
+% \hline
+
+% % ---------------- ID 3 (5 variable rows) ----------------
+% \noalign{\Needspace{8\baselineskip}}
+% \multirow[c]{5}{*}{3} &
+% \multirow[c]{5}{=}{Functional Status \& \gls{FR}} &
+% \multirow[c]{5}{=}{Measures of mobility and physical decline} &
+% \gls{FR} Index \\ \cline{4-4}
+% & & & \gls{UGS} \\ \cline{4-4}
+% & & & Falls History \\ \cline{4-4}
+% & & & \gls{IADL} \\ \cline{4-4}
+% & & & \gls{DIS} \\
+% \hline
+
+% % ---------------- ID 4 (4 variable rows) ----------------
+% \noalign{\Needspace{7\baselineskip}}
+% \multirow[c]{4}{*}{4} &
+% \multirow[c]{4}{=}{Lifestyle \& Behavioural} &
+% \multirow[c]{4}{=}{Modifiable health related behaviours} &
+% Smoking \\ \cline{4-4}
+% & & & Alcohol Intake \\ \cline{4-4}
+% & & & \gls{PA} \\ \cline{4-4}
+% & & & \gls{IPAQ} \\
+% \hline
+
+% % ---------------- ID 5 (5 variable rows) ----------------
+% \noalign{\Needspace{8\baselineskip}}
+% \multirow[c]{5}{*}{5} &
+% \multirow[c]{5}{=}{Nutrition \& Metabolic Biomarkers} &
+% \multirow[c]{5}{=}{Objective nutritional and metabolic markers} &
+% Plasma Carotenoids \\ \cline{4-4}
+% & & & Lutein \\ \cline{4-4}
+% & & & Zeaxanthin \\ \cline{4-4}
+% & & & Vitamin D/\allowbreak B12 \\ \cline{4-4}
+% & & & Cholesterol \\
+% \hline
+
+% % ---------------- ID 6 (4 variable rows) ----------------
+% \noalign{\Needspace{7\baselineskip}}
+% \multirow[c]{4}{*}{6} &
+% \multirow[c]{4}{=}{Psychological \& Cognitive} &
+% \multirow[c]{4}{=}{Mental health and cognitive performance} &
+% \gls{CESD} \\ \cline{4-4}
+% & & & Loneliness \\ \cline{4-4}
+% & & & \gls{COG} \\ \cline{4-4}
+% & & & \gls{CRT} \\
+% \hline
+
+% \end{longtable}
+
+% \begin{figure}[htbp]
+% \centering
+% \includegraphics[width=\textwidth]{domain_counts_heatmap.png}
+% \caption{Feature dominance per domain per wave (blue gradient indicates higher counts).}
+% \label{fig:domain_heatmap}
+% \end{figure}
 
 % ---------------------------------------------------------------------------
 % ----------------------- end of thesis sub-document ------------------------
