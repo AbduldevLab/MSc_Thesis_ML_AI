@@ -184,48 +184,71 @@ The gradient \emph{heatmap} integrated at the bottom of Table~\ref{tab:feature_g
 \hline
 \endhead
 
-1 & \textcolor{blue!50}{\textbf{Socio-Demographic \& Context}} 
-& Baseline demographic and socioeconomic indicators 
-& Age, sex, education, income, marital status 
-& 844 \\ \hline
+% ---------------- ID 1 ----------------
+\multirow{4}{*}{1} &
+\multirow{4}{=}{\textcolor{blue!50}{\textbf{Socio-Demographic \& Context}}} &
+\multirow{4}{=}{Baseline demographic and socioeconomic indicators} &
+Age/Sex & \multirow{4}{=}{\centering 844} \\ \cline{4-4}
+& & & Education & \\ \cline{4-4}
+& & & Income & \\ \cline{4-4}
+& & & Marital status & \\ \hline
 
-2 & \textcolor{green!90!black}{\textbf{Physical Health \& Clinical}} 
-& Clinical and self reported health measures 
-& Blood pressure, \gls{BMI}, chronic disease status, self rated health 
-& 839 \\ \hline
+% ---------------- ID 2 ----------------
+\multirow{4}{*}{2} &
+\multirow{4}{=}{\textcolor{green!90!black}{\textbf{Physical Health \& Clinical}}} &
+\multirow{4}{=}{Clinical and self reported health measures} &
+Blood pressure & \multirow{4}{=}{\centering 839} \\ \cline{4-4}
+& & & \gls{BMI} & \\ \cline{4-4}
+& & & Chronic disease status & \\ \cline{4-4}
+& & & Self rated health & \\ \hline
 
-3 & \textcolor{orange!60}{\textbf{Functional Status \& Frailty}} 
-& Physical functioning and frailty markers 
-& \gls{ADL}/\gls{IADL}, grip strength, gait speed 
-& 174 \\ \hline
+% ---------------- ID 3 ----------------
+\multirow{3}{*}{3} &
+\multirow{3}{=}{\textcolor{orange!60}{\textbf{Functional Status \& Frailty}}} &
+\multirow{3}{=}{Physical functioning and frailty markers} &
+\gls{ADL}/\gls{IADL} & \multirow{3}{=}{\centering 174} \\ \cline{4-4}
+& & & Grip strength & \\ \cline{4-4}
+& & & Gait speed & \\ \hline
 
-4 & \textcolor{yellow!90!black}{\textbf{Lifestyle \& Behavioural}} 
-& Health behaviours and activity patterns 
-& Physical activity, smoking, alcohol use 
-& 120 \\ \hline
+% ---------------- ID 4 ----------------
+\multirow{3}{*}{4} &
+\multirow{3}{=}{\textcolor{yellow!90!black}{\textbf{Lifestyle \& Behavioural}}} &
+\multirow{3}{=}{Health behaviours and activity patterns} &
+Physical activity & \multirow{3}{=}{\centering 120} \\ \cline{4-4}
+& & & Smoking & \\ \cline{4-4}
+& & & Alcohol use & \\ \hline
 
-5 & \textcolor{teal!60}{\textbf{Nutrition \& Metabolic}} 
-& Metabolic and biomarker indicators 
-& \gls{CRP}, creatinine, lipid markers 
-& 22 \\ \hline
+% ---------------- ID 5 ----------------
+\multirow{3}{*}{5} &
+\multirow{3}{=}{\textcolor{teal!60}{\textbf{Nutrition \& Metabolic}}} &
+\multirow{3}{=}{Metabolic and biomarker indicators} &
+\gls{CRP} & \multirow{3}{=}{\centering 22} \\ \cline{4-4}
+& & & Creatinine & \\ \cline{4-4}
+& & & Lipid markers & \\ \hline
 
-6 & \textcolor{purple!60}{\textbf{Psychological \& Cognitive}} 
-& Cognitive performance and mental health 
-& \gls{MMSE}, depressive symptoms, stress scale 
-& 291 \\ \hline
+% ---------------- ID 6 ----------------
+\multirow{3}{*}{6} &
+\multirow{3}{=}{\textcolor{purple!60}{\textbf{Psychological \& Cognitive}}} &
+\multirow{3}{=}{Cognitive performance and mental health} &
+\gls{MMSE} & \multirow{3}{=}{\centering 291} \\ \cline{4-4}
+& & & Depressive symptoms & \\ \cline{4-4}
+& & & Stress scale & \\ \hline
 
-7 & \textcolor{gray!80}{\textbf{Other / Administrative}} 
-& Survey metadata and structural variables 
-& sampling weight, completion status, contact names
-& 809 \\[0.5em] 
-\hline
+% ---------------- ID 7 ----------------
+\multirow{3}{*}{7} &
+\multirow{3}{=}{\textcolor{gray!80}{\textbf{Other / Administrative}}} &
+\multirow{3}{=}{Survey metadata and structural variables} &
+Sampling weight & \multirow{3}{=}{\centering 809} \\ \cline{4-4}
+& & & Completion status & \\ \cline{4-4}
+& & & Contact names & \\ \hline
+
 \multicolumn{5}{|l|}{\vspace{0.5em}} \\[-1em] 
 \multicolumn{5}{|l|}{
   \includegraphics[width=1.15\linewidth,height=0.75\textheight,keepaspectratio]{domain_counts_heatmap.png}%
 } \\[0.5em]
 
 \multicolumn{5}{|c|}{
-\small{Thematic domain dominance across waves (higher n of features per domain).}
+\small{Thematic domain dominance across waves (higher n features per domain).}
 } \\ \hline
 
 \end{longtable}
