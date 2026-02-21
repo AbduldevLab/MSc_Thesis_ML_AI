@@ -17,6 +17,7 @@ The approach followed key principles for systematic mapping. This included defin
 The integrative literature review \cite{torracoWritingIntegrativeLiterature2005} helped structure and connect findings across studies, while \cite{roccoLiteratureReviewsConceptual2009, oxmanGuidelinesReadingLiterature} guided the organisation of ideas. In related methodological work, \cite{kitchenhamSystematicLiteratureReviews2009a} clarified how \gls{SR}s can identify research gaps, and \cite{ashrafSystematicReviewSystematic2021} showed how mapping and synthesis highlight trends and future directions. 
 This combined guidance informed, structured yet flexible methodology suitable for ageing in \gls{AI}, and health research. 
 
+% ----------------------------------------------------------------------
 \section{Search strategy}
 The main topic of interest was chronic disease prediction using nutrition, lifestyle, and clinical data from \gls{TILDA}. Relevant databases (e.g., ScienceDirect, PubMed) were searched using combinations of keywords such as ``Irish Longitudinal Study on Ageing", ``machine learning,"``chronic disease", ``nutrition", ``diet", and ``physical activity", as shown in Table~\ref{tab:PetersenSearch}. 
 
@@ -92,6 +93,7 @@ Duplicates were removed using Zotero's reference management feature. The remaini
 \end{figure}
 % \clearpage
 
+% ----------------------------------------------------------------------
 \section{Quality and relevance evaluation} 
 To systematically assess the quality of the included studies, a customised version of the \gls{NOS} was applied (Table~\ref{tab:NOS}). 
 The \gls{NOS} evaluates studies across three domains: \emph{selection} (S1--S4), \emph{comparability} (C1--C2), and \emph{outcome} (O1--O3). 
@@ -171,6 +173,7 @@ Functional Mobility & Huang (2019) \cite{huangAgeModifyAssociations2019} & Wave 
 
 The integration of a research matrix with systematic mapping and integrative synthesis ensured that the methodology was well suited to capturing the complexity of ageing, nutrition, chronic disease risk and predictive modelling studies focused primarily on \gls{TILDA} based studies, but due to the limited number of \gls{ML} applications with \gls{TILDA}, additional studies on older adult populations and chronic disease were included.
 
+% ----------------------------------------------------------------------
 \section{Study population and design}
 
 \gls{TILDA} provides longitudinal data across five waves (Waves 1--5) for community dwelling adults in Ireland. For benchmarking against international cohorts, an external harmonised \gls{TILDA} dataset was also inspected and prepared. The harmonised dataset, which has been pre aligned to international standards e.g., the \gls{G2G}, contains a subset of variables mapped to a common cross study format and thus differs from the raw \gls{TILDA} files. Although the harmonised dataset was simpler to process, it was still subjected to the variable filtering and numerical standardisation steps developed as part of this research to ensure compatibility with the five wave cleaned datasets prior to modelling.
@@ -187,6 +190,7 @@ Participants were removed only in the rare case that, following manual variable 
 \end{itemize}
 This approach prioritises data integrity and sample size for machine learning applications, differing from exclusion heavy cohort definitions often used in traditional epidemiological studies \cite{obermeyerPredictingFutureBig2016}.
 
+% ----------------------------------------------------------------------
 \section{TILDA data collection and screening}
 
 \gls{TILDA} data collection occurred over five longitudinal waves (Table~\ref{tab:raw_dataset_shape}). 
@@ -222,6 +226,7 @@ Harmonised & 2016 (release) & 8501 & 572 \\
 
 \end{table}
 
+% ----------------------------------------------------------------------
 \section{Thematic domains}
 
 Variables were organised into seven thematic domains based on ageing literature and study objectives. Each variable's prefix, as defined in the \gls{PMF} metadata (Table~\ref{tab:pmf_prefixes}), indicates its source or research domain. This systematic assignment ensures that each thematic group contains conceptually related features and provides a clear structure for downstream automated preprocessing and machine learning. 
@@ -276,6 +281,7 @@ G2G & Gateway to Global Aging Data \\
 \end{table}
 
 By categorising the raw variables into these seven thematic domains, a structured foundation was established for the technical dimensionality reduction and cleaning pipeline described in the following Chapter~\ref{ch:chapter4}.
+
 % ---------------------------------------------------------------------------
 % ----------------------- end of thesis sub-document ------------------------
 % ---------------------------------------------------------------------------

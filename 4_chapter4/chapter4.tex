@@ -14,7 +14,7 @@
 \fi
 
 
-% ----------------------- contents from here ------------------------ 
+% ----------------------- contents from here ------------------------
 Prior to any data cleaning or modelling, a structured multi-stage workflow was implemented to screen and reduce the dimensionality of the raw \gls{TILDA} datasets. As shown in Table~\ref{tab:reduced_dataset_shape} (for example, 1619 $\to$ 809 variables in Wave 1), the raw \gls{PMF} files were reduced to a subset of variables of interest. This procedure also separated automated diagnostic profiling from manual variable exclusion, ensuring transparency in all selection decisions.
 
 The process consisted of the following steps:
@@ -26,6 +26,7 @@ The process consisted of the following steps:
     \item \textbf{Reloading filtered datasets:} The \gls{JSON} files were then used to subset the original raw datasets, producing reduced datasets with identical rows but fewer variables. No cleaning, recoding, or imputation was applied at this stage.
 \end{enumerate}
 
+% ----------------------------------------------------------------------
 \section{Manual variable filtering workflow}\label{sc:manual_var_filtering}
 Python scripts were used to profile all variables across each wave. For every variable, the following metrics were computed: data type, number of missing values, number of unique values, most frequent value, and frequency of the most frequent value. These summaries were exported to spreadsheet format to support structured manual review prior to variable dropping.
 
@@ -50,6 +51,7 @@ The retained variables, defined in \gls{JSON} files, were subsequently used to s
 Importantly, all variable exclusion decisions were completed at this stage. Subsequent preprocessing steps focus exclusively on numerical standardisation, recoding, and preparation for machine learning rather than further feature removal. With the variables of interest selected and the datasets reduced to a manageable dimensionality, the next stage focuses on automated preprocessing, recoding, and preparation for \gls{ML} modelling.
 
 \clearpage
+% ----------------------------------------------------------------------
 \section{Reduced dataset overview}
 To further understand the characteristics of these retained variables, the datasets were profiled using an exploratory visualiser (\texttt{.ipynb}) file implemented with \texttt{pandas}, \texttt{numpy}, \texttt{matplotlib}, and \texttt{seaborn}. This step examined data types, missingness patterns, unique value distributions, and representative sample values across all waves. The purpose of this profiling stage was not transformation but to expose structural inconsistencies and latent formatting issues that would undermine direct numerical conversion.
 
@@ -77,6 +79,7 @@ Despite this, the exploratory visualiser was limited because the raw data were n
 
 These insights, revealed through systematic profiling, guided the development of the subsequent cleaning pipeline steps, ensuring consistent numeric logic representations (e.g., midpoints for ranges, standardised sentinel handling).
 
+% ----------------------------------------------------------------------
 \section{Thematic grouping of retained variables}
 
 Using the \gls{PMF} prefixes described in Table~\ref{tab:pmf_prefixes} as a guide, variables were assigned to seven thematic groups (Table~\ref{tab:feature_groups}), each capturing a conceptually coherent domain: physical, cognitive, social, and behavioural aspects of ageing. This structure supports reproducible preprocessing and helps machine learning models focus on meaningful, longitudinally robust features. 
@@ -175,6 +178,7 @@ Sampling weight & \multirow{3}{=}{\centering 809} \\ \cline{4-4}
 
 \end{longtable}
 
+% ----------------------------------------------------------------------
 \section{Automated cleaning engine}\label{sc:cleaning_engine}
 The core challenge in converting heterogeneous variable types across the six datasets (Table~\ref{tab:reduced_dataset_shape}) was achieving a single numerical standard suitable for downstream analysis. This required enforcing \emph{numerical homogeneity}, defined here as representing all retained features using a single numerical representation (\texttt{float64}) with a unified missing or non response sentinel ($\texttt{-1.0}$). The exploratory profiling across all waves showed that categorical variables were dominant overall ($2,916$ columns), while numeric variables were fragmented across multiple types, with \texttt{float64} being the most prevalent native numeric representation ($462$ columns), motivating its use as a common standard to ensure consistency and compatibility with downstream \gls{ML} models, while accommodating decimal values arising from range midpoints, frequency normalisation, and ordinal scaling that cannot be reliably represented using integer types. To address this, the solution was implemented as a two stage system. The first stage performs automated \emph{variable scenario detection}, identifying the structural form of each variable based on observed value patterns using the \texttt{detect\_column\_scenario\_mapping} function (Appendix~\ref{app:variable_mapping_code}). This stage includes additional diagnostic categories used during development to surface unhandled edge cases.
 
@@ -314,6 +318,7 @@ The grouped Markdown representation reveals three critical points:
 \end{tabular}
 \end{table}
 
+% ----------------------------------------------------------------------
 \section{Validation of the cleaning pipeline}
 The purpose of the cleaning validation stage was to assess whether the automated numerical parsing and encoding pipeline preserved meaningful biological and statistical structure within the cleaned datasets. Rather than asserting correctness based solely on successful execution, validation was performed by evaluating whether known relationships reported in the literature could be recovered using the cleaned data under realistic data governance constraints.
 
