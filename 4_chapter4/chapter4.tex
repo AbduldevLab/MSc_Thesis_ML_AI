@@ -23,7 +23,7 @@ Following manual variable filtering in (Chapter~\ref{ch:chapter3}), the reduced 
 \label{tab:dataset_shape}
 \begin{tabular}{|c|c|c|}
 \hline
-\textbf{Dataset} & \textbf{Row (participants)} & \textbf{Column (features)} \\
+\textbf{Dataset} & \textbf{Row (N participants)} & \textbf{Column (N features)} \\
 \hline
 Wave 1 & 8501 & 809 \\
 Wave 2 & 7206 & 482 \\
@@ -81,7 +81,7 @@ This design reflects the empirical diversity of survey encodings, where a small 
 \draw[->, thick] (step5) -- (step6);
 
 \end{tikzpicture}
-\caption{Flowchart of the final six step cleaning pipeline applied to all \gls{TILDA} waves. See full transformation tables in Appendix~\ref{tab:step6_full} and \ref{app:cleaning_pipeline_code} for a detailed progression ``\texttt{.ipynb}'' script at each scenario cleaning step.}
+\caption{Flowchart of the final six step cleaning pipeline applied to all \gls{TILDA} waves. See full transformation tables in Appendix~\ref{tab:step6_full} and \ref{app:cleaning_pipeline_code} for the detailed progress ``\texttt{.ipynb}'' script, at each scenario cleaning step.}
 \label{fig:cleaning_flow}
 \end{figure}
 
@@ -217,15 +217,15 @@ Table~\ref{tab:directional_validation} summarises the expected and observed dire
 \hline
 \textbf{Predictor 1} & \textbf{Predictor 2} & \textbf{Expected Direction / Justification} & \textbf{Observed $r$} \\
 \hline
-\gls{GRIP} & Age & \textbf{Negative (-)}; \gls{GRIP} is a positive predictor of \gls{GSR}, while age is a negative predictor \cite{davisLinearRegressionbasedMachine2021}. & $-0.265$ \\
+\gls{GRIP} & Age & \textbf{Negative (-)}; \gls{GRIP} is a positive predictor of \gls{GSR}, while age is a negative predictor. & $-0.265$ \\
 \hline
-\gls{GRIP} & Chair Stands Time & \textbf{Negative (-)}; Higher strength (grip) is expected to correlate with faster (lower) performance time in physical tests \cite{davisLinearRegressionbasedMachine2021}. & $-0.170$ \\
+\gls{GRIP} & Chair Stands Time & \textbf{Negative (-)}; Higher strength (grip) is expected to correlate with faster (lower) performance time in physical tests. & $-0.170$ \\
 \hline
-\gls{MOCA} Score & Age & \textbf{Negative (-)}; Cognitive performance (\gls{MOCA}) contributes positively to \gls{GSR}, whereas increasing age is associated with reduced reserve \cite{davisLinearRegressionbasedMachine2021}. & $-0.381$ \\
+\gls{MOCA} Score & Age & \textbf{Negative (-)}; Cognitive performance (\gls{MOCA}) contributes positively to \gls{GSR}, whereas increasing age is associated with reduced reserve. & $-0.381$ \\
 \hline
-Education & \gls{MOCA} Score & \textbf{Positive (+)}; Third level education and cognitive scores are both cited as positive contributors to cognitive reserve and \gls{GSR} \cite{davisLinearRegressionbasedMachine2021}. & $0.367$ \\
+Education & \gls{MOCA} Score & \textbf{Positive (+)}; Third level education and cognitive scores are both cited as positive contributors to cognitive reserve and \gls{GSR}. & $0.367$ \\
 \hline
-\gls{BMI} & Age & \textbf{Weak / Mixed}; \gls{BMI} and age both negatively impact \gls{GSR}, though their internal correlation in older cohorts is typically weak \cite{davisLinearRegressionbasedMachine2021}. & $-0.073$ \\
+\gls{BMI} & Age & \textbf{Weak / Mixed}; \gls{BMI} and age both negatively impact \gls{GSR}, though their internal correlation in older cohorts is typically weak. & $-0.073$ \\
 \hline
 \end{tabular}
 \end{table}
@@ -258,7 +258,7 @@ The resulting \gls{AUC} values are reported separately for (i) cleaned (Figure~\
 
 \begin{figure}[htbp]
 \includegraphics[width=0.8\textwidth]{cleaned_FI_PCA.png}
-\caption{ROC curves for mortality prediction using the cleaned 16-item \gls{FI} under the \gls{PCA} informed mortality proxy. Separate models are shown for men and women, with and without age.}
+\caption{ROC curves for mortality prediction using the cleaned 16 \gls{FI} items under the \gls{PCA} informed mortality proxy. Separate models are shown for men and women, with and without age.}
 \label{fig:roc_cleaned_fi_pca}
 \end{figure}   
 \begin{figure}[htbp]
