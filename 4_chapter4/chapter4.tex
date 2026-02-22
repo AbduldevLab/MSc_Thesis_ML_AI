@@ -201,22 +201,34 @@ This design reflects the empirical diversity of survey encodings, where a small 
 \begin{figure}[htbp]
 \centering
 \begin{tikzpicture}[
-    node distance=12mm,
-    every node/.style={rectangle, rounded corners, draw=black, align=center, minimum width=5.2cm, minimum height=1.1cm}
+    node distance=6mm and 14mm,
+    every node/.style={
+        rectangle,
+        rounded corners=3pt,
+        draw=black!70,
+        fill=white,
+        align=center,
+        minimum width=4.3cm,
+        minimum height=0.85cm,
+        font=\small\sffamily,
+        line width=0.7pt
+    }
 ]
 
-\node (step1) {Step 1:\\Empty / Blank Handling};
-\node (step2) [below=of step1] {Step 2:\\Sentinel Standardisation};
-\node (step3) [below=of step2] {Step 3:\\Numeric Cleaning};
-\node (step4) [below=of step3] {Step 4:\\Censored / Ordinal Mapping};
-\node (step5) [below=of step4] {Step 5:\\Binary Classification};
-\node (step6) [below=of step5] {Step 6:\\Multi-class / Mixed Parsing};
+\node (step1) {Step 1: Empty / Blank Handling};
+\node (step2) [below right=of step1] {Step 2: Sentinel Standardisation};
+\node (step3) [below left=of step2] {Step 3: Numeric Cleaning};
+\node (step4) [below right=of step3] {Step 4: Censored / Ordinal Mapping};
+\node (step5) [below left=of step4] {Step 5: Binary Classification};
+\node (step6) [below right=of step5] {Step 6: Multi-class / Mixed Parsing};
 
-\draw[->, thick] (step1) -- (step2);
-\draw[->, thick] (step2) -- (step3);
-\draw[->, thick] (step3) -- (step4);
-\draw[->, thick] (step4) -- (step5);
-\draw[->, thick] (step5) -- (step6);
+\begin{scope}[every path/.style={->, thick, >=Stealth, draw=black!70}]
+    \draw (step1.south) to[out=-70,in=180] (step2.west);
+    \draw (step2.south) to[out=-70,in=0] (step3.east);
+    \draw (step3.south) to[out=-70,in=180] (step4.west);
+    \draw (step4.south) to[out=-70,in=0] (step5.east);
+    \draw (step5.south) to[out=-70,in=180] (step6.west);
+\end{scope}
 
 \end{tikzpicture}
 \caption{Flowchart of the final six step cleaning pipeline applied to all \gls{TILDA} waves. See full transformation tables in Appendix~\ref{tab:step6_full} and \ref{app:cleaning_pipeline_code} for the detailed progress ``\texttt{.ipynb}'' script, at each scenario cleaning step.}
