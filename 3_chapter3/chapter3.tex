@@ -102,6 +102,7 @@ The \gls{NOS} evaluates studies across three domains: \emph{selection} (S1--S4),
 Each domain is scored 0/1, recall the Bernoulli random variable (0 = criterion not met, 1 = criterion met), and the total score reflects the overall study quality.
 
 This initial table guided a further refinement of the results into two sub tables: 1. studies critically related to \gls{TILDA}, 2. studies using \gls{TILDA} and \gls{ML} for predictive contexts, which revealed minimal to no integration with \gls{TILDA}.
+
 % NOS Scale Table
 \begin{table}[htbp]
 \centering
@@ -210,8 +211,9 @@ Pseudonymisation ensures that analyses comply with data protection standards whi
 \centering
 \caption{Dimensions of raw \gls{TILDA} and harmonised datasets (prior to cleaning Section~\ref{sc:cleaning_engine}).}
 \label{tab:raw_dataset_shape}
-
-\begin{tabular}{|L{0.2\textwidth}|L{0.2\textwidth}|C{0.2\textwidth}|C{0.23\textwidth}|}
+\small
+\resizebox{\textwidth}{!}{
+\begin{tabular}{p{3cm} c c c}
 \hline
 \textbf{Dataset} & \textbf{Collection Period} & \textbf{Participants (N)} & \textbf{Raw Variables (N)} \\
 \hline
@@ -222,8 +224,7 @@ Wave 4 & 2016 & 5713 & 990 \\
 Wave 5 & 2018--2019 & 4978 & 983 \\
 Harmonised & 2016 (release) & 8501 & 572 \\
 \hline
-\end{tabular}
-
+\end{tabular}}
 \end{table}
 
 % ----------------------------------------------------------------------

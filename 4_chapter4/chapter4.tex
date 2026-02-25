@@ -59,7 +59,8 @@ To further understand the characteristics of these retained variables, the datas
 \centering
 \caption{Input shape for cleaning pipeline (post manual filtering workflow~\ref{fig:variable_filter_criteria}).}
 \label{tab:reduced_dataset_shape}
-\begin{tabular}{|c|c|c|}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{p{3cm} c c}
 \hline
 \textbf{Dataset} & \textbf{Row (N participants)} & \textbf{Column (N features)} \\
 \hline
@@ -70,7 +71,7 @@ Wave 4 & 5713 & 592 \\
 Wave 5 & 4978 & 577 \\
 Harmonised & 8501 & 453 \\
 \hline
-\end{tabular}
+\end{tabular}}
 \end{table}
 
 For example, in wave 1, the visualiser detected 650 categorical columns, 150 (\texttt{float64}) columns, and 9 object columns, while the harmonised dataset contained 304 categorical columns, 148 \texttt{float32} columns, and several integer columns. Age distributions confirmed that the study population was restricted to older adults across waves, however, ages were bottom coded for participants younger than 50 years and top coded for those aged 65--85 years and above. Missing value summaries indicated substantial variation (e.g., mean missing values ranging from $4.7\%$ in wave 4 to $35\%$ in the harmonised dataset, with some variables exceeding $77\%$ missing).
@@ -368,13 +369,13 @@ Table~\ref{tab:directional_validation} summarises the expected and observed dire
 \hline
 \textbf{Predictor 1} & \textbf{Predictor 2} & \textbf{Expected Direction / Justification} & \textbf{Observed $r$} \\
 \hline
-\gls{GRIP} & Age & \textbf{Negative (-)}: \gls{GRIP} is a positive predictor of \gls{GSR}, while age is a negative predictor. & $-0.265$ \\
+\gls{GRIP} & Age & \textbf{Negative ($-$)}: \gls{GRIP} is a positive predictor of \gls{GSR}, while age is a negative predictor. & $-0.265$ \\
 \hline
-\gls{GRIP} & Chair Stands Time & \textbf{Negative (-)}: Higher strength (grip) is expected to correlate with faster (lower) performance time in physical tests. & $-0.170$ \\
+\gls{GRIP} & Chair Stand Time & \textbf{Negative ($-$)}: Higher strength (grip) is expected to correlate with faster (lower) performance time in physical tests. & $-0.170$ \\
 \hline
-\gls{MOCA} Score & Age & \textbf{Negative (-)}: Cognitive performance (\gls{MOCA}) contributes positively to \gls{GSR}, whereas increasing age is associated with reduced reserve. & $-0.381$ \\
+\gls{MOCA} Score & Age & \textbf{Negative ($-$)}: Cognitive performance (\gls{MOCA}) contributes positively to \gls{GSR}, whereas increasing age is associated with reduced reserve. & $-0.381$ \\
 \hline
-Education & \gls{MOCA} Score & \textbf{Positive (+)}: Third level education and cognitive scores are both cited as positive contributors to cognitive reserve and \gls{GSR}. & $0.367$ \\
+Education & \gls{MOCA} Score & \textbf{Positive ($+$)}: Third level education and cognitive scores are both cited as positive contributors to cognitive reserve and \gls{GSR}. & $0.367$ \\
 \hline
 \gls{BMI} & Age & \textbf{Weak / Mixed}: \gls{BMI} and age both negatively impact \gls{GSR}, though their internal correlation in older cohorts is typically weak. & $-0.073$ \\
 \hline
