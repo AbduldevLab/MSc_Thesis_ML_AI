@@ -16,7 +16,7 @@
 
 All participants who provided data in at least one \gls{TILDA} wave were considered eligible. To maximise the available sample for machine learning, no exclusions were applied on the basis of age, medical conditions, mobility, cognitive status, or health centre attendance.
 
-Participants were removed only in the rare case that, following manual variable filtering, no analytically usable variables remained for that individual. Filtering occurred primarily at the \emph{variable level} during the manual screening stage, which involved features removed for extreme missingness, lack of variation, or non informative structure. This approach preserves the largest possible sample while ensuring all retained inputs are analytically meaningful for downstream analysis and model development.
+Participants were removed only in the rare case that, following manual variable filtering, no analytically usable variables remained for that individual. Filtering occurred primarily at the \emph{variable level} during the manual screening stage, which excluded features with extreme missingness, lack of variation, or non informative structure. This approach preserves the largest possible sample while ensuring all retained inputs are analytically meaningful for downstream analysis and model development.
 
 \begin{itemize}
     \item[-] \textbf{Participant inclusion:} All respondents who contributed data in at least one wave were included in the initial sample. % After M5 baseline model add - longitudinal risk modelling inclusion criteria: where participants free of chronic disease at wave 1 were included
@@ -71,7 +71,7 @@ Variables from the self completion questionnaire are prefixed with \gls{SCQ}, wh
 
 \begin{table}[htbp]
 \centering
-\caption{\gls{PMF} v5.5 derived variable prefixes grouped by thematic domains \cite{tilda2023pmf}.}
+\caption{\gls{PMF} v5.5 derived variable prefixes \cite{tilda2023pmf}.}
 \label{tab:pmf_prefixes}
 \begin{tabular}{|l|l|}
 \hline
@@ -123,7 +123,7 @@ The process consisted of the following steps:
 \begin{enumerate}
     \item \textbf{Raw data loading:} Raw \gls{TILDA} \gls{PMF} files were loaded without cleaning or recoding. Waves 1--5 were loaded from \gls{SPSS} (\texttt{.sav}) files, while the harmonised dataset was loaded from a (\texttt{Stata}) (\texttt{.dta}) file due to technical compatibility issues.
     \item \textbf{Automated variable profiling (Python):} For every variable, summary statistics were computed programmatically, including data type, proportion of missing values, number of unique values, most frequent value, and frequency of the most frequent value. These summaries were exported to spreadsheet format for inspection.
-    \item \textbf{Manual variable screening (spreadsheet based):} Using predefined rule based thresholds detailed in the next Section~\ref{sc:manual_var_filtering}. Variables were manually reviewed and flagged for exclusion based on missingness, lack of variation, dominance of a single category, or administrative function.
+    \item \textbf{Manual variable screening (spreadsheet based):} Using predefined rule based thresholds described below. Variables were manually reviewed and flagged for exclusion based on missingness, lack of variation, dominance of a single category, or administrative function.
     \item \textbf{Creation of retained variable lists:} Variables not flagged for exclusion were programmatically concatenated in \texttt{.xlsx} and manually transferred into wave specific \gls{JSON} files representing the retained \texttt{variables of interest}.
     \item \textbf{Reloading filtered datasets:} The \gls{JSON} files were then used to subset the original raw datasets, producing reduced datasets with identical rows but fewer variables. No cleaning, recoding, or imputation was applied at this stage.
 \end{enumerate}
@@ -179,7 +179,7 @@ Despite this, the exploratory visualiser was limited because the raw data were n
 
 These insights, revealed through systematic profiling, guided the development of the subsequent cleaning pipeline steps, ensuring consistent numeric logic representations (e.g., midpoints for ranges, standardised sentinel handling).
 
-\section{Thematic grouping of retained variables}
+\section{Retained variable distribution by domain}
 
 Using the \gls{PMF} prefixes described in Table~\ref{tab:pmf_prefixes} as a guide, variables were assigned to seven thematic groups (Table~\ref{tab:feature_groups}), each capturing a conceptually coherent domain: physical, cognitive, social, and behavioural aspects of ageing. This structure supports reproducible preprocessing and helps machine learning models focus on meaningful, longitudinally robust features. 
 
