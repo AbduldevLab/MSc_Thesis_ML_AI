@@ -2,7 +2,6 @@
 % content in this file will be fed into the main document
 
 % ----------------------------------------------------------------------
-% LR Methodology
 \chapter{Methodology}\label{ch:chapter3} % top level followed by section, subsection
 
 \ifpdf
@@ -11,170 +10,6 @@
     \graphicspath{{3_chapter3/figures/EPS/}{3_chapter3/figures/}}
 \fi
 % ----------------------- contents from here ------------------------
-
-Several sources describe how systematic and integrative reviews are commonly carried out in fields such as software engineering, health, and education. 
-The approach followed key principles for systematic mapping. This included defining research questions, identifying relevant studies through structured database searches, applying inclusion and exclusion criteria, and categorising results as outlined \cite{petersenGuidelinesConductingSystematic2015}.
-The integrative literature review \cite{torracoWritingIntegrativeLiterature2005} helped structure and connect findings across studies, while \cite{roccoLiteratureReviewsConceptual2009, oxmanGuidelinesReadingLiterature} guided the organisation of ideas. In related methodological work, \cite{kitchenhamSystematicLiteratureReviews2009a} clarified how \gls{SR}s can identify research gaps, and \cite{ashrafSystematicReviewSystematic2021} showed how mapping and synthesis highlight trends and future directions. 
-This combined guidance informed, structured yet flexible methodology suitable for ageing in \gls{AI}, and health research. 
-
-% ----------------------------------------------------------------------
-\section{Search strategy}
-The main topic of interest was chronic disease prediction using nutrition, lifestyle, and clinical data from \gls{TILDA}. Relevant databases (e.g., ScienceDirect, PubMed) were searched using combinations of keywords such as ``Irish Longitudinal Study on Ageing", ``machine learning,"``chronic disease", ``nutrition", ``diet", and ``physical activity", as shown in Table~\ref{tab:PetersenSearch}. 
-
-The search covered studies published from 2011 to 2025. Figure~\ref{fig:mapping_years} summarises the number of studies identified per year, highlighting trends and gaps over time.
-
-\begin{figure}[htbp]
-\centering
-\begin{tikzpicture}
-\begin{axis}[
-  ybar,
-  bar width=10pt,
-  width=\textwidth,
-  height=0.4\textheight,
-  xlabel={Year},
-  ylabel={Number of Mapping Studies},
-  symbolic x coords={2011,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025},
-  xtick=data,
-  x tick label style={rotate=45, anchor=east},
-  nodes near coords,
-  ymin=0
-]
-\addplot coordinates {
-  (2011,1) (2013,2) (2014,3) (2015,2) (2016,2)
-  (2017,4) (2018,6) (2019,3) (2020,7) (2021,11)
-  (2022,13) (2023,14) (2024,7) (2025,3)
-};
-\end{axis}
-\end{tikzpicture}
-\caption{Publications per year.}
-\label{fig:mapping_years}
-\end{figure}
-% \clearpage
-
-% Table: string db search 
-\begin{table}[htbp]
-\centering
-\caption{Database searches and number of studies per database \ref{tab:lr_table} \cite{petersenGuidelinesConductingSystematic2015}.}
-\label{tab:PetersenSearch}
-\small
-\resizebox{\textwidth}{!}{
-\begin{tabular}{p{3cm} p{10cm} p{3cm}}
-\hline
-\textbf{Database} & \textbf{Search} & \textbf{Results} \\
-\hline
-\multirow{2}{*}{Oxford Academic} &
-(TILDA OR Irish Longitudinal Study on Ageing)AND (chronic disease OR diabetes OR cardiovascular) AND (nutrition OR diet OR ``physical activity") & 1081 \\
-\\ & (TILDA OR ``Irish Longitudinal Study on Ageing") AND (``machine learning" OR ``predictive model" OR ``risk prediction") & 71 \\
-\hline
-\multirow{2}{*}{IEEE Xplore} &
-TILDA OR ``Irish Longitudinal Study on Ageing" & 56 \\
-\\ & (TILDA OR "Irish Longitudinal Study on Ageing") AND (``machine learning" OR ``predictive model" OR ``risk prediction") & 7 \\
-\hline
-\multirow{2}{*}{ScienceDirect} &
-(TILDA OR ``Irish Longitudinal Study on Ageing") AND (``chronic disease" OR cardiovascular OR diabetes) AND (nutrition OR diet OR lifestyle OR ``physical activity") & 257 \\
-\\ & (TILDA OR ``Irish Longitudinal Study on Ageing") AND (``machine learning" OR ``predictive model") AND (``chronic disease" OR diabetes) AND (nutrition OR ``physical activity") & 20 \\
-\hline
-\multirow{2}{*}{PubMed} &
-(TILDA OR ``Irish Longitudinal Study on Ageing") AND (``chronic disease" OR cardiovascular OR diabetes) AND (nutrition OR diet OR lifestyle OR ``physical activity") & 27 \\
-\\ & (TILDA OR ``Irish Longitudinal Study on Ageing") AND (``machine learning" OR ``predictive model" OR ``risk prediction") & 9 \\
-\hline
-\end{tabular}}
-\end{table}
-% \clearpage
- 
-Some search strings returned few or irrelevant entries, particularly for \gls{ML} applications in \gls{TILDA}, highlighting a key research gap. Iterations continued until suitable combinations consistently retrieved relevant studies.
-Duplicates were removed using Zotero's reference management feature. The remaining studies were individually and manually checked for relevance to ``ageing,'' ``chronic disease,'' and \gls{ML}. Using Zotero's notes functionality, the initially created Table~\ref{tab:lr_table} captured key elements for each study, including model type, features used, and main findings, as shown in the following \gls{PRISMA} flow diagram (Figure~\ref{fig:prisma}).
-% Prisma fig
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=\textwidth]{0_frontmatter/figures/prisma.pdf}
-\caption{\gls{PRISMA} chart for \gls{SR}s showing the study selection process for the systematic mapping and integrative review \cite{haddawayPRISMA2020PackageShiny2022}.}
-\label{fig:prisma}
-\end{figure}
-% \clearpage
-
-% ----------------------------------------------------------------------
-\section{Quality and relevance evaluation} 
-To systematically assess the quality of the included studies, a customised version of the \gls{NOS} was applied (Table~\ref{tab:NOS}). 
-The \gls{NOS} evaluates studies across three domains: \emph{selection} (S1--S4), \emph{comparability} (C1--C2), and \emph{outcome} (O1--O3). 
-\emph{Selection} criteria assess the representativeness of the sample, clarity of exposure measurement, and temporal alignment of outcomes. 
-\emph{Comparability} examines the control of key confounders (variables that may influence both the predictor and outcome), while \emph{outcome} evaluates measurement validity, follow up adequacy, and completeness. 
-Each domain is scored 0/1, recall the Bernoulli random variable (0 = criterion not met, 1 = criterion met), and the total score reflects the overall study quality.
-
-This initial table guided a further refinement of the results into two sub tables: 1. studies critically related to \gls{TILDA}, 2. studies using \gls{TILDA} and \gls{ML} for predictive contexts, which revealed minimal to no integration with \gls{TILDA}.
-
-% NOS Scale Table
-\begin{table}[htbp]
-\centering
-\caption{Quality evaluation of \gls{SLR}s \cite{kitchenhamSystematicLiteratureReviews2009a}.}
-\label{tab:NOS}
-\small
-\resizebox{\textwidth}{!}{
-\begin{tabular}{p{5cm} c c c c c c c c c c}
-\hline
-\textbf{Reference} & \textbf{S1} & \textbf{S2} & \textbf{S3} & \textbf{S4} & \textbf{C1} & \textbf{C2} & \textbf{O1} & \textbf{O2} & \textbf{O3} & \textbf{Total} \\
-\hline
-(Xu, 2023 \cite{xuTailoredMachineLearning2023}) & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 9 \\
-(Donoghue, 2023 \cite{donoghueUsingConditionalInference2023}) & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 & 1 & 8 \\
-(Moguilner, 2021 \cite{moguilnerImportanceAgePrediction2021}) & 1 & 1 & 1 & 1 & 1 & 0 & 1 & 1 & 1 & 8 \\
-(Davis, 2021 \cite{davisComparisonGaitSpeed2021}) & 1 & 1 & 1 & 1 & 1 & 0 & 1 & 1 & 0 & 7 \\
-(Boyle, 2021 \cite{boyleBrainpredictedAgeDifference2021}) & 1 & 1 & 1 & 1 & 1 & 0 & 1 & 0 & 1 & 7 \\
-(Tzemah-Shahar, 2022 \cite{tzemah-shaharWhatCanWe2022}) & 1 & 1 & 1 & 0 & 1 & 0 & 1 & 1 & 1 & 7 \\
-(A. Shirsath, 2024 \cite{a.shirsathSlowerSpeedBlood2024}) & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 & 1 & 8 \\
-(Romero-Ortuno, 2021 \cite{romero-ortunoTransitionsFrailtyPhenotype2021}) & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 9 \\
-(Bardon, 2020 \cite{bardonPredictorsIncidentMalnutrition2020}) & 1 & 1 & 1 & 0 & 1 & 0 & 1 & 1 & 1 & 7 \\
-(Zhang, 2025 \cite{zhangMachineLearningModels2025}) & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 & 1 & 8 \\
-(Sutin, 2023 \cite{sutinSenseMeaningPurpose2023}) & 1 & 1 & 1 & 1 & 0 & 0 & 1 & 1 & 1 & 7 \\
-\hline
-\end{tabular}}
-\end{table}
-% \clearpage
-
-Table~\ref{tab:lr_table} summarises selected studies on ageing using \gls{TILDA} and \gls{ML}, reflecting key gaps and opportunities identified during systematic mapping.
-These steps were aligned with the research matrix created at the beginning, ensuring that the refinement of studies and synthesis of findings stayed closely tied to the original research goals.
-
-\subsection{Synthesis and integration}
-Using the \gls{NOS} scores, each study was annotated in Zotero with details on dataset, key variables, analytical approach, and main findings, facilitating a consistent and systematic evaluation across studies.
-For the systematic component, data was systematically extracted and synthesised to identify trends (e.g., Markov models, logistic regression, 5-fold \gls{CV}) and research gaps \cite{kitchenhamSystematicLiteratureReviews2009a}, complemented by \emph{DoctoralWriting} resources \cite{doctoralwritingCreatingLiteratureReview2016a,doctoralwritingCreatingLiteratureReview2016b}, which clarified how to define research questions and develop logical arguments.
-% Summary of Literature - Table
-\begin{table}[htbp]
-\centering
-\caption{Summary of selected studies on ageing using \gls{TILDA}.}
-\label{tab:lr_table}
-\small
-\resizebox{\textwidth}{!}{
-\begin{tabular}{p{2.5cm} p{2.5cm} p{2cm} p{4cm} p{4cm} p{4cm} p{4cm}}
-\hline
-\textbf{Theme} & \textbf{Author/year} & \textbf{Dataset} & \textbf{Variables/features} & \textbf{Methods/model type} & \textbf{Key Findings/outcome} & \textbf{Limitations} \\
-\hline
-\glsentryfull{FR} & Romero-Ortuno (2021) \cite{romero-ortunoTransitionsFrailtyPhenotype2021} & Wave 1--5 & \gls{FR} state, \gls{FR} phenotype (FP) components (Exhaustion(EX), Unexplained weight loss(WL), Weakness(WK), Slowness(SL), Low physical activity(LA)) & Multi state Markov model, longitudinal 8 year follow up & 32\% of pre frail to non frail; \gls{FR} strongly predicted 31\% mortality & Self report bias; observational design \\
-\hline
-Falls + \glsentryfull{ML} & Donoghue (2023) \cite{donoghueUsingConditionalInference2023} & Wave 1--3 & Gait, mobility, medications, history of falls & Conditional inference forest; 5-fold \gls{CV}; undersampling for imbalance & Accuracy up to 69.7\%; for adults aged 50--64.& \gls{AUROC} values were $<= 0.69$ and PRAUC $<= 0.39$ indicating low predictive accuracy; no external validation; cross sectional; Class imbalance \\
-\hline
-\glsentryfull{FOF} & Zarudsky (2014) \cite{zarudskyP277OneleggedBalance2014} & Wave 1 & Age, sex, fall history & Cross sectional prevalence analysis & 23.3\% prevalence; higher in women; 70\% with \gls{FOF} had no recent falls in the last 12 months & Self reported; cross sectional \\
-\hline
-Functional Mobility & Huang (2019) \cite{huangAgeModifyAssociations2019} & Wave 1--2 & Measured by \gls{TUG}, \gls{HGS}, physical activity, vision, \gls{BMI}, age & Linear regression, stratified analyses & Age modifies effects; \gls{PA} and grip protect mobility; vision benefit only in middle aged (Beta = -0.032, P = 0.002) & Observational; 2 year follow up \\
-\hline
-\multirow{2}{*}{Depression} 
-& Jacob (2023) \cite{jacobFallsIncreaseRisk2023} & Wave 1--2 & Falls, \gls{FOF}, HADS-A, \gls{CESD} & Prospective logistic regression & Falls predicted incident anxiety \gls{OR}=1.58 and depression \gls{OR}=1.43 & Self reported falls; short follow up; mediation effect partially explored \\
-& Laird (2023) \cite{lairdPhysicalActivityDepression2023} & Wave 1--5 & \gls{MVPA}, walking, sociodemographics & Longitudinal regression; mixed model & Higher physical activity reduced depressive symptoms; dose response effect & Self reported \gls{PA}; observational; limited causal inference \\
-\hline
-\multirow{2}{*}{Nutrition} 
-& Murphy (2023) \cite{murphyPlasmaLuteinZeaxanthin2023} & Wave 1--5 & Plasma lutein, zeaxanthin & Linear/ordinal logistic regression & Higher carotenoids linked to slower \gls{FR} progression Lower odds of becoming frail (ORs = 0.57--0.89) & Observational; not predictive of longitudinal muscle changes \\
-& Bardon (2020) \cite{bardonPredictorsIncidentMalnutrition2020} & Wave 1--2 & Hospitalisation, functional status, \gls{SOC} support, sex, falls & Logistic regression; sex stratified analyses & Functional decline, hospitalisation, poor support increased malnutrition risk; sex differences & Observational(short follow up (2 years)); limited generalisability >65 years, self reported\\
-\hline
-\multirow{3}{*}{\gls{ML}} 
-& Xu (2023) \cite{xuTailoredMachineLearning2023} & Wave 1--3 & 105 predictors from 40,000+ variables (\gls{SOC}, clinical, mental, family) & Stacked ensemble: \gls{RF}, XRT, GLM, \gls{GBM}, \gls{DNN}; \gls{SHAP} explainability & \gls{AUC}=0.854 for 2 year \gls{DM} prediction; top predictors LDL, cirrhosis, sex & No external validation; short follow up; ensemble complexity limits deployment \\
-& Davis (2021) \cite{davisComparisonGaitSpeed2021} & Wave 3 & Age, \gls{HGS}, chair stands, \gls{BMI}, cognitive tests & Histogram gradient boosting regression; \gls{SHAP} & r$^2$  test: \gls{UGS}$\approx$0.41, \gls{MGS}$\approx$0.46, GSR$\approx$0.21 & Modest predictive power; cross sectional; no external validation \\
-& Zhang (2025) \cite{zhangMachineLearningModels2025} & Longitudinal IMAGEN cohort & Psychopathology, personality, cognition, substance use, environment & Regularised logistic regression; diagnostic & Longitudinal \gls{AUC}: ED=0.71, MDD=0.64, AUD=0.67; shared transdiagnostic predictors & Limited age range; no external replication \\
-& Boyle (2021) \cite{boyleBrainpredictedAgeDifference2021} & Wave 3 & \gls{brainPAD}; processing speed; attention; cognitive flexibility; verbal fluency & Linear regression, correlation analyses & Higher \gls{brainPAD} associated with lower cognitive performance across multiple domains & Cross sectional; no causal inference; limited sample \\
-
-\end{tabular}}
-\end{table}
-
-The integration of a research matrix with systematic mapping and integrative synthesis ensured that the methodology was well suited to capturing the complexity of ageing, nutrition, chronic disease risk and predictive modelling studies focused primarily on \gls{TILDA} based studies, but due to the limited number of \gls{ML} applications with \gls{TILDA}, additional studies on older adult populations and chronic disease were included.
-
-% ----------------------------------------------------------------------
 \section{Study population and design}
 
 \gls{TILDA} provides longitudinal data across five waves (Waves 1--5) for community dwelling adults in Ireland. For benchmarking against international cohorts, an external harmonised \gls{TILDA} dataset was also inspected and prepared. The harmonised dataset, which has been pre aligned to international standards e.g., the \gls{G2G}, contains a subset of variables mapped to a common cross study format and thus differs from the raw \gls{TILDA} files. Although the harmonised dataset was simpler to process, it was still subjected to the variable filtering and numerical standardisation steps developed as part of this research to ensure compatibility with the five wave cleaned datasets prior to modelling.
@@ -191,7 +26,6 @@ Participants were removed only in the rare case that, following manual variable 
 \end{itemize}
 This approach prioritises data integrity and sample size for machine learning applications, differing from exclusion heavy cohort definitions often used in traditional epidemiological studies \cite{obermeyerPredictingFutureBig2016}.
 
-% ----------------------------------------------------------------------
 \section{TILDA data collection and screening}
 
 \gls{TILDA} data collection occurred over five longitudinal waves (Table~\ref{tab:raw_dataset_shape}). 
@@ -209,7 +43,7 @@ Pseudonymisation ensures that analyses comply with data protection standards whi
 
 \begin{table}[htbp]
 \centering
-\caption{Dimensions of raw \gls{TILDA} and harmonised datasets version 5.5 (prior to cleaning Section~\ref{sc:cleaning_engine}).}
+\caption{Dimensions of raw \gls{TILDA} and harmonised datasets version 5.5 (prior to cleaning in Section~\ref{sc:cleaning_engine}).}
 \label{tab:raw_dataset_shape}
 \small
 \resizebox{\textwidth}{!}{
@@ -227,7 +61,6 @@ Harmonised \cite{ISSDA/FHM5I8_2025} & 2016 (release) & 8501 & 572 \\
 \end{tabular}}
 \end{table}
 
-% ----------------------------------------------------------------------
 \section{Thematic domains}
 
 Variables were organised into seven thematic domains based on ageing literature and study objectives. Each variable's prefix, as defined in the \gls{PMF} metadata (Table~\ref{tab:pmf_prefixes}), indicates its source or research domain. This systematic assignment ensures that each thematic group contains conceptually related features and provides a clear structure for downstream automated preprocessing and machine learning. 
@@ -281,7 +114,167 @@ G2G & Gateway to Global Aging Data \\
 \end{tabular}
 \end{table}
 
-By categorising the raw variables into these seven thematic domains, a structured foundation was established for the technical dimensionality reduction and cleaning pipeline described in the following Chapter~\ref{ch:chapter4}.
+By categorising the raw variables into these seven thematic domains, a structured foundation was established for the technical dimensionality reduction and cleaning pipeline described in the following Section~\ref{sc:manual_var_filtering} and Chapter~\ref{ch:chapter4}.
+
+\section{Manual variable filtering workflow}\label{sc:manual_var_filtering} % rename to manaul dimensionality reduction?
+Prior to any data cleaning or modelling, a structured multi-stage workflow was implemented to screen and reduce the dimensionality of the raw \gls{TILDA} datasets. As shown in Table~\ref{tab:reduced_dataset_shape} (for example, 1619 $\to$ 809 variables in Wave 1), the raw \gls{PMF} files were reduced to a subset of variables of interest. This procedure also separated automated diagnostic profiling from manual variable exclusion, ensuring transparency in all selection decisions.
+
+The process consisted of the following steps:
+\begin{enumerate}
+    \item \textbf{Raw data loading:} Raw \gls{TILDA} \gls{PMF} files were loaded without cleaning or recoding. Waves 1--5 were loaded from \gls{SPSS} (\texttt{.sav}) files, while the harmonised dataset was loaded from a (\texttt{Stata}) (\texttt{.dta}) file due to technical compatibility issues.
+    \item \textbf{Automated variable profiling (Python):} For every variable, summary statistics were computed programmatically, including data type, proportion of missing values, number of unique values, most frequent value, and frequency of the most frequent value. These summaries were exported to spreadsheet format for inspection.
+    \item \textbf{Manual variable screening (spreadsheet based):} Using predefined rule based thresholds detailed in the next Section~\ref{sc:manual_var_filtering}. Variables were manually reviewed and flagged for exclusion based on missingness, lack of variation, dominance of a single category, or administrative function.
+    \item \textbf{Creation of retained variable lists:} Variables not flagged for exclusion were programmatically concatenated in \texttt{.xlsx} and manually transferred into wave specific \gls{JSON} files representing the retained \texttt{variables of interest}.
+    \item \textbf{Reloading filtered datasets:} The \gls{JSON} files were then used to subset the original raw datasets, producing reduced datasets with identical rows but fewer variables. No cleaning, recoding, or imputation was applied at this stage.
+\end{enumerate}
+
+Python scripts were used to profile all variables across each wave. For every variable, the following metrics were computed: data type, number of missing values, number of unique values, most frequent value, and frequency of the most frequent value. These summaries were exported to spreadsheet format to support structured manual review prior to variable dropping.
+
+Manual filtering was applied according to the following criteria:
+\begin{itemize}
+    \item \textbf{Missingness:} Drop variables with $>80\%$ missing values. This threshold balances retaining sufficient feature coverage while ensuring statistical reliability. Variables exceeding this threshold provide limited information in most cases, increase imputation uncertainty, and reduce effective sample size, which is particularly critical in longitudinal machine learning analyses.
+    \item \textbf{Unique values:} Drop variables with a single observed value, as they contain no discriminative information and cannot contribute to modelling or inference. Variables with low cardinality (2--4 unique values) were retained for review, as they frequently represent meaningful categorical responses (e.g., binary indicators or ordinal scales) relevant to ageing outcomes.
+    \item \textbf{Dominant category (top value/frequency):} Variables where a single category (sample value) marked as the \emph{topValue} occurs over $\approx$ $>90\%$ (\emph{topFrequency}) of observations were flagged. Such dominance indicates limited variability, reducing analytical utility and predictive value. Variables exceeding this threshold were marked for review or exclusion.
+    \item \textbf{Identifiers / administrative fields:} IDs, version tags, and sampling weights were identified using the \gls{PMF} metadata. Variable names and descriptions were exported from each wave's \gls{PMF} file into \gls{CSV} files (Appendix~\ref{app:pmf_code}) to systematically document and review features prior to filtering. These exports enabled structured manual inspection and traceability between raw \gls{PMF} metadata and downstream feature selection decisions.
+\end{itemize}
+
+During manual screening and filtering, variables exceeding exclusion thresholds (e.g., high missingness, single value, dominant category, administrative identifiers) were visually flagged (e.g., marked in red). Non flagged variables were programmatically concatenated using spreadsheet formulas (e.g., \texttt{=TEXTJOIN(", ", TRUE, J2:J\textit{n})}) and then manually transferred into wave specific \gls{JSON} files for each wave. These files represent the \emph{variables of interest} retained after manual screening and filtering and serve as inputs for the upcoming automated data preprocessing and cleaning in Section~\ref{sc:cleaning_engine}.
+\begin{figure}[htbp]
+\centering
+\includegraphics[height=1.25\textwidth]{variable_filter_criteria.png}
+\caption{Flowchart of the manual five-step workflow for variable screening and filtering. Placeholder (n) values represent the number of variables at each stage, illustrating the reduction from the raw dataset to the filtered dataset prior to automated preprocessing.}
+\label{fig:variable_filter_criteria}
+\end{figure}
+
+The retained variables, defined in \gls{JSON} files, were subsequently used to subset the raw datasets. As shown in Table~\ref{tab:reduced_dataset_shape}, this process yielded a reduced dataset for each wave containing only the variables of interest. At this stage, no cleaning or recoding was performed. The operation served purely as dimensionality reduction, preparing the data for the automated six step scenario cleaning pipeline described in Section~\ref{sc:cleaning_engine}.
+
+Importantly, all variable exclusion decisions were completed at this stage. Subsequent preprocessing steps focus exclusively on numerical standardisation, recoding, and preparation for machine learning rather than further feature removal. With the variables of interest selected and the datasets reduced to a manageable dimensionality, the next stage focuses on automated preprocessing, recoding, and preparation for \gls{ML} modelling.
+
+\clearpage
+\section{Reduced dataset overview}
+To further understand the characteristics of these retained variables, the datasets were profiled using an exploratory visualiser (\texttt{.ipynb}) file implemented with \texttt{pandas}, \texttt{numpy}, \texttt{matplotlib}, and \texttt{seaborn}. This step examined data types, missingness patterns, unique value distributions, and representative sample values across all waves. The purpose of this profiling stage was not transformation but to expose structural inconsistencies and latent formatting issues that would undermine direct numerical conversion.
+
+\begin{table}[htbp]
+\centering
+\caption{Input shape for cleaning pipeline (post manual filtering workflow~\ref{fig:variable_filter_criteria}).}
+\label{tab:reduced_dataset_shape}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{p{3cm} c c}
+\hline
+\textbf{Dataset} & \textbf{Row (N participants)} & \textbf{Column (N features)} \\
+\hline
+Wave 1 & 8501 & 809 \\
+Wave 2 & 7206 & 482 \\
+Wave 3 & 6397 & 639 \\
+Wave 4 & 5713 & 592 \\
+Wave 5 & 4978 & 577 \\
+Harmonised & 8501 & 453 \\
+\hline
+\end{tabular}}
+\end{table}
+
+For example, in wave 1, the visualiser detected 650 categorical columns, 150 (\texttt{float64}) columns, and 9 object columns, while the harmonised dataset contained 304 categorical columns, 148 \texttt{float32} columns, and several integer columns. Age distributions confirmed that the study population was restricted to older adults across waves, however, ages were bottom coded for participants younger than 50 years and top coded for those aged 65--85 years and above. Missing value summaries indicated substantial variation (e.g., mean missing values ranging from $4.7\%$ in wave 4 to $35\%$ in the harmonised dataset, with some variables exceeding $77\%$ missing).
+
+Despite this, the exploratory visualiser was limited because the raw data were not yet cleaned, many outputs were incorrect or nonsensical due to hybrid formats and inconsistent coding. For instance, inspection revealed that many variables across both the wave specific and harmonised datasets, while appearing numeric at first glance, in fact contained hybrid representations combining numeric prefixes with descriptive text (e.g., ``1.Rarely or none of the time (less than 1 day)'', ``4.All of the time (5--7 days)'', or prefixed labels such as ``0.not coupled'', ``1.coupled''). A trivial string stripping approach would therefore produce incorrect numeric values (for example, reducing ``5--7 days'' to \texttt{5}) resulting in silently introducing semantic distortion. Similarly, numeric columns sometimes contained sentinel codes (e.g., -98, -99) or embedded symbols (`$\$$', `$cm$', `$\%$') that skewed visual summaries.
+
+These insights, revealed through systematic profiling, guided the development of the subsequent cleaning pipeline steps, ensuring consistent numeric logic representations (e.g., midpoints for ranges, standardised sentinel handling).
+
+\section{Thematic grouping of retained variables}
+
+Using the \gls{PMF} prefixes described in Table~\ref{tab:pmf_prefixes} as a guide, variables were assigned to seven thematic groups (Table~\ref{tab:feature_groups}), each capturing a conceptually coherent domain: physical, cognitive, social, and behavioural aspects of ageing. This structure supports reproducible preprocessing and helps machine learning models focus on meaningful, longitudinally robust features. 
+
+Specifically, the thematic grouping:
+\begin{enumerate}
+    \item Provides a clear framework for automated cleaning and filtering rules.
+    \item Ensures that model input variables are conceptually aligned with study objectives.
+\end{enumerate}
+
+The seven thematic groups integrate information from \gls{CAPI}, \gls{SCQ}, and derived variables, covering sociodemographic context, physical health, functional status, lifestyle behaviours, nutrition and metabolic biomarkers, psychological and cognitive measures, and administrative identifiers.
+
+The gradient \emph{heatmap} integrated at the bottom of Table~\ref{tab:feature_groups} visually illustrates the relative dominance of each thematic domain across the five waves. Darker blue shading indicates domains with a higher number of variables, providing a quick summary of domain coverage and prominence. This integrated visualisation supports interpretation by highlighting which domains contribute the most features to the dataset.
+
+% -------------------- Longtable (breaks only between IDs) --------------------
+\clearpage
+
+\begin{longtable}{|C{0.04\linewidth}|C{0.225\linewidth}|C{0.225\linewidth}|L{0.3\linewidth}|C{0.1\linewidth}|}
+\caption{Thematic domain grouping of longitudinal features.}
+\label{tab:feature_groups}\\
+\hline
+\textbf{ID} & \textbf{Thematic Group} & \textbf{Description} & \textbf{Representative Variable Examples} & \textbf{Total Features} \\
+\hline
+\endfirsthead
+\hline
+\textbf{ID} & \textbf{Thematic Group} & \textbf{Description} & \textbf{Representative Variable Examples} & \textbf{Total Features} \\
+\hline
+\endhead
+
+% ---------------- ID 1 ----------------
+\multirow{4}{*}{1} &
+\multirow{4}{=}{\textbf{Socio-Demographic \& Context}} &
+\multirow{4}{=}{Baseline demographic and socioeconomic indicators} &
+Age/Sex & \multirow{4}{=}{\centering 844} \\ \cline{4-4}
+& & & Education & \\ \cline{4-4}
+& & & Income & \\ \cline{4-4}
+& & & Marital status & \\ \hline
+
+% ---------------- ID 2 ----------------
+\multirow{4}{*}{2} &
+\multirow{4}{=}{\textbf{Physical Health \& Clinical}} &
+\multirow{4}{=}{Clinical and self reported health measures} &
+Blood pressure & \multirow{4}{=}{\centering 839} \\ \cline{4-4}
+& & & \gls{BMI} & \\ \cline{4-4}
+& & & Chronic disease status & \\ \cline{4-4}
+& & & Self rated health & \\ \hline
+
+% ---------------- ID 3 ----------------
+\multirow{3}{*}{3} &
+\multirow{3}{=}{\textbf{Functional Status \& Frailty}} &
+\multirow{3}{=}{Physical functioning and frailty markers} &
+\gls{ADL}/\gls{IADL} & \multirow{3}{=}{\centering 174} \\ \cline{4-4}
+& & & Grip strength & \\ \cline{4-4}
+& & & Gait speed & \\ \hline
+
+% ---------------- ID 4 ----------------
+\multirow{3}{*}{4} &
+\multirow{3}{=}{\textbf{Lifestyle \& Behavioural}} &
+\multirow{3}{=}{Health behaviours and activity patterns} &
+Physical activity & \multirow{3}{=}{\centering 120} \\ \cline{4-4}
+& & & Smoking & \\ \cline{4-4}
+& & & Alcohol use & \\ \hline
+
+% ---------------- ID 5 ----------------
+\multirow{3}{*}{5} &
+\multirow{3}{=}{\textbf{Nutrition \& Metabolic}} &
+\multirow{3}{=}{Metabolic and biomarker indicators} &
+\gls{CRP} & \multirow{3}{=}{\centering 22} \\ \cline{4-4}
+& & & Creatinine & \\ \cline{4-4}
+& & & Lipid markers & \\ \hline
+
+% ---------------- ID 6 ----------------
+\multirow{3}{*}{6} &
+\multirow{3}{=}{\textbf{Psychological \& Cognitive}} &
+\multirow{3}{=}{Cognitive performance and mental health} &
+\gls{MMSE} & \multirow{3}{=}{\centering 291} \\ \cline{4-4}
+& & & Depressive symptoms & \\ \cline{4-4}
+& & & Stress scale & \\ \hline
+
+% ---------------- ID 7 ----------------
+\multirow{3}{*}{7} &
+\multirow{3}{=}{\textbf{Other / Administrative}} &
+\multirow{3}{=}{Survey metadata and structural variables} &
+Sampling weight & \multirow{3}{=}{\centering 809} \\ \cline{4-4}
+& & & Completion status & \\ \cline{4-4}
+& & & Contact names & \\ \hline
+
+\multicolumn{5}{|l|}{\vspace{0.5em}} \\[-1em] 
+\multicolumn{5}{|l|}{
+  \includegraphics[width=1\linewidth]{domain_counts_heatmap.png}
+} \\[0.5em]
+
+\multicolumn{5}{|c|}{
+\small{Thematic domain dominance across waves (higher n features per domain).}
+} \\ \hline
+\end{longtable}
 
 % ---------------------------------------------------------------------------
 % ----------------------- end of thesis sub-document ------------------------

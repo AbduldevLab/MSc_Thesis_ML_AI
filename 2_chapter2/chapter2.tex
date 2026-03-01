@@ -15,15 +15,172 @@
 \fi
 
 %: ----------------------- contents from here ------------------------
-
 This chapter reviews literature on ageing, chronic disease, and predictive modelling using \gls{TILDA} (introduced in Chapter~\ref{ch:chapter1}). 
 It focuses on three interrelated domains central to later life health: \gls{FR}, physical function, \gls{MH}, and nutrition within the context of biological ageing. 
 This review focuses on \gls{FR}, \gls{MH}, and nutrition as key determinants of later life outcomes.
 In line with the \gls{WHO} healthy ageing framework, research using \gls{TILDA} highlights \gls{FR}, \gls{MH}, and nutrition as interconnected determinants of later life outcomes. 
-The following subsections examine each domain in turn.\label{sec:ChronicDiseaseAndAgeing}
 
-% ----------------------------------------------------------------------
-% Frailty and Physical Function
+\section{Search strategy and study selection}
+Several sources describe how systematic and integrative reviews are commonly carried out in fields such as software engineering, health, and education. 
+The approach followed key principles for systematic mapping. This included defining research questions, identifying relevant studies through structured database searches, applying inclusion and exclusion criteria, and categorising results as outlined \cite{petersenGuidelinesConductingSystematic2015}.
+The integrative literature review \cite{torracoWritingIntegrativeLiterature2005} helped structure and connect findings across studies, while \cite{roccoLiteratureReviewsConceptual2009, oxmanGuidelinesReadingLiterature} guided the organisation of ideas. In related methodological work, \cite{kitchenhamSystematicLiteratureReviews2009a} clarified how \gls{SR}s can identify research gaps, and \cite{ashrafSystematicReviewSystematic2021} showed how mapping and synthesis highlight trends and future directions. 
+This combined guidance informed, structured yet flexible methodology suitable for ageing in \gls{AI}, and health research. 
+
+\subsection{Database search and query development}
+The main topic of interest was chronic disease prediction using nutrition, lifestyle, and clinical data from \gls{TILDA}. Relevant databases (e.g., ScienceDirect, PubMed) were searched using combinations of keywords such as ``Irish Longitudinal Study on Ageing", ``machine learning,"``chronic disease", ``nutrition", ``diet", and ``physical activity", as shown in Table~\ref{tab:PetersenSearch}. 
+
+The search covered studies published from 2011 to 2025. Figure~\ref{fig:mapping_years} summarises the number of studies identified per year, highlighting trends and gaps over time.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  ybar,
+  bar width=10pt,
+  width=\textwidth,
+  height=0.4\textheight,
+  xlabel={Year},
+  ylabel={Number of Mapping Studies},
+  symbolic x coords={2011,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025},
+  xtick=data,
+  x tick label style={rotate=45, anchor=east},
+  nodes near coords,
+  ymin=0
+]
+\addplot coordinates {
+  (2011,1) (2013,2) (2014,3) (2015,2) (2016,2)
+  (2017,4) (2018,6) (2019,3) (2020,7) (2021,11)
+  (2022,13) (2023,14) (2024,7) (2025,3)
+};
+\end{axis}
+\end{tikzpicture}
+\caption{Publications per year.}
+\label{fig:mapping_years}
+\end{figure}
+% \clearpage
+
+% Table: string db search 
+\begin{table}[htbp]
+\centering
+\caption{Database searches and number of studies per database \ref{tab:lr_table} \cite{petersenGuidelinesConductingSystematic2015}.}
+\label{tab:PetersenSearch}
+\small
+\resizebox{\textwidth}{!}{
+\begin{tabular}{p{3cm} p{10cm} p{3cm}}
+\hline
+\textbf{Database} & \textbf{Search} & \textbf{Results} \\
+\hline
+\multirow{2}{*}{Oxford Academic} &
+(TILDA OR Irish Longitudinal Study on Ageing)AND (chronic disease OR diabetes OR cardiovascular) AND (nutrition OR diet OR ``physical activity") & 1081 \\
+\\ & (TILDA OR ``Irish Longitudinal Study on Ageing") AND (``machine learning" OR ``predictive model" OR ``risk prediction") & 71 \\
+\hline
+\multirow{2}{*}{IEEE Xplore} &
+TILDA OR ``Irish Longitudinal Study on Ageing" & 56 \\
+\\ & (TILDA OR "Irish Longitudinal Study on Ageing") AND (``machine learning" OR ``predictive model" OR ``risk prediction") & 7 \\
+\hline
+\multirow{2}{*}{ScienceDirect} &
+(TILDA OR ``Irish Longitudinal Study on Ageing") AND (``chronic disease" OR cardiovascular OR diabetes) AND (nutrition OR diet OR lifestyle OR ``physical activity") & 257 \\
+\\ & (TILDA OR ``Irish Longitudinal Study on Ageing") AND (``machine learning" OR ``predictive model") AND (``chronic disease" OR diabetes) AND (nutrition OR ``physical activity") & 20 \\
+\hline
+\multirow{2}{*}{PubMed} &
+(TILDA OR ``Irish Longitudinal Study on Ageing") AND (``chronic disease" OR cardiovascular OR diabetes) AND (nutrition OR diet OR lifestyle OR ``physical activity") & 27 \\
+\\ & (TILDA OR ``Irish Longitudinal Study on Ageing") AND (``machine learning" OR ``predictive model" OR ``risk prediction") & 9 \\
+\hline
+\end{tabular}}
+\end{table}
+% \clearpage
+ 
+Some search strings returned few or irrelevant entries, particularly for \gls{ML} applications in \gls{TILDA}, highlighting a key research gap. Iterations continued until suitable combinations consistently retrieved relevant studies.
+Duplicates were removed using Zotero's reference management feature. The remaining studies were individually and manually checked for relevance to ``ageing,'' ``chronic disease,'' and \gls{ML}. Using Zotero's notes functionality, the initially created Table~\ref{tab:lr_table} captured key elements for each study, including model type, features used, and main findings, as shown in the following \gls{PRISMA} flow diagram (Figure~\ref{fig:prisma}).
+% Prisma fig
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{0_frontmatter/figures/prisma.pdf}
+\caption{\gls{PRISMA} chart for \gls{SR}s showing the study selection process for the systematic mapping and integrative review \cite{haddawayPRISMA2020PackageShiny2022}.}
+\label{fig:prisma}
+\end{figure}
+% \clearpage
+
+\subsection{Quality and relevance evaluation} 
+To systematically assess the quality of the included studies, a customised version of the \gls{NOS} was applied (Table~\ref{tab:NOS}). 
+The \gls{NOS} evaluates studies across three domains: \emph{selection} (S1--S4), \emph{comparability} (C1--C2), and \emph{outcome} (O1--O3). 
+\emph{Selection} criteria assess the representativeness of the sample, clarity of exposure measurement, and temporal alignment of outcomes. 
+\emph{Comparability} examines the control of key confounders (variables that may influence both the predictor and outcome), while \emph{outcome} evaluates measurement validity, follow up adequacy, and completeness. 
+Each domain is scored 0/1, recall the Bernoulli random variable (0 = criterion not met, 1 = criterion met), and the total score reflects the overall study quality.
+
+This initial table guided a further refinement of the results into two sub tables: 1. studies critically related to \gls{TILDA}, 2. studies using \gls{TILDA} and \gls{ML} for predictive contexts, which revealed minimal to no integration with \gls{TILDA}.
+
+% NOS Scale Table
+\begin{table}[htbp]
+\centering
+\caption{Quality evaluation of \gls{SLR}s \cite{kitchenhamSystematicLiteratureReviews2009a}.}
+\label{tab:NOS}
+\small
+\resizebox{\textwidth}{!}{
+\begin{tabular}{p{5cm} c c c c c c c c c c}
+\hline
+\textbf{Reference} & \textbf{S1} & \textbf{S2} & \textbf{S3} & \textbf{S4} & \textbf{C1} & \textbf{C2} & \textbf{O1} & \textbf{O2} & \textbf{O3} & \textbf{Total} \\
+\hline
+(Xu, 2023 \cite{xuTailoredMachineLearning2023}) & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 9 \\
+(Donoghue, 2023 \cite{donoghueUsingConditionalInference2023}) & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 & 1 & 8 \\
+(Moguilner, 2021 \cite{moguilnerImportanceAgePrediction2021}) & 1 & 1 & 1 & 1 & 1 & 0 & 1 & 1 & 1 & 8 \\
+(Davis, 2021 \cite{davisComparisonGaitSpeed2021}) & 1 & 1 & 1 & 1 & 1 & 0 & 1 & 1 & 0 & 7 \\
+(Boyle, 2021 \cite{boyleBrainpredictedAgeDifference2021}) & 1 & 1 & 1 & 1 & 1 & 0 & 1 & 0 & 1 & 7 \\
+(Tzemah-Shahar, 2022 \cite{tzemah-shaharWhatCanWe2022}) & 1 & 1 & 1 & 0 & 1 & 0 & 1 & 1 & 1 & 7 \\
+(A. Shirsath, 2024 \cite{a.shirsathSlowerSpeedBlood2024}) & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 & 1 & 8 \\
+(Romero-Ortuno, 2021 \cite{romero-ortunoTransitionsFrailtyPhenotype2021}) & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 9 \\
+(Bardon, 2020 \cite{bardonPredictorsIncidentMalnutrition2020}) & 1 & 1 & 1 & 0 & 1 & 0 & 1 & 1 & 1 & 7 \\
+(Zhang, 2025 \cite{zhangMachineLearningModels2025}) & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 & 1 & 8 \\
+(Sutin, 2023 \cite{sutinSenseMeaningPurpose2023}) & 1 & 1 & 1 & 1 & 0 & 0 & 1 & 1 & 1 & 7 \\
+\hline
+\end{tabular}}
+\end{table}
+% \clearpage
+
+Table~\ref{tab:lr_table} summarises selected studies on ageing using \gls{TILDA} and \gls{ML}, reflecting key gaps and opportunities identified during systematic mapping.
+These steps were aligned with the research matrix created at the beginning, ensuring that the refinement of studies and synthesis of findings stayed closely tied to the original research goals.
+
+\subsection{Synthesis and integration}
+Using the \gls{NOS} scores, each study was annotated in Zotero with details on dataset, key variables, analytical approach, and main findings, facilitating a consistent and systematic evaluation across studies.
+For the systematic component, data was systematically extracted and synthesised to identify trends (e.g., Markov models, logistic regression, 5-fold \gls{CV}) and research gaps \cite{kitchenhamSystematicLiteratureReviews2009a}, complemented by \emph{DoctoralWriting} resources \cite{doctoralwritingCreatingLiteratureReview2016a,doctoralwritingCreatingLiteratureReview2016b}, which clarified how to define research questions and develop logical arguments.
+% Summary of Literature - Table
+\begin{table}[htbp]
+\centering
+\caption{Summary of selected studies on ageing using \gls{TILDA}.}
+\label{tab:lr_table}
+\small
+\resizebox{\textwidth}{!}{
+\begin{tabular}{p{2.5cm} p{2.5cm} p{2cm} p{4cm} p{4cm} p{4cm} p{4cm}}
+\hline
+\textbf{Theme} & \textbf{Author/year} & \textbf{Dataset} & \textbf{Variables/features} & \textbf{Methods/model type} & \textbf{Key Findings/outcome} & \textbf{Limitations} \\
+\hline
+\glsentryfull{FR} & Romero-Ortuno (2021) \cite{romero-ortunoTransitionsFrailtyPhenotype2021} & Wave 1--5 & \gls{FR} state, \gls{FR} phenotype (FP) components (Exhaustion(EX), Unexplained weight loss(WL), Weakness(WK), Slowness(SL), Low physical activity(LA)) & Multi state Markov model, longitudinal 8 year follow up & 32\% of pre frail to non frail; \gls{FR} strongly predicted 31\% mortality & Self report bias; observational design \\
+\hline
+Falls + \glsentryfull{ML} & Donoghue (2023) \cite{donoghueUsingConditionalInference2023} & Wave 1--3 & Gait, mobility, medications, history of falls & Conditional inference forest; 5-fold \gls{CV}; undersampling for imbalance & Accuracy up to 69.7\%; for adults aged 50--64.& \gls{AUROC} values were $<= 0.69$ and PRAUC $<= 0.39$ indicating low predictive accuracy; no external validation; cross sectional; Class imbalance \\
+\hline
+\glsentryfull{FOF} & Zarudsky (2014) \cite{zarudskyP277OneleggedBalance2014} & Wave 1 & Age, sex, fall history & Cross sectional prevalence analysis & 23.3\% prevalence; higher in women; 70\% with \gls{FOF} had no recent falls in the last 12 months & Self reported; cross sectional \\
+\hline
+Functional Mobility & Huang (2019) \cite{huangAgeModifyAssociations2019} & Wave 1--2 & Measured by \gls{TUG}, \gls{HGS}, physical activity, vision, \gls{BMI}, age & Linear regression, stratified analyses & Age modifies effects; \gls{PA} and grip protect mobility; vision benefit only in middle aged (Beta = -0.032, P = 0.002) & Observational; 2 year follow up \\
+\hline
+\multirow{2}{*}{Depression} 
+& Jacob (2023) \cite{jacobFallsIncreaseRisk2023} & Wave 1--2 & Falls, \gls{FOF}, HADS-A, \gls{CESD} & Prospective logistic regression & Falls predicted incident anxiety \gls{OR}=1.58 and depression \gls{OR}=1.43 & Self reported falls; short follow up; mediation effect partially explored \\
+& Laird (2023) \cite{lairdPhysicalActivityDepression2023} & Wave 1--5 & \gls{MVPA}, walking, sociodemographics & Longitudinal regression; mixed model & Higher physical activity reduced depressive symptoms; dose response effect & Self reported \gls{PA}; observational; limited causal inference \\
+\hline
+\multirow{2}{*}{Nutrition} 
+& Murphy (2023) \cite{murphyPlasmaLuteinZeaxanthin2023} & Wave 1--5 & Plasma lutein, zeaxanthin & Linear/ordinal logistic regression & Higher carotenoids linked to slower \gls{FR} progression Lower odds of becoming frail (ORs = 0.57--0.89) & Observational; not predictive of longitudinal muscle changes \\
+& Bardon (2020) \cite{bardonPredictorsIncidentMalnutrition2020} & Wave 1--2 & Hospitalisation, functional status, \gls{SOC} support, sex, falls & Logistic regression; sex stratified analyses & Functional decline, hospitalisation, poor support increased malnutrition risk; sex differences & Observational(short follow up (2 years)); limited generalisability >65 years, self reported\\
+\hline
+\multirow{3}{*}{\gls{ML}} 
+& Xu (2023) \cite{xuTailoredMachineLearning2023} & Wave 1--3 & 105 predictors from 40,000+ variables (\gls{SOC}, clinical, mental, family) & Stacked ensemble: \gls{RF}, XRT, GLM, \gls{GBM}, \gls{DNN}; \gls{SHAP} explainability & \gls{AUC}=0.854 for 2 year \gls{DM} prediction; top predictors LDL, cirrhosis, sex & No external validation; short follow up; ensemble complexity limits deployment \\
+& Davis (2021) \cite{davisComparisonGaitSpeed2021} & Wave 3 & Age, \gls{HGS}, chair stands, \gls{BMI}, cognitive tests & Histogram gradient boosting regression; \gls{SHAP} & r$^2$  test: \gls{UGS}$\approx$0.41, \gls{MGS}$\approx$0.46, GSR$\approx$0.21 & Modest predictive power; cross sectional; no external validation \\
+& Zhang (2025) \cite{zhangMachineLearningModels2025} & Longitudinal IMAGEN cohort & Psychopathology, personality, cognition, substance use, environment & Regularised logistic regression; diagnostic & Longitudinal \gls{AUC}: ED=0.71, MDD=0.64, AUD=0.67; shared transdiagnostic predictors & Limited age range; no external replication \\
+& Boyle (2021) \cite{boyleBrainpredictedAgeDifference2021} & Wave 3 & \gls{brainPAD}; processing speed; attention; cognitive flexibility; verbal fluency & Linear regression, correlation analyses & Higher \gls{brainPAD} associated with lower cognitive performance across multiple domains & Cross sectional; no causal inference; limited sample \\
+
+\end{tabular}}
+\end{table}
+
+The integration of a research matrix with systematic mapping and integrative synthesis ensured that the methodology was well suited to capturing the complexity of ageing, nutrition, chronic disease risk and predictive modelling studies focused primarily on \gls{TILDA} based studies, but due to the limited number of \gls{ML} applications with \gls{TILDA}, additional studies on older adult populations and chronic disease were included.
+
 \section{Frailty and physical function}
 
 \gls{FR} reflects declining physiological reserve, providing a framework for understanding physical vulnerability in ageing. 
@@ -56,7 +213,7 @@ where $P(Y \mid X)$ is the posterior probability of outcome $Y$ given features $
 
 \subsection{Bayesian updating of frailty risk}
 Causal inference is limited by observational designs, and predictors are frequently examined separately, ignoring interactions. 
-Most \gls{FR} models have only been with the \gls{TILDA} dataset, and with this study that focuses on the same \gls{TILDA} but uses both longitudinal \gls{TILDA} waves and harmonised variables to improve cross study comparability, enabling for a enabling for a more robust training validation splits in ML models, and explores richer predictive patterns over time. 
+Most \gls{FR} models have only been with the \gls{TILDA} dataset, and with this study that focuses on the same \gls{TILDA} but uses both longitudinal \gls{TILDA} waves and harmonised variables to improve cross study comparability, enabling for a more robust training validation splits in ML models, and explores richer predictive patterns over time. 
 These gaps point to the need for multidimensional approaches. 
 Traditional regression models may not fully capture age dependent interactions, suggesting a role for more flexible methods such as machine learning techniques and models.
 
@@ -118,7 +275,7 @@ Isolating single nutrients risks oversimplification. Integrative modelling that 
 \gls{ML} is increasingly applied in ageing research because it can capture non linear and multidimensional relationships that traditional regression models, such as logistic regression, often miss \cite{xuTailoredMachineLearning2023, boyleBrainpredictedAgeDifference2021}. Studies using \gls{ML} in ageing research include many types of predictors: clinical measures, sociodemographic factors, lifestyle habits, cognitive tests, and psychosocial variables. 
 
 A recurring pattern, however, is that models often underline easily measured physical health data, such as comorbidity counts, mobility scores, or vital signs, while more complex but important predictors, including nutrition and \gls{SOC} factors, are underrepresented \cite{zarudskyP277OneleggedBalance2014}. 
-This imbalance may limit the ability of models to capture the full complexity of chronic disease risk with ageing, especially considering that \gls{MH} and nutrition exert independent and interacting effects on later life outcomes (\hyperref[sec:ChronicDiseaseAndAgeing]{here}). 
+This imbalance may limit the ability of models to capture the full complexity of chronic disease risk with ageing, especially considering that \gls{MH} and nutrition exert independent and interacting effects on later life outcomes. 
 Models that focus only on ready available clinical data risk reproducing the same biases seen in traditional regression approaches.
 
 \subsection{Models used in machine learning}
@@ -167,7 +324,7 @@ The findings showed that while \gls{FR} is partly reversible, it remains strongl
 
 While machine learning has improved prediction accuracy in ageing research, challenges remain in integrating diverse predictors and ensuring interpretability and longitudinal validation.
 
-Addressing these challenges requires the integrative, longitudinal, and transparent approaches that combine diverse predictors. These gaps motivated the feature engineering and modelling strategies implemented in Chapters~\ref{ch:chapter3} and ~\ref{ch:chapter4}, including the use of harmonised variables to ensure reproducibility and generalisability for \gls{ML} modelling.
+Addressing these challenges requires the integrative, longitudinal, and transparent approaches that combine diverse predictors. These gaps motivated the data preparation and pipeline implementation described in Chapters~\ref{ch:chapter3} and ~\ref{ch:chapter4}, and the modelling strategies presented in Chapter~\ref{ch:chapter5}.
 
 % ---------------------------------------------------------------------------
 %: ----------------------- end of thesis sub-document ------------------------
