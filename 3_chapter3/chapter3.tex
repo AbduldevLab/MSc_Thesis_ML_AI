@@ -146,11 +146,10 @@ During manual screening and filtering, variables exceeding exclusion thresholds 
 \label{fig:variable_filter_criteria}
 \end{figure}
 
-The retained variables, defined in \gls{JSON} files, were subsequently used to subset the raw datasets. As shown in Table~\ref{tab:reduced_dataset_shape}, this process yielded a reduced dataset for each wave containing only the variables of interest. At this stage, no cleaning or recoding was performed. The operation served purely as dimensionality reduction, preparing the data for the automated six step scenario cleaning pipeline described in Section~\ref{sc:cleaning_engine}.
-
+The retained variables defined in \gls{JSON} files were subsequently used to subset the raw datasets. As shown in Table~\ref{tab:reduced_dataset_shape}, this process yielded a significant reduced dataset for each wave. For instance, in Wave 1, manual filtering reduced the feature space from 1,619 to 809 variables, a 50.03\% reduction. This substantial drop highlights the elimination of non-contributory data (providing no predictive value to the model), ensuring only the \emph{variables of interest} proceed to the automated cleaning engine.
+                                                                                                        
 Importantly, all variable exclusion decisions were completed at this stage. Subsequent preprocessing steps focus exclusively on numerical standardisation, recoding, and preparation for machine learning rather than further feature removal. With the variables of interest selected and the datasets reduced to a manageable dimensionality, the next stage focuses on automated preprocessing, recoding, and preparation for \gls{ML} modelling.
 
-\clearpage
 \section{Reduced dataset overview}
 To further understand the characteristics of these retained variables, the datasets were profiled using an exploratory visualiser (\texttt{.ipynb}) file implemented with \texttt{pandas}, \texttt{numpy}, \texttt{matplotlib}, and \texttt{seaborn}. This step examined data types, missingness patterns, unique value distributions, and representative sample values across all waves. The purpose of this profiling stage was not transformation but to expose structural inconsistencies and latent formatting issues that would undermine direct numerical conversion.
 
@@ -159,16 +158,16 @@ To further understand the characteristics of these retained variables, the datas
 \caption{Input shape for cleaning pipeline (post manual filtering workflow~\ref{fig:variable_filter_criteria}).}
 \label{tab:reduced_dataset_shape}
 \resizebox{\textwidth}{!}{
-\begin{tabular}{p{3cm} c c}
+\begin{tabular}{p{3cm} c c c}
 \hline
-\textbf{Dataset} & \textbf{Row (N participants)} & \textbf{Column (N features)} \\
+\textbf{Dataset} & \textbf{Row (N participants)} & \textbf{Column (N features)} & \textbf{\% Reduction} \\
 \hline
-Wave 1 & 8501 & 809 \\
-Wave 2 & 7206 & 482 \\
-Wave 3 & 6397 & 639 \\
-Wave 4 & 5713 & 592 \\
-Wave 5 & 4978 & 577 \\
-Harmonised & 8501 & 453 \\
+Wave 1 & 8501 & 809 & 50.0\% \\
+Wave 2 & 7206 & 482 & 33.4\% \\
+Wave 3 & 6397 & 639 & 37.9\% \\
+Wave 4 & 5713  & 592 & 40.2\% \\
+Wave 5 & 4978 & 577 & 41.3\% \\
+Harmonised & 8501 & 453 & 20.8\% \\
 \hline
 \end{tabular}}
 \end{table}
