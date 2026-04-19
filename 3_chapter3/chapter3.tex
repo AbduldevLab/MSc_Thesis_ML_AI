@@ -24,7 +24,7 @@ Participants were removed only in the rare case that, following manual variable 
     \item[-] \textbf{Longitudinal retention:} Individuals were retained regardless of how many waves they contributed to, enabling initial maximum dataset utilisation.
     \item[-] \textbf{No clinical exclusions:} No participant was removed due to medical diagnoses, cognitive scores, functional limitations, or non attendance at the health centre assessment.
 \end{itemize}
-This approach prioritises data integrity and sample size for machine learning applications, differing from exclusion heavy cohort definitions often used in traditional epidemiological studies \cite{obermeyerPredictingFutureBig2016}.
+This approach prioritises data integrity and sample size for machine learning applications, differing from exclusion heavy cohort definitions often used in traditional epidemiological studies~\cite{obermeyerPredictingFutureBig2016}.
 
 \section{TILDA data collection and screening}
 
@@ -43,20 +43,19 @@ Pseudonymisation ensures that analyses comply with data protection standards whi
 
 \begin{table}[htbp]
 \centering
-\caption{Dimensions of raw \gls{TILDA} and harmonised datasets version 5.5 (prior to cleaning in Section~\ref{sc:cleaning_engine}).}
-\label{tab:raw_dataset_shape}
+\caption{Dimensions of raw \gls{TILDA} and harmonised datasets version 5.5 (prior to cleaning in Section~\ref{sc:cleaning_engine}).}\label{tab:raw_dataset_shape}
 \small
 \resizebox{\textwidth}{!}{
 \begin{tabular}{p{3cm} c c c}
 \hline
 \textbf{Dataset} & \textbf{Collection Period} & \textbf{Participants (N)} & \textbf{Raw Variables (N)} \\
 \hline
-Wave 1 \cite{ISSDA/AWCUY3_2025} & 2009--2011 & 8501 & 1619 \\
-Wave 2 \cite{ISSDA/HSBNCU_2025} & 2012--2013 & 7206 & 724 \\
-Wave 3 \cite{ISSDA/9Z4MFF_2025} & 2014--2015 & 6397 & 1029 \\
-Wave 4 \cite{ISSDA/R4BZYX_2025} & 2016 & 5713 & 990 \\
-Wave 5 \cite{ISSDA/JCMO6P_2025} & 2018--2019 & 4978 & 983 \\
-Harmonised \cite{ISSDA/FHM5I8_2025} & 2016 (release) & 8501 & 572 \\
+Wave 1~\cite{ISSDA/AWCUY3_2025} & 2009--2011 & 8501 & 1619 \\
+Wave 2~\cite{ISSDA/HSBNCU_2025} & 2012--2013 & 7206 & 724 \\
+Wave 3~\cite{ISSDA/9Z4MFF_2025} & 2014--2015 & 6397 & 1029 \\
+Wave 4~\cite{ISSDA/R4BZYX_2025} & 2016 & 5713 & 990 \\
+Wave 5~\cite{ISSDA/JCMO6P_2025} & 2018--2019 & 4978 & 983 \\
+Harmonised~\cite{ISSDA/FHM5I8_2025} & 2016 (release) & 8501 & 572 \\
 \hline
 \end{tabular}}
 \end{table}
@@ -71,8 +70,7 @@ Variables from the self completion questionnaire are prefixed with \gls{SCQ}, wh
 
 \begin{table}[htbp]
 \centering
-\caption{\gls{PMF} v5.5 derived variable prefixes \cite{tilda2023pmf}.}
-\label{tab:pmf_prefixes}
+\caption{\gls{PMF} v5.5 derived variable prefixes~\cite{tilda2023pmf}.}\label{tab:pmf_prefixes}
 \begin{tabular}{|l|l|}
 \hline
 \rowcolor{gray!30}
@@ -142,8 +140,7 @@ During manual screening and filtering, variables exceeding exclusion thresholds 
 \begin{figure}[htbp]
 \centering
 \includegraphics[height=1.25\textwidth]{variable_filter_criteria.png}
-\caption{Flowchart of the manual five-step workflow for variable screening and filtering. Placeholder (n) values represent the number of variables at each stage, illustrating the reduction from the raw dataset to the filtered dataset prior to automated preprocessing.}
-\label{fig:variable_filter_criteria}
+\caption{Flowchart of the manual five-step workflow for variable screening and filtering. Placeholder (n) values represent the number of variables at each stage, illustrating the reduction from the raw dataset to the filtered dataset prior to automated preprocessing.}\label{fig:variable_filter_criteria}
 \end{figure}
 
 The retained variables defined in \gls{JSON} files were subsequently used to subset the raw datasets. As shown in Table~\ref{tab:reduced_dataset_shape}, this process yielded a significant reduced dataset for each wave. For instance, in Wave 1, manual filtering reduced the feature space from 1,619 to 809 variables, a 50.03\% reduction. This substantial drop highlights the elimination of non-contributory data (providing no predictive value to the model), ensuring only the \emph{variables of interest} proceed to the automated cleaning engine.
@@ -155,8 +152,7 @@ To further understand the characteristics of these retained variables, the datas
 
 \begin{table}[htbp]
 \centering
-\caption{Input shape for cleaning pipeline (post manual filtering workflow~\ref{fig:variable_filter_criteria}).}
-\label{tab:reduced_dataset_shape}
+\caption{Input shape for cleaning pipeline (post manual filtering workflow~\ref{fig:variable_filter_criteria}).}\label{tab:reduced_dataset_shape}
 \resizebox{\textwidth}{!}{
 \begin{tabular}{p{3cm} c c c}
 \hline
@@ -196,8 +192,7 @@ The gradient \emph{heatmap} integrated at the bottom of Table~\ref{tab:feature_g
 \clearpage
 
 \begin{longtable}{|C{0.04\linewidth}|C{0.225\linewidth}|C{0.225\linewidth}|L{0.3\linewidth}|C{0.1\linewidth}|}
-\caption{Thematic domain grouping of longitudinal features.}
-\label{tab:feature_groups}\\
+\caption{Thematic domain grouping of longitudinal features.}\label{tab:feature_groups}\\
 \hline
 \textbf{ID} & \textbf{Thematic Group} & \textbf{Description} & \textbf{Representative Variable Examples} & \textbf{Total Features} \\
 \hline
