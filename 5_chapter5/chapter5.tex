@@ -1,63 +1,106 @@
-% this file is called up by thesis.tex
-% content in this file will be fed into the main document
+%: ---------------------------------------------------------------------------
+%: CHAPTER 5: EMPIRICAL EVALUATION
+%: ---------------------------------------------------------------------------
+\chapter{Empirical Evaluation}\label{ch:chapter5}
 
-% ------
-% Notes
-% ------
-% Start with Incident Risk (exclude them) for the Baseline. In Chapter 5, add a "Sensitivity Analysis" include them to see how the model's focus shifts. Should we include people who already have a disease in Wave 1?
-%: ----------------------- name of chapter  -------------------------
-\chapter{Empirical Evaluation} \label{ch:chapter5}% top level followed by section, subsection
+\section{Study Design and Evaluation Framework}
 
-\ifpdf
-    \graphicspath{{5_chapter5/figures/PNG/}{5_chapter5/figures/PDF/}{5_chapter5/figures/}}
-\else
-    \graphicspath{{5_chapter5/figures/EPS/}{5_chapter5/figures/}}
-\fi
+\subsection{Study Population and Analysis Sample Definition}
+% Logic: Summarizes final samples used in Chapter 5, building on Chapter 3 rules.[1]
+% Placeholder: Table 5.1 - Participant counts and incident case rates for D1 vs. D2/D3.
+% Include only the sample-defining details necessary for interpreting results.
+
+\subsection{Outcome Definitions (Track A and Track B)}
+% Define Track A composite incident chronic disease outcome.
+% Define Track B disease-specific outcomes.
+% Clarify incidence criteria and any outcome coding rules.
+
+\subsection{Modelling Designs}
+% Logic: Describe D1 (baseline), D2 (multi-wave pooled), D3 (top-20 features), and Track B.
+% Briefly explain the role of each design in the evaluation framework.
+% Briefly justify the use of XGBoost for Track B.
+
+\subsection{Participant-Level Data Splitting and Leakage Prevention}
+% Logic: Detail the core strength—grouped splitting to prevent person-level leakage.[4, 2]
+% Placeholder: Description of grouped CV strategy and automated pipeline isolation.[5]
+% State that participants do not appear in both training and test sets.
+
+\subsection{Evaluation Protocol and Decision Metrics}
+% Logic: Define why AUC, Brier, and F1 were chosen for this specific task.[6, 7]
+% Mention the use of 95% confidence intervals to ensure statistical rigor.
+% Briefly explain validation strategy and threshold selection.
+% Mention uncertainty estimation if applicable, e.g. bootstrap confidence intervals.
+
+\section{Main Results: Predictive Performance}
+
+\subsection{Track A: Incident Chronic Disease (Composite Outcome)}
+% Logic: Surgical presentation of D1, D2, and D3 performance results.
+% Core table comparing AUC, Brier score, and F1 for LR, XGB, RF, and MLP across D1, D2, and D3.
+\subsubsection{D1: Baseline (Wave 1 $\rightarrow$ Wave 5)}
+
+\subsubsection{D2: Multi-Wave Pooled}
+
+\subsubsection{D3: Reduced Feature Set (Top 20)}
+
+\subsubsection{Summary of Track A Performance}
+
+\subsection{Track B: Disease-Specific Prediction}
+% Present performance results for disease-specific outcomes.
+% Include a table summarising AUC, Brier score, and F1 for each condition.
+% Note that XGBoost is the primary model family, where applicable.
+% In Appendix add the feature label and endoded values
+
+\section{Comparative and Interpretive Findings}
+
+\subsection{Temporal Data Improves Predictive Performance}
+% Logic: Comparison of D1 (Baseline) vs D2 (Multi-Wave).[8, 9]
+% Placeholder: Plot showing the "Temporal Lift" in ROC space.
+
+\subsection{Limited Impact of Model Choice}
+% Compare LR, XGB, RF, and MLP.
+% Discuss whether performance differences are small relative to data effects.
+
+\subsection{Domain-Specific Predictive Gains}
+% Which thematic domains contribute most (brief, not duplicate ablation) feature-group contribution analysis.
+% Discuss which domains add the most predictive value.
+
+\section{Model Evaluation and Interpretation}
+
+\subsection{Calibration (Reliability Curves) and Threshold Analysis}
+% Logic: Assess the agreement between predicted risk and observed incidence.
+% Placeholder: Reliability plots for the best-performing models in Track A.
+% Present sensitivity/specificity or precision/recall trade-offs.
+% Include decision curve analysis if available.
+% Discuss the range of thresholds where the model provides net benefit.
+
+\subsection{Clinical Utility and Decision Curve Analysis (DCA)}
+% Logic: Quantify "Net Benefit" beyond default clinical strategies.[10, 11, 12]
+% Placeholder: Decision Curves showing threshold ranges for positive intervention.
+
+\subsection{Feature Importance and Model Interpretability}
+
+\subsection{Feature Ablation and Contribution Analysis} % TODO - use the domain mappings in the trackb_dynamic_addon notebook - TODO coding 
+% Here is where you show AUC drop when removing nutrition, PA, etc.
+% Present performance changes when domain groups are removed. 
+% Discuss the contribution of nutrition, physical activity, cognitive, and social features.
+
+\section{Robustness and Sensitivity Analyses}
+% Logic: Sensitivity analysis including/excluding participants with baseline disease.
+% Placeholder: Table comparing "incident-only" vs "prevalent-inclusive" models.
+% Compare pooled cohort versus restricted fixed cohort.
+% Report subgroup performance by age, sex, and other relevant characteristics.
 
 
+\section{Error Analysis: Clinical Failure Modes}
 
+\subsection{False Positive and False Negative Profiling}
+% Logic: Characterize misclassified cases (e.g., acute onsets vs. "resilient" high-risk).
+% Discuss clinical consequences of missed diagnoses (False Negatives).[13, 14]
 
-% \section{References}
-
-% Open the file `references\_myphd' with BibTex. The file is located in `/7\_references/'
-
-% The file contains a series of templates for the proper formatting of references according to the Harvard referencing style.
-% Click on each reference in the text below to see how Latex has formatted the reference on the References section.
-
-% \begin{itemize}
-% \item \textbf{Book}: (\Citealt[p. 10]{mybook}) (page number required only if referring to an in-text quote)
-% \item \textbf{Book Chapter}: (\Citealt{mybookchapter})
-% \item \textbf{Book Contribution}: (\Citealt{mybookcontribution})
-% \item \textbf{MUSIC CD/DVD}: (\Citealt{mycddvd})
-% \item \textbf{Journal Article}: (\Citealt{myjournal})
-% \item \textbf{Patent}: (\Citealt{mypatent})
-% \item \textbf{PhD/Master Dissertation}: (\Citealt{myphd})
-% \item \textbf{Conference Paper}: (\Citealt{myproceeding})
-% \item \textbf{Technical Report}: (\Citealt{mytechreport})
-% \item \textbf{Unpublished Report}: (\Citealt{myunpublishedreport})
-% \item \textbf{Web Videos}(\Citealt{mywebvideos}) (. . . not the name of the person who uploaded the video though)
-% \item \textbf{Web Paper}: (\Citealt{mywebpaper}) 
-% \item \textbf{Web Journal Article}: (\Citealt{mywebarticlejournal})
-% \item \textbf{Webpage}: (\Citealt{mywebpage})
-% \item \textbf{Downloaded Images or Sounds}: (\Citealt{mydownloadedimage})
-% \end{itemize}
-
-
-
-
-% Surname \citeyearpar{mybookchapter} said that . . .
-
- 		
-
-
-
-
-
-
-
-
+\section{Summary of Empirical Findings}
+% Provide a concise bullet-point summary of the key findings.
+% Link the results forward to Chapter 6.
 
 % ---------------------------------------------------------------------------
 %: ----------------------- end of thesis sub-document ------------------------
 % ---------------------------------------------------------------------------
-
