@@ -3,103 +3,81 @@
 %: ---------------------------------------------------------------------------
 \chapter{Empirical Evaluation}\label{ch:chapter5}
 
-\section{Study Design and Evaluation Framework}
+\section{Modeling and Evaluation Framework}
+This section specifies how models were constructed and evaluated in this chapter, including the final analysis samples, outcome definitions, modelling designs, and evaluation procedures, building on the data preparation described in Chapters~\ref{ch:chapter3} and~\ref{ch:chapter4}.
 
-\subsection{Study Population and Analysis Sample Definition}
-% Logic: Summarizes final samples used in Chapter 5, building on Chapter 3 rules.[1]
-% Placeholder: Table 5.1 - Participant counts and incident case rates for D1 vs. D2/D3.
-% Include only the sample-defining details necessary for interpreting results.
+For all incident prediction, the outcome is defined per task and transition (see Section~5.1.1). Individuals with the target condition present at the start of a transition were excluded so that only at-risk observations contributed to model training and evaluation. This rule was applied consistently across all designs and for both Track A (composite outcome) and Track B (disease-specific outcomes).
+
+Final analysis samples differed by design due to data structure. The baseline design (D1) uses a single transition (Wave 1$\rightarrow$Wave 5). The pooled multi-wave designs (D2 and D3) aggregate all eligible consecutive transitions (e.g., W1$\rightarrow$W2, W2$\rightarrow$W3, W3$\rightarrow$W4, W4$\rightarrow$W5), allowing participants to contribute multiple at-risk observations. Sample sizes and incident rates are summarised in Table~5.1.
+
+\begin{table}[ht]
+\centering
+\caption{Analysis samples by modelling design}\label{tab:analysis_samples}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|l|c|c|c|}
+\hline
+\textbf{Design} & \textbf{Observations (n)} & \textbf{Incident cases (n)} & \textbf{Incidence rate (\%)} \\ \hline
+D1: Baseline (W1$\rightarrow$W5) & 916 & 248 & 27.07 \\ \hline
+D2: Multi-wave pooled & 14{,}296 & 3{,}212 & 22.5 \\ \hline
+D3: Top-20 (pooled) & 14{,}296 & 3{,}212 & 22.5 \\ \hline
+\end{tabular}
+}
+\end{table}
 
 \subsection{Outcome Definitions (Track A and Track B)}
-% Define Track A composite incident chronic disease outcome.
-% Define Track B disease-specific outcomes.
-% Clarify incidence criteria and any outcome coding rules.
+Two complementary prediction tasks were defined.
 
-\subsection{Modelling Designs}
-% Logic: Describe D1 (baseline), D2 (multi-wave pooled), D3 (top-20 features), and Track B.
-% Briefly explain the role of each design in the evaluation framework.
-% Briefly justify the use of XGBoost for Track B.
+\begin{enumerate}
+	\item \textbf{Track A:} Focused on incident chronic disease as a composite binary outcome. This was operationalised using a harmonised indicator (ICD10\_ANY), defined as the first occurrence of any chronic disease recorded across follow-up waves. Individuals were labelled as 1 if an incident diagnosis occurred and 0 if they remained disease-free throughout the observation period. 
+	\item \textbf{Track B:} Focused on disease-specific prediction tasks. Separate models were developed for individual conditions, including circulatory disease (ICD10\_09), diabetes (ph726\_01), and related outcomes. For each task, the outcome was defined as the first recorded diagnosis of the specific condition, with participants excluded if the condition was present at the baseline of the corresponding transition.
+\end{enumerate}	
+
+All outcome variables were harmonised across waves to ensure consistency. Incident status was defined strictly based on the absence of the condition at baseline and its occurrence at follow-up, ensuring temporal validity of the prediction task. % placeholer:add a mention for the variables mentioned in thesis we need to add them to appendix showing the feature, label and encoded values for the outcome definitions. This will be important for reproducibility and transparency, especially for Track B where multiple disease-specific outcomes are modelled.
+
+% Placeholder: Table of outcome definitions and coding rules for all modeled conditions.
+
+\subsection{Modelling Designs} % why didnt we mention ph003 etc it played a roll in the clasisfiairton of who is freee of disease at baseline and who is not. We can add a table in the appendix showing the variables used to define the outcome and the coding rules for each condition. especially for d2 and d3used ph003 consitley d1 didnt important to shoscase is the use of the variable for defining the outcome and the at-risk population.
+Three primary modelling designs were implemented to address distinct analytical objectives:
+
+\begin{itemize}
+	\item \textbf{D1 (Baseline):} Models trained on a single transition from Wave 1 (baseline) to Wave 5 (follow-up), using only participants free of the outcome at baseline.
+	\item \textbf{D2 (Multi-wave pooled):} Models trained on pooled consecutive transitions (e.g., W1$\rightarrow$W2, W2$\rightarrow$W3, etc.), allowing participants to contribute multiple transitions if they remained at risk. This design leverages longitudinal structure to increase sample size and capture temporal dynamics.
+	\item \textbf{D3 (Top-20 features):} A reduced version of D2 but restricted to the 20 most informative predictors identified using XGBoost gain importance, enabling evaluation of model simplicity and feature efficiency. 
+\end{itemize}
+
+Track B (disease-specific) models followed the D2 or D3 design, with XGBoost as the primary model family due to its superior performance and flexibility in handling class imbalance and feature interactions.
+
+Each design was chosen to address specific research questions: D1 for baseline prediction, D2 for leveraging longitudinal information, and D3 for evaluating the impact of feature reduction.
 
 \subsection{Participant-Level Data Splitting and Leakage Prevention}
-% Logic: Detail the core strength—grouped splitting to prevent person-level leakage.[4, 2]
-% Placeholder: Description of grouped CV strategy and automated pipeline isolation.[5]
-% State that participants do not appear in both training and test sets.
+
+To prevent information leakage and ensure valid generalisation, all data splitting was performed at the participant level. Individuals were assigned exclusively to either the training, validation, or test set, ensuring that no participant contributed data to more than one split. This approach is particularly important in longitudinal settings, where repeated observations from the same individual could otherwise inflate performance through identity leakage. % lets back this using a paper reference on the importance of participant-level splitting in longitudinal data to prevent leakage and ensure valid performance estimation.
+
+In addition, strict pipeline isolation was enforced. All preprocessing steps, including imputation, scaling, and feature selection, were fitted using training data only and subsequently applied to validation and test sets. This ensures that no information from the evaluation data influenced model development or tuning.
+Temporal ordering was also preserved in all prediction tasks, with predictors drawn only from baseline or prior waves and outcomes defined at subsequent follow-up waves, eliminating any risk of look-ahead bias.
 
 \subsection{Evaluation Protocol and Decision Metrics}
-% Logic: Define why AUC, Brier, and F1 were chosen for this specific task.[6, 7]
-% Mention the use of 95% confidence intervals to ensure statistical rigor.
-% Briefly explain validation strategy and threshold selection.
-% Mention uncertainty estimation if applicable, e.g. bootstrap confidence intervals.
+Model performance was assessed using a combination of discrimination, calibration, and classification metrics. The primary metric was the \gls{AUC}, chosen for its robustness to class imbalance and its interpretability in risk prediction contexts.
 
-\section{Main Results: Predictive Performance}
+Calibration was evaluated using the Brier score, which measures the accuracy of predicted probabilities, while classification performance was summarised using the F1 score, capturing the balance between precision and recall. Additional metrics, including sensitivity, specificity, and confusion matrices, were used to support interpretation.
 
-\subsection{Track A: Incident Chronic Disease (Composite Outcome)}
-% Logic: Surgical presentation of D1, D2, and D3 performance results.
-% Core table comparing AUC, Brier score, and F1 for LR, XGB, RF, and MLP across D1, D2, and D3.
-\subsubsection{D1: Baseline (Wave 1 $\rightarrow$ Wave 5)}
+Performance was reported as point estimates for all designs. For the Track B add-on analysis, 95\% confidence intervals for performance deltas were estimated via bootstrap resampling.
 
-\subsubsection{D2: Multi-Wave Pooled}
+% Placeholder: Table of evaluation metrics and confidence intervals for all models and designs. maybe add a table of the ones used right here.
+\begin{table}[ht]
+\centering
+\caption{Evaluation metrics used in this chapter}\label{tab:metrics}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Metric} & \textbf{Purpose} \\ \hline
+AUC & Discrimination (ranking ability) \\ \hline
+Brier score & Calibration (probability accuracy) \\ \hline
+F1 score & Balance of precision and recall \\ \hline
+Sensitivity/Specificity & Threshold-based performance \\ \hline
+Confusion matrix & Error breakdown \\ \hline
+\end{tabular}
+\end{table}
 
-\subsubsection{D3: Reduced Feature Set (Top 20)}
-
-\subsubsection{Summary of Track A Performance}
-
-\subsection{Track B: Disease-Specific Prediction}
-% Present performance results for disease-specific outcomes.
-% Include a table summarising AUC, Brier score, and F1 for each condition.
-% Note that XGBoost is the primary model family, where applicable.
-% In Appendix add the feature label and endoded values
-
-\section{Comparative and Interpretive Findings}
-
-\subsection{Temporal Data Improves Predictive Performance}
-% Logic: Comparison of D1 (Baseline) vs D2 (Multi-Wave).[8, 9]
-% Placeholder: Plot showing the "Temporal Lift" in ROC space.
-
-\subsection{Limited Impact of Model Choice}
-% Compare LR, XGB, RF, and MLP.
-% Discuss whether performance differences are small relative to data effects.
-
-\subsection{Domain-Specific Predictive Gains}
-% Which thematic domains contribute most (brief, not duplicate ablation) feature-group contribution analysis.
-% Discuss which domains add the most predictive value.
-
-\section{Model Evaluation and Interpretation}
-
-\subsection{Calibration (Reliability Curves) and Threshold Analysis}
-% Logic: Assess the agreement between predicted risk and observed incidence.
-% Placeholder: Reliability plots for the best-performing models in Track A.
-% Present sensitivity/specificity or precision/recall trade-offs.
-% Include decision curve analysis if available.
-% Discuss the range of thresholds where the model provides net benefit.
-
-\subsection{Clinical Utility and Decision Curve Analysis (DCA)}
-% Logic: Quantify "Net Benefit" beyond default clinical strategies.[10, 11, 12]
-% Placeholder: Decision Curves showing threshold ranges for positive intervention.
-
-\subsection{Feature Importance and Model Interpretability}
-
-\subsection{Feature Ablation and Contribution Analysis} % TODO - use the domain mappings in the trackb_dynamic_addon notebook - TODO coding 
-% Here is where you show AUC drop when removing nutrition, PA, etc.
-% Present performance changes when domain groups are removed. 
-% Discuss the contribution of nutrition, physical activity, cognitive, and social features.
-
-\section{Robustness and Sensitivity Analyses}
-% Logic: Sensitivity analysis including/excluding participants with baseline disease.
-% Placeholder: Table comparing "incident-only" vs "prevalent-inclusive" models.
-% Compare pooled cohort versus restricted fixed cohort.
-% Report subgroup performance by age, sex, and other relevant characteristics.
-
-
-\section{Error Analysis: Clinical Failure Modes}
-
-\subsection{False Positive and False Negative Profiling}
-% Logic: Characterize misclassified cases (e.g., acute onsets vs. "resilient" high-risk).
-% Discuss clinical consequences of missed diagnoses (False Negatives).[13, 14]
-
-\section{Summary of Empirical Findings}
-% Provide a concise bullet-point summary of the key findings.
-% Link the results forward to Chapter 6.
 
 % ---------------------------------------------------------------------------
 %: ----------------------- end of thesis sub-document ------------------------
