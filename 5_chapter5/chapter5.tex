@@ -1,40 +1,48 @@
-%: ---------------------------------------------------------------------------
-%: CHAPTER 5: EMPIRICAL EVALUATION
-%: ---------------------------------------------------------------------------
+% ---------------------------------------------------------------------------
+% CHAPTER 5: EMPIRICAL EVALUATION
+% ---------------------------------------------------------------------------
 \chapter{Empirical Evaluation}\label{ch:chapter5}
 
-\section{Modeling and Evaluation Framework}
+\section{Model and evaluation framework}
 This section defines the modelling and evaluation setup used throughout this chapter, including model families and designs, analysis samples, outcome definitions, and evaluation procedures, building directly on the prepared datasets from Chapters~\ref{ch:chapter3} and~\ref{ch:chapter4}.
 
-The evaluation is based on participants aged 50–-80 years (mean age: 57.8). To ensure that the task reflects incident \emph{new-onset} disease, individuals with the target condition present at the start of a transition were excluded, leaving only \emph{at risk} observations for training and testing.
+The evaluation is based on participants aged 50--80 years with a mean age of 59. To ensure that the task reflects incident \emph{new onset} disease, individuals with the target condition present at the start of a transition were excluded, leaving only \emph{at risk} observations for training and testing. This rule was applied consistently across all designs and for both Track A (composite outcome) and Track B (disease-specific outcomes).
 
-For all incident prediction, the outcome is defined per task and transition (see Section~\ref{sec:outcome_definitions}). Individuals with the target condition present at the start of a transition were excluded so that only at-risk observations contributed to model training and evaluation. This rule was applied consistently across all designs and for both Track A (composite outcome) and Track B (disease-specific outcomes).
+For all incident prediction, the outcome is defined per task and transition (see Section~PLACEHOLDER).  
 
-Final analysis samples differed by design and tracks due to data structure. The baseline design (D1) uses a single transition (Wave 1$\rightarrow$Wave 5). The pooled multi-wave designs (D2 and D3) aggregate all eligible consecutive transitions (e.g., W1$\rightarrow$W2, W2$\rightarrow$W3, W3$\rightarrow$W4, W4$\rightarrow$W5), allowing participants to contribute multiple at-risk observations. Sample sizes and incident rates are summarised in Table~\ref{tab:analysis_samples}. % mention track b doesnt use these n because they are disease-specific and the at-risk population is defined differently for each condition, but we can add a table in the appendix showing the sample sizes and incident rates for each disease-specific model in Track B to provide transparency and context for those analyses. Also mention the years dont just say w1->5 mentun teh years..a nd for teh w1->2,w2->w3 lets say an avergae of 2 years it shows the time series differecne right..
+Final analysis samples differed by design and tracks due to data structure. The baseline design (D1) uses a single transition (Wave 1$\rightarrow$Wave 5), a follow-up period of approximately 8~years. The pooled multi-wave designs (D2 and D3) aggregate all eligible consecutive transitions (W1$\rightarrow$W2, W2$\rightarrow$W3, W3$\rightarrow$W4, W4$\rightarrow$W5) each interval lasts about 2~years, capturing shorter term dynamics. Sample sizes and incident rates are summarised in Table~\ref{tab:analysis_samples}. For Track B (disease-specific), sample sizes vary by condition. 
+An appendix table (Appendix~incident\_rate\_PLACEHOLDER) provides the number of observations and incident rates for each disease specific model.
 
-\subsection{Model Families}
+\subsection{Model families}
 Four supervised learning algorithms were used across all main designs (D1, D2, D3):
 
 \begin{itemize}
     \item \textbf{Logistic Regression (LR)} – a linear baseline with built-in interpretability.
-    \item \textbf{XGBoost} – a gradient-boosted tree ensemble, chosen for its strong performance on structured data and handling of class imbalance.
+    \item \textbf{XGBoost} – a gradient boosted tree ensemble.
     \item \textbf{Random Forest (RF)} – a bagged tree ensemble, robust to overfitting.
     \item \textbf{Multi-Layer Perceptron (MLP)} – a simple neural network to capture non-linear interactions.
 \end{itemize}
 
-For disease-specific tasks (Track B), XGBoost was the primary model due to its consistently strong performance in preliminary experiments across the 3 designs in Track A. % Palceholder: see subsection xxx /appendix where we display the table perfomances across all model families and designs, we can add a summary table here showing the overall performance of each model family across all designs to justify the choice of XGBoost for Track B.
+A summary table in Appendix~model\_performance\_PLACEHOLDER shows the performance of all four families across D1/D2/D3, justifying this choice.
 
-\subsection{Outcome Definitions (Track A and Track B)}
+\subsection{Outcome definitions (Track A and Track B)}
 Two complementary prediction tasks were defined.
 
 \paragraph{Track A: Composite incident chronic disease.}
-Track A uses a binary outcome indicating the first occurrence of any chronic disease during follow-up. The operationalisation differs slightly between designs to align with data availability and reproducibility:
+Track A uses a binary outcome indicating the first occurrence of any chronic disease during follow-up.
 \begin{itemize}
-    \item In the baseline design (D1), the outcome was derived from harmonised \texttt{ICD10\_ANY} (clinical diagnoses) because both Waves~1 and~5 contain reliable ICD-10 records. 
-    \item In the pooled multi-wave designs (D2 and D3), the outcome was defined using \texttt{ph003} (self-reported chronic illness), which is available for every wave and enables consistent application across all transitions. The at-risk population in D2/D3 was also identified using \texttt{ph003} (i.e., participants with \texttt{ph003}=0 at the start of a transition were eligible).
-    \item Correlation analysis justifies this proxy: \texttt{ph003} and \texttt{ICD10\_ANY} show an agreement of 59.5\% (Kappa: 0.167), suggesting that ph003 captures a distinct signal of self-perceived health decline that precedes clinical diagnosis.
+    \item In (D1), the outcome was derived from a composite of self-reported conditions recorded in Wave 1 (e.g., eye conditions (\texttt{ph105\_x}), cardiovascular conditions (\texttt{ph201\_xx}), diabetes related conditions (\texttt{ph216\_xx}), general chronic conditions (\texttt{ph301\_xx}), limiting long term illness (\texttt{DISlongterm}), and self-reported chronic illness status (\texttt{ph003})). Incident cases \texttt{ICD10\_ANY} uses the \gls{WHO} \emph{International Statistical Classification of Diseases and Related Health Problems 10th Revision} in Wave 5 (e.g., mental and behavioural disorders (\texttt{ICD10\_05}), musculoskeletal diseases (\texttt{ICD10\_13})). 
+		\begin{itemize}
+			\item No single \texttt{ICD10\_ANY} variable exists in Wave 1.
+			\item PHYSICAL \& COGNITIVE HEALTH (PH) variables are self-reported responses that reflect prior doctor diagnoses (“has a doctor ever told you”), whereas \texttt{ph003} captures a general self-assessment of long term illness without requiring clinical confirmation
+			\item All feature scoring schemes and labels are provided in Appendix~PLACEHOLDER.
+    	\end{itemize}
+    \item In (D2 and D3), the outcome was defined using \texttt{ph003}, which is available for every wave and enables consistent application across all transitions. The at risk population in D2/D3 was also identified using \texttt{ph003} (i.e., participants with \texttt{ph003}=0 at the start of a transition were eligible).
+    \item The agreement analysis betwen \texttt{ph003} and \texttt{ICD10} indicators showed moderate raw agreement of 59.5\% but poor aggreement with \emph{Cohen's Kappa for agreement beyond chance} (Kappa: 0.167), supporting the interpretation of \texttt{ph003} as a distinct but related proxy for self-perceived chronic illness status.
 \end{itemize}
-The harmonised composite outcome is the same conceptual construct; the choice of source variable reflects pragmatic data coverage. Appendix~\ref{app:outcome_coding} provides the exact variables and coding rules for both approaches.
+A complete list of features, outcome variables, and their coding schemes is provided in Appendix~PLACEHOLDER.
+
+%ToDo: I need add missningness before this table or insinde modelling desing which is weak: Features with more than 50\% missing values were excluded prior to model fitting. Where imputation was required, it was performed using training data only, with the same parameters applied to validation and test sets to prevent information leakage.
 
 \begin{table}[ht]
 \centering
@@ -44,56 +52,41 @@ The harmonised composite outcome is the same conceptual construct; the choice of
 \hline
 \textbf{Design} & \textbf{Observations (n)} & \textbf{Incident cases (n)} & \textbf{Incidence rate (\%)} \\ \hline
 D1: Baseline (W1$\rightarrow$W5) & 916 & 248 & 27.07 \\ \hline
-D2: Multi-wave pooled & 14{,}296 & 3{,}212 & 22.5 \\ \hline
-D3: Top-20 (reduced) & 14{,}296 & 3{,}212 & 22.5 \\ \hline
+D2: Multi-wave pooled & 14,296 & 3,212 & 22.5 \\ \hline
+D3: Top-20 (reduced) & 14,296 & 3,212 & 22.5 \\ \hline
 \end{tabular}
 }
 \end{table}
 
-\paragraph{Track B: Disease-specific prediction.}
-Track B targets individual conditions, (e.g., (\texttt{ICD10\_09}) circulatory disease, (\texttt{ph726\_01}) diabetes, and (\texttt{DISlongterm}) functional decline). For each task, the outcome was defined as the first recorded diagnosis of the specific condition, and participants were excluded if the condition was present at the baseline of the corresponding transition. Coding details for each disease-specific outcome are also given in Appendix~PLACEHOLDER.
+\paragraph{Track B: Disease specific prediction.}
+Track B targets individual chronic disease outcomes,, e.g., circulatory disease (\texttt{ICD10\_09}), diabetes (\texttt{ph726\_01}), and functional decline (\texttt{DISlongterm}). For each task, the outcome was defined as the first recorded diagnosis of the specific condition, and participants were excluded if the condition was present at the baseline of the corresponding transition. Coding details for each disease specific outcome are provided in Appendix~PLACEHOLDER.
 
-\subsection{Modelling Designs}
+\subsection{Modelling designs}\label{}
 
-Three primary modelling designs were implemented to address distinct analytical objectives:
+Three primary modelling designs were implemented to address and assess the effect of baseline only prediction, pooled longitudinal prediction, and feature reduction, respectively.
 
 \begin{itemize}
-\item \textbf{D1 (Baseline):} Single transition from Wave~1 to Wave~5. Only participants free of the outcome at Wave~1 were included. Feature selection: SelectKBest ($k=20$). Models: LR, XGB, RF, MLP.
+\item \textbf{D1 (Baseline):} Single transition from Wave 1 to Wave 5. Only participants free of the outcome at Wave 1 were included. Feature selection: SelectKBest ($k=20$). Models: LR, XGB, RF, MLP.
 \item \textbf{D2 (Multi-wave pooled):} All eligible consecutive transitions (W1$\rightarrow$W2, W2$\rightarrow$W3, W3$\rightarrow$W4, W4$\rightarrow$W5) stacked together. A wave-transition indicator was included as a feature. Feature selection: SelectKBest ($k=100$). Models: LR, XGB, RF, MLP.
 \item \textbf{D3 (Top-20 features):} Same pooled structure as D2, but restricted to the 20 most informative predictors identified by XGBoost gain importance from D2. No additional feature selection was applied. Models: LR, XGB, RF, MLP.
 \end{itemize}
 
-Track B (disease-specific) models followed either the D2/D3 design, with XGBoost as the primary model family due to its superior handling of class imbalance and feature interactions. % wrong reason it was simply chosen because of its superior performance in Track A across all D2/3 wa sthe best performing model family, we can add a table in the appendix showing the overall performance of each model family across all designs to justify the choice of XGBoost for Track B.
+Track B (disease specific) models followed either the D2 or D3 design, with XGBoost as the primary model family because it performed best in Track A (D2/D3). Each design was chosen to address specific research questions: D1 for baseline prediction, D2 for leveraging longitudinal information, and D3 for evaluating the impact of feature reduction with hyperparameter tuning.
 
-Each design was chosen to address specific research questions: D1 for baseline prediction, D2 for leveraging longitudinal information, and D3 for evaluating the impact of feature reduction with hyperparameters tuning.
+\subsection{Participant level data splitting and leakage prevention}
 
-\subsection{Participant-Level Data Splitting and Leakage Prevention}
-
-To prevent identity based leakage where a model memorises a participant's specific health signature rather than learning general patterns all splitting was performed at the \textbf{participant level}. Individuals were assigned exclusively to either the training, validation, or test set, ensuring that no participant contributed data to more than one split. This approach is particularly important in longitudinal settings, where repeated observations from the same individual could otherwise inflate performance through identity leakage. % cite Saeb2017 et al.
+To prevent identity based leakage where a model memorises a participant's specific health signature rather than learning general patterns, all splitting was performed at the \textbf{participant level}. Individuals were assigned exclusively to either the training, validation, or test set, ensuring that no participant contributed data to more than one split. This approach is particularly important in longitudinal settings, where repeated observations from the same individual could otherwise inflate performance through identity leakage.% Saeb2017.
 
 Additional leakage prevention measures included:
 \begin{itemize}
-    \item \textbf{Pipeline isolation:} All preprocessing steps (imputation, scaling, selectkbest (feature selection)) were fitted using training data only and then applied to validation and test sets.
-    \item \textbf{Temporal ordering:} Predictors were drawn only from baseline or prior waves $\rightarrow$ outcomes were defined at subsequent follow-up waves, eliminating look ahead bias.
-    \item \textbf{Exclusion of direct proxies:} When predicting a specific disease, variables that directly indicated the same condition (proxies for the outcome) (e.g., \texttt{ph201\_01} for hypertension) were removed from the predictor set. % add the outcome in this sentence that related to ph201_01
-\subsection{Evaluation Protocol and Decision Metrics}
-Model performance was assessed using a combination of discrimination, calibration, and classification metrics. The primary metric was the \gls{AUC}, chosen for its robustness to class imbalance and its interpretability in risk prediction contexts.
+    \item \textbf{Pipeline isolation:} All preprocessing steps (median imputation, scaling, SelectKBest) were fitted using training data only and then applied to validation and test sets.
+    \item \textbf{Temporal ordering:} Predictors were drawn only from baseline (start of a transition) \emph{Wave n} to predict outcomes at follow-up \emph{Wave n+1} eliminating look ahead bias.
+    \item \textbf{Exclusion of direct proxies:} When predicting a specific disease (e.g., hypertension), variables that directly indicated the same condition (e.g., \texttt{ph201\_01}) were removed from the predictor set.
+\end{itemize}
 
-Calibration was evaluated using the Brier score, which measures the accuracy of predicted probabilities, while classification performance was summarised using the F1 score, capturing the balance between precision and recall n the presence of class imbalance e.g., (22–-27\%). Additional metrics, including sensitivity, specificity, and confusion matrices, were used to support interpretation.
+\subsection{Evaluation protocol and decision metrics}
+Model performance was assessed using a combination of discrimination, calibration, and classification metrics. The primary metric was the \gls{AUC}, chosen for its robustness to class imbalance and its interpretability in risk prediction contexts. Model performance was estimated using 5-fold stratified cross-validation on the training set, which was also used as the internal resampling strategy for model comparison across all designs. For models that required hyperparameter tuning (D3),  a grid search was conducted within the same cross-validation framework.
+
+Calibration was evaluated using the Brier score, which measures the accuracy of predicted probabilities, while classification performance was summarised using the F1 score, capturing the balance between precision and recall in the presence of class imbalance (e.g., 22-27\% incidence). Additional metrics, including sensitivity, specificity, and confusion matrices, were used to support interpretation.
 
 For the Track B add-on analysis, 95\% confidence intervals for performance deltas were estimated via bootstrap resampling to ensure statistical significance.
-
-\begin{table}[ht]
-\centering
-\caption{Evaluation metrics used in this chapter}\label{tab:metrics}
-\begin{tabular}{|l|l|}
-\hline
-\textbf{Metric} & \textbf{Purpose} \\ \hline
-AUC & Discrimination (ranking ability) \\ \hline
-Brier score & Calibration (probability accuracy) \\ \hline
-F1 score & Balance of precision and recall \\ \hline
-Sensitivity/Specificity & Threshold based performance \\ \hline
-Confusion matrix & Error breakdown \\ \hline
-\end{tabular}
-\end{table}
-
