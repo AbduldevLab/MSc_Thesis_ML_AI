@@ -8,8 +8,9 @@ This section defines the modelling and evaluation setup used throughout this cha
 
 The evaluation is based on participants aged between 50--80 years with a mean age of 57.8. To ensure that the task reflects incident \emph{new onset} disease, individuals with the target condition present at the start of a transition were excluded, leaving only \emph{at risk} observations for training and testing. This rule was applied consistently across all designs and for both Track A (composite outcome) and Track B (disease specific outcomes).
 
-Final analysis samples differed by design and tracks due to data structure. The baseline design (D1) uses a single transition (Wave 1$\rightarrow$Wave 5), a follow-up period of approximately 8~years. The pooled multi-wave designs (D2 and D3) aggregate all eligible consecutive transitions (W1$\rightarrow$W2, W2$\rightarrow$W3, W3$\rightarrow$W4, W4$\rightarrow$W5) each interval lasts about 2~years, capturing shorter term dynamics. Sample sizes and incident rates are summarised in Table~\ref{tab:analysis_samples}. For Track B (disease specific), sample sizes vary by condition. 
-An appendix table (Appendix~incident\_rate\_PLACEHOLDER) provides the number of observations and incident rates for each disease specific model.
+Final analysis samples differed by design and tracks due to data structure. The baseline design (D1) uses a single transition (Wave 1$\rightarrow$Wave 5), a follow-up period of approximately 8~years. The pooled multi-wave designs (D2 and D3) aggregate all eligible consecutive transitions (W1$\rightarrow$W2, W2$\rightarrow$W3, W3$\rightarrow$W4, W4$\rightarrow$W5), each spanning approximately 2 years, thereby capturing shorter term dynamics.
+
+Sample sizes and incident rates are summarised in Table~\ref{tab:analysis_samples}. For Track B (disease specific), sample sizes vary by condition. An appendix table (Appendix~incident\_rate\_PLACEHOLDER) provides the number of observations and incident rates for each disease specific model.
 
 \subsection{Outcome definitions (Track A and Track B)}
 Two complementary prediction tasks were defined.
@@ -23,7 +24,7 @@ Track A uses a binary outcome indicating the first occurrence of any chronic dis
 			\item PHYSICAL \& COGNITIVE HEALTH (PH) variables are self-reported responses that reflect prior doctor diagnoses (“has a doctor ever told you”), whereas \texttt{ph003} captures a general self-assessment of long term illness without requiring clinical confirmation
 			\item All feature scoring schemes and labels are provided in Appendix~PLACEHOLDER.
     	\end{itemize}
-    \item In D2 and D3, the outcome was defined using \texttt{ph003}, which is available for every wave and enables consistent application across all transitions. The at risk population in D2/D3 was also identified using \texttt{ph003} (i.e., participants with \texttt{ph003}=0 at the start of a transition were eligible).
+    \item In D2 and D3, \texttt{ph003} was used to both define the outcome and identify the at risk cohort (\texttt{ph003}=0) at the start of each transition, as it is available in every wave and enables consistent application across all transitions.
 \end{itemize}
 
 \begin{table}[ht]
@@ -44,7 +45,7 @@ D3: Top-20 (reduced) & 14,296 & 3,212 & 22.5 \\ \hline
 Track B targets individual chronic disease outcomes, e.g., circulatory disease (\texttt{ICD10\_09}), diabetes (\texttt{ph726\_01}), and functional decline (\texttt{DISlongterm}). For each task, the outcome was defined as the first recorded diagnosis of the specific condition, and participants were excluded if the condition was present at the baseline of the corresponding transition. Coding details for each disease specific outcome are provided in Appendix~PLACEHOLDER.
 
 \subsection{Modelling designs}\label{sc:modelling_designs}
-Across all designs, four supervised learning algorithms were used across all main designs (D1, D2, D3):
+Four supervised learning algorithms were evaluated across all main Track A designs (D1, D2, D3) to compare linear and non-linear model families under the same evaluation framework.
 
 \begin{itemize}
     \item \textbf{\gls{LR}} – a linear baseline model to capture additive effects and provide interpretability through coefficients and odds ratios, with regularisation (e.g., L1/Lasso) to mitigate overfitting in high dimensional settings.
@@ -58,13 +59,13 @@ The three primary modelling designs were implemented to address and assess the e
 \begin{itemize}
 \item \textbf{D1 (Baseline):} Single transition from Wave 1 to Wave 5. Only participants free of the outcome at Wave 1 were included. Feature selection: SelectKBest ($k=20$). All models were trained with default hyperparameters to establish a baseline performance for each model family.
 \item \textbf{D2 (Multi-wave pooled):} All eligible consecutive transitions (W1$\rightarrow$W2, W2$\rightarrow$W3, W3$\rightarrow$W4, W4$\rightarrow$W5) stacked together. A wave transition indicator was included as a feature. Feature selection: SelectKBest ($k=100$) applied to the pooled dataset.
-\item \textbf{D3 (Top-20 features):} Same pooled structure as D2, but restricted to the 20 most informative predictors identified by \gls{XGB} gain importance from D2. No additional feature selection was applied in D3 to allow the models to leverage the same reduced feature set. Hyperparameter optimisation was performed for all models in D3 using grid search within the same cross-validation framework to ensure a fair comparison of optimised performance across model families.
+\item \textbf{D3 (Top-20 features):} Same pooled structure as D2, but restricted to the 20 most informative predictors identified by \gls{XGB} gain importance from D2. No additional feature selection was applied in D3 to allow the models to leverage the same reduced feature set. Hyperparameter optimisation was performed for all models in D3 using grid search within the same \gls{CV} framework to ensure a fair comparison of optimised performance across model families.
 \end{itemize}
 Track B (disease specific) models followed either the D2 or D3 design, with \gls{XGB} as the primary model family because it performed best in Track A (D2/D3). Each design was chosen to address specific research questions: D1 for baseline prediction, D2 for leveraging longitudinal information, and D3 for evaluating the impact of feature reduction with model hyperparameter optimisation.
 
 Before model training, features with more than 50\% missing values were removed to reduce sparsity. Remaining missing values were handled using median imputation. All model input pipeline steps, including feature filtering and imputation, were fitted on the training data only and then applied unchanged to validation and test sets to prevent information leakage.
 
-This ensured that no information from held out data influenced feature engineering or model fitting. To account for class imbalance, model specific weighting strategies were applied: balanced class weights for \gls{LR} and \gls{RF}, scale\_pos\_weight for \gls{XGB}, and sample weights for \gls{MLP}. Standard scaling (zero mean, unit variance) was applied only to the features used by \gls{LR} and \gls{MLP}. Tree based models (XGB and RF) were trained on the raw imputed features without scaling. For D3, hyperparameter optimisation was performed using grid search within cross-validation. For example, \gls{XGB} was limited to a maximum depth of 3, and random forest used a maximum depth of 5 with a minimum of 10 samples per leaf.
+This ensured that no information from held out data influenced feature engineering or model fitting. To account for class imbalance, model specific weighting strategies were applied: balanced class weights for \gls{LR} and \gls{RF}, scale\_pos\_weight for \gls{XGB}, and sample weights for \gls{MLP}. Standard scaling (zero mean, unit variance) was applied only to the features used by \gls{LR} and \gls{MLP}. Tree based models (XGB and RF) were trained on the raw imputed features without scaling. For D3, hyperparameter optimisation was performed using grid search within \gls{CV}. For example, \gls{XGB} was limited to a maximum depth of 3, and random forest used a maximum depth of 5 with a minimum of 10 samples per leaf.
 
 % ----------------------
 % FLOWCHART: Shared pipeline, then Track A / Track B
@@ -150,8 +151,7 @@ This ensured that no information from held out data influenced feature engineeri
 \end{enumerate}
 
 \subsection{Participant level data splitting and leakage prevention}
-
-To prevent identity based leakage where a model memorises a participant's specific health signature rather than learning general patterns, all splitting was performed at the \textbf{participant level}. Individuals were assigned exclusively to either the training, validation, or test set, ensuring that no participant contributed data to more than one split. This approach is particularly important in longitudinal settings, where repeated observations from the same individual could otherwise inflate performance through identity leakage.% Saeb2017.
+To prevent identity based leakage where models memorise participant specific health signatures rather than learning general risk patterns, all splitting was performed at the \textbf{participant level}. Individuals were assigned exclusively to either the training, validation, or test set, ensuring no participant contributed data to more than one split. As Rumala~\cite{rumalaHowYouSplit2023c} demonstrates in longitudinal brain \gls{MRI} analysis, this subject wise approach prevents overconfident performance and identity confounding, where models learn individual characteristics alongside diagnostic features ensuring generalisation to truly unseen individuals.
 
 Additional leakage prevention measures included:
 \begin{itemize}
@@ -161,7 +161,7 @@ Additional leakage prevention measures included:
 \end{itemize}
 
 \subsection{Evaluation protocol and decision metrics}
-Model performance was assessed using a combination of discrimination, calibration, and classification metrics. The primary metric was the \gls{AUC}, chosen for its robustness to class imbalance and its interpretability in risk prediction contexts. Model performance was estimated using 5-fold stratified cross-validation on the training set, which was also used as the internal resampling strategy for model comparison across all designs. For models that required hyperparameter optimisation (D3), a grid search was conducted within the same cross-validation framework.
+Model performance was assessed using a combination of discrimination, calibration, and classification metrics. The primary metric was the \gls{AUC}, chosen for its robustness to class imbalance and its interpretability in risk prediction contexts. Model performance was estimated using 5-fold stratified \gls{CV} on the training set, which was also used as the internal resampling strategy for model comparison across all designs. For models that required hyperparameter optimisation (D3), a grid search was conducted within the same \gls{CV} framework.
 
 Calibration was evaluated using the Brier score, which measures the accuracy of predicted probabilities, while classification performance was summarised using the F1 score, capturing the balance between precision and recall in the presence of class imbalance (e.g., 22--27\% incidence). Additional metrics, including sensitivity, specificity, and confusion matrices, were used to support interpretation.
 
