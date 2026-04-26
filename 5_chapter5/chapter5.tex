@@ -59,10 +59,10 @@ Track B targets individual chronic disease outcomes, e.g., circulatory disease (
 Four supervised learning algorithms were evaluated across all main Track A designs (D1, D2, D3) to compare linear and non-linear model families under the same evaluation framework.
 
 \begin{enumerate}
-    \item \textbf{\gls{LR}} – a linear baseline model capturing linear effects and providing interpretability through coefficients and odds ratios, with regularisation (e.g., L1/Lasso) to mitigate overfitting in high dimensional settings.
-    \item \textbf{\gls{XGB}} – a tree based gradient boosted model that captures non-linearities and interactions, with built in regularisation to mitigate overfitting and feature importance measures to identify key predictors.
-    \item \textbf{\gls{RF}} – a bagged ensemble of decision trees that captures complex patterns and is robust to noise and outliers through random feature selection and averaging over trees, with feature importance measures based on mean decrease in impurity or permutation importance.
-    \item \textbf{\gls{MLP}} – a feedforward neural network that captures complex non-linear relationships through multiple layers of abstraction, with regularisation techniques (e.g., dropout) to prevent overfitting and the ability to learn hierarchical feature representations, with reduced interpretability compared to tree based models.
+    \item \textbf{\gls{LR}} A linear baseline model capturing linear effects and providing interpretability through coefficients and odds ratios, with regularisation (e.g., L1/Lasso) to mitigate overfitting in high dimensional settings.
+    \item \textbf{\gls{XGB}} – A tree based gradient boosted model that captures non-linearities and interactions, with built in regularisation to mitigate overfitting and feature importance measures to identify key predictors.
+    \item \textbf{\gls{RF}} – A bagged ensemble of decision trees that captures complex patterns and is robust to noise and outliers through random feature selection and averaging over trees, with feature importance measures based on mean decrease in impurity or permutation importance.
+    \item \textbf{\gls{MLP}} – A feedforward neural network that captures complex non-linear relationships through multiple layers of abstraction, with regularisation techniques (e.g., dropout) to prevent overfitting and the ability to learn hierarchical feature representations, with reduced interpretability compared to tree based models.
 \end{enumerate}
 
 The three primary modelling designs were implemented to address and assess the effect of baseline only prediction, pooled longitudinal prediction, and feature reduction, respectively.
