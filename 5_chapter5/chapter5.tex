@@ -25,7 +25,7 @@ Sample sizes and incident rates are summarised in Table~\ref{tab:analysis_sample
 \subsection{Outcome definitions (Track A and Track B)}
 Two complementary prediction tasks were defined.
 
-\paragraph{Track A: Predicting any chronic disease onset.}
+\paragraph{Track A: Predicting any chronic disease onset.}\label{sc:track_a}
 Track A uses a binary outcome indicating the first occurrence of any chronic disease during follow-up.
 \begin{itemize}
     \item In D1, the outcome was derived from a composite of self reported conditions recorded in Wave 1 (e.g., eye conditions (\texttt{ph105\_x}), cardiovascular conditions (\texttt{ph201\_xx}), diabetes related conditions (\texttt{ph216\_xx}), general chronic conditions (\texttt{ph301\_xx}), limiting long term illness (\texttt{DISlongterm}), and self reported chronic illness status (\texttt{ph003})). Incident cases were defined using \texttt{ICD10\_ANY} from the \gls{WHO} \emph{International Statistical Classification of Diseases and Related Health Problems 10th Revision} in Wave 5 (e.g., mental and behavioural disorders (\texttt{ICD10\_05}), musculoskeletal diseases (\texttt{ICD10\_13})). 
@@ -52,25 +52,24 @@ D3: Top-20 (reduced) & 14,296 & 3,212 & 22.5 \\ \hline
 }
 \end{table}
 
-\paragraph{Track B: Disease specific prediction.}
+\paragraph{Track B: Disease specific prediction.}\label{sc:track_b}
 Track B targets individual chronic disease outcomes, e.g., circulatory disease (\texttt{ICD10\_09}), diabetes (\texttt{ph726\_01}), and functional decline (\texttt{DISlongterm}). For each task, the outcome was defined as the first recorded diagnosis of the specific condition, and participants were excluded if the condition was present at the baseline of the corresponding transition. Coding details for each disease specific outcome are provided in Appendix~PLACEHOLDER.
 
 \subsection{Modelling designs}\label{sc:modelling_designs}
 Four supervised learning algorithms were evaluated across all main Track A designs (D1, D2, D3) to compare linear and non-linear model families under the same evaluation framework.
 
-\begin{itemize}
-    \item \textbf{\gls{LR}} – a linear baseline model to capture additive effects and provide interpretability through coefficients and odds ratios, with regularisation (e.g., L1/Lasso) to mitigate overfitting in high dimensional settings.
+\begin{enumerate}
+    \item \textbf{\gls{LR}} – a linear baseline model capturing linear effects and providing interpretability through coefficients and odds ratios, with regularisation (e.g., L1/Lasso) to mitigate overfitting in high dimensional settings.
     \item \textbf{\gls{XGB}} – a tree based gradient boosted model that captures non-linearities and interactions, with built in regularisation to mitigate overfitting and feature importance measures to identify key predictors.
     \item \textbf{\gls{RF}} – a bagged ensemble of decision trees that captures complex patterns and is robust to noise and outliers through random feature selection and averaging over trees, with feature importance measures based on mean decrease in impurity or permutation importance.
     \item \textbf{\gls{MLP}} – a feedforward neural network that captures complex non-linear relationships through multiple layers of abstraction, with regularisation techniques (e.g., dropout) to prevent overfitting and the ability to learn hierarchical feature representations, with reduced interpretability compared to tree based models.
-\end{itemize}
+\end{enumerate}
 
 The three primary modelling designs were implemented to address and assess the effect of baseline only prediction, pooled longitudinal prediction, and feature reduction, respectively.
-
-\begin{itemize}
-\item \textbf{D1 (Baseline):} Single transition from Wave 1 to Wave 5. Only participants free of the outcome at Wave 1 were included. Feature selection: SelectKBest ($k=20$). All models were trained with default hyperparameters to establish a baseline performance for each model family.
-\item \textbf{D2 (Multi-wave pooled):} All eligible consecutive transitions (W1$\rightarrow$W2, W2$\rightarrow$W3, W3$\rightarrow$W4, W4$\rightarrow$W5) stacked together. A wave transition indicator was included as a feature. Feature selection: SelectKBest ($k=100$) applied to the pooled dataset.
-\item \textbf{D3 (Top-20 features):} Same pooled structure as D2, but restricted to the 20 most informative predictors identified by \gls{XGB} gain importance from D2. No additional feature selection was applied in D3 to allow the models to leverage the same reduced feature set. Hyperparameter optimisation was performed for all models in D3 using grid search within the same \gls{CV} framework to ensure a fair comparison of optimised performance across model families.
+\begin{itemize}\label{three_designs}
+\item[-] \textbf{D1 (Baseline):} Single transition from Wave 1 to Wave 5. Only participants free of the outcome at Wave 1 were included. Feature selection: SelectKBest ($k=20$). All models were trained with default hyperparameters to establish a baseline performance for each model family.
+\item[-] \textbf{D2 (Multi-wave pooled):} All eligible consecutive transitions (W1$\rightarrow$W2, W2$\rightarrow$W3, W3$\rightarrow$W4, W4$\rightarrow$W5) stacked together. A wave transition indicator was included as a feature. Feature selection: SelectKBest ($k=100$) applied to the pooled dataset.
+\item[-] \textbf{D3 (Top-20 features):} Same pooled structure as D2, but restricted to the 20 most informative predictors identified by \gls{XGB} gain importance from D2. No additional feature selection was applied in D3 to allow the models to leverage the same reduced feature set. Hyperparameter optimisation was performed for all models in D3 using grid search within the same \gls{CV} framework to ensure a fair comparison of optimised performance across model families.
 \end{itemize}
 Track B (disease specific) models followed either the D2 or D3 design, with \gls{XGB} as the primary model family because it performed best in Track A (D2/D3). Each design was chosen to address specific research questions: D1 for baseline prediction, D2 for leveraging longitudinal information, and D3 for evaluating the impact of feature reduction with model hyperparameter optimisation.
 
@@ -179,13 +178,13 @@ Calibration was evaluated using the Brier score, which measures the accuracy of 
 For the Track B add-on analysis, 95\% confidence intervals for performance deltas were estimated via bootstrap resampling to ensure statistical significance.
 
 \section{Main results}
-This section presents the predictive performance for Track A (any disease onset) across the three modelling designs, followed by cross design and model level comparisons. % no mention of Track B here revsit this please.
+This section presents the main results for Track A~\ref{sc:track_a} and Track B~\ref{sc:track_b}. Performance is first evaluated across the three modelling designs (D1, D2, and D3)~\ref{three_designs}, followed by cross design and model level comparisons.
 
 \subsection{Track A: Any disease onset}
-Results are presented for each modelling design (D1, D2, D3). Tables report discrimination (\gls{AUC}), calibration (Brier score), and classification performance (F1), alongside training, validation, and test performance to assess generalisation.
+Results are presented across the three modelling designs, with tables summarising discrimination (\gls{AUC}), calibration (Brier score), and classification performance (F1), alongside training, validation, and test metrics to assess generalisation.
 
 \subsubsection{Design 1 performance:}\label{ssc:d1}
-Table~\ref{tab:d1_results} summarises the performance of the four models on the single transition task (Wave 1 $\rightarrow$ Wave 5). Discrimination is weak (test \gls{AUC} around $0.55$--$0.58$), and tree based models show large gaps between training and test \gls{AUC}, indicating overfitting.
+The following Table~\ref{tab:d1_results} summarises the performance of the four models on the single transition task (Wave 1 $\rightarrow$ Wave 5). Discrimination is weak with test \gls{AUC} values ranging from $0.55$--$0.58$, and the larger train--test gaps for the tree based models indicate stronger overfitting in the baseline design.
 
 \begin{table}[ht]
 \centering
@@ -195,7 +194,7 @@ Table~\ref{tab:d1_results} summarises the performance of the four models on the 
 \toprule
 Model & CV AUC & Train AUC & Val AUC & Test AUC & Brier Score & F1 Optimal \\
 \midrule
-\gls{LR} & 0.589 & 0.677 & 0.582 & 0.571 & 0.245 & 0.411 \\
+Logistic Regression & 0.589 & 0.677 & 0.582 & 0.571 & 0.245 & 0.411 \\
 XGBoost & 0.569 & 0.825 & 0.563 & 0.544 & 0.240 & 0.398 \\
 Random Forest & 0.579 & 0.871 & 0.565 & 0.534 & 0.231 & 0.440 \\
 MLP & 0.536 & 0.664 & 0.552 & 0.582 & 0.241 & 0.419 \\
@@ -205,7 +204,7 @@ MLP & 0.536 & 0.664 & 0.552 & 0.582 & 0.241 & 0.419 \\
 \end{table}
 
 \subsubsection{Design 2 performance:}\label{ssc:d2}
-Table~\ref{tab:d2_results} shows the results when using all consecutive transitions (pooled multi-wave design). All models improve markedly compared to D1~\ref{ssc:d1}, with test \gls{AUC}s between $0.699$ and $0.715$. % change the word markedly here..
+Table~\ref{tab:d2_results} shows the results when using all consecutive transitions (pooled multi-wave design). All models improve substantially compared to D1~\ref{ssc:d1}, with test \gls{AUC}s values ranging from $0.699$ to $0.715$.
 
 \begin{table}[ht]
 \centering
@@ -215,7 +214,7 @@ Table~\ref{tab:d2_results} shows the results when using all consecutive transiti
 \toprule
 Model & CV AUC & Train AUC & Val AUC & Test AUC & Brier Score & F1 Optimal \\
 \midrule
-\gls{LR} & 0.715 & 0.728 & 0.715 & 0.709 & 0.217 & 0.460 \\
+Logistic Regression & 0.715 & 0.728 & 0.715 & 0.709 & 0.217 & 0.460 \\
 XGBoost & 0.716 & 0.736 & 0.719 & 0.715 & 0.214 & 0.468 \\
 Random Forest & 0.711 & 0.740 & 0.717 & 0.711 & 0.212 & 0.452 \\
 MLP & 0.698 & 0.749 & 0.706 & 0.699 & 0.208 & 0.455 \\
@@ -225,7 +224,7 @@ MLP & 0.698 & 0.749 & 0.706 & 0.699 & 0.208 & 0.455 \\
 \end{table}
 
 \subsubsection{Design 3 performance:}\label{ssc:d3}
-Table~\ref{tab:d3_results} presents performance using only the 20 most informative predictors (derived from D2~\ref{ssc:d2}) with hyperparameter optimisation applied across all models. Discrimination remains effectively unchanged compared to D2~\ref{ssc:d2}, with test \gls{AUC} values tightly clustered around $0.71$.
+Table~\ref{tab:d3_results} presents performance using only the 20 most informative predictors (derived from \gls{XGB} model trained on D2~\ref{ssc:d2}) with hyperparameter optimisation applied across all models. Discrimination remains effectively unchanged compared to D2, with test \gls{AUC} values tightly clustered around $0.71$.
 \begin{table}[ht]
 \centering
 \caption{Predictive performance across model families for D3 (tuned design).}\label{tab:d3_results}
@@ -234,7 +233,7 @@ Table~\ref{tab:d3_results} presents performance using only the 20 most informati
 \toprule
 Model & CV AUC & Train AUC & Val AUC & Test AUC & Brier Score & F1 Optimal \\
 \midrule
-\gls{LR} & 0.716 & 0.718 & 0.717 & 0.712 & 0.212 & 0.459 \\
+Logistic Regression & 0.716 & 0.718 & 0.717 & 0.712 & 0.212 & 0.459 \\
 XGBoost & 0.718 & 0.736 & 0.719 & 0.713 & 0.209 & 0.462 \\
 Random Forest & 0.717 & 0.766 & 0.718 & 0.713 & 0.205 & 0.462 \\
 MLP & 0.713 & 0.743 & 0.710 & 0.712 & 0.207 & 0.467 \\
@@ -243,9 +242,10 @@ MLP & 0.713 & 0.743 & 0.710 & 0.712 & 0.207 & 0.467 \\
 }
 \end{table}
 
-\subsection{Cross design comparison}
-The best test \gls{AUC} increased from $0.582$ in D1~\ref{ssc:d1} (achieved by \gls{MLP}) to $0.715$ in D2~\ref{ssc:d2} by (\gls{XGB}).
-Incorporating pooled temporal transitions substantially improves predictive performance (absolute gain of $0.133$). Reducing the feature set to the top 20 predictors in D3~\ref{ssc:d3} maintained this gain, with \gls{XGB} achieving a test \gls{AUC} of $0.713$, only $0.002$ lower than D2~\ref{ssc:d2}, confirming that most of the predictive signal is concentrated in a small subset of variables, and that performance is robust to feature reduction.
+\subsection{Cross-design comparison}
+The best test \gls{AUC} increased from $0.582$ in D1~\ref{ssc:d1} (achieved by \gls{MLP}) to $0.715$ in D2~\ref{ssc:d2} by \gls{XGB}, representing an improvement of $0.133$, demonstrating the benefit of incorporating pooled longitudinal transitions.
+
+Reducing the feature set to the top 20 predictors in D3 maintained this gain, with \gls{XGB} achieving a test \gls{AUC} of $0.713$, only $0.002$ lower than D2, confirming that most of the predictive signal is concentrated in a small subset of variables, and that performance is robust to feature reduction.
 
 Across designs, \gls{CV} performance also improves and stabilises:
 \begin{itemize}
@@ -254,20 +254,20 @@ Across designs, \gls{CV} performance also improves and stabilises:
     \item[-] D3: $0.718 \pm 0.006$ (\gls{XGB})
 \end{itemize}
 
-The reduction in standard deviation from D1~\ref{ssc:d1} to D2~\ref{ssc:d2} and D3~\ref{ssc:d3} reflects improved stability associated with the pooled multi-wave design and more consistent learning signal across transitions, although differences in data structure across designs should be considered when interpreting cross design variability.
+The reduction in standard deviation from D1 to D2 and D3 reflects improved stability associated with the pooled multi-wave design and more consistent learning signal across transitions, although differences in data structure across designs should be considered when interpreting cross design variability.
 
 \subsection{Model comparison}
-Once temporal structure is introduced (D2~\ref{ssc:d2} and D3~\ref{ssc:d3}), differences between model families are modest. Test \gls{AUC}s cluster between $(0.699$--$0.715)$, with no single model class dominating performance. \gls{XGB} achieves the highest test \gls{AUC} in both D2~\ref{ssc:d2} ($0.715$) and D3~\ref{ssc:d3} ($0.713$), but the margin over \gls{LR} is at most ($\leq 0.006$). \gls{LR} remaines competitive ($0.709$ in D2~\ref{ssc:d2} and $0.712$ in D3~\ref{ssc:d3}), suggesting that linear effects capture much of the signal when features are well engineered. \gls{MLP} slightly underperforms in D2~\ref{ssc:d2} ($0.699$) but matched other models in D3~\ref{ssc:d3} ($0.712$), indicating improved performance when the feature space is reduced to the most informative predictors.
+Once temporal structure is introduced (D2 and D3), differences between model families are modest. Test \gls{AUC}s cluster in the range $(0.699$--$0.715)$, with no single model class dominating performance. \gls{XGB} achieved the highest test \gls{AUC} in both D2~\ref{ssc:d2} ($0.715$) and D3~\ref{ssc:d3} ($0.713$), though the margin over \gls{LR} was narrow ($\leq 0.006$). The fact that the linear \gls{LR} remained consistently competitive ($0.709$ in D2~\ref{ssc:d2} and $0.712$ in D3~\ref{ssc:d3}) suggests that risk signals in the ageing population are primarily linear. \gls{MLP} slightly underperforms in D2~\ref{ssc:d2} ($0.699$) but matched other models in D3~\ref{ssc:d3} ($0.712$), indicating improved performance when the feature space is reduced to the most informative predictors. This suggests that individual health indicators, such as physical pain (\texttt{ph501}) or medication counts (\texttt{MDmeds4}), contribute largely and independently to the risk score, with limited additional benefit from modelling complex non-linear interactions.
 
-Figure~\ref{fig:generalisation_gap} compares generalisation gaps (Train--Test \gls{AUC}) across all three designs. A clear reduction in overfitting is observed from D1~\ref{ssc:d1} to D2~\ref{ssc:d2} and D3~\ref{ssc:d3}, reflecting the benefit of pooled training data and improved feature representation.
-D1~\ref{ssc:d1} exhibits the largest gaps, consistent with weaker signal and higher variance in estimates. In contrast, D2~\ref{ssc:d2} and D3~\ref{ssc:d3} show much smaller gaps, indicating improved stability. Tree based models (\gls{XGB} and \gls{RF}) consistently show slightly larger gaps than \gls{LR} and \gls{MLP}, reflecting their greater flexibility.
+Figure~\ref{fig:generalisation_gap} compares generalisation gaps (Train - Test \gls{AUC}s) across all three designs. The average train--test \gls{AUC} gap (across all four models) drops from $0.202$ in D1 to $0.030$ in D2 and $0.028$ in D3 – a reduction of over $85\%$. This demonstrates that the pooled multi-wave design effectively reduces overfitting.
+D1 exhibits the largest gaps, consistent with weaker signal and higher variance in estimates. In contrast, D2 and D3 show much smaller gaps, indicating improved stability. While tree based models (\gls{XGB} and \gls{RF}) exhibit the largest gaps in the small sample size of D1. However, D2 and D3, \gls{XGB} achieves the smallest gaps ($0.021$ and $0.023$ respectively), while \gls{RF} still shows comparatively larger gaps ($0.029$ and $0.053$). The strong performance of \gls{XGB} in D3 is expected, as the top-20 feature set was selected using \gls{XGB} gain importance from D2. Nevertheless, \gls{XGB} also generalises well in D2, suggesting that its boosting mechanism is effective at learning stable patterns from pooled longitudinal data. In contrast, \gls{RF} may be more prone to overfitting even with the pooled design, possibly due to its reliance on bagging and random feature selection, which may capture informative predictors less efficiently than boosting.
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.9\textwidth]{gen_gap_fig.png}
-    \caption{Train–test AUC generalisation gaps across models and designs.}\label{fig:generalisation_gap}
+    \caption{Train–test AUC generalisation gaps across models and designs. $0.05$ marks a conventional heuristic threshold for acceptable error in \gls{AUC}. Gaps below this level indicate that the model generalises well to unseen data.}\label{fig:generalisation_gap}
 \end{figure}
-The figure also highlights that model level differences in generalisation gap are more pronounced in D1~\ref{ssc:d1}, whereas D2~\ref{ssc:d2} and D3~\ref{ssc:d3} exhibit convergence across model families, suggesting that data structure plays a larger role than algorithmic choice in controlling overfitting.
+The figure also highlights that model level differences in generalisation gap are more pronounced in D1~\ref{ssc:d1}, whereas D2~\ref{ssc:d2} and D3~\ref{ssc:d3} exhibit convergence across model families, suggesting that data structure plays a larger role than algorithmic choice in controlling overfitting. % give reason about the 0.05 dashed line here and why we chose it as a threshold for good generalisation
 
 \subsection{Track B: Disease specific}
 
