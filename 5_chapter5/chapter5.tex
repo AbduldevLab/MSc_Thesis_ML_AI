@@ -1,6 +1,16 @@
 % ---------------------------------------------------------------------------
 % CHAPTER 5: EMPIRICAL EVALUATION
 % ---------------------------------------------------------------------------
+% ----------------------- paths to graphics ------------------------
+
+% change according to folder and file names
+\ifpdf
+    \graphicspath{{5_chapter5/figures/PNG/}{5_chapter5/figures/PDF/}{5_chapter5/figures/}}
+\else
+    \graphicspath{{5_chapter5/figures/EPS/}{5_chapter5/figures/}}
+\fi
+% ---------------------------------------------------------------------------
+
 \chapter{Empirical Evaluation}\label{ch:chapter5}
 
 \section{Modelling and evaluation framework}
@@ -78,7 +88,7 @@ This ensured that no information from held out data influenced feature engineeri
     \node (centeranchor) at (0,0) {};
     % Shared pipeline (vertical chain)
     \node[draw, rounded corners, fill=white, minimum width=4cm, align=center] (raw) {\textbf{All Data}};
-    \node[draw, rounded corners, fill=gray!10, below=of raw, align=center] (drop) {Drop $>=$50\% missing};
+    \node[draw, rounded corners, fill=gray!10, below=of raw, align=center] (drop) {Drop $\geq 50\%$ missing};
     \node[draw, rounded corners, fill=gray!10, below=of drop, align=center] (imp) {Median Imputation};
     \node[draw, rounded corners, fill=gray!10, below=of imp, align=center] (var) {Variance Threshold (0.01)};
     \node[draw, rounded corners, fill=gray!10, below=of var, align=center] (split) {Participant level (ID) Split};
@@ -167,3 +177,101 @@ Model performance was assessed using a combination of discrimination, calibratio
 Calibration was evaluated using the Brier score, which measures the accuracy of predicted probabilities, while classification performance was summarised using the F1 score, capturing the balance between precision and recall in the presence of class imbalance (e.g., 22--27\% incidence). Additional metrics, including sensitivity, specificity, and confusion matrices, were used to support interpretation.
 
 For the Track B add-on analysis, 95\% confidence intervals for performance deltas were estimated via bootstrap resampling to ensure statistical significance.
+
+\section{Main results}
+This section presents the predictive performance for Track A (any disease onset) across the three modelling designs, followed by cross design and model level comparisons. % no mention of Track B here revsit this please.
+
+\subsection{Track A: Any disease onset}
+Results are presented for each modelling design (D1, D2, D3). Tables report discrimination (\gls{AUC}), calibration (Brier score), and classification performance (F1), alongside training, validation, and test performance to assess generalisation.
+
+\subsubsection{Design 1 performance:}\label{ssc:d1}
+Table~\ref{tab:d1_results} summarises the performance of the four models on the single transition task (Wave 1 $\rightarrow$ Wave 5). Discrimination is weak (test \gls{AUC} around $0.55$--$0.58$), and tree based models show large gaps between training and test \gls{AUC}, indicating overfitting.
+
+\begin{table}[ht]
+\centering
+\caption{Predictive performance across model families for D1 (baseline design).}\label{tab:d1_results}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{lrrrrrrr}
+\toprule
+Model & CV AUC & Train AUC & Val AUC & Test AUC & Brier Score & F1 Optimal \\
+\midrule
+\gls{LR} & 0.589 & 0.677 & 0.582 & 0.571 & 0.245 & 0.411 \\
+XGBoost & 0.569 & 0.825 & 0.563 & 0.544 & 0.240 & 0.398 \\
+Random Forest & 0.579 & 0.871 & 0.565 & 0.534 & 0.231 & 0.440 \\
+MLP & 0.536 & 0.664 & 0.552 & 0.582 & 0.241 & 0.419 \\
+\bottomrule
+\end{tabular}
+}
+\end{table}
+
+\subsubsection{Design 2 performance:}\label{ssc:d2}
+Table~\ref{tab:d2_results} shows the results when using all consecutive transitions (pooled multi-wave design). All models improve markedly compared to D1~\ref{ssc:d1}, with test \gls{AUC}s between $0.699$ and $0.715$. % change the word markedly here..
+
+\begin{table}[ht]
+\centering
+\caption{Predictive performance across model families for D2 (multi-wave design).}\label{tab:d2_results}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{lrrrrrrr}
+\toprule
+Model & CV AUC & Train AUC & Val AUC & Test AUC & Brier Score & F1 Optimal \\
+\midrule
+\gls{LR} & 0.715 & 0.728 & 0.715 & 0.709 & 0.217 & 0.460 \\
+XGBoost & 0.716 & 0.736 & 0.719 & 0.715 & 0.214 & 0.468 \\
+Random Forest & 0.711 & 0.740 & 0.717 & 0.711 & 0.212 & 0.452 \\
+MLP & 0.698 & 0.749 & 0.706 & 0.699 & 0.208 & 0.455 \\
+\bottomrule
+\end{tabular}
+}
+\end{table}
+
+\subsubsection{Design 3 performance:}\label{ssc:d3}
+Table~\ref{tab:d3_results} presents performance using only the 20 most informative predictors (derived from D2~\ref{ssc:d2}) with hyperparameter optimisation applied across all models. Discrimination remains effectively unchanged compared to D2~\ref{ssc:d2}, with test \gls{AUC} values tightly clustered around $0.71$.
+\begin{table}[ht]
+\centering
+\caption{Predictive performance across model families for D3 (tuned design).}\label{tab:d3_results}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{lrrrrrrr}
+\toprule
+Model & CV AUC & Train AUC & Val AUC & Test AUC & Brier Score & F1 Optimal \\
+\midrule
+\gls{LR} & 0.716 & 0.718 & 0.717 & 0.712 & 0.212 & 0.459 \\
+XGBoost & 0.718 & 0.736 & 0.719 & 0.713 & 0.209 & 0.462 \\
+Random Forest & 0.717 & 0.766 & 0.718 & 0.713 & 0.205 & 0.462 \\
+MLP & 0.713 & 0.743 & 0.710 & 0.712 & 0.207 & 0.467 \\
+\bottomrule
+\end{tabular}
+}
+\end{table}
+
+\subsection{Cross design comparison}
+The best test \gls{AUC} increased from $0.582$ in D1~\ref{ssc:d1} (achieved by \gls{MLP}) to $0.715$ in D2~\ref{ssc:d2} by (\gls{XGB}).
+Incorporating pooled temporal transitions substantially improves predictive performance (absolute gain of $0.133$). Reducing the feature set to the top 20 predictors in D3~\ref{ssc:d3} maintained this gain, with \gls{XGB} achieving a test \gls{AUC} of $0.713$, only $0.002$ lower than D2~\ref{ssc:d2}, confirming that most of the predictive signal is concentrated in a small subset of variables, and that performance is robust to feature reduction.
+
+Across designs, \gls{CV} performance also improves and stabilises:
+\begin{itemize}
+    \item[-] D1: $0.589 \pm 0.072$ (\gls{LR})
+    \item[-] D2: $0.716 \pm 0.007$ (\gls{XGB})
+    \item[-] D3: $0.718 \pm 0.006$ (\gls{XGB})
+\end{itemize}
+
+The reduction in standard deviation from D1~\ref{ssc:d1} to D2~\ref{ssc:d2} and D3~\ref{ssc:d3} reflects improved stability associated with the pooled multi-wave design and more consistent learning signal across transitions, although differences in data structure across designs should be considered when interpreting cross design variability.
+
+\subsection{Model comparison}
+Once temporal structure is introduced (D2~\ref{ssc:d2} and D3~\ref{ssc:d3}), differences between model families are modest. Test \gls{AUC}s cluster between $(0.699$--$0.715)$, with no single model class dominating performance. \gls{XGB} achieves the highest test \gls{AUC} in both D2~\ref{ssc:d2} ($0.715$) and D3~\ref{ssc:d3} ($0.713$), but the margin over \gls{LR} is at most ($\leq 0.006$). \gls{LR} remaines competitive ($0.709$ in D2~\ref{ssc:d2} and $0.712$ in D3~\ref{ssc:d3}), suggesting that linear effects capture much of the signal when features are well engineered. \gls{MLP} slightly underperforms in D2~\ref{ssc:d2} ($0.699$) but matched other models in D3~\ref{ssc:d3} ($0.712$), indicating improved performance when the feature space is reduced to the most informative predictors.
+
+Figure~\ref{fig:generalisation_gap} compares generalisation gaps (Train--Test \gls{AUC}) across all three designs. A clear reduction in overfitting is observed from D1~\ref{ssc:d1} to D2~\ref{ssc:d2} and D3~\ref{ssc:d3}, reflecting the benefit of pooled training data and improved feature representation.
+D1~\ref{ssc:d1} exhibits the largest gaps, consistent with weaker signal and higher variance in estimates. In contrast, D2~\ref{ssc:d2} and D3~\ref{ssc:d3} show much smaller gaps, indicating improved stability. Tree based models (\gls{XGB} and \gls{RF}) consistently show slightly larger gaps than \gls{LR} and \gls{MLP}, reflecting their greater flexibility.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.9\textwidth]{gen_gap_fig.png}
+    \caption{Train–test AUC generalisation gaps across models and designs.}\label{fig:generalisation_gap}
+\end{figure}
+The figure also highlights that model level differences in generalisation gap are more pronounced in D1~\ref{ssc:d1}, whereas D2~\ref{ssc:d2} and D3~\ref{ssc:d3} exhibit convergence across model families, suggesting that data structure plays a larger role than algorithmic choice in controlling overfitting.
+
+\subsection{Track B: Disease specific}
+
+\section{Model interpretability and feature importance}
+\section{Robustness checks and sensitivity}
+\section{Error analysis}
+\section{Summary of findings}
