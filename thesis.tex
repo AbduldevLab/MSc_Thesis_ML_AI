@@ -42,6 +42,12 @@
 \usepackage{enumitem}
 \usepackage[table]{xcolor}
 
+% %%draft
+% \usepackage{draftwatermark}
+% \SetWatermarkText{DRAFT}
+% \SetWatermarkScale{5}
+% \SetWatermarkLightness{0.9} % 0 is black, 1 is white
+
 %%%USE TABLE LIKE STYLING FOR GLOSSARY
 % \newglossarystyle{tableacronyms}{%
 %   \setglossarystyle{long}%
@@ -71,6 +77,7 @@
 
 % to display Math
 \usepackage{mathtools}
+\usepackage{bbm}
 
 % to Display C++ code
 \definecolor{c++red}{rgb}{0.6,0,0} % for strings
@@ -216,7 +223,6 @@
 %: Declaration of originality
 \include{0_frontmatter/glossary}
 \include{0_frontmatter/abstract}
-\include{0_frontmatter/declaration}
 
 
 %: ----------------------- tie in front matter ------------------------
@@ -224,8 +230,8 @@
 \frontmatter
 
 \include{0_frontmatter/acknowledgement}
+\include{0_frontmatter/AIDeclaration}
 \include{0_frontmatter/dedication}
-
 
 %: ----------------------- contents ------------------------
 

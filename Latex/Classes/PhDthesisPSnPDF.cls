@@ -402,7 +402,16 @@
    \begin{quote}}
 {\end{quote}\end{alwayssingle}}
 
-
+%AI Declaration
+\newenvironment{aideclaration}
+{\begin{alwayssingle} \pagestyle{empty}
+  \begin{center}
+  \vspace*{1.5cm}
+  {\Large \bfseries AI Declaration}
+  \end{center}
+  \vspace{0.5cm}
+  \begin{quote}}
+{\end{quote}\end{alwayssingle}}
 %:-------------------------- page numbers: roman+arabic -----------------------
 
 % ROMANPAGES
