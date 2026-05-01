@@ -31,7 +31,7 @@ Track A uses a binary outcome indicating the first occurrence of any chronic dis
 \begin{itemize}
     \item In D1, disease free status at Wave~1 was established using a composite of self-reported conditions (e.g., eye conditions (\texttt{ph105\_x}), cardiovascular conditions (\texttt{ph201\_xx}), diabetes related conditions (\texttt{ph216\_xx}), general chronic conditions (\texttt{ph301\_xx}), limiting long-term illness (\texttt{DISlongterm}), and self-reported chronic illness status (\texttt{ph003})). Incident cases were then defined using any positive \texttt{ICD10} codes from the \gls{WHO} \emph{International Statistical Classification of Diseases and Related Health Problems 10th Revision} at Wave~5 (e.g., mental and behavioural disorders (\texttt{ICD10\_05}), musculoskeletal diseases (\texttt{ICD10\_13})).
 		\begin{itemize}
-            \item No single \texttt{ICD10\_ANY} variable exists in Wave 1 to establish a clinical baseline. These clinical codes were recorded unevenly across the middle waves, with only three indicators available in Wave 2, two in Wave 3, and one in Wave 4, before a comprehensive set of 16 variables appeared at Wave 5.
+            \item No single \texttt{ICD10\_ANY} variable exists in Wave 1 to establish a clinical baseline. These clinical codes were recorded unevenly across the middle waves, with only three indicators available in Wave 2, two in Wave 3, and one in Wave 4, before a comprehensive set of 16 variables appeared at Wave 5. % Mention some where dropped form the manual filtering descirbed in chapter 3/4 optional sicne at teh start of tis chapter we did say continuing form ch3/4.
 			\item PHYSICAL \& COGNITIVE HEALTH (PH) variables are self-reported responses that reflect prior doctor diagnoses (``has a doctor ever told you''), whereas \texttt{ph003} captures a general self-assessment of long term illness without requiring clinical confirmation
 			\item All feature scoring schemes and labels are provided in Appendix~PLACEHOLDER.
     	\end{itemize}
@@ -73,7 +73,7 @@ Track B (disease specific) models used \gls{XGB} exclusively, as it achieved the
 
 The three primary modelling designs were implemented to address and assess the effect of baseline prediction, longitudinal pooling, and feature reduction with optimisation, respectively.
 \begin{itemize}\label{three_designs}
-\item[-] \textbf{D1 (Baseline):} A single W1$\rightarrow$W5 transition. Only participants disease free at Wave~1 (using self-reported and derived disease variables, plus explicit \texttt{ICD10} source variables to prevent proxy leakage) were included, with incident disease defined by any positive \texttt{ICD10} code at Wave~5 ($n=916$, incidence 27.1\%). Feature selection used \texttt{SelectKBest} ($k=20$) and \gls{CV} used \texttt{StratifiedKFold} (one observation per participant).
+\item[-] \textbf{D1 (Baseline):} A single W1$\rightarrow$W5 transition. Only participants disease free at Wave~1 (using self-reported and derived disease variables, plus explicit \texttt{ICD10} source variables) were included, with incident disease defined by any positive \texttt{ICD10} code at Wave~5 ($n=916$, incidence 27.1\%). Feature selection used \texttt{SelectKBest} ($k=20$) and \gls{CV} used \texttt{StratifiedKFold} (one observation per participant).
 \item[-] \textbf{D2 (Multi-wave pooled):} All four eligible consecutive transitions (W1$\rightarrow$W2, W2$\rightarrow$W3, W3$\rightarrow$W4, W4$\rightarrow$W5) were stacked into a single pooled dataset. Disease free status and incident outcome were defined using \texttt{ph003} (self-reported chronic illness) at each transition. A numeric wave transition indicator (\texttt{wave\_transition\_num}) was added as a feature to capture temporal context. The pooled cohort comprised $n=14{,}296$ person wave observations (incidence 22.5\%). Feature selection used \texttt{SelectKBest} ($k=100$), and \gls{CV} used \texttt{StratifiedGroupKFold} to ensure no participant appeared in more than one fold.
 \item[-] \textbf{D3 (Top--20 + \gls{HPO}):} Built directly on the D2 cohort and wave structure. The feature set was restricted to the 20 highest ranked predictors by \gls{XGB} gain importance from D2, plus \texttt{wave\_transition\_num}. No additional feature selection step was applied. \gls{HPO} was performed for all four model families using \texttt{RandomizedSearchCV} (200 iterations) within a \texttt{StratifiedGroupKFold} framework.
 \end{itemize}
@@ -88,15 +88,15 @@ All three designs shared the same participant-level train/test split (80\%/20\%,
 \begin{tikzpicture}[node distance=0.9cm and 1.8cm, every node/.style={font=\scriptsize}, >=stealth, thick]
     % Shared pipeline (vertical chain)
     \node[draw, rounded corners, fill=white, minimum width=4cm, align=center] (raw) {\textbf{All Data}};
-    \node[draw, rounded corners, fill=gray!10, below=of raw, align=center] (drop) {Drop $\geq 50\%$ missing (train only)};
-    \node[draw, rounded corners, fill=gray!10, below=of drop, align=center] (imp) {Median Imputation (train fit)};
-    \node[draw, rounded corners, fill=gray!10, below=of imp, align=center] (var) {Variance Threshold (0.01, train fit)};
+    \node[draw, rounded corners, fill=gray!10, below=of raw, align=center] (drop) {Drop $\geq 50\%$ missing};
+    \node[draw, rounded corners, fill=gray!10, below=of drop, align=center] (imp) {Median Imputation};
+    \node[draw, rounded corners, fill=gray!10, below=of imp, align=center] (var) {Variance Threshold (0.01)};
     \node[draw, rounded corners, fill=gray!10, below=of var, align=center] (split) {Participant-level (ID) Split\\80\% train / 20\% test, stratified};
  
     \draw[->] (raw) -- (drop);
-    \draw[->] (drop) -- (imp);
-    \draw[->] (imp) -- (var);
-    \draw[->] (var) -- (split);
+    \draw[->] (drop) -- node[right, font=\scriptsize]{train only}(imp);
+    \draw[->] (imp) -- node[right, font=\scriptsize]{train fit}(var);
+    \draw[->] (var) -- node[right, font=\scriptsize]{train fit}(split);
  
     % Track A branch (left)
     \node[draw, rounded corners, fill=white, left=2.2cm of split, minimum width=2.8cm, align=center] (tracka)
@@ -136,19 +136,38 @@ All three designs shared the same participant-level train/test split (80\%/20\%,
     \draw[->] (split) -- (trackb);
  
     \node[draw, rounded corners, fill=green!10, below=0.6cm of trackb, minimum width=2.8cm, align=center] (b_design)
-        {Follows D2 / D3 structure\\(same waves, ph726\_xx/phxxx, ICD10\_xx, \\ DISlongterm (predictors add-ons))};
+        {Follows D2 / D3 structure\\(disease specific $y$, predictor add-ons)};
     \draw[->] (trackb) -- (b_design);
  
-    \draw[->, dotted, thick] (d2) -- ++(3,0) |- (b_design);
-    \draw[->, dotted, thick] (d3) -- ++(3,0) |- (b_design);
+    \draw[->, dotted, thick] (d2) -- ++(3.5,0) node[above, font=\scriptsize, rotate=90, xshift=1.4cm ]{all $X$} |- (b_design);
+    \draw[->, dotted, thick] (d3) -- ++(3.5,0) node[below, font=\scriptsize, rotate=90, xshift=1.7cm ]{top-20 $X$} |- (b_design);
  
     \node[draw, rounded corners, fill=red!10, below=0.7cm of b_design, minimum width=3.2cm, align=center] (b_outcome)
-        {Disease specific outcome\\(e.g., ICD10\_09, ph726)\\Direct proxies excluded};
-    \draw[->] (b_design) -- (b_outcome);
+        {Disease specific $y$\\(e.g., Diabetes, Hypertension)\\Multi-horizon}; 
+    % \draw[->] (b_design) -- (b_outcome);
+
+    \node[draw, rounded corners, fill=orange!12, below=0.7cm of b_outcome, minimum width=3.4cm, align=center] (b_addon)
+        {Predictor add-on study\\BASE vs ADDON\\$\Delta$AUC and 95\% CI};
+    % \draw[->] (b_design) -- (b_addon);
  
-    \node[draw, rounded corners, fill=gray!20, below=0.7cm of b_outcome, align=center, font=\scriptsize] (b_mod)
+    \node[draw, rounded corners, fill=gray!20, below=0.7cm of b_addon, align=center, font=\scriptsize] (b_mod)
         {XGB only};
-    \draw[->, dashed] (b_outcome) -- (b_mod);
+    % \draw[->, dashed] (b_addon) -- (b_mod);
+
+    \path (b_design.east) -- ++(0.5,0) coordinate (rightTop);
+    \path (rightTop |- b_addon.east) coordinate (rightBottom);
+    \draw[-] (b_design.east) -- (rightTop);
+    \draw[-] (rightTop) -- (rightBottom);
+    \draw[-] (rightTop |- b_outcome.east) -- (b_outcome.east);
+    \draw[-] (rightBottom) -- (b_addon.east);
+
+    \path (b_outcome.west) -- ++(-1.2,0) coordinate (leftTop);
+    \path (leftTop |- b_addon.west) coordinate (leftMid);
+    \path (leftTop |- b_mod.west) coordinate (leftBase);
+    \draw[dashed] (b_outcome.west) -- (leftTop);
+    \draw[dashed] (b_addon.west) -- (leftMid);
+    \draw[dashed] (leftTop) -- (leftBase);
+    \draw[->, dashed] (leftBase) -- (b_mod.west);
  
 \end{tikzpicture}
 }
