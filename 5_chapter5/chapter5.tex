@@ -54,7 +54,7 @@ D3: Top-20 (reduced) & 14,296 & 3,212 & 22.5 \\ \hline
 \end{table}
 
 \paragraph{Track B: Disease specific prediction.}\label{sc:track_b}
-Track B targets individual chronic disease outcomes, e.g., circulatory disease (\texttt{ICD10\_09}), diabetes (\texttt{ph726\_01}), and functional decline (\texttt{DISlongterm}). For each task, the outcome was defined as the first recorded diagnosis of the specific condition, and participants were excluded if the condition was present at the baseline of the corresponding transition. Scoring details for each disease specific outcome are provided in Appendix~PLACEHOLDER.
+Track B targets individual chronic disease outcomes, e.g., circulatory disease (\texttt{ICD10\_09}), diabetes (\texttt{ph726\_01}), and functional decline (\texttt{DISlongterm}). For each prediction task, the outcome was defined as the first recorded diagnosis of the specific condition, and participants were excluded if the condition was present at the baseline of the corresponding transition. Scoring details for each disease specific outcome are provided in Appendix~PLACEHOLDER.
 
 % -------- Modeling designs and hyperparameters --------
 \subsection{Modelling designs}\label{sc:modelling_designs}
@@ -143,13 +143,13 @@ All three designs shared the same participant-level train/test split (80\%/20\%,
     \draw[->, dotted, thick] (d3) -- ++(3.5,0) node[below, font=\scriptsize, rotate=90, xshift=1.7cm ]{top-20 $X$} |- (b_design);
  
     \node[draw, rounded corners, fill=red!10, below=0.7cm of b_design, minimum width=3.2cm, align=center] (b_outcome)
-        {Disease specific $y$\\(e.g., Diabetes, Hypertension)\\Multi-horizon}; 
+        {Disease specific $y$\\(e.g., Diabetes, Hypertension)\\Multi-horizon};
     % \draw[->] (b_design) -- (b_outcome);
 
     \node[draw, rounded corners, fill=orange!12, below=0.7cm of b_outcome, minimum width=3.4cm, align=center] (b_addon)
         {Predictor add-on study\\BASE vs ADDON\\$\Delta$AUC and 95\% CI};
     % \draw[->] (b_design) -- (b_addon);
- 
+
     \node[draw, rounded corners, fill=gray!20, below=0.7cm of b_addon, align=center, font=\scriptsize] (b_mod)
         {XGB only};
     % \draw[->, dashed] (b_addon) -- (b_mod);
@@ -209,6 +209,7 @@ For Track B predictor add-on analysis, 95\% confidence intervals for performance
 \section{Main results}\label{sc:results}
 This section discusses the main results for Track A~\ref{sc:track_a} and Track B~\ref{sc:track_b}. Performance is first evaluated across the three modelling designs (D1, D2, and D3)~\ref{three_designs}, followed by cross design and model level comparisons.
 
+% -------- Track A: Any disease onset --------
 \subsection{Track A: Any disease onset}
 Results are presented across the three modelling designs, with tables summarising discrimination (\gls{AUC}), calibration (Brier score), and classification performance (F1), alongside training, validation, and test metrics to assess generalisation.
 
@@ -271,6 +272,7 @@ MLP & 0.713 & 0.743 & 0.710 & 0.712 & 0.207 & 0.467 \\
 }
 \end{table}
 
+% -------- Cross design and model comparison --------
 \subsection{Cross-design comparison}
 The best test \gls{AUC} increased from $0.582$ in D1~\ref{ssc:d1} (achieved by \gls{MLP}) to $0.715$ in D2~\ref{ssc:d2} by \gls{XGB}, representing an improvement of $0.133$, demonstrating the benefit of incorporating pooled longitudinal transitions.
 
@@ -284,7 +286,7 @@ Across designs, \gls{CV} performance also improves and stabilises:
 \end{itemize}
 
 The reduction in standard deviation from D1 to D2 and D3 reflects improved stability associated with the pooled multi-wave design and more consistent learning signal across transitions, although differences in data structure across designs should be considered when interpreting cross-design variability.
-
+% -------- Model comparison --------
 \subsection{Model comparison}
 Once temporal structure is introduced (D2 and D3), differences between model families are modest. Test \gls{AUC} values cluster in the range ($0.69$--$0.72$), with no single model class dominating performance. \gls{XGB} achieved the highest test \gls{AUC} in both D2 ($0.715$) and D3 ($0.713$), though the margin over \gls{LR} was narrow ($\leq 0.006$). The fact that the linear \gls{LR} remained consistently competitive ($0.709$ in D2~\ref{ssc:d2} and $0.712$ in D3~\ref{ssc:d3}) suggests that risk signals in the ageing population are primarily linear. \gls{MLP} slightly underperforms in D2~\ref{ssc:d2} ($0.699$) but matched other models in D3~\ref{ssc:d3} ($0.712$), indicating improved performance when the feature space is reduced to the most informative predictors. This suggests that individual health indicators, such as physical pain (\texttt{ph501}) or medication counts (\texttt{MDmeds4}), contribute largely and independently to the risk score, with limited additional benefit from modelling complex non-linear interactions.
 
@@ -298,9 +300,46 @@ D1 exhibits the largest gaps, consistent with weaker signal and higher variance 
 \end{figure}
 The figure also highlights that model level differences in generalisation gap are more pronounced in D1~\ref{ssc:d1}, whereas D2~\ref{ssc:d2} and D3~\ref{ssc:d3} exhibit convergence across model families, suggesting that data structure plays a larger role than algorithmic choice in controlling overfitting. 
 
+% -------- Track B: Disease specific --------
 \subsection{Track B: Disease specific}\label{ssc:trackb}
+Track~B extends the prediction framework from Track~A to individual chronic disease outcomes. Rather than predicting the onset of any chronic disease, each model targets a single condition, using the same pooled multi-wave cohort structure, participant-level splitting, and \gls{XGB} classifier established in D2~\ref{ssc:d2} and D3~\ref{ssc:d3}. For each disease, participants with the condition already present at the baseline of a transition were excluded, so only those genuinely at risk contributed to training and evaluation.
 
-\section{Model interpretability and feature importance}
+Twenty four disease specific outcomes were evaluated across two feature strategies: all eligible predictors retained after the missingness filter, and a restricted top-20 set derived from \gls{XGB} gain importance. Disease outcomes were grouped into four categories based on their measurement modality. % we say 4 but our plot shows Clinical, Functional, Family history, self reported disease, procedure, medicaton and doctor diagnosis.
+\subsubsection{Outcome Categories}
+\begin{itemize}
+    \item \textbf{Clinical outcomes (ICD10 codes):} Circulatory disease, endocrine and metabolic diseases, eye diseases, and musculoskeletal diseases, derived from \gls{WHO} \texttt{ICD10} codes recorded at follow-up waves. All directly related predictor variables (the source items that feed into each \texttt{ICD10} code) were excluded to prevent leakage.
+    \item \textbf{Functional and symptom outcomes:} Functional decline, falls and balance, chronic pain, hearing loss, and urinary incontinence, captured through self-reported \texttt{PH} variables. These outcomes are continuously present across waves, enabling multi horizon pooling (e.g., W2$\rightarrow$W5, W3$\rightarrow$W4$\rightarrow$W5).
+    \item \textbf{Family-history indicators (\texttt{ph726\_xx}):} Variables recording whether a participant's family member has been diagnosed with a condition, including diabetes, high cholesterol, hypertension, heart disease, osteoporosis, Alzheimer's disease, cancer, and depression. These are not incident clinical diagnoses of the participant and must be interpreted as a distinct prediction target, estimating the likelihood of a participant reporting a family history item at follow-up. These variables were retained following the manual dimensionality reduction procedure described in Chapter~3~\ref{sc:manual_var_filtering}, as they exceeded the minimum variability thresholds and were deemed potentially informative despite their indirect relationship to participant health status.
+    \item \textbf{Medication and procedure proxies:} Variables encoding prescription of antidepressants, antihypertensives, pain analgesia, cholesterol medication, a doctor confirmed hypertension diagnosis, and a record of cardiac procedure. These are treatment or diagnosis proxies rather than raw disease outcomes. Models trained on these targets can show inflated performance because the signal partly reflects established treatment decisions rather than new disease onset.
+\end{itemize}
+
+\subsubsection{Overall Performance}
+Figure~\ref{fig:trackb_scatter_plot} summarises discrimination across all disease specific models. The range of test \gls{AUC} values across all outcomes and both feature strategies spans from approximately $0.45$ to $0.75$, reflecting substantial variation in predictability.
+The highest performing outcomes were medication and diagnosis proxies, with antihypertensive prescription and doctor confirmed hypertension both achieving test \gls{AUC} of $0.718$ using all features. Functional decline and falls and balance assessment achieved $0.713$ and $0.721$ respectively, consistent with the strong signal these variables carry in \gls{TILDA} and their sustained measurement across all five waves. These results align with Track~A D2 and D3 performance, suggesting that predictive performance is largely driven by outcome measurability and prevalence, rather than whether the target is composite or disease-specific.    
+
+Clinical \texttt{ICD10} outcomes showed moderate discrimination. Eye diseases achieved the highest test \gls{AUC} among \texttt{ICD10} outcomes ($0.653$, all features), followed by circulatory disease ($0.626$). Endocrine and metabolic diseases ($0.515$) and musculoskeletal diseases ($0.507$) were near chance with the all features strategy and showed severe training overfitting (Train \gls{AUC} of $0.967$ and $1.000$ respectively). Restricting to the top-20 feature set improved musculoskeletal disease from $0.507$ to $0.548$ and endocrine disease from $0.515$ to $0.561$, suggesting that feature pruning mitigates overfitting driven by sparse incident cases, rather than uncovering stronger underlying signal.
+
+Family history models produced the most variable results. Using all features, test \gls{AUC} values ranged from $0.513$ (cancer) and $0.665$ (high cholesterol), but in most cases Training \gls{AUC} values were well above $0.80$, with some reaching $1.000$ (Alzheimer's disease and cancer), indicating severe overfitting. Switching to the top-20 feature set consistently degraded performance for family history targets, with several dropping below $0.50$. This pattern reflects two compounding problems: rare event counts and the nature of the target variable itself. Family history items do not represent a participant developing a disease, but rather their recall or report of a relative's diagnosis. As such, the signal is indirect, subject to recall bias, and not strongly linked to measurable physiological predictors. Additionally, during the manual dimensionality reduction process (Chapter~3\ref{fig:variable_filter_criteria}), variables with highly imbalanced response distributions (e.g., a single category exceeding approximately 90\% frequency) were excluded to improve model utility. While this improved overall feature quality, it further reduced the already limited variability available for these targets, contributing to instability and reduced generalisation performance.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.9\textwidth]{disease_specific_fig.png}
+    \caption{Train vs test \gls{AUC} for all Track~B models, coloured by outcome category.}\label{fig:trackb_scatter_plot}
+\end{figure}
+
+\subsubsection{Incidence and predictability}
+[\textbf{PLACEHOLDER: Appendix and couple of outcome incidence rates, counts, cohort size (best 2, worst2 and one middle performance) }] provides cohort sizes and incidence rates for each outcome. These vary considerably across diseases. Incidence rate is the primary driver of predictability in Track~B. Outcomes with incidence above approximately \textbf{PLACEHOLDER\_INCIDENCE\_THRESHOLD}\% and stable measurement across waves (functional decline, falls, symptom outcomes, medication proxies) produced test \gls{AUC} values consistently above $0.65$. Outcomes with incidence below \textbf{PLACEHOLDER\_LOW\_INCIDENCE\_THRESHOLD}\% (several family history items, cancer, Alzheimer's disease) produced near chance discrimination and large train-test gaps regardless of feature strategy. % mention only the worthy outocomes based on teh reulsts example teh bets reulsts and the worst and maybe 1/2 middle ones so reader can undertand ok why were the worst the worst and why where the best the best? todo: add table in appendix of all 24 features incident count/rates and cohort size
+
+The relationship between incidence and performance is direct: a model with fewer positive examples has less signal to learn stable decision boundaries from, and the class imbalance weighting (via \texttt{scale\_pos\_weight}) can only partially compensate when positive cases are very sparse. Low incidence outcomes also produce inflated training \gls{AUC} because the model can achieve a high training score simply by memorising the small number of positive cases in the training set, without learning any generalisable pattern, as seen in the Train $= 1.000$ cases for musculoskeletal diseases, Alzheimer's disease, and cancer. % change teh word direct.
+
+\subsubsection{Overfitting and feature reduction}
+For outcomes where the all features strategy produced a Train \gls{AUC} substantially above $0.90$ alongside a near chance test \gls{AUC}, the model has overfit. In these cases the top-20 strategy is the more reliable estimate of generalisable discrimination, even when absolute performance remains modest. For example, musculoskeletal diseases moved from Train $1.000$ / Test $0.507$ to Train $0.761$ / Test $0.548$ under feature reduction, which is a more calibrated result. Conversely, for outcomes where both strategies produce similar test \gls{AUC} with small train-test gaps (functional decline, hearing loss, urinary incontinence), the model has genuinely learnt something stable and the feature reduction confirms this. % change teh word 'Conversely'
+
+Medication proxies are an important exception to interpret carefully. Antidepressant prescription achieved test \gls{AUC} of $0.702$ (all features) with Train \gls{AUC} of $0.990$. The test performance is real, but it is driven partly by the model identifying participants who already show characteristics associated with receiving a prescription, such as prior depression related symptoms or functional limitations, rather than predicting new onset disease. These models are useful for identifying at risk individuals for clinical intervention but should not be conflated with predicting a confirmed diagnosis.
+
+Predictability in Track~B varies primarily with incidence rate, measurement consistency across waves, and target type. Functional, symptom, and medication proxy outcomes produced the strongest discrimination and the most stable generalisation. Clinical \texttt{ICD10} outcomes showed moderate performance where incidence was sufficient, and near-chance results where events were too rare to support learning. Family-history targets were the least reliable: performance was inconsistent, overfitting was pronounced, and the target itself reflects reported family burden rather than incident disease onset. These distinctions are important for interpreting the results shown in Figure~\ref{fig:trackb_scatter_plot} and inform the feature importance discussion in Section~\ref{sc:feature_importance}.% we need to be able to slightly to connetc teh dots here as in give stringer reaosns based on what we did previusly in our work example in ur chapter3.. the manual filtering..
+
+% -------- feature importance --------
+\section{Model interpretability and feature importance}\label{sc:feature_importance}
 \section{Robustness checks and sensitivity}
 \section{Error analysis}
 \section{Summary of findings}
