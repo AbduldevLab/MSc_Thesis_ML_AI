@@ -1,11 +1,19 @@
-\begin{table}[htbp]
-\centering
-\caption{40-items: and scoring of individual features}
-\small
-\begin{tabularx}{\textwidth}{X p{3cm} p{4cm}}
+\begin{longtable}{p{7cm} p{3cm} p{4cm}}
+\caption{40-items: and scoring of individual features} \\
 \toprule
 \textbf{Item} & \textbf{Variable} & \textbf{Scoring} \\
 \midrule
+\endfirsthead
+\toprule
+\textbf{Item} & \textbf{Variable} & \textbf{Scoring} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{3}{r}{\emph{Continued on next page}} \\
+\midrule
+\endfoot
+\bottomrule
+\endlastfoot
 
 Doctor diagnosed eye disease & ph105\_5 & 0 = None; 1 = Yes \\
 Doctor diagnosed hypertension & ph201\_01 & 1 = Yes; 0 = No \\
@@ -31,7 +39,7 @@ Family history of high cholesterol & ph726\_02 & 0 = No; 1 = Yes \\
 Family history of hypertension & ph726\_03 & 0 = No; 1 = Yes \\
 Family history of heart disease & ph726\_04 & 0 = No; 1 = Yes \\
 Family history of osteoporosis & ph726\_06 & 0 = No; 1 = Yes \\
-Family history of alzheimer's/dementia & ph726\_07 & 0 = No; 1 = Yes \\
+Family history of alzheimer's / dementia & ph726\_07 & 0 = No; 1 = Yes \\
 Family history of cancer & ph726\_08\_to\_11 & 1 = Yes; 0 = No \\
 Family history of depression & ph726\_12 & 0 = No; 1 = Yes \\
 Family history of other condition & ph726\_95 & 0 = No; 1 = Yes \\
@@ -48,6 +56,4 @@ Angioplasty/stent & ph208 & 0 = No; 1 = Yes; -1 = DK \\
 Fear of falling & ph408 & 0 = No; 1 = Yes; -1 = DK \\
 Antihypertensive medication use & ph202a & 1 = Yes; 0 = No; -1 = DK \\
 
-\bottomrule
-\end{tabularx}
-\end{table}
+\end{longtable}
