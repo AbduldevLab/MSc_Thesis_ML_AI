@@ -1,0 +1,53 @@
+\begin{table}[htbp]
+\centering
+\caption{40-items: and scoring of individual features}
+\small
+\begin{tabularx}{\textwidth}{X p{3cm} p{4cm}}
+\toprule
+\textbf{Item} & \textbf{Variable} & \textbf{Scoring} \\
+\midrule
+
+Doctor diagnosed eye disease & ph105\_5 & 0 = None; 1 = Yes \\
+Doctor diagnosed hypertension & ph201\_01 & 1 = Yes; 0 = No \\
+Doctor diagnosed high cholesterol & ph201\_08 & 0 = No; 1 = Yes \\
+No conditions & ph201\_14 & 1 = None; 0 = Otherwise \\
+Doctor diagnosed arthritis & ph301\_03 & 1 = Yes; 0 = No \\
+No listed conditions & ph301\_17 & 1 = None; 0 = Otherwise \\
+Long-term health problem & ph003 & 1 = Yes; 0 = No; -1 = DK/RF \\
+Self-reported long term illness/health problem & DISlongterm & 0 = No illness; 1 = Illness; 1 = Limiting illness \\
+Neoplasms & ICD10\_02 & 0 = No; 1 = Yes \\
+Diseases of the blood & ICD10\_03 & 0 = No; 1 = Yes \\
+Endocrine/metabolic disease & ICD10\_04 & 0 = No; 1 = Yes \\
+Mental and behavioural disorders & ICD10\_05 & 0 = No; 1 = Yes \\
+Diseases of the nervous system & ICD10\_06 & 0 = No; 1 = Yes \\
+Eye disease & ICD10\_07 & 0 = No; 1 = Yes \\
+Circulatory disease & ICD10\_09 & 0 = No; 1 = Yes \\
+Respiratory disease & ICD10\_10 & 0 = No; 1 = Yes \\
+Digestive system disease & ICD10\_11 & 0 = No; 1 = Yes \\
+Musculoskeletal disease & ICD10\_13 & 0 = No; 1 = Yes \\
+Genitourinary disease & ICD10\_14 & 0 = No; 1 = Yes \\
+Family history of diabetes & ph726\_01 & 0 = No; 1 = Yes \\
+Family history of high cholesterol & ph726\_02 & 0 = No; 1 = Yes \\
+Family history of hypertension & ph726\_03 & 0 = No; 1 = Yes \\
+Family history of heart disease & ph726\_04 & 0 = No; 1 = Yes \\
+Family history of osteoporosis & ph726\_06 & 0 = No; 1 = Yes \\
+Family history of alzheimer's/dementia & ph726\_07 & 0 = No; 1 = Yes \\
+Family history of cancer & ph726\_08\_to\_11 & 1 = Yes; 0 = No \\
+Family history of depression & ph726\_12 & 0 = No; 1 = Yes \\
+Family history of other condition & ph726\_95 & 0 = No; 1 = Yes \\
+No family history of any disease & ph726\_96 & 0 = No; 1 = Yes \\
+Pain medication use & ph505 & 1 = Yes; 0 = No; -1 = DK/RF \\
+Cholesterol medication & ph225 & 1 = Yes; 0 = No; -1 = DK/RF \\
+Antidepressant use & MDantidepressant & 0 = No; 1 = Yes \\
+Antihypertensive use & MDantihypertensives & 0 = No; 1 = Yes \\
+Self-rated chronic pain & ph501 (proxy) & 1 = Yes; 0 = No; -1 = DK \\
+Self-rated chronic pain & CHRany\_pain & 0 = No; 1 = Yes \\
+Self-rated hearing loss & ph145 & 0 = No; 1 = Yes; -1 = DK \\
+Self-rated urinary incontinence & ph601 & 0 = No; 1 = Yes; -1 = DK/RF \\
+Angioplasty/stent & ph208 & 0 = No; 1 = Yes; -1 = DK \\
+Fear of falling & ph408 & 0 = No; 1 = Yes; -1 = DK \\
+Antihypertensive medication use & ph202a & 1 = Yes; 0 = No; -1 = DK \\
+
+\bottomrule
+\end{tabularx}
+\end{table}
