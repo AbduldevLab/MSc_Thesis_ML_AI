@@ -26,7 +26,7 @@ The integrative literature review~\cite{torracoWritingIntegrativeLiterature2005}
 This combined guidance informed a structured yet flexible methodology suitable for ageing in \gls{AI}, and health research. 
 
 \subsection{Database search and query development}
-The main topic of interest was chronic disease prediction using nutrition, lifestyle, and clinical data from \gls{TILDA}. Relevant databases (e.g., ScienceDirect, PubMed) were searched using combinations of keywords such as ``Irish Longitudinal Study on Ageing", ``machine learning,"``chronic disease", ``nutrition", ``diet", and ``physical activity", as shown in Table~\ref{tab:PetersenSearch}. 
+The main topic of interest was chronic disease prediction using nutrition, lifestyle, and clinical data from \gls{TILDA}. Relevant databases (e.g., ScienceDirect, PubMed) were searched using combinations of keywords such as ``Irish Longitudinal Study on Ageing'', ``machine learning'', ``chronic disease'', ``nutrition'', ``diet'', and ``physical activity'', as shown in Table~\ref{tab:PetersenSearch}. 
 
 The search covered studies published from 2011 to 2025. Figure~\ref{fig:mapping_years} summarises the number of studies identified per year, highlighting trends and gaps over time.
 
@@ -68,27 +68,27 @@ The search covered studies published from 2011 to 2025. Figure~\ref{fig:mapping_
 \textbf{Database} & \textbf{Search} & \textbf{Results} \\
 \hline
 \multirow{2}{*}{Oxford Academic} &
-(TILDA OR Irish Longitudinal Study on Ageing) AND (chronic disease OR diabetes OR cardiovascular) AND (nutrition OR diet OR ``physical activity") & 1081 \\
-\\ & (TILDA OR ``Irish Longitudinal Study on Ageing") AND (``machine learning" OR ``predictive model" OR ``risk prediction") & 71 \\
+(TILDA OR Irish Longitudinal Study on Ageing) AND (chronic disease OR diabetes OR cardiovascular) AND (nutrition OR diet OR ``physical activity'') & 1081 \\
+\\ & (TILDA OR ``Irish Longitudinal Study on Ageing'') AND (``machine learning'' OR ``predictive model'' OR ``risk prediction'') & 71 \\
 \hline
 \multirow{2}{*}{IEEE Xplore} &
-TILDA OR ``Irish Longitudinal Study on Ageing" & 56 \\
-\\ & (TILDA OR "Irish Longitudinal Study on Ageing") AND (``machine learning" OR ``predictive model" OR ``risk prediction") & 7 \\
+TILDA OR ``Irish Longitudinal Study on Ageing'' & 56 \\
+\\ & (TILDA OR ``Irish Longitudinal Study on Ageing'') AND (``machine learning'' OR ``predictive model'' OR ``risk prediction'') & 7 \\
 \hline
 \multirow{2}{*}{ScienceDirect} &
-(TILDA OR ``Irish Longitudinal Study on Ageing") AND (``chronic disease" OR cardiovascular OR diabetes) AND (nutrition OR diet OR lifestyle OR ``physical activity") & 257 \\
-\\ & (TILDA OR ``Irish Longitudinal Study on Ageing") AND (``machine learning" OR ``predictive model") AND (``chronic disease" OR diabetes) AND (nutrition OR ``physical activity") & 20 \\
+(TILDA OR ``Irish Longitudinal Study on Ageing'') AND (``chronic disease'' OR cardiovascular OR diabetes) AND (nutrition OR diet OR lifestyle OR ``physical activity'') & 257 \\
+\\ & (TILDA OR ``Irish Longitudinal Study on Ageing'') AND (``machine learning'' OR ``predictive model'') AND (``chronic disease'' OR diabetes) AND (nutrition OR ``physical activity'') & 20 \\
 \hline
 \multirow{2}{*}{PubMed} &
-(TILDA OR ``Irish Longitudinal Study on Ageing") AND (``chronic disease" OR cardiovascular OR diabetes) AND (nutrition OR diet OR lifestyle OR ``physical activity") & 27 \\
-\\ & (TILDA OR ``Irish Longitudinal Study on Ageing") AND (``machine learning" OR ``predictive model" OR ``risk prediction") & 9 \\
+(TILDA OR ``Irish Longitudinal Study on Ageing'') AND (``chronic disease'' OR cardiovascular OR diabetes) AND (nutrition OR diet OR lifestyle OR ``physical activity'') & 27 \\
+\\ & (TILDA OR ``Irish Longitudinal Study on Ageing'') AND (``machine learning'' OR ``predictive model'' OR ``risk prediction'') & 9 \\
 \hline
 \end{tabular}}
 \end{table}
 % \clearpage
  
 Some search strings returned few or irrelevant entries, particularly for \gls{ML} applications in \gls{TILDA}, highlighting a key research gap. Iterations continued until suitable combinations consistently retrieved relevant studies.
-Duplicates were removed using Zotero's reference management feature. The remaining studies were individually and manually checked for relevance to ``ageing,'' ``chronic disease,'' and \gls{ML}. Using Zotero's notes functionality, the initially created Table~\ref{tab:lr_table} captured key elements for each study, including model type, features used, and main findings, as shown in the following \gls{PRISMA} flow diagram (Figure~\ref{fig:prisma}).
+Duplicates were removed using Zotero's reference management feature. The remaining studies were individually and manually checked for relevance to ``ageing,'' ``chronic disease'', and \gls{ML}. Using Zotero's notes functionality, the initially created Table~\ref{tab:lr_table} captured key elements for each study, including model type, features used, and main findings, as shown in the following \gls{PRISMA} flow diagram (Figure~\ref{fig:prisma}).
 % Prisma fig
 \begin{figure}[htbp]
 \centering
@@ -213,7 +213,7 @@ Traditional regression models may not fully capture age dependent interactions, 
 
 % ----------------------------------------------------------------------
 % Mental Health in Older Adults
-\section{Mental health in older adults}
+\section{Mental health in older adults}\label{sc:mental_health}
 
 \gls{MH}, including depression, anxiety, loneliness, and \gls{SOC} isolation, strongly shapes quality of life. 
 Evidence from \gls{TILDA} shows strong links to both physical and \gls{SOC} factors.~\cite{santiniProtectivePropertiesActBelongCommit2017} found that participation in physical, \gls{SOC}, and cognitive activities summarised by the Act-Belong-Commit (ABC) indicator was associated with lower depression and anxiety. 
@@ -297,7 +297,7 @@ This gap links directly to the broader methodological limits discussed in the ne
 
 % ---------------------------------------------------------------------------
 % Gaps in the Literature
-\section{Gaps in the literature}
+\section{Gaps in the literature}\label{sc:gaps_literature}
 First, most studies rely on \gls{TILDA} or similar cohorts of Irish and predominantly older adults $\texttt{(50+)}$. This limits confidence in how well results transfer to other populations. This thesis focuses on \gls{TILDA} studying ageing in depth but also makes use of the harmonised dataset, which links \gls{TILDA} with comparable UK and US cohorts. This helps place findings in a broader international context while retaining a core emphasis on older adults.
 
 Second, there is an over reliance on physical health predictors such as comorbidity counts and mobility measures, while nutrition, \gls{SOC}, religious or spiritual, and environmental variables are often overlooked. As shown in~\cite{murphyPlasmaLuteinZeaxanthin2023}, nutritional biomarkers like lutein and zeaxanthin are strong predictors of \gls{FR}, yet these are rarely integrated into broader \gls{ML} pipelines. By contrast, studies such as~\cite{bardonPredictorsIncidentMalnutrition2020} highlight the role of \gls{SOC} support and functional decline in malnutrition risk. Together, these examples show that excluding nutrition and \gls{SOC} factors risks producing models that reinforce the same biomedical biases seen in regression heavy work. From a Bayesian viewpoint, the omission of key features reduces the explanatory power of the model and weakens the posterior probability $P(\text{Outcome} \mid \text{All Features})$ compared to $P(\text{Outcome} \mid \text{Limited Features})$. Including a richer set of features increases the likelihood that the model accurately reflects the true data generating process.
