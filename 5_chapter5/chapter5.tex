@@ -345,7 +345,6 @@ For outcomes where the all features strategy produced train \gls{AUC} substantia
 For family history targets, feature reduction worsened rather than helped. With only 20 features, the model is further constrained in its ability to identify even proxy signal for family reported diagnoses. This is consistent with the broader point that the target type, rather than the feature count, drives instability in these models.
 
 The overall pattern across Track~B is consistent with the preprocessing decisions made in Chapter~\ref{sc:manual_var_filtering}. Variables were excluded during the manual filtering stage if they exceeded the missingness threshold, exhibited constant values, or had a single response category dominating more than approximately 90\% of observations. This process improved overall signal quality, but it also reduced the number of available predictors for outcomes that are inherently sparse or indirectly measured. Outcomes with rich, well distributed predictor signals, such as functional decline and fear of falling, benefited most. Outcomes dependent on rare or indirect signals, such as Alzheimer's family history or cardiac procedure, remained constrained by both the target definition and the reduced predictor space. The results in Figure~\ref{fig:trackb_scatter_plot} should therefore be interpreted not only as a function of modelling choices, but as a reflection of data availability and the structural properties of each outcome in \gls{TILDA}.
-
 % -------- feature importance --------
 \section{Model interpretability and feature importance}\label{sc:feature_importance}
 Feature importance analysis across all designs reveals three consistent findings. First, predictive signal is concentrated in a small, highly redundant set of health burden indicators, primarily spanning the Physical/Clinical and Functional thematic domains defined in Chapter~\ref{sc:thematic_domains}, with other domains adding little additional discriminative information beyond the baseline feature set. Second, the most important predictors shift fundamentally between designs: objective clinical biomarkers dominate the 8 year prediction window in D1, while medication burden and self-rated health dominate the 2 year transitions in D2 and D3. Third, no single domain specific predictor adds statistically significant predicitive value. This remained true within the constraints of the available features and model specification, as confirmed by the add-on analysis. Full feature importance bar plots for D1 and D2 across all four model families are provided in Appendix~\ref{app:top20_features}. Figure~\ref{fig:add_on_fig} displays the add-on $\Delta$delta visualisation.
@@ -427,4 +426,74 @@ Given the large baseline feature sets entering each comparison, marginal gains f
 Across all designs and model families, predictive signal across these related health outcomes was concentrated within a highly correlated pattern of indicators associated with accumulated health burden. Medication load, self-rated health, pain frequency and severity, and mobility difficulty collectively capture most of the discriminative signal available in this dataset: social, cognitive, nutritional, and behavioural domains showed weak positive trends but no independent contribution, within the context of the available feature set and model specification. This is supported by two convergent findings. Restricting D3 to 20 features produced no reduction in performance, and no add-on candidate improved discrimination significantly. Together, these results suggest that for 2-year transitions in this cohort, the signal structure reflects a highly correlated cluster of burden indicators rather than a set of separable domain specific risk factors.
 
 \section{Error analysis}
-% ph003/icd10 heatmap/dislongterm (outocme heatmaps (understand teh relatonship between the outcome and the features)), •	FP / FN insights •	keep tight (no storytelling overload)
+
+% Keep this section concise:
+% Goal is NOT to repeat performance metrics.
+% Focus instead on:
+% (i) where models fail,
+% (ii) patterns in FP/FN cases,
+% (iii) correlation structure among strongest predictors and outcomes.
+
+% Suggested structure:
+% 1. Brief paragraph on false positives and false negatives.
+% 2. Heatmap showing relationships between outcomes used:
+%    - ph003
+%    - DISlongterm
+%    - ICD10_ANY
+%    - medication burden variables
+%    - pain variables
+%    - functional limitation variables
+%    - self-rated health variables
+% 3. Final short interpretation paragraph linking errors to:
+%    - latent frailty / health burden structure
+%    - sparse incidence outcomes
+%    - self-report limitations
+%    - longitudinal transition uncertainty
+
+% Suggested interpretation:
+% False positives may reflect participants with elevated frailty
+% burden who did not progress to formal disease onset during the
+% prediction window.
+%
+% False negatives likely reflect disease processes not fully captured
+% by baseline self-reported variables or outcomes with sparse incidence.
+%
+% Heatmap should support the broader finding that most predictive
+% variables cluster around a shared health burden structure,
+% explaining why feature reduction in D3 caused minimal loss in AUC
+% and why add-on predictors produced limited incremental gain.
+% Suggested heatmap variables:
+% Outcomes:
+% - ph003
+% - DISlongterm
+% - ICD10_ANY
+%
+% Strong D2/D3 predictors:
+% - MDmeds4
+% - Self-rated health
+% - Pain severity
+% - Pain limits activities
+% - Physical limitation count
+% - GP visits
+% - Hospital visits
+% - Chair rising difficulty
+% - Walking steadiness
+% - Health vs peers
+%
+% Optional:
+% - BMI
+% - Grip strength
+% - Age
+\subsection{Misclassification patterns}
+
+[1 short paragraph]
+
+\subsection{Correlation structure of major predictors}
+
+[heatmap figure]
+
+[1 interpretation paragraph]
+
+\subsection{Interpretation of residual errors}
+
+[1 short paragraph]
