@@ -345,6 +345,7 @@ For outcomes where the all features strategy produced train \gls{AUC} substantia
 For family history targets, feature reduction worsened rather than helped. With only 20 features, the model is further constrained in its ability to identify even proxy signal for family reported diagnoses. This is consistent with the broader point that the target type, rather than the feature count, drives instability in these models.
 
 The overall pattern across Track~B is consistent with the preprocessing decisions made in Chapter~\ref{sc:manual_var_filtering}. Variables were excluded during the manual filtering stage if they exceeded the missingness threshold, exhibited constant values, or had a single response category dominating more than approximately 90\% of observations. This process improved overall signal quality, but it also reduced the number of available predictors for outcomes that are inherently sparse or indirectly measured. Outcomes with rich, well distributed predictor signals, such as functional decline and fear of falling, benefited most. Outcomes dependent on rare or indirect signals, such as Alzheimer's family history or cardiac procedure, remained constrained by both the target definition and the reduced predictor space. The results in Figure~\ref{fig:trackb_scatter_plot} should therefore be interpreted not only as a function of modelling choices, but as a reflection of data availability and the structural properties of each outcome in \gls{TILDA}.
+
 % -------- feature importance --------
 \section{Model interpretability and feature importance}\label{sc:feature_importance}
 Feature importance analysis across all designs reveals three consistent findings. First, predictive signal is concentrated in a small, highly redundant set of health burden indicators, primarily spanning the Physical/Clinical and Functional thematic domains defined in Chapter~\ref{sc:thematic_domains}, with other domains adding little additional discriminative information beyond the baseline feature set. Second, the most important predictors shift fundamentally between designs: objective clinical biomarkers dominate the 8 year prediction window in D1, while medication burden and self-rated health dominate the 2 year transitions in D2 and D3. Third, no single domain specific predictor adds statistically significant predicitive value. This remained true within the constraints of the available features and model specification, as confirmed by the add-on analysis. Full feature importance bar plots for D1 and D2 across all four model families are provided in Appendix~\ref{app:top20_features}. Figure~\ref{fig:add_on_fig} displays the add-on $\Delta$delta visualisation.
@@ -361,12 +362,12 @@ Shifting from D1 to D2 produced a major change in the importance landscape (see 
 
 Medication count excluding supplements ranked first in \gls{XGB} ($0.068$), \gls{RF} ($0.115$), and \gls{MLP} ($0.012$) in D2. Polypharmacy indicators, total medication counts including supplements, and extended medication burden measures collectively occupied much of the top 10 across all four model families. This shift reflects the change in prediction target from ICD10 coded hospitalisation over 8 years (D1) to self-reported chronic illness over 2 year transitions (D2). Over shorter windows, medication burden is a closer indicator of health deterioration: a participant already taking multiple medications at baseline is substantially more likely to report chronic illness at the next wave.
 
-Self-rated general health ranked first for \gls{LR} ($0.150$) and appeared in the top six for all model families. This predictor is one of the most consistently reported predictors of subsequent morbidity and mortality in older adult cohorts~\cite{moguilnerImportanceAgePrediction2021}, and its prominence here validates the predictive framework. Comparative self-rated health, capturing how participants assess their health relative to peers of the same age, also appeared in the top-20 across all models.
+Self-rated general health ranked first for \gls{LR} ($0.150$) and appeared in the top six for all model families. This predictor is one of the most consistently reported predictors of subsequent morbidity and mortality in older adult cohorts~\cite{moguilnerImportanceAgePrediction2021}, and its prominence here validates the predictive framework. Comparative self-rated health, capturing how participants assess their health relative to peers of the same age, also appeared in the top-20 across \gls{LR}, \gls{XGB} and \gls{RF} models.
 
 Pain related variables contributed substantially in D2. Chronic pain limiting activities, pain severity, and any chronic pain indicator all ranked consistently across model families. Chapter~\ref{sc:gaps_literature} identified chronic pain as a marker of underlying functional decline and a strong predictor of subsequent disease burden~\cite{lairdPhysicalActivityDepression2023}. Functional disability items, specifically difficulty getting up from a chair after sitting, chair rising steadiness, and aggregate physical limitation counts, rounded out the top predictors. Healthcare utilisation variables, general practitioner visit frequency and outpatient visit frequency, also appeared, reflecting that participants who engage heavily with the health system consistently showed elevated risk of incident chronic illness at the next wave.
 
 \subsection{Cross model consistency and the D3 feature set} 
-A notable finding across D2 is the high degree of agreement between model families regarding which features matter. The top five features by \gls{XGB} gain, \gls{RF} Gini importance, \gls{LR} absolute coefficient magnitude, and \gls{MLP} permutation importance show substantial overlap in the highest ranked predictors, with only minor ordering differences. This cross model agreement strengthens confidence that these represent genuine risk signals rather than model specific effects of any single modelling approach. % can we replace teh word artefact here with something more precise?
+A notable finding across D2 is the high degree of agreement between model families regarding which features matter. The top five features by \gls{XGB} gain, \gls{RF} Gini importance, \gls{LR} absolute coefficient magnitude, and \gls{MLP} permutation importance show substantial overlap in the highest ranked predictors, with only minor ordering differences. This cross model agreement strengthens confidence that these represent genuine risk signals rather than model specific effects of any single modelling approach.
 
 The D3 and Track~B top-20 feature set was derived directly from \gls{XGB} gain importance in D2 and applied unchanged across all four D3 model families and all Track~B disease specific models. Table~\ref{tab:top20_features_gain} lists this feature set with thematic domain assignments following the domains described in Section~\ref{sc:manual_var_filtering}.
 
@@ -379,11 +380,11 @@ The D3 and Track~B top-20 feature set was derived directly from \gls{XGB} gain i
 \toprule
 Feature label & Description & Thematic domain \\
 \midrule
-Regular medications (excl.\ supps) & Total regular medications excluding supplements & Physical/Clinical \\
+Reported medications (excl.\ supps) & Total reported medications excluding supplements & Physical/Clinical \\
 Chronic pain (proxy) & Frequency of pain experienced & Functional/Symptom \\
 Polypharmacy (excl.\ supps) & Taking five or more medications excluding supplements & Physical/Clinical \\
-Regular medications ($\geq$4) & Number of regular medications including supplements & Physical/Clinical \\
-Regular medications (count) & All reported medications including supplements & Physical/Clinical \\
+Regular medications & Number of regular medications including supplements & Physical/Clinical \\
+Reported medications & Number of reported medications including supplements & Physical/Clinical \\
 Self-rated health & General self-rated health (excellent to poor) & Physical/Clinical \\
 Number of physical limitations & Count of activity limitations from mobility items & Functional \\
 Health limits activities & Health problem limits kind or amount of activities & Functional \\
@@ -397,8 +398,8 @@ Chronic pain & Any chronic pain present & Functional/Symptom \\
 Chair rising steadiness & Steadiness when getting up from a chair & Functional \\
 Hospital visits (12 months) & Number of outpatient visits in past 12 months & Physical/Clinical \\
 Getting up from chair difficulty & Difficulty getting up from a chair after sitting & Functional \\
-Functional difficulty (7) & Difficulty stooping, kneeling, or crouching & Functional \\
-Health vs.\ peers & Self-rated health compared with others of same age & Physical/Clinical \\
+Functional difficulty & Difficulty stooping, kneeling, or crouching & Functional \\
+Health vs peers & Self-rated health compared with others of same age & Physical/Clinical \\
 \bottomrule
 \end{tabular}
 }
@@ -407,14 +408,14 @@ Health vs.\ peers & Self-rated health compared with others of same age & Physica
 The feature set spans two primary thematic domains: Physical/Clinical (medication counts, self-rated health, healthcare utilisation) and Functional (mobility difficulty, pain, physical limitation), with one Lifestyle item (flu vaccination). Nutritional and metabolic biomarkers, psychological and cognitive measures, and sociodemographic variables are absent from the top-20.
 
 \subsection{Predictor add-on analysis} 
-The add-on analysis evaluated the incremental contribution of individual candidate features to the prediction of functional decline (\texttt{DISlongterm}) using a BASE versus BASE+ADDON framework. For each candidate, a model was trained on all available predictors except that candidate (BASE), then retrained with it included. The baseline cohort and feature set are determined dynamically for each candidate. Only waves in which both the outcome target and available candidate feature were included, causing cohort size and feature count to vary. For example, when difficulty walking 1~km served as the candidate, the analysis included waves 1 to 3, yielding 929 held out test participants and approximately 570 features entering the model after the missingness filter. When education level served as the candidate, waves 3 to 5 were used, yielding 660 test participants and approximately 464 features. The delta in \gls{AUC} and average precision (\gls{AP}) was estimated with bootstrapped 95\% \gls{CI}s ($B = 2{,}000$ resamples on the held out test set). Full delta results are shown in Figure~\ref{fig:add_on_fig}. The candidates span lifestyle, socioeconomic, cognitive, nutritional, and social domains, including features from thematic domains~\ref{tab:pmf_prefixes} not represented in the top-20 feature set.
+The add-on analysis evaluated the incremental contribution of individual candidate features to the prediction of functional decline (\texttt{DISlongterm}) using a BASE versus BASE+ADDON framework. For each candidate, a model was trained on all available predictors except that candidate (BASE), then retrained with it included. The baseline cohort and feature set are determined dynamically for each candidate. Only waves in which both the outcome target and the candidate feature were present were used, meaning cohort size and feature count varied across candidates. For example, when a history of blackout or fainting served as the candidate feature, the analysis included waves 1 to 3, yielding 929 held-out test participants and approximately 570 features entering the model after the missingness filter. When education level served as the candidate, waves 3 to 5 were used, yielding 660 test participants and approximately 464 features. The delta in \gls{AUC} and average precision (\gls{AP}) was estimated with bootstrapped 95\% \gls{CI}s ($B = 2{,}000$ resamples on the held-out test set). Full delta results are shown in Figure~\ref{fig:add_on_fig}. The candidates span lifestyle, socioeconomic, cognitive, nutritional, and social domains, including features from thematic domains~\ref{tab:pmf_prefixes} not represented in the top-20 feature set.
 
 Given the large baseline feature sets entering each comparison, marginal gains from a single additional candidate feature are expected to be small. The purpose of the analysis is therefore to assess whether any domain contributes unique predictive information beyond this baseline rather than to achieve statistically significant improvements. No candidate produced a statistically significant improvement across any metric. Every \gls{AUC} delta \gls{CI} crossed zero. Selected results, organised by domain cluster, are as follows.
 \begin{enumerate}[label= (\roman*)]
-    \item \textbf{Functional predictors} (walking difficulty, chair rising difficulty, physical limitations, chair rising steadiness). The highest BASE \gls{AUC} in the study ($0.714$, CV $0.726 \pm 0.009$) occurred when the candidate feature was difficulty walking 1~km, confirming its strong individual signal. Adding it to the BASE produced zero marginal gain (\gls{CI}: $[-0.007, 0.007]$). Chair rising difficulty ($[-0.012, 0.002]$), physical limitation count ($[-0.008, 0.007]$), and chair rising steadiness ($[-0.006, 0.010]$) showed similarly null deltas. The \gls{NOS} table in Chapter~\ref{tab:lr_table} identified gait speed, chair stand performance, and physical limitation as primary frailty indicators in \gls{TILDA}~\cite{davisComparisonGaitSpeed2021}. The small incremental contributions are consistent with strong correlation across functional predictors: pain, steadiness, and mobility difficulty items share their predictive variance, and none appears to contribute substantial independent information beyond the others.
+    \item \textbf{Functional predictors} (chair rising difficulty, physical limitations, chair rising steadiness, \gls{FOF}). Among the functional candidates, the highest BASE \gls{AUC} occurred when getting up from a chair difficulty served as the candidate feature ($0.707$). Adding it to the BASE produced a near zero marginal gain (\gls{CI}: $[-0.012, 0.002]$). Physical limitation count (\gls{CI}: $[-0.008, 0.007]$) and chair rising steadiness (\gls{CI}: $[-0.006, 0.010]$) showed similarly null deltas. The \gls{NOS} table in Chapter~\ref{tab:lr_table} identified gait speed, chair stand performance and physical limitation as primary frailty indicators in \gls{TILDA}~\cite{davisComparisonGaitSpeed2021}. The small incremental contributions are consistent with strong correlation across functional predictors: pain, steadiness, and mobility difficulty items share their predictive variance, and none appears to contributes substantial independent information beyond the others.
     \item \textbf{Socioeconomic predictors} (education level, household income). Education level produced the largest observed positive delta, with Test \gls{AUC} moving from $0.711$ to $0.719$ (\gls{CI}: $[-0.002, 0.018]$). The direction is consistent with the examined literature on social disadvantage~\cite{mccrorySocialDisadvantageSocial2016}, although the interval crosses zero and the effect cannot be confirmed statistically. Total household income produced a smaller positive trend ($[-0.004, 0.010]$). The smaller effect likely reflects alignment with healthcare utilisation and employment status predictors already in the BASE.\
     \item \textbf{Psychosocial and mental health predictors} (UCLA loneliness, depressive symptoms, social connectedness). UCLA loneliness produced no detectable effect (\gls{CI}: $[-0.009, 0.006]$). Depressive symptoms produced a small positive delta of $+0.001$ (\gls{CI}: $[-0.008, 0.010]$). Social connectedness showed similarly minimal movement (\gls{CI}: $[-0.008, 0.007]$). Chapter~\ref{sc:mental_health} documented bidirectional links between \gls{SOC} (social isolation, depression, and functional health) in \gls{TILDA}~\cite{santiniProtectivePropertiesActBelongCommit2017,jacobFallsIncreaseRisk2023}. The null deltas do not contradict these associations, they indicate that the relevant pathways are already captured within the functional and pain predictors present in the BASE.\
-    \item \textbf{Physical and behavioural predictors} (grip strength, \gls{BMI}, cigarettes per day, CAGE alcohol scale). Grip strength produced a positive delta of $+0.004$ (\gls{CI}: $[-0.004, 0.012]$). The literature review chapter identifies grip strength as a primary frailty marker in \gls{TILDA}~\cite{romero-ortunoTransitionsFrailtyPhenotype2021}, the near zero increment confirms that the functional limitation variables in the BASE already capture this frailty related signal.\ \gls{BMI} produced $+0.002$ (\gls{CI}: $[-0.007, 0.012]$). Cigarettes per day trended slightly negative ($[-0.012, 0.002]$), and the CAGE alcohol scale contributed minimally ($[-0.004, 0.008]$).
+    \item \textbf{Physical and behavioural predictors} (grip strength, \gls{BMI}, cigarettes per day, CAGE alcohol scale, history of blackout or fainting). Grip strength produced a positive delta of $+0.004$ (\gls{CI}: $[-0.004, 0.012]$). Chapter~\ref{ch:chapter2} identifies grip strength as a primary frailty marker in \gls{TILDA}~\cite{romero-ortunoTransitionsFrailtyPhenotype2021}; the near zero increment confirms that the functional limitation variables in the BASE already capture this frailty related signal.\ \gls{BMI} produced $+0.002$ (\gls{CI}: $[-0.007, 0.012]$). Cigarettes per day trended slightly negative ($[-0.012, 0.002]$), and the CAGE alcohol scale contributed minimally ($[-0.004, 0.008]$). A history of blackout or fainting produced the highest BASE \gls{AUC} in the study ($0.714$, CV $0.726 \pm 0.009$), indicating a BASE model that is already performing strongly when this variable is withheld. Adding it back yielded no further gain (\gls{CI}: $[-0.007, 0.007]$), suggesting its signal is captured through correlated cardiovascular and health burden predictors already present in the BASE.\
 \end{enumerate}
 
 \begin{figure}[ht]
@@ -426,74 +427,3 @@ Given the large baseline feature sets entering each comparison, marginal gains f
 Across all designs and model families, predictive signal across these related health outcomes was concentrated within a highly correlated pattern of indicators associated with accumulated health burden. Medication load, self-rated health, pain frequency and severity, and mobility difficulty collectively capture most of the discriminative signal available in this dataset: social, cognitive, nutritional, and behavioural domains showed weak positive trends but no independent contribution, within the context of the available feature set and model specification. This is supported by two convergent findings. Restricting D3 to 20 features produced no reduction in performance, and no add-on candidate improved discrimination significantly. Together, these results suggest that for 2-year transitions in this cohort, the signal structure reflects a highly correlated cluster of burden indicators rather than a set of separable domain specific risk factors.
 
 \section{Error analysis}
-
-% Keep this section concise:
-% Goal is NOT to repeat performance metrics.
-% Focus instead on:
-% (i) where models fail,
-% (ii) patterns in FP/FN cases,
-% (iii) correlation structure among strongest predictors and outcomes.
-
-% Suggested structure:
-% 1. Brief paragraph on false positives and false negatives.
-% 2. Heatmap showing relationships between outcomes used:
-%    - ph003
-%    - DISlongterm
-%    - ICD10_ANY
-%    - medication burden variables
-%    - pain variables
-%    - functional limitation variables
-%    - self-rated health variables
-% 3. Final short interpretation paragraph linking errors to:
-%    - latent frailty / health burden structure
-%    - sparse incidence outcomes
-%    - self-report limitations
-%    - longitudinal transition uncertainty
-
-% Suggested interpretation:
-% False positives may reflect participants with elevated frailty
-% burden who did not progress to formal disease onset during the
-% prediction window.
-%
-% False negatives likely reflect disease processes not fully captured
-% by baseline self-reported variables or outcomes with sparse incidence.
-%
-% Heatmap should support the broader finding that most predictive
-% variables cluster around a shared health burden structure,
-% explaining why feature reduction in D3 caused minimal loss in AUC
-% and why add-on predictors produced limited incremental gain.
-% Suggested heatmap variables:
-% Outcomes:
-% - ph003
-% - DISlongterm
-% - ICD10_ANY
-%
-% Strong D2/D3 predictors:
-% - MDmeds4
-% - Self-rated health
-% - Pain severity
-% - Pain limits activities
-% - Physical limitation count
-% - GP visits
-% - Hospital visits
-% - Chair rising difficulty
-% - Walking steadiness
-% - Health vs peers
-%
-% Optional:
-% - BMI
-% - Grip strength
-% - Age
-\subsection{Misclassification patterns}
-
-[1 short paragraph]
-
-\subsection{Correlation structure of major predictors}
-
-[heatmap figure]
-
-[1 interpretation paragraph]
-
-\subsection{Interpretation of residual errors}
-
-[1 short paragraph]
