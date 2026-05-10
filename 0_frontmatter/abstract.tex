@@ -5,15 +5,16 @@
 %\begin{abstractslong}    %uncommenting this line, gives a different abstract heading
 \begin{abstracts}        %this creates the heading for the abstract page.
 
-\textbf{Background:} Chronic diseases such as \gls{CVD}, \gls{DM}, \gls{FR}, and obesity represent major contributors to morbidity in older adults. While traditional prediction models focus heavily on clinical and functional indicators, the contribution of nutritional and lifestyle factors to early risk detection remains underexplored.  
+\textbf{Background:} Chronic disease and functional decline are major contributors to morbidity and reduced quality of life in older adults. Large longitudinal ageing studies such as \gls{TILDA} allow examination of how clinical, functional, behavioural, and self-reported health indicators contribute to disease risk prediction over time.
 
-\textbf{Methods:} This thesis applies machine learning techniques to data from \gls{TILDA}, a national representative longitudinal study of older adults. Five waves of socio demographic, clinical, nutritional, psychological, and behavioural data, with selected variables from the externally produced \gls{RAND} + Harmonised \gls{TILDA} dataset, together were systematically cleaned and standardised using a multi stage preprocessing pipeline. Predictive models, including (\emph{models x, y, z}) were developed to estimate the risk of chronic disease and \gls{FR} related outcomes. Model performance was evaluated using (\emph{mention examples}), and feature importance was used to assess predictive value.
+\textbf{Methods:} A longitudinal machine learning framework was developed using five waves of \gls{TILDA} data. Variables were cleaned, harmonised, and standardised through a multi stage preprocessing pipeline before applying multiple machine learning models to chronic disease and functional health outcomes. Performance, generalisation, and predictor contribution were evaluated using \gls{CV}, feature importance analysis, and statistical add on evaluation.
 
-\textbf{Results:} TBD
+\textbf{Results:} Longitudinal pooled modelling substantially improved predictive performance and model stability compared with single wave transition approach, increasing \gls{CV} performance by $0.129\pm0.066$. Predictive signal was consistently concentrated within a compact group of health burden indicators, particularly medication use, self rated health, chronic pain, and functional limitation measures. Cognitive, psychosocial, nutritional, and behavioural variables provided limited independent improvement once these core measures were included. % \gls{CV} performance by $+0.129$ while reducing variance from $\pm0.072$ to $\pm0.006$
 
-\textbf{Conclusions:} TBD
+\textbf{Conclusions:} Longitudinal disease risk prediction in this cohort was driven primarily by accumulated health burden captured through self-reported and functional health indicators rather than isolated domain specific risk factors. A relatively small set of correlated health burden variables captured most of the discriminative signal available within the publicly accessible \gls{TILDA} dataset used in this study.
 
-\textbf{Keywords:} ageing, (\glsentryfull{AI}), \glsentryfull{ML}, predictive modelling, \glsentryfull{FR}, chronic disease, nutrition, \glsentryfull{TILDA}
+\textbf{Keywords:} ageing, (\glsentryfull{AI}), \glsentryfull{ML}, predictive modelling, \glsentryfull{FR}, chronic disease, functional decline, \glsentryfull{TILDA}
+
 \end{abstracts}
 %\end{abstractlongs}
 
