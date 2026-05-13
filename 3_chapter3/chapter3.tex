@@ -12,20 +12,21 @@
 % ----------------------- contents from here ------------------------
 \section{Study population and design}
 
-\gls{TILDA} provides longitudinal data across five waves (Waves 1--5) for community dwelling adults in Ireland. For benchmarking against international cohorts, an external harmonised \gls{TILDA} dataset was also inspected and prepared. The harmonised dataset, which has been pre aligned to international standards e.g., the \gls{G2G}, contains a subset of variables mapped to a common cross study format and thus differs from the raw \gls{TILDA} files. Although the harmonised dataset was simpler to process, it was still subjected to the variable filtering and numerical standardisation steps developed as part of this research to ensure compatibility with the five wave cleaned datasets prior to modelling.
+\gls{TILDA} provides longitudinal data across five waves (Waves 1--5) for community dwelling adults in Ireland. The harmonised dataset, which has been pre aligned to international standards e.g., the \gls{G2G}, contains a subset of variables mapped to a common cross study format and thus differs from the raw \gls{TILDA} files. Although the harmonised dataset was simpler to process, it was still subjected to the variable filtering and numerical standardisation steps developed as part of this research, producing a cleaned representation in the same format as the five wave datasets. Its potential for cross study replication is discussed in Chapter~\ref{ch:chapter6}.
 
 All participants who provided data in at least one \gls{TILDA} wave were considered eligible. To maximise the available sample for machine learning, no exclusions were applied on the basis of age, medical conditions, mobility, cognitive status, or health centre attendance.
 
 Participants were removed only in the rare case that, following manual variable filtering, no analytically usable variables remained for that individual. Filtering occurred primarily at the \emph{variable level} during the manual screening stage, which excluded features with extreme missingness, lack of variation, or non informative structure. This approach preserves the largest possible sample while ensuring all retained inputs are analytically meaningful for downstream analysis and model development.
 
 \begin{itemize}
-    \item[-] \textbf{Participant inclusion:} All respondents who contributed data in at least one wave were included in the initial sample. % After M5 baseline model add - longitudinal risk modelling inclusion criteria: where participants free of chronic disease at wave 1 were included
+    \item[-] \textbf{Participant inclusion:} All respondents who contributed data in at least one wave were included in the initial sample.
     \item[-] \textbf{Usable data requirement:} Participants were excluded only if all retained variables were missing for that individual after manual variable screening.
     \item[-] \textbf{Longitudinal retention:} Individuals were retained regardless of how many waves they contributed to, enabling initial maximum dataset utilisation.
     \item[-] \textbf{No clinical exclusions:} No participant was removed due to medical diagnoses, cognitive scores, functional limitations, or non attendance at the health centre assessment.
 \end{itemize}
 This approach prioritises data integrity and sample size for machine learning applications, differing from exclusion heavy cohort definitions often used in traditional epidemiological studies~\cite{obermeyerPredictingFutureBig2016}.
 
+% ----------------------------------------------------------------------
 \section{TILDA data collection and screening}
 
 \gls{TILDA} data collection occurred over five longitudinal waves (Table~\ref{tab:raw_dataset_shape}). 
@@ -60,6 +61,7 @@ Harmonised~\cite{ISSDA/FHM5I8_2025} & 2016 (release) & 8501 & 572 \\
 \end{tabular}}
 \end{table}
 
+% ----------------------------------------------------------------------
 \section{Thematic domains}\label{sc:thematic_domains}
 
 Variables were organised into seven thematic domains based on ageing literature and study objectives. Each variable's prefix, as defined in the \gls{PMF} metadata (Table~\ref{tab:pmf_prefixes}), indicates its source or research domain. This systematic assignment ensures that each thematic group contains conceptually related features and provides a clear structure for downstream automated preprocessing and machine learning. 
@@ -114,7 +116,8 @@ G2G & Gateway to Global Aging Data \\
 
 By categorising the raw variables into these seven thematic domains, a structured foundation was established for the technical dimensionality reduction and cleaning pipeline described in the following Section~\ref{sc:manual_var_filtering} and Chapter~\ref{ch:chapter4}.
 
-\section{Manual variable filtering workflow}\label{sc:manual_var_filtering} % rename to manaul dimensionality reduction?
+% ----------------------------------------------------------------------
+\section{Manual variable filtering workflow}\label{sc:manual_var_filtering} % rename to manaul dimensionality reduction? or soemthing more appropriate? - optional
 Prior to any data cleaning or modelling, a structured multi-stage workflow was implemented to screen and reduce the dimensionality of the raw \gls{TILDA} datasets. As shown in Table~\ref{tab:reduced_dataset_shape} (for example, 1619 $\to$ 809 variables in Wave 1), the raw \gls{PMF} files were reduced to a subset of variables of interest. This procedure also separated automated diagnostic profiling from manual variable exclusion, ensuring transparency in all selection decisions.
 
 The process consisted of the following steps:
@@ -147,6 +150,7 @@ The retained variables defined in \gls{JSON} files were subsequently used to sub
                                                                                                  
 Importantly, all variable exclusion decisions were completed at this stage. Subsequent preprocessing steps focus exclusively on numerical standardisation, recoding, and preparation for machine learning rather than further feature removal. With the variables of interest selected and the datasets reduced to a manageable dimensionality, the next stage focuses on automated preprocessing, recoding, and preparation for \gls{ML} modelling.
 
+% ----------------------------------------------------------------------
 \section{Reduced dataset overview}
 To further understand the characteristics of these retained variables, the datasets were profiled using an exploratory visualiser (\texttt{.ipynb}) file implemented with \texttt{pandas}, \texttt{numpy}, \texttt{matplotlib}, and \texttt{seaborn}. This step examined data types, missingness patterns, unique value distributions, and representative sample values across all waves. The purpose of this profiling stage was not transformation but to expose structural inconsistencies and latent formatting issues that would undermine direct numerical conversion.
 
@@ -174,6 +178,7 @@ Despite this, the exploratory visualiser was limited because the raw data were n
 
 These insights, revealed through systematic profiling, guided the development of the subsequent cleaning pipeline steps, ensuring consistent numeric logic representations (e.g., midpoints for ranges, standardised sentinel handling).
 
+% ----------------------------------------------------------------------
 \section{Retained variable distribution by domain}
 
 Using the \gls{PMF} prefixes described in Table~\ref{tab:pmf_prefixes} as a guide, variables were assigned to seven thematic groups (Table~\ref{tab:feature_groups}), each capturing a conceptually coherent domain: physical, cognitive, social, and behavioural aspects of ageing. This structure supports reproducible preprocessing and helps machine learning models focus on meaningful, longitudinally robust features. 

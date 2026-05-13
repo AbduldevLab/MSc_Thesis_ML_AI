@@ -16,9 +16,7 @@ European regulatory frameworks such as the \gls{GDPR} and proposed \gls{EU} \gls
 
 Traditional risk prediction models have largely relied on clinical biomarkers such as \gls{BP} and lipid profiles. Yet, growing evidence shows that broader predictors, including nutrition~\cite{murphyPlasmaLuteinZeaxanthin2023}, \gls{PA}~\cite{lairdPhysicalActivityDose2023}, \gls{MH}~\cite{mcdowellAssociationsPhysicalActivity2018}, and \gls{SOC}~\cite{mccrorySocialDisadvantageSocial2016} improve predictive performance. Estimating the likelihood of developing a condition given certain risk factors helps quantify the influence of these predictors in clinical decision making. 
 
-\gls{TILDA}\footnote{\gls{TILDA}'s dataset are pseudonymised and accessed under license via \gls{ISSDA}. Use adheres to \gls{UL} S\&E ethics approval and data retention requirements.} provides a national representative cohort of adults aged $\texttt{50+}$ in Ireland, surveyed repeatedly across multiple domains. For cross study comparability and methodological consistency in model development, selected variables from the externally produced \gls{RAND} Harmonised \gls{TILDA} dataset (available for Waves 1 and 2) were included. 
-
-The harmonised dataset provides standardised variable definitions and documented construction rules, which are particularly relevant in a machine learning setting where models are trained and evaluated on partitioned data. Its inclusion supports robust feature engineering, reproducible train validation splits, and alignment with prior ageing related \gls{ML} studies that adopt harmonised frameworks. The specific role of harmonised variables within the modelling pipeline is detailed in Chapter~\ref{ch:chapter3}.
+\gls{TILDA}\footnote{\gls{TILDA}'s dataset are pseudonymised and accessed under license via \gls{ISSDA}. Use adheres to \gls{UL} S\&E ethics approval and data retention requirements.} provides a national representative cohort of adults aged $\texttt{50+}$ in Ireland, surveyed repeatedly across multiple domains. An externally produced \gls{RAND} Harmonised \gls{TILDA} dataset (available for waves $1-2$) was also inspected and prepared during data processing, its role and potential for cross study replication are discussed in Chapter~\ref{ch:chapter3} and future work (Chapter~\ref{ch:chapter6}).
 
 Despite these advantages, existing \gls{ML} research on chronic disease prediction faces persistent limitations: over reliance on clinical predictors, limited incorporation of lifestyle and \gls{SOC} variables, predominantly cross sectional study designs that fail to capture trajectories, and a lack of interpretability consistent with emerging \gls{AI} governance standards.  
 
@@ -48,9 +46,9 @@ The goal of this thesis is to develop and validate \gls{ML} models that integrat
 \begin{itemize}
   \item[-] Review existing applications in \gls{ML} for chronic disease prediction in ageing populations, with emphasis on gaps in lifestyle and nutrition integration.
   \item[-] Develop a reproducible pipeline to preprocess and align \gls{TILDA} waves 1--5, and engineer multidomain features (nutrition, activity, mobility, \gls{MH}, clinical indicators).
-  \item[-] Develop and compare baseline statistical models (e.g., logistic regression) with advanced interpretable \gls{ML} methods such as \gls{RF} and \gls{GBM}.
+  \item[-] Develop and compare a linear baseline (\gls{LR}) against tree ensemble and neural network families (\gls{XGB}, \gls{RF}, \gls{MLP}) across single wave and pooled longitudinal designs.
   \item[-] Evaluate models using predictive classification performance metrics including \gls{AUC}, calibration and error measures (accuracy, precision, \gls{recall}, \gls{F1}), perform ablation analyses to assess the incremental value of lifestyle and nutrition predictors.
-  \item[-] Identify actionable predictors (e.g., vitamin D status, \gls{UGS} reserve) and highlight modifiable risk factors for intervention.
+  \item[-] Identify the most informative predictors of chronic disease onset and assess whether domain specific features beyond the core health burden set contribute independent predictive value.
   \item[-] Document ethical, governance, and reproducibility practices for handling longitudinal pseudonymised health data.
 \end{itemize}
 
@@ -61,7 +59,7 @@ The goal of this thesis is to develop and validate \gls{ML} models that integrat
 This research makes contributions at three levels:
 
 \begin{itemize}
-  \item \textbf{Empirical:} Demonstrates how behavioural, dietary, and other \gls{MH} features complement established clinical measures to enhance predictive performance.
+  \item \textbf{Empirical:} Demonstrates that predictive signal for chronic disease onset in this cohort is concentrated in a compact set of health burden indicators (medication use, self-rated health, pain, functional limitation and other \gls{MH} features), that pooled longitudinal modelling substantially improves both performance and stability over a single-wave baseline. % A bit cliche i think we dont have to explecity mention this becaise then teh nrration becomes ot evdienty taht this was fitted to jusitfy our chapter 5 hahaha lets make it natrual right i think we shoudl drop the statemnt of single wave vs pooled longitudinal because it is a bit too much of a spoiler for the results chapter, we can just say that we demonstrate the value of longitudinal modelling and then in the results chapter we can show the comparison between single wave and pooled longitudinal and then we can discuss the implications of that in the discussion chapter, i think that would be a more natural way to present the results rather than giving away the punchline in the introduction. Again try keep things as short as possible
   \item \textbf{Methodological:} Provides a reproducible pipeline for aligning longitudinal \gls{TILDA} data across domains and integrating diverse features into \gls{ML} workflows.  
   \item \textbf{Clinical:} Highlights actionable modifiable factors alongside traditional clinical indicators for targeted interventions and policy. 
 \end{itemize}
@@ -73,7 +71,7 @@ This research makes contributions at three levels:
 \emph{Chapter}~\ref{ch:chapter2} presents a literature review on \gls{ML} prediction of chronic disease in ageing populations, focusing on lifestyle, nutrition predictors and methodological considerations.
 \emph{Chapter}~\ref{ch:chapter3} describes the data preparation process, including the \gls{TILDA} study design, data collection, thematic domain structure, and the manual variable filtering workflow.
 In \emph{Chapter}~\ref{ch:chapter4}, the automated cleaning pipeline is presented, including the variable scenario detection system, the deterministic six-step cleaning sequence, and validation of the pipeline against established benchmarks.
-\emph{Chapter 5} presents the experimental results, including model comparisons and feature importance analysis. 
+\emph{Chapter 5} presents the empirical evaluation, covering performance across three modelling designs, disease specific prediction, predictor add-on analysis, and an interpretation of the health burden correlation structure underlying the results.
 \emph{Chapter 6} discusses the implications and future directions of the research.
 
 % ---------------------------------------------------------------------------
