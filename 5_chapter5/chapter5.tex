@@ -17,7 +17,7 @@
 \section{Modelling and evaluation framework}
 This section defines the modelling and evaluation setup used throughout this chapter, including model families and designs, analysis samples, outcome definitions, and evaluation procedures, building directly on the prepared datasets from Chapters~\ref{ch:chapter3} and~\ref{ch:chapter4}.
 
-The evaluation is based on participants aged between $50-84$ years with a mean age of $66$. To ensure that the prediction task reflects incident (new onset) disease, individuals with the target condition present at the start of a transition were excluded, leaving only at risk observations for training and testing. This rule was applied consistently across all designs and for both Track~A (Any disease outcome) and Track~B (disease specific outcomes).
+The evaluation is based on participants aged between $50-84$ years with a mean age of $66$. To ensure that the prediction task reflects incident (new onset) disease, individuals with the target condition present (outcome${}=1$) at the start of a transition were excluded, leaving only at risk observations for training and testing. This rule was applied consistently across all designs and for both Track~A (Any disease outcome) and Track~B (disease specific outcomes).
 
 Final analysis samples differed by design and tracks due to data structure. The baseline design (D1) uses a single transition (Wave~1$\rightarrow$Wave~5), with a follow-up period of approximately 8 years. The pooled multi-wave designs (D2 and D3) aggregate all eligible consecutive transitions (W1$\rightarrow$W2, W2$\rightarrow$W3, W3$\rightarrow$W4, W4$\rightarrow$W5), each spanning approximately 2 years, thereby capturing shorter term dynamics.
 
@@ -78,7 +78,7 @@ The three primary modelling designs were implemented to address and assess the e
 \item[-] \textbf{D2 (Multi-wave pooled):} All four eligible consecutive transitions (W1$\rightarrow$W2, W2$\rightarrow$W3, W3$\rightarrow$W4, W4$\rightarrow$W5) were stacked into a single pooled dataset. Disease free status and incident outcome were defined using (self-reported long term chronic/health problems) at each transition. A numeric wave transition indicator (\texttt{wave\_transition\_num}) was added as a feature to capture temporal context. The pooled cohort comprised $n=14{,}296$ person wave observations (incidence $22.5\%$). Feature selection used \texttt{SelectKBest} ($k=100$), and \gls{CV} used \texttt{StratifiedGroupKFold} to ensure no participant appeared in more than one fold.
 \item[-] \textbf{D3 (Top-20 + \gls{HPO}):} Built directly on the D2 cohort and wave structure. The feature set was restricted to the 20 highest ranked predictors by \gls{XGB} gain importance from D2, plus \texttt{wave\_transition\_num}. No additional feature selection step was applied.\ \gls{HPO} was performed for all four model families using \texttt{RandomizedSearchCV} (200 iterations) within a \texttt{StratifiedGroupKFold} framework.
 \end{itemize}
-All three designs shared the same participant-level train/test split ($80\%$/$20\%$, stratified by outcome), the same missingness filter and variance threshold applied on training data only, and the same five fold \gls{CV} evaluation protocol. Track~B models followed either the D2 or D3 structure depending on the outcome being predicted. Full details are provided in Subsection~\ref{ssc:trackb}.
+All three designs shared the same participant level train/test split ($80\%$/$20\%$, stratified by outcome), the same missingness filter and variance threshold applied on training data only, and the same five fold \gls{CV} evaluation protocol. Track~B models followed either the D2 or D3 structure depending on the outcome being predicted. Full details are provided in Subsection~\ref{ssc:trackb}.
 
 % ----------------------
 % FLOWCHART:
@@ -92,7 +92,7 @@ All three designs shared the same participant-level train/test split ($80\%$/$20
     \node[draw, rounded corners, fill=gray!10, below=of raw, align=center] (drop) {Drop $>50\%$ missing};
     \node[draw, rounded corners, fill=gray!10, below=of drop, align=center] (imp) {Median Imputation};
     \node[draw, rounded corners, fill=gray!10, below=of imp, align=center] (var) {Variance Threshold (0.01)};
-    \node[draw, rounded corners, fill=gray!10, below=of var, align=center] (split) {Participant-level (ID) Split\\$80\%$ train / $20\%$ test, stratified};
+    \node[draw, rounded corners, fill=gray!10, below=of var, align=center] (split) {Participant level (ID) Split\\$80\%$ train / $20\%$ test, stratified};
  
     \draw[->] (raw) -- (drop);
     \draw[->] (drop) -- node[right, font=\scriptsize]{train only}(imp);
@@ -172,24 +172,24 @@ All three designs shared the same participant-level train/test split ($80\%$/$20
  
 \end{tikzpicture}
 }
-\caption{Pipeline overview: shared preprocessing applied to all data before branching into Track~A (any chronic disease onset, D1/D2/D3) and Track~B (disease specific, following D2/D3 structure). D3 is built directly on D2's cohort and wave structure, adding feature reduction and \gls{HPO}.}\label{fig:pipeline_flowchart}
+\caption{Pipeline overview: shared preprocessing applied to all data before branching into Track~A (any chronic disease, D1/D2/D3) and Track~B (disease specific, following D2/D3 structure). D3 is built directly on D2's cohort and wave structure, adding feature reduction and \gls{HPO}.}\label{fig:pipeline_flowchart}
 \end{figure}
 \clearpage
 
 \textbf{Figure~\ref{fig:pipeline_flowchart} notes}:
 \begin{enumerate}[label= (\roman*), leftmargin=*]
     \item All grey pipeline steps (missingness filter, imputation, variance threshold, split) are shared across Track~A and Track~B. All fitting occurs on training data only.
-    \item D1 uses a single W1$\rightarrow$W5 transition with \texttt{StratifiedKFold}, D2 and D3 use all four pooled transitions with \texttt{StratifiedGroupKFold} to prevent participant-level leakage across folds.
+    \item D1 uses a single W1$\rightarrow$W5 transition with \texttt{StratifiedKFold}, D2 and D3 use all four pooled transitions with \texttt{StratifiedGroupKFold} to prevent participant level leakage across folds.
     \item D3 is built on D2: it uses the same cohort, waves, and wave indicator, but replaces \texttt{SelectKBest} with the top-20 features ranked by \gls{XGB} gain from D2, and adds \gls{HPO} for all model families.
     \item Feature counts after the missingness filter: D1 retains $\approx$570 features, further reduced to $k=20$ by \texttt{SelectKBest} before model training. D2 retains $\approx$261 features, reduced to $k=100$. D3 uses exactly 21 features (top-20 + wave indicator) with no further selection.
     \item Track~B uses \gls{XGB} only, following the D2 or D3 design with a disease specific outcome and explicit exclusion of direct outcome proxies from the predictor set.
 \end{enumerate}
 
 % -------- Data splitting and leakage prevention --------
-\subsection{Participant-level data splitting and leakage prevention}
+\subsection{Participant level data splitting and leakage prevention}
 To prevent identity based leakage where models memorise participant specific health signatures rather than learning general risk patterns, all splitting was performed at the \textbf{participant level}. Individuals were assigned exclusively to either the training, validation, or test set, ensuring no participant contributed data to more than one split. The overall dataset was first split into $80\%$ for model development and $20\%$ as a held-out test set. The $80\%$ development partition was then further divided $80\%/20\%$ internally, yielding a final three way allocation of $64\%$ training, $16\%$ validation, and $20\%$ test. Splitting was performed using participant identifiers to ensure group wise separation, with stratification by outcome to preserve class balance across splits. Rumala~\cite{rumalaHowYouSplit2023c} demonstrates in longitudinal brain \gls{MRI} analysis, this subject wise approach prevents overconfident performance and identity confounding, where models learn individual characteristics alongside diagnostic features, ensuring generalisation to truly unseen individuals.
 
-D1 used \texttt{StratifiedKFold} ($k=5$), D2 and D3 used \texttt{StratifiedGroupKFold} ($k=5$) to prevent participant-level leakage across folds from appearing in both training and validation folds simultaneously (see Subsection~\ref{sc:modelling_designs} for details). Three additional leakage controls were applied across all designs:
+D1 used \texttt{StratifiedKFold} ($k=5$), D2 and D3 used \texttt{StratifiedGroupKFold} ($k=5$) to prevent participant level leakage across folds from appearing in both training and validation folds simultaneously (see Subsection~\ref{sc:modelling_designs} for details). Three additional leakage controls were applied across all designs:
 \begin{itemize}
     \item \textbf{Pipeline isolation:} Imputation medians, variance masks, and feature selection scores were computed on the training partition only. The resulting transformations were then applied unchanged to validation and test data.
     \item \textbf{Temporal ordering:} Predictors were drawn exclusively from the baseline wave of each transition (wave~$n$) to predict outcomes at the subsequent (wave~$n+1$), eliminating any look ahead bias.
@@ -448,6 +448,6 @@ A third pattern concerns the internal structure of the self-reported measures. M
 
 This internal structure directly explains why the add-on analysis in Section~\ref{sc:feature_importance} produced no statistically significant results. Add-on candidates from outside this set, including education level, grip strength, UCLA loneliness, and cognitive function (\gls{MMSE}, the survey based cognitive screener available across all waves), were each tested against a BASE model already containing the core burden indicators None produced a measurable increment, because the principal signal had already been absorbed by these variables.
 
-Prediction of chronic disease risk in this cohort is therefore governed by a compact and internally correlated set of perceived and functional health measures. Further gains from adding variables of the same type are unlikely. The present analysis used the publicly accessible \gls{TILDA} release (Waves~$1-5$), which contains self-reported health, functional, cognitive, nutritional, and behavioural variables, together with \texttt{ICD10} coded disease indicators from wave~2 onwards. Richer data that could distinguish perceived health burden from objective physiological decline, including linked mortality records, primary care records, and repeated biomarker panels, are held under elevated access and were not available for this study. The inclusion of family history indicators in Track~B partly reflects this constraint: participant-level onset data for specific conditions were often sparse or absent in the public release, and family reported diagnoses served as an indirect proxy where direct measures were unavailable.
+Prediction of chronic disease risk in this cohort is therefore governed by a compact and internally correlated set of perceived and functional health measures. Further gains from adding variables of the same type are unlikely. The present analysis used the publicly accessible \gls{TILDA} release (Waves~$1-5$), which contains self-reported health, functional, cognitive, nutritional, and behavioural variables, together with \texttt{ICD10} coded disease indicators from wave~2 onwards. Richer data that could distinguish perceived health burden from objective physiological decline, including linked mortality records, primary care records, and repeated biomarker panels, are held under elevated access and were not available for this study. The inclusion of family history indicators in Track~B partly reflects this constraint: participant level onset data for specific conditions were often sparse or absent in the public release, and family reported diagnoses served as an indirect proxy where direct measures were unavailable.
 
 These considerations provide the context for the discussion in Chapter~\ref{ch:chapter6}, where the implications of the modelling results and directions for future work are considered.
