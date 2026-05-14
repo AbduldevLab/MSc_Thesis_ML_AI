@@ -11,8 +11,7 @@
 \fi
 % ----------------------- contents from here ------------------------
 \section{Study population and design}
-
-\gls{TILDA} provides longitudinal data across five waves (Waves 1--5) for community dwelling adults in Ireland. The harmonised dataset, which has been pre aligned to international standards e.g., the \gls{G2G}, contains a subset of variables mapped to a common cross study format and thus differs from the raw \gls{TILDA} files. Although the harmonised dataset was simpler to process, it was still subjected to the variable filtering and numerical standardisation steps developed as part of this research, producing a cleaned representation in the same format as the five wave datasets. Its potential for cross study replication is discussed in Chapter~\ref{ch:chapter6}.
+\gls{TILDA} provides longitudinal data across five waves (Waves 1--5) for community dwelling adults in Ireland. The \gls{RAND} harmonised \gls{TILDA} dataset (Waves 1--2), aligned to cross study standards via the \gls{G2G} framework, was also cleaned using the same pipeline.
 
 All participants who provided data in at least one \gls{TILDA} wave were considered eligible. To maximise the available sample for machine learning, no exclusions were applied on the basis of age, medical conditions, mobility, cognitive status, or health centre attendance.
 
@@ -28,19 +27,16 @@ This approach prioritises data integrity and sample size for machine learning ap
 
 % ----------------------------------------------------------------------
 \section{TILDA data collection and screening}
-
 \gls{TILDA} data collection occurred over five longitudinal waves (Table~\ref{tab:raw_dataset_shape}). 
 
 Each wave included three primary components:
 \begin{enumerate}
     \item \textbf{\gls{CAPI}:} Home based, computer assisted personal interviews covering health, socio demographics, and family.
-    \item \textbf{\gls{SCQ}:} Paper based self completion questionnaires capturing sensitive information on mental health, lifestyle, and wellbeing.
-    \item \textbf{Health Assessment:} Clinical and biomarker measurements conducted in dedicated centres or at home (Wave 1 and Wave 3).
+    \item \textbf{\gls{SCQ}:} Paper based self completion questionnaires capturing sensitive information on \gls{MH}, lifestyle, and wellbeing.
+    \item \textbf{Health Assessment:} Clinical and biomarker measurements conducted in dedicated centres or at home (wave~1 and wave~3).
 \end{enumerate}
 
 All \gls{TILDA} data were pseudonymised prior to release, meaning that personal identifiers such as names and addresses were removed or replaced with unique codes to protect participant confidentiality. Each participant received a unique identifier (`id'), along with household and cluster identifiers (`household', `cluster'), allowing longitudinal linkage across waves without revealing individual identities. 
-
-Pseudonymisation ensures that analyses comply with data protection standards while retaining the structural and analytical integrity of the dataset. From a data cleaning and machine learning perspective, pseudonymised identifiers enable accurate merging of data across waves, preserve the longitudinal design, and support reproducible preprocessing and feature engineering. While these identifiers cannot be used for analyses of personal demographics like names or addresses, this limitation does not affect the modelling of health outcomes, lifestyle factors, or other variables of interest.
 
 \begin{table}[htbp]
 \centering
@@ -117,8 +113,8 @@ G2G & Gateway to Global Aging Data \\
 By categorising the raw variables into these seven thematic domains, a structured foundation was established for the technical dimensionality reduction and cleaning pipeline described in the following Section~\ref{sc:manual_var_filtering} and Chapter~\ref{ch:chapter4}.
 
 % ----------------------------------------------------------------------
-\section{Manual variable filtering workflow}\label{sc:manual_var_filtering} % rename to manaul dimensionality reduction? or soemthing more appropriate? - optional
-Prior to any data cleaning or modelling, a structured multi-stage workflow was implemented to screen and reduce the dimensionality of the raw \gls{TILDA} datasets. As shown in Table~\ref{tab:reduced_dataset_shape} (for example, 1619 $\to$ 809 variables in Wave 1), the raw \gls{PMF} files were reduced to a subset of variables of interest. This procedure also separated automated diagnostic profiling from manual variable exclusion, ensuring transparency in all selection decisions.
+\section{Manual variable filtering screening}\label{sc:manual_var_filtering}
+Prior to any data cleaning or modelling, a structured multi-stage workflow was implemented to screen and reduce the dimensionality of the raw \gls{TILDA} datasets. As shown in Table~\ref{tab:reduced_dataset_shape} (for example, 1619 $\to$ 809 variables in wave~1), the raw \gls{PMF} files were reduced to a subset of variables of interest. This procedure also separated automated diagnostic profiling from manual variable exclusion, ensuring transparency in all selection decisions.
 
 The process consisted of the following steps:
 \begin{enumerate}
@@ -128,8 +124,6 @@ The process consisted of the following steps:
     \item \textbf{Creation of retained variable lists:} Variables not flagged for exclusion were programmatically concatenated in \texttt{.xlsx} and manually transferred into wave specific \gls{JSON} files representing the retained \texttt{variables of interest}.
     \item \textbf{Reloading filtered datasets:} The \gls{JSON} files were then used to subset the original raw datasets, producing reduced datasets with identical rows but fewer variables. No cleaning, recoding, or imputation was applied at this stage.
 \end{enumerate}
-
-Python scripts were used to profile all variables across each wave. For every variable, the following metrics were computed: data type, number of missing values, number of unique values, most frequent value, and frequency of the most frequent value. These summaries were exported to spreadsheet format to support structured manual review prior to variable dropping.
 
 Manual filtering was applied according to the following criteria:
 \begin{itemize}
@@ -146,9 +140,9 @@ During manual screening and filtering, variables exceeding exclusion thresholds 
 \caption{Flowchart of the manual five-step workflow for variable screening and filtering. Placeholder ($n$) values represent the number of variables at each stage, illustrating the reduction from the raw dataset to the filtered dataset prior to automated preprocessing.}\label{fig:variable_filter_criteria}
 \end{figure}
 
-The retained variables defined in \gls{JSON} files were subsequently used to subset the raw datasets. As shown in Table~\ref{tab:reduced_dataset_shape}, this process yielded a significant reduced dataset for each wave. For instance, in Wave 1, manual filtering reduced the feature space from 1,619 to 809 variables, a 50.03\% reduction. When considering all five waves collectively, the total number of variables was reduced from 5,345 to 3,099 representing a count of 2,246 dropped features with an overall reduction average of 42.0\%. This substantial drop highlights the elimination of non-contributory data (providing no predictive value to the model), ensuring only the \emph{variables of interest} proceed to the automated cleaning engine.
+The retained variables defined in \gls{JSON} files were subsequently used to subset the raw datasets. As shown in Table~\ref{tab:reduced_dataset_shape}, this process yielded a significant reduced dataset for each wave. For instance, in wave~1, manual filtering reduced the feature space from 1,619 to 809 variables, a 50.03\% reduction. When considering all five waves collectively, the total number of variables was reduced from 5,345 to 3,099 representing a count of 2,246 dropped features with an overall reduction average of 42.0\%. This substantial drop highlights the elimination of non-contributory data (providing no predictive value to the model), ensuring only the \emph{variables of interest} proceed to the automated cleaning engine.
 
-Importantly, all variable exclusion decisions were completed at this stage. Subsequent preprocessing steps focus exclusively on numerical standardisation, recoding, and preparation for machine learning rather than further feature removal. With the variables of interest selected and the datasets reduced to a manageable dimensionality, the next stage focuses on automated preprocessing, recoding, and preparation for \gls{ML} modelling.
+Importantly, all variable exclusion decisions were completed at this stage, subsequent steps focus on numerical standardisation and model preparation.
 
 % ----------------------------------------------------------------------
 \section{Reduced dataset overview}
@@ -174,9 +168,8 @@ Harmonised & 8501 & 453 & 20.8\% \\
 
 For example, in wave 1, the visualiser detected 650 categorical columns, 150 (\texttt{float64}) columns, and 9 object columns, while the harmonised dataset contained 304 categorical columns, 148 \texttt{float32} columns, and several integer columns. Age distributions confirmed that the study population was restricted to older adults across waves, however, ages were bottom coded for participants younger than 50 years and top coded for those aged 65--85 years and above. Missing value summaries indicated substantial variation (e.g., mean missing values ranging from $4.7\%$ in wave 4 to $35\%$ in the harmonised dataset, with some variables exceeding $77\%$ missing).
 
-Despite this, the exploratory visualiser was limited because the raw data were not yet cleaned, many outputs were incorrect or nonsensical due to hybrid formats and inconsistent coding. For instance, inspection revealed that many variables across both the wave specific and harmonised datasets, while appearing numeric at first glance, in fact contained hybrid representations combining numeric prefixes with descriptive text (e.g., ``1.Rarely or none of the time (less than 1 day)'', ``4.All of the time (5--7 days)'', or prefixed labels such as ``0.not coupled'', ``1.coupled''). A trivial string stripping approach would therefore produce incorrect numeric values (for example, reducing ``5--7 days'' to \texttt{5}) resulting in silently introducing semantic distortion. Similarly, numeric columns sometimes contained sentinel codes (e.g., -98, -99) or embedded symbols (`$\$$', `$cm$', `$\%$') that skewed visual summaries.
-
-These insights, revealed through systematic profiling, guided the development of the subsequent cleaning pipeline steps, ensuring consistent numeric logic representations (e.g., midpoints for ranges, standardised sentinel handling).
+% Despite this, the exploratory visualiser was limited because the raw data were not yet cleaned, many outputs were incorrect or nonsensical due to hybrid formats and inconsistent coding. For instance, inspection revealed that many variables across both the wave specific and harmonised datasets, while appearing numeric at first glance, in fact contained hybrid representations combining numeric prefixes with descriptive text (e.g., ``1.Rarely or none of the time (less than 1 day)'', ``4.All of the time (5--7 days)'', or prefixed labels such as ``0.not coupled'', ``1.coupled''). A trivial string stripping approach would therefore produce incorrect numeric values (for example, reducing ``5--7 days'' to \texttt{5}) resulting in silently introducing semantic distortion. Similarly, numeric columns sometimes contained sentinel codes (e.g., -98, -99) or embedded symbols (`$\$$', `$cm$', `$\%$') that skewed visual summaries.
+These insights exposed structural inconsistencies, including hybrid text-numeric formats and embedded sentinel codes, that guided the design of the deterministic cleaning pipeline described in Chapter~\ref{ch:chapter4}.
 
 % ----------------------------------------------------------------------
 \section{Retained variable distribution by domain}
