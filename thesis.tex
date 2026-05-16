@@ -124,20 +124,21 @@
 
 %if output to PDF then put the following in PDF header
 \ifpdf  
-    \pdfinfo { /Title (Prediction of Chronic Disease Risk in Older Adults using Nutrition, Lifestyle and Clinical Data from TILDA) % could rename to: Prediction of Chronic Disease Risk in Older Adults using Longitudinal Health Data from The Irish Longitudinal Study on Ageing (TILDA)
+    \pdfinfo{ /Title (Predicting Chronic Disease Onset in Older Adults: A Machine Learning Study using The Irish Longitudinal Study on Ageing (TILDA)) % (Prediction of Chronic Disease Risk in Older Adults using Nutrition, Lifestyle and Clinical Data from TILDA)
         /Creator (Abderahman Haouit)
         /Producer (pdfTeX)
-        /Author (Abderahman Haouit - 24474983@studentmail.ul.ie)
+        /Author (Abderahman Haouit $-$ 24474983@studentmail.ul.ie)
         /CreationDate (D:20250601090000)  
         /ModDate (D:YYYYMMDDhhmm)       
-        /Subject (Artificial Intelligence, Machine Learning, Predictive Modelling, Ageing, Nutrition, Frailty, TILDA, Health Informatics)
-        /Keywords (Machine Learning, Artificial Intelligence, TILDA, Predictive Modelling, Frailty, Nutrition, Ageing, Longitudinal Data, Healthcare Analytics)}
-    \pdfcatalog { /PageMode (/UseOutlines)
+        /Subject (Artificial Intelligence, Machine Learning, Predictive Modelling, Ageing, Nutrition, Health Burden, TILDA, Health Informatics)
+        /Keywords (Machine Learning, Artificial Intelligence, TILDA, Predictive Modelling, Health Burden, Nutrition, Ageing, Longitudinal Data, Healthcare Analytics)}
+    \pdfcatalog{ /PageMode (/UseOutlines)
         /OpenAction (fitbh)}
 \fi
 
 
-\title{ Prediction of Chronic Disease Risk in Older Adults using Nutrition, Lifestyle \& Clinical Data from The Irish Longitudinal Study on Ageing (TILDA)} % could rename to: Prediction of Chronic Disease Risk in Older Adults using Longitudinal Health Data from The Irish Longitudinal Study on Ageing (TILDA)
+% \title{ Prediction of Chronic Disease Risk in Older Adults using Nutrition, Lifestyle \& Clinical Data from The Irish Longitudinal Study on Ageing (TILDA)}
+\title{Predicting Chronic Disease Onset in Older Adults: A Machine Learning Study using The Irish Longitudinal Study on Ageing (TILDA)}
 
 
 
@@ -435,15 +436,21 @@
 \chapter{MD Dictionary: Scenario Grouping and Transformation Audit Outputs}
 \label{app:md_audit}
 % \section*{Code for }
-\begin{itemize}
-    \item \texttt{sex}: Binary biological sex indicator (e.g., \texttt{Male/Female}, \texttt{Female/Male}, prefixed encodings).
+% \begin{itemize}
+%     \item \texttt{sex}: Binary biological sex indicator (e.g., \texttt{Male/Female}, \texttt{Female/Male}, prefixed encodings).
     
-    \item \texttt{ph001}: Self-rated general health status measured on an ordinal scale. Survey question: \emph{“Now I would like to ask you some questions about your health. Would you say your health is…”}. Responses range from \emph{Poor} to \emph{Excellent}, with additional 'no response' categories.
+%     \item \texttt{ph001}: Self-rated general health status measured on an ordinal scale. Survey question: \emph{“Now I would like to ask you some questions about your health. Would you say your health is…”}. Responses range from \emph{Poor} to \emph{Excellent}, with additional 'no response' categories.
     
-    \item \texttt{ph009}: Comparative self-rated health relative to people of the same age. Survey question: \emph{“In general, compared to other people your age, would you say your health is…”}.
+%     \item \texttt{ph009}: Comparative self-rated health relative to people of the same age. Survey question: \emph{“In general, compared to other people your age, would you say your health is…”}.
     
-    \item \texttt{bh006}: Frequency based lifestyle variable combining numeric values, bounded ranges (e.g., \texttt{20--39}), and textual descriptors (e.g., \texttt{Less than 10}, \texttt{30+}). Survey question: \emph{“How many cigarettes do/did you smoke on average per day?”}.
-\end{itemize}
+%     \item \texttt{bh006}: Frequency based lifestyle variable combining numeric values, bounded ranges (e.g., \texttt{20--39}), and textual descriptors (e.g., \texttt{Less than 10}, \texttt{30+}). Survey question: \emph{“How many cigarettes do/did you smoke on average per day?”}.
+% \end{itemize}
+The grouped Markdown representation reveals three critical points: 
+\begin{enumerate}
+    \item Semantically identical categories are correctly grouped even under different variable names (\texttt{ph001} vs \texttt{ph009}), enabling direct comparison of representations that would otherwise appear fragmented across waves. 
+    \item Numerical encoding is invariant to category ordering, preserving ordinal meaning across waves. Without this approach, positional encoding would assign inconsistent values, potentially distorting performance for downstream models.
+    \item For variables with a large and heterogeneous set of observed values (e.g., income bands, frequency ranges, or mixed numeric text responses), the grouped view provided essential visibility into how complex category spaces were being collapsed into stable numeric representations, supporting both validation and error detection at scale.
+\end{enumerate}
 \input{7_appendixes/mapping_dictionary_md.tex}
 
 \chaptermark{Appendix}

@@ -17,13 +17,7 @@ All participants who provided data in at least one \gls{TILDA} wave were conside
 
 Participants were removed only in the rare case that, following manual variable filtering, no analytically usable variables remained for that individual. Filtering occurred primarily at the \emph{variable level} during the manual screening stage, which excluded features with extreme missingness, lack of variation, or non informative structure. This approach preserves the largest possible sample while ensuring all retained inputs are analytically meaningful for downstream analysis and model development.
 
-\begin{itemize}
-    \item[-] \textbf{Participant inclusion:} All respondents who contributed data in at least one wave were included in the initial sample.
-    \item[-] \textbf{Usable data requirement:} Participants were excluded only if all retained variables were missing for that individual after manual variable screening.
-    \item[-] \textbf{Longitudinal retention:} Individuals were retained regardless of how many waves they contributed to, enabling initial maximum dataset utilisation.
-    \item[-] \textbf{No clinical exclusions:} No participant was removed due to medical diagnoses, cognitive scores, functional limitations, or non attendance at the health centre assessment.
-\end{itemize}
-This approach prioritises data integrity and sample size for machine learning applications, differing from exclusion heavy cohort definitions often used in traditional epidemiological studies~\cite{obermeyerPredictingFutureBig2016}.
+This approach prioritises data integrity and sample size, differing from exclusion heavy cohort definitions common in traditional epidemiological studies.
 
 % ----------------------------------------------------------------------
 \section{TILDA data collection and screening}
@@ -113,7 +107,7 @@ G2G & Gateway to Global Aging Data \\
 By categorising the raw variables into these seven thematic domains, a structured foundation was established for the technical dimensionality reduction and cleaning pipeline described in the following Section~\ref{sc:manual_var_filtering} and Chapter~\ref{ch:chapter4}.
 
 % ----------------------------------------------------------------------
-\section{Manual variable filtering screening}\label{sc:manual_var_filtering}
+\section{Manual variable screening}\label{sc:manual_var_filtering}
 Prior to any data cleaning or modelling, a structured multi-stage workflow was implemented to screen and reduce the dimensionality of the raw \gls{TILDA} datasets. As shown in Table~\ref{tab:reduced_dataset_shape} (for example, 1619 $\to$ 809 variables in wave~1), the raw \gls{PMF} files were reduced to a subset of variables of interest. This procedure also separated automated diagnostic profiling from manual variable exclusion, ensuring transparency in all selection decisions.
 
 The process consisted of the following steps:
@@ -127,20 +121,20 @@ The process consisted of the following steps:
 
 Manual filtering was applied according to the following criteria:
 \begin{itemize}
-    \item \textbf{Missingness:} Drop variables with $>80\%$ missing values. This threshold balances retaining sufficient feature coverage while ensuring statistical reliability. Variables exceeding this threshold provide limited information in most cases, increase imputation uncertainty, and reduce effective sample size, which is particularly critical in longitudinal machine learning analyses.
+    \item \textbf{Missingness:} Variables with $>80\%$ missing values were dropped. This threshold retains sufficient feature coverage while avoiding the imputation uncertainty that arises when the majority of values are absent.
     \item \textbf{Unique values:} Drop variables with a single observed value, as they contain no discriminative information and cannot contribute to modelling or inference. Variables with low cardinality (2--4 unique values) were retained for review, as they frequently represent meaningful categorical responses (e.g., binary indicators or ordinal scales) relevant to ageing outcomes.
-    \item \textbf{Dominant category (top value/frequency):} Variables where a single category (sample value) marked as the \emph{topValue} occurs over $\approx$ $>90\%$ (\emph{topFrequency}) of observations were flagged. Such dominance indicates limited variability, reducing analytical utility and predictive value. Variables exceeding this threshold were marked for review or exclusion.
+    \item \textbf{Dominant category (top value/frequency):} Variables where a single category (sample value) marked as the \texttt{topValue} occurs over $\approx$ $>90\%$ (\texttt{topFrequency}) of observations were flagged. Such dominance indicates limited variability, reducing analytical utility and predictive value. Variables exceeding this threshold were marked for review or exclusion.
     \item \textbf{Identifiers / administrative fields:} IDs, version tags, and sampling weights were identified using the \gls{PMF} metadata. Variable names and descriptions were exported from each wave's \gls{PMF} file into \gls{CSV} files (Appendix~\ref{app:pmf_code}) to systematically document and review features prior to filtering. These exports enabled structured manual inspection and traceability between raw \gls{PMF} metadata and downstream feature selection decisions.
 \end{itemize}
 
-During manual screening and filtering, variables exceeding exclusion thresholds (e.g., high missingness, single value, dominant category, administrative identifiers) were visually flagged (e.g., marked in red). Non flagged variables were programmatically concatenated with double quotes and comma to seperate each variable using spreadsheet formulas (e.g., \texttt{=TEXTJOIN(", ", TRUE, CHAR(34) \& J2:J\textit{n} \& CHAR(34))}) ready for the manual transfer into wave specific \gls{JSON} files for each wave. These files represent the \emph{variables of interest} retained after manual screening and filtering and serve as inputs for the upcoming automated data preprocessing and cleaning in Section~\ref{sc:cleaning_engine}.
+During manual screening and filtering, variables exceeding exclusion thresholds (e.g., high missingness, single value, dominant category, administrative identifiers) were visually flagged (e.g., marked in red). Non-flagged variables were programmatically concatenated with double quotes and commas to separate each variable using spreadsheet formulas (e.g., \texttt{=TEXTJOIN(", ", TRUE, CHAR(34) \& J2:J\textit{n} \& CHAR(34))}) ready for the manual transfer into wave specific \gls{JSON} files for each wave. These files represent the \emph{variables of interest} retained after manual screening and filtering and serve as inputs for the upcoming automated data preprocessing and cleaning in Section~\ref{sc:cleaning_engine}.
 \begin{figure}[htbp]
 \centering
 \includegraphics[height=1.25\textwidth]{variable_filter_criteria.png}
-\caption{Flowchart of the manual five-step workflow for variable screening and filtering. Placeholder ($n$) values represent the number of variables at each stage, illustrating the reduction from the raw dataset to the filtered dataset prior to automated preprocessing.}\label{fig:variable_filter_criteria}
+\caption{Flowchart of the manual five step workflow for variable screening and filtering. Placeholder ($n$) values represent the number of variables at each stage, illustrating the reduction from the raw dataset to the filtered dataset prior to automated preprocessing.}\label{fig:variable_filter_criteria}
 \end{figure}
 
-The retained variables defined in \gls{JSON} files were subsequently used to subset the raw datasets. As shown in Table~\ref{tab:reduced_dataset_shape}, this process yielded a significant reduced dataset for each wave. For instance, in wave~1, manual filtering reduced the feature space from 1,619 to 809 variables, a 50.03\% reduction. When considering all five waves collectively, the total number of variables was reduced from 5,345 to 3,099 representing a count of 2,246 dropped features with an overall reduction average of 42.0\%. This substantial drop highlights the elimination of non-contributory data (providing no predictive value to the model), ensuring only the \emph{variables of interest} proceed to the automated cleaning engine.
+The retained variables defined in \gls{JSON} files were subsequently used to subset the raw datasets. As shown in Table~\ref{tab:reduced_dataset_shape}, this process yielded a significant reduced dataset for each wave. For instance, in wave~1, manual filtering reduced the feature space from 1,619 to 809 variables, a 50.03\% reduction. When considering all five waves collectively, the total number of variables was reduced from 5,345 to 3,099 representing a count of 2,246 dropped features with an overall reduction average of 42.0\%. This reduction ensures only analytically meaningful variables proceed to the automated cleaning engine.
 
 Importantly, all variable exclusion decisions were completed at this stage, subsequent steps focus on numerical standardisation and model preparation.
 
@@ -168,23 +162,18 @@ Harmonised & 8501 & 453 & 20.8\% \\
 
 For example, in wave 1, the visualiser detected 650 categorical columns, 150 (\texttt{float64}) columns, and 9 object columns, while the harmonised dataset contained 304 categorical columns, 148 \texttt{float32} columns, and several integer columns. Age distributions confirmed that the study population was restricted to older adults across waves, however, ages were bottom coded for participants younger than 50 years and top coded for those aged 65--85 years and above. Missing value summaries indicated substantial variation (e.g., mean missing values ranging from $4.7\%$ in wave 4 to $35\%$ in the harmonised dataset, with some variables exceeding $77\%$ missing).
 
-% Despite this, the exploratory visualiser was limited because the raw data were not yet cleaned, many outputs were incorrect or nonsensical due to hybrid formats and inconsistent coding. For instance, inspection revealed that many variables across both the wave specific and harmonised datasets, while appearing numeric at first glance, in fact contained hybrid representations combining numeric prefixes with descriptive text (e.g., ``1.Rarely or none of the time (less than 1 day)'', ``4.All of the time (5--7 days)'', or prefixed labels such as ``0.not coupled'', ``1.coupled''). A trivial string stripping approach would therefore produce incorrect numeric values (for example, reducing ``5--7 days'' to \texttt{5}) resulting in silently introducing semantic distortion. Similarly, numeric columns sometimes contained sentinel codes (e.g., -98, -99) or embedded symbols (`$\$$', `$cm$', `$\%$') that skewed visual summaries.
-These insights exposed structural inconsistencies, including hybrid text-numeric formats and embedded sentinel codes, that guided the design of the deterministic cleaning pipeline described in Chapter~\ref{ch:chapter4}.
+These insights exposed structural inconsistencies. For instance, variables that appeared numeric but encoded labels such as ``1.Rarely or none of the time'' alongside sentinel codes (e.g., $-98$, $-99$) that directly informed the design of the deterministic cleaning pipeline described in Chapter~\ref{ch:chapter4}.
 
 % ----------------------------------------------------------------------
 \section{Retained variable distribution by domain}
 
 Using the \gls{PMF} prefixes described in Table~\ref{tab:pmf_prefixes} as a guide, variables were assigned to seven thematic groups (Table~\ref{tab:feature_groups}), each capturing a conceptually coherent domain: physical, cognitive, social, and behavioural aspects of ageing. This structure supports reproducible preprocessing and helps machine learning models focus on meaningful, longitudinally robust features. 
 
-Specifically, the thematic grouping:
-\begin{enumerate}
-    \item Provides a clear framework for automated cleaning and filtering rules.
-    \item Ensures that model input variables are conceptually aligned with study objectives.
-\end{enumerate}
+This grouping provides a clear framework for the automated cleaning rules described in Chapter~\ref{ch:chapter4} and ensures model inputs are conceptually aligned with study objectives.
 
 The seven thematic groups integrate information from \gls{CAPI}, \gls{SCQ}, and derived variables, covering sociodemographic context, physical health, functional status, lifestyle behaviours, nutrition and metabolic biomarkers, psychological and cognitive measures, and administrative identifiers.
 
-The gradient \emph{heatmap} integrated at the bottom of Table~\ref{tab:feature_groups} visually illustrates the relative dominance of each thematic domain across the five waves. Darker blue shading indicates domains with a higher number of variables, providing a quick summary of domain coverage and prominence. This integrated visualisation supports interpretation by highlighting which domains contribute the most features to the dataset.
+The heatmap at the base of Table~\ref{tab:feature_groups} shows domain coverage across waves, darker shading indicates a higher variable count highlighting which domains contribute most features to the dataset.
 
 % -------------------- Longtable (breaks only between IDs) --------------------
 \clearpage

@@ -10,13 +10,13 @@
 
 Ageing populations experience substantial changes across physical, nutritional, cognitive, and psychosocial domains, each shaping vulnerability to chronic disease and functional decline~\cite{davisComparisonGaitSpeed2021, mooreCountingTimeLived2017, huangSexDifferencesAssociations2020}. Understanding how these multidomain factors interact over time is essential for early risk identification.
 
-The financial and societal burden is substantial. In Europe, poor diet is a major risk factor for non communicable diseases, contributing billions in healthcare costs annually~\cite{WhoNutritionReport}. In Ireland, malnutrition alone is estimated to cost over €1.4 billion per year~\cite{RICE2012}. In response to these challenges, international public health frameworks, including the \gls{WHO} \emph{Global Action Plan} on noncommunicable diseases and Ireland's \emph{Healthy Ireland} framework, highlight nutrition and lifestyle factors as central components of disease prevention strategies.
+The financial and societal burden is substantial: lifestyle risk factors contribute billions in healthcare costs annually across Europe~\cite{WhoNutritionReport}, and in Ireland, malnutrition alone is estimated to cost over €1.4 billion per year~\cite{RICE2012}. In response, frameworks including the \gls{WHO} \emph{Global Action Plan} and Ireland's \emph{Healthy Ireland} strategy identify modifiable health behaviours as central to disease prevention.
 
 European regulatory frameworks such as the \gls{GDPR} and proposed \gls{EU} \gls{AI} Act emphasise transparency and highlight the need for interpretable \gls{ML} models in healthcare.
 
-Traditional risk prediction models have largely relied on clinical biomarkers such as \gls{BP} and lipid profiles. Yet, growing evidence shows that broader predictors, including nutrition~\cite{murphyPlasmaLuteinZeaxanthin2023}, \gls{PA}~\cite{lairdPhysicalActivityDose2023}, \gls{MH}~\cite{mcdowellAssociationsPhysicalActivity2018}, and \gls{SOC}~\cite{mccrorySocialDisadvantageSocial2016} improve predictive performance. Estimating the likelihood of developing a condition given certain risk factors helps quantify the influence of these predictors in clinical decision making. 
+Traditional risk prediction models have largely relied on clinical biomarkers such as \gls{BP} and lipid profiles. Yet, growing evidence shows that broader predictors, including nutrition~\cite{murphyPlasmaLuteinZeaxanthin2023}, \gls{PA}~\cite{lairdPhysicalActivityDose2023}, \gls{MH}~\cite{mcdowellAssociationsPhysicalActivity2018}, and \gls{SOC}~\cite{mccrorySocialDisadvantageSocial2016} improve predictive performance.
 
-\gls{TILDA}\footnote{\gls{TILDA}'s dataset are pseudonymised and accessed under license via \gls{ISSDA}. Use adheres to \gls{UL} S\&E ethics approval and data retention requirements.} provides a national representative cohort of adults aged $\texttt{50+}$ in Ireland, surveyed repeatedly across multiple domains. An externally produced \gls{RAND} Harmonised \gls{TILDA} dataset (available for waves $1-2$) was inspected and preprocessed alongside the five core waves. Its potential role for cross study replication are discussed in (Chapter~\ref{ch:chapter6}) future work.
+\gls{TILDA}\footnote{\gls{TILDA}'s dataset are pseudonymised and accessed under license via \gls{ISSDA}. Use adheres to \gls{UL} S\&E ethics approval and data retention requirements.} provides a national representative cohort of adults aged $\texttt{50+}$ in Ireland, surveyed repeatedly across multiple domains. An externally produced \gls{RAND} harmonised \gls{TILDA} dataset (Waves~1--2) was inspected and preprocessed alongside the five core waves. Its potential for cross study replication is discussed in Chapter~\ref{ch:chapter6}.
 
 Despite these advantages, existing \gls{ML} research on chronic disease prediction faces persistent limitations: over reliance on clinical predictors, limited incorporation of lifestyle and \gls{SOC} variables, predominantly cross sectional study designs that fail to capture trajectories, and a lack of interpretability consistent with emerging \gls{AI} governance standards.  
 
@@ -24,7 +24,6 @@ This thesis addresses these gaps by leveraging longitudinal \gls{TILDA} data acr
 % ----------------------------------------------------------------------
 % Research Problem
 \section{Research problem and motivation} 
-
 Despite increasing research and clinical interest in lifestyle, nutrition factors, and advances in \gls{ML} methods, approaches to chronic disease prediction in older adults remain limited in several ways.
 
 \begin{itemize}
@@ -38,26 +37,25 @@ Addressing these challenges is essential to improve predictive accuracy, support
 % ----------------------------------------------------------------------
 % Research Aims and goals
 \section{Research aims and objectives}
+The goal of this thesis is to develop and evaluate longitudinal \gls{ML} approaches that combine multidomain predictors from \gls{TILDA} to predict chronic disease onset in older adults, while identifying the features and modelling designs that best support this task. 
 
-The goal of this thesis is to develop and validate \gls{ML} models that integrate nutrition, lifestyle, and \gls{MH} features with clinical data to improve prediction of chronic disease and ageing related outcomes in a representative cohort of older adults. This goal will be achieved through the following objectives:
-
+This goal will be achieved through the following objectives:
 \begin{itemize}
   \item[-] Review existing applications in \gls{ML} for chronic disease prediction in ageing populations, with emphasis on gaps in lifestyle and nutrition integration.
-  \item[-] Develop a reproducible pipeline to preprocess and align \gls{TILDA} waves 1--5, and engineer multidomain features (nutrition, activity, mobility, \gls{MH}, clinical indicators).
+  \item[-] Develop a reproducible pipeline to preprocess and align \gls{TILDA} waves~1--5, deriving multidomain features across physical, functional, clinical, lifestyle, and psychosocial domains.
   \item[-] Develop and compare a linear baseline (\gls{LR}) against tree ensemble and neural network families (\gls{XGB}, \gls{RF}, \gls{MLP}) across single wave and pooled longitudinal designs.
-  \item[-] Evaluate models using predictive classification performance metrics including \gls{AUC}, calibration and error measures (accuracy, precision, \gls{recall}, \gls{F1}), perform ablation analyses to assess the incremental value of lifestyle and nutrition predictors.
-  \item[-] Identify the most informative predictors of chronic disease onset and assess whether domain specific features beyond the core health burden set contribute independent predictive value.
+  \item[-] Evaluate models using \gls{AUC}, calibration, and classification metrics across all designs.
+  \item[-] Identify the most informative predictors of chronic disease onset and, through a predictor add-on analysis, assess whether domain specific features contribute independent predictive value beyond the core health burden set.
   \item[-] Document ethical, governance, and reproducibility practices for handling longitudinal pseudonymised health data.
 \end{itemize}
 
 % ----------------------------------------------------------------------
 % Contributions
 \section{Contributions of the research}
-
 This research makes contributions at three levels:
 
 \begin{itemize}
-  \item \textbf{Empirical:} Demonstrates the value of longitudinal pooling for chronic disease onset prediction and identifies the health burden indicators that drive predictive signal in this cohort.
+  \item \textbf{Empirical:} Demonstrates the value of longitudinal pooling for chronic disease onset prediction and identifies the health burden indicators that drive predictive signal in this cohort. Nutritional and psychosocial domain features did not contribute independent predictive value beyond this core set, a finding discussed in Chapter~\ref{ch:chapter5}.
   \item \textbf{Methodological:} Provides a reproducible pipeline for aligning longitudinal \gls{TILDA} data across domains and integrating diverse features into \gls{ML} workflows.  
   \item \textbf{Clinical:} Identifies the most informative predictors of chronic disease onset and evaluates the marginal contribution of domain specific features, providing a data driven basis for risk stratification.
 \end{itemize}
@@ -68,7 +66,7 @@ This research makes contributions at three levels:
 
 \emph{Chapter}~\ref{ch:chapter2} reviews \gls{ML} approaches to chronic disease prediction in ageing populations, with emphasis on lifestyle, nutrition, and methodological considerations.
 \emph{Chapter}~\ref{ch:chapter3} describes the data preparation process, including the \gls{TILDA} study design, data collection, thematic domain structure, and the manual variable filtering workflow.
-In \emph{Chapter}~\ref{ch:chapter4}, the automated cleaning pipeline is presented, including the variable scenario detection system, the deterministic six-step cleaning sequence, and validation of the pipeline against established benchmarks.
+In \emph{Chapter}~\ref{ch:chapter4}, the automated cleaning pipeline is presented, including the variable scenario detection system, the deterministic six step cleaning sequence, and validation of the pipeline against established benchmarks.
 \emph{Chapter 5} presents the empirical evaluation, covering performance across three modelling designs, disease specific prediction, predictor add-on analysis, and an interpretation of the health burden correlation structure underlying the results.
 \emph{Chapter 6} discusses the implications and future directions of the research.
 
