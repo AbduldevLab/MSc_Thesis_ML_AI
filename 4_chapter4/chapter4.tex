@@ -80,7 +80,7 @@ The final cleaning pipeline consisted of six deterministic steps applied uniform
     \begin{itemize}
         \item[-] Converting textual ordinal labels and Likert scale responses to numeric equivalents.  
         \item[-] Mapping calendar based frequency descriptors to numeric weekly equivalents.  
-        \item[-] Manual verification for low count or unusual variables, supported by the Markdown audit outputs to ensure semantic meaning was preserved.  
+        \item[-] Manual verification was conducted for low count or unusual variables using the Markdown audit outputs to confirm semantic meaning was preserved.  
     \end{itemize}
 
     \item \textbf{Binary Categorical Variables:} Two level features (e.g., Yes/No, Male/Female) were dynamically encoded using mappings derived from the observed value set of each variable:
@@ -211,7 +211,7 @@ An `\texttt{8y\_mortality\_proxy}' outcome was constructed to approximate the se
 Two variants of this proxy were implemented:
 \begin{enumerate}[label= (\roman*)]
 \item the purely random assignment described above, used as a structural baseline, and 
-\item biologically informed probabilistic assignment that leverages latent \gls{FR} captured via \gls{PCA}. This dual construction allowed separation of statistical artefact from biologically meaningful signal. 
+\item biologically informed probabilistic assignment based on latent \gls{FR} structure extracted via \gls{PCA}. This dual construction allowed separation of statistical artefact from biologically meaningful signal. 
 \end{enumerate} 
 
 The random proxy provides an initial diagnostic benchmark, mortality labels were assigned using purely random sampling within each sex to match the published 8-year mortality proportions. While this preserves overall class balance, it does not encode any biological or \gls{FR} related information and therefore serves only as a structural validation baseline.
@@ -275,7 +275,7 @@ These results confirm that, without embedding biological \gls{FR} structure into
 When mortality assignment incorporated the \gls{PCA} derived \gls{FR} representation \gls{PC1}, discrimination improved relative to the random baseline for both \gls{FI} constructions. For the 16 cleaned \gls{FI} items, the \gls{FI} only model achieved \gls{AUC} = 0.591 (men) and 0.667 (women), increasing to 0.602 (men) and 0.660 (women) when age was included.
 When six of the sixteen deficits were recoded in accordance with the published scoring framework, the \gls{FI}-only model achieved \gls{AUC} = 0.636 (men) and 0.633 (women), while the \gls{FI} $+$ age model achieved 0.643 (men) and 0.652 (women).
 
-This indicates that closer alignment with published ordinal deficit scoring improves discriminative stable performance relative to the simplified numeric encoding applied during initial cleaning.
+This indicates that closer alignment with published ordinal deficit scoring improves discrimination relative to the simplified numeric encoding applied during initial cleaning.
 \item \textbf{Comparison with published performance:}  
 Absolute \gls{AUC} values remain below those reported in~\cite{moguilnerImportanceAgePrediction2021} (approximately 0.70 for \gls{FI} only and up to 0.80–0.90 when age is included), which is expected given the use of a constructed mortality proxy and only 16 of the original 32 \gls{FI} items. However, the methodological sequence reported in the original study is preserved:
 \begin{enumerate}[label= (\roman*)]

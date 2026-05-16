@@ -115,7 +115,7 @@ The process consisted of the following steps:
     \item \textbf{Raw data loading:} Raw \gls{TILDA} \gls{PMF} files were loaded without cleaning or recoding. Waves 1--5 were loaded from \gls{SPSS} (\texttt{.sav}) files, while the harmonised dataset was loaded from a (\texttt{Stata}) (\texttt{.dta}) file due to technical compatibility issues.
     \item \textbf{Automated variable profiling (Python):} For every variable, summary statistics were computed programmatically, including data type, proportion of missing values, number of unique values, most frequent value, and frequency of the most frequent value. These summaries were exported to spreadsheet format for inspection.
     \item \textbf{Manual variable screening (spreadsheet based):} Using predefined rule based thresholds described below. Variables were manually reviewed and flagged for exclusion based on missingness, lack of variation, dominance of a single category, or administrative function.
-    \item \textbf{Creation of retained variable lists:} Variables not flagged for exclusion were programmatically concatenated in \texttt{.xlsx} and manually transferred into wave specific \gls{JSON} files representing the retained \texttt{variables of interest}.
+    \item \textbf{Creation of retained variable lists:} Variables not flagged for exclusion were programmatically concatenated in \texttt{.xlsx} and manually transferred into wave specific \gls{JSON} files representing the retained \emph{variables of interest}.
     \item \textbf{Reloading filtered datasets:} The \gls{JSON} files were then used to subset the original raw datasets, producing reduced datasets with identical rows but fewer variables. No cleaning, recoding, or imputation was applied at this stage.
 \end{enumerate}
 
@@ -139,7 +139,7 @@ The retained variables defined in \gls{JSON} files were subsequently used to sub
 Importantly, all variable exclusion decisions were completed at this stage, subsequent steps focus on numerical standardisation and model preparation.
 
 % ----------------------------------------------------------------------
-\section{Reduced dataset overview}
+\section{Dataset characteristics after filtering}
 To further understand the characteristics of these retained variables, the datasets were profiled using an exploratory visualiser (\texttt{.ipynb}) file implemented with \texttt{pandas}, \texttt{numpy}, \texttt{matplotlib}, and \texttt{seaborn}. This step examined data types, missingness patterns, unique value distributions, and representative sample values across all waves. The purpose of this profiling stage was not transformation but to expose structural inconsistencies and latent formatting issues that would undermine direct numerical conversion.
 
 \begin{table}[htbp]

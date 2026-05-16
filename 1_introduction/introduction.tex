@@ -16,7 +16,7 @@ European regulatory frameworks such as the \gls{GDPR} and proposed \gls{EU} \gls
 
 Traditional risk prediction models have largely relied on clinical biomarkers such as \gls{BP} and lipid profiles. Yet, growing evidence shows that broader predictors, including nutrition~\cite{murphyPlasmaLuteinZeaxanthin2023}, \gls{PA}~\cite{lairdPhysicalActivityDose2023}, \gls{MH}~\cite{mcdowellAssociationsPhysicalActivity2018}, and \gls{SOC}~\cite{mccrorySocialDisadvantageSocial2016} improve predictive performance.
 
-\gls{TILDA}\footnote{\gls{TILDA}'s dataset are pseudonymised and accessed under license via \gls{ISSDA}. Use adheres to \gls{UL} S\&E ethics approval and data retention requirements.} provides a national representative cohort of adults aged $\texttt{50+}$ in Ireland, surveyed repeatedly across multiple domains. An externally produced \gls{RAND} harmonised \gls{TILDA} dataset (Waves~1--2) was inspected and preprocessed alongside the five core waves. Its potential for cross study replication is discussed in Chapter~\ref{ch:chapter6}.
+\gls{TILDA}\footnote{\gls{TILDA}'s dataset are pseudonymised and accessed under license via \gls{ISSDA}. Use adheres to \gls{UL} Science \& Engineering ethics approval and data retention requirements.} provides a national representative cohort of adults aged 50 and over in Ireland, surveyed repeatedly across multiple domains. An externally produced \gls{RAND} harmonised \gls{TILDA} dataset (Waves~1--2) was inspected and preprocessed alongside the five core waves. Its potential for cross study replication is discussed in Chapter~\ref{ch:chapter6}.
 
 Despite these advantages, existing \gls{ML} research on chronic disease prediction faces persistent limitations: over reliance on clinical predictors, limited incorporation of lifestyle and \gls{SOC} variables, predominantly cross sectional study designs that fail to capture trajectories, and a lack of interpretability consistent with emerging \gls{AI} governance standards.  
 
@@ -32,7 +32,7 @@ Despite increasing research and clinical interest in lifestyle, nutrition factor
     Probabilistic reasoning can help estimate the likelihood of developing a condition at a future time given earlier measurements, for example, calculating the probability $P(\text{\gls{FR} at wave 5} \mid \text{\gls{UGS} at wave 1}, \text{Nutrition at wave 2})$.
     \item \textbf{Lack of Explainability:} Many \gls{ML} models are not interpretable, limiting clinical adoption and failing to meet emerging regulatory requirements for trustworthy \gls{AI} in healthcare~\cite{donoghueUsingConditionalInference2023}.
 \end{itemize}
-Addressing these challenges is essential to improve predictive accuracy, support evidence based interventions, and ensure alignment with evolving policy and regulatory priorities.
+These gaps motivate the multi wave, multidomain approach taken in this thesis, which uses \gls{TILDA}'s five longitudinal waves to test whether richer predictor sets and pooled designs improve chronic disease onset prediction.
 
 % ----------------------------------------------------------------------
 % Research Aims and goals
