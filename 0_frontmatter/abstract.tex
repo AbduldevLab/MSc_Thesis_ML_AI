@@ -1,17 +1,16 @@
-
 % Thesis Abstract -----------------------------------------------------
 % BMRC style
 
 %\begin{abstractslong}    %uncommenting this line, gives a different abstract heading
 \begin{abstracts}        %this creates the heading for the abstract page.
 
-\textbf{Background:} Chronic disease and functional decline are major contributors to morbidity in older adults, yet the predictive contribution of accumulated self-reported health burden indicators across longitudinal transitions remains underexplored.
+\textbf{Background:} Chronic disease and functional decline are major health challenges for older adults, yet how well self-reported health burden can predict disease onset across longitudinal waves remains underexplored.
 
-\textbf{Methods:} A longitudinal machine learning framework was developed using five waves of TILDA data. Variables were standardised through a multi-stage preprocessing pipeline, and four model families (\texttt{Logistic Regression}, \texttt{XGBoost}, \texttt{Random Forest}, \texttt{Multi-Layer Perceptron}) were evaluated across three modelling designs spanning single and pooled transitions. Performance, generalisation, and predictor contribution were assessed using \gls{CV}, bootstrapped confidence intervals, and predictor add-on analysis.
+\textbf{Methods:} A longitudinal machine learning framework was developed using five waves of TILDA data (2009--2019). Four model families, \texttt{logistic Regression}, \texttt{XGBoost}, \texttt{random Forest}, and a \texttt{multi-Layer Perceptron}, were compared across a single wave baseline and two pooled multi wave designs. Performance was assessed using \gls{CV} \gls{AUC}. The contribution of individual domain-specific predictors was evaluated using a bootstrapped add-on analysis.
 
-\textbf{Results:} Pooled multi wave modelling improved predictive performance and stability over the single wave transition baseline, increasing \gls{CV} AUC from $0.589 \pm 0.072$ to $0.718 \pm 0.006$. Reducing the feature set to the 20 most important predictors caused no measurable performance loss, while cognitive, psychosocial, nutritional, and behavioural add-on variables produced no statistically significant improvement.
+\textbf{Results:} Pooled multi wave modelling improved predictive performance and stability over the single wave baseline, increasing \gls{CV} \gls{AUC} from $0.589 \pm 0.072$ to $0.718 \pm 0.006$. Reducing the feature set to the 20 most important predictors caused no measurable performance loss, while cognitive, psychosocial, nutritional, and behavioural add-on variables produced no statistically significant improvement.
 
-\textbf{Conclusions:} Chronic disease risk prediction in this cohort using the publicly accessible TILDA dataset was driven primarily by accumulated self-reported and functional health measures rather than isolated domain specific risk factors. A compact set of survey derived indicators captured most predictive signal for risk assessment.
+\textbf{Conclusions:} Among community dwelling older adults, chronic disease risk prediction was driven primarily by accumulated self-reported and functional health measures, particularly medication use, pain, and self-rated health, rather than domain specific biomarker or lifestyle profiles. These findings suggest that publicly available survey data can support meaningful risk stratification with limited feature sets.
 
 \textbf{Keywords:} ageing, \glsentryfull{ML}, predictive modelling, chronic disease, functional decline, health burden, \glsentryfull{TILDA}, \glsentryfull{XGB}
 
@@ -22,4 +21,3 @@
 % ---------------------------------------------------------------------------
 % ----------------------- end of thesis sub-document ------------------------
 % ---------------------------------------------------------------------------
-
