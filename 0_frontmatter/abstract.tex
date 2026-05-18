@@ -6,13 +6,14 @@
 
 \textbf{Background:} Chronic disease and functional decline are major health challenges for older adults, yet how well self-reported health burden can predict disease onset across longitudinal waves remains underexplored.
 
-\textbf{Methods:} A longitudinal machine learning framework was developed using five waves of TILDA data (2009--2019). Four model families, \texttt{logistic Regression}, \texttt{XGBoost}, \texttt{random Forest}, and a \texttt{multi-Layer Perceptron}, were compared across a single wave baseline and two pooled multi wave designs. Performance was assessed using \gls{CV} \gls{AUC}. The contribution of individual domain-specific predictors was evaluated using a bootstrapped add-on analysis.
+% \textbf{Methods:} A longitudinal machine learning framework was developed using five waves of TILDA data (2009--2019). Four model families, logistic regression, XGBoost, random forest, and a multi-Layer perceptron, were compared across a single wave baseline and two pooled multi wave designs. Performance was assessed using \gls{CV} \gls{AUC}. The contribution of individual domain-specific predictors was evaluated using a bootstrapped add-on analysis.
+\textbf{Methods:} Using five waves of data (2009--2019), a longitudinal framework evaluated two tasks: predicting any chronic disease onset across three designs (single wave, two pooled multi-wave), and 24 disease specific outcomes. Four model families were compared via \gls{CV} \gls{AUC}, with predictor contributions assessed by bootstrapped add-on analysis.
 
-\textbf{Results:} Pooled multi wave modelling improved predictive performance and stability over the single wave baseline, increasing \gls{CV} \gls{AUC} from $0.589 \pm 0.072$ to $0.718 \pm 0.006$. Reducing the feature set to the 20 most important predictors caused no measurable performance loss, while cognitive, psychosocial, nutritional, and behavioural add-on variables produced no statistically significant improvement.
+\textbf{Results:} Pooled multi-wave modelling improved predictive performance over the single wave baseline, increasing \gls{CV} \gls{AUC} from $0.589 \pm 0.072$ to $0.718 \pm 0.006$. Disease specific models achieved test \gls{AUC} up to $0.721$ for functional outcomes. Reducing to the 20 most important predictors caused no loss in performance, while cognitive, psychosocial, nutritional, and behavioural add-on variables showed no significant improvement.
 
-\textbf{Conclusions:} Among community dwelling older adults, chronic disease risk prediction was driven primarily by accumulated self-reported and functional health measures, particularly medication use, pain, and self-rated health, rather than domain specific biomarker or lifestyle profiles. These findings suggest that publicly available survey data can support meaningful risk stratification with limited feature sets.
+\textbf{Conclusions:} Among community dwelling older adults, chronic disease risk prediction was primarily driven by accumulated self-reported burden indicators, medication use, pain, and self-rated health rather than domain specific biomarker or lifestyle profiles. These findings suggest that publicly available survey data can support meaningful risk stratification with a limited feature set.
 
-\textbf{Keywords:} ageing, \glsentryfull{ML}, predictive modelling, chronic disease, functional decline, health burden, \glsentryfull{TILDA}, \glsentryfull{XGB}
+\textbf{Keywords:} ageing, \glsentryfull{ML}, predictive modelling, chronic disease, functional decline, health burden, \glsentryfull{TILDA}, \glsentryfull{XGB}.
 
 \end{abstracts}
 %\end{abstractlongs}
