@@ -26,7 +26,7 @@ This approach prioritises data integrity and sample size over the strict exclusi
 Each wave included three primary components:
 \begin{enumerate}
     \item \textbf{\gls{CAPI}:} Computer assisted personal interviews conducted in participants homes, covering health status, sociodemographics, economic circumstances, and family networks. This assisted format ensures automatic routing between questions, eliminates data entry errors, and allows real time consistency checks, improving data integrity compared with paper based methods.
-    \item \textbf{\gls{SCQ}:} Paper based questionnaires completed privately by participants, capturing sensitive information including mental health, alcohol use, sexual activity, and subjective wellbeing. The self completion format reduces social desirability bias for topics participants may be reluctant to discuss with an interviewer.    
+    \item \textbf{\gls{SCQ}:} Paper based questionnaires completed privately by participants, capturing sensitive information including mental health, alcohol use, sexual activity, and subjective wellbeing. The self completion format reduces social desirability bias for topics participants may be reluctant to discuss with an interviewer.
     \item \textbf{Health Assessment:} Objective clinical and biomarker measurements, including blood pressure, grip strength, gait speed, cognitive tests, and blood samples, conducted in dedicated health assessment centres (waves~1 and~3) or adapted for home measurement in subsequent waves.
 \end{enumerate}
 
@@ -116,7 +116,7 @@ The process consisted of the following steps:
     \item \textbf{Automated variable profiling (Python):} For every variable, summary statistics were computed programmatically, including data type, proportion of missing values, number of unique values, most frequent value, and frequency of the most frequent value. These summaries were exported to spreadsheet format for inspection.
     \item \textbf{Manual variable screening (spreadsheet based):} Using predefined rule based thresholds described below. Variables were manually reviewed and flagged for exclusion based on missingness, lack of variation, dominance of a single category, or administrative function.
     \item \textbf{Creation of retained variable lists:} Variables not flagged for exclusion were programmatically concatenated in \texttt{.xlsx} and manually transferred into wave specific \gls{JSON} files representing the retained \emph{variables of interest}.
-    \item \textbf{Reloading filtered datasets:} The \gls{JSON} files were then used to subset the original raw datasets, producing reduced datasets with identical rows but fewer variables. No programmatic cleaning, recoding, or imputation script was applied at this stage.
+    \item \textbf{Reloading filtered datasets:} The \gls{JSON} files were then used to subset the original raw datasets, producing reduced datasets with identical rows but fewer variables. No scripts were used to clean, recode, or impute data at this stage.
 \end{enumerate}
 
 Manual filtering was applied according to the following criteria (Figure~\ref{fig:variable_filter_criteria}):
@@ -174,7 +174,6 @@ The seven thematic groups integrate information from \gls{CAPI}, \gls{SCQ}, and 
 The heatmap at the base of Table~\ref{tab:feature_groups} shows domain coverage across waves, darker shading indicates a higher variable count highlighting which domains contribute most features to the dataset.
 
 % -------------------- Longtable (breaks only between IDs) --------------------
-% \clearpage
 
 \begin{longtable}{|C{0.04\linewidth}|C{0.225\linewidth}|C{0.225\linewidth}|L{0.3\linewidth}|C{0.1\linewidth}|}
 \caption{Thematic domain grouping of longitudinal features.}\label{tab:feature_groups}\\
