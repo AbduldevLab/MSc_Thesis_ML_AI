@@ -101,7 +101,7 @@ The final cleaning pipeline consisted of six deterministic steps applied uniform
 
     Technical implementation details for this step are provided in Appendix~\ref{app:step6_code}:
     \begin{itemize}
-        \item[-] text based parsing extracted numbers, ranges, units, percentages, and frequency descriptors into numeric values, yielding interpretable numerical feature representations.  
+        \item[-] Text based parsing extracted numbers, ranges, units, percentages, and frequency descriptors into numeric values, yielding interpretable numerical feature representations.  
         \item[-] Sentinel handling ensured all known non-response codes mapped to ($\texttt{-1.0}$).  
         \item[-] Original values were grouped and assigned numeric identifiers in first seen order, non numeric categorical labels were assigned integer codes above the highest observed numeric value to prevent collisions.  
         \item[-] Manual inspection using the Markdown audit file verified that semantic equivalence was maintained across waves.  
@@ -225,7 +225,7 @@ Two model variants were tested for each sex:
 \end{enumerate}
 Model training and evaluation followed the procedure reported in~\cite{moguilnerImportanceAgePrediction2021} as closely as permitted by the available data. Features were min-max normalised prior to modelling. For each sex, data were split into training $(80\%)$ and testing $(20\%)$ sets. To mitigate overfitting and obtain robust estimates of model performance, 5-fold stratified cross-validation was applied on the training data.\ \gls{AUC} was selected as the primary evaluation metric due to its widespread use in prior \gls{TILDA} and \gls{ML} based studies (Figure~\ref{fig:prisma}) and its robustness to class imbalance.
 
-For six of the sixteen \gls{FI} items, the cleaned dataset transformations differed from the scoring rules published in~\cite{moguilnerImportanceAgePrediction2021}.  To align precisely with the original 16/32-item \gls{FI} methodology, these items were recoded following the published ordinal and dichotomous mappings. This step was necessary to ensure that the six remapped \gls{FI} items reflects the same interpretation of health deficits used in the literature and is consistent with standard \gls{FI} construction principles~\cite{searleStandardProcedureCreating2008}. Models were then re-evaluated using this partial remapping \gls{FI} to assess sensitivity to feature encoding.
+For six of the sixteen \gls{FI} items, the cleaned dataset transformations differed from the scoring rules published in~\cite{moguilnerImportanceAgePrediction2021}. To align precisely with the original 16/32-item \gls{FI} methodology, these items were recoded following the published ordinal and dichotomous mappings. This step was necessary to ensure that the six remapped \gls{FI} items reflects the same interpretation of health deficits used in the literature and is consistent with standard \gls{FI} construction principles~\cite{searleStandardProcedureCreating2008}. Models were then re-evaluated using this partial remapping \gls{FI} to assess sensitivity to feature encoding.
 
 The resulting \gls{AUC} values are reported separately for (i) cleaned (Figure~\ref{fig:roc_cleaned_fi_pca}) vs 6/16 recoded \gls{FI} items (Figure~\ref{fig:roc_recoded_fi_pca}), (ii) random vs \gls{PCA} informed mortality assignment, (iii) \gls{FI} only vs \gls{FI} $+$ Age models, and (iv) men and women.
 
