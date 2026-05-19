@@ -18,11 +18,12 @@
 
 
 \section{Summary}
-Models x, y, z
+This thesis developed and evaluated a longitudinal \gls{ML} pipeline for predicting chronic disease onset in older adults using all five waves of \gls{TILDA} data. Chapter~\ref{ch:chapter3} described the study population and manual variable screening workflow, which reduced over 5,000 raw features to a structured, domain-organised dataset. Chapter~\ref{ch:chapter4} presented the deterministic six-step cleaning pipeline and validated the transformed features against published benchmarks. Chapter~\ref{ch:chapter5} evaluated four model families across three modelling designs and 24 disease specific outcomes, finding that pooled multi-wave designs substantially outperformed the single-wave baseline, that predictive signal concentrated in a small cluster of health burden indicators, and that no domain specific add-on feature contributed statistically significant independent predictive value.
+
 % ---------------------------------------------------------------------------
 \section{Conclusions}
 % DRAFT
-One of the more striking findings of this study concerns the gap between the variety of data available and the narrowness of what turned out to matter. The pipeline drew on features spanning every major domain of ageing, yet prediction converged on 20 indicators from physical health and functional status alone. This points to something worth reflecting on: self-rated health, pain, and medication use are not just convenient proxies for disease risk. In survey cohorts like \gls{TILDA}, they are integrative measures, absorbing the accumulated effect of social circumstances, lifestyle, psychological state, and biological vulnerability into a single reported experience of burden. Whether that signal can be disaggregated into clinically actionable components is a question that requires richer data than what the publicly available release provides.
+One of the more striking findings of this study concerns the gap between the variety of data available and the narrowness of what turned out to matter. Of the $3{,}113$ features retained after manual screening, covering sociodemographic context, physical health, functional status, lifestyle, nutrition, and psychological wellbeing, the 20 predictors that drove nearly all discriminative signal came from just two of those domains, physical health and functional status. This points to something worth reflecting on: self-rated health, pain, and medication use are not just convenient proxies for disease risk. In survey cohorts like \gls{TILDA}, they appear to act as integrative markers, absorbing the accumulated effect of social circumstances, lifestyle, psychological state, and biological vulnerability that might otherwise require hundreds of individual variables to capture separately. Whether that combined signal can be disaggregated into clinically specific components is a question for future work that requires richer data than the publicly available release provides.
 % use the below numbers to streghten the abpve paragrpah using stats etc..
 % in chapter 1 we say: assess whether domain specific features contribute independent predictive value beyond the core health burden set. so its imporant right to touch on this exmaple look at how many thematic domain variables exist from our chapter3 - domain_counts_heatmap.png - down below is latex representation of this figure.
 % \begin{table}
@@ -36,19 +37,19 @@ One of the more striking findings of this study concerns the gap between the var
 % wave2 & 119 & 148 & 18 & 21 & 0 & 38 & 138 & 482 \\
 % wave3 & 164 & 184 & 44 & 14 & 8 & 93 & 132 & 639 \\
 % wave4 & 161 & 186 & 30 & 13 & 4 & 36 & 162 & 592 \\
-% wave5 & 128 & 186 & 34 & 14 & 0 & 27 & 202 & 591 \\
-% Total\_per\_Domain & 844 & 853 & 174 & 120 & 22 & 291 & 809 & 3113 \\
+% wave5 & 128 & 186 & 34 & 14 & 0 & 27 & 202 & 577 \\
+% Total\_per\_Domain & 844 & 853 & 174 & 120 & 22 & 291 & 809 & 3099 \\
 % \bottomrule
 % \end{tabular}
 % \end{table}
 
-\subsection{Data availability Statement} 
-The data analysed in this study is subject to the following licenses/restrictions: The datasets generated during and/or analysed during the current study are not publicly available due to data protection regulations but are accessible at TILDA on reasonable request. 
-Requests to access these datasets should be directed to https://tilda.tcd.ie/data/accessing-data/.  
-% use some of the info from this: This analysis was conducted using the publicly accessible \gls{TILDA} dataset (Waves~1--5). The public release is a heavily pseudonymised dataset covering self-reported health, physical, cognitive, nutritional, and behavioural variables collected at each wave, together with \texttt{ICD10} coded disease indicators available from Wave~2 onwards. Several data sources relevant to chronic disease prediction are not included in the public release and require either on site hotdesk access at \gls{TILDA}'s Trinity College Dublin facility, or remote access through the \gls{TILDA}~VISTA trusted research environment. These include a dedicated biomarkers dataset, the Wave~3 \gls{MRI} dataset, an epigenetics dataset, linked primary care records (\gls{TILDA}-\texttt{PCRS}), and linked mortality records (\gls{TILDA}~Mortality). Access to these sources would enable future work to distinguish more precisely between perceived health burden, objective physiological deterioration, and clinically verified disease trajectories. The inclusion of family history indicators in Track~B partly reflects the constraints of the public release: individual-level disease diagnoses specific to the participant were limited in the available data, and family reported diagnoses served as an indirect proxy for certain conditions where participant level onset data was absent or sparse.
+\subsection{Data availability} 
+This analysis was conducted using the publicly accessible \gls{TILDA} release (waves~1--5), a pseudonymised dataset covering self-reported health, physical, cognitive, nutritional, and behavioural variables, together with ICD-10 coded disease indicators from wave~2 onwards. The datasets are accessible through the \gls{ISSDA} at \url{https://tilda.tcd.ie/data/accessing-data/}.
+
+Several data sources relevant to chronic disease prediction are not included in the public release. These require either on-site access at \gls{TILDA}'s Trinity College Dublin facility or remote access through the \gls{TILDA} VISTA trusted research environment. They include a dedicated biomarkers dataset, the wave~3 \gls{MRI} dataset, an epigenetics dataset, linked primary care records, and linked mortality records. Access to these sources would enable future work to distinguish more precisely between perceived health burden, objective physiological decline, and verified disease trajectories.
 
 \subsection{Ethics Statement}  
-The studies involving human participants were reviewed and approved by the \texttt{Faculty of Health Sciences Research Ethics Committee} at Trinity College Dublin, Ireland. 
+The studies involving human participants were reviewed and approved by the Faculty of Health Sciences Research Ethics Committee at Trinity College Dublin, Ireland. 
 The patients/participants provided their written informed consent to participate in this study.
 
 % ---------------------------------------------------------------------------
@@ -56,9 +57,7 @@ The patients/participants provided their written informed consent to participate
 
 % ---------------------------------------------------------------------------
 \section{Future Work}
-To use wave6 published on 15/12/2025, IDS and covid-19 datasets. 
-How well our models generalise well compared to international data.
-The utilisation of the harmonised dataset.
+The recently released sixth wave of \gls{TILDA} data (December 2025), together with the Intellectual Disability Supplement and the COVID-19 sub-study, would extend the longitudinal coverage and introduce health trajectory data spanning a pandemic period, likely altering self-reported burden profiles in meaningful ways. Cross-cohort validation using the \gls{RAND} harmonised \gls{TILDA} dataset, which maps variables to international standards compatible with cohorts such as \gls{HRS} and \gls{SHARE}, would test how well the identified health burden cluster generalises beyond the Irish context. Finally, access to the restricted biomarker panels, primary care records, and linked mortality data held within \gls{TILDA}'s secure research environment would allow future work to test whether the signal limits identified here reflect the nature of chronic disease risk itself or the constraints of the publicly available dataset.
 
 
 
