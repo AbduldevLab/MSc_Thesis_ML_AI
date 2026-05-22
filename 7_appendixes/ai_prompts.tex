@@ -73,11 +73,11 @@ I acknowledge the use of GitHub Copilot to assist in the preparation of my thesi
 
 \textbf{Prompts:}
 \begin{itemize}
-    \item "Write a function `plot\_shap\_summary(model, X, feature\_names, out\_path, max\_display=20, figsize=(8,6), dpi=300)` that:
+    \item ``Write a function `plot\_shap\_summary(model, X, feature\_names, out\_path, max\_display=20, figsize=(8,6), dpi=300)` that:
     \begin{itemize}
         \item accepts an `xgboost.Booster` or scikit-learn `XGBClassifier`/`Pipeline` and a preprocessed `X` (numpy/pandas),
         \item uses `shap.TreeExplainer`, handles multi-class by selecting class index 1 when `shap\_values` is a list,\
-        \item produces a `shap.summary\_plot` (bar or dot) with `max\_display` features, sets figure size and DPI, and saves a PNG to `out\_path`, then closes the figure."
+        \item produces a `shap.summary\_plot` (bar or dot) with `max\_display` features, sets figure size and DPI, and saves a PNG to `out\_path`, then closes the figure.''
     \end{itemize}
     \item ``Provide a reusable function `plot\_model\_curves(y\_true, y\_proba, out\_prefix) that:
     \begin{itemize}
