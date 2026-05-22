@@ -11,7 +11,7 @@ I acknowledge the use of OpenAI ChatGPT (\url{https://www.chatgpt.com}) to assis
     \item How do I fix a glossary issue in LaTeX where the list of abbreviations prints an empty page?
     \item Provide a template for a thesis introduction chapter structure.
     \item How can I include a glossary of acronyms in my thesis and ensure it appears in the Table of Contents?
-    \item Explain the Harvard referencing rule for multiple authors and how to enforce it in LaTeX.
+    \item Explain the IEEE referencing rule for multiple authors and how to enforce it in LaTeX.
 \end{itemize}
 
 \textbf{Use:}
@@ -44,20 +44,22 @@ I acknowledge the use of Microsoft Copilot (\url{https://copilot.microsoft.com/}
 \end{itemize}
 
 \section*{Declaration: Google Gemini}
-I acknowledge the use of Google Gemini to assist in the preparation of my thesis. The tool was used for idea refinement, concise rewriting, and checking the structure of longer sections.
+I acknowledge the use of Google Gemini (\url{https://gemini.google.com}) to assist in the preparation of my thesis. The tool was used as an expert technical collaborator for machine learning workflow design, longitudinal cohort construction logic, and data engineering strategy.
 
 \textbf{Prompts:}
 \begin{itemize}
-    \item Suggest a clear outline for the introduction and literature review chapters.
-    \item Help me shorten this paragraph while keeping the academic meaning.
-    \item Explain how to present SHAP and AUC in plain language.
+    \item How should a machine learning pipeline handle the transition from cross-sectional data cleaning to a longitudinal predictive design using multi-wave study data?
+    \item In a study predicting incident chronic disease risk from baseline variables, what are the technical implications of excluding versus including participants who have pre-existing conditions at Wave 1?
+    \item How can I programmatically utilise CAPI questionnaire block ``None of these'' gatekeeper variables to robustly identify a healthy baseline cohort when individual low-frequency disease flags have been dropped during automated preprocessing?
+    \item Explain the machine learning trade-offs between implementing a baseline Logistic Regression model (with class weighting for target imbalance) versus transitioning to an XGBoost model utilising gain scores for high dimensional clinical and lifestyle data.
 \end{itemize}
 
 \textbf{Use:}
 \begin{itemize}
-    \item Refine chapter structure and section flow.
-    \item Rephrase long passages more concisely.
-    \item Check that technical explanations remain readable.
+    \item Formulate the longitudinal modeling strategy, transitioning the project from simple descriptive data cleaning to an incident risk prediction framework (Wave 1 $\rightarrow$ Wave 5).
+    \item Establish rigorous cohort selection criteria, specifically validating the epidemiological logic of isolating ``incident cases'' to capture true disease onset rather than baseline prevalence.
+    \item Refine the data engineering approach by shifting from error prone keyword-based variable filtering to a structurally secure validation of CAPI ``None'' indicators.
+    \item Draft high-level LaTeX documentation for Chapter 4 regarding the selection parameters and mathematical logic of the longitudinal analytical sample.
 \end{itemize}
 
 \section*{Declaration: Grammarly}
@@ -67,18 +69,30 @@ I acknowledge the use of Grammarly (\url{https://www.grammarly.com/}) to assist 
 No prompt; the tool provided automated suggestions.
 
 \section*{Declaration: GitHub Copilot}
-I acknowledge the use of GitHub Copilot to assist in the preparation of my thesis. The tool was used for code drafting, notebook support, and LaTeX editing.
+I acknowledge the use of GitHub Copilot to assist in the preparation of my thesis. The tool was used for code drafting and explanation, notebook support, and LaTeX editing.
 
 \textbf{Prompts:}
 \begin{itemize}
-    \item Help me clean up this Python data-processing function.
-    \item Explain this notebook error and suggest a small fix.
-    \item Draft a concise LaTeX snippet for a thesis figure caption.
+    \item "Write a function `plot\_shap\_summary(model, X, feature\_names, out\_path, max\_display=20, figsize=(8,6), dpi=300)` that:
+    \begin{itemize}
+        \item accepts an `xgboost.Booster` or scikit-learn `XGBClassifier`/`Pipeline` and a preprocessed `X` (numpy/pandas),
+        \item uses `shap.TreeExplainer`, handles multi-class by selecting class index 1 when `shap\_values` is a list,\
+        \item produces a `shap.summary\_plot` (bar or dot) with `max\_display` features, sets figure size and DPI, and saves a PNG to `out\_path`, then closes the figure."
+    \end{itemize}
+    \item ``Provide a reusable function `plot\_model\_curves(y\_true, y\_proba, out\_prefix) that:
+    \begin{itemize}
+        \item computes and plots ROC and Precision-Recall curves with `sklearn.metrics`,
+        \item computes calibration curve and plots reliability diagram,\
+        \item annotates AUC and average precision on the plots, applies consistent styling, and saves PDF/PNG outputs prefixed by `out\_prefix`.``
+    \end{itemize}
+    \item ``Create a small `set\_fig\_style(dpi=300, figsize=(8,6))` utility that sets `matplotlib.rcParams` and a seaborn style, and demonstrate its use in a notebook cell before plotting.''
+    \item ``Suggest a one-line notebook-cell patch to fix a common plotting error: missing `figsize` or using `show=False` in `shap.dependence\_plot` (include exact code replacement).''
 \end{itemize}
 
 \textbf{Use:}
 \begin{itemize}
-    \item Support Python and notebook-related editing.
-    \item Suggest small code refactors and debugging steps.
-    \item Draft short LaTeX fragments when needed.
+    \item Provide exact, copy-paste-ready code snippets for generating SHAP summary and dependence plots compatible with `xgboost` and `sklearn` pipelines.
+    \item Produce end-to-end examples that handle preprocessing pipelines (e.g., `Pipeline` -> `predict\_proba`) and map transformed features back to original `feature\_names` for plotting.
+    \item Ensure figure reproducibility: explicit `figsize`, `dpi`, file format, and use of `plt.close()` to avoid notebook memory growth.
+    \item Supply minimal notebook-cell diffs (before/after) to fix plotting errors, with line-level replacements the thesis examiners can reproduce.
 \end{itemize}
