@@ -1,4 +1,4 @@
-\url{https://www.ul.ie/provost/functions-processes/academic-integrity-unit}
+\url{https://www.ul.ie/provost/functions-processes/academic-integrity-unit}\\
 \noindent\textit{Note: the prompts and usage examples listed below are illustrative only and are provided to demonstrate the types of technical requests made to each tool.}
 
 \section*{Declaration: OpenAI ChatGPT}
@@ -6,21 +6,22 @@ I acknowledge the use of OpenAI ChatGPT (\url{https://www.chatgpt.com}) to assis
 
 \textbf{Prompts:}
 \begin{itemize}
-    \item How can I make this LaTeX table wider without breaking the format margins?
-    \item How do I rotate a figure into landscape mode in LaTeX?
-    \item Where should I place the publication per year figure within my methodology section?
-    \item How do I fix a glossary issue in LaTeX where the list of abbreviations prints an empty page?
-    \item Provide a template for a thesis introduction chapter structure related to ML/Health research.
-    \item How can I include a glossary of acronyms in my thesis and ensure it appears in the Table of Contents?
-    \item Explain the IEEE referencing rule for multiple authors and how to enforce it in LaTeX.
+    \item[-] How can I make this LaTeX table wider without breaking the format margins?
+    \item[-] How do I rotate a figure into landscape mode in LaTeX?
+    \item[-] Suggest a structured literature review workflow for organising journal articles using Zotero and Excel, including consistent extraction headings for variables, methods, findings, and limitations.
+    \item[-] How do I fix a glossary issue in LaTeX where the list of abbreviations prints an empty page?
+    \item[-] Suggest conventions for organising appendices, reproducibility notes, and preprocessing documentation in a technical MSc thesis involving longitudinal health data.
+    \item[-] Analyse why semantically similar categorical responses (e.g., “None”, “NOT None”, “None of these”, “NOT None of these”) were assigned inconsistent numeric encodings during automated preprocessing, and identify which parser rules caused the behaviour.
+    \item[-] How can I include a glossary of acronyms in my thesis and ensure it appears in the Table of Contents?
+    \item[-] Explain the IEEE referencing rule for multiple authors and how to enforce it in LaTeX.
 \end{itemize}
 
 \textbf{Use:}
 \begin{itemize}
-    \item Correct LaTeX structure and formatting, including figure rotation, table sizing, and pagination.
-    \item Structure the literature review methodology and thesis outline.
-    \item Troubleshoot LaTeX compilation issues and glossary formatting.
-    \item Clarify academic conventions and referencing rules.
+    \item[-] Correct LaTeX structure and formatting, including figure rotation, table sizing, and pagination.
+    \item[-] Support inspection and interpretation of preprocessing behaviour by tracing how categorical parser rules, token ordering, and fallback mappings affected downstream numeric encodings across longitudinal survey variables.
+    \item[-] Troubleshoot LaTeX compilation issues and glossary formatting.
+    \item[-] Clarify academic conventions and referencing rules by suggesting consistent extraction templates for Zotero notes and Excel comparison tables used in the systematic mapping process.
 \end{itemize}
 
 \section*{Declaration: Microsoft Copilot (M365)}
@@ -28,18 +29,18 @@ I acknowledge the use of Microsoft Copilot (\url{https://copilot.microsoft.com/}
 
 \textbf{Prompts:}
 \begin{itemize}
-    \item What is the recommended setup for using Python virtual environments with VS Code and OneDrive without causing kernel timeouts or file access issues?
-    \item How can I safely migrate a Python virtual environment from a cloud synced location to a local directory without breaking dependencies?
-    \item What is the correct workflow for installing project dependencies using \texttt{pip install -r requirements.txt} in a clean local environment?
-    \item Why am I getting ``Reference undefined'' and ``Citation undefined'' warnings in LaTeX, and how can I resolve missing labels, bibliography entries, and PDF figure errors during compilation?
+    \item[-] What is the recommended setup for using Python virtual environments with VS Code and OneDrive without causing kernel timeouts or file access issues?
+    \item[-] How can I resolve Python import errors when working across nested project directories (e.g., ensuring modules such as \texttt{loader.py} are correctly visible to notebooks)?
+    \item[-] What is the correct workflow for installing project dependencies using \texttt{pip install -r requirements.txt} in a clean local environment?
+    \item[-] Why am I getting ``Reference undefined'' and ``Citation undefined'' warnings in LaTeX, and how can I resolve missing labels, bibliography entries, and PDF figure errors during compilation?
 \end{itemize}
 
 \textbf{Use:}
 \begin{itemize}
-    \item Diagnose and resolve environment related issues, including OneDrive file system delays affecting Python execution and Jupyter kernel startup.
-    \item Establish a robust development workflow by separating project files (stored in OneDrive) from Python virtual environments (stored locally).
-    \item Assist in configuring VS Code and Jupyter to use correct kernels and interpreters for stable notebook execution.
-    \item Provide practical troubleshooting steps for package installation errors and environment misconfiguration on macOS systems.
+    \item[-] Diagnose and resolve development environment issues, including OneDrive file system latency affecting Python execution and Jupyter kernel stability.
+    \item[-] Configure and standardise project structure, ensuring consistent module importing across nested directories (e.g., linking notebooks to core scripts such as \texttt{loader.py}).
+    \item[-] Support debugging of Python workflow issues, including path handling, file I/O errors, and incorrect relative directory references during multi file data loading.
+    \item[-] Provide practical troubleshooting for package installation issues, environment conflicts, and LaTeX compilation errors on macOS systems.
 \end{itemize}
 
 \section*{Declaration: Google Gemini}
@@ -47,51 +48,51 @@ I acknowledge the use of Google Gemini (\url{https://gemini.google.com}) to assi
 
 \textbf{Prompts:}
 \begin{itemize}
-    \item How should a machine learning pipeline handle the transition from cross sectional data cleaning to a longitudinal predictive design using multi wave study data?
-    \item In a study predicting incident chronic disease risk from baseline variables, what are the technical implications of excluding versus including participants who have pre existing conditions at Wave 1?
-    \item How can I programmatically utilise CAPI questionnaire block ``None of these'' gatekeeper variables to robustly identify a healthy baseline cohort when individual low frequency disease flags have been dropped during automated preprocessing?
-    \item Explain the machine learning trade offs between implementing a baseline Logistic Regression model (with class weighting for target imbalance) versus transitioning to an XGBoost model utilising gain scores for high dimensional clinical and lifestyle data.
+    \item[-] How should a machine learning pipeline handle the transition from cross sectional data cleaning to a longitudinal predictive design using multi wave study data?
+    \item[-] In a study predicting incident chronic disease risk from baseline variables, what are the technical implications of excluding versus including participants who have pre existing conditions at Wave 1?
+    \item[-] How can I programmatically utilise CAPI questionnaire block ``None of these'' gatekeeper variables to robustly identify a healthy baseline cohort when individual low frequency disease flags have been dropped during automated preprocessing?
+    \item[-] Explain the machine learning trade offs between implementing a baseline Logistic Regression model (with class weighting for target imbalance) versus transitioning to an XGBoost model utilising gain scores for high dimensional clinical and lifestyle data.
 \end{itemize}
 
 \textbf{Use:}
 \begin{itemize}
-    \item Formulate the longitudinal modeling strategy, transitioning the project from simple descriptive data cleaning to an incident risk prediction framework (Wave 1 $\rightarrow$ Wave 5).
-    \item Establish rigorous cohort selection criteria, specifically validating the epidemiological logic of isolating ``incident cases'' to capture true disease onset rather than baseline prevalence.
-    \item Refine the data engineering approach by shifting from error prone keyword based variable filtering to a structurally secure validation of CAPI ``None'' indicators.
-    \item Draft high level LaTeX documentation for Chapter 4 regarding the selection parameters and mathematical logic of the longitudinal analytical sample.
+    \item[-] Formulate the longitudinal modeling strategy, transitioning the project from simple descriptive data cleaning to an incident risk prediction framework (Wave 1 $\rightarrow$ Wave 5).
+    \item[-] Establish rigorous cohort selection criteria, specifically validating the epidemiological logic of isolating ``incident cases'' to capture true disease onset rather than baseline prevalence.
+    \item[-] Refine the data engineering approach by shifting from error prone keyword based variable filtering to a structurally secure validation of CAPI ``None'' indicators.
+    \item[-] Summarise the current high level technical details for the selection parameters and mathematical logic of the longitudinal analytical sample.
 \end{itemize}
 
 \section*{Declaration: Grammarly}
 I acknowledge the use of Grammarly (\url{https://www.grammarly.com/}) to assist in the preparation of my thesis. The tool was used to refine academic writing.
 
 \textbf{Prompts:}
-No prompt; the tool provided automated suggestions.
+No prompt, the tool provided automated suggestions.
 
 \section*{Declaration: GitHub Copilot}
 I acknowledge the use of GitHub Copilot (\url{https://github.com/education/students}) to assist in the preparation of my thesis. The tool was used for code drafting and explanation, notebook support, and LaTeX editing.
 
 \textbf{Prompts:}
 \begin{itemize}
-    \item ``Write a function `plot\_shap\_summary(model, X, feature\_names, out\_path, max\_display=20, figsize=(8,6), dpi=300)` that:
+    \item[-] ``Write a function `plot\_shap\_summary(model, X, feature\_names, out\_path, max\_display=20, figsize=(8,6), dpi=300)' that:
     \begin{itemize}
-        \item accepts an `xgboost.Booster` or scikit-learn `XGBClassifier`/`Pipeline` and a preprocessed `X` (numpy/pandas),
-        \item uses `shap.TreeExplainer`, handles multi-class by selecting class index 1 when `shap\_values` is a list,\
-        \item produces a `shap.summary\_plot` (bar or dot) with `max\_display` features, sets figure size and DPI, and saves a PNG to `out\_path`, then closes the figure.''
+        \item accepts an `xgboost.Booster' or scikit-learn `XGBClassifier'/`Pipeline' and a preprocessed `X' (numpy/pandas),
+        \item uses `shap.TreeExplainer', handles multi-class by selecting class index 1 when `shap\_values' is a list,\
+        \item produces a `shap.summary\_plot' (bar or dot) with `max\_display' features, sets figure size and DPI, and saves a PNG to `out\_path', then closes the figure.''
     \end{itemize}
-    \item ``Provide a reusable function `plot\_model\_curves(y\_true, y\_proba, out\_prefix) that:
+    \item[-] ``Provide a reusable function `plot\_model\_curves(y\_true, y\_proba, out\_prefix) that:
     \begin{itemize}
-        \item computes and plots ROC and precision and recall curves with `sklearn.metrics`,
+        \item computes and plots ROC and precision and recall curves with `sklearn.metrics',
         \item computes calibration curve and plots reliability diagram,\
-        \item annotates AUC and average precision on the plots, applies consistent styling, and saves PDF/PNG outputs prefixed by `out\_prefix`.``
+        \item annotates AUC and average precision on the plots, applies consistent styling, and saves PDF/PNG outputs prefixed by `out\_prefix'.''
     \end{itemize}
-    \item ``Create a small `set\_fig\_style(dpi=300, figsize=(8,6))` utility that sets `matplotlib.rcParams` and a seaborn style, and demonstrate its use in a notebook cell before plotting.''
-    \item ``Suggest a one line notebook cell patch to fix a common plotting error: missing `figsize` or using `show=False` in `shap.dependence\_plot` (include exact code replacement).''
+    \item[-] ``Create a small `set\_fig\_style(dpi=300, figsize=(8,6))' utility that sets `matplotlib.rcParams' and a seaborn style, and demonstrate its use in a notebook cell before plotting.''
+    \item[-] ``Suggest a one line notebook cell patch to fix a common plotting error: missing `figsize' or using `show=False' in `shap.dependence\_plot' (include exact code replacement).''
 \end{itemize}
 
 \textbf{Use:}
 \begin{itemize}
-    \item Provide exact, copy paste ready code snippets for generating SHAP summary and dependence plots compatible with `xgboost` and `sklearn` pipelines.
-    \item Produce end to end examples that handle preprocessing pipelines (e.g., `Pipeline` -> `predict\_proba`) and map transformed features back to original `feature\_names` for plotting.
-    \item Ensure figure reproducibility: explicit `figsize`, `dpi`, file format, and use of `plt.close()` to avoid notebook memory growth.
-    \item Supply minimal notebook cell diffs (before/after) to fix plotting errors, with line level replacements the thesis examiners can reproduce.
+    \item[-] Provide exact, copy paste ready code snippets for generating summary and dependence plots compatible with `xgboost, lr, rf, mlp' and `sklearn' pipelines.
+    \item[-] Produce end to end examples that handle preprocessing pipelines (e.g., `Pipeline' $\rightarrow$ `predict\_proba') and map transformed features back to original `feature\_names' for plotting.
+    \item[-] Ensure figure reproducibility: explicit `figsize', `dpi', file format, and use of `plt.close()' to avoid notebook memory growth.
+    \item[-] Supply minimal notebook cell diffs (before/after) to fix plotting errors and reproducibility plotting across model families and designs (e.g., calibration curves, Probability distribution, decline curves).
 \end{itemize}
