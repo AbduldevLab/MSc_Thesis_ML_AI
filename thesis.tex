@@ -488,31 +488,37 @@ The grouped Markdown representation reveals three critical points:
 
 % --- Appendix K ---
 \clearpage
-\chapter{Generative AI acknowledgement and prompt examples}\label{app:ai_prompts}
+\chapter{SHAP value plots for Track~A and Track~B}\label{app:shap_plots}
 
-\input{7_appendixes/ai_prompts}
+\begin{figure}[p]
+\centering
+\includegraphics[width=\textwidth]{7_appendixes/SHAP/d1_SHAP.png}
+\caption{Global \gls{SHAP} beeswarm plots for D1 across all four model families (top-20 features by mean $|\text{SHAP}|$).}\label{fig:shap_d1}
+\end{figure}
+
+\begin{figure}[p]
+\centering
+\includegraphics[width=\textwidth]{7_appendixes/SHAP/d2_SHAP.png}
+\caption{Global \gls{SHAP} beeswarm plots for D2 across all four model families (top-20 features by mean $|\text{SHAP}|$).}\label{fig:shap_d2}
+\end{figure}
+
+\begin{figure}[p]
+\centering
+\includegraphics[width=\textwidth]{7_appendixes/SHAP/trackb_SHAP.png}
+\caption{Global \gls{SHAP} beeswarm plots for four Track~B disease specific \gls{XGB} models: functional decline, fear of falling, hearing loss, and circulatory disease.}\label{fig:shap_trackb}
+\end{figure}
 
 \chaptermark{Appendix}
 \markboth{Appendix}{Appendix}
 
-% --- Appendix K ---
+% --- Appendix X ---
+% \clearpage
+% \chapter{Generative AI acknowledgement and prompt examples}\label{app:ai_prompts}
 
-% Supporting documents are included in the appendix:
+% \input{7_appendixes/ai_prompts}
 
-% \begin{itemize}
-% \item \emph{Appendix X}: Variable codebook and wave harmonisation notes (including anonymisation actions, top coding, and grouping rules relevant to the features used).
-% \item \emph{Appendix Y}: Ethics.
-% \item \emph{Appendix Z}: Modelling details, tables/figures, and reproducibility checklist (overview of data processing scripts).
-% \end{itemize} 
-
-% \vspace{5 mm}
-
-% Access request required:
-
-% \begin{itemize}
-% \item \emph{Folder 1}: Preprocessing and feature engineering scripts (documentation only, no raw \gls{TILDA} data).
-% \item \emph{Folder 2}: Model training/evaluation code and configuration files to reproduce the reported results.
-% \end{itemize}
+% \chaptermark{Appendix}
+% \markboth{Appendix}{Appendix}
 
 
 
