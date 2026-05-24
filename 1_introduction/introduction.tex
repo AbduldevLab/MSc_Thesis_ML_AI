@@ -10,12 +10,14 @@
 
 Ageing populations experience substantial changes across physical, nutritional, cognitive, and psychosocial domains, each shaping vulnerability to chronic disease and functional decline~\cite{davisComparisonGaitSpeed2021, mooreCountingTimeLived2017, huangSexDifferencesAssociations2020}. Understanding how these multidomain factors interact over time is essential for early risk identification.
 
+% 1.4billion malnutrition causes a cost in what exactly ? Vague 
 Lifestyle risk factors contribute billions in healthcare costs annually across Europe~\cite{WhoNutritionReport}, and in Ireland, malnutrition alone is estimated to cost over €1.4 billion per year~\cite{RICE2012}. Frameworks such as the \gls{WHO} \emph{Global Action Plan} and Ireland's \emph{Healthy Ireland} strategy identify modifiable health behaviours as central to disease prevention.
 
 European regulatory frameworks such as the \gls{GDPR} and proposed \gls{EU} \gls{AI} Act emphasise transparency and highlight the need for interpretable \gls{ML} models in healthcare.
 
 Traditional risk prediction models have largely relied on clinical biomarkers such as \gls{BP} and lipid profiles. Yet, growing evidence shows that broader predictors, including nutrition~\cite{murphyPlasmaLuteinZeaxanthin2023}, \gls{PA}~\cite{lairdPhysicalActivityDose2023}, \gls{MH}~\cite{mcdowellAssociationsPhysicalActivity2018}, and \gls{SOC}~\cite{mccrorySocialDisadvantageSocial2016} improve predictive performance.
 
+% Harmonises - highlight only waves 1-2 only available currently to let reader know taht more will become available and i quote from teh websote 'Wave 1 and Wave 2 harmonisation are complete and we have just released the documentation and code for the Demographic, Family and Health section' which means more to come right? do it here or in chapter 3 openeing paragraph
 \gls{TILDA}\footnote{\gls{TILDA}'s data are pseudonymised and accessed under license via \gls{ISSDA}. Use adheres to \gls{UL} Science \& Engineering ethics approval and data retention requirements.} provides a nationally representative cohort of adults aged 50 and over in Ireland, surveyed repeatedly across physical, clinical, functional, psychological, and social domains. An externally produced \gls{RAND} harmonised \gls{TILDA} dataset (waves~1--2), aligned to international standards, was inspected and preprocessed alongside the five core waves.
 
 Despite these advantages, existing \gls{ML} research on chronic disease prediction faces persistent limitations: over reliance on clinical predictors, limited incorporation of lifestyle and \gls{SOC} variables, predominantly cross sectional study designs that fail to capture risk trajectories, and insufficient attention to the preprocessing and representation of heterogeneous longitudinal health data.
@@ -31,7 +33,7 @@ Despite increasing research and clinical interest in lifestyle, nutritional fact
     \item \textbf{Limited integration of multidomain predictors:} Existing models focus primarily on clinical measurements and often neglect modifiable behavioural, dietary, and psychosocial factors~\cite{murphyPlasmaLuteinZeaxanthin2023, lairdPhysicalActivityDepression2023}.
     \item \textbf{Underuse of longitudinal dynamics:} Few studies use repeated measures to track how risk changes over time, such as the progression of \gls{FR}~\cite{moguilnerImportanceAgePrediction2021}.
     Probabilistic reasoning can help estimate the likelihood of developing a condition at a future time given earlier measurements, for example, calculating the probability $P(\text{\gls{FR} at wave 5} \mid \text{\gls{UGS} at wave 1}, \text{Nutrition at wave 2})$.
-    \item \textbf{Healthcare data preprocessing:} Longitudinal health survey data present significant representation challenges. Variables encoding the same concept may differ in format, value ordering, and coding scheme across waves, while health-specific constructs such as frailty index items require careful ordinal handling to preserve clinical meaning during numerical conversion~\cite{searleStandardProcedureCreating2008}. These challenges are rarely reported in the \gls{ML} literature, yet the quality of downstream predictions depends directly on how accurately the data are prepared.
+    \item \textbf{Healthcare data preprocessing:} Longitudinal health survey data present significant representation challenges. Variables encoding the same concept may differ in format, value ordering, and coding scheme across waves, while health specific constructs such as frailty index items require careful ordinal handling to preserve clinical meaning during numerical conversion~\cite{searleStandardProcedureCreating2008}. These challenges are rarely reported in the \gls{ML} literature, yet the quality of downstream predictions depends directly on how accurately the data are prepared.
 \end{itemize}
 These gaps motivate the multi-wave, multidomain approach taken in this thesis, which uses \gls{TILDA}'s five longitudinal waves to test whether richer predictor sets and pooled designs improve chronic disease onset prediction.
 
@@ -68,6 +70,7 @@ This research makes contributions at three levels:
 \emph{Chapter}~\ref{ch:chapter2} reviews \gls{ML} approaches to chronic disease prediction in ageing populations, with emphasis on lifestyle, nutrition, and methodological considerations.
 \emph{Chapter}~\ref{ch:chapter3} describes the data preparation process, including the \gls{TILDA} study design, data collection, thematic domain structure, and the manual variable screening workflow.
 In \emph{Chapter}~\ref{ch:chapter4}, the automated cleaning pipeline is presented, including the variable scenario detection system, the deterministic six step cleaning sequence, and validation of the pipeline against published benchmarks.
+% Add SHAP mention to line below for chapter 5.
 \emph{Chapter 5} presents the empirical evaluation, covering performance across three modelling designs, disease specific prediction, predictor add-on analysis, and an interpretation of the health burden correlation structure underlying the results.
 \emph{Chapter 6} discusses the implications and future directions of the research.
 
