@@ -268,7 +268,7 @@ The resulting \gls{AUC} values are reported separately for (i) originally cleane
 These results highlight several key points:
 \begin{enumerate}
 \item \textbf{Random proxy baseline (cleaned vs recoded \gls{FI}):}  
-Under purely random mortality assignment, discrimination remained at chance level for both versions of the \gls{FI}. For the cleaned 16 \gls{FI} items, the \gls{FI} only model achieved \gls{AUC} = 0.507 (men) and 0.512 (women), increasing marginally to 0.516 (men) and 0.531 (women) when age was included. When six of the sixteen available deficits were recoded to align with the published \gls{FI} scoring rules~\cite{moguilnerImportanceAgePrediction2021}, the \gls{AUC} values increased to 0.567 (men) and 0.537 (women) for the \gls{FI} only model, and to 0.572 (men) and 0.605 (women) for the \gls{FI} $+$ Age model. Despite this increase relative to the fully cleaned encoding, discrimination remained close to chance under random label assignment.
+Under purely random mortality assignment, discrimination remained at chance level regardless of \gls{FI} version. The cleaned 16-item \gls{FI} achieved \gls{AUC} $= 0.507$ (men) and $0.512$ (women). Recoding six items per the published scoring rules~\cite{moguilnerImportanceAgePrediction2021} improved this to $0.567$ (men) and $0.537$ (women), but discrimination remained close to chance. This confirms that without biological structure in the outcome labels, predictive performance reflects noise.
 
 These results confirm that, without embedding biological \gls{FR} structure into the outcome, predictive performance reflects statistical noise rather than meaningful signal, regardless of encoding refinement.
 \item \textbf{\gls{PCA} informed mortality proxy (cleaned vs recoded \gls{FI}):}  
@@ -277,7 +277,7 @@ When six of the sixteen deficits were recoded in accordance with the published s
 
 This indicates that closer alignment with published ordinal deficit scoring improves discrimination relative to the simplified numeric encoding applied during initial cleaning.
 \item \textbf{Comparison with published performance:}  
-Absolute \gls{AUC} values remain below those reported in~\cite{moguilnerImportanceAgePrediction2021} (approximately 0.70 for \gls{FI} only and up to 0.80–0.90 when age is included), which is expected given the use of a constructed mortality proxy and only 16 of the original 32 \gls{FI} items. However, the methodological sequence reported in the original study is preserved:
+Absolute \gls{AUC} values remain below those in~\cite{moguilnerImportanceAgePrediction2021} (approximately $0.70$ for \gls{FI} only, up to $0.80$--$0.90$ with age), as expected given the proxy outcome and only 16 of the original 32 \gls{FI} items. The methodological sequence is preserved: random assignment gives chance performance, \gls{PCA} latent \gls{FR} structure improves discrimination, adding age further improves prediction.
 \begin{enumerate}[label= (\roman*)]
 \item Random assignment yields chance level performance, 
 \item Extracting latent \gls{FR} structure via \gls{PCA} improves discrimination, 
