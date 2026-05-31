@@ -64,7 +64,8 @@ This design reflects the empirical diversity of survey encodings: a small subset
 \end{scope}
 
 \end{tikzpicture}
-\caption{Flowchart of the final six step cleaning pipeline applied to all \gls{TILDA} waves. Detailed transformation tables are provided in Appendix~\ref{tab:step6_full}. The corresponding implementation ``\texttt{.ipynb}'' script is documented in Appendix~\ref{app:cleaning_pipeline_code} at each scenario step.}\label{fig:cleaning_flow}
+\caption{Six step deterministic cleaning pipeline applied uniformly across all \gls{TILDA} waves. Transformation tables and implementation scripts are in Appendices~\ref{tab:step6_full} and~\ref{app:cleaning_pipeline_code}.
+}\label{fig:cleaning_flow}
 \end{figure}
 
 The final cleaning pipeline consisted of six deterministic steps applied uniformly across all \gls{TILDA} waves, with increasingly complex transformations handled in later stages. Steps 4--6 required particular attention due to hybrid, ordinal, or multi-class formats. A summary of each step and examples is provided below.
