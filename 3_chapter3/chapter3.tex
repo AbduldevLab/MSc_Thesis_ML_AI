@@ -15,7 +15,7 @@
 
 All participants who provided data in at least one \gls{TILDA} wave were considered eligible. To maximise the available sample for \gls{ML}, no exclusions were applied on the basis of age, medical conditions, mobility, cognitive status, or health centre attendance.
 
-Participants were removed only in the rare case that, following manual variable filtering, no analytically usable variables remained for that individual. Filtering occurred primarily at the \emph{variable level} during the manual screening stage, which excluded features with extreme missingness, lack of variation, or non informative structure. This approach preserves the largest possible sample while ensuring all retained inputs are analytically meaningful for downstream analysis and model development.
+Participants were removed only in the rare case that, following manual variable filtering, no analytically usable variables remained for that individual. Filtering occurred primarily at the \emph{variable level} during the manual screening stage, which excluded features with extreme missingness, lack of variation, or non informative structure. This approach preserves the largest possible sample while ensuring all retained inputs are analytically meaningful.
 
 % ----------------------------------------------------------------------
 \section{TILDA data collection}
@@ -54,7 +54,7 @@ Harmonised~\cite{ISSDA/FHM5I8_2025} & 2016 (release) & 8501 & 572 \\
 
 Variables were organised into seven thematic domains based on ageing literature and study objectives. Each variable's prefix, as defined in the \gls{PMF} metadata (Table~\ref{tab:pmf_prefixes}), indicates its source or research domain. This systematic assignment ensures that each thematic group contains conceptually related features and provides a clear structure for downstream automated preprocessing and \gls{ML}. 
 
-Each variable in \gls{TILDA} was assigned a prefix indicating its data source or research domain. Home based \gls{CAPI} variables use a two letter module code followed by a three digit question code. Variables with multiple responses or loops include an underscore and number to specify the response or iteration.
+Home based \gls{CAPI} variables use a two letter module code followed by a three digit question code. Variables with multiple responses or loops include an underscore and number to specify the response or iteration.
 
 Variables from the self completion questionnaire are prefixed with \gls{SCQ}, while derived variables constructed from either \gls{CAPI} or \gls{SCQ} data use uppercase codes corresponding to their research area. These prefixes provide a consistent framework for categorising features and guiding the research into thematic domains for downstream analysis. Additional derived variables, constructed from \gls{CAPI} or \gls{SCQ} responses, are documented in a separate codebook that specifies their source items and scoring logic. These derived variables were assigned thematic domains based on the research area of their component items.
 

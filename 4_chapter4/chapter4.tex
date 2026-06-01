@@ -25,11 +25,11 @@ All variables passed sequentially through the six step pipeline, most were resol
 
 To ensure robustness, the classification output was immediately processed by a validation routine that generated a comprehensive dictionary of variable states before transformation and feature representations after, including all representative sample values for each variable. This allowed direct inspection of how the same variable was represented across waves prior to cleaning, particularly in cases where identical semantic categories appeared in different orders or formats. By comparing these grouped samples before and after each cleaning step, classification errors and inconsistent mappings were identified and corrected prior to execution of subsequent transformations.
 
-The dictionary generated inside the \texttt{show\_grouped\_vars\_for\_scenarios} function (Appendix~\ref{app:md_script}) was formatted to create an automatic friendly ``.md'' file for rapid, surface level verification, which honed the final mapping dictionary (an example can be found in Appendix~\ref{app:md_audit}) for all features across all waves. This process of using automated detection followed by visual, manual validation was essential for correcting errors in classification logic before the subsequent scenario transformations were executed in the pipeline.
+The dictionary generated inside the \texttt{show\_grouped\_vars\_for\_scenarios} function (Appendix~\ref{app:md_script}) was formatted to create an automatic friendly ``.md'' file for rapid, surface level verification, which honed the final mapping dictionary (an example can be found in Appendix~\ref{app:md_audit}) for all features across all waves. Automated detection followed by manual validation identified and corrected classification errors before transformations were executed.
 
 \subsection{Stage 2: Deterministic six step cleaning sequence}\label{sc:stage2}
 The nine input scenarios were processed sequentially by the \emph{six step cleaning engine}, resolving simple and unambiguous cases first to maximise the proportion of successfully transformed variables before tackling more complex structures, particularly censored and multi-class scenarios (Figure~\ref{fig:cleaning_flow}). With later steps progressively shifting from cleaning into semantic feature engineering, this deterministic sequence applied identical transformation and feature encoding logic to each wave, with later steps (particularly Steps 4--6) performing rule based feature engineering by deriving semantically meaningful numerical representations directly from observed category tokens at runtime. The rationale for this embedded feature engineering approach is detailed in Section~\ref{subsec:feature_engineering}, implementation is provided in Appendix~\ref{app:step6_code}.
-This design reflects the empirical diversity of survey encodings: a small subset of variables only reveals its structure once simpler transformations have been applied.
+This design reflects the empirical diversity of survey encodings. A small subset of variables only reveals its structure once simpler transformations have been applied.
 
 \begin{figure}[htbp]
 \centering
@@ -157,7 +157,7 @@ The Markdown audit confirmed that semantically identical categories were correct
 
 % ----------------------------------------------------------------------
 \section{Validation of the transformed features}
-Validation assessed whether the pipeline preserved meaningful biological structure by confirming that known relationships reported in the literature were retained in the cleaned, transformed data.
+Validation checked whether known biological relationships reported in the literature were preserved after cleaning.
 
 Due to restricted access to certain outcome variables within \gls{TILDA}, full end-to-end replication of all published models was not always feasible. In particular, access through the hotdesk facility for the official mortality outcomes is subject to additional governance requirements, including institutional \gls{GDPR} training certification and approval by the \gls{TILDA} data access committee~\cite{HotDesksIrish}. 
 
@@ -166,7 +166,7 @@ As a result, validation focused on two complementary strategies:
 \item Internal consistency checks against established biological and clinical relationships, and 
 \item Constrained replication of published modelling frameworks using available predictors and the derived \emph{8-year mortality proxy} outcome. 
 \end{enumerate}
-Together, these validation steps demonstrate that the cleaning pipeline retains expected relational patterns and produces datasets appropriate for the downstream modelling tasks presented in Chapter~\ref{ch:chapter5}.
+These validation steps confirm that the cleaning pipeline retains expected relational patterns and produces datasets suitable for the modelling tasks in Chapter~\ref{ch:chapter5}.
 
 \subsection{Internal feature relationships}
 The first validation stage assessed whether cleaned predictors preserved biologically and clinically plausible relationships reported in prior \gls{TILDA} studies. This analysis focused on predictors identified by~\cite{davisLinearRegressionbasedMachine2021} as accounting for approximately $95\%$ of the explained variance in \gls{GSR}, defined as the difference between maximum and \gls{UGS}.
