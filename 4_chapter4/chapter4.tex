@@ -270,7 +270,6 @@ These results highlight several key points:
 \item \textbf{Random proxy baseline (cleaned vs recoded \gls{FI}):}  
 Under purely random mortality assignment, discrimination remained at chance level regardless of \gls{FI} version. The cleaned 16 \gls{FI} items achieved \gls{AUC} $= 0.507$ (men) and $0.512$ (women). Recoding six items per the published scoring rules~\cite{moguilnerImportanceAgePrediction2021} improved this to $0.567$ (men) and $0.537$ (women), but discrimination remained close to chance. This confirms that without a biological structure in the outcome labels, predictive performance reflects noise.
 
-These results confirm that, without embedding biological \gls{FR} structure into the outcome, predictive performance reflects statistical noise rather than meaningful signal, regardless of encoding refinement.
 \item \textbf{\gls{PCA} informed mortality proxy (cleaned vs recoded \gls{FI}):}  
 When mortality assignment incorporated the \gls{PCA} derived \gls{FR} representation \gls{PC1}, discrimination improved relative to the random baseline for both \gls{FI} constructions. For the 16 cleaned \gls{FI} items, the \gls{FI} only model achieved \gls{AUC} = 0.591 (men) and 0.667 (women), increasing to 0.602 (men) and 0.660 (women) when age was included.
 When six of the sixteen deficits were recoded in accordance with the published scoring framework, the \gls{FI}-only model achieved \gls{AUC} = 0.636 (men) and 0.633 (women), while the \gls{FI} $+$ age model achieved 0.643 (men) and 0.652 (women).
