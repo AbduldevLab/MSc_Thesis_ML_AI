@@ -15,7 +15,7 @@
 
 % ---------------------------------------------------------------------------
 \section{Modelling and evaluation framework}
-Building on the cleaned and validated datasets from Chapters~\ref{ch:chapter3} and~\ref{ch:chapter4}, this chapter presents the empirical evaluation of \gls{ML} models for predicting chronic disease onset in the \gls{TILDA} cohort. The evaluation is based on participants aged between $50-84$ years with a mean age of $66$. To ensure that the prediction task reflects (new onset) disease, individuals with the target condition already present at the start of a transition were excluded, leaving only at risk observations for training and testing. This rule was applied consistently across all designs and for both Track~A (\emph{any disease outcome}) and Track~B (\emph{disease specific outcomes}).
+Building on the cleaned and validated datasets from Chapters~\ref{ch:chapter3} and~\ref{ch:chapter4}, this chapter presents the empirical evaluation of \gls{ML} models for predicting chronic disease onset in the \gls{TILDA} cohort. The evaluation is based on participants aged between $50$--$84$ years with a mean age of $66$. To ensure that the prediction task reflects new onset disease, individuals with the target condition already present at the start of a transition were excluded, leaving only at risk observations for training and testing. This rule was applied consistently across all designs and for both Track~A (\emph{any disease outcome}) and Track~B (\emph{disease specific outcomes}).
 
 Final analysis samples differed by design and tracks due to data structure. The baseline design (D1) uses a single transition (Wave~1$\rightarrow$Wave~5), with a follow-up period of approximately 8 years. The pooled multi-wave designs (D2 and D3) aggregate all eligible consecutive transitions (W1$\rightarrow$W2, W2$\rightarrow$W3, W3$\rightarrow$W4, W4$\rightarrow$W5), each spanning approximately 2 years, thereby capturing shorter term dynamics.
 
@@ -173,7 +173,7 @@ All three designs shared the same participant level train/test split ($80\%$/$20
 \end{figure}
 \clearpage
 
-\textbf{Figure~\ref{fig:pipeline_flowchart} note}: Feature counts after the missingness filter: D1 retains $\approx$570 features, further reduced to $k=20$ by \texttt{SelectKBest} before model training. D2 retains $\approx$261 features, reduced to $k=100$. D3 uses exactly 21 features (top-20 + wave indicator) with no further selection.
+\textbf{Figure~\ref{fig:pipeline_flowchart} note}: Feature counts after the missingness filter: D1 retains $\approx$570 features, further reduced to $k=20$ by \texttt{SelectKBest}. D2 retains $\approx$261 features, reduced to $k=100$. D3 uses exactly 21 features (top-20 + wave indicator) with no further selection.
 
 % -------- Data splitting and leakage prevention --------
 \subsection{Participant level data splitting and leakage prevention}
@@ -223,7 +223,7 @@ MLP & 0.536 & 0.664 & 0.552 & 0.582 & 0.241 & 0.419 \\
 \end{table}
 
 \subsubsection{Design 2 performance}\label{ssc:d2}
-Table~\ref{tab:d2_results} shows the results when using all consecutive transitions (pooled multi-wave design). All models improve substantially compared to D1~\ref{ssc:d1}, with test \gls{AUC} values ranging from $0.69$ to $0.72$.
+Table~\ref{tab:d2_results} shows the results when using all consecutive transitions (pooled multi-wave design). All models improve substantially compared to D1, with test \gls{AUC} values ranging from $0.69$ to $0.72$.
 
 \begin{table}[ht]
 \centering
@@ -338,7 +338,7 @@ The overall pattern across Track~B is consistent with the preprocessing decision
 
 % ---------------------------------------------------------------------------
 \section{Model interpretability and feature importance}\label{sc:feature_importance}
-Feature importance is reported for all four model families in Appendix~\ref{app:top20_features}, with predictor add-on results in Figure~\ref{fig:add_on_fig}. Three findings are consistent across designs. Signal concentrates in a compact health burden cluster, the dominant predictors shift with the prediction window, and no domain-specific add-on contributed statistically significant independent value.
+Feature importance is reported for all four model families in Appendix~\ref{app:top20_features}, with predictor add-on results in Figure~\ref{fig:add_on_fig}. Signal concentrates in a compact health burden cluster, the dominant predictors shift with the prediction window, and no domain-specific add-on contributed statistically significant independent value.
 
 Global \gls{SHAP} beeswarm plots for D1, D2, and D3 across all four model families, together with four disease specific \gls{XGB} models from Track~B, are provided in Appendix~\ref{app:shap_plots}. In D1, blood pressure, anthropometric markers, and attendance at community classes or lectures carry the highest mean $|\text{SHAP}|$ values, consistent with the 8 year ICD-10 prediction task. The binary hypertension flag ranks fourth in \gls{LR} and \gls{MLP} (${|\text{SHAP}|} \approx 0.025$) but contributes zero under \gls{XGB}. As a tree model, \gls{XGB} captures the same cardiovascular information directly from continuous blood pressure readings rather than from a derived indicator. Attendance at community classes or lectures appears in the D1 top 5 across all models but drops out entirely in D2. This pattern aligns with Section~\ref{sc:mental_health}. Community participation carries predictive signal over an 8 year window but not over 2 year transitions in self-reported health. In D2, medication count produces the strongest shift under \gls{XGB} (${|\text{SHAP}|} = 0.194$), while self-rated health leads in \gls{LR} ($0.118$), showing that linear and tree-based models weight the same predictors differently. \gls{UCLA} loneliness appears at rank~16 in the \gls{LR} beeswarm (${|\text{SHAP}|} = 0.034$) but is absent from the tree and neural models, consistent with the near zero add-on delta for loneliness reported in Section~\ref{ssc:add_on_analysis}. A weak linear association is absorbed by correlated pain and healthcare utilisation predictors once ensemble models are used.
 
@@ -422,7 +422,6 @@ Predictive signal in this cohort is concentrated in a compact, internally correl
 \section{Health burden correlations}
 The performance patterns in this chapter are partly explained by the structure of the underlying data. Pairwise correlations among key health burden variables explain three recurring findings: why pooled designs outperformed the single wave baseline, why feature reduction caused negligible performance loss, and why no add-on candidate improved discrimination significantly.
 
-\subsection{Shared health burden signal}
 When pairwise correlations among predictors approach $|r| = 1$, the effective rank of the feature matrix decreases and the marginal information gained from adding further correlated variables approaches zero, a property that directly explains why the feature reduction in D3 (Section~\ref{ssc:d3}) produced negligible performance loss, and why no add-on candidate in Subsection~\ref{ssc:add_on_analysis} improved discrimination significantly.
 Figure~\ref{fig:hb_heatmap} presents pairwise Spearman correlations at wave~5 ($n = 4{,}978$) for six health burden variables used across Track~A and Track~B:\ self-reported long term health problem, long term illness, any clinically coded incident cases of chronic disease, chronic pain, self-rated health, and medication use.
 
