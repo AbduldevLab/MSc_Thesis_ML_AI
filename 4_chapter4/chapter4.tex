@@ -16,19 +16,19 @@
 
 % ----------------------- contents from here ------------------------
 \section{Automated cleaning engine}\label{sc:cleaning_engine}
-The core challenge in converting heterogeneous variable types across the six datasets (Table~\ref{tab:reduced_dataset_shape}) was achieving a single numerical standard suitable for downstream analysis. This required enforcing \emph{numerical homogeneity}, defined here as representing all retained features using a single numerical representation (\texttt{float64}) with a unified missing or non response sentinel ($\texttt{-1.0}$). 
+The core challenge in converting heterogeneous variable types across the six datasets was achieving a single numerical standard suitable for downstream analysis. This required enforcing \emph{numerical homogeneity}, defined here as representing all retained features using a single numerical representation (\texttt{float64}) with a unified missing or non response sentinel ($\texttt{-1.0}$). 
 
-Categorical variables were dominant ($2{,}916$ columns) while numeric types were fragmented, with \texttt{float64} ($462$ columns) adopted as the common standard to support decimal values from midpoints, ordinal scaling, and frequency normalisation. The solution was implemented as two stages: automated \emph{variable scenario detection} function (\texttt{detect\_column\_scenario\_mapping}, (Appendix~\ref{app:variable_mapping_code})) and a deterministic \emph{six step numerical cleaning engine} (Appendix~\ref{app:cleaning_pipeline_code}). Nine scenario categories were defined initially and three served only as validation fallbacks and were eliminated as coverage improved, leaving six active transformation steps applied uniformly across all waves (Appendix~\ref{tab:cleaning_tables}).
+Categorical variables were dominant ($2{,}916$ columns) while numeric types were fragmented, with \texttt{float64} ($462$ columns) adopted as the common standard to support decimal values from midpoints, ordinal scaling, and frequency normalisation. The solution was implemented as two stages: automated \emph{variable scenario detection} function (Appendix~\ref{app:variable_mapping_code}) and a deterministic \emph{six step numerical cleaning engine} (Appendix~\ref{app:cleaning_pipeline_code}). Nine scenario categories were defined initially and three served only as validation fallbacks and were eliminated as coverage improved, leaving six active transformation steps applied uniformly across all waves (Appendix~\ref{tab:cleaning_tables}).
 
 \subsection{Stage 1: Variable scenario mapping}
-All variables passed sequentially through the six step pipeline, most were resolved in Steps 1--5, with step 6 (Appendix~\ref{app:step6_code}) handling only residual variables that could not be resolved by earlier transformations.
+All variables passed sequentially through the six step pipeline, most were resolved in steps 1--5, with step 6 (Appendix~\ref{app:step6_code}) handling only residual variables that could not be resolved by earlier transformations.
 
 To ensure robustness, the classification output was immediately processed by a validation routine that generated a comprehensive dictionary of variable states before transformation and feature representations after, including all representative sample values for each variable. This allowed direct inspection of how the same variable was represented across waves prior to cleaning, particularly in cases where identical semantic categories appeared in different orders or formats. By comparing these grouped samples before and after each cleaning step, classification errors and inconsistent mappings were identified and corrected prior to execution of subsequent transformations.
 
-The dictionary generated inside the \texttt{show\_grouped\_vars\_for\_scenarios} function (Appendix~\ref{app:md_script}) was formatted to create an automatic friendly ``.md'' file for rapid, surface level verification, which honed the final mapping dictionary (an example can be found in Appendix~\ref{app:md_audit}) for all features across all waves. Automated detection followed by manual validation identified and corrected classification errors before transformations were executed.
+The dictionary generated inside the \texttt{show\_grouped\_vars\_for\_scenarios} function (Appendix~\ref{app:md_script}) was formatted to create an automatic friendly Markdown file for rapid, surface level verification, which honed the final mapping dictionary (an example can be found in Appendix~\ref{app:md_audit}) for all features across all waves. Automated detection followed by manual validation identified and corrected classification errors before transformations were executed.
 
 \subsection{Stage 2: Deterministic six step cleaning sequence}\label{sc:stage2}
-The nine input scenarios were processed sequentially by the \emph{six step cleaning engine}, resolving simple and unambiguous cases first to maximise the proportion of successfully transformed variables before tackling more complex structures, particularly censored and multi-class scenarios (Figure~\ref{fig:cleaning_flow}). With later steps progressively shifting from cleaning into semantic feature engineering, this deterministic sequence applied identical transformation and feature encoding logic to each wave, with later steps (particularly Steps 4--6) performing rule based feature engineering by deriving semantically meaningful numerical representations directly from observed category tokens at runtime. The rationale for this embedded feature engineering approach is detailed in Section~\ref{subsec:feature_engineering}, implementation is provided in Appendix~\ref{app:step6_code}.
+The nine input scenarios were processed sequentially by the \emph{six step cleaning engine}, resolving simple and unambiguous cases first to maximise the proportion of successfully transformed variables before tackling more complex structures, particularly censored and multi-class scenarios (Figure~\ref{fig:cleaning_flow}). With later steps progressively shifting from cleaning into semantic feature engineering, this deterministic sequence applied identical transformation and feature encoding logic to each wave, with later steps (particularly steps 4--6) performing rule based feature engineering by deriving semantically meaningful numerical representations directly from observed category tokens at runtime. The rationale for this embedded feature engineering approach is detailed in Section~\ref{subsec:feature_engineering}, implementation is provided in Appendix~\ref{app:step6_code}.
 This design reflects the empirical diversity of survey encodings. A small subset of variables only reveals its structure once simpler transformations have been applied.
 
 \begin{figure}[htbp]
@@ -97,9 +97,7 @@ The final cleaning pipeline consisted of six deterministic steps applied uniform
         \item[-] \textit{Example (sentinel case):} Feature \texttt{X} with pre-transformed values \texttt{[`NOT Getting in or out of bed', -1.0, `Getting in or out of bed']} was encoded as \texttt{[0.0, -1.0, 1.0]}, demonstrating how a sentinel preserves binary semantics.
     \end{itemize}
 
-    \item \textbf{Multi-class / Mixed Variables (rule based feature engineering):} Variables with remaining multi-class structure, mixed types, or unresolved string numeric hybrids after earlier transformations were processed in the final step.
-
-    Technical implementation for this step are provided in Appendix~\ref{app:step6_code}:
+    \item \textbf{Multi-class / Mixed Variables (rule based feature engineering):} Variables with remaining multi-class structure, mixed types, or unresolved string numeric hybrids after earlier transformations were processed in the final step. Technical implementation for this step are provided in Appendix~\ref{app:step6_code}:
     \begin{itemize}
         \item[-] Text based parsing extracted numbers, ranges, units, percentages, and frequency descriptors into numeric values, yielding interpretable numerical feature representations.  
         \item[-] Sentinel handling ensured all known non-response codes mapped to ($\texttt{-1.0}$).  
@@ -158,12 +156,10 @@ The Markdown audit confirmed that semantically identical categories were correct
 \section{Validation of the transformed features}
 Validation checked whether known biological relationships reported in the literature were preserved after cleaning.
 
-Due to restricted access to certain outcome variables within \gls{TILDA}, full end-to-end replication of all published models was not always feasible. In particular, access through the hotdesk facility for the official mortality outcomes is subject to additional governance requirements, including institutional \gls{GDPR} training certification and approval by the \gls{TILDA} data access committee~\cite{HotDesksIrish}. 
-
-As a result, validation focused on two complementary strategies: 
+Due to restricted access to certain outcome variables within \gls{TILDA}, full end-to-end replication of all published models was not always feasible. In particular, access through the hotdesk facility for the official mortality outcomes is subject to additional governance requirements, including institutional \gls{GDPR} training certification and approval by the \gls{TILDA} data access committee~\cite{HotDesksIrish}. As a result, validation focused on two complementary strategies: 
 \begin{enumerate}[label= (\roman*)]
 \item Internal consistency checks against established biological and clinical relationships, and 
-\item Constrained replication of published modelling frameworks using available predictors and the derived \emph{8-year mortality proxy} outcome. 
+\item Constrained replication of published modelling frameworks using available predictors and the derived 8 year mortality proxy outcome. 
 \end{enumerate}
 These validation steps confirm that the cleaning pipeline retains expected relational patterns and produces datasets suitable for the modelling tasks in Chapter~\ref{ch:chapter5}.
 
@@ -204,21 +200,17 @@ Education & \gls{MOCA} Score & \textbf{Positive ($+$)}: Third level education an
 \end{table}
 
 \subsection{Model based validation}
-To evaluate whether the cleaned dataset preserves predictive utility, a constrained replication of~\cite{moguilnerImportanceAgePrediction2021} was conducted using available wave~1 predictors. The study predicted 8-year mortality using 32 \gls{FI} items. In the cleaned wave 1 dataset following the deterministic six step cleaning pipeline described in Section~\ref{sc:stage2}, only 16 of these 32 \gls{FI} items remained following the manual variable filtering described in Section~\ref{sc:manual_var_filtering}, which prioritised global numeric consistency across waves.
+To evaluate whether the cleaned dataset preserves predictive utility, a constrained replication of~\cite{moguilnerImportanceAgePrediction2021} was conducted using available wave~1 predictors. The study predicted 8 year mortality using 32 \gls{FI} items. In the cleaned wave 1 dataset following the deterministic six step cleaning pipeline described in Section~\ref{sc:stage2}, only 16 of these 32 \gls{FI} items remained following the manual variable filtering described in Section~\ref{sc:manual_var_filtering}, which prioritised global numeric consistency across waves.
 
-An \emph{8-year mortality proxy} outcome was constructed to approximate the sex specific 8-year mortality rates reported in~\cite{moguilnerImportanceAgePrediction2021} (men: $14.9\%$, women: $11.1\%$), derived from linkage to Ireland’s Central Register Office records~\cite{wardLinkingDeathRegistration2020a}. Due to access restrictions, the official mortality data were unavailable. Therefore, mortality status was first assigned by randomly selecting deceased participants from the wave 1 cohort aged 50 years or older to match the published sex specific mortality proportions observed at wave 5 follow up. An equal number of surviving participants were then randomly sampled within each sex to construct balanced datasets for model training. The resulting random proxy datasets included 1,114 men (557 deceased) and 982 women (491 deceased), reflecting the baseline wave 1 population aged $\ge50$ years ($n = 8,172$: 3,743 men and 4,429 women).
-
-Two variants of this proxy were implemented:
+An \emph{8 year mortality proxy} outcome was constructed to approximate the sex specific 8 year mortality rates reported in~\cite{moguilnerImportanceAgePrediction2021} (men: $14.9\%$, women: $11.1\%$), derived from linkage to Ireland’s Central Register Office records~\cite{wardLinkingDeathRegistration2020a}. Due to access restrictions, the official mortality data were unavailable. Therefore, mortality status was first assigned by randomly selecting deceased participants from the wave 1 cohort aged 50 years or older to match the published sex specific mortality proportions observed at wave 5 follow up. An equal number of surviving participants were then randomly sampled within each sex to construct balanced datasets for model training. The resulting random proxy datasets included 1,114 men (557 deceased) and 982 women (491 deceased), reflecting the baseline wave 1 population aged $\ge50$ years ($n = 8,172$: 3,743 men and 4,429 women). Two variants of this proxy were implemented:
 \begin{enumerate}[label= (\roman*)]
 \item the purely random assignment described above, used as a structural baseline, and 
 \item biologically informed probabilistic assignment based on latent \gls{FR} structure extracted via \gls{PCA}. This dual construction allowed separation of statistical artefact from biologically meaningful signal. 
 \end{enumerate} 
 
-The random proxy serves as an initial diagnostic benchmark. Mortality labels were assigned by randomly selecting deceased participants within each sex to match the published 8-year mortality proportions. While this preserves overall class balance, it does not encode any biological or \gls{FR} related information and therefore serves only as a structural validation baseline.
+The random proxy serves as an initial diagnostic benchmark. Mortality labels were assigned by randomly selecting deceased participants within each sex to match the published 8 year mortality proportions. While this preserves overall class balance, it does not encode any biological or \gls{FR} related information and therefore serves only as a structural validation baseline.
 
-For the biologically informed proxy, the 16 available \gls{FI} items were standardised to zero mean and unit variance using z-score transformation.\ \gls{PCA} was then performed separately within each sex on complete case observations to extract the principal component representing the dominant latent \gls{FR} structure. The \gls{PC1} was retained as a latent \gls{FR} score, and its direction was aligned such that higher \gls{PC1} scores correspond to higher \gls{FR} by enforcing a positive correlation with the calculated \gls{FI}. This latent \gls{FR} score was subsequently combined with age to construct a probabilistic mortality assignment reflecting both biological vulnerability and time dependent risk.
-
-Two model variants were tested for each sex:
+For the biologically informed proxy, the 16 available \gls{FI} items were standardised to zero mean and unit variance using z-score transformation.\ \gls{PCA} was then performed separately within each sex on complete case observations to extract the principal component representing the dominant latent \gls{FR} structure. The \gls{PC1} was retained as a latent \gls{FR} score, and its direction was aligned such that higher \gls{PC1} scores correspond to higher \gls{FR} by enforcing a positive correlation with the calculated \gls{FI}. This latent \gls{FR} score was subsequently combined with age to construct a probabilistic mortality assignment reflecting both biological vulnerability and time dependent risk. Two model variants were tested for each sex:
 \begin{enumerate}
     \item \textbf{\gls{FI} only model:} using the 16 available \gls{FI} items, without age.
     \item \textbf{\gls{FI} $+$ Age model:} including age as an additional predictor.
@@ -227,7 +219,7 @@ Model training and evaluation followed the procedure reported in~\cite{moguilner
 
 For six of the sixteen \gls{FI} items, the cleaned dataset transformations differed from the scoring rules published in~\cite{moguilnerImportanceAgePrediction2021}. To align precisely with the original 16/32-item \gls{FI} methodology, these items were recoded following the published ordinal and dichotomous mappings. This step was necessary to ensure that the six remapped \gls{FI} items reflects the same interpretation of health deficits used in the literature and is consistent with standard \gls{FI} construction principles~\cite{searleStandardProcedureCreating2008}. Models were then re-evaluated using this partial remapping \gls{FI} to assess sensitivity to feature encoding.
 
-The resulting \gls{AUC} values are reported separately for (i) originally cleaned (Figure~\ref{fig:roc_cleaned_fi_pca}) vs 6/16 recoded \gls{FI} items (Figure~\ref{fig:roc_recoded_fi_pca}), (ii) random vs \gls{PCA} informed mortality assignment, (iii) \gls{FI} only vs \gls{FI} $+$ Age models, and (iv) men and women.
+The resulting \gls{AUC} values are reported separately for (i) originally cleaned (Figure~\ref{fig:roc_cleaned_fi_pca}) vs 6/16 recoded \gls{FI} items (Figure~\ref{fig:roc_recoded_fi_pca}), (ii) random vs \gls{PCA} informed mortality assignment, (iii) \gls{FI} only vs \gls{FI} $+$ Age models, and (iv) men and women. These results highlight several key points:
 
 \begin{figure}[htbp]
 \includegraphics[width=0.8\textwidth]{cleaned_FI_PCA.png}
@@ -265,7 +257,6 @@ The resulting \gls{AUC} values are reported separately for (i) originally cleane
 %     \item The cleaning pipeline successfully produced a fully numeric dataset suitable for downstream machine learning while maintaining sample characteristics close to the original cohort. Total participants over the age of 50 with a sex distribution of 45.8\% men and 54.2\% women, and expected deaths based on published rates of 14.9\% (men) and 11.1\% (women), confirming that the preprocessing and filtering preserved key demographic and outcome structures.
 % \end{enumerate}
 
-These results highlight several key points:
 \begin{enumerate}
 \item \textbf{Random proxy baseline (cleaned vs recoded \gls{FI}):}  
 Under purely random mortality assignment, discrimination remained at chance level regardless of \gls{FI} version. The cleaned 16 \gls{FI} items achieved \gls{AUC} $= 0.507$ (men) and $0.512$ (women). Recoding six items per the published scoring rules~\cite{moguilnerImportanceAgePrediction2021} improved this to $0.567$ (men) and $0.537$ (women), but discrimination remained close to chance. This confirms that without a biological structure in the outcome labels, predictive performance reflects noise.
@@ -276,7 +267,7 @@ When six of the sixteen deficits were recoded in accordance with the published s
 
 This indicates that closer alignment with published ordinal deficit scoring improves discrimination relative to the simplified numeric encoding applied during initial cleaning.
 \item \textbf{Comparison with published performance:}  
-Absolute \gls{AUC} values remain below those in~\cite{moguilnerImportanceAgePrediction2021} (approximately $0.70$ for \gls{FI} only, up to $0.80$--$0.90$ with age), as expected given the proxy outcome and only 16 of the original 32 \gls{FI} items. The methodological sequence is preserved: random assignment gives chance performance, \gls{PCA} latent \gls{FR} structure improves discrimination, and adding age further improves prediction.
+Absolute \gls{AUC} values remain below those in~\cite{moguilnerImportanceAgePrediction2021} (approximately $0.70$ for \gls{FI} only, up to $0.80$--$0.90$ with age), as expected given the created proxy outcome and only 16 of the original 32 \gls{FI} items. The methodological sequence is preserved. Random assignment gives chance performance, \gls{PCA} latent \gls{FR} structure improves discrimination, and adding age further improves prediction.
 \begin{enumerate}[label= (\roman*)]
 \item Random assignment yields chance level performance, 
 \item Extracting latent \gls{FR} structure via \gls{PCA} improves discrimination, 

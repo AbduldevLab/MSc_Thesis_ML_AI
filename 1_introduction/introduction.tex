@@ -10,9 +10,8 @@
 
 Ageing populations experience substantial changes across physical, nutritional, cognitive, and psychosocial domains, each shaping vulnerability to chronic disease and functional decline~\cite{davisComparisonGaitSpeed2021, mooreCountingTimeLived2017, huangSexDifferencesAssociations2020}. Understanding how these multidomain factors interact over time is essential for early risk identification.
 
-Lifestyle risk factors are estimated to contribute over \$514 billion in direct and indirect healthcare costs annually across Europe~\cite{WhoNutritionReport}, and in Ireland, malnutrition alone is estimated to cost over €1.4 billion per year in hospital and community care costs~\cite{RICE2012}. Frameworks such as the \gls{WHO} \emph{Global Action Plan} and Ireland's \emph{Healthy Ireland} strategy identify modifiable health behaviours as central to disease prevention.
-
-European regulatory frameworks such as the \gls{GDPR} and proposed \gls{EU} \gls{AI} Act emphasise transparency and highlight the need for interpretable \gls{ML} models in healthcare.
+% ToDo: add reference for teh eu ai act gdpr using the reference bib shared if you find an appropiate one.
+Lifestyle risk factors are estimated to contribute over \$514 billion in direct and indirect healthcare costs annually across Europe~\cite{WhoNutritionReport}, and in Ireland, malnutrition alone is estimated to cost over €1.4 billion per year in hospital and community care costs~\cite{RICE2012}. Frameworks such as the \gls{WHO} \emph{Global Action Plan} and Ireland's \emph{Healthy Ireland} strategy identify modifiable health behaviours as central to disease prevention. European regulatory frameworks, including the \gls{GDPR} and the proposed \gls{EU} \gls{AI} Act, further emphasise the need for transparent and interpretable \gls{ML} models in healthcare.
 
 Traditional risk prediction models have largely relied on clinical biomarkers such as \gls{BP} and lipid profiles. Yet, growing evidence shows that broader predictors, including nutrition~\cite{murphyPlasmaLuteinZeaxanthin2023}, \gls{PA}~\cite{lairdPhysicalActivityDose2023}, \gls{MH}~\cite{mcdowellAssociationsPhysicalActivity2018}, and \gls{SOC}~\cite{mccrorySocialDisadvantageSocial2016} improve predictive performance.
 
@@ -38,16 +37,14 @@ These gaps motivate the multi-wave, multidomain approach taken in this thesis, w
 % ----------------------------------------------------------------------
 % Research Aims and goals
 \section{Research aims and objectives}
-The goal of this thesis is to develop and evaluate longitudinal \gls{ML} approaches that combine multidomain predictors from \gls{TILDA} to predict chronic disease onset in older adults, while identifying the features and modelling designs that best support this task. 
-
-This goal will be achieved through the following objectives:
+The goal of this thesis is to develop and evaluate longitudinal \gls{ML} approaches that combine multidomain predictors from \gls{TILDA} to predict chronic disease onset in older adults, while identifying the features and modelling designs that best support this task. This goal will be achieved through the following objectives:
 \begin{itemize}
-  \item[-] Review existing applications in \gls{ML} for chronic disease prediction in ageing populations, with emphasis on gaps in lifestyle and nutrition integration.
+  \item[-] Review existing applications in \gls{ML} with \gls{TILDA} for chronic disease prediction in ageing populations, with emphasis on gaps in lifestyle and nutrition integration.
   \item[-] Develop a reproducible pipeline to preprocess and align \gls{TILDA} waves~1--5, deriving multidomain features across physical, functional, clinical, lifestyle, and psychosocial domains.
   \item[-] Develop and compare a linear baseline (\gls{LR}) against tree ensemble and neural network families (\gls{XGB}, \gls{RF}, \gls{MLP}) across single wave and pooled longitudinal designs.
   \item[-] Evaluate models using \gls{AUC}, calibration, and classification metrics across all designs.
   \item[-] Identify the most informative predictors of chronic disease onset and, through a predictor add-on analysis, assess whether domain specific features contribute independent predictive value beyond the core health burden set.
-  \item[-] Document ethical, governance, and reproducibility practices for handling longitudinal pseudonymised health data.
+  \item[-] Document ethical, governance, data access, and reproducibility practices for the pseudonymised longitudinal data used in this study.
 \end{itemize}
 
 % ----------------------------------------------------------------------
