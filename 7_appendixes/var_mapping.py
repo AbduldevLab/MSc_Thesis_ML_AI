@@ -4,7 +4,7 @@ standardised_sentinels = {'-1', '-1.0', -1, -1.0} #  set -> duplicates removed -
 numeric_sentinels = [-1, -1.0, -98, -98.0, -99, -99.0,
                      95, 95.0, 96, 96.0, 98, 98.0, 99, 99.0]
 string_sentinels = [str(x) for x in numeric_sentinels] + [f"_{x}" for x in numeric_sentinels] + \
-    ['na', 'n/a', 'refused', 'missing', 'dk', 'rf', 'refused', "refuse", 'none', 'no response', 'nan', 'not answered', 'no answer',
+    ['na', 'n/a', 'refused', 'missing', 'dk', 'rf', 'refused', "refuse", 'no response', 'nan', 'not answered', 'no answer',
      'not applicable','no consent','dont know',"don't know","didn't answer",'prefer not to say', 'task not done', 'insufficient sample', 'unable to record',
      '__', '*']
 blanks = ['', ' ', '\t', '\n']
@@ -45,7 +45,7 @@ def detect_column_scenario_mapping(df, sample_size=10):
 
     # Regex patterns
     special_symbols_pattern = r'[^A-Za-z0-9\s\.,\-+&/()]' # special symbols excluding common numeric formatting
-    bracketed_numeric_pattern = r"\d{1,3}(?:,\d{3})*[-/]\d{1,3}(?:,\d{3})*|\d+\s*[<>+-]"  # patterns like "10-20", "30/40", ">=50"
+    bracketed_numeric_pattern = r'\d{1,3}(?:,\d{3})*[--/]\d{1,3}(?:,\d{3})*|\d+\s*[<>+-]' # patterns like "10-20", "30/40", ">=50"
     sentinel_set = set(x.lower() for x in string_sentinels) # Lowercase string sentinels for comparison
 
     for col in df.columns:

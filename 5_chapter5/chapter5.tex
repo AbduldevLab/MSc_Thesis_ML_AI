@@ -25,7 +25,7 @@ Sample sizes and incident rates for Track~A are summarised in Table~\ref{tab:ana
 \subsection{Outcome definitions}
 Two complementary prediction tasks were defined.
 
-\paragraph{Track~A$-$Predicting any chronic disease onset:}\label{sc:track_a}
+\paragraph{Track~A--Predicting any chronic disease onset:}\label{sc:track_a}
 Track~A uses a binary outcome indicating the first occurrence of any chronic disease during follow-up.
 \begin{itemize}
     \item In D1, disease free status at wave one was established using a composite of self-reported conditions (e.g., eye conditions, cardiovascular conditions, diabetes related conditions, general chronic conditions, limiting long term illness, and self-reported chronic/health problems). Incident cases were then defined using any positive ICD-10 disease codes from the \gls{WHO} (\emph{International Statistical Classification of Diseases and Related Health Problems 10th Revision}) at wave five (e.g., mental and behavioural disorders \& musculoskeletal diseases).
@@ -52,7 +52,7 @@ D3: Top-20 (reduced) & 14,296 & 3,212 & 22.5 \\ \hline
 }
 \end{table}
 
-\paragraph{Track~B$-$Disease specific prediction:}\label{sc:track_b}
+\paragraph{Track~B--Disease specific prediction:}\label{sc:track_b}
 Track~B targets individual chronic disease outcomes, e.g., circulatory disease, diabetes, and functional decline. For each prediction task, the outcome was defined as the first recorded diagnosis of the specific condition, and participants were excluded if the condition was present at the baseline of the corresponding transition. Scoring details for each disease specific outcome are also provided in the same Appendix~\ref{app:item_index_scoring}. Additionally, a predictor add-on analysis was conducted to evaluate whether individual candidate features from domains beyond the top-20 feature set (Appendix~\ref{app:top20_features}) contribute independent predictive value.
 
 % -------- Modeling designs and hyperparameters --------
@@ -422,7 +422,7 @@ Predictive signal in this cohort is concentrated in a compact, internally correl
 \section{Health burden correlations}
 The performance patterns in this chapter are partly explained by the structure of the underlying data. Pairwise correlations among key health burden variables explain three recurring findings: why pooled designs outperformed the single wave baseline, why feature reduction caused negligible performance loss, and why no add-on candidate improved discrimination significantly.
 
-When pairwise correlations among predictors approach $|r| = 1$, the effective rank of the feature matrix decreases and the marginal information gained from adding further correlated variables approaches zero, a property that directly explains why the feature reduction in D3 (Section~\ref{ssc:d3}) produced negligible performance loss, and why no add-on candidate in Subsection~\ref{ssc:add_on_analysis} improved discrimination significantly.
+When pairwise correlations among predictors approach $|r| = 1$, the effective rank of the feature matrix decreases and the marginal information gained from adding further correlated variables approaches zero, a property that directly explains why the feature reduction in D3 produced negligible performance loss, and why no add-on candidate in Subsection~\ref{ssc:add_on_analysis} improved discrimination significantly.
 Figure~\ref{fig:hb_heatmap} presents pairwise Spearman correlations at wave~5 ($n = 4{,}978$) for six health burden variables used across Track~A and Track~B:\ self-reported long term health problem, long term illness, any clinically coded incident cases of chronic disease, chronic pain, self-rated health, and medication use.
 
 \begin{figure}[ht]

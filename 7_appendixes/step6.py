@@ -63,7 +63,18 @@ def categorical_transform_S6(df): # Step6; Scenario -> Multi class categorical
                 return 'SENTINEL'
             return float(x)
 
+        if isinstance(x, str):
+            sx = str(x).strip()
+            if (sx.startswith('NOT ') or sx.lower().startswith('not ')) \
+                and 'applicable' not in sx.lower() \
+                and not sx.lower().startswith('not none'):
+                return 0.0
         s = _norm(x)
+
+        if s in ('none', 'none of these', 'none of the these'):  # typo variant too
+            return 0.0
+        if s.startswith('not none'):
+            return 1.0
         # Extending sentinel detection for categorical parsing scenario
         if s == '':
             return 'SENTINEL'
@@ -217,14 +228,14 @@ def categorical_transform_S6(df): # Step6; Scenario -> Multi class categorical
             'strongly disagree': 0.0, 'disagree': 1.0, 'neither agree nor disagree': 2.0, 'neither': 2.0,
             'agree': 3.0, 'strongly agree': 4.0,
             'very poor': 0.0, 'poor': 1.0, 'fair': 2.0, 'good': 3.0, 'very good': 4.0, 'excellent': 5.0,
-            'none': 0.0, 'not at all': 0.0, 'hardly ever': 0.0,
+            'not at all': 0.0, 'hardly ever': 0.0,
             'a little': 1.0, 'some': 2.0, 'a lot': 3.0, 'alot': 3.0, 'often': 3.0,
-            'yes': 1.0, 'no': 0.0, 'sometimes': 2.0, 'rarely': 1.0, 'most or all of the time': 4.0,
-            'pass': 2.0, 'fail': 1.0, '100': 100.0,
+            'yes': 1.0, 'no': 0.0, 'sometimes': 2.0, 'rarely': 1.0,
+            'pass': 1.0, 'fail': 0.0, '100': 100.0,
             # Problem severity mappings
-            'no problem': 1.0,'minor problem': 2.0,'moderate problem': 3.0,'major problem': 4.0,
+            'no problem': 0.0, 'minor problem': 1.0, 'moderate problem': 2.0, 'major problem': 3.0,
             # Concern level mappings
-            'not at all concerned': 1.0,'somewhat concerned': 2.0,'fairly concerned': 3.0,'very concerned': 4.0,
+            'not at all concerned': 0.0,'somewhat concerned': 1.0,'fairly concerned': 2.0,'very concerned': 3.0,
             # Survey frequency mappings
             'daily / almost daily': 7.0, 'once a week or more': 6.0,'twice a month or more': 5.0,'about once a month': 4.0,
             'every few months': 3.0, 'about once or twice a year': 2.0,'less than once a year': 1.0,'never': 0.0,
@@ -236,6 +247,15 @@ def categorical_transform_S6(df): # Step6; Scenario -> Multi class categorical
         
         if s0 in likert_map:
             return float(likert_map[s0])
+        
+        _CONJ_RE = re.compile(r'\b(?:and|but|or|because|however|although|answered)\b')
+        _NO_SPECIFIC = ['problem', 'response', 'prompt']
+
+        if s0.startswith('no ') and not any(w in s0 for w in _NO_SPECIFIC) and not _CONJ_RE.search(s0):
+            return 0.0
+
+        if s0.startswith('yes ') and not _CONJ_RE.search(s0):
+            return 1.0
 
         # Quintile / ordinal like tokens: 'lowest', '2nd quintile', 'highest'
         if 'quintile' in s0 or 'lowest' in s0 or 'highest' in s0 or 'middle' in s0 or 'median' in s0:
