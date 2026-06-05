@@ -14,7 +14,7 @@ Lifestyle risk factors are estimated to contribute over \$514 billion in direct 
 
 Traditional risk prediction models have largely relied on clinical biomarkers such as \gls{BP} and lipid profiles. Yet, growing evidence shows that broader predictors, including nutrition~\cite{murphyPlasmaLuteinZeaxanthin2023}, \gls{PA}~\cite{lairdPhysicalActivityDose2023}, \gls{MH}~\cite{mcdowellAssociationsPhysicalActivity2018}, and \gls{SOC}~\cite{mccrorySocialDisadvantageSocial2016} improve predictive performance.
 \clearpage
-\gls{TILDA}\footnote{\gls{TILDA}'s data are pseudonymised and accessed under license via \gls{ISSDA}. Use adheres to \gls{UL} Science \& Engineering ethics approval and data retention requirements.} provides a nationally representative cohort of adults aged 50 and over in Ireland, surveyed repeatedly across physical, clinical, functional, psychological, and social domains. An externally produced \gls{RAND} harmonised \gls{TILDA} dataset (waves~1--2, the only waves currently harmonised), aligned to international standards, was inspected and preprocessed alongside the five core waves.
+\gls{TILDA}\footnote{\gls{TILDA}'s data are pseudonymised and accessed under license via \gls{ISSDA}. Use adheres to \gls{UL} Science \& Engineering ethics approval and data retention requirements.} is a nationally representative longitudinal study of community dwelling Irish adults aged 50 or older, with data collected repeatedly across physical, clinical, functional, psychological, and social domains. An externally produced \gls{RAND} harmonised \gls{TILDA} dataset (waves~1--2, the only waves currently harmonised), aligned to international standards, was inspected and preprocessed alongside the five core waves.
 
 Despite these advantages, existing \gls{ML} research on chronic disease prediction faces persistent limitations. Models over rely on clinical predictors, rarely incorporate lifestyle and \gls{SOC}, predominantly use cross sectional designs that fail to capture risk trajectories, and give insufficient attention to the preprocessing and representation of heterogeneous longitudinal health data.
 
@@ -37,7 +37,7 @@ These gaps motivate the multi-wave, multidomain approach taken in this thesis, w
 % ----------------------------------------------------------------------
 % Research Aims and goals
 \section{Research aims and objectives}
-The goal of this thesis is to develop and evaluate longitudinal \gls{ML} approaches that combine multidomain predictors from \gls{TILDA} to predict chronic disease onset in older adults, while identifying the features and modelling designs that best support this task. This goal will be achieved through the following objectives:
+This thesis develops and evaluates longitudinal \gls{ML} approaches that combine multidomain predictors from \gls{TILDA} to predict chronic disease onset in older adults, with a focus on identifying the features and modelling designs that best support this task. This goal will be achieved through the following objectives:
 \begin{itemize}
   \item[-] Review existing applications in \gls{ML} with \gls{TILDA} for chronic disease prediction in ageing populations, with emphasis on gaps in lifestyle and nutrition integration.
   \item[-] Develop a reproducible pipeline to preprocess and align \gls{TILDA} waves~1--5, deriving multidomain features across physical, functional, clinical, lifestyle, and psychosocial domains.
@@ -67,7 +67,7 @@ This research makes contributions at three levels:
 \emph{Chapter}~\ref{ch:chapter3} describes the data preparation process, including the \gls{TILDA} study design, data collection, thematic domain structure, and the manual variable screening workflow.
 In \emph{Chapter}~\ref{ch:chapter4}, the automated cleaning pipeline is presented, including the variable scenario detection system, the deterministic six step cleaning sequence, and validation of the pipeline against published benchmarks.
 \emph{Chapter 5} presents the empirical evaluation, covering performance across three modelling designs, disease specific prediction, predictor add-on analysis, \gls{SHAP} based interpretability analysis, and an interpretation of the health burden correlation structure underlying the results.
-\emph{Chapter 6} discusses the implications and future directions of the research.
+\emph{Chapter 6} discusses the implications of the findings and future directions for the research.
 
 % ---------------------------------------------------------------------------
 % ----------------------- end of thesis sub-document ------------------------
