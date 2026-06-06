@@ -16,7 +16,7 @@
 
 % ----------------------- contents from here ------------------------
 \section{Automated cleaning engine}\label{sc:cleaning_engine}
-The core challenge in converting heterogeneous variable types across the six datasets was achieving a single numerical standard suitable for downstream analysis. This required enforcing \emph{numerical homogeneity}, defined here as representing all retained features using a single numerical representation (\texttt{float64}) with a unified missing or non response sentinel ($\texttt{-1.0}$). 
+The core challenge in converting heterogeneous variable types across the six datasets was achieving a single numerical standard suitable for downstream analysis. This required enforcing \emph{numerical homogeneity}, defined here as representing all retained variables using a single numerical representation (\texttt{float64}) with a unified missing or non response sentinel ($\texttt{-1.0}$). 
 
 Categorical variables were dominant ($2{,}916$ columns) while numeric types were fragmented, with \texttt{float64} ($462$ columns) adopted as the common standard to support decimal values from midpoints, ordinal scaling, and frequency normalisation. The solution was implemented as two stages: automated \emph{variable scenario detection} function (Appendix~\ref{app:variable_mapping_code}) and a deterministic \emph{six step numerical cleaning engine} (Appendix~\ref{app:cleaning_pipeline_code}). Nine scenario categories were defined initially and three served only as validation fallbacks and were eliminated as coverage improved, leaving six active transformation steps applied uniformly across all waves (Appendix~\ref{tab:cleaning_tables}).
 
@@ -25,10 +25,10 @@ All variables passed sequentially through the six step pipeline, most were resol
 
 To ensure robustness, the classification output was immediately processed by a validation routine that generated a comprehensive dictionary of variable states before transformation and feature representations after, including all representative sample values for each variable. This allowed direct inspection of how the same variable was represented across waves prior to cleaning, particularly in cases where identical semantic categories appeared in different orders or formats. By comparing these grouped samples before and after each cleaning step, classification errors and inconsistent mappings were identified and corrected prior to execution of subsequent transformations.
 
-The dictionary generated inside the \texttt{show\_grouped\_vars\_for\_scenarios} function (Appendix~\ref{app:md_script}) was formatted to create an automatic friendly Markdown file for rapid, surface level verification, which honed the final mapping dictionary (an example can be found in Appendix~\ref{app:md_audit}) for all features across all waves. Automated detection followed by manual validation identified and corrected classification errors before step transformations were executed.
+The dictionary generated inside the \texttt{show\_grouped\_vars\_for\_scenarios} function (Appendix~\ref{app:md_script}) was formatted to create an automatic friendly Markdown file for rapid, surface level verification, which honed the final mapping dictionary (an example is provided in Appendix~\ref{app:md_audit}) for all features across all waves. Automated detection followed by manual validation identified and corrected classification errors before step transformations were executed.
 
 \subsection{Stage 2: Deterministic six step cleaning sequence}\label{sc:stage2}
-The nine input scenarios were processed sequentially by the \emph{six step cleaning engine}, resolving simple and unambiguous cases first to maximise the proportion of successfully transformed variables before tackling more complex structures, particularly censored and multi-class scenarios (Figure~\ref{fig:cleaning_flow}). With later steps progressively shifting from cleaning into semantic feature engineering, this deterministic sequence applied identical transformation and feature encoding logic to each wave, with later steps (particularly steps 4--6) performing rule based feature engineering by deriving semantically meaningful numerical representations directly from observed category tokens at runtime. The rationale for this embedded feature engineering approach is detailed in Section~\ref{subsec:feature_engineering}, implementation is provided in Appendix~\ref{app:step6_code}.
+The nine input scenarios were processed sequentially by the \emph{six step cleaning engine}, resolving simple and unambiguous cases first to maximise the proportion of successfully transformed variables before tackling more complex structures, particularly censored and multi-class scenarios (Figure~\ref{fig:cleaning_flow}). With later steps progressively shifting from cleaning into semantic feature engineering, this deterministic sequence applied identical transformation and feature encoding logic to each wave. Particularly steps 4--6, performing rule based feature engineering by deriving semantically meaningful numerical representations directly from observed category labels at runtime. The rationale for this embedded feature engineering approach is detailed in Section~\ref{subsec:feature_engineering}, implementation is provided in Appendix~\ref{app:step6_code}.
 This design reflects the empirical diversity of survey encodings. A small subset of variables only reveals its structure once simpler transformations have been applied.
 
 \begin{figure}[htbp]
@@ -64,26 +64,26 @@ This design reflects the empirical diversity of survey encodings. A small subset
 \end{scope}
 
 \end{tikzpicture}
-\caption{Six step deterministic cleaning pipeline applied uniformly across all \gls{TILDA} waves. Transformation tables and implementation scripts are in Appendices~\ref{tab:step6_full} and~\ref{app:cleaning_pipeline_code}.}\label{fig:cleaning_flow}
+\caption{Six step deterministic cleaning pipeline applied uniformly across all \gls{TILDA} waves. Transformation tables and implementation scripts are provided in Appendices~\ref{tab:step6_full} and~\ref{app:cleaning_pipeline_code}.}\label{fig:cleaning_flow}
 \end{figure}
 
 The final cleaning pipeline consisted of six deterministic steps applied uniformly across all \gls{TILDA} waves, with increasingly complex transformations handled in later stages. Steps 4--6 required particular attention due to hybrid, ordinal, or multi-class formats. A summary of each step and examples is provided below.
 
 \begin{enumerate}
-    \item \textbf{Empty / Blank Values:} All missing entries, empty strings, and whitespace were converted to the standard non-response sentinel ($\texttt{-1.0}$).
+    \item \textbf{Empty / blank values:} All missing entries, empty strings, and whitespace were converted to the standard non-response sentinel ($\texttt{-1.0}$).
     
-    \item \textbf{Sentinel Values:} Wave specific non-response codes (e.g., $\texttt{-98}$, $\texttt{-99}$) and textual sentinels (e.g., \texttt{``dk''}, \texttt{``not applicable''}) were mapped to the unified ($\texttt{-1.0}$) placeholder.
+    \item \textbf{Sentinel standardisation:} Wave specific non-response codes (e.g., $\texttt{-98}$, $\texttt{99}$) and textual sentinels (e.g., \texttt{``dk''}, \texttt{``not applicable''}) were mapped to the unified ($\texttt{-1.0}$) placeholder.
 
-    \item \textbf{Numeric Transformation:} Numeric like columns containing embedded units, symbols, or hybrid strings (e.g., $\texttt{50+}$, $\texttt{<10}$, $\texttt{1-2.5}$) were parsed using regex and converted to \texttt{float64}. For ranges, midpoints \&/or boundary values were used. For censored or annotated values, appropriate upper/lower bounds were applied. 
+    \item \textbf{Numeric transformation:} Numeric like columns containing embedded units, symbols, or hybrid strings (e.g., $\texttt{50+}$, $\texttt{<10}$, $\texttt{1$-$2.5}$) were parsed using regex and converted to \texttt{float64}. For ranges, midpoints and/or boundary values were used. For censored or annotated values, appropriate upper/lower bounds were applied. 
 
-    \item \textbf{Censored / Ordinal Variables:} This step addressed variables representing ordinal scales, bracketed numeric ranges, or frequency expressions (e.g., ``2--3 days a week'', ``daily''). Transformations included:
+    \item \textbf{Censored / ordinal variables:} This step addressed variables representing ordinal scales, bracketed numeric ranges, or frequency expressions (e.g., ``2--3 days a week'', ``daily''). Transformations included:
     \begin{itemize}
         \item[-] Converting textual ordinal labels and Likert scale responses to numeric equivalents.  
         \item[-] Mapping calendar based frequency descriptors to numeric weekly equivalents.  
         \item[-] Manual verification was conducted for low count or unusual variables using the Markdown audit outputs to confirm semantic meaning was preserved.  
     \end{itemize}
 
-    \item \textbf{Binary Categorical Variables:} Two level features (e.g., Yes/No, Male/Female) were dynamically encoded using mappings derived from the observed value set of each variable:
+    \item \textbf{Binary categorical variables:} Two level features (e.g., Yes/No, Male/Female) were dynamically encoded using mappings derived from the observed value set of each variable:
     \begin{itemize}
         \item[-] Semantic rules were applied e.g., (``no'', ``not'', ``female'' $\to 0.0$) and (``yes'', ``male'' $\to 1.0$).  
         \item[-] Count based detection verified that variables had exactly two non-missing unique values.  
@@ -97,16 +97,16 @@ The final cleaning pipeline consisted of six deterministic steps applied uniform
         \item[-] \textit{Example (sentinel case):} Feature \texttt{X} with pre-transformed values \texttt{[`NOT Getting in or out of bed', -1.0, , `Getting in or out of bed']} was encoded as \texttt{[0.0, -1.0, -1.0, 1.0]}, demonstrating how a sentinel preserves binary semantics.
     \end{itemize}
 
-    \item \textbf{Multi-class / Mixed Variables (rule based feature engineering):} Variables with remaining multi-class structure, mixed types, or unresolved string numeric hybrids after earlier transformations were processed in the final step. Technical implementation for this step are provided in Appendix~\ref{app:step6_code}:
+    \item \textbf{Multi-class / mixed variables (rule based feature engineering):} Variables with remaining multi-class structure, mixed types, or unresolved string numeric hybrids after earlier transformations were processed in the final step. The implementation script is provided in Appendix~\ref{app:step6_code}:
     \begin{itemize}
         \item[-] Text based parsing extracted numbers, ranges, units, percentages, and frequency descriptors into numeric values, yielding interpretable numerical feature representations.  
         \item[-] A word-to-number mapping resolved textual numerals (e.g., \texttt{`twice'}, \texttt{`a couple'}) to numeric equivalents, and a curated semantic expression map handled survey specific phrasing (e.g., \texttt{`not at all concerned'}, \texttt{`daily / almost daily'}) that couldn't be resolved by ordinal position alone.
-        \item[-] Sentinel handling ensured all known non-response codes mapped to ($\texttt{-1.0}$).  
-        \item[-] Original values were grouped and assigned numeric identifiers in first seen order, non numeric categorical labels were assigned integer codes above the highest observed numeric value to prevent collisions.  
+        % \item[-] Sentinel handling ensured all known non-response codes mapped to ($\texttt{-1.0}$).  
+        \item[-] Original values were grouped and assigned numeric identifiers in \textbf{first seen order}, non numeric categorical labels were assigned integer codes above the highest observed numeric value to prevent collisions.  
         \item[-] Manual inspection using the Markdown audit file verified that semantic equivalence was maintained across waves.  
         \item[-] Step 6 was designed to be \emph{order invariant}, dynamically interpreting category values within each wave rather than relying on predefined lookup tables shared across waves. This preserved consistent numeric representation regardless of variable ordering or wave specific encodings.
         \begin{itemize}
-        \item[-] \textit{Example:} Step 5 handled simple binary variables, e.g., (any pain reported) with pre transformed values \texttt{[`pain', `No pain']} and numeric mapping \texttt{[1.0, 0.0]}. In contrast, step 6 dynamically processed multi-class variables, e.g., (pre tax wage/salary) many of which contained over 20 distinct pre transformed categories (e.g., \texttt{-1.0, `200--299', `Less than 100', \ldots, `6,000--6,999'}) into consistent numeric representations (e.g., \texttt{-1.0, 249.5, 99, \ldots, 6499.5}). This illustrates why step 6 required wave specific, dynamic parsing to maintain semantic equivalence across diverse observed values.
+        \item[-] \textit{Example:} Step 5 handled simple binary variables, e.g., \texttt{[`pain', `No pain']}$\rightarrow$\texttt{[1.0, 0.0]}. In contrast, step 6 dynamically processed multi-class variables, e.g., (pre tax wage/salary) many of which contained over 20 distinct pre transformed categories (e.g., \texttt{-1.0, `200--299', `Less than 100', \ldots, `6,000--6,999'}) into consistent numeric representations (e.g., \texttt{-1.0, 249.5, 99, \ldots, 6499.5}). This illustrates why step 6 required wave specific, dynamic parsing to maintain semantic equivalence across diverse observed values.
         \end{itemize}
     \end{itemize}
 \end{enumerate}
@@ -156,13 +156,12 @@ The Markdown audit confirmed that semantically identical categories were correct
 % ----------------------------------------------------------------------
 \section{Validation of the transformed features}
 Validation checked whether known biological relationships reported in the literature were preserved after cleaning.
-
 Due to restricted access to certain outcome variables within \gls{TILDA}, full end-to-end replication of all published models was not always feasible. In particular, access through the hotdesk facility for the official mortality outcomes is subject to additional governance requirements, including institutional \gls{GDPR} training certification and approval by the \gls{TILDA} data access committee~\cite{HotDesksIrish}. As a result, validation focused on two complementary strategies: 
 \begin{enumerate}[label= (\roman*)]
 \item Internal consistency checks against established biological and clinical relationships, and 
 \item Constrained replication of published modelling frameworks using available predictors and the derived 8 year mortality proxy outcome. 
 \end{enumerate}
-These validation steps confirm that the cleaning pipeline retains expected relational patterns and produces datasets suitable for the modelling tasks in Chapter~\ref{ch:chapter5}.
+These validation steps help confirm that the cleaning pipeline retains expected relational patterns and produces datasets suitable for the modelling tasks.
 
 \subsection{Internal feature relationships}
 The first validation stage assessed whether cleaned predictors preserved biologically and clinically plausible relationships reported in prior \gls{TILDA} studies. This analysis focused on predictors identified by~\cite{davisLinearRegressionbasedMachine2021} as accounting for approximately $95\%$ of the explained variance in \gls{GSR}, defined as the difference between maximum and \gls{UGS}.

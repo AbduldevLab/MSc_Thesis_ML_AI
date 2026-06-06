@@ -75,11 +75,11 @@ MD & Medication data \\
 SCR & Screening tests \\
 \hline
 \rowcolor{orange!15}\multicolumn{2}{|l|}{\textbf{3: Functional Status \& Frailty}} \\
-ADL & Activities of daily living \\
+ADL & \gls{ADL} \\
 DIS & Disability, functional impairment, helpers \\
 FR & Frailty, gait, exercise, falls and fractures \\
 GRIP & Grip strength \\
-IADL & Instrumental activities of daily living \\
+IADL & \gls{IADL} \\
 \hline
 \rowcolor{yellow!15}\multicolumn{2}{|l|}{\textbf{4: Lifestyle \& Behavioural}} \\
 BEH & Health behaviours \\
@@ -108,8 +108,8 @@ Prior to any data cleaning or modelling, a structured multi-stage workflow was i
     \item \textbf{Raw data loading:} Raw \gls{TILDA} \gls{PMF} files were loaded without cleaning or recoding. Due to compatibility issues, the harmonised dataset was loaded from a (\texttt{Stata}) (\texttt{.dta}) file, while waves 1--5 were loaded from \gls{SPSS} (\texttt{.sav}) files.
     \item \textbf{Automated variable profiling (Python):} For every variable, summary statistics were computed programmatically, including data type, proportion of missing values, number of unique values, most frequent value, and frequency of the most frequent value. These summaries were exported to spreadsheet format for inspection.
     \item \textbf{Manual variable screening (spreadsheet based):} Using predefined rule based thresholds described below. Variables were manually reviewed and flagged for exclusion based on missingness, lack of variation, dominance of a single category, or administrative function.
-    \item \textbf{Creation of retained variable lists:} Variables not flagged for exclusion were programmatically concatenated in \texttt{.xlsx} and manually transferred into wave specific \gls{JSON} files representing the retained \emph{variables of interest}.
-    \item \textbf{Reloading filtered datasets:} The \gls{JSON} files were then used to subset the original raw datasets, producing reduced datasets with identical rows but fewer variables. No scripts were used to clean, recode, or impute data at this stage.
+    \item \textbf{Creation of retained variable lists:} Variables not flagged for exclusion were programmatically concatenated in \texttt{.xlsx} and manually transferred into wave specific \gls{JSON} files representing the list of retained \emph{variables of interest}.
+    \item \textbf{Reloading filtered datasets:} The \gls{JSON} files were then used to subset the original raw datasets, producing reduced datasets with identical rows but fewer column variables. No scripts were used to clean, recode, or impute data at this stage.
 \end{enumerate}
 
 Manual filtering followed the criteria below, also visualised in Figure~\ref{fig:variable_filter_criteria}:
@@ -210,7 +210,7 @@ Physical activity & \multirow{3}{=}{\centering 120} \\ \cline{4-4}
 \multirow{3}{*}{5} &
 \multirow{3}{=}{\textbf{Nutrition \& Metabolic}} &
 \multirow{3}{=}{Metabolic and biomarker indicators} &
-\gls{CRP} & \multirow{3}{=}{\centering 22} \\ \cline{4-4}
+C-Reactive protein & \multirow{3}{=}{\centering 22} \\ \cline{4-4}
 & & & Creatinine & \\ \cline{4-4}
 & & & Lipid markers & \\ \hline
 

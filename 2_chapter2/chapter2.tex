@@ -15,7 +15,7 @@
 \fi
 
 %: ----------------------- contents from here ------------------------
-This chapter reviews literature on ageing, chronic disease, and predictive modelling using \gls{TILDA} covering four interrelated domains: physical function and \gls{FR}, \gls{MH}, nutrition, biological ageing, and \gls{ML} applications for chronic disease prediction.
+This chapter reviews literature on ageing, chronic disease, and predictive modelling using \gls{TILDA} covering four interrelated domains: physical function and \gls{FR}, \gls{MH}, nutrition and biological ageing, and \gls{ML} applications for chronic disease prediction.
 
 % ----------------------------------------------------------------------
 \section{Search strategy and study selection}
@@ -177,7 +177,7 @@ Metabolic syndrome accelerates the development of \gls{FR}, suggesting a metabol
 The presence of metabolic syndrome raises $P(\text{\gls{FR}} \mid \text{Metabolic Syndrome})$ and is associated with greater risk of adverse outcomes over time~\cite{mccarthyAssociationMetabolicSyndrome2023}. 
 Age also plays an important role. Obesity predicts mobility decline earlier in life,  whereas later in life, traits that protect against this, including \gls{HGS}, become more significant~\cite{huangAgeModifyAssociations2019}. The rate of \gls{BP} recovery after postural change has also been linked to accelerated brain ageing in \gls{TILDA}~\cite{a.shirsathSlowerSpeedBlood2024}, illustrating that physiological vulnerability in this cohort extends beyond conventional \gls{FR} markers into cardiovascular dynamics.
 
-These findings somewhat contradict when \gls{FR} appears both reversible and progressive, depending on risk context. This complexity motivates probabilistic models that can update beliefs about risk as new observations arrive, as formalised by Bayes theorem:
+These findings partially conflict when \gls{FR} appears both reversible and progressive, depending on risk context. This complexity motivates probabilistic models that can update beliefs about risk as new observations arrive, as formalised by Bayes theorem:
 \begin{equation*}
 P(Y \mid X) = \frac{P(X \mid Y) P(Y)}{P(X)}
 \end{equation*}
@@ -189,7 +189,7 @@ where $P(Y \mid X)$ is the posterior probability of outcome $Y$ given features $
 Evidence from \gls{TILDA} shows strong links to both physical and \gls{SOC} factors. Participation in physical, \gls{SOC}, and cognitive activities, summarised by the Act-Belong-Commit (ABC) indicator, was associated with lower depression and anxiety, suggesting that \gls{SOC} integration and lifestyle protect mental wellbeing~\cite{santiniProtectivePropertiesActBelongCommit2017}. However, self-reported measures may overestimate such associations, raising concerns about response bias.
 These two findings show some disagreement. The effect of \gls{SOC} engagement is strong when self-reported and weaker when objectively assessed.
 
-Objective data strengthen the case for activity. Accelerometer based measures show a dose response link between moderate to vigorous activity and lower depressive symptoms~\cite{lairdPhysicalActivityDose2023}. 
+Objective data strengthen the case for activity. Accelerometer based measures show a dose response link between \gls{MVPA} and lower depressive symptoms~\cite{lairdPhysicalActivityDose2023}. 
 Yet reverse pathways are also evident, incident falls and functional decline predict later depression, mediated by \gls{FOF}~\cite{jacobFallsIncreaseRisk2023}. 
 Together, these results reveal a bidirectional relationship, \gls{MH} both influences and is influenced by physical decline. Most studies rely on broad self report scales, such as \gls{CESD} or \gls{HADS}, with little biomarker or clinical validation. 
 
@@ -227,6 +227,7 @@ This imbalance may limit the ability of models to capture the full complexity of
 \subsection{Methodological approaches}
 The methodological approaches used in ageing research span both traditional and advanced models. 
 \gls{LR} and Markov models remain common baselines due to their interpretability and simplicity, yet they are often unable to capture nonlinearities or higher order interactions. 
+% ToDo: The end of this sentence isnt a fair comparison, one is predciting morality and the other is predicting diabetes, which is a more complex outcome. To add the reults arent much of a bigger gap so for the pparagraph argument sake it would make more sense to include and compare two larger gaps between the two learning algorthm scores. be honest about my suggestion i could be wrong so revise this todo.
 More recent work has shifted towards ensemble methods such as \gls{RF}, \gls{GBM}, as well as \gls{DNN}s, which generally achieve higher predictive accuracy. For instance, \gls{LR} for mortality prediction in \gls{TILDA} achieved an \gls{AUC} of $0.78$~\cite{matthewsPredictingMortalityIrish2022}, whereas ensemble methods for \gls{DM} incidence reached $0.854$~\cite{xuTailoredMachineLearning2023}.
 
 \subsection{Performance and validation}
