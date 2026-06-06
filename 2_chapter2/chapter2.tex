@@ -160,7 +160,7 @@ This initial table guided refinement into two subsets. Studies critically relate
 \section{Physical function and frailty}
 \gls{FR} reflects declining physiological reserve, providing a framework for understanding physical vulnerability in ageing. In \gls{TILDA}, it is captured through both the \gls{FR} phenotype and the \gls{FR} index, with \gls{UGS}, \gls{HGS}, and mobility decline serving as practical predictors. These measures strongly predict hospitalisation and mortality~\cite{romero-ortunoTransitionsFrailtyPhenotype2021}.
 
-At the same time, \gls{FR} indicators are highly correlated with one another. When grip strength declines, gait speed and functional capacity typically follow, meaning each additional predictor captures diminishing independent information. This correlation structure has direct implications for \gls{ML} models, which must decide how many such indicators to include before results become insignificant, a question revisited empirically in Chapter~\ref{ch:chapter5}.
+At the same time, \gls{FR} indicators are highly correlated with one another. When \gls{GRIP} declines, gait speed and functional capacity typically follow, meaning each additional predictor captures diminishing independent information. This correlation structure has direct implications for \gls{ML} models, which must decide how many such indicators to include before results become insignificant, a question revisited empirically in Chapter~\ref{ch:chapter5}.
 
 \subsection{Probabilistic interpretation of frailty}
 From a probabilistic perspective, the likelihood of an adverse outcome $Y$ (such as mortality) given observed \gls{FR} features $X$ is expressed as a conditional probability $P(Y \mid X)$, and identifying which features carry the strongest predictive signal requires understanding how much unique information each contributes. 
@@ -169,15 +169,15 @@ When features $X_i$ and $X_j$ are statistically independent,
 \begin{equation*}
 P(X_i, X_j) = P(X_i)\,P(X_j),
 \end{equation*}
-and each adds fully independent information to the model. In practice, however, \gls{FR} related predictors such as \gls{UGS}, grip strength, and mobility limitation are often highly correlated, so the features share information and the additional gain from including a second correlated predictor is reduced.
+and each adds fully independent information to the model. In practice, however, \gls{FR} related predictors such as \gls{UGS}, \gls{HGS}, and mobility limitation are often highly correlated, so the features share information and the additional gain from including a second correlated predictor is reduced.
 
 Evidence suggests that \gls{FR} is dynamic, not irreversible. 
 For example, multi state modelling showed that many prefrail adults transition back to non frail, although established \gls{FR} strongly predicts mortality~\cite{romero-ortunoTransitionsFrailtyPhenotype2021}. 
 Metabolic syndrome accelerates the development of \gls{FR}, suggesting a metabolic pathway of vulnerability~\cite{mccarthyAssociationMetabolicSyndrome2023}. 
 The presence of metabolic syndrome raises $P(\text{\gls{FR}} \mid \text{Metabolic Syndrome})$ and is associated with greater risk of adverse outcomes over time~\cite{mccarthyAssociationMetabolicSyndrome2023}. 
-Age also plays an important role. Obesity predicts mobility decline earlier in life,  whereas later in life, traits that protect against this, including \gls{HGS}, become more significant~\cite{huangAgeModifyAssociations2019}. 
+Age also plays an important role. Obesity predicts mobility decline earlier in life,  whereas later in life, traits that protect against this, including \gls{HGS}, become more significant~\cite{huangAgeModifyAssociations2019}. The rate of \gls{BP} recovery after postural change has also been linked to accelerated brain ageing in \gls{TILDA}~\cite{a.shirsathSlowerSpeedBlood2024}, illustrating that physiological vulnerability in this cohort extends beyond conventional \gls{FR} markers into cardiovascular dynamics.
 
-These findings partly conflict when \gls{FR} appears both reversible and progressive, depending on risk context. This complexity motivates probabilistic models that can update beliefs about risk as new observations arrive, as formalised by Bayes theorem:
+These findings somewhat contradict when \gls{FR} appears both reversible and progressive, depending on risk context. This complexity motivates probabilistic models that can update beliefs about risk as new observations arrive, as formalised by Bayes theorem:
 \begin{equation*}
 P(Y \mid X) = \frac{P(X \mid Y) P(Y)}{P(X)}
 \end{equation*}
