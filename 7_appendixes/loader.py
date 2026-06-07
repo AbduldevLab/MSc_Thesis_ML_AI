@@ -90,7 +90,7 @@ if __name__ == "__main__":
         print(f"--------------- wave {path} ---------------")
         print(df.shape)
         print(df.columns[:20])
-        print("Variable/Feature descriptions, csv file saved successfully -> dir=output/")
+        print("Variable descriptions, csv file saved successfully -> dir=output/")
 
         df.to_csv(output_dir / f"{wave_name}.csv", index=False)
 
