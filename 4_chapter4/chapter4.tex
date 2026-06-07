@@ -18,7 +18,7 @@
 \section{Automated cleaning engine}\label{sc:cleaning_engine}
 The core challenge in converting heterogeneous variable types across the six datasets was achieving a single numerical standard suitable for downstream analysis. This required enforcing \emph{numerical homogeneity}, defined here as representing all retained variables using a single numerical representation (\texttt{float64}) with a unified missing or non response sentinel ($\texttt{-1.0}$). 
 
-Categorical variables were dominant ($2{,}916$ columns) while numeric types were fragmented, with \texttt{float64} ($462$ columns) adopted as the common standard to support decimal values from midpoints, ordinal scaling, and frequency normalisation. The solution was implemented as two stages: automated \emph{variable scenario detection} function (Appendix~\ref{app:variable_mapping_code}) and a deterministic \emph{six step numerical cleaning engine} (Appendix~\ref{app:cleaning_pipeline_code}). Nine scenario categories were defined initially and three served only as validation fallbacks and were eliminated as coverage improved, leaving six active transformation steps applied uniformly across all waves (Appendix~\ref{tab:cleaning_tables}).
+Categorical variables were dominant ($2{,}916$ columns) while numeric types were fragmented, with \texttt{float64} ($462$ columns) adopted as the common standard to support decimal values from midpoints, ordinal scaling, and frequency normalisation. The solution was implemented as two stages: automated \emph{variable scenario detection} function (Appendix~\ref{app:variable_mapping_code}) and a deterministic \emph{six step numerical cleaning engine} (Appendix~\ref{app:cleaning_pipeline_code}). Nine scenario categories were defined initially and three served only as validation fallbacks and were eliminated as coverage improved, leaving six active transformation steps applied uniformly across all waves.
 
 \subsection{Stage 1: Variable scenario mapping}
 All variables passed sequentially through the six step pipeline, most were resolved in steps 1--5, with step 6 (Appendix~\ref{app:step6_code}) handling only residual variables that could not be resolved by earlier transformations.
@@ -67,7 +67,7 @@ This design reflects the empirical diversity of survey encodings. A small subset
 \caption{Six step deterministic cleaning pipeline applied uniformly across all \gls{TILDA} waves. Transformation tables and implementation scripts are provided in Appendices~\ref{tab:step6_full} and~\ref{app:cleaning_pipeline_code}.}\label{fig:cleaning_flow}
 \end{figure}
 
-The final cleaning pipeline consisted of six deterministic steps applied uniformly across all \gls{TILDA} waves, with increasingly complex transformations handled in later stages. Steps 4--6 required particular attention due to hybrid, ordinal, or multi-class formats. A summary of each step and examples is provided below.
+The final cleaning pipeline consisted of six deterministic steps applied uniformly across all \gls{TILDA} waves, with increasingly complex transformations handled in later stages (the step-by-step scenario transformation tables are documented in Appendix~\ref{tab:cleaning_tables}). Steps 4--6 required particular attention due to hybrid, ordinal, or multi-class formats. A summary of each step and examples is provided below.
 
 \begin{enumerate}
     \item \textbf{Empty / blank values:} All missing entries, empty strings, and whitespace were converted to the standard non-response sentinel ($\texttt{-1.0}$).
@@ -158,7 +158,7 @@ The Markdown audit confirmed that semantically identical categories were correct
 Validation checked whether known biological relationships reported in the literature were preserved after cleaning.
 Due to restricted access to certain outcome variables within \gls{TILDA}, full end-to-end replication of all published models was not always feasible. In particular, access through the hotdesk facility for the official mortality outcomes is subject to additional governance requirements, including institutional \gls{GDPR} training certification and approval by the \gls{TILDA} data access committee~\cite{HotDesksIrish}. As a result, validation focused on two complementary strategies: 
 \begin{enumerate}[label= (\roman*)]
-\item Internal consistency checks against established biological and clinical relationships, and 
+\item Internal consistency checks against established biological and clinical relationships. 
 \item Constrained replication of published modelling frameworks using available predictors and the derived 8 year mortality proxy outcome. 
 \end{enumerate}
 These validation steps help confirm that the cleaning pipeline retains expected relational patterns and produces datasets suitable for the modelling tasks.
@@ -210,7 +210,7 @@ Due to access restrictions, the official mortality data were unavailable. As a r
 
 The random proxy serves as an initial diagnostic benchmark. Mortality labels were assigned by randomly selecting deceased participants within each sex to match the published 8 year mortality proportions. While this preserves overall class balance, it does not encode any biological or \gls{FR} related information and therefore serves only as a structural validation baseline.
 
-For the biologically informed proxy, the 16 available \gls{FI} items were standardised to zero mean and unit variance using z-score transformation.\ \gls{PCA} was then performed separately within each sex on complete case observations to extract the principal component representing the dominant latent \gls{FR} structure. The \gls{PC1} was retained as a latent \gls{FR} score, and its direction was aligned such that higher \gls{PC1} scores correspond to higher \gls{FR} by enforcing a positive correlation with the calculated \gls{FI}. This latent \gls{FR} score was subsequently combined with age to construct a probabilistic mortality assignment reflecting both biological vulnerability and time dependent risk. Two model variants were tested for each sex:
+For the biologically informed proxy, the 16 available \gls{FI} items were standardised to zero mean and unit variance using z-score transformation.\ \gls{PCA} was then performed separately within each sex on complete case observations to extract the principal component representing the latent \gls{FR} structure. The \gls{PC1} was retained as a latent \gls{FR} score, and its direction was aligned such that higher \gls{PC1} scores correspond to higher \gls{FR} by enforcing a positive correlation with the calculated \gls{FI}. This latent \gls{FR} score was subsequently combined with age to construct a probabilistic mortality assignment reflecting both biological vulnerability and time dependent risk. Two model variants were tested for each sex:
 \begin{enumerate}
     \item \textbf{\gls{FI} only model:} using the 16 available \gls{FI} items, without age.
     \item \textbf{\gls{FI} $+$ Age model:} including age as an additional predictor.
@@ -270,7 +270,7 @@ This indicates that closer alignment with published ordinal deficit scoring impr
 Absolute \gls{AUC} values remain below those in~\cite{moguilnerImportanceAgePrediction2021} (approximately $0.70$ for \gls{FI} only, up to $0.80$--$0.90$ with age), as expected given the created proxy outcome and only 16 of the original 32 \gls{FI} items. The methodological sequence is preserved. Random assignment gives chance performance, \gls{PCA} latent \gls{FR} structure improves discrimination, and adding age further improves prediction.
 \begin{enumerate}[label= (\roman*)]
 \item Random assignment yields chance level performance, 
-\item Extracting latent \gls{FR} structure via \gls{PCA} improves discrimination, 
+\item Extracting underlying \gls{FR} structure via \gls{PCA} improves discrimination, 
 \item Inclusion of age generally improved mortality prediction. 
 \end{enumerate}
 The cleaned dataset maintains realistic sex distributions (45.8\% men, 54.2\% women) and mortality proportions consistent with published estimates, confirming that preprocessing preserved demographic and structural integrity required for downstream modelling.
